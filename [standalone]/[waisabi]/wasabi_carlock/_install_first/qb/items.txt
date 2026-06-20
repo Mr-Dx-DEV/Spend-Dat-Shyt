@@ -1,0 +1,1 @@
+carkeys        = { name = 'carkeys',        label = 'Car Keys', weight = 120, type = 'item', image = 'carkeys.png',     unique = true, useable = true,  shouldClose = true, combinable = nil,   description = 'Keys to a vehicle.' },

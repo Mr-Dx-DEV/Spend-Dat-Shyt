@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cx-CinemaV2</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/sell-ui.css">
+    <link rel="stylesheet" href="./css/admin-panel.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- Flatpickr CSS (dark theme) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka+One&family=Mulish:wght@200&display=swap" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="notifDiv animate__backInDown animate__animated " style="display: none;" id = CinmaNotif>
+        <img class="animate__fadeInLeft animate__animated imgtopNotify" src="./img/leftitem.png" alt="">
+        <img class="animate__fadeInRight animate__animated imgbottomNotify" src="./img/righttem.png" alt="">
+        <p id = NotifText>Please complete all fields.</p>
+    </div>
+
+    <div id="liveeditordivID" class="liveeditordiv animate__fadeInUp animate__animated">
+        <img class="animate__fadeInLeft animate__animated imgtopadminliveedite" src="./img/leftitem.png" alt="">
+        <img class="animate__fadeInRight animate__animated imgbottomadminliveedite" src="./img/righttem.png" alt="">
+
+        <div class="closesellui animate__fadeInRight animate__animated ">
+            <button class="Btn" onclick="CLOSE()">
+                <div class="sign">
+                    <svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.9999 2.00006L2 16M1.99994 2L15.9999 15.9999" stroke="white" stroke-width="2.1" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                
+                <div class="text" >Close</div>
+              </button>
+        </div>
+        
+
+        <div class="flex justify-center ">
+            <div class="controls animate__animated animate__fadeIn ">
+               <!-- <input type="range" id="progress" min="0" max="1000" value="0" />  --> 
+                <div class="liveeditebuttonResume animate__animated animate__fadeIn anim1" id="stopBtn" onclick="PauseMoive()">
+                    <svg class="svgbutt" width="40" height="34" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                        <div class="liveediteitemsinside">
+                            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#E6E6E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 15V9M14 15V9" stroke="#E6E6E6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            <p>pause</p>
+                        </div>
+                </div>
+
+                <div class="liveeditebuttonResume animate__animated animate__fadeIn anim2" id="startBtn" onclick="ResumeMoive()">
+                    <svg class="svgbutt" width="40" height="34" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                        <div class="liveediteitemsinside">
+                            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.5 15.5839V8.41592C9.50015 8.32623 9.52442 8.23824 9.57026 8.16116C9.61611 8.08408 9.68184 8.02075 9.76057 7.9778C9.83931 7.93485 9.92814 7.91388 10.0178 7.91706C10.1074 7.92025 10.1945 7.94749 10.27 7.99592L15.846 11.5789C15.9166 11.6242 15.9747 11.6864 16.0149 11.76C16.0552 11.8336 16.0763 11.9161 16.0763 11.9999C16.0763 12.0838 16.0552 12.1663 16.0149 12.2398C15.9747 12.3134 15.9166 12.3757 15.846 12.4209L10.27 16.0049C10.1945 16.0533 10.1074 16.0806 10.0178 16.0838C9.92814 16.087 9.83931 16.066 9.76057 16.023C9.68184 15.9801 9.61611 15.9168 9.57026 15.8397C9.52442 15.7626 9.50015 15.6746 9.5 15.5849V15.5839Z" fill="#E6E6E6"/>
+                                <path d="M1 12C1 5.925 5.925 1 12 1C18.075 1 23 5.925 23 12C23 18.075 18.075 23 12 23C5.925 23 1 18.075 1 12ZM12 2.5C9.48044 2.5 7.06408 3.50089 5.28249 5.28249C3.50089 7.06408 2.5 9.48044 2.5 12C2.5 14.5196 3.50089 16.9359 5.28249 18.7175C7.06408 20.4991 9.48044 21.5 12 21.5C14.5196 21.5 16.9359 20.4991 18.7175 18.7175C20.4991 16.9359 21.5 14.5196 21.5 12C21.5 9.48044 20.4991 7.06408 18.7175 5.28249C16.9359 3.50089 14.5196 2.5 12 2.5Z" fill="#E6E6E6"/>
+                                </svg>
+                            <p>Resume</p>
+                        </div>
+                </div>
+                
+                
+                <div class="liveeditebuttonStop animate__animated animate__fadeIn anim3" id="StopMovBTN" onclick="StopMov()" >
+                    <svg class="svgbutt" width="40" height="34" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                    <div class="liveediteitemsinside">
+                        <svg width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 5C5.73478 5 5.48043 5.10536 5.29289 5.29289C5.10536 5.48043 5 5.73478 5 6V10C5 10.2652 5.10536 10.5196 5.29289 10.7071C5.48043 10.8946 5.73478 11 6 11H10C10.2652 11 10.5196 10.8946 10.7071 10.7071C10.8946 10.5196 11 10.2652 11 10V6C11 5.73478 10.8946 5.48043 10.7071 5.29289C10.5196 5.10536 10.2652 5 10 5H6ZM1 8C1 6.14348 1.7375 4.36301 3.05025 3.05025C4.36301 1.7375 6.14348 1 8 1C9.85652 1 11.637 1.7375 12.9497 3.05025C14.2625 4.36301 15 6.14348 15 8C15 9.85652 14.2625 11.637 12.9497 12.9497C11.637 14.2625 9.85652 15 8 15C6.14348 15 4.36301 14.2625 3.05025 12.9497C1.7375 11.637 1 9.85652 1 8ZM8 2C7.21207 2 6.43185 2.15519 5.7039 2.45672C4.97595 2.75825 4.31451 3.20021 3.75736 3.75736C3.20021 4.31451 2.75825 4.97595 2.45672 5.7039C2.15519 6.43185 2 7.21207 2 8C2 8.78793 2.15519 9.56815 2.45672 10.2961C2.75825 11.0241 3.20021 11.6855 3.75736 12.2426C4.31451 12.7998 4.97595 13.2417 5.7039 13.5433C6.43185 13.8448 7.21207 14 8 14C9.5913 14 11.1174 13.3679 12.2426 12.2426C13.3679 11.1174 14 9.5913 14 8C14 6.4087 13.3679 4.88258 12.2426 3.75736C11.1174 2.63214 9.5913 2 8 2Z" fill="#E6E6E6"/>
+                            </svg>
+                        <p>Stop</p>
+                    </div>
+                </div>
+
+                <div class="liveeditebuttonEdite animate__animated animate__fadeIn anim4" id="ReplayBTN" onclick="ReplayMovie()" style="  margin-left: 0rem;">
+                    <svg class="svgbutt" width="40" height="34" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                    <div class="liveediteitemsinside">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5.00003V2.21003C12 1.76003 11.46 1.54003 11.15 1.86003L7.35003 5.65003C7.15003 5.85003 7.15003 6.16003 7.35003 6.36003L11.14 10.15C11.46 10.46 12 10.24 12 9.79003V7.00003C15.73 7.00003 18.68 10.42 17.86 14.29C17.39 16.56 15.55 18.39 13.29 18.86C9.72003 19.61 6.54003 17.16 6.06003 13.85C6.02438 13.615 5.90615 13.4003 5.72656 13.2446C5.54697 13.0888 5.31775 13.0021 5.08003 13C4.48003 13 4.00003 13.53 4.08003 14.13C4.70003 18.52 8.88003 21.77 13.61 20.85C16.73 20.24 19.24 17.73 19.85 14.61C20.84 9.48003 16.94 5.00003 12 5.00003Z" fill="#E6E6E6"/>
+                            </svg>
+                        <p>Replay</p>
+                    </div>
+                </div>
+              </div>
+             <!-- <div class="timeLiveedite animate__animated animate__fadeIn " id="timeDisplay">00:00 </div> --> 
+        </div>
+
+    </div>
+
+    <div class="sell_ui animate__fadeIn animate__animated" id = SELLPANEL>
+        <img class="animate__fadeInLeft animate__animated imgtop" src="./img/leftitem.png" alt="">
+        <img class="animate__fadeInRight animate__animated imgbottom" src="./img/righttem.png" alt="">
+        <div class="closesellui" >
+            <button class="Btn"onclick="CLOSE()">
+                <div class="sign"><svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.9999 2.00006L2 16M1.99994 2L15.9999 15.9999" stroke="white" stroke-width="2.1" stroke-linecap="round"/>
+                    </svg>
+                    </div>
+                
+                <div class="text">Close</div>
+              </button>
+        </div>
+        <div class="cinema_name animate__fadeIn animate__animated">
+            <h2>cinema canx script</h2>
+            <h3>cinema canx script</h3>
+        </div>
+        <div class="boxes_movies scroll animate__fadeIn animate__animated" id = SELL_BOXES_MOVIES>
+
+            <div class="box_movie items-center ">
+                <img src="./img/movieimg.png" alt="">
+                <div class="detailmoviebox">
+                    <h1 class="h1tx">Interstellar</h1>
+                    <p class="ptext">When Earth becomes uninhabitable in thetable in thetablethetable in thetable in thetable in thetable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is </p>
+                    <div class="flex flex-row gap-2 ltbox">
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary22</div>
+                    </div>
+                </div>
+
+                <div class="rightpart">
+                    <h1 class="price">$200,222</h1>
+                    <h1 class="date">2024/2/13</h1>
+                    <h1 class="time">20:20</h1>
+                </div>
+
+                <div class="buyticket" onclick="openModal('modal1')">
+                    <svg class="svgbutt" width="55" height="33.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                    <h1>BUY TICKET</h1>
+                </div>
+
+                <ul class="condition_box">
+                    <li class="icon-content">
+                      <svg width="4" height="16" viewBox="0 0 4 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0C2.53043 0 3.03914 0.210714 3.41421 0.585787C3.78929 0.96086 4 1.46957 4 2V20C4 20.5304 3.78929 21.0391 3.41421 21.4142C3.03914 21.7893 2.53043 22 2 22C1.46957 22 0.96086 21.7893 0.585787 21.4142C0.210714 21.0391 0 20.5304 0 20V2C0 1.46957 0.210714 0.96086 0.585787 0.585787C0.96086 0.210714 1.46957 0 2 0ZM2 28C2.53043 28 3.03914 27.7893 3.41421 27.4142C3.78929 27.0391 4 26.5304 4 26C4 25.4696 3.78929 24.9609 3.41421 24.5858C3.03914 24.2107 2.53043 24 2 24C1.46957 24 0.96086 24.2107 0.585787 24.5858C0.210714 24.9609 0 25.4696 0 26C0 26.5304 0.210714 27.0391 0.585787 27.4142C0.96086 27.7893 1.46957 28 2 28Z" fill="white"/>
+                        </svg>
+                      <div class="tooltip">Waiting</div>
+                    </li>
+                  </ul>
+            </div>
+
+            
+            <div class="box_movie items-center">
+                <img src="./img/movieimg.png" alt="">
+                <div class="detailmoviebox">
+                    <h1 class="h1tx">Interstellar</h1>
+                    <p class="ptext">When Earth becomes uninhabitable in thetable in thetablethetable in thetable in thetable in thetable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is </p>
+                    <div class="flex flex-row gap-2 ltbox">
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary22</div>
+                    </div>
+                </div>
+
+                <div class="rightpart">
+                    <h1 class="price">$200,222</h1>
+                    <h1 class="date">2024/2/13</h1>
+                    <h1 class="time">13:99</h1>
+                </div>
+
+                <div class="buyticket">
+                    <svg class="svgbutt" width="55" height="33.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                    <h1>BUY TICKET</h1>
+                </div>
+
+                <ul class="condition_box">
+                    <li class="icon-content">
+                        <svg width="15" height="15" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.5" d="M20.8535 4.58203C20.8535 4.20234 20.5457 3.89453 20.166 3.89453C19.7863 3.89453 19.4785 4.20234 19.4785 4.58203V17.4154C19.4785 17.7951 19.7863 18.1029 20.166 18.1029C20.5457 18.1029 20.8535 17.7951 20.8535 17.4154V4.58203Z" fill="white"/>
+                            <path d="M15.2722 13.4255C16.9101 12.3678 16.9101 9.62963 15.2722 8.5719L5.38225 2.18538C3.79033 1.15739 1.83398 2.49541 1.83398 4.61219V17.3852C1.83398 19.502 3.79033 20.84 5.38225 19.812L15.2722 13.4255Z" fill="white"/>
+                            </svg>
+                      <div class="tooltip">Playing</div>
+                    </li>
+                  </ul>
+            </div>
+
+            
+
+            <div class="box_movie items-center">
+                <img src="./img/movieimg.png" alt="">
+                <div class="detailmoviebox">
+                    <h1 class="h1tx">Interstellar</h1>
+                    <p class="ptext">When Earth becomes uninhabitable in thetable in thetablethetable in thetable in thetable in thetable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is </p>
+                    <div class="flex flex-row gap-2 ltbox">
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary</div>
+                        <div class="littleboxdiv">scary22</div>
+                    </div>
+                </div>
+
+                <div class="rightpart">
+                    <h1 class="price">$200,222</h1>
+                    <h1 class="date">2024/2/13</h1>
+                    <h1 class="time">99:99</h1>
+                </div>
+
+                <div class="buyticket">
+                    <svg class="svgbutt" width="55" height="33.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                        <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                        </g>
+                        </svg>
+                    <h1>BUY TICKET</h1>
+                </div>
+
+                <ul class="condition_box">
+                    <li class="icon-content">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="System / Wifi_Off">
+                            <path id="Vector" d="M17.8506 11.5442C17.0475 10.6829 16.0641 10.0096 14.9707 9.57227M20.7759 8.81625C19.5712 7.52437 18.0961 6.51439 16.4561 5.8584C14.816 5.20241 13.0514 4.91635 11.2881 5.02111M8.34277 14.5905C8.95571 13.9332 9.73448 13.4532 10.5971 13.2012C11.4598 12.9491 12.3745 12.9335 13.2449 13.1574M6.14941 11.5438C7.09778 10.5268 8.29486 9.77461 9.62259 9.36133M3.22363 8.81604C4.1215 7.85319 5.17169 7.04466 6.33211 6.42285M4.41406 4L18.5562 18.1421M12 19C11.4477 19 11 18.5523 11 18C11 17.4477 11.4477 17 12 17C12.5523 17 13 17.4477 13 18C13 18.5523 12.5523 19 12 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            </svg>
+                      <div class="tooltip">FINISHED</div>
+                    </li>
+                  </ul>
+            </div>
+
+
+
+        </div>
+            </div>
+
+
+     <div id="modal1" class="modal animate__fadeIn animate__animated animate__faster"  data-wow-duration=".40s">
+        <div class="center">
+        <div class="modal-content">
+           
+            <div class="toppartmodal animate__animated animate__fadeIn">
+                <h1>BUY TICKET</h1>
+                <div class="close" onclick="closeModal('modal1')" >
+                    <p>Close</p>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#D2162D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+            </div>
+
+            <div class="linemodal animate__animated animate__fadeIn"></div>
+
+            <div class="modalinputsdiv animate__animated animate__fadeIn anim1">
+                <p>Your First name and Last name</p>
+                <input placeholder="Your name Here" class="inputbuymodal" name="text" type="text"  autocomplete="off" />
+            </div>
+
+            <div class="modalinputsdiv animate__animated animate__fadeIn anim2">
+                <div class="detailmodaldiv">
+                    <p>Your Phone Number</p>
+                    <p class="optionalp">(optional)</p>
+                </div>
+                <input placeholder="Your Phone Number Here" class="inputbuymodal" name="text" type="text" autocomplete="off"/>
+            </div>
+
+            <div class="rulesbuyticket animate__animated animate__fadeIn anim3">
+                <p>1. The checking gate will be available 3 hours before the film starts.</p>
+                <p>2. Snacks and Refreshments: Check the cinema's policy on outside snacks.</p>
+                <p>3. Refund policy: All payments are final and non-refundable. </p>
+            </div>
+
+            <div class="buyticketmodal animate__animated animate__fadeIn anim4" onclick="closeModal('modal1') , BuyATicket()">
+                <svg class="svgbuyticket1"  width="65" height="43.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.3">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                    <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                    </g>
+                    </svg>
+                    <p>BUY TICKET</p>
+                    <svg class="svgbuyticket2" width="67" height="53.5" viewBox="0 0 125 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.3">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M80.9224 -1.38912L100.353 15.6043C108.505 22.7339 112.581 26.2987 111.581 30.0229C111.565 30.0845 111.547 30.146 111.529 30.2072C110.416 33.9029 104.986 35.0927 94.1257 37.4724C88.0908 38.7948 85.0733 39.456 83.5707 41.6509L83.4933 41.7665L59.6415 23.5521L59.7189 23.4364C61.1731 21.2119 60.5378 18.3128 59.2672 12.5145L58.9351 10.9987C55.4124 -5.0774 53.6511 -13.1155 57.8669 -15.4907C62.0826 -17.8659 68.3625 -12.3736 80.9224 -1.38912Z" fill="white"/>
+                        <path opacity="0.5" d="M83.9442 52.6895L84.2763 54.2046C87.7992 70.2808 89.5607 78.3189 85.3449 80.6941C81.1291 83.0694 74.8491 77.5771 62.2891 66.5926L42.8587 49.5995C34.7065 42.4699 30.6304 38.9051 31.6299 35.1809C31.6464 35.1193 31.6639 35.0578 31.6824 34.9966C32.7958 31.3009 38.2258 30.111 49.0858 27.7313C55.1206 26.409 58.138 25.7478 59.6406 23.553L83.4925 41.7674C82.0383 43.9919 82.6736 46.8911 83.9442 52.6895Z" fill="white"/>
+                        </g>
+                        </svg>
+            </div>
+
+            
+            </div>
+            
+
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="adminplan_ui animate__fadeIn animate__animated" id = ADMINPLANMENU style="display: none;">
+
+
+
+
+        <div id="homepage" class="homepage  ">
+            <img class="animate__fadeInLeft animate__animated imgtopadmin" src="./img/leftitem.png" alt="">
+            <img class="animate__fadeInRight animate__animated imgbottomadmin" src="./img/righttem.png" alt="">
+            <div class="closesellui animate__animated animate__fadeIn" onclick="pageHandler('homepage')">
+                <button class="Btn" onclick="CLOSE()">
+                    <div class="sign"><svg width="13" height="13" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.9999 2.00006L2 16M1.99994 2L15.9999 15.9999" stroke="white" stroke-width="2.1" stroke-linecap="round"/>
+                        </svg>
+                        </div>
+                    <div class="text">Close</div>
+                  </button>
+            </div>
+            <div class="cinema_Adminplan_name animate__fadeIn animate__animated">
+                <h2>cinema Admin Plan</h2>
+                <h3>cinema Admin Plan</h3>
+            </div>
+    
+    
+    
+           <div class="boxesadminplan">
+                <div class="managemoviesdiv animate__fadeIn animate__animated anim1">
+                    <p>Manage</p>
+                    <button onclick="pageHandler('managemovies')" class="boton-elegante">Manage Movies</button>
+                </div>
+                <div class="addmoviesdiv animate__fadeIn animate__animated anim2">
+                    <p>Add</p>
+                    <button onclick="pageHandler('addmovie')"  class="boton-elegante">Add Movie</button>
+                </div>
+            </div>
+        </div>    
+
+
+
+
+
+
+
+
+        <div id="managemovies" class="managemoviedisplay  items-center justify-center  animate__fadeIn animate__animated " >
+            <img class="animate__fadeInLeft animate__animated imgtopadminmanage" src="./img/leftitem.png" alt="">
+            <img class="animate__fadeInRight animate__animated imgbottomadminmanage" src="./img/righttem.png" alt="">
+   
+
+            <div class="managedetaildiv relative">
+                <h1 class="managemovieh1  animate__fadeIn animate__animated anim1">Manage Movies</h1>
+                <div class="close absolute right-[2rem] top-[2rem] anim1  animate__fadeIn animate__animated" onclick="pageHandler('homepage')">
+                    <p>Close</p>
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#D2162D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+
+                 <div id="moviesmanagepage" class="flex flex-col mt-[6rem] w-[100%] animate__fadeIn animate__animated">
+                    <div class="font-['roboto'] flex flex-row text-[10.5px] text-[#b9b8bc] relative mt-[1rem]">
+                        <p class="absolute left-[1.6rem] animate__fadeIn animate__animated anim1">Movie Name</p>
+                        <p class="absolute left-[18rem] animate__fadeIn animate__animated anim2">Movie Genre</p>
+                        <p class="absolute left-[30rem] animate__fadeIn animate__animated anim3">Ticket Price</p>
+                        <p class="absolute left-[38rem] animate__fadeIn animate__animated anim4">Date</p>
+                        <p class="absolute left-[44rem] animate__fadeIn animate__animated anim4">Hall</p>
+                        <p class="absolute left-[48.2rem] animate__fadeIn animate__animated anim5">Options</p>
+                    </div>
+                    <div class="w-[94.5%] h-[1px] bg-[#42414a] ml-[1.6rem] mt-[2rem] rounded-4xl animate__fadeIn animate__animated"></div>
+
+                    <div class="w-[94.5%] max-h-[26rem] custom-scrollbar ml-[1.3rem] mt-[1rem]  flex flex-col flex-start " id = MANAGE_MOVIE_LIST>
+
+                        <div class="w-[100%] min-h-[83px] bacolor rounded-[8px] flex justify-center items-center relative">
+                            <img src="./img/movieimg.png" class="w-[60px] h-[60px] absolute left-[15px] object-cover rounded-[8px] animate__fadeIn animate__animated anim1" alt="">
+                            <div class=" absolute  left-[90px]">
+                                <h1 class=" textfilter  font-['roboto'] font-bold text-[17px] animate__fadeIn animate__animated anim2" >Interstellar</h1>
+                                <h1  class=" textfilter  font-['roboto'] font-bold text-[11px] animate__fadeIn animate__animated anim2 text-[#D2162D] flex items-center"><div class="w-[7px] rounded-[100%] h-[7px] mr-[5px] bg-[#D2162D]"></div>Movie is live</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[16rem] font-bold text-[12.5px] flex flex-row gap-3 anim3 animate__fadeIn animate__animated ">
+                                <h1 class="textgenrefilter">Funny</h1>
+                                <h1 class="textgenrefilter">Drama</h1>
+                                <h1 class="textgenrefilter">Scary</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[28.62rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim4 flex flex-row"><span>$</span><p class="moneyfilter">2000</p></div>
+                            <div class="absolute font-['roboto'] left-[36.5rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2024/2/13</div>
+                            <div class="absolute font-['roboto'] left-[43rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2</div>
+                            <div class="buttonmanage absolute font-['roboto'] left-[52.3rem] font-bold text-[11px] animate__fadeIn animate__animated anim6" onclick="pageHandler('ManageEdite')"><p>Manage</p></div>
+                            
+                            <div class="buttonremove absolute font-['roboto'] left-[56.9rem] font-bold text-[11px] animate__fadeIn animate__animated anim7 " onclick="RemovepageHandler('removepage')">
+                                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.33073 6.6667V11.3334M6.66406 6.6667V11.3334M3.9974 4.00003V11.8667C3.9974 12.6134 3.9974 12.9865 4.14272 13.2718C4.27055 13.5226 4.47438 13.727 4.72526 13.8548C5.0102 14 5.38339 14 6.12867 14H9.86612C10.6114 14 10.9841 14 11.269 13.8548C11.5199 13.727 11.7244 13.5226 11.8522 13.2718C11.9974 12.9868 11.9974 12.614 11.9974 11.8688V4.00003M3.9974 4.00003H5.33073M3.9974 4.00003H2.66406M5.33073 4.00003H10.6641M5.33073 4.00003C5.33073 3.37878 5.33073 3.0683 5.43222 2.82327C5.56755 2.49657 5.82694 2.23685 6.15365 2.10152C6.39867 2.00003 6.70947 2.00003 7.33073 2.00003H8.66406C9.28532 2.00003 9.59594 2.00003 9.84097 2.10152C10.1677 2.23685 10.4272 2.49657 10.5625 2.82327C10.664 3.0683 10.6641 3.37878 10.6641 4.00003M10.6641 4.00003H11.9974M11.9974 4.00003H13.3307" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+
+                            <div  class="buttonstart absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-1 hidden" ><p>Start movie</p>
+                            </div>
+
+                            <div  class="buttonstop absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-2 " ><svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 12.5L8.50001 8.50001M8.50001 8.50001L4.5 4.5M8.50001 8.50001L12.5 4.5M8.50001 8.50001L4.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg><p>Stop</p>
+                            </div>
+
+                        </div>
+
+                        <div class="w-[100%] min-h-[83px] bicolor rounded-[8px] flex justify-center items-center relative">
+                            <img src="./img/movieimg.png" class="w-[60px] h-[60px] absolute left-[15px] object-cover rounded-[8px] animate__fadeIn animate__animated anim1" alt="">
+                            <div class=" absolute  left-[90px]">
+                                <h1 class=" textfilter  font-['roboto'] font-bold text-[17px] animate__fadeIn animate__animated anim2" >Interstellar</h1>
+                                <h1  class=" textfilter  font-['roboto'] font-bold text-[11px] animate__fadeIn animate__animated anim2 text-[#D2162D] flex items-center hidden"><div class="w-[7px] rounded-[100%] h-[7px] mr-[5px] bg-[#D2162D]"></div>Movie is live</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[16rem] font-bold text-[12.5px] flex flex-row gap-3 anim3 animate__fadeIn animate__animated ">
+                                <h1 class="textgenrefilter">Funny</h1>
+                                <h1 class="textgenrefilter">Drama</h1>
+                                <h1 class="textgenrefilter">Scary</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[28.62rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim4 flex flex-row"><span>$</span><p class="moneyfilter">2000</p></div>
+                            <div class="absolute font-['roboto'] left-[36.5rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2024/2/13</div>
+                            <div class="absolute font-['roboto'] left-[43rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2</div>
+                            <div class="buttonmanage absolute font-['roboto'] left-[52.3rem] font-bold text-[11px] animate__fadeIn animate__animated anim6" onclick="pageHandler('ManageEdite')"><p>Manage</p></div>
+                            
+                            <div class="buttonremove absolute font-['roboto'] left-[56.9rem] font-bold text-[11px] animate__fadeIn animate__animated anim7 " onclick="RemovepageHandler('removepage')">
+                                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.33073 6.6667V11.3334M6.66406 6.6667V11.3334M3.9974 4.00003V11.8667C3.9974 12.6134 3.9974 12.9865 4.14272 13.2718C4.27055 13.5226 4.47438 13.727 4.72526 13.8548C5.0102 14 5.38339 14 6.12867 14H9.86612C10.6114 14 10.9841 14 11.269 13.8548C11.5199 13.727 11.7244 13.5226 11.8522 13.2718C11.9974 12.9868 11.9974 12.614 11.9974 11.8688V4.00003M3.9974 4.00003H5.33073M3.9974 4.00003H2.66406M5.33073 4.00003H10.6641M5.33073 4.00003C5.33073 3.37878 5.33073 3.0683 5.43222 2.82327C5.56755 2.49657 5.82694 2.23685 6.15365 2.10152C6.39867 2.00003 6.70947 2.00003 7.33073 2.00003H8.66406C9.28532 2.00003 9.59594 2.00003 9.84097 2.10152C10.1677 2.23685 10.4272 2.49657 10.5625 2.82327C10.664 3.0683 10.6641 3.37878 10.6641 4.00003M10.6641 4.00003H11.9974M11.9974 4.00003H13.3307" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+
+                            <div  class="buttonstart absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-1 " ><p>Start movie</p>
+                            </div>
+
+                            <div  class="buttonstop absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-2 hidden" ><svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 12.5L8.50001 8.50001M8.50001 8.50001L4.5 4.5M8.50001 8.50001L12.5 4.5M8.50001 8.50001L4.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg><p>Stop</p>
+                            </div>
+
+                        </div>
+
+                        <div class="w-[100%] min-h-[83px] bacolor rounded-[8px] flex justify-center items-center relative">
+                            <img src="./img/movieimg.png" class="w-[60px] h-[60px] absolute left-[15px] object-cover rounded-[8px] animate__fadeIn animate__animated anim1" alt="">
+                            <div class=" absolute  left-[90px]">
+                                <h1 class=" textfilter  font-['roboto'] font-bold text-[17px] animate__fadeIn animate__animated anim2" >Interstellar</h1>
+                                <h1  class=" textfilter  font-['roboto'] font-bold text-[11px] animate__fadeIn animate__animated anim2 text-[#D2162D] flex items-center hidden"><div class="w-[7px] rounded-[100%] h-[7px] mr-[5px] bg-[#D2162D]"></div>Movie is live</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[16rem] font-bold text-[12.5px] flex flex-row gap-3 anim3 animate__fadeIn animate__animated ">
+                                <h1 class="textgenrefilter">Funny</h1>
+                                <h1 class="textgenrefilter">Drama</h1>
+                                <h1 class="textgenrefilter">Scary</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[28.62rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim4 flex flex-row"><span>$</span><p class="moneyfilter">2000</p></div>
+                            <div class="absolute font-['roboto'] left-[36.5rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2024/2/13</div>
+                            <div class="absolute font-['roboto'] left-[43rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2</div>
+                            <div class="buttonmanage absolute font-['roboto'] left-[52.3rem] font-bold text-[11px] animate__fadeIn animate__animated anim6" onclick="pageHandler('ManageEdite')"><p>Manage</p></div>
+                            
+                            <div class="buttonremove absolute font-['roboto'] left-[56.9rem] font-bold text-[11px] animate__fadeIn animate__animated anim7 " onclick="RemovepageHandler('removepage')">
+                                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.33073 6.6667V11.3334M6.66406 6.6667V11.3334M3.9974 4.00003V11.8667C3.9974 12.6134 3.9974 12.9865 4.14272 13.2718C4.27055 13.5226 4.47438 13.727 4.72526 13.8548C5.0102 14 5.38339 14 6.12867 14H9.86612C10.6114 14 10.9841 14 11.269 13.8548C11.5199 13.727 11.7244 13.5226 11.8522 13.2718C11.9974 12.9868 11.9974 12.614 11.9974 11.8688V4.00003M3.9974 4.00003H5.33073M3.9974 4.00003H2.66406M5.33073 4.00003H10.6641M5.33073 4.00003C5.33073 3.37878 5.33073 3.0683 5.43222 2.82327C5.56755 2.49657 5.82694 2.23685 6.15365 2.10152C6.39867 2.00003 6.70947 2.00003 7.33073 2.00003H8.66406C9.28532 2.00003 9.59594 2.00003 9.84097 2.10152C10.1677 2.23685 10.4272 2.49657 10.5625 2.82327C10.664 3.0683 10.6641 3.37878 10.6641 4.00003M10.6641 4.00003H11.9974M11.9974 4.00003H13.3307" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+
+                            <div  class="buttonstart absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-1 " ><p>Start movie</p>
+                            </div>
+
+                            <div  class="buttonstop absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-2 hidden" ><svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 12.5L8.50001 8.50001M8.50001 8.50001L4.5 4.5M8.50001 8.50001L12.5 4.5M8.50001 8.50001L4.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg><p>Stop</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="w-[100%] min-h-[83px] bicolor rounded-[8px] flex justify-center items-center relative">
+                            <img src="./img/movieimg.png" class="w-[60px] h-[60px] absolute left-[15px] object-cover rounded-[8px] animate__fadeIn animate__animated anim1" alt="">
+                            <div class=" absolute  left-[90px]">
+                                <h1 class=" textfilter  font-['roboto'] font-bold text-[17px] animate__fadeIn animate__animated anim2" >Interstellar</h1>
+                                <h1  class=" textfilter  font-['roboto'] font-bold text-[11px] animate__fadeIn animate__animated anim2 text-[#D2162D] flex items-center hidden"><div class="w-[7px] rounded-[100%] h-[7px] mr-[5px] bg-[#D2162D]"></div>Movie is live</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[16rem] font-bold text-[12.5px] flex flex-row gap-3 anim3 animate__fadeIn animate__animated ">
+                                <h1 class="textgenrefilter">Funny</h1>
+                                <h1 class="textgenrefilter">Drama</h1>
+                                <h1 class="textgenrefilter">Scary</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[28.62rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim4 flex flex-row"><span>$</span><p class="moneyfilter">2000</p></div>
+                            <div class="absolute font-['roboto'] left-[36.5rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2024/2/13</div>
+                            <div class="absolute font-['roboto'] left-[43rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2</div>
+                            <div class="buttonmanage absolute font-['roboto'] left-[52.3rem] font-bold text-[11px] animate__fadeIn animate__animated anim6" onclick="pageHandler('ManageEdite')"><p>Manage</p></div>
+                            
+                            <div class="buttonremove absolute font-['roboto'] left-[56.9rem] font-bold text-[11px] animate__fadeIn animate__animated anim7 " onclick="RemovepageHandler('removepage')">
+                                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.33073 6.6667V11.3334M6.66406 6.6667V11.3334M3.9974 4.00003V11.8667C3.9974 12.6134 3.9974 12.9865 4.14272 13.2718C4.27055 13.5226 4.47438 13.727 4.72526 13.8548C5.0102 14 5.38339 14 6.12867 14H9.86612C10.6114 14 10.9841 14 11.269 13.8548C11.5199 13.727 11.7244 13.5226 11.8522 13.2718C11.9974 12.9868 11.9974 12.614 11.9974 11.8688V4.00003M3.9974 4.00003H5.33073M3.9974 4.00003H2.66406M5.33073 4.00003H10.6641M5.33073 4.00003C5.33073 3.37878 5.33073 3.0683 5.43222 2.82327C5.56755 2.49657 5.82694 2.23685 6.15365 2.10152C6.39867 2.00003 6.70947 2.00003 7.33073 2.00003H8.66406C9.28532 2.00003 9.59594 2.00003 9.84097 2.10152C10.1677 2.23685 10.4272 2.49657 10.5625 2.82327C10.664 3.0683 10.6641 3.37878 10.6641 4.00003M10.6641 4.00003H11.9974M11.9974 4.00003H13.3307" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+
+                            <div  class="buttonstart absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-1 " ><p>Start movie</p>
+                            </div>
+
+                            <div  class="buttonstop absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-2 hidden" ><svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 12.5L8.50001 8.50001M8.50001 8.50001L4.5 4.5M8.50001 8.50001L12.5 4.5M8.50001 8.50001L4.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg><p>Stop</p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="w-[100%] min-h-[83px] bacolor rounded-[8px] flex justify-center items-center relative">
+                            <img src="./img/movieimg.png" class="w-[60px] h-[60px] absolute left-[15px] object-cover rounded-[8px] animate__fadeIn animate__animated anim1" alt="">
+                            <div class=" absolute  left-[90px]">
+                                <h1 class=" textfilter  font-['roboto'] font-bold text-[17px] animate__fadeIn animate__animated anim2" >Interstellar</h1>
+                                <h1  class=" textfilter  font-['roboto'] font-bold text-[11px] animate__fadeIn animate__animated anim2 text-[#D2162D] flex items-center hidden"><div class="w-[7px] rounded-[100%] h-[7px] mr-[5px] bg-[#D2162D]"></div>Movie is live</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[16rem] font-bold text-[12.5px] flex flex-row gap-3 anim3 animate__fadeIn animate__animated ">
+                                <h1 class="textgenrefilter">Funny</h1>
+                                <h1 class="textgenrefilter">Drama</h1>
+                                <h1 class="textgenrefilter">Scary</h1>
+                            </div>
+                            <div class="absolute font-['roboto'] left-[28.62rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim4 flex flex-row"><span>$</span><p class="moneyfilter">2000</p></div>
+                            <div class="absolute font-['roboto'] left-[36.5rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2024/2/13</div>
+                            <div class="absolute font-['roboto'] left-[43rem] font-bold text-[12.5px] animate__fadeIn animate__animated anim5">2</div>
+                            <div class="buttonmanage absolute font-['roboto'] left-[52.3rem] font-bold text-[11px] animate__fadeIn animate__animated anim6" onclick="pageHandler('ManageEdite')"><p>Manage</p></div>
+                            
+                            <div class="buttonremove absolute font-['roboto'] left-[56.9rem] font-bold text-[11px] animate__fadeIn animate__animated anim7 " onclick="RemovepageHandler('removepage')">
+                                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.33073 6.6667V11.3334M6.66406 6.6667V11.3334M3.9974 4.00003V11.8667C3.9974 12.6134 3.9974 12.9865 4.14272 13.2718C4.27055 13.5226 4.47438 13.727 4.72526 13.8548C5.0102 14 5.38339 14 6.12867 14H9.86612C10.6114 14 10.9841 14 11.269 13.8548C11.5199 13.727 11.7244 13.5226 11.8522 13.2718C11.9974 12.9868 11.9974 12.614 11.9974 11.8688V4.00003M3.9974 4.00003H5.33073M3.9974 4.00003H2.66406M5.33073 4.00003H10.6641M5.33073 4.00003C5.33073 3.37878 5.33073 3.0683 5.43222 2.82327C5.56755 2.49657 5.82694 2.23685 6.15365 2.10152C6.39867 2.00003 6.70947 2.00003 7.33073 2.00003H8.66406C9.28532 2.00003 9.59594 2.00003 9.84097 2.10152C10.1677 2.23685 10.4272 2.49657 10.5625 2.82327C10.664 3.0683 10.6641 3.37878 10.6641 4.00003M10.6641 4.00003H11.9974M11.9974 4.00003H13.3307" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                            </div>
+
+                            <div  class="buttonstart absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-1 " ><p>Start movie</p>
+                            </div>
+
+                            <div  class="buttonstop absolute font-['roboto'] left-[46.7rem] font-bold text-[11px] animate__fadeIn animate__animated anim6 flex flex-row gap-2 hidden" ><svg width="15" height="15" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.5 12.5L8.50001 8.50001M8.50001 8.50001L4.5 4.5M8.50001 8.50001L12.5 4.5M8.50001 8.50001L4.5 12.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg><p>Stop</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div id="removepage" class="removepage w-[92.5%] h-[26rem] ml-[1rem] mt-[7rem]  flex flex-col justify-center items-center  " style="display: none;">
+                    <h1 class="max-w-[450px] text-center text-[20px] animate__fadeIn animate__animated anim1">Are you sure you want remove this film ?</h1>
+                    <div class="flex flex-row gap-2 mt-[2rem]">
+                        <div class="removeyesbutton anim2 animate__fadeIn animate__animated"  onclick="DeleteMovie()">
+                            <svg class="svgbutt" width="55" height="33.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                <g opacity="0.3">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                                <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                                </g>
+                                </svg>
+                            <h1 >Yes</h1>
+                        </div>
+                        <div class="removenobutton animate__fadeIn animate__animated anim3" onclick="RemovepageHandler('moviesmanagepage')">
+                            <svg class="svgbutt" width="55" height="33.5" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g opacity="0.3">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                                <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                                </g>
+                                </svg>
+                            <h1>No</h1>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>  
+
+
+
+
+
+
+
+
+        <div id="ManageEdite" class="addmovie ">
+            <img class="animate__fadeInLeft animate__animated imgtopadminadd" src="./img/leftitem.png" alt="">
+            <img class="animate__fadeInRight animate__animated imgbottomadminadd" src="./img/righttem.png" alt="">
+            <div class="detailaddmovie">
+                <div class="Admintoppart2 animate__animated animate__fadeIn">
+                    <h1>EDITE MOVIE</h1>
+                    <div class="close" onclick="pageHandler('managemovies')">
+                        <p>Close</p>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#D2162D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                </div>
+
+                <div class="flex flex-row gap-4">
+                    <div class="inputadd animate__animated animate__fadeIn anim1">
+                        <p>Movie Name</p>
+                        <input placeholder="Movie name here" class="inputaddmovie" name="text" type="text"  autocomplete="off" id = MOVIENAMEM />
+                    </div>
+                
+                    <div class=" inputadd animate__animated animate__fadeIn anim1">
+                        <p>Movie Price</p>
+                        <input placeholder="Movie price Here" class="inputaddmovie" name="text" type="number"  autocomplete="off" id = MOVIEPRICEM  />
+                    </div>
+            </div>
+
+            <div class="mt-[.7rem] animate__fadeIn animate__animated anim3">
+                <textarea class="inputaddmovie textareaaddmovie" placeholder="Enter movie description here" id = MOVIEDISCM ></textarea>
+            </div>
+
+            <div class=" relative mt-[.2rem] animate__fadeIn animate__animated anim4">
+                <p class="genertextright">Click "Enter" to add</p>
+                <div class="genre-input-container inputaddmovie" data-genre-section onclick="this.querySelector('input').focus()">
+                  <ul class="genre-tags animate__fadeIn animate__animated" id = TAGSM></ul>
+                  <input type="text" placeholder="Movie Genre" autocomplete="off" id = TAGSMINPUT />
+                </div>
+              </div>
+
+              <div class="flex flex-col w-[435px] mt-[1rem] animate__fadeIn animate__animated anim4">
+                <p class="text-[13px] font-['inter'] font-bold mb-2">Cinema hall</p>
+            
+                <div class=" bgchoseitem rounded-[4px] h-[2.7rem]  relative cursor-pointer font-['inter']" id="selectorBox2">
+            
+                  <div id="triggerText2" >
+                    Choose which theater the movie will be screened in?
+                  </div>
+            
+                  <div id="optionRow2" class="flex gap-2   fade-slide hidden">
+                    <div class="option-box  text-center border w-[8rem] h-[1.5rem] items-center  text-[9px]  cursor-pointer"id = T1 data-value="1"><p class="pt-[4.5px]">Theater 1</p></div>
+                    <div class="option-box  text-center border w-[8rem] h-[1.5rem] items-center  text-[9px] cursor-pointer" id = T2 data-value="2"><p class="pt-[4.5px]">Theater 2</p></div>
+                    <div class="option-box  text-center border w-[8rem] h-[1.5rem] items-center  text-[9px] cursor-pointer"id = T3 data-value="3"><p class="pt-[4.5px]">Theater 3</p></div>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div class="flex flex-row gap-4 mt-[1.5rem] ">
+                <div class="inputtimedate animate__animated animate__fadeIn anim5">
+                    <p>Time</p>
+                    <input
+                      class="inputtimedatemovie customTimeInput"
+                      placeholder="00:00"
+                      type="text"
+                      maxlength="5"
+                      autocomplete="off"
+                      id = MOVIETIMEM 
+                    />
+                  </div>
+                  
+            
+                  <div class="inputtimedate animate__animated animate__fadeIn anim5">
+                    <p>Date</p>
+                    <input
+                      id="datePicker"
+                      class="inputtimedatemovie no-calendar-icon"
+                      placeholder="Select date"
+                      type="text"
+                      autocomplete="off"
+                      
+                    />
+                  </div>
+        </div>
+
+        <div class="flex flex-row gap-4 mt-[1rem]">
+            <div class=" relative  animate__animated animate__fadeIn anim6">
+                <svg class="svglinkinputadd" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.11453 9.88618L9.88577 6.11494M4.70057 7.529L3.75776 8.47181C2.71636 9.51321 2.71606 11.2018 3.75746 12.2432C4.79886 13.2846 6.4878 13.2843 7.5292 12.2429L8.471 11.3002M7.5286 4.70033L8.47141 3.75752C9.5128 2.71612 11.201 2.71631 12.2424 3.7577C13.2838 4.7991 13.2838 6.48756 12.2424 7.52896L11.3001 8.47173" stroke="#f7f7f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <input placeholder="Your Movie Image Link" class="inputtimedatemovie pl-[25px]" name="text" type="text"  autocomplete="off" id = MOVIEURLM />
+            </div>
+        
+            <div class="relative inputtimedate animate__animated animate__fadeIn anim6">
+                <svg class="svglinkinputadd" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.11453 9.88618L9.88577 6.11494M4.70057 7.529L3.75776 8.47181C2.71636 9.51321 2.71606 11.2018 3.75746 12.2432C4.79886 13.2846 6.4878 13.2843 7.5292 12.2429L8.471 11.3002M7.5286 4.70033L8.47141 3.75752C9.5128 2.71612 11.201 2.71631 12.2424 3.7577C13.2838 4.7991 13.2838 6.48756 12.2424 7.52896L11.3001 8.47173" stroke="#f7f7f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                <input placeholder="Your Movie Link" class="inputtimedatemovie pl-[25px]" name="text" type="text"  autocomplete="off" id = MOVIELINKM  />
+            </div>
+
+
+        </div>
+
+        <div class="flex flex-row gap-2 justify-center items-center animate__fadeIn animate__animated anim7">
+            <div class="livebutton " onclick="OpenLiveEditor()">
+                <svg class="svgbutt" width="70" height="54" viewBox="0 0 95 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.3">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2856 -7.38866L-6.14483 9.60474C-14.2969 16.7343 -18.3729 20.2991 -17.3734 24.0233C-17.3569 24.085 -17.3394 24.1464 -17.321 24.2076C-16.2075 27.9033 -10.7776 29.0932 0.0823368 31.4729C6.11723 32.7953 9.13467 33.4565 10.6373 35.6513L10.7147 35.767L34.5665 17.5526L34.4892 17.4369C33.0349 15.2124 33.6702 12.3132 34.9408 6.51494L35.2729 4.99916C38.7956 -11.0769 40.5569 -19.115 36.3411 -21.4902C32.1254 -23.8654 25.8455 -18.3732 13.2856 -7.38866Z" fill="white"/>
+                    <path opacity="0.5" d="M10.2638 46.689L9.93174 48.2041C6.40879 64.2803 4.64732 72.3184 8.86309 74.6937C13.0789 77.0689 19.3589 71.5767 31.9189 60.5922L51.3493 43.5991C59.5015 36.4695 63.5776 32.9047 62.5781 29.1805C62.5616 29.1188 62.5441 29.0574 62.5256 28.9962C61.4122 25.3004 55.9822 24.1106 45.1222 21.7309C39.0874 20.4085 36.07 19.7473 34.5674 17.5525L10.7155 35.7669C12.1697 37.9914 11.5344 40.8906 10.2638 46.689Z" fill="white"/>
+                    </g>
+                    </svg>
+
+                    <svg class="mr-[5px]" width="28" height="27" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.1667 5.33333L11.3267 21.1733M19.7933 19.3067L27.1667 26.6667M11.3267 10.8267L16.5 16M12.5 8C12.5 10.2091 10.7091 12 8.5 12C6.29086 12 4.5 10.2091 4.5 8C4.5 5.79086 6.29086 4 8.5 4C10.7091 4 12.5 5.79086 12.5 8ZM12.5 24C12.5 26.2091 10.7091 28 8.5 28C6.29086 28 4.5 26.2091 4.5 24C4.5 21.7909 6.29086 20 8.5 20C10.7091 20 12.5 21.7909 12.5 24Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                <h1>Live Editor</h1>
+            </div>
+            <div class="savebuttonmovie" onclick="SaveEdit()"><p>Save</p></div>
+        </div>
+            </div>
+        </div>
+
+ 
+
+
+
+
+        <div id="addmovie" class="addmovie   animate__fadeIn animate__animated " >
+            <img class="animate__fadeInLeft animate__animated imgtopadminadd" src="./img/leftitem.png" alt="">
+            <img class="animate__fadeInRight animate__animated imgbottomadminadd" src="./img/righttem.png" alt="">
+
+            <div class="detailaddmovie">
+                <div class="Admintoppart animate__animated animate__fadeIn">
+                    <h1>ADD MOVIE</h1>
+                    <div class="close" onclick="pageHandler('homepage')">
+                        <p>Close</p>
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 18L12 12M12 12L6 6M12 12L18 6M12 12L6 18" stroke="#D2162D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                </div>
+
+                <div class="flex flex-row gap-4">
+                        <div class="inputadd animate__animated animate__fadeIn anim1">
+                            <p>Movie Name</p>
+                            <input placeholder="Movie name here" class="inputaddmovie" name="text" type="text"  autocomplete="off" id = MOVIENAME  />
+                        </div>
+                    
+                        <div class=" inputadd animate__animated animate__fadeIn anim1">
+                            <p>Movie Price</p>
+                            <input placeholder="Movie price Here" class="inputaddmovie" name="text" type="number"  autocomplete="off"  id = MOVIEPRICE  />
+                        </div>
+                </div>
+
+                <div class="mt-[.7rem] animate__fadeIn animate__animated anim3">
+                    <textarea class="inputaddmovie textareaaddmovie" placeholder="Enter movie description here" id = MOVIEDISC></textarea>
+                </div>
+
+              <div class=" relative mt-[.2rem] animate__fadeIn animate__animated anim4 ">
+                <p class="genertextright">Click "Enter" to add</p>
+                <div class="genre-input-container inputaddmovie" data-genre-section onclick="this.querySelector('input').focus()">
+                  <ul class="genre-tags animate__fadeIn animate__animated" id = TAGS></ul>
+                  <input type="text" placeholder="Movie Genre" autocomplete="off" />
+                </div>
+              </div>
+
+              <div class="flex flex-col w-[435px] mt-[1rem] animate__fadeIn animate__animated anim4">
+                <p class="text-[13px] font-['inter'] font-bold mb-2">Cinema hall</p>
+            
+                <div class=" bgchoseitem rounded-[4px] h-[2.7rem]  relative cursor-pointer font-['inter']" id="selectorBox">
+            
+                  <div id="triggerText" >
+                    Choose which theater the movie will be screened in?
+                  </div>
+            
+                  <div id="optionRow" class="flex gap-2   fade-slide hidden">
+                    <div class="option-box selected text-center border w-[8rem] h-[1.5rem] items-center  text-[9px]  cursor-pointer" data-value="1"><p class="pt-[4.5px]">Theater 1</p></div>
+                    <div class="option-box  text-center border w-[8rem] h-[1.5rem] items-center  text-[9px] cursor-pointer" data-value="2"><p class="pt-[4.5px]">Theater 2</p></div>
+                    <div class="option-box  text-center border w-[8rem] h-[1.5rem] items-center  text-[9px] cursor-pointer" data-value="3"><p class="pt-[4.5px]">Theater 3</p></div>
+                  </div>
+                </div>
+              </div>
+
+
+                  <div class="flex flex-row gap-4 mt-[1rem] ">
+                    <div class="inputtimedate animate__animated animate__fadeIn anim5">
+                        <p>Time</p>
+                        <input
+                          class="inputtimedatemovie customTimeInput"
+                          placeholder="00:00"
+                          type="text"
+                          maxlength="5"
+                          autocomplete="off"
+                          id = MOVIETIME 
+                        />
+                      </div>
+                      
+                
+                      <div class="inputtimedate animate__animated animate__fadeIn anim5">
+                        <p>Date</p>
+                        <input
+                          id="datePicker"
+                          class="inputtimedatemovie no-calendar-icon"
+                          placeholder="Select date"
+                          type="text"
+                          autocomplete="off"
+                        
+                        />
+                      </div>
+            </div>
+
+            <div class="flex flex-row gap-4 mt-[1rem]">
+                <div class=" relative  animate__animated animate__fadeIn anim6">
+                    <svg class="svglinkinputadd" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.11453 9.88618L9.88577 6.11494M4.70057 7.529L3.75776 8.47181C2.71636 9.51321 2.71606 11.2018 3.75746 12.2432C4.79886 13.2846 6.4878 13.2843 7.5292 12.2429L8.471 11.3002M7.5286 4.70033L8.47141 3.75752C9.5128 2.71612 11.201 2.71631 12.2424 3.7577C13.2838 4.7991 13.2838 6.48756 12.2424 7.52896L11.3001 8.47173" stroke="#f7f7f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    <input placeholder="Your Movie Image Link" class="inputtimedatemovie pl-[25px]" name="text" type="text"  autocomplete="off" id = MOVIEURL />
+                </div>
+            
+                <div class="relative inputtimedate animate__animated animate__fadeIn anim6">
+                    <svg class="svglinkinputadd" width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.11453 9.88618L9.88577 6.11494M4.70057 7.529L3.75776 8.47181C2.71636 9.51321 2.71606 11.2018 3.75746 12.2432C4.79886 13.2846 6.4878 13.2843 7.5292 12.2429L8.471 11.3002M7.5286 4.70033L8.47141 3.75752C9.5128 2.71612 11.201 2.71631 12.2424 3.7577C13.2838 4.7991 13.2838 6.48756 12.2424 7.52896L11.3001 8.47173" stroke="#f7f7f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    <input placeholder="Your Movie Link" class="inputtimedatemovie pl-[25px]" name="text" type="text" id = MOVIELINK  autocomplete="off" />
+                </div>
+
+
+            </div>
+
+
+
+            <div class="addbuttonmovie anim7 animate__animated animate__fadeIn" onclick="AddMovie()"><p>Add movie</p></div>
+            </div>
+        </div>   
+        
+    </div>
+
+
+
+
+
+
+    <script src="./index.js"></script>
+      
+</body>
+</html>

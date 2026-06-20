@@ -1,0 +1,100 @@
+ chocolate_strawberry_bouquet                     = {
+        ['name'] = 'chocolate_strawberry_bouquet',
+        ['label'] = 'Chocolate Srawberry Bouquet',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'chocolate_strawberry_bouquet.png',
+        ['unique'] = false,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a eatable and sellable bouquet'
+    },
+     sweetheart_gift_box                   = {
+        ['name'] = 'sweetheart_gift_box',
+        ['label'] = 'Sweetheart Gift Box',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_gift_box.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers gift box'
+    },
+     devotion_gift_box                     = {
+        ['name'] = 'devotion_gift_box',
+        ['label'] = 'Devotion Gift Box',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_gift_box.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers gift box'
+    },
+     passion_gift_box                     = {
+        ['name'] = 'passion_gift_box',
+        ['label'] = 'Passion Gift Box',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_gift_box.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers gift box'
+    },
+
+    eternal_gift_box                    = {
+        ['name'] = 'eternal_gift_box',
+        ['label'] = 'Eternal Gift Box',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_gift_box.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers gift box'
+    },
+
+      lovers_gift_card                     = {
+        ['name'] = 'lovers_gift_card',
+        ['label'] = 'Lovers Gift Card',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_gift_card.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers gift card'
+    },
+
+    lovers_promise_ring                     = {
+        ['name'] = 'lovers_promise_ring',
+        ['label'] = 'Promise Ring',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'lovers_promise_ring.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'a lovers promise ring'
+    },
+
+    promise_ring_case                     = {
+        ['name'] = 'promise_ring_case',
+        ['label'] = 'Proposal Promise Ring',
+        ['weight'] = 100,
+        ['type'] = 'item',
+        ['image'] = 'promise_ring_case.png',
+        ['unique'] = true,
+        ['useable'] = true,
+        ['shouldClose'] = true,
+        ['combinable'] = nil,
+        ['description'] = 'Proposal Promise Ring'
+    },

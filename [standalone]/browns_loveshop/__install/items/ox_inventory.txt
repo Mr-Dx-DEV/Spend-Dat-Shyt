@@ -1,0 +1,88 @@
+	['chocolate_strawberry_bouquet'] = {
+		label = 'Chocolate Srawberry Bouquet',
+		weight = 0,
+		description = 'a eatable and sellable bouquet',
+		stack = true,
+		client = {
+			export = 'browns_loveshop.useBouquet'
+		}
+	},
+
+	['sweetheart_gift_box'] = {
+		label = 'Sweetheart Gift Box',
+		description = 'a lovers gift box',
+		stack = false,
+		weight = 100,
+		client = {
+			image = 'lovers_gift_box.png',
+		},
+		server = {
+			export = 'browns_loveshop.openSweetheartGift'
+		}
+	},
+
+	['devotion_gift_box'] = {
+		label = 'Devotion Gift Box',
+		description = 'a lovers gift box',
+		stack = false,
+		weight = 100,
+		client = {
+			image = 'lovers_gift_box.png',
+		},
+		server = {
+			export = 'browns_loveshop.openDevotionGift'
+		}
+	},
+
+	['passion_gift_box'] = {
+		label = 'Passion Gift Box',
+		description = 'a lovers gift box',
+		stack = false,
+		weight = 100,
+		client = {
+			image = 'lovers_gift_box.png',
+		},
+		server = {
+			export = 'browns_loveshop.openPassionGift'
+		}
+	},
+
+	['eternal_gift_box'] = {
+		label = 'Eternal Gift Box',
+		description = 'a lovers gift box',
+		stack = false,
+		weight = 100,
+		client = {
+			image = 'lovers_gift_box.png',
+		},
+		server = {
+			export = 'browns_loveshop.openEternalGift'
+		}
+	},
+
+	['lovers_gift_card'] = {
+		label = 'Lovers Gift Card',
+		description = 'a redeemable lovers gift card',
+		stack = false,
+		weight = 0,
+		server = {
+			export = 'browns_loveshop.openLoversGiftCard'
+		}
+	},
+
+	['lovers_promise_ring'] = {
+		label = 'Promise Ring',
+		description = 'a lovers promise ring',
+		weight = 1000,
+		stack = false,
+	},
+
+	['promise_ring_case'] = {
+		label = 'Proposal Promise Ring',
+		description = 'Proposal Promise Ring',
+		weight = 100,
+		stack = false,
+		client = {
+			export = 'browns_loveshop.doProposal'
+		}
+	},

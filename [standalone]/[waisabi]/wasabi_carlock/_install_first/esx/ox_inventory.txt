@@ -1,0 +1,6 @@
+['carkeys'] = {
+    label = 'Car Keys',
+    weight = 100,
+    stack = false,
+    close = true,
+},
