@@ -1,0 +1,105 @@
+
+    ["hidef"] = {
+        "hidef@animations",
+        "hidefclip",
+        "Hide Forward",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hideb"] = {
+        "hideb@animations",
+        "hidebclip",
+        "Hide Backward",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hider"] = {
+        "hider@animations",
+        "hiderclip",
+        "Hide Right",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidel"] = {
+        "hidel@animations",
+        "hidelclip",
+        "Hide Left",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidecarf"] = {
+        "hidecarf@animations",
+        "hidecarfclip",
+        "Hide Car Forward",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidecarb"] = {
+        "hidecarb@animations",
+        "hidecarbclip",
+        "Hide Car Backward",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidecarr"] = {
+        "hidecarr@animations",
+        "hidecarrclip",
+        "Hide Car Right",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidecarl"] = {
+        "hidecarl@animations",
+        "hidecarlclip",
+        "Hide Car Left",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidepole"] = {
+        "hidepole@animations",
+        "hidepoleclip",
+        "Hide Pole",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidepolehigh"] = {
+        "hidepolehigh@animations",
+        "hidepolehighclip",
+        "Hide Pole High",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidepolehigh2"] = {
+        "hidepolehigh2@animations",
+        "hidepolehigh2clip",
+        "Hide Pole High 2",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidepoleveryhigh"] = {
+        "hidepoleveryhigh@animations",
+        "hidepoleveryhighclip",
+        "Hide Pole Very High",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["hidepoleveryhigh2"] = {
+        "hidepoleveryhigh2@animations",
+        "hidepoleveryhigh2clip",
+        "Hide Pole Very High 2",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },

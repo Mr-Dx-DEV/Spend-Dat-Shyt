@@ -1,0 +1,1 @@
+-- for Bablo Animation Menu is already automatically configured ^-^ you just need to drag the animation file into the stream folder ^-^

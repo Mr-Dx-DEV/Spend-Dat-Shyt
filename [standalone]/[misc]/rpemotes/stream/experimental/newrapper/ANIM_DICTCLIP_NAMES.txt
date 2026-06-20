@@ -1,0 +1,7 @@
+ANIM DICT/CLIP NAMES
+
+<Anim dict="pandora@stuvibes1_1" name="stuvibes1_1_clip" />
+<Anim dict="pandora@stuvibes1_2" name="stuvibes1_2_clip" />
+<Anim dict="pandora@stuvibes1_3" name="stuvibes1_3_clip" />
+<Anim dict="pandora@stuvibes1_4" name="stuvibes1_4_clip" />
+<Anim dict="pandora@stuvibes1_5" name="stuvibes1_5_clip" />

@@ -1,0 +1,138 @@
+PANDORAS BOX INSTALLATION INSTRUCTIONS
+
+FOR STORY MODE:
+1. INSTALLATION > PLACE ANIMATION FILES (.YCD) INTO DLC WHEREVER YOU HAVE YOUR ANIMATIONS IN GTA V FILES. THIS CAN BE AN ADDON OR A COPIED MOD FOLDER THAT HOSTS ANIMATION .YCDS
+
+2. MENYOOSTUFF > FAVOURITEANIMS.XML
+*EDIT THE DOCUMENT AND ADD THESE LINES OF CODE*
+
+    <Anim dict="pandora@beefitup_fem" name="pandora" /> 
+    <Anim dict="pandora@beefitup_male" name="pandora" />
+    <Anim dict="pandora@cupidshuffle" name="pandora" />
+    <Anim dict="pandora@thewop" name="pandora" /> 
+    <Anim dict="pandora@wobble" name="pandora" /> 
+    <Anim dict="pandora@bootybump" name="pandora_fem" />
+    <Anim dict="pandora@bootybump" name="pandora_male" />
+
+============================================================================================
+
+FOR FIVEM ADDITION TO SCRIPTS:
+1. FIND THE RESOURCE THAT HOSTS YOUR ANIMATIONS
+2. PLACE THE .YCD FILES INTO ITS STREAMING FOLDER
+3. COPY THESE LINES OF CODE INTO YOUR ANIMATIONLIST.LUA WHICH IS USUALLY LOCATED IN THE CLIENT FOLDER OF THE SCRIPT
+
+--RP.DANCES SECTION:
+
+
+    ["pb_bootybump1"] = {
+        "pandora@bootybump",
+        "pandora_fem",
+        "[PB] Booty Bump (F)",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_bootybump2"] = {
+        "pandora@bootybump",
+        "pandora_male",
+        "[PB] Booty Bump (M)",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_cupidshuffle"] = {
+        "pandora@cupidshuffle",
+        "pandora",
+        "[PB] Cupid Shuffle",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_electricslide"] = {
+        "pandora@electricslide",
+        "pandora",
+        "[PB] Electric Slide",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_thewop"] = {
+        "pandora@thewop",
+        "pandora",
+        "[PB] The Wop",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_thewobble"] = {
+        "pandora@thewobble",
+        "pandora",
+        "[PB] The Wobble",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_beefitup1"] = {
+        "pandora@beefitup_fem",
+        "pandora",
+        "[PB] BeefItUp [M]",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+    ["pb_beefitup2"] = {
+        "pandora@beefitup_male",
+        "pandora",
+        "[PB] BeefItIp [F]",
+        AnimationOptions = {
+            EmoteLoop = true
+        }
+    },
+
+
+--RP.SHARED SECTION:
+
+["pb_beefitup_s1"] = {"pandora@beefitup_fem", "pandora", "[PB] BeefItUp (SF)", "pb_beefitup_s2", 
+AnimationOptions = {
+    EmoteLoop = true,
+    EmoteMoving = false,
+    Attachto = true,
+    xPos = 0.00,
+    yPos = 0.00,
+    zPos = 0.00,
+    xRot = 0.00,
+    yRot = 0.00,
+    zRot = 0.00,
+
+}},
+["pb_beefitup_s2"] = {"pandora@beefitup_male", "pandora", "[PB] BeefItUp (SM)", "pb_beefitup_s1", 
+AnimationOptions = {
+    EmoteLoop = true,
+    EmoteMoving = false,
+}}, 
+
+}}, 
+["pb_bootybump1s"] = {"pandora@bootybump", "pandora_fem", "[PB] Booty Bump (SF)", "pb_bootybump2s", 
+AnimationOptions = {
+    EmoteLoop = true,
+    EmoteMoving = false,
+    Attachto = true,
+    xPos = 0.00,
+    yPos = 0.00,
+    zPos = 0.00,
+    xRot = 0.00,
+    yRot = 0.00,
+    zRot = 0.00,
+
+}},
+["pb_bootybump2s"] = {"pandora@bootybump", "pandora_male", "[PB] Booty Bump (SM)", "pb_bootybump1s", 
+AnimationOptions = {
+    EmoteLoop = true,
+    EmoteMoving = false,
+}},
+
+
+
+If you have trouble adding your animations to your game or server feel free to make a support ticket in our discord for assistance. 
+
+Discord: https://discord.gg/Kkb5h5gkyv

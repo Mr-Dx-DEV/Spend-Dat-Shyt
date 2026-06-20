@@ -1,0 +1,408 @@
+Thanks to FoczkaX!
+"pavehcar1l" : {
+    "dict" : "pavehcar1l@animations",
+    "id" : "pavehcar1l",
+    "gif" : "pavehcar1l.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Sit-Up Left",
+    "anim" : "pavehcar1lclip"
+  },
+  "pavehcar1r" : {
+    "dict" : "pavehcar1r@animations",
+    "id" : "pavehcar1r",
+    "gif" : "pavehcar1r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Sit-Up Right",
+    "anim" : "pavehcar1rclip"
+  },
+  "pavehcar2r" : {
+    "dict" : "pavehcar2r@animations",
+    "id" : "pavehcar2r",
+    "gif" : "pavehcar2r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Hold On Tight Right",
+    "anim" : "pavehcar2rclip"
+  },
+  "pavehcar3r" : {
+    "dict" : "pavehcar3r@animations",
+    "id" : "pavehcar3r",
+    "gif" : "pavehcar3r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Scared Hold Tight Right",
+    "anim" : "pavehcar3rclip"
+  },
+  "pavehcar4r" : {
+    "dict" : "pavehcar4r@animations",
+    "id" : "pavehcar4r",
+    "gif" : "pavehcar4r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Cradle Right",
+    "anim" : "pavehcar4rclip"
+  },
+  "pavehcar5r" : {
+    "dict" : "pavehcar5r@animations",
+    "id" : "pavehcar5r",
+    "gif" : "pavehcar5r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Hold Tight Right",
+    "anim" : "pavehcar5rclip"
+  },
+  "pavehcar6r" : {
+    "dict" : "pavehcar6r@animations",
+    "id" : "pavehcar6r",
+    "gif" : "pavehcar6r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Holding Right",
+    "anim" : "pavehcar6rclip"
+  },
+  "pavehcar7r" : {
+    "dict" : "pavehcar7r@animations",
+    "id" : "pavehcar7r",
+    "gif" : "pavehcar7r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Hold Right",
+    "anim" : "pavehcar7rclip"
+  },
+  "pavehcar8r" : {
+    "dict" : "pavehcar8r@animations",
+    "id" : "pavehcar8r",
+    "gif" : "pavehcar8r.webp",
+    "animSettings" : {
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Hug Tight Right",
+    "anim" : "pavehcar8rclip"
+  },
+  "pavehcar9r" : {
+    "dict" : "pavehcar9r@animations",
+    "id" : "pavehcar9r",
+    "gif" : "pavehcar9r.webp",
+    "animSettings" : {
+      "Prop" : "prop_phone_ing",
+      "PropBone" : 28422,
+      "PropPlacement" : "{0.05, 0.0100, 0.060, -174.961, 149.618, 8.649}",
+      "EmoteLoop" : true,
+      "EmoteMoving" : false
+    },
+    "category" : "custom",
+    "label" : "Veh Take Video Right",
+    "anim" : "pavehcar9rclip"
+  },
+
+
+  "pavehcar9l": {
+    "dict": "pavehcar9l@animations",
+    "id": "pavehcar9l",
+    "gif": "pavehcar9l.webp",
+    "animSettings": {
+      "Prop": "prop_phone_ing",
+      "PropBone": 58866,
+      "PropPlacement": "{0.07, -0.0500, 0.010, -105.33, -168.30, 48.97}",
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Take Video Left",
+    "anim": "pavehcar9lclip"
+  },
+  "pavehcar10": {
+    "dict": "pavehcar10@animations",
+    "id": "pavehcar10",
+    "gif": "pavehcar10.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy Lucia",
+    "anim": "pavehcar10clip"
+  },
+  "pbvehcar1": {
+    "dict": "pbvehcar1@animations",
+    "id": "pbvehcar1",
+    "gif": "pbvehcar1.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Here I Am",
+    "anim": "pbvehcar1clip"
+  },
+  "pbvehcar2": {
+    "dict": "pbvehcar2@animations",
+    "id": "pbvehcar2",
+    "gif": "pbvehcar2.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy The Wind",
+    "anim": "pbvehcar2clip"
+  },
+  "pbvehcar3r": {
+    "dict": "pbvehcar3r@animations",
+    "id": "pbvehcar3r",
+    "gif": "pbvehcar3r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy The Ride Right",
+    "anim": "pbvehcar3rclip"
+  },
+  "pbvehcar3l": {
+    "dict": "pbvehcar3l@animations",
+    "id": "pbvehcar3l",
+    "gif": "pbvehcar3l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy The Ride Left",
+    "anim": "pbvehcar3lclip"
+  },
+  "pbvehcar4r": {
+    "dict": "pbvehcar4r@animations",
+    "id": "pbvehcar4r",
+    "gif": "pbvehcar4r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy The Ride 2 Right",
+    "anim": "pbvehcar4rclip"
+  },
+  "pbvehcar4l": {
+    "dict": "pbvehcar4l@animations",
+    "id": "pbvehcar4l",
+    "gif": "pbvehcar4l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy The Ride 2 Left",
+    "anim": "pbvehcar4lclip"
+  },
+  "pbvehcar5r": {
+    "dict": "pbvehcar5r@animations",
+    "id": "pbvehcar5r",
+    "gif": "pbvehcar5r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Looking The View Right",
+    "anim": "pbvehcar5rclip"
+  },
+  "pbvehcar5l": {
+    "dict": "pbvehcar5l@animations",
+    "id": "pbvehcar5l",
+    "gif": "pbvehcar5l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Looking The View Left",
+    "anim": "pbvehcar5lclip"
+  },
+  "pbvehcar6r": {
+    "dict": "pbvehcar6r@animations",
+    "id": "pbvehcar6r",
+    "gif": "pbvehcar6r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Twerk Right",
+    "anim": "pbvehcar6rclip"
+  },
+  "pbvehcar6l": {
+    "dict": "pbvehcar6l@animations",
+    "id": "pbvehcar6l",
+    "gif": "pbvehcar6l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Twerk Left",
+    "anim": "pbvehcar6lclip"
+  },
+  "pbvehcar7l": {
+    "dict": "pbvehcar7l@animations",
+    "id": "pbvehcar7l",
+    "gif": "pbvehcar7l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Standing At The Driver Left",
+    "anim": "pbvehcar7lclip"
+  },
+  "pbvehcar8": {
+    "dict": "pbvehcar8@animations",
+    "id": "pbvehcar8",
+    "gif": "pbvehcar8.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sleep On The Roof",
+    "anim": "pbvehcar8clip"
+  },
+  "pbvehcar9": {
+    "dict": "pbvehcar9@animations",
+    "id": "pbvehcar9",
+    "gif": "pbvehcar9.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Relaxs On The Roof",
+    "anim": "pbvehcar9clip"
+  },
+  "pbvehcar10": {
+    "dict": "pbvehcar10@animations",
+    "id": "pbvehcar10",
+    "gif": "pbvehcar10.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Relaxs On The Roof",
+    "anim": "pbvehcar10clip"
+  },
+  "pcvehcar1": {
+    "dict": "pcvehcar1@animations",
+    "id": "pcvehcar1",
+    "gif": "pcvehcar1.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Enjoy On The Roof",
+    "anim": "pcvehcar1clip"
+  },
+  "pcvehcar2r": {
+    "dict": "pcvehcar2r@animations",
+    "id": "pcvehcar2r",
+    "gif": "pcvehcar2r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Right",
+    "anim": "pcvehcar2rclip"
+  },
+  "pcvehcar2l": {
+    "dict": "pcvehcar2l@animations",
+    "id": "pcvehcar2l",
+    "gif": "pcvehcar2l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Left",
+    "anim": "pcvehcar2lclip"
+  },
+  "pcvehcar3r": {
+    "dict": "pcvehcar3r@animations",
+    "id": "pcvehcar3r",
+    "gif": "pcvehcar3r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Lower Right",
+    "anim": "pcvehcar3rclip"
+  },
+  "pcvehcar3l": {
+    "dict": "pcvehcar3l@animations",
+    "id": "pcvehcar3l",
+    "gif": "pcvehcar3l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Lower Left",
+    "anim": "pcvehcar3lclip"
+  },
+  "pcvehcar4r": {
+    "dict": "pcvehcar4r@animations",
+    "id": "pcvehcar4r",
+    "gif": "pcvehcar4r.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Very Low Right",
+    "anim": "pcvehcar4rclip"
+  },
+  "pcvehcar4l": {
+    "dict": "pcvehcar4l@animations",
+    "id": "pcvehcar4l",
+    "gif": "pcvehcar4l.webp",
+    "animSettings": {
+      "EmoteLoop": true,
+      "EmoteMoving": false
+    },
+    "category": "custom",
+    "label": "Veh Sit Trunk Very Low Left",
+    "anim": "pcvehcar4lclip"
+  },
+
+
+  

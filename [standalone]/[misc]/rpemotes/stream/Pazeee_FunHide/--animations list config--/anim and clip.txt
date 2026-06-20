@@ -1,0 +1,100 @@
+DP EMOTES :
+
+   }},
+   ["NAMECOMMAND"] = {"hidef@animations", "hidefclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hideb@animations", "hidebclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hider@animations", "hiderclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidel@animations", "hidelclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidecarf@animations", "hidecarfclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidecarb@animations", "hidecarbclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidecarr@animations", "hidecarrclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidecarl@animations", "hidecarlclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidepole@animations", "hidepoleclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidepolehigh@animations", "hidepolehighclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidepolehigh2@animations", "hidepolehigh2clip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidepoleveryhigh@animations", "hidepoleveryhighclip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+   ["NAMECOMMAND"] = {"hidepoleveryhigh2@animations", "hidepoleveryhigh2clip", "NAMEDANCE", AnimationOptions = {
+       EmoteLoop = true,
+   }},
+
+
+
+OR
+
+   }},
+   ["hidef"] = {"hidef@animations", "hidefclip", "Hide Forward", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hideb"] = {"hideb@animations", "hidebclip", "Hide Backward", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hider"] = {"hider@animations", "hiderclip", "Hide Right", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidel"] = {"hidel@animations", "hidelclip", "Hide Left", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidecarf"] = {"hidecarf@animations", "hidecarfclip", "Hide Car Forward", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidecarb"] = {"hidecarb@animations", "hidecarbclip", "Hide Car Backward", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidecarr"] = {"hidecarr@animations", "hidecarrclip", "Hide Car Right", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidecarl"] = {"hidecarl@animations", "hidecarlclip", "Hide Car Left", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidepole"] = {"hidepole@animations", "hidepoleclip", "Hide Pole", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidepolehigh"] = {"hidepolehigh@animations", "hidepolehighclip", "Hide Pole High", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidepolehigh2"] = {"hidepolehigh2@animations", "hidepolehigh2clip", "Hide Pole High 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidepoleveryhigh"] = {"hidepoleveryhigh@animations", "hidepoleveryhighclip", "Hide Pole Very High", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},
+   ["hidepoleveryhigh2"] = {"hidepoleveryhigh2@animations", "hidepoleveryhigh2clip", "Hide Pole Very High 2", AnimationOptions =
+   {
+       EmoteLoop = true,
+   }},

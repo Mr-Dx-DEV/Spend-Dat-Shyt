@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<PedAnims>
+    <Anim dict="pandora@beefitup_fem" name="pandora" /> 
+    <Anim dict="pandora@beefitup_male" name="pandora" />
+    <Anim dict="pandora@cupidshuffle" name="pandora" />
+    <Anim dict="pandora@thewop" name="pandora" /> 
+    <Anim dict="pandora@wobble" name="pandora" /> 
+    <Anim dict="pandora@bootybump" name="pandora_fem" />
+    <Anim dict="pandora@bootybump" name="pandora_male" />
+</PedAnims>

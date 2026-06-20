@@ -1,0 +1,7 @@
+fx_version 'cerulean'
+game 'gta5'
+author 'L&L Shop'
+description 'Lookbehind'
+version '1.0'
+lua54 'yes'
+dependency '/assetpacks'
