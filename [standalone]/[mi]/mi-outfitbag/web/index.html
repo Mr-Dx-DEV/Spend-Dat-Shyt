@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Outfit Bag</title>
+</head>
+
+<body>
+    <div id="app" style="display: none;">
+        
+        <div class="preview-container">
+            
+            <div class="preview-header-overlay">
+                
+            </div>
+        </div>
+
+        
+        
+        <div id="closed-state" class="ui-panel closed-panel">
+            <button id="btn-unzip" class="unzip-btn">
+                <i class="fas fa-lock-open"></i> OPEN
+            </button>
+        </div>
+
+        
+        <div class="ui-panel" id="open-panel" style="display: none;">
+            <div class="panel-header">
+                <div class="header-top-row"
+                    style="display:flex; justify-content:space-between; width:100%; align-items:center; margin-bottom: 5px;">
+                    
+                    <div class="slot-counter">
+                        <span id="count">0</span>/<span id="max-count">10</span>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        
+                        <div id="btn-lock" class="header-close-btn" title="Toggle Lock"
+                            style="display:none; color: #ccc;">
+                            <i class="fas fa-lock-open"></i>
+                        </div>
+                        
+                        <div id="btn-close" class="header-close-btn">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-info">
+                    <h1 id="selected-outfit-name">Select Outfit</h1>
+                    <span id="timestamp">Saved recently</span>
+                </div>
+            </div>
+
+            
+            <div class="outfit-list" id="outfit-list">
+                
+            </div>
+
+            
+
+            
+            <div class="action-bar">
+                <div class="action-buttons">
+                    <button class="icon-btn" id="btn-wear" title="Apply">
+                        <i class="fas fa-tshirt"></i>
+                        <span>APPLY</span>
+                    </button>
+
+                    <button class="icon-btn" id="btn-rename" title="Rename">
+                        <i class="fas fa-pen"></i>
+                        <span>EDIT</span>
+                    </button>
+                    <button class="icon-btn delete-btn" id="btn-delete" title="Delete">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>DELETE</span>
+                    </button>
+                </div>
+            </div>
+
+            
+            <div class="partial-actions">
+                <div class="part-btn" id="btn-part-mask" title="Equip Mask Only">
+                    <i class="fas fa-mask"></i>
+                </div>
+                <div class="part-btn" id="btn-part-top" title="Equip Top Only">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="part-btn" id="btn-part-pants" title="Equip Pants Only">
+                    <i class="fas fa-running"></i>
+                </div>
+                <div class="part-btn" id="btn-part-shoes" title="Equip Shoes Only">
+                    <i class="fas fa-shoe-prints"></i>
+                </div>
+            </div>
+
+            
+            <div class="footer-actions">
+                <button class="btn-save" id="btn-save">
+                    SAVE CURRENT OUTFIT
+                </button>
+            </div>
+        </div>
+
+        
+        <div id="input-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3 id="modal-title">Name Your Outfit</h3>
+                <input type="text" id="outfit-name-input" placeholder="Outfit Name" maxlength="15">
+
+                <span class="category-label">Category</span>
+                <div class="category-selector" id="category-selector">
+                    <div class="cat-btn" data-cat="work" title="Work"><i class="fas fa-briefcase"></i></div>
+                    <div class="cat-btn" data-cat="casual" title="Casual"><i class="fas fa-tshirt"></i></div>
+                    <div class="cat-btn" data-cat="heist" title="Heist"><i class="fas fa-mask"></i></div>
+                    <div class="cat-btn" data-cat="formal" title="Formal"><i class="fas fa-user-tie"></i></div>
+                    <div class="cat-btn" data-cat="party" title="Party"><i class="fas fa-glass-cheers"></i></div>
+                </div>
+
+                <div class="modal-actions">
+                    <button id="modal-cancel">CANCEL</button>
+                    <button id="modal-confirm" class="primary">CONFIRM</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

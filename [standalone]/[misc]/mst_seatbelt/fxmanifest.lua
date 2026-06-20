@@ -1,0 +1,42 @@
+server_script '@ElectronAC/src/include/server.lua'
+client_script '@ElectronAC/src/include/client.lua'
+shared_script "@ReaperV4/imports/bypass.lua"
+shared_script "@ReaperV4/imports/bypass_s.lua"
+shared_script "@ReaperV4/imports/bypass_c.lua"
+lua54 "yes" -- needed for Reaper
+
+fx_version 'cerulean'
+game 'gta5'
+lua54 'yes'
+version '1.1.0'
+author 'Mosoto Scripts'
+description 'The most advanced seatbelt system for FiveM'
+dependencies {
+    'interact-sound'
+}
+shared_scripts {
+    'config.lua',
+    '@ox_lib/init.lua',
+}
+client_scripts {
+    'code/modules/editable.lua',
+    'code/modules/client.lua',
+}
+server_scripts {
+    'code/modules/server.lua',
+    'code/core/version_checker.lua'
+}
+files {
+    'code/web/index.html',
+    'code/web/styles.css',
+    'code/web/main.js',
+    'code/web/assets/indicator.png',
+    'code/web/assets/heartbeat.ogg'
+}
+ui_page 'code/web/index.html'
+data_file 'DLC_ITYP_REQUEST' 'mst_seatbelt.ytyp'
+escrow_ignore {
+    'config.lua',
+    'code/modules/editable.lua',
+}
+dependency '/assetpacks'

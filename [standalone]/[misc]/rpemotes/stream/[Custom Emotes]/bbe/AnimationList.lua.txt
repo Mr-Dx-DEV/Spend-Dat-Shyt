@@ -1,0 +1,41 @@
+["pb_bbv1_1"] = {
+    "pandora@bbv1_1",
+    "bbv1_1_clip",
+    "~p~[PB] BBV V1.1",
+    AnimationOptions = {
+        EmoteLoop = true
+    }
+},
+["pb_bbv1_2"] = {
+    "pandora@bbv1_2",
+    "bbv1_2_clip",
+    "~p~[PB] BBV V1.2",
+    AnimationOptions = {
+        EmoteLoop = true
+    }
+},
+["pb_bbv1_3"] = {
+    "pandora@bbv1_3",
+    "bbv1_3_clip",
+    "~p~[PB] BBV V1.3",
+    AnimationOptions = {
+        EmoteLoop = true
+    }
+},
+["pb_bbv1_4"] = {
+    "pandora@bbv1_4",
+    "bbv1_4_clip",
+    "~p~[PB] BBV V1.4",
+    AnimationOptions = {
+        EmoteLoop = true
+    }
+},
+["pb_bbv1_5"] = {
+    "pandora@bbv1_5",
+    "bbv1_5_clip",
+    "~p~[PB] BBV V1.5",
+    AnimationOptions = {
+        EmoteLoop = true
+    }
+},
+

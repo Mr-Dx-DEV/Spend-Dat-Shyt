@@ -1,0 +1,10 @@
+	
+	<Anim dict="duomale@damian" name="non_clip" />
+	<Anim dict="duofem@damian" name="non_clip" />
+	<Anim dict="duomale2@damian" name="non_clip" />
+	<Anim dict="duofem2@damian" name="non_clip" />
+	<Anim dict="duomale3@damian" name="non_clip" />
+	<Anim dict="duomale4@damian" name="non_clip" />
+	<Anim dict="duofem4@damian" name="non_clip" />
+	<Anim dict="duo5@damian" name="non_clip" />
+	<Anim dict="duod5@damian" name="non_clip" />

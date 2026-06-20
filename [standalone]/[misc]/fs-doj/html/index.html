@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fs-doj System</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #warrant-frame, #document-frame, #tv-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+        }
+        #warrant-frame.active, #document-frame.active, #tv-frame.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Warrant Viewer iFrame -->
+    <iframe id="warrant-frame" src="warrant.html"></iframe>
+
+    <!-- Document Viewer iFrame -->
+    <iframe id="document-frame" src="document_viewer.html"></iframe>
+
+    <!-- TV iFrame -->
+    <iframe id="tv-frame" src="tv.html"></iframe>
+
+    <script>
+        // DOJ Main NUI Handler - Routes messages to appropriate iframes
+
+        // Gavel Sound System (Global across all views)
+        const gavelSoundCache = {};
+
+        // Preload gavel sounds
+        function preloadGavelSound(soundName) {
+            if (!gavelSoundCache[soundName]) {
+                gavelSoundCache[soundName] = new Audio(`sounds/${soundName}.ogg`);
+                gavelSoundCache[soundName].preload = 'auto';
+            }
+        }
+
+        // Preload available sounds
+        preloadGavelSound('gavel_one');
+        preloadGavelSound('gavel_three');
+
+        // Play gavel sound
+        function playGavelSound(soundName, volume) {
+            try {
+                // Check if sound exists in cache
+                if (!gavelSoundCache[soundName]) {
+                    console.error('[fs-doj] Sound not found in cache:', soundName);
+                    return;
+                }
+
+                // Clone the audio to allow multiple simultaneous plays
+                const audio = gavelSoundCache[soundName].cloneNode();
+                audio.volume = Math.max(0.0, Math.min(1.0, volume || 0.5));
+
+                // Play the sound
+                const playPromise = audio.play();
+
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => {
+                            console.log('[fs-doj] Gavel sound played successfully:', soundName);
+                        })
+                        .catch(error => {
+                            console.error('[fs-doj] Error playing gavel sound:', error);
+                        });
+                }
+
+                // Clean up after playing
+                audio.addEventListener('ended', () => {
+                    audio.remove();
+                });
+            } catch (error) {
+                console.error('[fs-doj] Error in playGavelSound:', error);
+            }
+        }
+
+        // Get frame references
+        const warrantFrame = document.getElementById('warrant-frame');
+        const documentFrame = document.getElementById('document-frame');
+        const tvFrame = document.getElementById('tv-frame');
+
+        // Listen for messages from FiveM client
+        window.addEventListener('message', (event) => {
+            const data = event.data;
+
+            // Handle gavel sounds globally
+            if (data.type === 'playSound') {
+                playGavelSound(data.sound, data.volume || 0.5);
+                return;
+            }
+
+            // Route warrant-related messages to warrant frame
+            if (data.action === 'showWarrant' || data.action === 'hideWarrant') {
+                warrantFrame.classList.add('active');
+                documentFrame.classList.remove('active');
+                tvFrame.classList.remove('active');
+
+                // Forward message to warrant frame
+                warrantFrame.contentWindow.postMessage(data, '*');
+                return;
+            }
+
+            // Route document/photo messages to document viewer frame
+            if (data.action === 'showDocument' || data.action === 'showPhoto' || data.action === 'hide') {
+                documentFrame.classList.add('active');
+                warrantFrame.classList.remove('active');
+                tvFrame.classList.remove('active');
+
+                // Forward message to document frame
+                documentFrame.contentWindow.postMessage(data, '*');
+                return;
+            }
+
+            // Route TV messages to TV frame
+            if (data.action === 'showTV' || data.action === 'hideTV' || data.action === 'updateTV') {
+                tvFrame.classList.add('active');
+                warrantFrame.classList.remove('active');
+                documentFrame.classList.remove('active');
+
+                // Forward message to TV frame
+                tvFrame.contentWindow.postMessage(data, '*');
+                return;
+            }
+        });
+
+        // Listen for close events from iframes
+        window.addEventListener('message', (event) => {
+            const data = event.data;
+
+            // Handle iframe close events
+            if (data.closeFrame) {
+                if (data.closeFrame === 'warrant') {
+                    warrantFrame.classList.remove('active');
+                } else if (data.closeFrame === 'document') {
+                    documentFrame.classList.remove('active');
+                } else if (data.closeFrame === 'tv') {
+                    tvFrame.classList.remove('active');
+                }
+            }
+        });
+
+        console.log('[fs-doj] Main NUI system initialized');
+        console.log('[fs-doj] Gavel sound system initialized');
+    </script>
+</body>
+</html>

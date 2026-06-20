@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Official Warrant Document</title>
+    <link rel="stylesheet" href="warrant.css">
+</head>
+<body style="display: none;">
+    <div id="warrant-container">
+        <div class="warrant-document">
+            <!-- Header with Official Seal -->
+            <div class="document-header">
+                <div class="header-seal">
+                    <div class="seal-circle">
+                        <div class="seal-inner">
+                            <div class="seal-text-top">DEPARTMENT OF</div>
+                            <div class="seal-center">⚖️</div>
+                            <div class="seal-text-bottom">JUSTICE</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-title">
+                    <h1>LOS SANTOS DISTRICT COURT</h1>
+                    <h2>JUDICIAL WARRANT</h2>
+                </div>
+                <div class="warrant-number">
+                    <div class="label">Warrant No.</div>
+                    <div class="value" id="warrant-number">W-2025-000000</div>
+                </div>
+            </div>
+
+            <!-- Official Notice Bar -->
+            <div class="notice-bar">
+                <span class="notice-icon">⚠️</span>
+                <span class="notice-text">OFFICIAL JUDICIAL DOCUMENT - ENFORCEABLE BY LAW</span>
+            </div>
+
+            <!-- Warrant Type -->
+            <div class="warrant-type-section">
+                <div class="type-label">TYPE OF WARRANT</div>
+                <div class="type-value" id="warrant-type">ARREST WARRANT</div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="document-body">
+                <!-- Subject Information -->
+                <div class="section">
+                    <div class="section-title">
+                        <span class="section-number">I.</span>
+                        <span>SUBJECT INFORMATION</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-row">
+                            <div class="info-label">Full Name:</div>
+                            <div class="info-value" id="subject-name">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warrant Details -->
+                <div class="section">
+                    <div class="section-title">
+                        <span class="section-number">II.</span>
+                        <span>WARRANT DETAILS</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-row">
+                            <div class="info-label">Issued Date:</div>
+                            <div class="info-value" id="issued-date">-</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Expiry Date:</div>
+                            <div class="info-value" id="expiry-date">Never</div>
+                        </div>
+                        <div class="info-row" id="location-row">
+                            <div class="info-label">Location:</div>
+                            <div class="info-value" id="location">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reason & Justification -->
+                <div class="section">
+                    <div class="section-title">
+                        <span class="section-number">III.</span>
+                        <span>PROBABLE CAUSE & JUSTIFICATION</span>
+                    </div>
+                    <div class="reason-content">
+                        <p id="warrant-reason">-</p>
+                    </div>
+                </div>
+
+                <!-- Authorization -->
+                <div class="section">
+                    <div class="section-title">
+                        <span class="section-number">IV.</span>
+                        <span>AUTHORIZATION</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-row">
+                            <div class="info-label">Issued By:</div>
+                            <div class="info-value" id="issued-by">-</div>
+                        </div>
+                        <div class="info-row">
+                            <div class="info-label">Presiding Judge:</div>
+                            <div class="info-value" id="judge-name">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Judge Signature Section -->
+                <div class="signature-section">
+                    <div class="signature-line">
+                        <div class="signature-placeholder">
+                            <div class="signature-script" id="judge-signature">Judge Signature</div>
+                        </div>
+                        <div class="signature-label">Presiding Judge Signature</div>
+                    </div>
+                    <div class="signature-stamp">
+                        <div class="stamp-border">
+                            <div class="stamp-text">
+                                <div>AUTHORIZED</div>
+                                <div class="stamp-date" id="stamp-date">00/00/0000</div>
+                                <div>COURT SEAL</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="document-footer">
+                <div class="footer-line"></div>
+                <div class="footer-content">
+                    <div class="footer-left">
+                        <p class="footer-small">This warrant is valid and enforceable throughout the jurisdiction.</p>
+                        <p class="footer-small">Any law enforcement officer is authorized to execute this warrant.</p>
+                    </div>
+                    <div class="footer-right">
+                        <p class="footer-barcode">|||||| |||| |||||| || ||||||</p>
+                        <p class="footer-small" id="footer-warrant-number">W-2025-000000</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Close Button -->
+            <button class="close-button" onclick="closeWarrant()">
+                <span>✕</span> CLOSE DOCUMENT
+            </button>
+        </div>
+    </div>
+
+    <script src="warrant.js"></script>
+</body>
+</html>

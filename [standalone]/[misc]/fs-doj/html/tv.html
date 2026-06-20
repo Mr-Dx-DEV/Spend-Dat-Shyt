@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOJ JOB - TV DUI</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sacramento&display=swap');
+
+    * {
+        box-sizing: border-box;
+        user-select: none;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    :root {
+        font-size: min(.83333333vw, 1.8009478673vh);
+        transition: font-size .15s linear;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+        overflow: hidden;
+        color: #fff;
+    }
+
+    .app-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #080706;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .app-wrapper::after {
+        content: "";
+        position: absolute;
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #57c6f2;
+        filter: blur(60rem);
+        z-index: 0;
+    }
+
+    .app-wrapper img {
+        position: absolute;
+        width: 30rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: .02;
+        z-index: 0;
+    }
+
+    .app-title {
+        font-size: 3rem;
+        width: 100%;
+        padding-top: 1rem;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    font {
+        color: rgb(23, 214, 248);
+    }
+
+    .table-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        background-color: #1c1a17;
+        padding: 1rem;
+        border: .0625rem solid rgba(128, 128, 128, 0.193);
+        overflow: hidden;
+        margin-top: 1rem;
+    }
+
+    .table-header::after {
+        content: "";
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        background-color: gray;
+        border-radius: 50%;
+        filter: blur(10rem);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .table-header span,
+    .table-row span {
+        width: calc(100% / 5);
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .table-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        background-color: #131110;
+        padding: 1rem;
+        border: .0625rem solid rgba(128, 128, 128, 0.193);
+        overflow: hidden;
+        margin-top: .75rem;
+        animation: fade-in 1s ease-in-out;
+        animation-delay: calc(0.1s * var(--i));
+    }
+
+    @keyframes fade-in {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+</style>
+
+<body>
+    <div class="app-wrapper">
+        <img src="img/doj.png" alt="">
+        <span class="app-title">INCOMING <font>COURT HEARINGS</font></span>
+        <div class="table-header">
+            <span>ID</span>
+            <span>JUDGE</span>
+            <span>PROSECUTOR</span>
+            <span>LAWYER</span>
+            <span>ACCUSED</span>
+            <span>ROOM</span>
+            <span>DATE</span>
+        </div>
+        <div class="table-columns">
+        </div>
+    </div>
+</body>
+<script>
+    const appWrapper = document.querySelector('.app-wrapper');
+
+    // Helper function to format status text
+    function formatStatus(status) {
+        if (!status) return 'N/A';
+        return status
+            .replace(/_/g, ' ')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+    }
+
+    // Helper function to format case type
+    function formatCaseType(type) {
+        if (!type) return 'N/A';
+        return type
+            .replace(/_/g, ' ')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+    }
+
+    // Helper function to format hearing type
+    function formatHearingType(type) {
+        if (!type) return 'Hearing';
+        return type
+            .replace(/_/g, ' ')
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+    }
+
+    window.addEventListener("message", (event) => {
+        const data = event.data;
+        console.log('[TV DUI] Received message:', data);
+
+        switch (data.action) {
+            case 'loadTV':
+                console.log('[TV DUI] Loading court schedule with', data.data?.tv?.length || 0, 'hearings');
+                appWrapper.style.display = 'flex';
+                appWrapper.innerHTML = `
+                <img src="img/doj.png" alt="">
+                <span class="app-title">${data.data.locales['incoming']} <font>${data.data.locales['court_hearings']}</font></span>
+                <div class="table-header">
+                    <span>${data.data.locales['id']}</span>
+                    <span>${data.data.locales['judge']}</span>
+                    <span>${data.data.locales['prosecutor']}</span>
+                    <span>${data.data.locales['lawyer']}</span>
+                    <span>${data.data.locales['accused']}</span>
+                    <span>${data.data.locales['type']}</span>
+                    <span>${data.data.locales['room']}</span>
+                    <span>${data.data.locales['date']}</span>
+                </div>
+                <div class="table-columns">
+                </div>`;
+                let newData = ``;
+                for (let i in data.data.tv) {
+                    let court = data.data.tv[i];
+                    newData = newData + `
+                    <div class="table-row" style="--i:${parseInt(i)}">
+                        <span style="word-break: break-word;">#${court.id || 'N/A'}</span>
+                        <span style="font-weight: 700; word-break: break-word;">
+                            <font>${court.judge || 'TBD'}</font>
+                        </span>
+                        <span style="word-break: break-word;">${court.prosecutor || 'TBD'}</span>
+                        <span style="word-break: break-word;">${court.lawyer || 'TBD'}</span>
+                        <span style="font-weight: 700; word-break: break-word;">${court.accused || 'N/A'}</span>
+                        <span style="word-break: break-word;">${formatHearingType(court.type)}</span>
+                        <span style="word-break: break-word;">${data.data.locales['room']} <font style="font-weight: 700;">${court.room || 'TBD'}</font></span>
+                        <span style="word-break: break-word; font-size: 0.9rem;">${court.date || 'TBD'}</span>
+                    </div>`
+                }
+                document.querySelector('.table-columns').innerHTML = newData;
+                break;
+
+            case 'loadImage':
+                appWrapper.style.display = 'flex';
+                appWrapper.innerHTML = `
+                <img src="${data.url}" alt="Display Image" style="width: 100%; height: 100%; object-fit: contain; opacity: 1; position: relative;">
+                `;
+                break;
+
+            case 'loadAnnouncements':
+                appWrapper.style.display = 'flex';
+                appWrapper.innerHTML = `
+                <img src="img/doj.png" alt="">
+                <span class="app-title">DOJ <font>ANNOUNCEMENTS</font></span>
+                <div class="table-columns" style="padding: 2rem;">
+                </div>`;
+                let announcementsHTML = '';
+                for (let announcement of data.data.announcements) {
+                    announcementsHTML += `
+                    <div class="table-row" style="flex-direction: column; align-items: flex-start; text-transform: none;">
+                        <span style="font-weight: 700; font-size: 1.5rem; margin-bottom: 0.5rem; word-break: break-word; width: 100%;">${announcement.title}</span>
+                        <span style="word-break: break-word; width: 100%;">${announcement.content}</span>
+                    </div>`;
+                }
+                document.querySelector('.table-columns').innerHTML = announcementsHTML;
+                break;
+
+            case 'loadStatistics':
+                appWrapper.style.display = 'flex';
+                appWrapper.innerHTML = `
+                <img src="img/doj.png" alt="">
+                <span class="app-title">DOJ <font>STATISTICS</font></span>
+                <div class="table-columns" style="padding: 2rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                </div>`;
+                let statsHTML = `
+                <div class="table-row" style="text-transform: none;">
+                    <span style="font-weight: 700; word-break: break-word;">Total Cases:</span>
+                    <span style="word-break: break-word;"><font>${data.data.statistics.totalCases}</font></span>
+                </div>
+                <div class="table-row" style="text-transform: none;">
+                    <span style="font-weight: 700; word-break: break-word;">Active Cases:</span>
+                    <span style="word-break: break-word;"><font>${data.data.statistics.activeCases}</font></span>
+                </div>
+                <div class="table-row" style="text-transform: none;">
+                    <span style="font-weight: 700; word-break: break-word;">Active Warrants:</span>
+                    <span style="word-break: break-word;"><font>${data.data.statistics.totalWarrants}</font></span>
+                </div>
+                <div class="table-row" style="text-transform: none;">
+                    <span style="font-weight: 700; word-break: break-word;">Today's Reports:</span>
+                    <span style="word-break: break-word;"><font>${data.data.statistics.todayReports}</font></span>
+                </div>
+                <div class="table-row" style="text-transform: none;">
+                    <span style="font-weight: 700; word-break: break-word;">Total Employees:</span>
+                    <span style="word-break: break-word;"><font>${data.data.statistics.totalEmployees}</font></span>
+                </div>`;
+                document.querySelector('.table-columns').innerHTML = statsHTML;
+                break;
+
+            case 'loadCourtLive':
+                console.log('[TV DUI] Loading live court feed');
+                appWrapper.style.display = 'flex';
+                const hearing = data.data.hearing;
+                appWrapper.innerHTML = `
+                <img src="img/doj.png" alt="">
+                <div style="position: absolute; top: 2rem; right: 2rem; display: flex; align-items: center; gap: 1rem; z-index: 10;">
+                    <div style="width: 1rem; height: 1rem; background-color: red; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                    <span style="font-size: 1.5rem; font-weight: 700; color: #ff0000; text-transform: uppercase;">LIVE</span>
+                </div>
+                <span class="app-title" style="text-align: left; padding-left: 2rem;">LIVE <font>COURT SESSION</font></span>
+                <div class="table-columns" style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div class="table-row" style="flex-direction: column; align-items: flex-start; padding: 2rem; text-transform: none;">
+                        <span style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #57c6f2; word-break: break-word; width: 100%; text-align: left;">
+                            Case ${hearing.case_number || 'N/A'}
+                        </span>
+                        <span style="font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem; word-break: break-word; width: 100%; text-transform: none; text-align: left;">
+                            ${hearing.title || 'Untitled Case'}
+                        </span>
+                        <span style="font-size: 1.2rem; opacity: 0.8; margin-bottom: 2rem; word-break: break-word; width: 100%; text-transform: none; text-align: left;">
+                            ${hearing.description || 'No description available'}
+                        </span>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; width: 100%;">
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Judge:</span>
+                                <span style="font-weight: 700; margin-left: 0.5rem; word-break: break-word;"><font>${hearing.judge_name || 'TBD'}</font></span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Prosecutor:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;">${hearing.prosecutor_name || 'TBD'}</span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Defendant:</span>
+                                <span style="font-weight: 700; margin-left: 0.5rem; word-break: break-word;">${hearing.defendant_name || 'N/A'}</span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Defense Attorney:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;">${hearing.defense_attorney || 'TBD'}</span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Courtroom:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;"><font>${hearing.courtroom || 'TBD'}</font></span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Hearing Type:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;">${formatHearingType(hearing.hearing_type)}</span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Status:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;"><font>${formatStatus(hearing.status)}</font></span>
+                            </div>
+                            <div style="text-transform: none;">
+                                <span style="font-weight: 700; opacity: 0.7;">Case Type:</span>
+                                <span style="margin-left: 0.5rem; word-break: break-word;">${formatCaseType(hearing.case_type)}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    @keyframes pulse {
+                        0%, 100% { opacity: 1; transform: scale(1); }
+                        50% { opacity: 0.5; transform: scale(1.2); }
+                    }
+                </style>
+                `;
+                break;
+
+            case 'hideTV':
+                // Hide all content - show blank/black screen
+                appWrapper.style.display = 'none';
+                appWrapper.innerHTML = '';
+                break;
+        }
+    })
+</script>
+
+</html>
