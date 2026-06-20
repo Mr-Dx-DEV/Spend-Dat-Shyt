@@ -1,0 +1,13 @@
+{
+    "Lua.diagnostics.globals": [
+        "dumpsConfig"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "lowercase-global",
+        "missing-parameter",
+        "param-type-mismatch",
+        "redundant-return-value"
+    ],
+    "css.validate": false
+}

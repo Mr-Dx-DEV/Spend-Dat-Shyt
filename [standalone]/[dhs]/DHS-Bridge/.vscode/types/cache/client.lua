@@ -1,0 +1,70 @@
+---@meta
+
+---**`Cache` `client`**
+---@class Cache
+---@field [string] any
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#playerid)
+--- 
+---Cached version of PlayerId()
+---
+---@field PlayerId number | boolean
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#serverid)
+---
+---Cached version of GetPlayerServerId()
+---
+---@field ServerId number | boolean
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#ped)
+---
+---Cached version of PlayerPedId()
+---
+---@field Ped number | boolean
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#vehicle)
+---
+---Cached version of GetVehiclePedIsIn()
+---
+---@field Vehicle number | boolean
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#weapon)
+---
+---Cached version of GetCurrentPedWeapon()
+---
+---@field Weapon number | boolean
+Cache = {}
+
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#set)
+--- 
+---Register custom cache key/value pair this will trigger the cache event handler when it's registered and updated
+---
+---```lua
+---Cache.Set("Test", "My Value")
+---  
+---print(Cache.Test)
+---```
+---
+---@param key string 
+---@param value any
+function Cache.Set(key, value) end
+
+---**`Cache` `client`** 
+---[Documentation](https://dev.reflow-store.com/bridge/cache/client#on)
+---
+---Register cache event handler that triggers when a cached value is registered or updated
+---
+---```lua
+---Cache.On("Weapon", function(value, oldvalue)
+---    if value then
+---        print("Weapon Equipped", value)
+---    else
+---        print("Weapon UnEquipped")
+---    end
+---end)
+---```
+---
+---@param key string 
+---@param cb fun(value : any, oldvalue : any)
+function Cache.On(key, cb) end

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lust Shop | Luxury Boutique</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+        :root {
+            --accent: #ff2d75;
+            --accent-glow: rgba(255, 45, 117, 0.4);
+            --glass: rgba(10, 10, 15, 1.0);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --bg-item: #16161d;
+        }
+
+        html, body {
+            background-color: transparent !important;
+            background: none !important;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+        }
+
+        #app {
+            width: 1150px;
+            height: 720px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            display: none;
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1, h2, .font-syne { 
+            font-family: 'Syne', sans-serif; 
+        }
+
+        .sidebar-item {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .sidebar-item.active {
+            color: var(--accent);
+            background: rgba(255, 45, 117, 0.1);
+        }
+
+        .sidebar-item.active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 25%;
+            bottom: 25%;
+            width: 3px;
+            background: var(--accent);
+            border-radius: 4px 0 0 4px;
+            box-shadow: -2px 0 10px var(--accent-glow);
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-item);
+            overflow: hidden;
+        }
+
+        .product-img {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .price-chip {
+            background: linear-gradient(135deg, #ff2d75 0%, #ff5e95 100%);
+            box-shadow: 0 4px 15px var(--accent-glow);
+            z-index: 10;
+        }
+
+        .btn-action {
+            background: var(--accent);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 800;
+        }
+
+        .btn-action:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .qty-input {
+            background: transparent;
+            border: none;
+            color: white;
+            text-align: center;
+            width: 44px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .qty-input::-webkit-outer-spin-button,
+        .qty-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 45, 117, 0.3);
+            border-radius: 10px;
+            transition: background 0.2s ease;
+        }
+        
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="flex">
+        <aside class="w-64 border-r border-white/5 flex flex-col p-8 bg-black/20">
+            <div class="flex items-center space-x-3 mb-12">
+                <div class="w-9 h-9 rounded-xl bg-pink-600 flex items-center justify-center shadow-lg">
+                    <i data-lucide="sparkles" class="text-white w-5 h-5"></i>
+                </div>
+                <h1 class="text-xl font-bold tracking-tighter uppercase font-syne">Lust<span class="text-pink-500">Shop</span></h1>
+            </div>
+
+            <nav class="flex-1 space-y-1 overflow-y-auto custom-scroll pr-2" id="categories-list"></nav>
+
+            <div class="mt-auto pt-6 border-t border-white/5">
+                <div class="mb-6 px-4 py-3 bg-white/5 rounded-2xl border border-white/5">
+                    <p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest mb-1">Your Wallet</p>
+                    <p id="user-balance" class="text-lg font-bold text-emerald-400 font-syne">$0</p>
+                </div>
+                
+                <button onclick="closeUI()" class="w-full flex items-center space-x-3 px-4 py-3 text-slate-400 hover:text-red-400 transition-colors group">
+                    <i data-lucide="power" class="w-5 h-5 group-hover:rotate-90 transition-transform"></i>
+                    <span class="font-bold text-sm">Close Store</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <header class="h-20 flex items-center justify-between px-10 border-b border-white/5">
+                <div class="flex items-center space-x-4">
+                    <span id="current-category-label" class="text-xs font-black uppercase tracking-[0.3em] text-pink-500">Collection</span>
+                </div>
+
+                <div class="flex items-center space-x-6">
+                    <div class="relative group">
+                        <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500"></i>
+                        <input
+                            type="text"
+                            id="search-input"
+                            oninput="renderGrid()"
+                            placeholder="Search item..."
+                            class="bg-white/5 border border-white/10 rounded-full py-2 pl-10 pr-4 text-xs focus:border-pink-500/50 outline-none w-48 transition-all focus:w-64"
+                        >
+                    </div>
+                    
+                    <button onclick="toggleCart()" class="relative p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span id="cart-count-badge" class="absolute -top-1 -right-1 w-4 h-4 bg-pink-500 rounded-full text-[10px] flex items-center justify-center font-bold hidden">0</span>
+                    </button>
+                </div>
+            </header>
+
+            <section id="catalog-view" class="flex-1 p-8 overflow-y-auto custom-scroll">
+                <div id="product-grid" class="grid grid-cols-3 gap-6"></div>
+            </section>
+
+            <section id="cart-view" class="hidden flex-1 p-10 flex flex-col overflow-hidden">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-3xl font-bold font-syne uppercase tracking-tight">Shopping Bag</h2>
+                    <button onclick="toggleCart()" class="text-slate-500 hover:text-white text-xs font-bold uppercase tracking-widest flex items-center">
+                        <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Back to Shop
+                    </button>
+                </div>
+                
+                <div id="cart-items" class="flex-1 overflow-y-auto custom-scroll space-y-3 pr-4"></div>
+
+                <div class="mt-8 p-8 bg-white/5 rounded-[32px] border border-white/5 flex items-center justify-between">
+                    <div>
+                        <p class="text-slate-500 text-[10px] font-black uppercase tracking-widest mb-1">Total Payable</p>
+                        <p id="cart-total" class="text-4xl font-black font-syne text-white">$0</p>
+                    </div>
+                    <button onclick="checkout()" class="btn-action px-12 py-5 rounded-2xl text-sm shadow-xl">
+                        Purchase Collection
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <div id="detail-overlay" class="absolute inset-0 bg-black/40 z-50 hidden opacity-0 transition-opacity duration-300">
+            <div id="detail-panel" class="absolute right-0 top-0 bottom-0 w-[420px] bg-[#0c0c12] border-l border-white/10 p-10 flex flex-col transform translate-x-full transition-transform duration-500">
+                <button onclick="closeDetail()" class="mb-10 w-10 h-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+
+                <div id="detail-body" class="flex-1 overflow-y-auto custom-scroll pr-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-10 right-10 flex items-center space-x-4 bg-white text-black p-4 rounded-2xl font-bold text-sm shadow-2xl transform translate-y-32 opacity-0 transition-all duration-500 z-[100]">
+        <div class="w-8 h-8 rounded-lg bg-pink-500 flex items-center justify-center">
+            <i data-lucide="check" class="text-white w-5 h-5"></i>
+        </div>
+        <span id="toast-message">Item Added</span>
+    </div>
+
+    <script>
+        const RESOURCE_NAME = (window.GetParentResourceName && GetParentResourceName()) || "devx-lustshop";
+
+        let products = [];
+        let cart = [];
+        let currentCategory = "all";
+        let SHOP_CATEGORIES = [];
+
+        window.addEventListener("message", (event) => {
+            const data = event.data;
+
+            if (data.type === "ui") {
+                document.getElementById("app").style.display = data.display ? "flex" : "none";
+                if (!data.display) closeDetail();
+                return;
+            }
+
+            if (data.type === "shopConfig") {
+                SHOP_CATEGORIES = data.categories || [];
+
+                products = Object.entries(data.products || {}).map(([_, p]) => ({
+                    id: String(p.id),
+                    inventoryName: p.inventoryName,
+                    name: p.displayName,
+                    sub: p.sub,
+                    price: Number(p.price) || 0,
+                    img: p.image,
+                    rating: p.rating,
+                    desc: p.description,
+                    type: p.type || [],
+                    category: p.category
+                }));
+
+                currentCategory = "all";
+                renderCategories();
+                renderGrid();
+                return;
+            }
+
+            if (data.type === "updateBalance") {
+                updateBalance(data.balance || 0);
+                return;
+            }
+
+            if (data.type === "checkoutResponse") {
+                showToast(data.message || (data.success ? "Purchase successful!" : "Purchase failed"));
+
+                if (data.success) {
+                    cart = [];
+                    updateCartStatus();
+                    document.getElementById("catalog-view").classList.remove("hidden");
+                    document.getElementById("cart-view").classList.add("hidden");
+                    setCategory("all");
+                    closeUI();
+                }
+
+                return;
+            }
+        });
+
+        const demoData = [
+            { id: "demo_1", name: "Satin Noir", category: "apparel", price: 1500, img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400&h=600&auto=format&fit=crop", desc: "Premium midnight silk tailored for elegance." },
+            { id: "demo_2", name: "Gold Chrono", category: "accessories", price: 8500, img: "https://images.unsplash.com/photo-1524592091214-8f97ad3c00c7?q=80&w=800&h=400&auto=format&fit=crop", desc: "18k gold plating with Swiss movement." },
+            { id: "demo_3", name: "Velvet Rose", category: "lifestyle", price: 450, img: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=400&h=400&auto=format&fit=crop", desc: "Handcrafted fragrance with notes of damask rose." }
+        ];
+
+        function init() {
+            lucide.createIcons();
+
+            if (!window.invokeNative) {
+                SHOP_CATEGORIES = [
+                    { id: "apparel", label: "Apparel", icon: "shirt" },
+                    { id: "accessories", label: "Accessories", icon: "watch" },
+                    { id: "lifestyle", label: "Lifestyle", icon: "sun" }
+                ];
+
+                products = demoData;
+                document.getElementById("app").style.display = "flex";
+                updateBalance(25000);
+            }
+
+            renderCategories();
+            renderGrid();
+        }
+
+        function renderCategories() {
+            const list = document.getElementById("categories-list");
+
+            const allBtn = `
+                <button onclick="setCategory('all')"
+                    class="sidebar-item w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-sm font-bold
+                    ${currentCategory === "all" ? "active" : "text-slate-500 hover:text-white hover:bg-white/5"}">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i>
+                    <span>All</span>
+                </button>
+            `;
+
+            const cats = SHOP_CATEGORIES.map(c => `
+                <button onclick="setCategory('${String(c.id)}')"
+                    class="sidebar-item w-full flex items-center space-x-3 px-4 py-3.5 rounded-2xl text-sm font-bold
+                    ${currentCategory === c.id ? "active" : "text-slate-500 hover:text-white hover:bg-white/5"}">
+                    <i data-lucide="${c.icon || "tag"}" class="w-4 h-4"></i>
+                    <span>${c.label}</span>
+                </button>
+            `).join("");
+
+            list.innerHTML = allBtn + cats;
+            lucide.createIcons();
+        }
+
+        function updateBalance(val) {
+            document.getElementById("user-balance").innerText = `$${Number(val || 0).toLocaleString()}`;
+        }
+
+        function nuiPost(eventName, data = {}) {
+            if (!window.invokeNative) return Promise.resolve();
+
+            return fetch(`https://${RESOURCE_NAME}/${eventName}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json; charset=UTF-8" },
+                body: JSON.stringify(data)
+            });
+        }
+
+        function closeUI() {
+            nuiPost("close");
+            document.getElementById("app").style.display = "none";
+            closeDetail();
+        }
+
+        function checkout() {
+            if (cart.length === 0) return;
+
+            const payloadCart = cart.map(item => ({
+                id: String(item.product.id),
+                qty: Number(item.quantity) || 1
+            }));
+
+            nuiPost("checkout", { cart: payloadCart });
+            showToast("Processing Order...");
+        }
+
+        function setCategory(c) {
+            currentCategory = String(c);
+
+            const catObj = SHOP_CATEGORIES.find(x => String(x.id) === currentCategory);
+            document.getElementById("current-category-label").innerText = catObj ? catObj.label : "All";
+
+            document.getElementById("catalog-view").classList.remove("hidden");
+            document.getElementById("cart-view").classList.add("hidden");
+
+            renderCategories();
+            renderGrid();
+        }
+
+        function renderGrid() {
+            const grid = document.getElementById("product-grid");
+            const searchVal = document.getElementById("search-input").value.toLowerCase();
+
+            let filtered = currentCategory === "all"
+                ? products
+                : products.filter(p => String(p.category) === currentCategory);
+
+            if (searchVal) {
+                filtered = filtered.filter(p => p.name.toLowerCase().includes(searchVal));
+            }
+
+            grid.innerHTML = filtered.map(p => `
+                <div class="product-card p-4 rounded-[32px] flex flex-col">
+                    <div class="relative aspect-[4/5] rounded-3xl overflow-hidden mb-4">
+                        <div class="image-container">
+                            <img src="${p.img}" class="product-img" onerror="this.src='https://placehold.co/400x500/151520/white?text=No+Image'">
+                        </div>
+                        <div class="price-chip absolute top-4 left-4 px-4 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase">
+                            $${p.price.toLocaleString()}
+                        </div>
+                    </div>
+                    
+                    <div class="px-2 flex-1">
+                        <p class="text-[9px] text-pink-500 font-black uppercase tracking-[0.2em] mb-1">${p.category}</p>
+                        <h3 class="text-base font-bold font-syne mb-4 truncate">${p.name}</h3>
+                        
+                        <div class="flex items-center space-x-2">
+                            <button onclick="addToCart('${String(p.id)}')" class="btn-action flex-1 py-3 rounded-xl text-[10px] flex items-center justify-center space-x-2">
+                                <i data-lucide="plus" class="w-3 h-3"></i>
+                                <span>Add to Bag</span>
+                            </button>
+                            <button onclick="openDetail('${String(p.id)}')" class="btn-secondary p-3 rounded-xl flex items-center justify-center">
+                                <i data-lucide="eye" class="w-3.5 h-3.5 text-slate-400"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+
+            lucide.createIcons();
+        }
+
+        function openDetail(id) {
+            const productId = String(id);
+            const p = products.find(x => String(x.id) === productId);
+            if (!p) return;
+
+            const body = document.getElementById("detail-body");
+            body.innerHTML = `
+                <div class="rounded-[32px] overflow-hidden aspect-square mb-8 bg-neutral-900 border border-white/5 relative">
+                    <div class="image-container">
+                        <img src="${p.img}" class="product-img">
+                    </div>
+                </div>
+                <h2 class="text-3xl font-bold font-syne mb-2 tracking-tight">${p.name}</h2>
+                <span class="inline-block px-3 py-1 rounded-full bg-pink-500/10 text-pink-500 text-[10px] font-black uppercase tracking-widest mb-6">${p.category}</span>
+                <p class="text-slate-400 text-sm leading-relaxed mb-10 bg-white/5 p-6 rounded-3xl border border-white/5">
+                    ${p.desc || "An exclusive addition to our premium collection, crafted with unparalleled attention to detail."}
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between px-2">
+                        <span class="text-slate-500 text-xs font-bold uppercase">Price</span>
+                        <span class="text-2xl font-bold font-syne text-emerald-400">$${p.price.toLocaleString()}</span>
+                    </div>
+                    <button onclick="addToCart('${String(p.id)}')" class="btn-action w-full py-5 rounded-2xl text-sm">
+                        Add to Collection
+                    </button>
+                </div>
+            `;
+
+            const overlay = document.getElementById("detail-overlay");
+            const panel = document.getElementById("detail-panel");
+
+            overlay.classList.remove("hidden");
+
+            setTimeout(() => {
+                overlay.classList.add("opacity-100");
+                panel.classList.remove("translate-x-full");
+            }, 10);
+
+            lucide.createIcons();
+        }
+
+        function closeDetail() {
+            const overlay = document.getElementById("detail-overlay");
+            const panel = document.getElementById("detail-panel");
+
+            panel.classList.add("translate-x-full");
+            overlay.classList.remove("opacity-100");
+
+            setTimeout(() => overlay.classList.add("hidden"), 500);
+        }
+
+        function addToCart(id) {
+            const productId = String(id);
+            const p = products.find(x => String(x.id) === productId);
+            if (!p) return;
+
+            const idx = cart.findIndex(item => String(item.product.id) === productId);
+
+            if (idx !== -1) {
+                cart[idx].quantity += 1;
+            } else {
+                cart.push({
+                    product: {
+                        id: String(p.id),
+                        inventoryName: p.inventoryName,
+                        name: p.name,
+                        img: p.img,
+                        category: p.category,
+                        price: Number(p.price) || 0
+                    },
+                    quantity: 1
+                });
+            }
+
+            updateCartStatus();
+            showToast(`${p.name} Added`);
+            closeDetail();
+        }
+
+        function updateCartStatus() {
+            const totalCount = cart.reduce((acc, item) => acc + (item.quantity || 0), 0);
+            const badge = document.getElementById("cart-count-badge");
+            badge.innerText = totalCount;
+            badge.classList.toggle("hidden", totalCount === 0);
+        }
+
+        function toggleCart() {
+            const catalog = document.getElementById("catalog-view");
+            const cartSec = document.getElementById("cart-view");
+
+            if (cartSec.classList.contains("hidden")) {
+                catalog.classList.add("hidden");
+                cartSec.classList.remove("hidden");
+                renderCart();
+            } else {
+                setCategory(currentCategory);
+            }
+        }
+
+        function handleQtyInputChange(id, value) {
+            const productId = String(id);
+            const idx = cart.findIndex(item => String(item.product.id) === productId);
+            if (idx === -1) return;
+
+            let newQty = parseInt(value, 10);
+            if (isNaN(newQty) || newQty < 1) newQty = 1;
+
+            cart[idx].quantity = newQty;
+
+            renderCart();
+            updateCartStatus();
+        }
+
+        function updateQuantity(id, delta) {
+            const productId = String(id);
+            const idx = cart.findIndex(item => String(item.product.id) === productId);
+            if (idx === -1) return;
+
+            cart[idx].quantity += delta;
+
+            if (cart[idx].quantity <= 0) {
+                cart.splice(idx, 1);
+            }
+
+            renderCart();
+            updateCartStatus();
+        }
+
+        function renderCart() {
+            const list = document.getElementById("cart-items");
+            const totalEl = document.getElementById("cart-total");
+            let total = 0;
+
+            if (cart.length === 0) {
+                list.innerHTML = `<div class="py-20 text-center text-slate-600 font-bold font-syne uppercase">Your bag is empty</div>`;
+            } else {
+                list.innerHTML = cart.map((item) => {
+                    const lineTotal = item.product.price * item.quantity;
+                    total += lineTotal;
+
+                    return `
+                        <div class="flex items-center p-4 bg-white/5 border border-white/5 rounded-3xl group">
+                            <div class="w-16 h-16 rounded-2xl overflow-hidden mr-5">
+                                <div class="image-container">
+                                    <img src="${item.product.img}" class="product-img">
+                                </div>
+                            </div>
+
+                            <div class="flex-1">
+                                <h4 class="font-bold text-base font-syne uppercase text-xs">${item.product.name}</h4>
+                                <p class="text-[9px] text-pink-500 font-black tracking-widest uppercase">$${item.product.price.toLocaleString()} each</p>
+                            </div>
+                            
+                            <div class="flex items-center bg-black/40 rounded-xl p-1 mx-4">
+                                <button onclick="updateQuantity('${String(item.product.id)}', -1)" class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+                                    <i data-lucide="minus" class="w-3 h-3"></i>
+                                </button>
+                                
+                                <input
+                                    type="number"
+                                    class="qty-input font-syne"
+                                    value="${item.quantity}"
+                                    min="1"
+                                    onchange="handleQtyInputChange('${String(item.product.id)}', this.value)"
+                                    onfocus="this.select()"
+                                >
+
+                                <button onclick="updateQuantity('${String(item.product.id)}', 1)" class="w-8 h-8 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+                                    <i data-lucide="plus" class="w-3 h-3"></i>
+                                </button>
+                            </div>
+
+                            <div class="text-right w-24">
+                                <p class="font-bold text-white text-sm">$${lineTotal.toLocaleString()}</p>
+                            </div>
+                            
+                            <button onclick="updateQuantity('${String(item.product.id)}', -${item.quantity})" class="ml-4 p-2 text-slate-600 hover:text-red-500 transition-colors">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    `;
+                }).join("");
+            }
+
+            totalEl.innerText = `$${total.toLocaleString()}`;
+            lucide.createIcons();
+        }
+
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            document.getElementById("toast-message").innerText = msg;
+            t.classList.remove("translate-y-32", "opacity-0");
+            setTimeout(() => t.classList.add("translate-y-32", "opacity-0"), 3000);
+        }
+
+        window.onload = init;
+        window.onkeydown = (e) => {
+            if (e.key === "Escape") closeUI();
+        };
+    </script>
+</body>
+</html>

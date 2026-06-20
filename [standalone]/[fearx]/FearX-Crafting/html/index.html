@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FearX Crafting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: true,
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background: transparent !important; background-color: transparent !important; margin: 0; padding: 0;">
+    <div id="root" style="background: transparent !important; background-color: transparent !important; position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; pointer-events: none;">
+
+        <div id="creator-app" class="hidden relative z-10 w-[1200px] h-[750px] bg-[#09090b]/85 flex overflow-hidden rounded-[30px] shadow-[0_0_50px_rgba(0,0,0,0.8)] border border-white/[0.05]" style="pointer-events: auto;">
+            <div class="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] bg-white/10 blur-[150px] pointer-events-none rounded-full"></div>
+
+
+            <div class="w-[260px] bg-transparent flex flex-col p-5 border-r border-white/[0.04] relative z-20">
+                <div class="mb-10 px-1 mt-2">
+                    <div class="flex items-center gap-4">
+                        <div class="w-11 h-11 bg-white rounded-xl shadow-[0_0_20px_rgba(255,255,255,0.3)] flex items-center justify-center shrink-0">
+                            <i data-lucide="hammer" class="text-black w-6 h-6 stroke-[2.5]"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <h1 class="text-white font-extrabold text-base leading-none mb-1">FearX</h1>
+                            <p class="text-white/60 text-[10px] font-bold tracking-wide uppercase">Crafting Creator</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-gray-500 text-[10px] leading-relaxed">
+                        Create and manage crafting benches from this admin panel.
+                    </div>
+                </div>
+
+                <div class="flex-1 overflow-y-auto pr-1 scrollbar-hide space-y-6">
+                    <div>
+                        <h3 class="text-gray-600 text-[10px] font-bold uppercase tracking-widest mb-3 pl-4">Navigation</h3>
+                        <nav id="creator-sidebar-nav" class="flex flex-col gap-1"></nav>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-4 border-t border-white/[0.04]">
+                    <div class="bg-[#121212]/50 p-3 rounded-xl border border-white/[0.04] flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-red-500/20 to-red-600/10 flex items-center justify-center border border-red-500/20 shrink-0">
+                            <i data-lucide="shield" class="w-4 h-4 text-red-400"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-gray-500 text-[9px] uppercase font-bold tracking-wider">Admin Panel</span>
+                            <span class="text-white font-bold text-xs tracking-wide">Creator Mode</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="creator-content-area" class="flex-1 flex flex-col h-full bg-transparent relative overflow-hidden"></div>
+
+
+            <div id="bench-modal" class="hidden absolute inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[600px] max-h-[90%] overflow-visible shadow-2xl">
+                    <div class="p-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                <i data-lucide="hammer" class="w-5 h-5 text-black"></i>
+                            </div>
+                            <div>
+                                <h3 id="bench-modal-title" class="text-white font-bold text-lg">Create Bench</h3>
+                                <p class="text-gray-500 text-xs">Configure bench settings and recipes</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-4">
+                            <button class="modal-tab active px-4 py-2 text-xs font-bold rounded-lg transition-all" data-modal-tab="basic">Basic Info</button>
+                            <button class="modal-tab px-4 py-2 text-xs font-bold rounded-lg transition-all" data-modal-tab="access">Access</button>
+                            <button class="modal-tab px-4 py-2 text-xs font-bold rounded-lg transition-all" data-modal-tab="recipes">Recipes</button>
+                            <button class="modal-tab px-4 py-2 text-xs font-bold rounded-lg transition-all" data-modal-tab="settings">Settings</button>
+                        </div>
+                    </div>
+
+                    <div class="modal-content p-6 overflow-visible">
+
+                        <div id="modal-tab-basic" class="modal-tab-content active space-y-4">
+                            <input type="hidden" id="edit-bench-id">
+
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Bench Name</label>
+                                <input type="text" id="bench-input-name" placeholder="e.g., Main Workbench" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Type</label>
+                                    <div class="custom-dropdown" data-dropdown-id="benchType">
+                                        <div class="custom-dropdown-trigger bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium cursor-pointer flex justify-between items-center" data-value="crafting">
+                                            <span class="dropdown-selected-text">Crafting Bench</span>
+                                            <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500"></i>
+                                        </div>
+                                        <div class="custom-dropdown-menu" id="benchType-menu"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Prop Model</label>
+                                    <button type="button" id="prop-model-selector" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium cursor-pointer flex justify-between items-center hover:border-white/20" data-value="workbench">
+                                        <span id="prop-model-selected-text">Workbench</span>
+                                        <i data-lucide="grid" class="w-4 h-4 text-gray-500"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Coordinates</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <input type="number" id="bench-input-x" placeholder="X" step="0.01" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                                    <input type="number" id="bench-input-y" placeholder="Y" step="0.01" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                                    <input type="number" id="bench-input-z" placeholder="Z" step="0.01" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                                </div>
+                                <div class="flex gap-2 mt-2">
+                                    <button type="button" id="get-current-coords" class="text-xs text-white/60 hover:text-white transition-colors flex items-center gap-1">
+                                        <i data-lucide="crosshair" class="w-3 h-3"></i> Current Location
+                                    </button>
+                                    <button type="button" id="start-prop-placer" class="text-xs text-white/60 hover:text-white transition-colors flex items-center gap-1">
+                                        <i data-lucide="move" class="w-3 h-3"></i> Place Prop Visually
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Heading: <span id="heading-value">0</span>°</label>
+                                <input type="range" id="bench-input-heading" min="0" max="360" value="0" class="w-full h-2 rounded-lg appearance-none cursor-pointer bg-[#1a1a1a]" style="accent-color: white;">
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" id="bench-input-blip" checked class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                                <label for="bench-input-blip" class="text-white text-sm">Show on Map</label>
+                            </div>
+                        </div>
+
+
+                        <div id="modal-tab-access" class="modal-tab-content space-y-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Access Type</label>
+                                <div class="custom-dropdown" data-dropdown-id="accessType">
+                                    <div class="custom-dropdown-trigger bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium cursor-pointer flex justify-between items-center" data-value="public">
+                                        <span class="dropdown-selected-text">Public</span>
+                                        <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500"></i>
+                                    </div>
+                                    <div class="custom-dropdown-menu" id="accessType-menu"></div>
+                                </div>
+                            </div>
+
+                            <div id="access-groups" class="access-section hidden space-y-2">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Allowed Groups</label>
+                                <div class="bg-[#1a1a1a] border border-white/10 rounded-lg p-3">
+                                    <div id="groups-tags" class="flex flex-wrap gap-2 mb-2"></div>
+                                    <input type="text" id="groups-input" placeholder="Add group..." class="w-full bg-transparent text-white text-sm focus:outline-none">
+                                </div>
+                            </div>
+
+                            <div id="access-jobs" class="access-section hidden space-y-2">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Allowed Jobs</label>
+                                <div id="jobs-list" class="space-y-2"></div>
+                                <button type="button" id="add-job-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+                                    <i data-lucide="plus" class="w-3 h-3"></i> Add Job
+                                </button>
+                            </div>
+
+                            <div id="access-gangs" class="access-section hidden space-y-2">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Allowed Gangs</label>
+                                <div id="gangs-list" class="space-y-2"></div>
+                                <button type="button" id="add-gang-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+                                    <i data-lucide="plus" class="w-3 h-3"></i> Add Gang
+                                </button>
+                            </div>
+
+                            <div id="access-discord" class="access-section hidden space-y-2">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Discord Role IDs</label>
+                                <div class="bg-[#1a1a1a] border border-white/10 rounded-lg p-3">
+                                    <div id="discord-tags" class="flex flex-wrap gap-2 mb-2"></div>
+                                    <div class="flex gap-2">
+                                        <input type="text" id="discord-input" placeholder="Add role ID..." class="flex-1 bg-transparent text-white text-sm focus:outline-none">
+                                        <button type="button" id="add-discord-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1 rounded text-xs font-bold transition-all flex items-center gap-1">
+                                            <i data-lucide="plus" class="w-3 h-3"></i> Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="access-private" class="access-section hidden space-y-4">
+                                <div>
+                                    <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Player Server ID</label>
+                                    <div class="flex gap-2">
+                                        <input type="number" id="owner-player-id" placeholder="Enter player ID..." class="flex-1 bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                                        <button type="button" id="grab-player-info-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-2">
+                                            <i data-lucide="search" class="w-4 h-4"></i> Grab Info
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="owner-info-display" class="hidden grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Player Name</label>
+                                        <input type="text" id="owner-name-display" readonly class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium">
+                                    </div>
+                                    <div>
+                                        <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">License</label>
+                                        <input type="text" id="owner-license-input" readonly class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium">
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 text-xs">Enter the player's server ID and click "Grab Info" to fetch their details</p>
+                            </div>
+                        </div>
+
+
+                        <div id="modal-tab-recipes" class="modal-tab-content">
+                            <div class="mb-4">
+                                <div class="relative">
+                                    <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
+                                    <input type="text" id="bench-recipe-search" placeholder="Search recipe groups..." class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-white text-sm focus:outline-none focus:border-white/30 transition-colors">
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-white font-bold text-sm">Recipe Groups</h4>
+                                <span class="text-gray-500 text-xs" id="bench-selected-count">0 selected</span>
+                            </div>
+                            <div id="recipes-editor-list" class="space-y-2 max-h-[250px] overflow-y-auto scrollbar-hide"></div>
+                        </div>
+
+
+                        <div id="modal-tab-settings" class="modal-tab-content space-y-4">
+                            <h4 class="text-white font-bold text-sm">Crafting Options</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-[#1a1a1a] rounded-lg border border-white/5">
+                                    <div>
+                                        <span class="text-white text-sm font-medium">Skill Check Override</span>
+                                        <p class="text-gray-500 text-xs">Override global skill check setting</p>
+                                    </div>
+                                    <div class="toggle-switch" data-setting="skillCheckOverride"></div>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-[#1a1a1a] rounded-lg border border-white/5">
+                                    <div>
+                                        <span class="text-white text-sm font-medium">XP Override</span>
+                                        <p class="text-gray-500 text-xs">Override global XP setting</p>
+                                    </div>
+                                    <div class="toggle-switch" data-setting="xpOverride"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-white/10 flex gap-3">
+                        <button id="bench-modal-cancel" class="flex-1 bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Cancel</button>
+                        <button id="bench-modal-save" class="flex-1 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wide">Save</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="recipe-modal" class="hidden absolute inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[500px] overflow-hidden shadow-2xl">
+                    <div class="p-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                <i data-lucide="book-open" class="w-5 h-5 text-black"></i>
+                            </div>
+                            <div>
+                                <h3 id="recipe-modal-title" class="text-white font-bold text-lg">Add Recipe</h3>
+                                <p class="text-gray-500 text-xs">Configure recipe details</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 max-h-[400px] overflow-y-auto scrollbar-hide">
+                        <input type="hidden" id="edit-recipe-index">
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Recipe Name (Item Name)</label>
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="recipe-input-name" placeholder="e.g., lockpick" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="recipe-input-name"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Display Label</label>
+                                <input type="text" id="recipe-input-label" placeholder="e.g., Lockpick" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Ingredients</label>
+                            <div id="ingredients-list" class="space-y-2 mb-2"></div>
+                            <button type="button" id="add-ingredient-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+                                <i data-lucide="plus" class="w-3 h-3"></i> Add Ingredient
+                            </button>
+                        </div>
+
+                        <div>
+                            <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Result Item</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="recipe-result-item" placeholder="Item name" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="recipe-result-item"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                                <input type="number" id="recipe-result-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Craft Time (ms)</label>
+                                <input type="number" id="recipe-craft-time" value="5000" min="1000" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Required Level</label>
+                                <input type="number" id="recipe-required-level" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">XP Reward</label>
+                                <input type="number" id="recipe-xp-reward" value="10" min="0" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Fail Chance (%)</label>
+                                <input type="number" id="recipe-fail-chance" value="10" min="0" max="100" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" id="recipe-skill-check" checked class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                            <label for="recipe-skill-check" class="text-white text-sm">Require Skill Check</label>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-white/10 flex gap-3">
+                        <button id="recipe-modal-cancel" class="flex-1 bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Cancel</button>
+                        <button id="recipe-modal-save" class="flex-1 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wide">Save</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="prop-model-modal" class="hidden absolute inset-0 z-[70] bg-black/60 flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[600px] overflow-hidden shadow-2xl">
+                    <div class="p-6 border-b border-white/10">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                    <i data-lucide="box" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Select Prop Model</h3>
+                                    <p class="text-gray-500 text-xs">Choose a prop for your bench</p>
+                                </div>
+                            </div>
+                            <button id="prop-model-close" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div id="prop-model-grid" class="grid grid-cols-3 gap-4 max-h-[400px] overflow-y-auto scrollbar-hide"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="delete-modal" class="hidden absolute inset-0 z-[70] bg-black/60 flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[400px] overflow-hidden shadow-2xl">
+                    <div class="p-8 text-center">
+                        <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="trash-2" class="w-8 h-8 text-red-400"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-xl mb-2">Confirm Delete</h3>
+                        <p id="delete-message" class="text-gray-500 text-sm mb-6">Are you sure you want to delete this?</p>
+                        <div class="flex gap-3">
+                            <button id="delete-cancel" class="flex-1 bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Cancel</button>
+                            <button id="delete-confirm" class="flex-1 bg-red-500/20 border border-red-500/30 text-red-400 hover:text-red-300 hover:bg-red-500/30 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="group-modal" class="hidden absolute inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[550px] max-h-[90%] overflow-visible shadow-2xl flex flex-col">
+                    <div class="p-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                <i data-lucide="folder" class="w-5 h-5 text-black"></i>
+                            </div>
+                            <div>
+                                <h3 id="group-modal-title" class="text-white font-bold text-lg">Create Recipe Group</h3>
+                                <p class="text-gray-500 text-xs">Organize recipes into groups for benches</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 flex-1 overflow-y-auto scrollbar-hide">
+                        <div>
+                            <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Group Name</label>
+                            <input type="text" id="group-input-name" placeholder="e.g., Weapons, Tools, Electronics" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider">Recipes in Group</label>
+                                <button type="button" onclick="addGroupRecipe()" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+                                    <i data-lucide="plus" class="w-3 h-3"></i> Add Recipe
+                                </button>
+                            </div>
+                            <div id="group-recipes-list" class="space-y-2 max-h-[300px] overflow-y-auto scrollbar-hide"></div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-white/10 flex gap-3">
+                        <button onclick="closeGroupModal()" class="flex-1 bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Cancel</button>
+                        <button onclick="saveGroup()" class="flex-1 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wide">Save Group</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="item-browser-modal" class="hidden absolute inset-0 z-[110] bg-black/70 backdrop-blur-md flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[700px] max-h-[80%] overflow-hidden shadow-2xl flex flex-col">
+                    <div class="p-5 border-b border-white/10">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                    <i data-lucide="package-search" class="w-5 h-5 text-black"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-white font-bold text-lg">Item Browser</h3>
+                                    <p class="text-gray-500 text-xs" id="item-browser-count">0 items available</p>
+                                </div>
+                            </div>
+                            <button id="item-browser-close" class="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                        <div class="relative">
+                            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"></i>
+                            <input type="text" id="item-browser-search" placeholder="Search items by name or label..." class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-white text-sm focus:outline-none focus:border-white/30 transition-colors" autofocus>
+                        </div>
+                    </div>
+                    <div id="item-browser-grid" class="p-5 flex-1 overflow-y-auto scrollbar-hide"></div>
+                </div>
+            </div>
+
+            <div id="custom-alert-modal" class="hidden absolute inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[380px] overflow-hidden shadow-2xl">
+                    <div class="p-8 text-center">
+                        <div class="w-14 h-14 bg-amber-500/15 rounded-full flex items-center justify-center mx-auto mb-4 border border-amber-500/20">
+                            <i data-lucide="alert-triangle" class="w-7 h-7 text-amber-400"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Notice</h3>
+                        <p id="custom-alert-message" class="text-gray-400 text-sm mb-6"></p>
+                        <button id="custom-alert-ok" class="w-full bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)] uppercase tracking-wide">OK</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="group-recipe-modal" class="hidden absolute inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center">
+                <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl w-[500px] overflow-hidden shadow-2xl">
+                    <div class="p-6 border-b border-white/10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                                <i data-lucide="book-open" class="w-5 h-5 text-black"></i>
+                            </div>
+                            <div>
+                                <h3 id="group-recipe-modal-title" class="text-white font-bold text-lg">Add Recipe</h3>
+                                <p class="text-gray-500 text-xs">Configure recipe details</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-6 space-y-4 max-h-[400px] overflow-y-auto scrollbar-hide">
+                        <input type="hidden" id="edit-group-recipe-index">
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Recipe Name (Item Name)</label>
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="group-recipe-input-name" placeholder="e.g., lockpick" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="group-recipe-input-name"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Display Label</label>
+                                <input type="text" id="group-recipe-input-label" placeholder="e.g., Lockpick" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider">Ingredients</label>
+                                <button type="button" onclick="addGroupIngredient()" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-1">
+                                    <i data-lucide="plus" class="w-3 h-3"></i> Add
+                                </button>
+                            </div>
+                            <div id="group-ingredients-list" class="space-y-2 mb-2"></div>
+                        </div>
+
+                        <div>
+                            <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Result Item</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="group-recipe-result-item" placeholder="Item name" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="group-recipe-result-item"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                                <input type="number" id="group-recipe-result-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Craft Time (ms)</label>
+                                <input type="number" id="group-recipe-craft-time" value="5000" min="1000" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Required Level</label>
+                                <input type="number" id="group-recipe-required-level" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">XP Reward</label>
+                                <input type="number" id="group-recipe-xp-reward" value="10" min="0" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider mb-2 block">Fail Chance (%)</label>
+                                <input type="number" id="group-recipe-fail-chance" value="10" min="0" max="100" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" id="group-recipe-skill-check" checked class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                            <label for="group-recipe-skill-check" class="text-white text-sm">Require Skill Check</label>
+                        </div>
+                    </div>
+
+                    <div class="p-6 border-t border-white/10 flex gap-3">
+                        <button onclick="closeGroupRecipeModal()" class="flex-1 bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-6 py-3 rounded-lg text-sm font-bold transition-all uppercase tracking-wide">Cancel</button>
+                        <button onclick="saveGroupRecipe()" class="flex-1 bg-white text-black hover:bg-gray-200 px-6 py-3 rounded-lg text-sm font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] uppercase tracking-wide">Save Recipe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bench-app" class="hidden">
+            <div class="bench-container">
+                <main class="bench-main-panel">
+                    <header class="bench-header">
+                        <div class="bench-header-left">
+                            <div class="bench-logo">
+                                <i data-lucide="hammer" class="bench-logo-icon"></i>
+                            </div>
+                            <div class="bench-title-block">
+                                <h1 class="bench-title" id="bench-title-text">Crafting Table</h1>
+                            </div>
+                            <div class="bench-header-divider"></div>
+                            <div class="bench-level-badge">
+                                <span id="bench-player-level">Your Level: 1</span>
+                            </div>
+                        </div>
+                        <button class="bench-close-btn" onclick="closeBench()">CLOSE</button>
+                    </header>
+                    <div class="bench-search-section">
+                        <div class="bench-search-wrapper">
+                            <i data-lucide="search" class="bench-search-icon"></i>
+                            <input
+                                type="text"
+                                id="bench-search-input"
+                                class="bench-search-input"
+                                placeholder="Search available recipes..."
+                            />
+                        </div>
+                    </div>
+                    <div class="bench-content">
+                        <div class="bench-content-header">
+                            <h2 class="bench-content-title">Available Recipes</h2>
+                            <p class="bench-content-subtitle">Select an item to begin crafting</p>
+                        </div>
+                        <div id="bench-recipes-grid" class="bench-recipes-grid">
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

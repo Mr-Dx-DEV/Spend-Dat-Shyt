@@ -1,0 +1,221 @@
+{
+    "accessTypes": {
+        "private": {
+            "description": "Only the bench owner can use",
+            "label": "Private Owner"
+        },
+        "gang": {
+            "description": "Only players in specific gangs can use",
+            "label": "Gang Required"
+        },
+        "discord": {
+            "description": "Only players with specific Discord roles can use",
+            "label": "Discord Role"
+        },
+        "group": {
+            "description": "Only specific framework groups can use",
+            "label": "Framework Group"
+        },
+        "job": {
+            "description": "Only players with specific jobs can use",
+            "label": "Job Required"
+        },
+        "public": {
+            "description": "Anyone can use this bench",
+            "label": "Public"
+        }
+    },
+    "propModels": {
+        "bench04b": {
+            "label": "Bench 04B",
+            "model": "xm3_prop_xm3_bench_04b",
+            "image": "https://r2.fivemanage.com/reN0iza3vc4oGjJ0nDgay/edited-photo.png",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "table": {
+            "label": "Table",
+            "model": "prop_table_03",
+            "image": "https://r2.fivemanage.com/reN0iza3vc4oGjJ0nDgay/image-removebg-preview(1)(1).png",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "medbench2": {
+            "label": "Medical Bench",
+            "model": "v_med_bench2",
+            "image": "https://r2.fivemanage.com/reN0iza3vc4oGjJ0nDgay/image_2026-01-10_175411867-removebg-preview(1).png",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "bench004": {
+            "label": "Bench 004",
+            "model": "ba_dlc_ba_int2_bench004",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "workbench": {
+            "label": "Workbench",
+            "model": "prop_tool_bench02",
+            "image": "https://r2.fivemanage.com/reN0iza3vc4oGjJ0nDgay/workbench.png",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        },
+        "wheelbench": {
+            "label": "Wheel Bench",
+            "model": "v_med_cor_wheelbench",
+            "image": "https://r2.fivemanage.com/reN0iza3vc4oGjJ0nDgay/edited-photo(1).png",
+            "offset": [
+                0.0,
+                0.0,
+                0.0
+            ]
+        }
+    },
+    "locale": {
+        "cmdNoAccess": "You do not have permission to use this command.",
+        "creatorTitle": "Crafting Creator",
+        "benchDeleted": "Bench deleted successfully!",
+        "noAccess": "You do not have access to this bench.",
+        "edit": "Edit",
+        "craftFailed": "Crafting failed! Lost some materials.",
+        "create": "Create",
+        "craftSuccess": "Successfully crafted %s!",
+        "benchCreated": "Bench created successfully!",
+        "loading": "Loading...",
+        "craftingTitle": "Crafting",
+        "close": "Close",
+        "levelTooLow": "Your crafting level is too low. Required: %d",
+        "delete": "Delete",
+        "levelUp": "Congratulations! You reached crafting level %d!",
+        "save": "Save",
+        "xpGained": "+%d XP",
+        "notOwner": "You are not the owner of this bench.",
+        "missingItems": "You are missing required materials.",
+        "benchUpdated": "Bench updated successfully!",
+        "cancel": "Cancel"
+    },
+    "benchTypes": {
+        "crafting": {
+            "description": "Create items from materials",
+            "label": "Crafting Bench",
+            "icon": "hammer"
+        }
+    },
+    "settings": {
+        "debug": false,
+        "oxInventory": {
+            "benchStash": {
+                "slots": 10,
+                "weight": 50000,
+                "enabled": false
+            },
+            "imagePath": "nui://ox_inventory/web/images/"
+        },
+        "commands": {
+            "creatorAlias": "cc",
+            "creator": "craftingcreator"
+        },
+        "interaction": {
+            "interactionKey": 38,
+            "useMarker": true,
+            "drawDistance": 10,
+            "markerSize": [
+                1,
+                1,
+                0.5
+            ],
+            "markerType": 27,
+            "interactionDistance": 2,
+            "useTarget": true,
+            "markerColor": [
+                255,
+                255,
+                255,
+                100
+            ]
+        },
+        "blips": {
+            "enabled": false,
+            "crafting": {
+                "color": 2,
+                "sprite": 566,
+                "scale": 0.7,
+                "display": 4
+            }
+        },
+        "permissions": {
+            "creatorAccess": {
+                "frameworkGroups": [
+                    "admin",
+                    "superadmin",
+                    "god"
+                ],
+                "useAcePermission": true,
+                "useFrameworkGroup": true,
+                "acePermission": "fearx.crafting.creator"
+            }
+        },
+        "crafting": {
+            "skillCheck": {
+                "inputs": [
+                    "w",
+                    "a",
+                    "s",
+                    "d"
+                ],
+                "enabled": false,
+                "difficulty": "easy"
+            },
+            "sounds": {
+                "craftStart": {
+                    "set": "ATM_SOUNDS",
+                    "sound": "PIN_BUTTON"
+                },
+                "craftFail": {
+                    "set": "HUD_FRONTEND_DEFAULT_SOUNDSET",
+                    "sound": "ERROR"
+                },
+                "craftSuccess": {
+                    "set": "HUD_FRONTEND_DEFAULT_SOUNDSET",
+                    "sound": "PICK_UP"
+                }
+            },
+            "animations": {
+                "crafting": {
+                    "anim": "fixing_a_player",
+                    "dict": "mini@repair",
+                    "duration": 5000
+                }
+            },
+            "xpSystem": {
+                "enabled": true,
+                "xpPerCraft": 10,
+                "xpPerLevel": 100,
+                "xpBonusOnLevelUp": 50,
+                "maxLevel": 100
+            },
+            "failureSystem": {
+                "failChanceReduction": 0.5,
+                "baseFailChance": 10,
+                "enabled": false,
+                "losePercentOnFail": 50,
+                "loseItemsOnFail": true
+            }
+        }
+    }
+}

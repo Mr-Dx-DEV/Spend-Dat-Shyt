@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lust Controller | Luxury Progress</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+    
+        :root {
+            --accent: #ff2d75;
+            --accent-glow: rgba(255, 45, 117, 0.4);
+            --glass: rgba(10, 10, 15, 1.0); 
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-primary: #ffffff;
+            --bg-dark: #0c0c12;
+        }
+
+        body {
+            background-color: transparent !important;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .font-syne { font-family: 'Syne', sans-serif; }
+
+        /* Progress Meter Styling */
+        .progress-container { 
+            position: fixed; 
+            top: 50%; 
+            right: 40px; 
+            transform: translateY(-50%); 
+            width: 380px; 
+            z-index: 1000; 
+            display: none; 
+        }
+
+        .main-panel {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.8);
+        }
+
+        .progress-bar-fill { 
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: linear-gradient(90deg, var(--accent) 0%, #ff5e95 100%);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* Remote Controller Styling */
+        #remote-app {
+            width: 320px;
+            background: var(--bg-dark);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.9);
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-active-glow {
+            background: var(--accent) !important;
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 15px var(--accent-glow);
+            color: white !important;
+        }
+
+        .rhythm-segment { 
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body class="bg-transparent">
+
+<div id="progress-meter" class="progress-container">
+    <div class="main-panel p-6 flex flex-col justify-center overflow-hidden relative">
+        <div class="flex justify-between items-end mb-4">
+            <div>
+                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-pink-500 mb-1">Body Sensation</p>
+                <h2 class="text-xl font-bold font-syne uppercase tracking-tight">Climax Progress</h2>
+            </div>
+            <p id="progress-text" class="text-3xl font-black font-syne text-white">0%</p>
+        </div>
+
+        <div class="w-full h-3 bg-black/40 rounded-full overflow-hidden mb-6 border border-white/5">
+            <div id="progress-fill" class="progress-bar-fill h-full rounded-full" style="width: 0%;"></div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+            <div class="flex flex-col">
+                <span id="rhythm-label" class="text-[9px] text-slate-500 font-black uppercase tracking-widest mb-1">Frequency</span>
+                <span id="rhythm-status" class="text-xs font-bold font-syne uppercase text-pink-500">Inactive</span>
+            </div>
+            <div id="rhythm-indicators" class="flex space-x-1.5">
+                <div id="rhythm-1" class="rhythm-segment w-2 h-6 rounded-full"></div>
+                <div id="rhythm-2" class="rhythm-segment w-2 h-6 rounded-full"></div>
+                <div id="rhythm-3" class="rhythm-segment w-2 h-6 rounded-full"></div>
+                <div id="rhythm-4" class="rhythm-segment w-2 h-6 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="remote-body" class="hidden fixed top-1/2 right-10 transform -translate-y-1/2 z-50">
+    <div id="remote-app" class="p-8">
+        <div class="text-center mb-8">
+            <div class="flex items-center justify-center space-x-2 mb-2">
+                <i data-lucide="zap" class="text-pink-500 w-5 h-5"></i>
+                <h1 id="header-title" class="text-xl font-bold text-white tracking-tighter uppercase font-syne">Lust<span class="text-pink-500">Ctrl</span></h1>
+            </div>
+            <p id="connection-status-text" class="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Status: Disconnected</p>
+        </div>
+
+        <div id="input-box" class="space-y-4 mb-8">
+            <div class="bg-white/5 p-4 rounded-2xl border border-white/5">
+                <label class="block text-[10px] font-black text-slate-500 uppercase tracking-widest mb-2">Target Player ID</label>
+                <div class="flex space-x-2">
+                    <input type="number" id="target-id" placeholder="000" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-2 text-sm focus:border-pink-500/50 outline-none transition-all font-bold">
+                    <button onclick="handleConnect()" class="bg-pink-600 hover:bg-pink-500 px-4 rounded-xl transition-colors">
+                        <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="disconnect-box" class="hidden mb-6">
+            <button onclick="handleDisconnect()" class="w-full py-3 rounded-xl border border-red-500/30 text-red-500 text-[10px] font-black uppercase tracking-widest hover:bg-red-500/10 transition-all flex items-center justify-center space-x-2">
+                <i data-lucide="power" class="w-3 h-3"></i>
+                <span>Terminate Link</span>
+            </button>
+        </div>
+
+        <div id="intensity-box" class="space-y-3">
+            <div class="flex items-center space-x-2 mb-4">
+                <div class="h-[1px] flex-1 bg-white/5"></div>
+                <span class="text-[9px] font-black text-slate-500 uppercase tracking-widest">Intensity Levels</span>
+                <div class="h-[1px] flex-1 bg-white/5"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-3">
+                <button id="btn-low" data-mode="LOW" onclick="setMode(this)" class="control-btn py-4 rounded-2xl text-[10px]">Low</button>
+                <button id="btn-medium" data-mode="MEDIUM" onclick="setMode(this)" class="control-btn py-4 rounded-2xl text-[10px]">Medium</button>
+                <button id="btn-high" data-mode="HIGH" onclick="setMode(this)" class="control-btn py-4 rounded-2xl text-[10px]">High</button>
+                <button id="btn-max" data-mode="MAX" onclick="setMode(this)" class="control-btn py-4 rounded-2xl text-[10px] text-pink-500">Extreme</button>
+            </div>
+
+            <button id="btn-pause" onclick="togglePause()" class="w-full mt-4 py-4 rounded-2xl bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest hover:bg-white/10 transition-all">
+                Pause Pulse
+            </button>
+        </div>
+
+        <p class="text-[9px] text-slate-600 mt-8 text-center font-bold uppercase tracking-[0.2em]">Esc to Minimize</p>
+    </div>
+</div>
+
+<script>
+let targetId = null;
+let currentMode = "OFF";
+let isPaused = false;
+let currentProgress = 0;
+let currentFrequency = 1;
+
+const progressMeter = document.getElementById('progress-meter');
+const progressFill = document.getElementById('progress-fill');
+const progressText = document.getElementById('progress-text');
+const rhythmStatus = document.getElementById('rhythm-status');
+const rhythmIndicators = document.getElementById('rhythm-indicators');
+const rhythmSegments = [1,2,3,4].map(i=>document.getElementById(`rhythm-${i}`));
+
+const body = document.getElementById('remote-body');
+const connectionText = document.getElementById('connection-status-text');
+const inputBox = document.getElementById('input-box');
+const disconnectBox = document.getElementById('disconnect-box');
+
+function updateProgress(percent=0, frequencyIndex=1){
+    currentProgress = percent;
+    currentFrequency = frequencyIndex;
+    const clampedPercent = Math.max(0,Math.min(100,percent));
+    progressFill.style.width = `${clampedPercent}%`;
+    progressText.textContent = `${Math.round(clampedPercent)}%`;
+
+    const stages = ['Low','Medium','High','Extreme'];
+    const stage = frequencyIndex-1;
+    
+    rhythmStatus.textContent = stages[stage] || 'Inactive';
+
+    rhythmSegments.forEach((seg,i)=>{
+        seg.style.background = 'rgba(255, 255, 255, 0.1)';
+        seg.style.boxShadow = 'none';
+        if(i <= stage){
+            seg.style.background = '#ff2d75';
+            seg.style.boxShadow = '0 0 10px rgba(255, 45, 117, 0.5)';
+        }
+    });
+}
+
+function clearActiveStyles(){
+    document.querySelectorAll('.control-btn').forEach(btn => {
+        btn.classList.remove('btn-active-glow');
+    });
+}
+
+function setMode(btn){
+    if(!btn) return;
+    const mode = btn.getAttribute('data-mode');
+    if(!targetId && mode !== 'OFF'){
+        connectionText.textContent="Status: Error - No ID";
+        connectionText.classList.add('text-red-500');
+        return;
+    }
+    currentMode = mode;
+    clearActiveStyles();
+
+    if(mode !== 'OFF'){
+        btn.classList.add('btn-active-glow');
+        connectionText.textContent=`Connected: ID #${targetId}`;
+        connectionText.classList.remove('text-red-500');
+        connectionText.classList.add('text-pink-500');
+    }
+    
+    sendNuiCallback(mode);
+}
+
+function sendNuiCallback(mode){
+    if(!targetId || mode === 'OFF') return;
+    const frequencyIndex = { LOW:1, MEDIUM:2, HIGH:3, MAX:4 }[mode] || 1;
+
+    fetch(`https://${GetParentResourceName()}/setMode`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+            targetId: targetId,
+            mode: mode,
+            frequencyIndex: frequencyIndex
+        })
+    });
+}
+
+function togglePause(){
+    if(!targetId) return;
+    isPaused = !isPaused;
+    document.getElementById('btn-pause').textContent = isPaused ? 'Resume Pulse' : 'Pause Pulse';
+    fetch(`https://${GetParentResourceName()}/togglePause`,{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({targetId, paused:isPaused})
+    });
+}
+
+function handleConnect(){
+    const input = document.getElementById('target-id');
+    targetId = parseInt(input.value.trim());
+    if(!targetId || targetId <= 0) return;
+    fetch(`https://${GetParentResourceName()}/requestConnect`,{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({targetId})
+    });
+}
+
+function handleDisconnect(){
+    fetch(`https://${GetParentResourceName()}/disconnectRemote`,{
+        method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({})
+    }).then(()=>{
+        targetId = null;
+        clearActiveStyles();
+        connectionText.textContent = 'Status: Disconnected';
+        connectionText.classList.remove('text-pink-500');
+        inputBox.classList.remove('hidden');
+        disconnectBox.classList.add('hidden');
+    });
+}
+
+window.addEventListener('message', e => {
+    const data = e.data;
+    switch(data.action || data.type){
+        case 'openRemote': body.classList.remove('hidden'); break;
+        case 'closeRemote': body.classList.add('hidden'); break;
+        case 'updateRemoteStatus':
+            if(data.status === 'on'){
+                targetId = data.targetId;
+                connectionText.textContent = `Link Established: ID #${targetId}`;
+                connectionText.classList.add('text-pink-500');
+                inputBox.classList.add('hidden');
+                disconnectBox.classList.remove('hidden');
+            } else handleDisconnect();
+            break;
+        case 'show':
+            progressMeter.style.display = 'block';
+            updateProgress(data.progress || 0, data.frequencyIndex || 1);
+            break;
+        case 'update':
+            updateProgress(data.progress, data.frequencyIndex);
+            break;
+        case 'stop': 
+            progressMeter.style.display = 'none'; 
+            updateProgress(0,1); 
+            break;
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => { 
+    lucide.createIcons(); 
+});
+
+document.addEventListener('keydown', e => { 
+    if(e.key === 'Escape'){ 
+        fetch(`https://${GetParentResourceName()}/closeRemote`, {method:'POST'}); 
+        body.classList.add('hidden'); 
+    } 
+});
+</script>
+</body>
+</html>

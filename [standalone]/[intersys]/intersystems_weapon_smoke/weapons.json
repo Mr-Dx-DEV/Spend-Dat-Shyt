@@ -1,0 +1,40 @@
+{
+    "453432689": {
+        "SmokeDuration": 10,
+        "maxHeat": 1.1,
+        "rot": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "pos": {
+            "x": 0.110107421875,
+            "y": 0.0,
+            "z": 0.04234743118286
+        },
+        "name": "ent_anim_cig_exhale_nse",
+        "dict": "core",
+        "scale": 1.02,
+        "naturalSmoke": false,
+        "heatPerShot": 0.05
+    },
+    "736523883": {
+        "SmokeDuration": 12,
+        "maxHeat": 1,
+        "rot": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "pos": {
+            "x": 0.3883056640625,
+            "y": -0.0009765625,
+            "z": 0.03399991989135
+        },
+        "name": "ent_anim_cig_exhale_nse",
+        "dict": "core",
+        "scale": 0.5,
+        "naturalSmoke": false,
+        "heatPerShot": 0.1
+    }
+}

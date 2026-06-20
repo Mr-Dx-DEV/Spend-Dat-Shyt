@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FearX Bridge UI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: 'Inter', sans-serif;
+        overflow: hidden;
+        background-color: transparent;
+      }
+      @keyframes countdown-circle {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 113; }
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @keyframes slideOut {
+        from { opacity: 1; transform: translateY(0) scale(1); }
+        to { opacity: 0; transform: translateY(-20px) scale(0.95); }
+      }
+      @keyframes textUISlideIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes textUISlideOut {
+        from { opacity: 1; transform: translateX(0); }
+        to { opacity: 0; transform: translateX(20px); }
+      }
+      .notification-enter { animation: slideIn 0.4s ease-out forwards; }
+      .notification-exit { animation: slideOut 0.4s ease-out forwards; }
+      .textui-enter { animation: textUISlideIn 0.3s ease-out forwards; }
+      .textui-exit { animation: textUISlideOut 0.3s ease-out forwards; }
+      .circle-progress { transform: rotate(-90deg); transform-origin: center; }
+    </style>
+  </head>
+  <body>
+    <!-- TextUI Container -->
+    <div id="textui-container" style="position: fixed; z-index: 9998;"></div>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <script>
+      // ============== NOTIFICATION SYSTEM ==============
+      const notifContainer = document.getElementById('notification-container');
+      let notifications = [];
+      let notificationId = 0;
+
+      const notifConfig = {
+        position: 'top-center',
+        maxNotifications: 5
+      };
+
+      const positionStyles = {
+        'top-center': 'top: 20px; left: 50%; transform: translateX(-50%);',
+        'top-right': 'top: 20px; right: 20px;',
+        'top-left': 'top: 20px; left: 20px;',
+        'bottom-center': 'bottom: 20px; left: 50%; transform: translateX(-50%);',
+        'bottom-right': 'bottom: 20px; right: 20px;',
+        'bottom-left': 'bottom: 20px; left: 20px;',
+        'center': 'top: 50%; left: 50%; transform: translate(-50%, -50%);'
+      };
+
+      const variantConfig = {
+        base: {
+          outerBorder: 'border-white/10',
+          innerBg: 'bg-[#18191c]',
+          textTitle: 'text-white',
+          textMessage: 'text-[#9ca3af]',
+          progressColor: '#ffffff',
+          iconBg: 'bg-[#050505]',
+          dividerColor: 'bg-white/20'
+        },
+        success: {
+          outerBorder: 'border-green-500/30',
+          innerBg: 'bg-gradient-to-r from-[#052e16] via-[#0f1c13] to-[#18191c]',
+          textTitle: 'text-green-50',
+          textMessage: 'text-green-200/70',
+          progressColor: '#4ade80',
+          iconBg: 'bg-green-500/20',
+          iconColor: 'text-green-400',
+          dividerColor: 'bg-green-500/40'
+        },
+        info: {
+          outerBorder: 'border-blue-500/30',
+          innerBg: 'bg-gradient-to-r from-[#082f49] via-[#0c1e2e] to-[#18191c]',
+          textTitle: 'text-blue-50',
+          textMessage: 'text-blue-200/70',
+          progressColor: '#60a5fa',
+          iconBg: 'bg-blue-500/20',
+          iconColor: 'text-blue-400',
+          dividerColor: 'bg-blue-500/40'
+        },
+        warning: {
+          outerBorder: 'border-amber-500/30',
+          innerBg: 'bg-gradient-to-r from-[#451a03] via-[#2e1205] to-[#18191c]',
+          textTitle: 'text-amber-50',
+          textMessage: 'text-amber-200/70',
+          progressColor: '#fbbf24',
+          iconBg: 'bg-amber-500/20',
+          iconColor: 'text-amber-400',
+          dividerColor: 'bg-amber-500/40'
+        },
+        error: {
+          outerBorder: 'border-red-500/30',
+          innerBg: 'bg-gradient-to-r from-[#380d0d] via-[#240e0e] to-[#18191c]',
+          textTitle: 'text-red-50',
+          textMessage: 'text-red-200/70',
+          progressColor: '#f87171',
+          iconBg: 'bg-red-500/20',
+          iconColor: 'text-red-400',
+          dividerColor: 'bg-red-500/40'
+        }
+      };
+
+      const icons = {
+        success: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+        </svg>`,
+        info: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+        </svg>`,
+        warning: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+        </svg>`,
+        error: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+        </svg>`
+      };
+
+      const fearxLogo = `
+        <div class="w-full h-full bg-[#050505] relative flex items-center justify-center overflow-hidden">
+          <div class="absolute top-0 right-0 w-12 h-12 bg-green-900/30 blur-xl rounded-full mix-blend-screen"></div>
+          <div class="relative z-10 flex flex-col items-center justify-center transform scale-[0.6]">
+            <span class="text-[6px] text-green-500 font-bold uppercase tracking-[0.15em] mb-[-1px]">FearX</span>
+            <span class="text-sm font-black italic tracking-tighter text-white transform -skew-x-12" style="text-shadow: 0 0 8px rgba(34, 197, 94, 0.5);">
+              <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400" style="-webkit-text-stroke: 1.5px #22c55e; -webkit-text-fill-color: transparent;">SCRIPTS</span>
+            </span>
+          </div>
+        </div>
+      `;
+
+      function createCircleIcon(cfg, duration, iconContent) {
+        const circumference = 2 * Math.PI * 18;
+        return `
+          <div class="flex-shrink-0 relative self-center">
+            <div class="relative w-[36px] h-[36px]">
+              <svg class="absolute inset-0 w-full h-full circle-progress" viewBox="0 0 40 40">
+                <circle cx="20" cy="20" r="18" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+                <circle cx="20" cy="20" r="18" fill="none" stroke="${cfg.progressColor}" stroke-width="2" stroke-linecap="round"
+                  style="stroke-dasharray: ${circumference}; stroke-dashoffset: 0; animation: countdown-circle ${duration}ms linear forwards;"/>
+              </svg>
+              <div class="absolute inset-[3px] rounded-full overflow-hidden">
+                ${iconContent}
+              </div>
+            </div>
+          </div>
+          <div class="w-[1px] h-[30px] ${cfg.dividerColor} mx-3 flex-shrink-0"></div>
+        `;
+      }
+
+      function createNotificationElement(data) {
+        const id = ++notificationId;
+        const variant = data.type || data.variant || 'base';
+        const cfg = variantConfig[variant] || variantConfig.base;
+        const duration = data.duration || 5000;
+
+        let iconContent;
+        if (variant === 'base') {
+          iconContent = fearxLogo;
+        } else {
+          iconContent = `<div class="w-full h-full flex items-center justify-center ${cfg.iconBg} ${cfg.iconColor} rounded-full">${icons[variant]}</div>`;
+        }
+
+        const iconBox = createCircleIcon(cfg, duration, iconContent);
+
+        const el = document.createElement('div');
+        el.className = 'notification-enter mb-2';
+        el.dataset.id = id;
+        el.innerHTML = `
+          <div class="relative rounded-[10px] border ${cfg.outerBorder} bg-black/50 p-[2px] shadow-xl">
+            <div class="relative ${cfg.innerBg} rounded-[8px] border border-white/5 flex items-center min-h-[50px] w-[280px] px-3 py-2.5 overflow-hidden">
+              ${iconBox}
+              <div class="flex-grow flex flex-col justify-center min-w-0">
+                <span class="${cfg.textTitle} text-[11px] font-semibold leading-tight tracking-wide truncate">${data.title || 'Notice'}</span>
+                <span class="${cfg.textMessage} text-[10px] font-medium leading-snug mt-0.5">${data.message || ''}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        return { el, id, duration };
+      }
+
+      function showNotification(data) {
+        if (notifications.length >= notifConfig.maxNotifications) {
+          removeNotification(notifications[0].id);
+        }
+
+        const notification = createNotificationElement(data);
+        notifContainer.appendChild(notification.el);
+        notifications.push(notification);
+
+        setTimeout(() => {
+          removeNotification(notification.id);
+        }, notification.duration);
+      }
+
+      function removeNotification(id) {
+        const index = notifications.findIndex(n => n.id === id);
+        if (index === -1) return;
+
+        const notification = notifications[index];
+        notification.el.classList.remove('notification-enter');
+        notification.el.classList.add('notification-exit');
+
+        setTimeout(() => {
+          if (notification.el.parentNode) {
+            notification.el.parentNode.removeChild(notification.el);
+          }
+          notifications = notifications.filter(n => n.id !== id);
+        }, 400);
+      }
+
+      function updateNotificationPosition(position) {
+        notifConfig.position = position;
+        notifContainer.style.cssText = `position: fixed; ${positionStyles[position] || positionStyles['top-center']} z-index: 9999; display: flex; flex-direction: column; align-items: center;`;
+      }
+
+      updateNotificationPosition('top-center');
+
+      // ============== TEXT UI SYSTEM ==============
+      const textuiContainer = document.getElementById('textui-container');
+      let textuiVisible = false;
+      let textuiElement = null;
+
+      const textuiPositionStyles = {
+        'right-center': 'top: 50%; right: 30px; transform: translateY(-50%);',
+        'left-center': 'top: 50%; left: 30px; transform: translateY(-50%);',
+        'bottom-center': 'bottom: 80px; left: 50%; transform: translateX(-50%);',
+        'top-center': 'top: 80px; left: 50%; transform: translateX(-50%);',
+        'center': 'top: 50%; left: 50%; transform: translate(-50%, -50%);'
+      };
+
+      let textuiPosition = 'right-center';
+
+      function showTextUI(text, key) {
+        if (textuiElement) {
+          // Update existing
+          textuiElement.querySelector('.textui-label').textContent = text || 'Interact';
+          textuiElement.querySelector('.textui-key').textContent = key || 'E';
+          return;
+        }
+
+        textuiElement = document.createElement('div');
+        textuiElement.className = 'textui-enter';
+        textuiElement.innerHTML = `
+          <div class="relative inline-flex rounded-[11px] p-[2px] shadow-2xl border border-white/10 bg-black/40">
+            <div class="relative flex items-center py-[10px] px-[16px] gap-[10px] rounded-[8px] border bg-[#18191c] border-white/20">
+              <!-- Key Binding Box -->
+              <div class="flex items-center justify-center min-w-[28px] h-[28px] px-[8px] border rounded-[4px] bg-white border-gray-300 text-black shadow-[0_0_10px_rgba(255,255,255,0.2)]">
+                <span class="textui-key font-bold text-[14px] font-sans leading-none mt-[1px]">${key || 'E'}</span>
+              </div>
+              <!-- Text Label -->
+              <span class="textui-label font-medium text-[14px] font-sans drop-shadow-sm leading-none mt-[1px] text-white">${text || 'Interact'}</span>
+            </div>
+          </div>
+        `;
+
+        textuiContainer.style.cssText = `position: fixed; ${textuiPositionStyles[textuiPosition]} z-index: 9998; pointer-events: none;`;
+        textuiContainer.appendChild(textuiElement);
+        textuiVisible = true;
+      }
+
+      function hideTextUI() {
+        if (!textuiElement) return;
+
+        textuiElement.classList.remove('textui-enter');
+        textuiElement.classList.add('textui-exit');
+
+        setTimeout(() => {
+          if (textuiElement && textuiElement.parentNode) {
+            textuiElement.parentNode.removeChild(textuiElement);
+          }
+          textuiElement = null;
+          textuiVisible = false;
+        }, 300);
+      }
+
+      function setTextUIPosition(position) {
+        textuiPosition = position;
+        if (textuiVisible) {
+          textuiContainer.style.cssText = `position: fixed; ${textuiPositionStyles[position]} z-index: 9998; pointer-events: none;`;
+        }
+      }
+
+      // ============== MESSAGE HANDLER ==============
+      window.addEventListener('message', function(event) {
+        const data = event.data;
+
+        // Notification actions
+        if (data.action === 'notify') {
+          showNotification({
+            title: data.title || 'Notification',
+            message: data.message || '',
+            type: data.type || 'info',
+            duration: data.duration || 5000
+          });
+        }
+
+        if (data.action === 'setNotificationPosition' && data.position) {
+          updateNotificationPosition(data.position);
+        }
+
+        // TextUI actions
+        if (data.action === 'showTextUI') {
+          showTextUI(data.text, data.key);
+        }
+
+        if (data.action === 'hideTextUI') {
+          hideTextUI();
+        }
+
+        if (data.action === 'setPosition' && data.position) {
+          setTextUIPosition(data.position);
+        }
+
+        // Clear all
+        if (data.action === 'clearAll') {
+          notifications.forEach(n => removeNotification(n.id));
+          hideTextUI();
+        }
+      });
+    </script>
+  </body>
+</html>

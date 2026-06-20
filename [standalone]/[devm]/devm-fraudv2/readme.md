@@ -1,0 +1,1 @@
+[docs.devm.cc/fraudv2](https://docs.devm.cc/fraud-v2)

@@ -1,0 +1,223 @@
+Locales = Locales or {}
+
+Locales['de'] = {
+    -- General
+    coin_shop = 'Coin Shop',
+
+    -- Client notifications
+    test_drive_ended = 'Probefahrt beendet.',
+    test_drive_already_active = 'Probefahrt bereits aktiv',
+    vehicle_not_found = 'Fahrzeug nicht gefunden',
+    failed_load_vehicle = 'Fahrzeugmodell konnte nicht geladen werden',
+    test_drive_started = 'Probefahrt gestartet! %d Sekunden.',
+    test_drive_started_msg = 'Probefahrt gestartet',
+    failed_spawn_vehicle = 'Fahrzeug konnte nicht gespawnt werden. Pruefe deine Garage.',
+    vehicle_purchased = 'Fahrzeug gekauft und gespawnt! Kennzeichen: %s',
+
+    -- Server messages
+    no_permission = 'Keine Berechtigung',
+    player_not_found = 'Spieler nicht gefunden',
+    item_not_found = 'Gegenstand nicht gefunden',
+    not_enough_coins = 'Nicht genuegend Coins',
+    failed_register_vehicle = 'Fahrzeug konnte nicht registriert werden',
+    purchase_successful = 'Kauf erfolgreich',
+    invalid_order_number = 'Ungueltige Bestellnummer',
+    invalid_order_detailed = 'Ungueltige Bestellnummer. Stelle sicher, dass du ein Coin-Paket gekauft und die korrekte Bestellnummer eingegeben hast (z.B. tbx-xxxxxxxxxxxxx-xxxxxx).',
+    order_already_redeemed = 'Diese Bestellung wurde bereits eingeloest',
+    successfully_redeemed = '%d Coins erfolgreich eingeloest',
+    target_not_found = 'Zielspieler nicht gefunden oder offline',
+    received_coins_gift = 'Du hast %d Coins als Geschenk erhalten!',
+    received_coins = 'Du hast %d Coins erhalten!',
+    coins_set_to = 'Deine Coins wurden auf %d gesetzt',
+    invalid_data = 'Ungueltige Daten',
+    invalid_target_amount = 'Ungueltiges Ziel oder Betrag',
+
+    -- Admin messages
+    item_name_required = 'Gegenstandsname ist erforderlich',
+    item_id_exists = 'Ein Gegenstand mit dieser ID existiert bereits',
+    item_created = 'Gegenstand "%s" erfolgreich erstellt',
+    item_id_required = 'Gegenstands-ID ist erforderlich',
+    item_updated = 'Gegenstand "%s" erfolgreich aktualisiert',
+    item_deleted = 'Gegenstand erfolgreich geloescht',
+    category_name_required = 'Kategoriename ist erforderlich',
+    category_exists = 'Eine Kategorie mit diesem Namen existiert bereits',
+    category_created = 'Kategorie "%s" erfolgreich erstellt',
+    category_id_required = 'Kategorie-ID ist erforderlich',
+    category_not_found = 'Kategorie nicht gefunden',
+    category_updated = 'Kategorie "%s" erfolgreich aktualisiert',
+    category_deleted = 'Kategorie erfolgreich geloescht',
+    deal_name_required = 'Angebotsname ist erforderlich',
+    valid_expiry_required = 'Gueltige Ablaufzeit ist erforderlich',
+    deal_items_limit = 'Waehle 1-10 Gegenstaende fuer das Angebot',
+    deal_created = 'Angebot "%s" erfolgreich erstellt',
+    deal_id_required = 'Angebots-ID ist erforderlich',
+    deal_deleted = 'Angebot erfolgreich geloescht',
+    deal_not_found = 'Angebot nicht gefunden oder abgelaufen',
+    deal_no_items = 'Angebot hat keine Gegenstaende',
+    deal_purchased = 'Angebot erfolgreich gekauft!',
+    all_cleared = 'Alle Pakete, Kategorien und Angebote wurden geloescht',
+    gave_coins = '%d Coins an Spieler %s gegeben',
+    set_coins_msg = 'Coins von Spieler %s auf %d gesetzt',
+    settings_saved = 'Einstellungen gespeichert',
+    settings_reset = 'Einstellungen auf Standard zurueckgesetzt',
+
+    -- Command usage
+    usage_givecoins = 'Verwendung: /givecoins [id] [betrag]',
+    usage_setcoins = 'Verwendung: /setcoins [id] [betrag]',
+
+    -- NUI - Navigation
+    ui_home = 'Startseite',
+    ui_tutorial = 'Anleitung',
+    ui_redeem = 'Einloesen',
+    ui_admin = 'Admin',
+
+    -- NUI - Home page
+    ui_browse_items = 'Gegenstaende durchsuchen',
+    ui_explore_items = 'Alle verfuegbaren Gegenstaende erkunden.',
+    ui_search_placeholder = 'Gegenstand hier suchen ...',
+    ui_browse = '%s durchsuchen',
+    ui_explore = 'Alle verfuegbaren %s im Shop erkunden',
+    ui_search = '%s hier suchen ...',
+    ui_coins = 'Coins',
+
+    -- NUI - Tutorial
+    ui_tutorial_desc = 'Dieser Bereich zeigt dir alles, was du ueber die Nutzung dieses Systems wissen musst',
+    ui_step_1 = 'Schritt 1',
+    ui_step_2 = 'Schritt 2',
+    ui_step_3 = 'Schritt 3',
+    ui_step_3_title = 'Schritt 3 - Wie man verschenkt',
+    ui_tutorial_step_1 = 'Hole dir zuerst die TBX-ID von hier:',
+    ui_tutorial_step_2 = 'Sobald du die TBX-ID hast, gehe zu Einloesen und fuege die TBX-ID in das Einloesefeld ein',
+    ui_tutorial_step_3 = 'Optional, wenn du es jemandem schenken moechtest, druecke "An jemanden verschenken". Die Person muss online sein. Gib ihre Server-ID ein und fuege dann die TBX-ID ein, und sie erhaelt die Coins.',
+
+    -- NUI - Payment overlay
+    ui_confirm_payment = 'Zahlung bestaetigen',
+    ui_confirm_question = 'Bist du sicher, dass du bestaetigen moechtest?',
+    ui_cancel = 'Abbrechen',
+    ui_confirm = 'Bestaetigen',
+    ui_test_drive = 'Probefahrt',
+
+    -- NUI - Redeem overlay
+    ui_redeem_settings = 'Einloeseeinstellungen',
+    ui_redeem_desc = 'Gib deine Tebex-Bestellnummer ein, um Coins einzuloesen.',
+    ui_redeem_yourself = 'Selbst einloesen',
+    ui_gift_someone = 'Jemandem schenken',
+    ui_player_id = 'Spieler-ID',
+    ui_enter_player_id = 'Spieler-ID eingeben ...',
+    ui_enter_redeem_key = 'Einloeseschluessel eingeben',
+    ui_redeem_placeholder = 'tbx-xxxxxxxxxxxxx-xxxxxx',
+
+    -- NUI - Admin panel
+    ui_admin_panel = 'Admin-Panel',
+    ui_close = 'Schliessen',
+    ui_admin_center = 'Admin-Center',
+    ui_creator_center = 'Ersteller-Center',
+    ui_player_management = 'Spielerverwaltung',
+    ui_customize_ui = 'UI anpassen',
+    ui_total_packages = 'Pakete gesamt',
+    ui_total_sales = 'Verkaeufe gesamt',
+    ui_coins_spent_24h = 'Coins ausgegeben (24h)',
+    ui_active_players = 'Aktive Spieler',
+    ui_recent_transactions = 'Letzte Transaktionen',
+    ui_top_selling = 'Meistverkaufte Gegenstaende',
+
+    -- NUI - Creator center
+    ui_create_package = '+ Paket erstellen',
+    ui_create_category = '+ Kategorie erstellen',
+    ui_create_deal = '+ Sonderangebot erstellen',
+    ui_clear_all = 'Alle Pakete, Kategorien & Angebote loeschen',
+    ui_custom_categories = 'Benutzerdefinierte Kategorien',
+    ui_active_deals = 'Aktive Angebote',
+    ui_existing_packages = 'Vorhandene Pakete',
+
+    -- NUI - Player management
+    ui_search_player = 'Spieler nach ID oder Name suchen...',
+    ui_give_coins = 'Coins geben',
+    ui_set_coins = 'Coins setzen',
+    ui_online_players = 'Online-Spieler',
+    ui_refresh = 'Aktualisieren',
+    ui_id = 'ID',
+    ui_name = 'Name',
+    ui_actions = 'Aktionen',
+    ui_activity_logs = 'Aktivitaetsprotokolle',
+    ui_amount = 'Betrag',
+    ui_enter_amount = 'Betrag eingeben...',
+
+    -- NUI - Customize UI
+    ui_colors = 'Farben',
+    ui_accent_color = 'Akzentfarbe',
+    ui_bg_color = 'Hintergrundfarbe',
+    ui_text_color = 'Textfarbe',
+    ui_error_color = 'Fehlerfarbe',
+    ui_card_border_color = 'Kartenrahmenfarbe',
+    ui_background = 'Hintergrund',
+    ui_image_url = 'Bild-URL',
+    ui_opacity = 'Deckkraft',
+    ui_blur = 'Unschaerfe',
+    ui_cards = 'Karten',
+    ui_bg_opacity = 'Hintergrund-Deckkraft',
+    ui_border_radius = 'Randradius',
+    ui_coin_icon = 'Coin-Symbol',
+    ui_icon_url = 'Symbol-URL',
+    ui_save_settings = 'Einstellungen speichern',
+    ui_reset_defaults = 'Auf Standard zuruecksetzen',
+
+    -- NUI - Create modals
+    ui_create_package_title = 'Paket erstellen',
+    ui_edit_package_title = 'Paket bearbeiten',
+    ui_description = 'Beschreibung',
+    ui_price_coins = 'Preis (Coins)',
+    ui_type = 'Typ',
+    ui_vehicle = 'Fahrzeug',
+    ui_item = 'Gegenstand',
+    ui_weapon = 'Waffe',
+    ui_tool = 'Werkzeug',
+    ui_category = 'Kategorie',
+    ui_category_optional = '(optional - einer benutzerdefinierten Kategorie zuweisen)',
+    ui_none_default = 'Keine (Standard)',
+    ui_spawn_name = 'Spawn-Name',
+    ui_spawn_hint = '(GTA Modellname, z.B. adder)',
+    ui_item_name = 'Gegenstandsname',
+    ui_item_hint = '(Inventar-Gegenstand)',
+    ui_count = 'Anzahl',
+    ui_weapon_name = 'Waffenname',
+    ui_weapon_hint = '(GTA Waffen-Hash)',
+    ui_icon = 'Symbol',
+    ui_icon_hint = '(wird im Navigations-Tab angezeigt)',
+    ui_tags = 'Tags (kommagetrennt)',
+    ui_mark_trending = 'Als Trend-Angebot markieren',
+    ui_create = 'Erstellen',
+    ui_save = 'Speichern',
+    ui_live_preview = 'Live-Vorschau',
+
+    -- NUI - Deal modal
+    ui_create_deal_title = 'Sonderangebot erstellen',
+    ui_expires_in = 'Laeuft ab in',
+    ui_select_items = 'Gegenstaende waehlen (Max 10)',
+    ui_search_items = 'Gegenstaende suchen...',
+
+    -- NUI - Deal purchase
+    ui_confirm_deal = 'Angebotskauf bestaetigen',
+    ui_items_included = 'Enthaltene Gegenstaende:',
+
+    -- NUI - Delete confirm
+    ui_confirm_delete = 'Loeschen bestaetigen',
+    ui_delete_msg = 'Bist du sicher, dass du "%s" loeschen moechtest? Dies kann nicht rueckgaengig gemacht werden.',
+    ui_delete = 'Loeschen',
+
+    -- NUI - Clear all
+    ui_clear_all_title = 'Alle Daten loeschen',
+    ui_clear_all_msg = 'Dies wird alle Pakete, Kategorien und Angebote dauerhaft aus dem Shop loeschen. Diese Aktion kann nicht rueckgaengig gemacht werden.',
+    ui_clear_everything = 'Alles loeschen',
+
+    -- NUI - Misc
+    ui_expired = 'ABGELAUFEN',
+    ui_no_image = 'Kein Bild',
+    ui_edit = 'Bearbeiten',
+    ui_trending = 'Beliebt',
+    ui_enter_name = 'Name eingeben...',
+    ui_enter_description = 'Beschreibung eingeben...',
+    ui_enter_price = 'Preis eingeben...',
+    ui_enter_deal_name = 'Angebotsname eingeben...',
+    ui_enter_image_url = 'Bild-URL eingeben...',
+}

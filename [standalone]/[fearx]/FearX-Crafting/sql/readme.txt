@@ -1,0 +1,1 @@
+All sql tables auto insert this is a fallback incase something goes wrong which it should not but just incase 

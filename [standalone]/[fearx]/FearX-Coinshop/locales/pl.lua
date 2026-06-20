@@ -1,0 +1,223 @@
+Locales = Locales or {}
+
+Locales['pl'] = {
+    -- General
+    coin_shop = 'Sklep Monet',
+
+    -- Client notifications
+    test_drive_ended = 'Jazda próbna zakończona.',
+    test_drive_already_active = 'Jazda próbna już aktywna',
+    vehicle_not_found = 'Nie znaleziono pojazdu',
+    failed_load_vehicle = 'Nie udało się załadować modelu pojazdu',
+    test_drive_started = 'Jazda próbna rozpoczęta! %d sekund.',
+    test_drive_started_msg = 'Jazda próbna rozpoczęta',
+    failed_spawn_vehicle = 'Nie udało się zespawnować pojazdu. Sprawdź swój garaż.',
+    vehicle_purchased = 'Pojazd zakupiony i zespawnowany! Tablica: %s',
+
+    -- Server messages
+    no_permission = 'Brak uprawnień',
+    player_not_found = 'Nie znaleziono gracza',
+    item_not_found = 'Nie znaleziono przedmiotu',
+    not_enough_coins = 'Niewystarczająca ilość monet',
+    failed_register_vehicle = 'Nie udało się zarejestrować pojazdu',
+    purchase_successful = 'Zakup udany',
+    invalid_order_number = 'Nieprawidłowy numer zamówienia',
+    invalid_order_detailed = 'Nieprawidłowy numer zamówienia. Upewnij się, że zakupiłeś pakiet monet i wpisałeś poprawny numer zamówienia (np. tbx-xxxxxxxxxxxxx-xxxxxx).',
+    order_already_redeemed = 'To zamówienie zostało już wykorzystane',
+    successfully_redeemed = 'Pomyślnie odebrano %d monet',
+    target_not_found = 'Gracz docelowy nie znaleziony lub offline',
+    received_coins_gift = 'Otrzymałeś %d monet w prezencie!',
+    received_coins = 'Otrzymałeś %d monet!',
+    coins_set_to = 'Twoje monety ustawiono na %d',
+    invalid_data = 'Nieprawidłowe dane',
+    invalid_target_amount = 'Nieprawidłowy cel lub kwota',
+
+    -- Admin messages
+    item_name_required = 'Nazwa przedmiotu jest wymagana',
+    item_id_exists = 'Przedmiot z tym ID już istnieje',
+    item_created = 'Przedmiot "%s" utworzony pomyślnie',
+    item_id_required = 'ID przedmiotu jest wymagane',
+    item_updated = 'Przedmiot "%s" zaktualizowany pomyślnie',
+    item_deleted = 'Przedmiot usunięty pomyślnie',
+    category_name_required = 'Nazwa kategorii jest wymagana',
+    category_exists = 'Kategoria o tej nazwie już istnieje',
+    category_created = 'Kategoria "%s" utworzona pomyślnie',
+    category_id_required = 'ID kategorii jest wymagane',
+    category_not_found = 'Nie znaleziono kategorii',
+    category_updated = 'Kategoria "%s" zaktualizowana pomyślnie',
+    category_deleted = 'Kategoria usunięta pomyślnie',
+    deal_name_required = 'Nazwa oferty jest wymagana',
+    valid_expiry_required = 'Wymagany prawidłowy czas wygaśnięcia',
+    deal_items_limit = 'Wybierz 1-10 przedmiotów do oferty',
+    deal_created = 'Oferta "%s" utworzona pomyślnie',
+    deal_id_required = 'ID oferty jest wymagane',
+    deal_deleted = 'Oferta usunięta pomyślnie',
+    deal_not_found = 'Nie znaleziono oferty lub wygasła',
+    deal_no_items = 'Oferta nie ma przedmiotów',
+    deal_purchased = 'Oferta zakupiona pomyślnie!',
+    all_cleared = 'Wszystkie pakiety, kategorie i oferty zostały usunięte',
+    gave_coins = 'Przekazano %d monet graczowi %s',
+    set_coins_msg = 'Ustawiono monety gracza %s na %d',
+    settings_saved = 'Ustawienia zapisane',
+    settings_reset = 'Ustawienia przywrócone do domyślnych',
+
+    -- Command usage
+    usage_givecoins = 'Użycie: /givecoins [id] [ilość]',
+    usage_setcoins = 'Użycie: /setcoins [id] [ilość]',
+
+    -- NUI - Navigation
+    ui_home = 'Główna',
+    ui_tutorial = 'Poradnik',
+    ui_redeem = 'Odbierz',
+    ui_admin = 'Admin',
+
+    -- NUI - Home page
+    ui_browse_items = 'Przeglądaj Przedmioty',
+    ui_explore_items = 'Odkryj wszystkie dostępne przedmioty.',
+    ui_search_placeholder = 'Szukaj przedmiotu ...',
+    ui_browse = 'Przeglądaj %s',
+    ui_explore = 'Odkryj wszystkie dostępne %s w sklepie',
+    ui_search = 'Szukaj %s tutaj ...',
+    ui_coins = 'Monety',
+
+    -- NUI - Tutorial
+    ui_tutorial_desc = 'Ta sekcja pokaże Ci wszystko, co musisz wiedzieć o korzystaniu z tego systemu',
+    ui_step_1 = 'Krok 1',
+    ui_step_2 = 'Krok 2',
+    ui_step_3 = 'Krok 3',
+    ui_step_3_title = 'Krok 3 - Jak Podarować',
+    ui_tutorial_step_1 = 'Najpierw pobierz TBX ID stąd:',
+    ui_tutorial_step_2 = 'Gdy masz TBX ID, przejdź do odbioru i wklej TBX ID w pole odbioru',
+    ui_tutorial_step_3 = 'Opcjonalnie, jeśli chcesz komuś podarować, naciśnij "Podaruj Komuś". Muszą być online. Wpisz ich ID serwera, a następnie wklej TBX ID, a otrzymają monety.',
+
+    -- NUI - Payment overlay
+    ui_confirm_payment = 'Potwierdź Płatność',
+    ui_confirm_question = 'Czy na pewno chcesz to potwierdzić?',
+    ui_cancel = 'Anuluj',
+    ui_confirm = 'Potwierdź',
+    ui_test_drive = 'Jazda Próbna',
+
+    -- NUI - Redeem overlay
+    ui_redeem_settings = 'Ustawienia Odbioru',
+    ui_redeem_desc = 'Wpisz numer zamówienia Tebex, aby odebrać monety.',
+    ui_redeem_yourself = 'Odbierz Dla Siebie',
+    ui_gift_someone = 'Podaruj Komuś',
+    ui_player_id = 'ID Gracza',
+    ui_enter_player_id = 'Wpisz ID gracza ...',
+    ui_enter_redeem_key = 'Wpisz Klucz Odbioru',
+    ui_redeem_placeholder = 'tbx-xxxxxxxxxxxxx-xxxxxx',
+
+    -- NUI - Admin panel
+    ui_admin_panel = 'Panel Admina',
+    ui_close = 'Zamknij',
+    ui_admin_center = 'Centrum Admina',
+    ui_creator_center = 'Centrum Twórcy',
+    ui_player_management = 'Zarządzanie Graczami',
+    ui_customize_ui = 'Dostosuj Interfejs',
+    ui_total_packages = 'Łączna Liczba Pakietów',
+    ui_total_sales = 'Łączna Sprzedaż',
+    ui_coins_spent_24h = 'Monety Wydane (24h)',
+    ui_active_players = 'Aktywni Gracze',
+    ui_recent_transactions = 'Ostatnie Transakcje',
+    ui_top_selling = 'Najlepiej Sprzedające się',
+
+    -- NUI - Creator center
+    ui_create_package = '+ Utwórz Pakiet',
+    ui_create_category = '+ Utwórz Kategorię',
+    ui_create_deal = '+ Utwórz Ofertę Specjalną',
+    ui_clear_all = 'Wyczyść Wszystkie Pakiety, Kategorie i Oferty',
+    ui_custom_categories = 'Własne Kategorie',
+    ui_active_deals = 'Aktywne Oferty',
+    ui_existing_packages = 'Istniejące Pakiety',
+
+    -- NUI - Player management
+    ui_search_player = 'Szukaj gracza po ID lub nazwie...',
+    ui_give_coins = 'Daj Monety',
+    ui_set_coins = 'Ustaw Monety',
+    ui_online_players = 'Gracze Online',
+    ui_refresh = 'Odśwież',
+    ui_id = 'ID',
+    ui_name = 'Nazwa',
+    ui_actions = 'Akcje',
+    ui_activity_logs = 'Logi Aktywności',
+    ui_amount = 'Ilość',
+    ui_enter_amount = 'Wpisz ilość...',
+
+    -- NUI - Customize UI
+    ui_colors = 'Kolory',
+    ui_accent_color = 'Kolor Akcentu',
+    ui_bg_color = 'Kolor Tła',
+    ui_text_color = 'Kolor Tekstu',
+    ui_error_color = 'Kolor Błędu',
+    ui_card_border_color = 'Kolor Obramowania Karty',
+    ui_background = 'Tło',
+    ui_image_url = 'URL Obrazu',
+    ui_opacity = 'Przezroczystość',
+    ui_blur = 'Rozmycie',
+    ui_cards = 'Karty',
+    ui_bg_opacity = 'Przezroczystość Tła',
+    ui_border_radius = 'Zaokrąglenie Narożników',
+    ui_coin_icon = 'Ikona Monety',
+    ui_icon_url = 'URL Ikony',
+    ui_save_settings = 'Zapisz Ustawienia',
+    ui_reset_defaults = 'Przywróć Domyślne',
+
+    -- NUI - Create modals
+    ui_create_package_title = 'Utwórz Pakiet',
+    ui_edit_package_title = 'Edytuj Pakiet',
+    ui_description = 'Opis',
+    ui_price_coins = 'Cena (Monety)',
+    ui_type = 'Typ',
+    ui_vehicle = 'Pojazd',
+    ui_item = 'Przedmiot',
+    ui_weapon = 'Broń',
+    ui_tool = 'Narzędzie',
+    ui_category = 'Kategoria',
+    ui_category_optional = '(opcjonalne - przypisz do własnej zakładki kategorii)',
+    ui_none_default = 'Brak (Domyślne)',
+    ui_spawn_name = 'Nazwa Spawnu',
+    ui_spawn_hint = '(nazwa modelu GTA, np. adder)',
+    ui_item_name = 'Nazwa Przedmiotu',
+    ui_item_hint = '(przedmiot z ekwipunku)',
+    ui_count = 'Ilość',
+    ui_weapon_name = 'Nazwa Broni',
+    ui_weapon_hint = '(hash broni GTA)',
+    ui_icon = 'Ikona',
+    ui_icon_hint = '(wyświetlana w zakładce nawigacji)',
+    ui_tags = 'Tagi (oddzielone przecinkami)',
+    ui_mark_trending = 'Oznacz jako Popularny',
+    ui_create = 'Utwórz',
+    ui_save = 'Zapisz',
+    ui_live_preview = 'Podgląd Na Żywo',
+
+    -- NUI - Deal modal
+    ui_create_deal_title = 'Utwórz Ofertę Specjalną',
+    ui_expires_in = 'Wygasa Za',
+    ui_select_items = 'Wybierz Przedmioty (Maks 10)',
+    ui_search_items = 'Szukaj przedmiotów...',
+
+    -- NUI - Deal purchase
+    ui_confirm_deal = 'Potwierdź Zakup Oferty',
+    ui_items_included = 'Zawarte przedmioty:',
+
+    -- NUI - Delete confirm
+    ui_confirm_delete = 'Potwierdź Usunięcie',
+    ui_delete_msg = 'Czy na pewno chcesz usunąć "%s"? Tego nie można cofnąć.',
+    ui_delete = 'Usuń',
+
+    -- NUI - Clear all
+    ui_clear_all_title = 'Wyczyść Wszystkie Dane',
+    ui_clear_all_msg = 'Spowoduje to trwałe usunięcie wszystkich pakietów, kategorii i ofert ze sklepu. Tej akcji nie można cofnąć.',
+    ui_clear_everything = 'Wyczyść Wszystko',
+
+    -- NUI - Misc
+    ui_expired = 'WYGASŁO',
+    ui_no_image = 'Brak Obrazu',
+    ui_edit = 'Edytuj',
+    ui_trending = 'Popularne',
+    ui_enter_name = 'Wpisz nazwę...',
+    ui_enter_description = 'Wpisz opis...',
+    ui_enter_price = 'Wpisz cenę...',
+    ui_enter_deal_name = 'Wpisz nazwę oferty...',
+    ui_enter_image_url = 'Wpisz URL obrazu...',
+}
