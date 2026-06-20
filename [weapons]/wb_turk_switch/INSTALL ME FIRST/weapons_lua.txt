@@ -1,0 +1,6 @@
+		['WEAPON_WB_TURK_SWITCH'] = {
+			label = 'TURK SWITCH',
+			weight = 1400,
+			durability = 0.1,
+			ammoname = 'ammo-9',
+		},

@@ -1,0 +1,157 @@
+		['WEAPON_3DPRINT'] = {
+			label = 'Ghost B-19x',
+			weight = 180,
+			durability = 1.8,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_3DPRINT2'] = {
+			label = 'Ghost P-19x',
+			weight = 180,
+			durability = 1.8,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G19G5'] = {
+			label = 'Camo Z19G5',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G40'] = {
+			label = 'Heavy Z40',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-10',
+			caliber = '10mm',
+		},
+
+		['WEAPON_SIGG'] = {
+			label = 'SNS 45x',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-45',
+			caliber = '.45 ACP',
+		},
+
+		['WEAPON_SNW'] = {
+			label = 'Smiff & Wess',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_S226'] = {
+			label = 'FIN Camo',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_MP9'] = {
+			label = 'Combat MP9',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_HELLCAT'] = {
+			label = 'Combat Cat',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G17'] = {
+			label = 'Camo Z17',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G19'] = {
+			label = 'Combat Z19',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G19X'] = {
+			label = 'Combat Z19x (Tan)',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G20'] = {
+			label = 'Heavy Z20',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-10',
+			caliber = '10mm',
+		},
+
+		['WEAPON_G45'] = {
+			label = 'Combat Z45',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_G2C'] = {
+			label = 'SNS 62C',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_GHOST'] = {
+			label = 'Combat Ghost',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_P80'] = {
+			label = 'SNS P80',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-htip',
+			caliber = '9x19mm Hollow Tips',
+		},
+
+		['WEAPON_SR40'] = {
+			label = 'Ceramic Z40',
+			weight = 180,
+			durability = 0.03,
+			ammoname = 'ammo-45',
+			caliber = '.45 ACP',
+		},
+
+
+		--AMMOS
+		--MAKE SURE U ADD THESE AT THE BOTTOM
+
+		['ammo-htip'] = {
+			label = '9x19mm Hollow Tips',
+			weight = 8,
+		},
+
+		['ammo-10'] = {
+			label = '10mm',
+			weight = 9,
+		},
