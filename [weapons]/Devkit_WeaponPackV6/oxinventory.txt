@@ -1,0 +1,104 @@
+                ['WEAPON_4INCHARP'] = {
+			label = '4inch ARP',
+			weight = 6000,
+			durability = 0.25,
+			ammoname = 'ammo-rifle',
+		},
+
+		['WEAPON_10INCHARP'] = {
+			label = '10inch ARP',
+			weight = 1000,
+			durability = 0.25,
+			ammoname = 'ammo-rifle'
+		},
+
+		['WEAPON_AKV9'] = {
+			label = 'AKV-9',
+			weight = 1,
+			durability = 0.5,
+			ammoname = 'ammo-9',
+		},
+
+		['WEAPON_PX4'] = {
+			label = 'PISTOL PX4',
+			weight = 3000,
+			durability = 0.3,
+			ammoname = 'ammo-9',
+		},
+
+		['WEAPON_ARCQB'] = {
+			label = 'AR CQB',
+			weight = 6000,
+			durability = 0.15,
+			ammoname = 'ammo-rifle'
+		},
+
+		['WEAPON_LILARP'] = {
+			label = 'Lil ARP',
+			weight = 5000,
+			durability = 0.25,
+			ammoname = 'ammo-rifle'
+		},
+
+		['WEAPON_CADRACO'] = {
+			label = 'Century Arms Draco',
+			weight = 6000,
+			durability = 0.15,
+			ammoname = 'ammo-rifle2',
+		},
+
+		['WEAPON_CAMICRODRACO'] = {
+			label = 'Century Arms BLK Micro Draco',
+			weight = 6000,
+			durability = 0.15,
+			ammoname = 'ammo-rifle2',
+		},
+
+		 ['WEAPON_TP9'] = {
+		 	label = 'TP9 ELITE',
+		 	weight = 1,
+		 	durability = 0.3,
+		 	ammoname = 'ammo-9',
+		 },
+
+		 ['WEAPON_G17GB'] = {
+		 	label = 'G17 Gold Button',
+		 	weight = 3000,
+		 	durability = 0.15,
+		 	ammoname = 'ammo-9',
+		 },
+
+		 ['WEAPON_G18'] = {
+		 	label = 'G18',
+		 	weight = 3000,
+		 	durability = 0.2,
+		 	ammoname = 'ammo-9',
+		 },
+
+		 ['WEAPON_INCOGNITOG26'] = {
+		 	label = 'Incognito G26',
+		 	weight = 3000,
+		 	durability = 0.2,
+		 	ammoname = 'ammo-9',
+		 },
+
+		 ['WEAPON_LLJG17'] = {
+		 	label = 'LLJ G17',
+		 	weight = 3000,
+		 	durability = 0.2,
+		 	ammoname = 'ammo-9',
+		 },
+
+		['WEAPON_MAC10'] = {
+			label = 'UZI 10',
+			weight = 6000,
+			durability = 0.15,
+			ammoname = 'ammo-45',
+		},
+
+		['WEAPON_REM870'] = {
+			label = 'Sawnoff Shotgun 870',
+			weight = 1,
+			durability = 0.4,
+			ammoname = 'ammo-shotgun'
+		},
