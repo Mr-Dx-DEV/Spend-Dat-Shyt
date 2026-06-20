@@ -1,0 +1,111 @@
+	['WEAPON_ARP9'] = {
+			label = 'Pink ARP-9',
+			weight = 4400,
+			durability = 0.4,
+			ammoname = 'ammo-9'
+		},
+
+		['WEAPON_PINKARP'] = {
+			label = 'Pink ARP',
+			weight = 5400,
+			durability = 0.3,
+			ammoname = 'ammo-rifle'
+		},
+
+		['WEAPON_PINKARPISTOL'] = {
+			label = 'Pink AR-Pistol',
+			weight = 5400,
+			durability = 0.3,
+			ammoname = 'ammo-rifle'
+		},
+
+		['WEAPON_PINKDRACO'] = {
+			label = 'Pink Draco',
+			weight = 4100,
+			durability = 0.3,
+			ammoname = 'ammo-rifle2'
+		},
+
+		-- ['WEAPON_PINKGLOCK21'] = {
+		-- 	label = 'Pink Pistol 21',
+		-- 	weight = 2400,
+		-- 	durability = 0.3,
+		-- 	ammoname = 'ammo-45'
+		-- },
+
+		-- ['WEAPON_PINKM18'] = {
+		-- 	label = 'Pink Pistol M18',
+		-- 	weight = 2100,
+		-- 	durability = 0.3,
+		-- 	ammoname = 'ammo-9'
+		-- },
+
+		['WEAPON_PINKM45A1'] = {
+			label = 'Pink M45A1',
+			weight = 2600,
+			durability = 0.5,
+			ammoname = 'ammo-45'
+		},
+
+		['WEAPON_PINKMINIDRACO'] = {
+			label = 'Pink Mini Draco',
+			weight = 2800,
+			durability = 0.6,
+			ammoname = 'ammo-rifle2'
+		},
+
+		['WEAPON_MP5'] = {
+			label = 'Pink MP5',
+			weight = 2800,
+			durability = 0.5,
+			ammoname = 'ammo-9'
+		},
+
+		['WEAPON_PINKMP7'] = {
+			label = 'Pink MP7',
+			weight = 2800,
+			durability = 0.6,
+			ammoname = 'ammo-9'
+		},
+
+		-- ['WEAPON_PINKP80'] = {
+		-- 	label = 'Pink Pistol P80',
+		-- 	weight = 2400,
+		-- 	durability = 0.5,
+		-- 	ammoname = 'ammo-9'
+		-- },
+
+		-- ['WEAPON_PINKSTRAPARP'] = {
+		-- 	label = 'Pink Strap ARP',
+		-- 	weight = 4100,
+		-- 	durability = 0.5,
+		-- 	ammoname = 'ammo-rifle'
+		-- },
+
+		['WEAPON_PINKSWMP9'] = {
+			label = 'Pink Pistol MP9',
+			weight = 2300,
+			durability = 0.4,
+			ammoname = 'ammo-9'
+		},
+
+		['WEAPON_PINKDAGGER19'] = {
+			label = 'Pink Dagger 19',
+			weight = 2300,
+			durability = 0.4,
+			ammoname = 'ammo-9'
+		},
+
+		-- ['WEAPON_PINKG40L'] = {
+		-- 	label = 'Pink Pistol 40L',
+		-- 	weight = 2300,
+		-- 	durability = 0.4,
+		-- 	ammoname = 'ammo-10'
+		-- },
+
+		['WEAPON_PINKMPA30'] = {
+			label = 'Pink Uzi 30',
+			weight = 2300,
+			durability = 0.4,
+			ammoname = 'ammo-9'
+		},
