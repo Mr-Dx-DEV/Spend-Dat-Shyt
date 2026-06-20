@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<audio id="rumbleSound" src="stomach_rumble.ogg" preload="auto"></audio>
+<script>
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.action === 'playRumble') {
+        const audio = document.getElementById('rumbleSound');
+        if (audio) {
+            audio.volume = 0.8;
+            audio.currentTime = 0;
+            audio.play().catch(() => {});
+        }
+    }
+});
+</script>
+</body>
+</html>

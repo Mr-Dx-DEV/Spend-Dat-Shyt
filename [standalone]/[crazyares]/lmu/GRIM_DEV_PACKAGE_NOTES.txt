@@ -1,0 +1,9 @@
+GRIM DEVELOPMENT COMPLETE PACKAGE PATCH
+- Child Support updated to 25% payout
+- Optional black money counting controlled in Config.ChildSupport
+- Optional role lock for Child Support (job/gang/citizenid)
+- Plan C remains in pharmacy
+- Child Support moved next to Bro Code on home screen
+- Added Baby Profiles app/page
+- Added NUI sound effects (click/open/success/error)
+- Child support payout item defaults to bank for ox_inventory

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneaker Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <audio id="click-sound" src="sounds/click.mp3" preload="auto"></audio>
+    <audio id="notification-sound" src="sounds/notification.mp3" preload="auto"></audio>
+
+    <!-- ── Notification toast (top-right, outside phone) ────────────── -->
+    <div id="notification" class="notif-toast">
+        <div class="notif-inner">
+            <img src="image/image.png" alt="icon" class="notif-icon">
+            <div class="notif-body">
+                <span class="notif-label">Sneaker Connect</span>
+                <p id="notification-message">Notification</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── iPhone shell ─────────────────────────────────────────────── -->
+    <div class="iphone" id="iphone">
+
+        <!-- Dynamic island -->
+        <div class="dynamic-island">
+            <div class="di-camera"></div>
+            <div class="di-speaker"></div>
+        </div>
+
+        <!-- ── SCREEN: all views live here ──────────────────────────── -->
+        <div class="phone-screen">
+
+            <!-- HOME VIEW -->
+            <div class="view" id="view-home">
+
+                <!-- Status bar overlaid on wallpaper -->
+                <div class="status-bar">
+                    <span class="status-time" id="status-time">12:00</span>
+                    <div class="status-icons">
+                        <i class="fas fa-signal"></i>
+                        <i class="fas fa-wifi" id="wifi-icon"></i>
+                        <i class="fas fa-battery-full"></i>
+                    </div>
+                </div>
+                <div class="home-wallpaper">
+                    <img src="image/background.png" alt="wallpaper" class="wallpaper-img">
+                </div>
+                <div class="home-apps">
+                    <button class="app-icon" id="btn-deliver">
+                        <div class="app-icon-bg deliver-bg">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <span>Deliver</span>
+                    </button>
+                    <button class="app-icon" id="btn-settings">
+                        <div class="app-icon-bg settings-bg">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <span>Settings</span>
+                    </button>
+                </div>
+                <div class="home-indicator"></div>
+            </div>
+
+            <!-- DELIVER VIEW (slides up inside the phone) -->
+            <div class="view view-panel" id="view-deliver">
+                <div class="panel-header">
+                    <button class="panel-back" id="back-deliver">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span></span>
+                </div>
+                <div class="panel-body">
+                    <div class="panel-hero">
+                        <div class="panel-hero-icon">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <h2>Ready to deliver?</h2>
+                        <p>We'll check your inventory and set a GPS drop-off point for your sneakers.</p>
+                    </div>
+                    <div class="panel-info-row">
+                        <div class="panel-info-chip">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Random location</span>
+                        </div>
+                        <div class="panel-info-chip">
+                            <i class="fas fa-dollar-sign"></i>
+                            <span>Paid on delivery</span>
+                        </div>
+                    </div>
+                    <button class="panel-cta" id="btn-start-delivery">
+                        <i class="fas fa-shipping-fast"></i>
+                        Start Delivery
+                    </button>
+                </div>
+            </div>
+
+            <!-- SETTINGS VIEW -->
+            <div class="view view-panel" id="view-settings">
+                <div class="panel-header">
+                    <button class="panel-back" id="back-settings">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="panel-title">Settings</span>
+                    <span></span>
+                </div>
+                <div class="panel-body">
+                    <div class="settings-section-label">Appearance</div>
+                    <div class="settings-row">
+                        <div class="settings-row-left">
+                            <div class="settings-row-icon" style="background:#e8a87c;">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <span>Border Colour</span>
+                        </div>
+                        <input type="color" id="border-color-picker" value="#ee82ee" class="color-swatch">
+                    </div>
+                    <button class="panel-cta" id="btn-apply-color" style="margin-top:16px;">
+                        Apply
+                    </button>
+
+                    <div class="settings-section-label" style="margin-top:24px;">About</div>
+                    <div class="settings-row no-action">
+                        <div class="settings-row-left">
+                            <div class="settings-row-icon" style="background:#6bab8e;">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <span>Version</span>
+                        </div>
+                        <span class="settings-row-value">1.0.0</span>
+                    </div>
+                    <div class="settings-row no-action">
+                        <div class="settings-row-left">
+                            <div class="settings-row-icon" style="background:#b58ca8;">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <span>Author</span>
+                        </div>
+                        <span class="settings-row-value">CodeWave</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /phone-screen -->
+    </div><!-- /iphone -->
+
+    <script src="script.js"></script>
+</body>
+</html>

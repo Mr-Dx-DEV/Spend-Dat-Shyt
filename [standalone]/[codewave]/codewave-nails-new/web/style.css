@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&family=Pacifico&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Playfair Display', serif;
+    color: #4a4a4a; /* Softer dark grey text */
+    background-color: #fff0f5; /* Lavender blush background */
+}
+
+#menu-container, #crafting-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1400px;
+    background: linear-gradient(145deg, #ffe6f2, #f9d7eb); /* Soft pink gradient background */
+    border-radius: 25px; /* Increased rounding for a softer look */
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+#menu-header, #crafting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    color: #4a4a4a;
+    border-bottom: 3px solid #ff69b4; /* Hot pink border */
+    box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Pacifico', cursive; /* Decorative script font for headers */
+}
+
+#menu-header .header-logo, #crafting-header .header-logo, #info-header .header-logo {
+    height: 180px;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(255, 105, 180, 0.4)); /* Soft pink drop shadow for a vibrant glow */
+    animation: float 4s ease-in-out 0s infinite alternate;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0) translateY(0) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: translateX(15px) translateY(-10px) rotate(-3deg) scale(1.05);
+    }
+    50% {
+        transform: translateX(-15px) translateY(10px) rotate(3deg) scale(1.1);
+    }
+    75% {
+        transform: translateX(10px) translateY(-15px) rotate(-2deg) scale(1.05);
+    }
+}
+
+#menu-header .header-icon, #crafting-header .header-icon {
+    margin: 0 10px;
+}
+
+.shoe-logo {
+    height: 210px;
+    width: auto;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#close-button, #close-crafting-button {
+    background: none;
+    border: none;
+    color: #ff69b4; /* Hot pink text */
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#menu, #crafting-menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    gap: 20px;
+    overflow-y: auto;
+    max-height: 600px;
+    justify-content: center;
+}
+
+/* Custom scrollbar styles */
+#menu::-webkit-scrollbar, #crafting-menu::-webkit-scrollbar {
+    width: 12px;
+}
+
+#menu::-webkit-scrollbar-track, #crafting-menu::-webkit-scrollbar-track {
+    background: #ffe6f2; /* Soft pink */
+    border-radius: 10px;
+}
+
+#menu::-webkit-scrollbar-thumb, #crafting-menu::-webkit-scrollbar-thumb {
+    background-color: #ff69b4; /* Hot pink */
+    border-radius: 10px;
+}
+
+#menu::-webkit-scrollbar-thumb:hover, #crafting-menu::-webkit-scrollbar-thumb:hover {
+    background-color: #ff1493; /* Deeper pink */
+}
+
+.menu-item, .crafting-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 240px;
+    padding: 20px;
+    background: #ffffff;
+    color: #4a4a4a;
+    border-radius: 15px; /* Increased rounding */
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #fff0f5, #ffe6f2); /* Light gradient for a soft, cohesive look */
+}
+
+.menu-item img, .crafting-item img {
+    height: 200px;
+    width: 200px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.menu-item span, .crafting-item span {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu-item .item-price {
+    font-size: 18px;
+    margin: 8px 0;
+    color: #ff69b4; /* Hot pink */
+}
+
+.menu-item input, .crafting-item input {
+    width: 70px;
+    margin-top: 12px;
+    border: 2px solid #ff69b4; /* Hot pink */
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+.menu-item input:focus, .crafting-item input:focus {
+    border-color: #ff1493; /* Deeper pink */
+}
+
+.menu-item button, .crafting-item button {
+    margin-top: 12px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: #ff69b4; /* Hot pink */
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item button:hover, .crafting-item button:hover {
+    background: #ff1493; /* Deeper pink */
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover, .crafting-item:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+#notification-container {
+    position: fixed;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    z-index: 1000;
+}
+
+.notification {
+    padding: 18px 35px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    animation: fadeInOut 4s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.notification.success {
+    background: #28a745; /* Success green */
+}
+
+.notification.error {
+    background: #dc3545; /* Error red */
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 182, 193, 0.3); /* Light pink */
+    border-radius: 50%;
+    border-top-color: #ff69b4; /* Hot pink */
+    animation: spin 1s ease-in-out infinite;
+    margin: 25px auto;
+    position: relative;
+    background: linear-gradient(135deg, #ffe6f2, #fff0f5); /* Subtle gradient */
+}
+
+.spinner-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #ff69b4; /* Hot pink */
+}
+
+#info-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1400px;
+    background: linear-gradient(145deg, #ffe6f2, #f9d7eb); /* Soft pink gradient background */
+    border-radius: 25px; /* Increased rounding for a softer look */
+    overflow: hidden;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+#info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    color: #4a4a4a;
+    border-bottom: 3px solid #ff69b4; /* Hot pink border */
+    box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Pacifico', cursive; /* Decorative script font for headers */
+}
+
+#info-header .header-logo {
+    height: 80px;
+    margin: 0 auto;
+}
+
+#close-info-button {
+    background: none;
+    border: none;
+    color: #ff69b4; /* Hot pink */
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#info-content {
+    padding: 25px;
+    color: #666666; /* Medium grey text */
+}
+
+.themed-button {
+    margin: 20px auto;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #ff69b4; /* Hot pink */
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
+    display: block;
+    text-align: center;
+    font-family: 'Pacifico', cursive; /* Decorative script font for buttons */
+}
+
+.themed-button:hover {
+    background: #ff1493; /* Deeper pink */
+    transform: scale(1.1);
+}
+
+/* New styles for crafting required items */
+.required-items {
+    font-family: 'Open Sans', sans-serif;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 12px; /* Softer corners */
+    margin-top: 10px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    color: #ff69b4; /* Hot pink text */
+}
+
+.required-items div {
+    margin: 5px 0;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}

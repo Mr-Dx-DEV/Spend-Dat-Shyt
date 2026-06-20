@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link href="style.css" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+		<link href="https://fonts.cdnfonts.com/css/akrobat" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+	<body style="display:none">
+        <div style="position: absolute;width: 570px;height: 60px;z-index: 100;top: 15.5%;margin-left: 20px;display: flex;">
+            <p style="font-family: 'Montserrat', sans-serif;font-weight: bold;font-size: 35px;color: white;padding-left: 20px;padding-right: 20px;background: #ff69b4;height: max-content;">BEAUTY</p>
+            <p style="font-family: 'Montserrat', sans-serif;font-weight: bold;font-size: 35px;color: white;margin-left: 8px;">SALON</p>
+            <div id="hide"><i class="fa-solid fa-xmark" style="color:white; font-size: 35px;text-align: center;line-height: 50px;margin-left: auto; margin-right: auto;"></i></div>
+        </div>
+        <div style="position: absolute;width: 570px;height: 400px;background: rgb(12, 12, 12);z-index: 200;margin-left: 20px;top: 20%; border-top-right-radius: 12px; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;">
+            <div id="panel" style="height: 83%;overflow-x: auto;-webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgb(53 53 53)), to(rgb(0 0 0 / 84%)));">
+
+            </div>
+            <div id="buy" style="position: absolute;margin-left: 14px;bottom: 14px;height: 37px;font-size: 15px;font-family: 'Montserrat', sans-serif;letter-spacing: 1px;width: 95%;color: #fff;text-align: center;background: black;border-radius: 9px;cursor: pointer;">
+                <i class="fa-solid fa-check" style="margin-right:4px"></i>
+                <p style="line-height: 38px;display: inline-flex;">SAVE HAIRSTYLE</p>
+            </div>
+        </div>
+        <div style="position: absolute;display: grid;top: 28%;margin-left: 595px;">
+            <div class="itemCircle hair_circle">
+                <img class="itemIcon" id="hair" width="40" height="50" src="img/hair.svg">
+            </div>
+            <div class="itemCircle beard_circle">
+                <img class="itemIcon" id="beard" width="40" height="55" src="img/beard.svg">
+            </div>
+            <div class="itemCircle eye_circle">
+                <img class="itemIcon" id="eye" width="40" height="50" src="img/eye.svg">
+            </div>
+            <div class="itemCircle makeup_circle" style="display:none;">
+                <img class="itemIcon" id="makeup" width="40" height="50" src="img/makeup.svg">
+            </div>
+            <div class="itemCircle others_circle" style="display:none;">
+                <img class="itemIcon" id="others" width="40" height="50" src="img/others.svg">
+            </div>
+            <div class="itemCircle">
+                <img class="itemIcon" id="camrotate" width="40" height="50" src="img/camrotate.svg">
+            </div>
+        </div>
+        
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <!-- TABLET UI - Payment System -->
+        <!-- ═══════════════════════════════════════════════════════════════════════════════ -->
+        <div id="tablet-container">
+            <div id="tablet-frame">
+                <div id="tablet-screen">
+                    <!-- Header -->
+                    <div id="tablet-header">
+                        <div id="tablet-logo">
+                            <span class="logo-beauty">BEAUTY</span>
+                            <span class="logo-trap">TRAP</span>
+                        </div>
+                        <div id="tablet-close"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                    
+                    <!-- Navigation (Employee Only) -->
+                    <div id="tablet-nav" class="employee-only">
+                        <div class="tab-btn" data-tab="home"><i class="fa-solid fa-house"></i> Home</div>
+                        <div class="tab-btn" data-tab="services"><i class="fa-solid fa-dollar-sign"></i> Charge</div>
+                        <div class="tab-btn" data-tab="history"><i class="fa-solid fa-clock-rotate-left"></i> History</div>
+                        <div class="tab-btn" data-tab="stats"><i class="fa-solid fa-chart-line"></i> Stats</div>
+                        <div class="tab-btn" data-tab="appointments"><i class="fa-solid fa-calendar"></i> Appts</div>
+                        <div class="tab-btn management-only" data-tab="management"><i class="fa-solid fa-cog"></i> Manage</div>
+                    </div>
+                    
+                    <!-- Content Area -->
+                    <div id="tablet-content">
+                        
+                        <!-- HOME: Welcome Screen -->
+                        <div id="tab-home" class="tab-panel employee-only active">
+                            <div class="home-screen">
+                                <img src="img/logo.png" alt="Beauty Trap" class="home-logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+                                <div id="logo-fallback" class="logo-fallback" style="display:none;">
+                                    <span class="logo-beauty-big">BEAUTY</span>
+                                    <span class="logo-trap-big">TRAP</span>
+                                </div>
+                                <div class="home-tagline">Premium Beauty Salon Services</div>
+                                <div class="home-info">
+                                    <div class="home-stat">
+                                        <i class="fa-solid fa-spa"></i>
+                                        <span id="home-today-services">0</span>
+                                        <label>Today's Services</label>
+                                    </div>
+                                    <div class="home-stat">
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                        <span id="home-today-earned">$0</span>
+                                        <label>Earned Today</label>
+                                    </div>
+                                    <div class="home-stat">
+                                        <i class="fa-solid fa-users"></i>
+                                        <span id="home-today-customers">0</span>
+                                        <label>Customers</label>
+                                    </div>
+                                </div>
+                                <button id="start-charge-btn" class="home-cta"><i class="fa-solid fa-plus"></i> Start New Charge</button>
+                            </div>
+                        </div>
+                        
+                        <!-- SERVICES: Charge Selection -->
+                        <div id="tab-services" class="tab-panel employee-only">
+                            <div class="services-layout">
+                                <div class="services-column">
+                                    <div class="section-title">Services</div>
+                                    <div class="category-filter">
+                                        <button class="cat-btn active" data-category="all">All</button>
+                                        <button class="cat-btn" data-category="hair">Hair</button>
+                                        <button class="cat-btn" data-category="nails">Nails</button>
+                                        <button class="cat-btn" data-category="makeup">Makeup</button>
+                                    </div>
+                                    <div id="services-list"></div>
+                                    <div class="custom-charge-section">
+                                        <input type="text" id="custom-charge-name" placeholder="Custom charge name...">
+                                        <input type="number" id="custom-charge-input" placeholder="Amount...">
+                                        <button id="add-custom-charge"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div>
+                                <div class="invoice-column">
+                                    <div class="section-title">Invoice</div>
+                                    <div id="invoice-summary">
+                                        <div id="invoice-items"></div>
+                                        <div id="invoice-total">
+                                            <span>Subtotal:</span>
+                                            <span id="invoice-subtotal">$0</span>
+                                        </div>
+                                    </div>
+                                    <button id="pass-to-customer-btn" class="disabled" disabled>
+                                        <i class="fa-solid fa-paper-plane"></i> Pass to Customer
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- HISTORY: Transaction History -->
+                        <div id="tab-history" class="tab-panel employee-only">
+                            <div class="section-title">Recent Transactions</div>
+                            <div id="history-list">
+                                <div class="empty-list">Loading transactions...</div>
+                            </div>
+                        </div>
+                        
+<!-- STATS: Personal Statistics -->
+<div id="tab-stats" class="tab-panel employee-only">
+    <div class="section-title">Your Stats</div>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-label">Today's Earnings</div>
+            <div class="stat-value" id="stat-today-sales">$0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Today's Tips</div>
+            <div class="stat-value" id="stat-today-tips">$0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Today's Customers</div>
+            <div class="stat-value" id="stat-today-count">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Week Earnings</div>
+            <div class="stat-value" id="stat-week-sales">$0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Week Tips</div>
+            <div class="stat-value" id="stat-week-tips">$0</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-label">Week Customers</div>
+            <div class="stat-value" id="stat-week-count">0</div>
+        </div>
+    </div>
+</div>
+
+<!-- APPOINTMENTS -->
+<div id="tab-appointments" class="tab-panel employee-only">
+    <div class="section-title">My Appointments</div>
+    
+    <!-- Availability Management -->
+    <button id="manage-availability-btn" class="availability-btn">
+        <i class="fa-solid fa-calendar-check"></i> Manage My Availability
+    </button>
+    
+    <!-- Availability Editor (hidden by default) -->
+    <div id="availability-editor" style="display:none;">
+        <div class="availability-header">
+            <span>Set Your Weekly Schedule</span>
+            <button id="close-availability-btn" class="close-btn"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div id="availability-days">
+            <!-- Populated by JS -->
+        </div>
+        <div class="availability-actions">
+            <label class="toggle-label">
+                <input type="checkbox" id="accepting-bookings-toggle">
+                <span>Accept Bookings</span>
+            </label>
+            <button id="save-availability-btn" class="save-btn"><i class="fa-solid fa-save"></i> Save Availability</button>
+        </div>
+    </div>
+    
+    <!-- Upcoming Appointments -->
+    <div class="section-title" style="margin-top: 15px;">Upcoming Appointments</div>
+    <div id="appointments-list">
+        <div class="empty-list">No appointments scheduled</div>
+    </div>
+</div>
+                        
+                        <!-- MANAGEMENT -->
+<div id="tab-management" class="tab-panel employee-only management-only">
+    <div class="section-title">Business Overview</div>
+    <div class="management-content">
+        <div class="mgmt-card">
+            <div class="mgmt-label">Today</div>
+            <div class="mgmt-value" id="finance-today">$0</div>
+        </div>
+        <div class="mgmt-card">
+            <div class="mgmt-label">This Week</div>
+            <div class="mgmt-value" id="finance-week">$0</div>
+        </div>
+        <div class="mgmt-card">
+            <div class="mgmt-label">This Month</div>
+            <div class="mgmt-value" id="finance-month">$0</div>
+        </div>
+        <div class="mgmt-card">
+            <div class="mgmt-label">Society Balance</div>
+            <div class="mgmt-value" id="finance-balance">$0</div>
+        </div>
+    </div>
+    
+    <!-- SOCIETY BANKING -->
+    <div class="section-title" style="margin-top:20px;">Society Banking</div>
+    <div class="banking-section">
+        <div class="banking-row">
+            <div class="banking-action">
+                <label>Deposit Cash:</label>
+                <div class="banking-input-group">
+                    <span class="currency-symbol">$</span>
+                    <input type="number" id="deposit-amount" placeholder="0" min="0">
+                    <button id="deposit-btn" class="banking-btn deposit"><i class="fa-solid fa-arrow-up"></i> Deposit</button>
+                </div>
+            </div>
+            <div class="banking-action">
+                <label>Withdraw Cash:</label>
+                <div class="banking-input-group">
+                    <span class="currency-symbol">$</span>
+                    <input type="number" id="withdraw-amount" placeholder="0" min="0">
+                    <button id="withdraw-btn" class="banking-btn withdraw"><i class="fa-solid fa-arrow-down"></i> Withdraw</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- EMPLOYEE MANAGEMENT -->
+    <div class="section-title" style="margin-top:20px;">Employee Management</div>
+    <div class="employee-management">
+        <button id="hire-employee-btn" class="hire-btn"><i class="fa-solid fa-user-plus"></i> Hire New Employee</button>
+        <div id="nearby-hireable-list" style="display:none;"></div>
+        <div id="current-employees-list">
+            <div class="empty-list">Loading employees...</div>
+        </div>
+    </div>
+    
+    <div class="section-title" style="margin-top:20px;">Service Prices</div>
+    <div id="price-management-list"></div>
+    
+    <div class="section-title" style="margin-top:20px;">Shelf Product Prices</div>
+    <div id="shelf-prices-list">
+        <div class="empty-list">Loading shelf prices...</div>
+    </div>
+    
+    <div class="section-title" style="margin-top:20px;">Settings</div>
+    <div class="settings-row">
+        <label>Charge Limit: $</label>
+        <input type="number" id="charge-limit-input" value="500" min="0" max="10000">
+        <button id="update-charge-limit-btn">Update</button>
+    </div>
+    
+    <div class="section-title" style="margin-top:20px;">Employee Stats</div>
+    <div id="employee-stats-list">
+        <div class="empty-list">No employee data</div>
+    </div>
+    
+    <div class="section-title" style="margin-top:20px;">Declined Transactions</div>
+    <div id="declined-list">
+        <div class="empty-list">No declined transactions</div>
+    </div>
+</div>
+                        
+                        <!-- CUSTOMER: Payment Section -->
+                        <div id="tab-customer-payment" class="tab-panel customer-only">
+                            <div class="customer-header">
+                                <div class="receipt-title">RECEIPT</div>
+                                <div class="stylist-name">Stylist: <span id="payment-employee-name">-</span></div>
+                            </div>
+                            
+                            <div id="payment-services"></div>
+                            
+                            <div class="customer-totals">
+                                <div class="total-row"><span>Subtotal:</span><span id="payment-subtotal">$0</span></div>
+                                <div class="total-row"><span>Tip:</span><span id="payment-tip">$0</span></div>
+                                <div class="total-row total-final"><span>Total:</span><span id="payment-total">$0</span></div>
+                            </div>
+                            
+                            <div class="tip-section">
+                                <div class="tip-label">Add a tip?</div>
+                                <div class="tip-buttons">
+                                    <button class="tip-btn" data-tip="0">No Tip</button>
+                                    <button class="tip-btn" data-tip="15">15%</button>
+                                    <button class="tip-btn" data-tip="20">20%</button>
+                                    <button class="tip-btn" data-tip="25">25%</button>
+                                </div>
+                                <input type="number" id="custom-tip-input" placeholder="Custom tip amount...">
+                            </div>
+                            
+                            <div class="payment-buttons">
+                                <button class="pay-btn cash" data-type="cash"><i class="fa-solid fa-money-bill"></i> Pay Cash</button>
+                                <button class="pay-btn card" data-type="card"><i class="fa-solid fa-credit-card"></i> Pay Card</button>
+                            </div>
+                            
+                            <button id="decline-payment-btn" class="decline-btn"><i class="fa-solid fa-xmark"></i> Decline</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="script.js" type="text/javascript"></script>
+    </body>
+</html>

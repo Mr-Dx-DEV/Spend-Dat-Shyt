@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sneakers V4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="display: none;">
+
+    <!-- ── Purchase Menu ── -->
+    <div id="menu-container">
+        <div id="menu-header">
+            <img src="image/cw-leftshoe.png" alt="Left Sneakers" class="header-icon bundle-logo">
+            <img src="image/codewave-sneakerlogo.png" alt="Sneakers Logo" class="header-logo">
+            <img src="image/cw-rightshoe.png" alt="Right Sneakers" class="header-icon bundle-logo">
+            <button id="close-button">X</button>
+        </div>
+        <div id="menu"></div>
+    </div>
+
+    <!-- ── Crafting Menu ── -->
+    <div id="crafting-container" style="display: none;">
+        <div id="crafting-header">
+            <img src="image/cw-leftshoe.png" alt="Left Sneakers" class="header-icon bundle-logo">
+            <img src="image/codewave-sneakerlogo.png" alt="Sneakers Logo" class="header-logo">
+            <img src="image/cw-rightshoe.png" alt="Right Sneakers" class="header-icon bundle-logo">
+            <button id="close-crafting-button">X</button>
+        </div>
+
+        <!-- XP bar strip -->
+        <div id="xp-bar-strip">
+            <div id="xp-strip-left">
+                <span id="xp-strip-badge">LVL <span id="xp-strip-level">1</span></span>
+                <span id="xp-strip-title">Fresh Kicks</span>
+            </div>
+            <div id="xp-strip-track">
+                <div id="xp-strip-fill"></div>
+                <span id="xp-strip-label">0 / 150 XP</span>
+            </div>
+            <button id="xp-panel-open-btn" title="View level details">
+                <i class="fas fa-star"></i> My Progress
+            </button>
+        </div>
+
+        <div id="crafting-menu"></div>
+        <button id="more-info-button" class="themed-button">More Info</button>
+        <div id="loading-spinner" class="spinner" style="display: none;">
+            <i class="fas fa-cog spinner-icon"></i>
+        </div>
+    </div>
+
+    <!-- ── Info Panel ── -->
+    <div id="info-container" style="display: none;">
+        <div id="info-header">
+            <img src="image/codewave-sneakerlogo.png" alt="Sneakers Logo" class="header-logo">
+            <button id="close-info-button">X</button>
+        </div>
+        <div id="info-content">
+            <h1>What can I do with my collected Sneakers?</h1>
+            <h2>Sneakers crafted here can be sold to clients around the city in two ways! The first way is using /sellsneakers which will make clients come to you to sell!
+                The second way is to buy a client phone &amp; use that to deliver the sneakers across the city, which usually earns more money!
+            </h2>
+        </div>
+    </div>
+
+    <!-- ── XP / Progress Modal ── -->
+    <div id="xp-modal-overlay" style="display: none;">
+        <div id="xp-modal">
+            <div id="xp-modal-header">
+                <div id="xp-modal-title-row">
+                    <i class="fas fa-crown xp-crown-icon"></i>
+                    <h2>Sneaker Reputation</h2>
+                </div>
+                <button id="close-xp-modal">X</button>
+            </div>
+
+            <div id="xp-modal-body">
+
+                <!-- Current rank card -->
+                <div id="xp-rank-card">
+                    <div id="xp-level-circle">
+                        <span id="xp-modal-level-num">1</span>
+                        <span id="xp-modal-level-lbl">LEVEL</span>
+                    </div>
+                    <div id="xp-rank-info">
+                        <div id="xp-modal-rank-title">Fresh Kicks</div>
+                        <div id="xp-modal-multiplier-tag">
+                            <i class="fas fa-dollar-sign"></i> Sale Bonus: <strong id="xp-modal-multiplier-val">+0%</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- XP progress bar -->
+                <div id="xp-modal-progress-wrap">
+                    <div id="xp-modal-bar-track">
+                        <div id="xp-modal-bar-fill"></div>
+                    </div>
+                    <div id="xp-modal-bar-labels">
+                        <span id="xp-modal-current-xp">0 XP</span>
+                        <span id="xp-modal-next-level-label">Next level: 150 XP</span>
+                    </div>
+                </div>
+
+                <!-- Why level up -->
+                <div id="xp-why-section">
+                    <h3><i class="fas fa-chart-line"></i> Why level up?</h3>
+                    <div id="xp-why-grid">
+                        <div class="xp-why-card">
+                            <i class="fas fa-coins xp-why-icon"></i>
+                            <div class="xp-why-text">
+                                <strong>Higher Payouts</strong>
+                                <p>Every level increases the money you earn per sale. A Level 10 Legendary Cobbler earns <em>70% more</em> than a newcomer.</p>
+                            </div>
+                        </div>
+                        <div class="xp-why-card">
+                            <i class="fas fa-lock-open xp-why-icon"></i>
+                            <div class="xp-why-text">
+                                <strong>Unlock New Recipes</strong>
+                                <p>Higher-tier sneakers and apparel are locked behind levels. Reaching Level 3, 5, 7 and 9 unlocks premium recipes with better yields and higher sale prices.</p>
+                            </div>
+                        </div>
+                        <div class="xp-why-card">
+                            <i class="fas fa-trophy xp-why-icon"></i>
+                            <div class="xp-why-text">
+                                <strong>Prestige Titles</strong>
+                                <p>Climb from <em>Fresh Kicks</em> to <em>Legendary Cobbler</em>. Each title is a badge of honour on the streets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Level roadmap -->
+                <div id="xp-roadmap-section">
+                    <h3><i class="fas fa-map-signs"></i> Level Roadmap</h3>
+                    <div id="xp-roadmap-list"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="notification-container"></div>
+    <script src="script.js"></script>
+</body>
+</html>

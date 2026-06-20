@@ -1,0 +1,102 @@
+════════════════════════════════════════════════════════
+  grim_lovemenu  —  PATCH NOTES
+  Grim Development
+════════════════════════════════════════════════════════
+
+v2.2.1
+──────
+REMOVED
+  - Bro Code social app (server, client, HTML, CSS, JS, SQL)
+  - Coffee App social app (server, client, HTML, CSS, JS, SQL)
+  - brocode_logo.png / coffee_logo.png assets
+  - All social feed DB tables (see migration.sql for optional cleanup)
+
+ADDED (restored from v1 / new)
+  - Plan C (morning-after pill) item — 90% effective within 24h window
+      · Configurable: PlanCEnabled, PlanCWindowHours, PlanCSuccessChance
+      · Full server logic: window check, probability roll, DB cleanup
+      · export: grim_lovemenu.usePlanC
+  - Rhino Pill item (cosmetic / RP flavor) restored from v1
+  - Lubricant item restored from v1
+  - Plan C, Rhino Pill, Lubricant added to pharmacy shop config
+  - Plan C strings added: PlanCSuccess, PlanCFailed, PlanCTooLate
+
+IMPROVED
+  - migration.sql sectioned per system (Pregnancy / STD / Contraception
+    / Condoms / Vitamins / Partners / DNA / Ultrasound) — easier to read
+  - migration.sql includes commented DROP TABLE block for old social tables
+  - fxmanifest cleaned up (no orphaned file refs)
+  - cl_main item handlers consolidated to one-liners
+  - Version bumped to 2.2.0
+
+UNCHANGED
+  - Full synced animation system with in-world preview
+  - Partner register / unregister (mutual consent)
+  - Pregnancy system (test, vitamins, ultrasound, give birth, birth cert)
+  - STD system (7-panel test, prescription meds, passive symptoms)
+  - DNA paternity test + result item viewer
+  - Pharmacy shop + ox_target zone
+  - Risk calculation engine (condoms / pill / pull-out / both / unprotected)
+  - QBX / QBCore / ESX / standalone bridge
+  - Dark + Pink theme toggle
+  - All 18 synced animations
+
+v2.1.1  (previous)
+────────────────────
+  - Partner sync rebuild
+  - Bro Code + Coffee App social feeds
+  - In-world animation preview (clone system)
+  - DNA result + birth cert item viewers
+  - Ultrasound report item
+  - Mutual consent unregister system
+
+- Added requester-side finish prompt during unprotected paired scenes (E key)
+- Pregnancy roll for unprotected finish scenes now requires explicit finish trigger
+- Increased tablet shell width for better on-screen fit
+
+- Added server-tracked selected partner state
+- Fixed selected partner desync after UI refresh
+- Added support for multiple registered partners
+- Unregister now targets current selected partner when provided
+
+- Partner picker now auto-selects the sole available partner.
+- Partner picker now uses server-synced players/registered partners only.
+- Unregister now removes the partner link immediately for the chosen or sole registered partner.
+
+- Added Bro Code app (male-only mp_m_freemode_01) with posts and comments.
+- Coffee app now strictly checks mp_f_freemode_01.
+- Added Purple and Teal tablet themes.
+- Pregnancy test item now uses a direct client event instead of resource export to avoid folder-name issues.
+- Added pregnancy test false-negative logic for very early stages.
+- Finish In Her prompt now falls back to whitelisted scenes even if preview protection sync misses.
+
+- Added missing CSS theme definitions for purple and teal modes.
+
+
+Patch pass (debug cleanup):
+- Added image fields to all shared lovemenu items
+- Fixed client tablet partial update overwrite by merging updates
+- Fixed DNA tests to validate pregnancy links in both directions
+- Fixed birth reminder loop stacking with start/stop guard
+
+Deep-dive cleanup
+- Fixed DATETIME parsing for give-birth readiness checks
+- Fixed stored ultrasound scan age math using parsed DATETIME values
+- Removed duplicate birth-ready push notification behavior
+- Relaxed Coffee/Bro Code ped gating for custom peds unless strict mode is enabled
+- Added framework money fallback for pharmacy bank purchases
+- Added startup warning for missing ox_inventory item registrations
+
+
+[Child Support]
+- Added Child Support home tile and full page UI
+- DNA confirmation now gates child support eligibility
+- Added one-time 15% payout based on father cash + bank + optional dirty money
+- Added server-side single-claim protection and status refresh
+
+
+Pregnancy sync patch:
+- unified active pregnancy lookup through GrimGetActivePregnancy()
+- pregnancy test and tablet now read the same latest active pregnancy row
+- forced pregnancy update push after pregnancy test use
+- latest active pregnancy queries now sort by conceived_at/id desc

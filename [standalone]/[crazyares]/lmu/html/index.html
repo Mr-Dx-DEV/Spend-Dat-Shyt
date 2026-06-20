@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Grim Love Menu</title>
+<link rel="stylesheet" href="assets/css/tablet.css" />
+</head>
+<body>
+<div id="overlay" class="overlay hidden" data-theme="pink">
+    <div class="overlay-glow overlay-glow--a"></div>
+    <div class="overlay-glow overlay-glow--b"></div>
+    <div class="overlay-glow overlay-glow--c"></div>
+
+    <section id="tabletShell" class="tablet-shell" aria-hidden="true">
+        <div class="shell-edge shell-edge--left">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <button
+            class="hardware-button hardware-button--standby"
+            type="button"
+            aria-label="Toggle standby"
+            title="Toggle standby"
+            onclick="toggleStandby()"
+        ></button>
+        <span class="hardware-button hardware-button--volume"></span>
+        <span class="hardware-button hardware-button--volume-small"></span>
+
+        <div class="tablet-frame">
+            <span class="tablet-camera"></span>
+            <span class="tablet-speaker"></span>
+
+            <div class="tablet-screen">
+                <div class="screen-backdrop"></div>
+                <div class="screen-watermark">
+                    <img id="watermarkLogo" alt="Grim Development watermark" />
+                </div>
+
+                <div id="screenWake" class="screen-wake hidden">
+                    <div class="screen-wake__panel">
+                        <div class="screen-wake__logo">
+                            <img id="wakeLogo" alt="Grim Development logo" />
+                            <span class="logo-fallback">Grim Development</span>
+                        </div>
+                        <p>Standby Mode</p>
+                        <span>Press the side button again to wake the tablet.</span>
+                    </div>
+                </div>
+
+                <header class="topbar">
+                    <div class="brand-stack">
+                        <div class="screen-time" id="statusTime">00:00</div>
+                        <div class="brand-lockup">
+                            <div class="brand-mark">
+                                <img id="brandLogo" alt="Grim Development logo" />
+                                <span class="logo-fallback">Grim</span>
+                            </div>
+                            <div class="brand-copy">
+                                <strong>Love Menu</strong>
+                                <span>GRIM DEVELOPMENT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="topbar-actions">
+                        <button
+                            id="protectionChip"
+                            class="status-chip status-chip--warn"
+                            type="button"
+                            onclick="showPage('protection')"
+                            title="Open protection"
+                        >
+                            <span class="status-chip__icon">Shield</span>
+                            <span id="protectionChipLabel" class="status-chip__label">Unprotected</span>
+                        </button>
+
+                        <button
+                            id="themeToggle"
+                            class="status-chip status-chip--theme"
+                            type="button"
+                            onclick="cycleTheme()"
+                            title="Change theme"
+                        >
+                            <span class="status-chip__icon">Theme</span>
+                            <span id="themeToggleLabel" class="status-chip__label">Pink Mode</span>
+                        </button>
+
+                        <button
+                            class="close-button"
+                            type="button"
+                            aria-label="Close tablet"
+                            title="Close tablet"
+                            onclick="closeTablet()"
+                            data-sound="none"
+                        >
+                            ×
+                        </button>
+                    </div>
+                </header>
+
+                <main class="screen-body">
+                    <section id="page-home" class="page active">
+                        <div id="home-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-animations" class="page">
+                        <div id="animations-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-protection" class="page">
+                        <div id="protection-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-pregnancy" class="page">
+                        <div id="pregnancy-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-std" class="page">
+                        <div id="std-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-pharmacy" class="page">
+                        <div id="pharmacy-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-dna" class="page">
+                        <div id="dna-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-childsupport" class="page">
+                        <div id="childsupport-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-coffee" class="page">
+                        <div id="coffee-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-brocode" class="page">
+                        <div id="brocode-page-content" class="page-content"></div>
+                    </section>
+
+                    <section id="page-babyprofiles" class="page">
+                        <div id="babyprofiles-page-content" class="page-content"></div>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <div id="partnerModal" class="modal hidden">
+        <div class="modal-card">
+            <div class="modal-card__head">
+                <div>
+                    <p class="eyebrow">Partner Picker</p>
+                    <h3 id="partnerModalTitle">Select partner</h3>
+                </div>
+                <button class="ghost-button" type="button" onclick="closeModal('partnerModal')">Close</button>
+            </div>
+            <div id="partnerPickerList" class="picker-list"></div>
+        </div>
+    </div>
+
+    <div id="viewerModal" class="modal hidden">
+        <div class="modal-card modal-card--viewer">
+            <div class="modal-card__head">
+                <div>
+                    <p id="viewerLabel" class="eyebrow">Viewer</p>
+                    <h3 id="viewerTitle">Record Viewer</h3>
+                </div>
+                <button class="ghost-button" type="button" onclick="closeModal('viewerModal')">Close</button>
+            </div>
+            <div id="viewerContent" class="viewer-content"></div>
+        </div>
+    </div>
+
+    <div id="confirmModal" class="modal hidden">
+        <div class="modal-card modal-card--confirm">
+            <div class="modal-card__head">
+                <div>
+                    <p class="eyebrow">Confirm Action</p>
+                    <h3 id="confirmModalTitle">Confirm purchase</h3>
+                </div>
+                <button class="ghost-button" type="button" onclick="closeModal('confirmModal')">Close</button>
+            </div>
+            <p id="confirmModalBody" class="modal-copy">Are you sure you want to continue?</p>
+            <div class="button-row button-row--end">
+                <button class="ghost-button" type="button" onclick="closeModal('confirmModal')">Cancel</button>
+                <button id="confirmModalAction" class="primary-button" type="button">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="unregBanner" class="request-banner hidden">
+        <div>
+            <p class="eyebrow">Partner Request</p>
+            <p id="unregBannerText" class="request-banner__text">A partner wants to unregister.</p>
+        </div>
+        <div class="button-row">
+            <button class="ghost-button" type="button" onclick="declineUnreg()">Decline</button>
+            <button class="primary-button" type="button" onclick="acceptUnreg()">Accept</button>
+        </div>
+    </div>
+
+    <div id="vitaminReminder" class="vitamin-banner hidden">
+        <div>
+            <p class="eyebrow">Care Reminder</p>
+            <p class="vitamin-banner__text">Your prenatal vitamin window is ready for the next dose.</p>
+        </div>
+        <div class="button-row">
+            <button class="ghost-button" type="button" onclick="hideVitaminReminder()">Dismiss</button>
+            <button class="primary-button" type="button" onclick="usePrenatalVitamins()">Take Dose</button>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <audio id="sfx-click" preload="auto" src="assets/sfx/click.wav"></audio>
+    <audio id="sfx-open" preload="auto" src="assets/sfx/open.wav"></audio>
+    <audio id="sfx-success" preload="auto" src="assets/sfx/success.wav"></audio>
+    <audio id="sfx-error" preload="auto" src="assets/sfx/error.wav"></audio>
+</div>
+
+<script src="assets/js/tablet.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

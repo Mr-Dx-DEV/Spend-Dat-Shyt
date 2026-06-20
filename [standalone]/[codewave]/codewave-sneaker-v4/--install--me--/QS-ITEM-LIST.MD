@@ -1,0 +1,460 @@
+['leather_materials'] = {
+    ['name'] = 'leather_materials',
+    ['label'] = 'Leathers',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'leather_materials.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Leathers'
+},
+['shoe_foam'] = {
+    ['name'] = 'shoe_foam',
+    ['label'] = 'Foam Material',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'shoe_foam.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Foam Material'
+},
+['clothe_materials'] = {
+    ['name'] = 'clothe_materials',
+    ['label'] = 'Raw Cloth',
+    ['weight'] = 25,
+    ['type'] = 'item',
+    ['image'] = 'clothe_materials.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Raw Cloth'
+},
+['work_station'] = {
+    ['name'] = 'work_station',
+    ['label'] = 'Shoe Work Station',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'work_station.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Shoe Work Station'
+},
+['shoe_phone'] = {
+    ['name'] = 'shoe_phone',
+    ['label'] = 'Shoe client phone',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'shoe_phone.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Shoe client phone'
+},
+['sky_gliders_plus'] = {
+    ['name'] = 'sky_gliders_plus',
+    ['label'] = 'Sky Gliders Plus',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_gliders_plus.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Gliders Plus'
+},
+['breeze_bangs'] = {
+    ['name'] = 'breeze_bangs',
+    ['label'] = 'Breeze Bangs',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_bangs.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze Bangs'
+},
+['tiger_mediums'] = {
+    ['name'] = 'tiger_mediums',
+    ['label'] = 'Tiger Mediums',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'tiger_mediums.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Tiger Mediums'
+},
+['galaxy_x'] = {
+    ['name'] = 'galaxy_x',
+    ['label'] = 'Galaxy X',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'galaxy_x.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Galaxy X'
+},
+['sky_walkers'] = {
+    ['name'] = 'sky_walkers',
+    ['label'] = 'Sky Walkers',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_walkers.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Walkers'
+},
+['sky_pilots'] = {
+    ['name'] = 'sky_pilots',
+    ['label'] = 'Sky Pilots',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_pilots.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Pilots'
+},
+['sky_flyers'] = {
+    ['name'] = 'sky_flyers',
+    ['label'] = 'Sky Flyers',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_flyers.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Flyers'
+},
+['sky_gliders'] = {
+    ['name'] = 'sky_gliders',
+    ['label'] = 'Sky Gliders',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_gliders.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Gliders'
+},
+['fastrunner_2000'] = {
+    ['name'] = 'fastrunner_2000',
+    ['label'] = 'Fastrunner 2000',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'fastrunner_2000.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Fastrunner 2000'
+},
+['speedster_300'] = {
+    ['name'] = 'speedster_300',
+    ['label'] = 'Speedster 300',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'speedster_300.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Speedster 300'
+},
+['runner_prime'] = {
+    ['name'] = 'runner_prime',
+    ['label'] = 'Runner Prime',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'runner_prime.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Runner Prime'
+},
+['breeze_95s'] = {
+    ['name'] = 'breeze_95s',
+    ['label'] = 'Breeze 95s',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_95s.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 95s'
+},
+['breeze_100s'] = {
+    ['name'] = 'breeze_100s',
+    ['label'] = 'Breeze 100s',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_100s.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 100s'
+},
+['breeze_90s'] = {
+    ['name'] = 'breeze_90s',
+    ['label'] = 'Breeze 90s',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_90s.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 90s'
+},
+['sky_walkers_red'] = {
+    ['name'] = 'sky_walkers_red',
+    ['label'] = 'Sky Walkers Red',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_walkers_red.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Walkers Red'
+},
+['shadow_yellows'] = {
+    ['name'] = 'shadow_yellows',
+    ['label'] = 'Shadow Yellows',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'shadow_yellows.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Shadow Yellows'
+}
+
+['breeze_90s_verified'] = {
+    ['name'] = 'breeze_90s_verified',
+    ['label'] = 'Breeze 90s Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_90s_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 90s Verified'
+},
+
+['breeze_95s_verified'] = {
+    ['name'] = 'breeze_95s_verified',
+    ['label'] = 'Breeze 95s Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_95s_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 95s Verified'
+},
+
+['breeze_100s_verified'] = {
+    ['name'] = 'breeze_100s_verified',
+    ['label'] = 'Breeze 100s Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_100s_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze 100s Verified'
+},
+
+['breeze_bangs_verified'] = {
+    ['name'] = 'breeze_bangs_verified',
+    ['label'] = 'Breeze Bangs Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'breeze_bangs_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Breeze Bangs Verified'
+},
+
+['fastrunner_2000_verified'] = {
+    ['name'] = 'fastrunner_2000_verified',
+    ['label'] = 'Fastrunner 2000 Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'fastrunner_2000_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Fastrunner 2000 Verified'
+},
+
+['galaxy_x_verified'] = {
+    ['name'] = 'galaxy_x_verified',
+    ['label'] = 'Galaxy X Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'galaxy_x_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Galaxy X Verified'
+},
+
+['runner_prime_verified'] = {
+    ['name'] = 'runner_prime_verified',
+    ['label'] = 'Runner Prime Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'runner_prime_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Runner Prime Verified'
+},
+
+['shadow_yellows_verified'] = {
+    ['name'] = 'shadow_yellows_verified',
+    ['label'] = 'Shadow Yellows Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'shadow_yellows_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Shadow Yellows Verified'
+},
+
+['sky_flyers_verified'] = {
+    ['name'] = 'sky_flyers_verified',
+    ['label'] = 'Sky Flyers Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_flyers_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Flyers Verified'
+},
+
+['sky_gliders_plus_verified'] = {
+    ['name'] = 'sky_gliders_plus_verified',
+    ['label'] = 'Sky Gliders Plus Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_gliders_plus_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Gliders Plus Verified'
+},
+
+['sky_gliders_verified'] = {
+    ['name'] = 'sky_gliders_verified',
+    ['label'] = 'Sky Gliders Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_gliders_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Gliders Verified'
+},
+
+['sky_pilots_verified'] = {
+    ['name'] = 'sky_pilots_verified',
+    ['label'] = 'Sky Pilots Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_pilots_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Pilots Verified'
+},
+
+['sky_walkers_red_verified'] = {
+    ['name'] = 'sky_walkers_red_verified',
+    ['label'] = 'Sky Walkers Red Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_walkers_red_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Walkers Red Verified'
+},
+
+['sky_walkers_verified'] = {
+    ['name'] = 'sky_walkers_verified',
+    ['label'] = 'Sky Walkers Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'sky_walkers_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Sky Walkers Verified'
+},
+
+['speedster_300_verified'] = {
+    ['name'] = 'speedster_300_verified',
+    ['label'] = 'Speedster 300 Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'speedster_300_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Speedster 300 Verified'
+},
+
+['tiger_mediums_verified'] = {
+    ['name'] = 'tiger_mediums_verified',
+    ['label'] = 'Tiger Mediums Verified',
+    ['weight'] = 5,
+    ['type'] = 'item',
+    ['image'] = 'tiger_mediums_verified.png',
+    ['unique'] = false,
+    ['useable'] = true,
+    ['shouldClose'] = true,
+    ['combinable'] = nil,
+    ['description'] = 'Tiger Mediums Verified'
+},

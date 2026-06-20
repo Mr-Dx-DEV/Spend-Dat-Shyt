@@ -1,0 +1,379 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #555;
+}
+
+.iphone {
+    width: 300px;
+    height: 650px;
+    border-radius: 40px;
+    background: url('image/background.png') no-repeat center center / cover;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 8px solid #ff69b4; /* Feminine pink border */
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    display: none; /* Ensure the phone is hidden by default */
+    flex-direction: column;
+    align-items: center;
+    animation: slideInUp 0.5s ease-out forwards;
+}
+
+.notch-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    background-color: transparent;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: 8px;
+}
+
+.dynamic-island {
+    width: 160px;
+    height: 24px;
+    background-color: #ffe4e1; /* Soft pastel color */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.camera {
+    width: 6.4px;
+    height: 6.4px;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    left: 16px;
+}
+
+.speaker {
+    width: 48px;
+    height: 3.2px;
+    background-color: #333;
+    border-radius: 2px;
+    position: absolute;
+    right: 16px;
+}
+
+.time-battery-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+}
+
+.time {
+    font-size: 14.4px;
+    font-weight: bold;
+    flex: 1;
+    color: #ffffff; /* White for better contrast */
+}
+
+.status-right {
+    display: flex;
+    align-items: center;
+}
+
+.battery {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.battery i {
+    font-size: 16px;
+    color: #ff69b4; /* Feminine pink */
+}
+
+.wifi {
+    font-size: 14.4px;
+    color: #ff69b4; /* Feminine pink */
+    margin-left: 8px;
+}
+
+.screen {
+    width: 100%;
+    height: calc(100% - 35px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 16px;
+    box-sizing: border-box;
+}
+
+.apps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.app {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 11.2px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: #ffffff;
+    background: linear-gradient(135deg, #ffbbc6, #f880d0); /* Soft pastel gradient */
+}
+
+.app i {
+    font-size: 38.4px;
+    margin-bottom: 4px;
+}
+
+.app span {
+    font-size: 11.2px;
+}
+
+.app:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.app:active {
+    transform: scale(0.95) rotate(-5deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.app#deliver-products {
+    background: linear-gradient(to bottom right, #ff7eb9, #ff65a3); /* Feminine pink gradient */
+}
+
+.app#settings-app {
+    background: linear-gradient(to bottom right, #c471ed, #f64f59); /* Elegant pink gradient */
+}
+
+.title-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Soft pastel gradient */
+    color: white;
+    width: 72%;
+    height: 56px;
+    border-radius: 16px;
+    margin: 8px auto;
+    font-size: 19.2px;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.title-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.phone-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.9); /* Softer white background */
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 0 auto;
+}
+
+.phone-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ff69b4; /* Feminine pink border */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #ffe4e1; /* Soft pastel background */
+}
+
+.call-button {
+    background-color: #ff69b4; /* Feminine pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.call-button:hover {
+    background-color: #ff85b3; /* Lighter pink on hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff0f5; /* Soft lavender blush background */
+    margin: 15% auto;
+    padding: 16px;
+    border: 1px solid #ff69b4; /* Feminine pink border */
+    width: 64%;
+    max-width: 320px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #ff69b4; /* Feminine pink */
+    float: right;
+    font-size: 22.4px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff85b3; /* Lighter pink on hover */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#start-button {
+    background-color: #ff69b4; /* Feminine pink */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12.8px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#apply-color-button {
+    background-color: #c471ed; /* Soft purple gradient */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12.8px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Notification styles */
+.notification {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 80%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 360px;
+    background-color: #fff;
+    color: black;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    animation: fadeInOut 5s ease-in-out forwards;
+}
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffe4e1; /* Soft pastel color */
+}
+
+.notification-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.notification-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.notification-title strong {
+    font-size: 16px;
+}
+
+.notification-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.notification-message {
+    padding: 10px;
+    background-color: #fff0f5; /* Lavender blush background */
+    font-size: 14px;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
