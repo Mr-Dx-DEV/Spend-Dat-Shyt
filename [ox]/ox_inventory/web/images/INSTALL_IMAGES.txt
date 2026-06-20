@@ -1,0 +1,23 @@
+═══════════════════════════════════════════════════════════
+  GRIM LOVE MENU — ox_inventory Item Images
+  Copy ALL .png files in this folder to:
+  ox_inventory/web/images/
+═══════════════════════════════════════════════════════════
+
+ALL 13 FILES INCLUDED:
+  love_tablet.png
+  plan_c.png
+  pregnancy_test.png
+  contraception.png
+  condoms.png
+  std_test_kit.png
+  dna_test.png
+  dna_result.png
+  birth_cert_boy.png
+  birth_cert_girl.png
+  prenatal_vitamins.png
+  prescription_meds.png
+  ultrasound_report.png
+
+After copying, restart ox_inventory:
+  ensure ox_inventory
