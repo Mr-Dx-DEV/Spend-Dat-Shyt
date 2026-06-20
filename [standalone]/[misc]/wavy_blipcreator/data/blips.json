@@ -1,0 +1,67 @@
+[
+    {
+        "name": "CASINO",
+        "sprite": 207,
+        "coords": {
+            "z": 32.32,
+            "y": -898.91,
+            "x": -266.24
+        },
+        "scale": 1,
+        "id": "17807938373166",
+        "radius": 0,
+        "color": "#FF0000"
+    },
+    {
+        "name": "BOWLING",
+        "coords": {
+            "z": 43.61,
+            "y": -171.06,
+            "x": -125.02
+        },
+        "color": "#00FF00",
+        "scale": 0.5,
+        "id": "17805145614389",
+        "radius": 0,
+        "sprite": 1
+    },
+    {
+        "name": "CHICAGO SKATING",
+        "sprite": 119,
+        "color": "#FF0000",
+        "scale": 0.5,
+        "id": "17805144981866",
+        "radius": 0,
+        "coords": {
+            "z": 55.17,
+            "y": -123.56,
+            "x": -163.79
+        }
+    },
+    {
+        "name": "GHOST GUNS",
+        "coords": {
+            "z": 28.13,
+            "y": -1024.13,
+            "x": 843.78
+        },
+        "color": "#800080",
+        "scale": 1,
+        "id": "17805143833841",
+        "radius": 0,
+        "sprite": 110
+    },
+    {
+        "name": "Weed Field",
+        "sprite": 140,
+        "color": "#00FF00",
+        "scale": 0.8,
+        "id": "17662119616935",
+        "radius": 35,
+        "coords": {
+            "z": 31.85,
+            "y": -1629.07,
+            "x": -298.12
+        }
+    }
+]

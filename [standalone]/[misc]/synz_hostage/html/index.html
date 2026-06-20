@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>synz_hostage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background:transparent!important;">
+  <div id="wrapper">
+
+    <div id="menu" class="hidden">
+      <div class="menu-header">
+        <div class="header-icon"><i class="fa-solid fa-crosshairs"></i></div>
+        <span id="title-text"></span>
+      </div>
+      <div class="menu-divider"></div>
+      <ul id="options"></ul>
+      <div class="menu-footer" id="hint"></div>
+    </div>
+
+    <div id="timer" class="hidden">
+      <div class="timer-content">
+        <div class="timer-top">
+          <i class="fa-solid fa-clock timer-icon"></i>
+          <span id="timer-label"></span>
+          <span id="timer-remaining"></span>
+        </div>
+        <div id="timer-track">
+          <div id="timer-fill"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

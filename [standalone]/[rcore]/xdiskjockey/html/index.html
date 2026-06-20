@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400" rel="stylesheet">
+    <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/vue.min.js"></script>
+
+    <script src="./scripts/popper.min.js"></script>
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./scripts/bootstrap.min.js"></script>
+
+    <script src="./scripts/purify.js"></script>
+    <link rel="stylesheet" href="https://rco.re/fa/css/all.css">
+    <script src="https://rco.re/fa/js/all.js" crossorigin="anonymous"></script>
+
+    <script src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflJJaNgk/www-widgetapi.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <script src="./scripts/bootstrap-notify.min.js"></script>
+    <link rel="stylesheet" href="css/notif.css" type="text/css">
+    <link rel="stylesheet" href="./css/animation.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body style="background:transparent; overflow: hidden;">
+<div id="trash"></div>
+<div id="body">
+    <div class="modal fade" id="actionCategory">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 v-if="view_edit_category_options" class="modal-title">Edit category</h5>
+                    <h5 v-if="!view_edit_category_options" class="modal-title">Create category</h5>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" @click="Close()">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Category name</label>
+                        <input minlength="3" id="category_input_name" placeholder="category name" type="text" required
+                               class="form-control" v-model="selectedCategoryName">
+                    </div>
+
+                    <div class="form-group">
+                        <button v-if="!view_edit_category_options" @click="CreateNewCategory()" type="button"
+                                class="btn btn-success"><i
+                                class="fa fa-check-circle"></i> Create
+                        </button>
+                        <button v-if="view_edit_category_options" @click="EditCategory()" type="button"
+                                class="btn btn-success" :disabled="selectedCategoryName.length == 0">
+                            <i class="fa fa-pencil"></i> Edit
+                        </button>
+                        <button v-if="view_edit_category_options" @click="DeleteCategoryModal()" type="button"
+                                class="btn btn-danger"><i
+                                class="fa fa-trash"></i> Delete
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="remove_category" tabindex="-1" role="dialog" aria-labelledby="remove_category"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger" style="color:white;">
+                    <h5 class="modal-title">This action cant ba reverted!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert">
+                        Do you really wish to remove this: <u>{{selectedCategoryName}}</u> category?
+                        <div class="mt-3">
+                            <button class="btn btn-danger" type="button" @click="DeleteCategoryFinal()">Yes</button>
+                            <button class="btn btn-dark" type="button" @click="Close()">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="addSong">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add new music</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" @click="Close()">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name of the music</label>
+                        <input id="inputName" placeholder="Some cool song" type="text" required v-model="inputName"
+                               class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>URL</label>
+                        <input id="inputSrc" placeholder="https://youtube.com/..." type="text" required
+                               v-model="inputSrc" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-form-label">Change category</label>
+                        <select class="form-control" id="createnewmusiccategory">
+                            <option value="false">None</option>
+                            <option v-for="it, kk in categoriesDropDown" :value="it.name" v-if="it.name !== 'null'"
+                                    :selected="currentData.Category === it.name">{{it.name}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button @click="CreateNewMusic()" type="button" class="btn btn-success"><i
+                                class="fas fa-plus-circle"></i> Confirm
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="remove_music" tabindex="-1" role="dialog" aria-labelledby="remove_music"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger" style="color:white;">
+                    <h5 class="modal-title">The final decision!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert">
+                        Do you want to remove this music?
+                        <div class="mt-3">
+                            <button class="btn btn-danger" type="button" @click="RemoveMusic()">Yes</button>
+                            <button class="btn btn-dark" type="button" @click="Close()">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="edit_music" tabindex="-1" role="dialog" aria-labelledby="edit_music" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit music</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="music_name" class="col-form-label">Name</label>
+                            <input type="text" class="form-control" id="music_name" v-model="inputName"
+                                   :value="inputName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="url_name" class="col-form-label">URL</label>
+                            <input type="text" class="form-control" id="url_name" v-model="inputSrc" :value="inputSrc">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Change category</label>
+                            <select class="form-control" id="category_music_edit">
+                                <option value="false">None</option>
+                                <option v-for="it, kk in categoriesDropDown" :value="it.name" v-if="it.name !== 'null'"
+                                        :selected="currentData.Category === it.name">{{it.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @click="EditMusic()">Save</button>
+                    <button type="button" class="btn btn-secondary" @click="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="musicPlaying" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: none !important;padding: 0rem 1rem !important;display: block !important;">
+                    <h5 style="text-align: center;padding-top: 0.4vw;">Currently playing music</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close(true)" style="display: table-column-group;position: relative;bottom: 1.5vw;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th style="text-align:center;">Name</th>
+                            <th style="text-align:center;">URL</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="it, kk in playingMusicInModal">
+                            <td><u>{{it.name}}</u></td>
+                            <td><u>{{it.url}}</u></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @click="Close(true)">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="volumeManager" data-toggle="modal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eh_alright_dude_two">Global mixer volume</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            @click="Close(true)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form onkeydown="return event.key != 'Enter';">
+                        <div class="range-slider grad"
+                             :style='"--min:0; --max:100; --step:1; --value:"+ userVolume +"; --text-value:"+ userVolume +";width: 100%;"'>
+                            <input @change="event => ChangeGlobalVolume()" id="globalvolume" type="range" min="0"
+                                   max="100" step="1" :value="userVolume" v-model="userVolume"
+                                   oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))">
+                            <output class="output" style="font-size: 12px;">
+                                Volume: {{userVolume}}%
+                            </output>
+                            <div class='range-slider__progress'></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" @click="Close(true)">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="advanced_music" tabindex="-1" role="dialog" aria-labelledby="advanced_music"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="advanced_musicLabel">Advanced settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <!--                    <h5>Volume for each speaker</h5>-->
+                    <!--                    <br>-->
+                    <!--                    <div v-for="(item, key) in speakerList">-->
+                    <!--                        Speaker {{item.Id}}<br>-->
+                    <!--                        <input type="range" class="speaker_volume" :value="(item.Volume * 100)" max="100" style="width: 100%;">-->
+                    <!--                    </div>-->
+
+                    <!--                    <hr>-->
+
+                    <h5>Time</h5>
+
+                    <div class="mb-3" v-if="playList[keyPlayList]">
+                        <label for="fade_speed" class="col-form-label">The current timestamp:
+                            {{fancyTimeFormat(timestamp)}}</label>
+                        <input v-if="!playList[keyPlayList].Active" type="range" min="0" value="0" :max="timestampMax"
+                               style="width: 100%;" v-model="timestamp" @change="timeStampInputChanged">
+                        <input v-if="playList[keyPlayList].Active" type="range" min="0" value="0" :max="timestampMax"
+                               style="width: 100%;" v-model="timestamp" @change="timeStampInputChanged" disabled>
+                    </div>
+
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="current_volume" class="col-form-label">Current music volume: {{current_volume}}%</label>
+                        <input type="range" id="current_volume" v-model="current_volume" @change="ChangeCurrentMusicVolume()" max="100" style="width: 100%;">
+                    </div>
+
+                    <div v-if="!externalSoundAPI">
+                        <h5>Pulsing volume</h5>
+
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" v-model="pulsing_enabled" class="custom-control-input"
+                                   id="pulsing_enabled" @change="EnablePulsing()">
+                            <label class="custom-control-label" for="pulsing_enabled">Is pulsing enabled?</label>
+                        </div>
+
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="pulsing_volume" class="col-form-label">How strong the pulsing is? Current
+                                percentage
+                                is: {{pulsing_percentage}}%</label>
+                            <input type="range" id="pulsing_volume" v-model="pulsing_percentage"
+                                   @change="EnablePulsing()"
+                                   max="100" style="width: 100%;" :disabled="!pulsing_enabled">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pulsing_time" class="col-form-label">How fast the pulsing is? Current time is:
+                                {{pulsing_time}}ms</label>
+                            <input type="range" id="pulsing_time" @change="EnablePulsing()" min="750" max="15000"
+                                   style="width: 100%;"
+                                   v-model="pulsing_time" :disabled="!pulsing_enabled">
+                        </div>
+
+                        <hr>
+                    </div>
+
+                    <h5>Fade in / Fade Out</h5>
+
+                    <div class="mb-3">
+                        <label for="fade_speed" class="col-form-label">How fast the fade is? The fade in/out will last
+                            for {{fade_time}}ms</label>
+                        <input type="range" id="fade_speed" min="500" value="500" max="15000" style="width: 100%;"
+                               v-model="fade_time">
+                    </div>
+
+                    <button class="btn btn-info" type="button" @click="FadeType('in')">Fade in</button>
+                    <button class="btn btn-info" type="button" @click="FadeType('out')">Fade out</button>
+
+                    <div v-if="!externalSoundAPI">
+                        <hr>
+
+                        <h5>Panning audio</h5>
+
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" v-model="stereo_enabled" class="custom-control-input"
+                                   id="spatial_audio" @change="EnableStereoSound()">
+                            <label class="custom-control-label" for="spatial_audio">Spatial audio moving</label>
+                        </div>
+
+
+                        <br>
+
+                        <div class="mb-3">
+                            <label for="pulsing_time" class="col-form-label">How fast the panning is? Current time is:
+                                {{spatial_time}}ms</label>
+                            <input type="range" min="500" max="15000" style="width: 100%;"
+                                   v-model="spatial_time" @change="EnableStereoSound()" :disabled="!stereo_enabled">
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @click="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="fx_effects" tabindex="-1" role="dialog" aria-labelledby="fx_effects"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">FX Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" @click="Close()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="max-height: 40vw;overflow-y: scroll;overflow-x: hidden;">
+                    <div v-for="it, k in fxEffectsList">
+                        <h5>{{it.label}}</h5>
+
+                        <div v-if="it.button === 'list'">
+                            <select class="form-control" v-bind:id="it.identifier"
+                                    @change="changeGalaxyEffect(it.identifier)">
+                                <option v-for="_it, _kk in it.name" :value="_it" :selected="it.activeName === _it">
+                                    {{translation[_it]}}
+                                </option>
+                            </select>
+                        </div>
+
+                        <div v-if="it.button === 'toggle'">
+                            <div class="custom-control custom-switch">
+                                <input v-model="it.active" type="checkbox" class="custom-control-input"
+                                       v-bind:id="it.name" @change="EnableEffect(event, it.name)">
+                                <label class="custom-control-label" v-bind:for="it.name">Is this effect enabled</label>
+                            </div>
+                        </div>
+                        <div v-if="it.button === 'button'">
+                            <button class="btn btn-info" v-bind:id="it.name" type="button"
+                                    @click="EnableEffect(event, it.name)">Trigger effect
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" @click="Close()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="visible == 'mixer'" id="mixer">
+        <div class="container_buttons">
+            <div class="mixer_button button_green" title="Playlist" @click="ChangePage('playlist')" data-toggle="tooltip" data-placement="top">
+                <i class="fa-solid fa-compact-disc"></i>
+            </div>
+
+            <div class="mixer_button button_red" title="Will stop all playing music" @click="StopAllMusic()" data-toggle="tooltip" data-placement="top">
+                <i class="fa fa-stop red" aria-hidden="true"></i>
+            </div>
+
+            <div class="mixer_button button_yellow" title="Queue list" data-toggle="tooltip" data-placement="top" @click="ChangePage('que')">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <div v-if="effects" class="mixer_button button_blue" title="FX Effects" data-toggle="tooltip" @click="ShowFXEffects()" data-placement="top">
+                <i class="fa-sharp fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div v-else class="mixer_button button_blue" title="Doesnt work on this dj mixer" data-toggle="tooltip" data-placement="top">
+                <i class="fa fa-magic" aria-hidden="true"></i>
+            </div>
+
+            <div class="mixer_button button_white" title="DJ Sounds effects" data-toggle="tooltip" data-placement="top" @click="ChangePage('effectList')">
+                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+            </div>
+
+            <div class="mixer_button button_purple" title="Quick play queue list" data-toggle="tooltip" @click="PlayQueList()" data-placement="top">
+                <i class="fa-solid fa-circle-play"></i>
+            </div>
+        </div>
+
+        <div v-if="IsAnyMusicActive()">
+            <div class="vinyl-left rotating"></div>
+            <div class="vinyl-right rotating"></div>
+        </div>
+        <div v-else>
+            <div class="vinyl-left"></div>
+            <div class="vinyl-right"></div>
+        </div>
+
+        <input class="slider" type="range" id="volume" value="0" :max="MaxMixerVolume" v-model="mixerVolume" @input="event => MixerVolumeUpdate()">
+    </div>
+
+    <div v-if="visible == 'playlist'" id="playlist">
+        <div class="container">
+            <br>
+            <div class="row">
+                <div class="col-6 noselect">
+                    <h1 style="color:white;">{{boothDjName}}'s music</h1>
+                </div>
+
+                <div class="col-6 text-right noselect">
+                    <button @click="GoBack()" type="button" class="btn btn-dark">
+                        <i class="fa-sharp fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button @click="AddNewMusicModal()" type="button" class="btn btn-success">
+                        <i class="fa-solid fa-circle-plus"></i>
+                        Add new music
+                    </button>
+                    <button @click="ChangePage('que')" type="button" class="btn btn-primary">
+                        <i class="fa-solid fa-list"></i>
+                        Queue list
+                    </button>
+                </div>
+
+                <div class="col-6 text-right" style="max-width: 100% !important;flex: 0 0 100% !important;margin-top: -0.5vw;">
+                    <button @click="ActionCategoryModal(false)" type="button" class="btn btn-secondary" style="color:white">
+                        <i class="fa-solid fa-box-archive"></i>
+                        Create category
+                    </button>
+                </div>
+
+            </div>
+            <br>
+
+            <div style="overflow: hidden;overflow-x: hidden;overflow-y: scroll;max-height: 48vw;">
+                <div v-for="it, kk in displayBoxCategories" v-if="it != null">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 style="color:white;">
+                            {{it.name === "null" ? "uncategorized" : it.name}}
+                            <button v-if="it.name !== 'null'" type="button" class="btn btn-warning mr-1"
+                                    style="float:right" @click="ActionCategoryModal(true, it.name)" data-toggle="tooltip"
+                                    data-placement="top" title="Edit category">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button type="button" class="btn btn-secondary mr-1" @click="AddToPlayList(it.name)"
+                                    style="float:right" data-toggle="tooltip"
+                                    data-placement="top" title="Add all music in this category to queue list">
+                                <i class="fa fa-play-circle"></i>
+                            </button>
+                        </h3>
+                    </div>
+                    <div class="col-6 text-right">
+
+                    </div>
+                    <div v-for="(item, key) in playList" class="col-sm-6 noselect"
+                         v-if="item.Category === it.name && item.Visible" style="margin-top: 0.4vw;">
+                        <div class="card h-100" style="background:transparent; color:white;">
+                            <div class="card-body"
+                                 style="background: rgb(32,32,32);background: linear-gradient(0deg, rgba(32,32,32,1) 0%, rgba(65,65,65,0.75) 100%);">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="card-title">{{item.Name}}</h5>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <a v-if="item.Active" class="btn btn-primary mr-1"
+                                           @click="PlayMusic(item, key)">Play</a>
+                                        <a v-if="!item.Active" class="btn btn-danger mr-1"
+                                           @click="StopMusic(item, key)">Stop</a>
+
+                                        <a v-if="!item.Loop" class="btn btn-secondary" style="color: white;"
+                                           @click="StartLoopMusic(item, key)">Loop</a>
+                                        <a v-if="item.Loop" class="btn btn-success" style="color: white;"
+                                           @click="StopLoopMusic(item, key)">Loop</a>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-md-6 text-left">
+                                        <button v-if="!item.Que" @click="AddToQue(item, key, true)" type="button"
+                                                class="btn btn-success btn-sm ">
+                                            <i class="fa fa-plus"></i>
+                                            Playlist
+                                        </button>
+                                        <button v-if="item.Que" @click="AddToQue(item, key, false)" type="button"
+                                                class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                            Playlist
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button @click="AdvancedModal(item, key)" type="button" data-toggle="tooltip"
+                                                data-placement="top" title="Advanced settings"
+                                                class="btn btn-secondary btn-sm mr-1">
+                                            <i class="fa fa-cog"></i>
+                                        </button>
+                                        <button @click="EditModalMusic(item, key)" type="button" data-toggle="tooltip"
+                                                data-placement="top" title="Edit music entry"
+                                                class="btn btn-warning btn-sm mr-1">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button @click="RemoveModalMusic(item, key)" type="button" data-toggle="tooltip"
+                                                data-placement="top" title="Delete music entry"
+                                                class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="visible === 'que'">
+        <div class="container noselect">
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <h1 style="color:white;">{{boothDjName}}'s queue list</h1>
+                </div>
+
+                <div class="col-6 text-right noselect">
+                    <button @click="GoBack()" type="button" class="btn btn-dark"><i
+                            class="fas fa-long-arrow-alt-left"></i>
+                    </button>
+                    <button @click="ShufflePlayList()" type="button" class="btn btn-success">
+                        <i class="fa fa-random"></i>
+                        Shuffle playlist
+                    </button>
+                </div>
+
+                <div class="col-6 text-right noselect"
+                     style="max-width: 100% !important;flex: 0 0 100% !important;margin-top: -0.5vw;">
+                    <button v-if="!playingQue" @click="PlayQueList()" type="button" class="btn btn-secondary">
+                        <i class="fa fa-play"></i>
+                        Play the queue
+                    </button>
+                    <button v-if="playingQue" @click="PlayQueList()" type="button" class="btn btn-secondary">
+                        <i class="fa fa-stop"></i>
+                        Stop the Queue
+                    </button>
+                    <button @click="DeleteQueList()" type="button" class="btn btn-warning">
+                        <i class="fa fa-trash"></i>
+                        Empty queue list
+                    </button>
+                </div>
+            </div>
+            <br>
+            <div class="row" style="overflow: hidden;overflow-x: hidden;overflow-y: scroll;max-height: 48vw;">
+                <div v-for="(item, key) in playList" class="col-sm-6" v-if="item.Visible && item.Que"
+                     style="margin-top: 0.4vw;">
+                    <div class="card h-100" style="background:transparent; color:white;">
+                        <div class="card-body"
+                             style="background: rgb(32,32,32);background: linear-gradient(0deg, rgba(32,32,32,1) 0%, rgba(65,65,65,0.75) 100%);">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="card-title noselect">{{item.Name}}</h5>
+                                </div>
+                                <div class="col-6 text-right noselect">
+                                    <button v-if="currentPlayingQue.url === item.URL && currentPlayingQue.name === item.Name"
+                                            @click="SkipFromQue(item, key, false)" type="button"
+                                            class="btn btn-warning"><i
+                                            class="fa fa-step-forward"></i>
+                                    </button>
+                                    <button @click="AddToQue(item, key, false)" type="button" class="btn btn-danger"><i
+                                            class="fa fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div v-if="visible === 'effectList'" id="que">
+        <div class="container noselect">
+
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <h1 style="color:white;">{{boothDjName}}'s sound effects</h1>
+                </div>
+
+                <div class="col-6 text-right noselect">
+                    <button @click="GoBack()" type="button" class="btn btn-dark"><i
+                            class="fas fa-long-arrow-alt-left"></i>
+                    </button>
+                </div>
+            </div>
+            <br>
+
+            <div class="row" style="overflow: hidden;overflow-x: hidden;overflow-y: scroll;max-height: 48vw;">
+                <div v-for="(item, key) in soundEffectsList" class="col-sm-6" style="margin-top: 0.4vw;">
+                    <div class="card h-100" style="background:transparent; color:white;">
+                        <div class="card-body"
+                             style="background: rgb(32,32,32);background: linear-gradient(0deg, rgba(32,32,32,1) 0%, rgba(65,65,65,0.75) 100%);">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h5 class="card-title noselect">{{item.Name}}</h5>
+                                </div>
+                                <div class="col-6 text-right noselect">
+                                    <button @click="PlayEffect(item)" type="button" class="btn btn-success" title="Play the effect" data-toggle="tooltip" data-placement="top">
+                                        <i class="fa fa-play"></i>
+                                    </button>
+                                    <button @click="EditKeyBind(item, key)" type="button" class="btn btn-secondary" title="Hotkey to play this effect" data-toggle="tooltip" data-placement="top">
+                                        <i class="fa fa-key"></i> {{item.keyBind != null ?
+                                        String.fromCharCode(item.keyBind) : "unset"}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script src="./scripts/listener.js"></script>
+<script src="./xSound/config.js" type="text/javascript"></script>
+<script src="./xSound/listener.js" type="text/javascript"></script>
+<script src="./xSound/functions.js" type="text/javascript"></script>
+<script src="./xSound/SoundPlayer.js" type="text/javascript"></script>
+
+</body>
+</html>

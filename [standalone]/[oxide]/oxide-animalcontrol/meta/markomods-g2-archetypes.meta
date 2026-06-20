@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF - 8"?>
+
+<CWeaponModelInfo__InitDataList>
+	<InitDatas>
+		<Item>
+			<modelName>markomods-g2</modelName>
+			<txdName>markomods-g2</txdName>
+			<ptfxAssetName>NULL</ptfxAssetName>
+			<lodDist value="1000"/>
+		</Item>
+		<Item>
+			<modelName>markomods-g2-mag1</modelName>
+			<txdName>markomods-g2-mag1</txdName>
+			<ptfxAssetName>NULL</ptfxAssetName>
+			<lodDist value="1000"/>
+		</Item>
+	</InitDatas>
+</CWeaponModelInfo__InitDataList>
+

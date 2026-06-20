@@ -1,0 +1,31 @@
+<Dat54>
+  <Version value="7314721" />
+  <ContainerPaths>
+    <Item>audiodirectory\vacuum_sounds</Item>
+  </ContainerPaths>
+  <Items>
+    <Item type="SimpleSound">
+      <Name>roboticvacuum_sp</Name>
+      <Header>
+        <Flags value="0x00008004" />
+        <Volume value="100" />
+        <Category>scripted</Category>
+      </Header>
+      <ContainerName>audiodirectory/vacuum_sounds</ContainerName>
+      <FileName>roboticvacuum</FileName>
+      <WaveSlotNum value="0" />
+    </Item>
+    <Item type="SoundSet">
+      <Name>specialvacuum_soundset</Name>
+      <Header>
+        <Flags value="0xAAAAAAAA" />
+      </Header>
+      <SoundSets>
+        <Item>
+          <ScriptName>roboticvacuum</ScriptName>
+          <ChildSound>roboticvacuum_sp</ChildSound>
+        </Item>
+      </SoundSets>
+    </Item>
+  </Items>
+</Dat54>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Market</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="shop-container" class="hidden">
+        <div class="shop-card">
+            <!-- Header -->
+            <div class="shop-header">
+                <div class="header-title">
+                    <span class="title-icon">&#9670;</span>
+                    <h1 data-locale="title">Black Market</h1>
+                </div>
+                <p class="header-subtitle" data-locale="subtitle">Discreet transactions only</p>
+            </div>
+
+            <!-- Stats bar -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-label" data-locale="reputation">Reputation</span>
+                    <span class="stat-value" id="player-rep">Unknown (0)</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-label" data-locale="cash">Cash</span>
+                    <span class="stat-value cash" id="player-cash">$0</span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="tabs">
+                <button id="tab-buy" class="tab active" data-locale="tab_buy">Buy</button>
+                <button id="tab-sell" class="tab" data-locale="tab_sell">Sell</button>
+            </div>
+
+            <!-- Inventory -->
+            <div class="inventory-wrapper">
+                <div id="buy-inventory" class="inventory">
+                    <div class="placeholder-message" data-locale="no_items">No items available</div>
+                </div>
+                <div id="sell-inventory" class="inventory hidden">
+                    <div class="placeholder-message" data-locale="no_sell_items">No items to sell</div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="shop-footer">
+                <button id="close-btn" class="close-btn">
+                    <span data-locale="close">Close</span>
+                    <span class="key-hint" data-locale="esc_hint">ESC</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

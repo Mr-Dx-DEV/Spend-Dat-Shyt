@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blips Creator</title>
+
+  <style>
+    html, body { background: transparent !important; background-color: transparent !important; }
+  </style>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container" id="app">
+    <button class="close-btn" id="closeBtn">×</button>
+
+    <div class="sidebar">
+      <div class="sidebar-header">Blips</div>
+      <div id="blipList"><div class="empty-sidebar">No blips</div></div>
+    </div>
+
+    <div class="content">
+      <div class="content-header">Editor</div>
+
+      <div class="form-row">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-input" id="blipName" placeholder="Enter name" />
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">Scale</label>
+        <div class="scale-options" id="scaleOptions">
+          <button class="scale-btn" data-scale="0.5">0.5</button>
+          <button class="scale-btn" data-scale="0.8">0.8</button>
+          <button class="scale-btn active" data-scale="1.0">1.0</button>
+          <button class="scale-btn" data-scale="1.5">1.5</button>
+          <button class="scale-btn" data-scale="2.0">2.0</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">Color</label>
+        <div class="color-selector" id="colorSelector"></div>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">Coordinates</label>
+        <div class="coords-grid">
+          <input type="number" step="0.01" class="coord-input" placeholder="X" id="coordX" />
+          <input type="number" step="0.01" class="coord-input" placeholder="Y" id="coordY" />
+          <input type="number" step="0.01" class="coord-input" placeholder="Z" id="coordZ" />
+        </div>
+        <button class="coord-copy-btn" id="coordCopyBtn">Copy Coordinates</button>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">Sprite</label>
+        <input
+          type="number"
+          class="form-input"
+          id="spriteInput"
+          placeholder="Enter sprite ID (e.g., 1, 40, 71)"
+          style="margin-bottom:10px"
+        />
+        <div class="sprite-grid" id="spriteGrid"></div>
+      </div>
+
+      <div class="form-row">
+        <label class="form-label">Radius (optional)</label>
+        <input type="number" step="0.1" class="form-input" id="radiusInput" placeholder="Enter radius (Radius: 0=none • 50=medium • 100=max)" />
+      </div>
+
+      <div class="action-buttons">
+        <button class="btn" id="btnClear">Clear</button>
+        <button class="btn" id="btnSave">Save</button>
+      </div>
+
+      <div class="export-box">
+        <div class="export-label">FiveM Blips Reference</div>
+        <div class="export-input-wrapper">
+          <input
+            type="text"
+            class="export-input"
+            id="refLink"
+            readonly
+            value="https://docs.fivem.net/docs/game-references/blips/"
+          />
+          <button class="copy-icon-btn" id="copyBtn" aria-label="Copy link">
+            <svg id="copyIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">Copied!</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+-- Add these items into your ox_inventory/data/items.lua file
+
+['condom'] = {
+    label = 'condom',
+    weight = 50,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['levonorgestrel'] = {
+    label = 'levonorgestrel',
+    weight = 50,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['mifepristone'] = {
+    label = 'mifepristone',
+    weight = 50,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['testpack'] = {
+    label = 'testpack',
+    weight = 50,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['viagra'] = {
+    label = 'viagra',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['dnatest'] = {
+    label = 'DNA Test',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['hiv_cured'] = {
+    label = 'hiv_cured',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['hepatitis_cured'] = {
+    label = 'hepatitis_cured',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['monkeypox_cured'] = {
+    label = 'monkeypox_cured',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},
+
+['diseasetest'] = {
+    label = 'diseasetest',
+    weight = 1,
+    stack = true,
+    close = true,
+    description = nil
+},

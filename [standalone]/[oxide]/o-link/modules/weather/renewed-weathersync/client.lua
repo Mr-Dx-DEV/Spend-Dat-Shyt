@@ -1,0 +1,24 @@
+if not olink._guardImpl('Weather', 'renewed-weathersync', 'Renewed-Weathersync') then return end
+if not olink._hasOverride('Weather') and GetResourceState('oxide-weather') == 'started' then return end
+
+olink._register('weather', {
+    ---@return string
+    GetResourceName = function()
+        return 'Renewed-Weathersync'
+    end,
+
+    ---@param toggle boolean
+    ToggleSync = function(toggle)
+        LocalPlayer.state.syncWeather = toggle
+    end,
+
+    ---@return string
+    GetWeather = function()
+        return 'CLEAR'
+    end,
+
+    ---@return table { hour: number, minute: number }
+    GetTime = function()
+        return { hour = GetClockHours(), minute = GetClockMinutes() }
+    end,
+})

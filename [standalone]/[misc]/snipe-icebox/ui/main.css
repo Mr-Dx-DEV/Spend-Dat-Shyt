@@ -1,0 +1,48 @@
+
+.root-wrapper {
+    width: auto;
+    height: auto;
+    padding: 2vh;
+    top: 50%;
+    left: -11vh;
+    transform: translateY(-50%) scale(0.9, 0.9);
+    position: absolute;
+    overflow: hidden;
+    opacity: 1;
+    background: transparent !important;
+    transition: transform 0.25s;
+}
+
+.interaction-menu {
+    display: inline-block;
+    width: auto;
+    height: 5vh;
+    background-color: #fc2a2a;    
+    border-radius: 0.3vh;
+    -webkit-box-shadow: 0px 2px 15px -5px rgba(0,0,0,0.7);
+    box-shadow: 0px 2px 15px -5px rgba(0,0,0,0.7);
+    transition: all .5s;
+}
+
+.status-label {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    font-size: 1.54vh;
+    letter-spacing: 0.7px;
+    line-height: 4.8vh;
+    margin-left: 1.2vh;
+    margin-right: 1.2vh;
+    font-weight: bold;
+    font-family: Copperplate, Sans-serif, sans-serif;
+    text-shadow: 2px 2px 4px #000;
+    /* text-shadow: 1px 1px 0 black, 2px 2px 0 black; */
+    /* text-shadow: 0px 2px 7px rgba(0,0,0,0.78); */
+    color: white;
+    transition: all 0.5s;
+}
+
+html,body {
+    background: transparent !important;
+}

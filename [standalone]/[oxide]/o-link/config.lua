@@ -1,0 +1,37 @@
+Config = {}
+
+-- Force a specific implementation for any bridged namespace.
+-- Values use implementation folder names and are matched case-insensitively.
+-- Leave keys unset or nil to keep normal auto-detection and priority behavior.
+Config.Overrides = {
+    -- Framework         = 'oxide-core',
+    -- Character         = 'oxide-core',
+    -- Job               = 'oxide-core',
+    -- Money             = 'oxide-accounts',
+    -- Inventory         = 'oxide-inventory',
+    -- Vehicles          = 'oxide-vehicles',
+    -- VehicleProperties = 'vehicleproperties',
+    -- VehicleOwnership  = 'oxide-vehicles',
+    -- Notify            = 'oxide-notify',
+    -- HelpText          = 'ox_lib',
+    -- Target            = 'ox_target',
+    -- ProgressBar       = 'ox_lib',
+    -- VehicleKey        = 'oxide-vehicles',
+    -- Fuel              = 'oxide-vehicles',
+     Weather           = 'cd_easytime',
+    -- Input             = 'ox_lib',
+    -- Menu              = 'oxide-menu',
+    -- Zones             = 'oxlib',
+     Phone             = 'lb-phone',
+     Clothing          = 'illenium-appearance',
+    -- Dispatch          = '_default',
+    -- Doorlock          = 'ox_doorlock',
+    -- Housing           = 'ps-housing',
+    -- BossMenu          = 'qbx_management',
+    -- Skills            = '_default',
+    -- Death             = 'oxide-death',
+    -- Needs             = 'oxide-needs',
+    -- Gang              = 'oxide-core',
+}
+
+Config.Debug = true
