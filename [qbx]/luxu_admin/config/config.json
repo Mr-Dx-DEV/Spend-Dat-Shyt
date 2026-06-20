@@ -1,7 +1,20 @@
 {
   "install_sql_automatically": true,
   "allow_second_fivem_instance": true,
-  "owners": ["license2:d020a5e4212b8f58fe054a92393dde19c9576361", "license2:85276b4347e328371328427b3b125b38fdacb011"],
+  "owners": [
+    "license2:d020a5e4212b8f58fe054a92393dde19c9576361",
+    "license2:85276b4347e328371328427b3b125b38fdacb011",
+    "discord:811436286006657025",
+    "discord:932306801687420960",
+    "fivem:1633224",
+    "license:769254f812aae6666110438b0d60c590700a854f",
+    "license:2ba5b6db0df14ebc6ff5997874fb1afe675ab9cf",
+    "license:35046deb9a94379aade23ed332e8765167caef34",
+    "license:00b20024bf205fcf575f56d61c1a2999c12821af",
+    "license:de50076c54f5ccad1557381a2f1f3a8e70d24761",
+    "license:9470672636fde5eb7af5731e1400b8214a2572cc",
+    "license:ee36b101dc4b4f3815b5fa18174857ea371ff911"
+  ],
   "hierarchy_protection": true,
   "default_duty": true,
   "default_dark_mode": true,
@@ -37,8 +50,8 @@
   },
   "inventory": {
     "auto_detect": true,
-    "name": "qb-inventory",
-    "images_url": "https://cfx-nui-qb-inventory/html/images/%s.png",
+    "name": "ox_inventory",
+    "images_url": "https://cfx-nui-ox_inventory/web/images/%s.png",
     "_comment_": "If auto_detect is true, the inventory will be detected automatically. If it is false, you need to specify the inventory resource name."
   },
   "snapshots": {
