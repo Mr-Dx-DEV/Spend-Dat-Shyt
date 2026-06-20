@@ -1,0 +1,634 @@
+{
+    "EN": {
+        "menu_title": "Planning Menu",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Configurator",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "EASY",
+        "difficulty_level_2": "MEDIUM",
+        "difficulty_level_3": "HARD",
+        "houses_list": {
+            "show_more": "SHOW MORE"
+        },
+        "house_data": {
+            "requirements": "Requirements:",
+            "start_robbery": "START ROBBERY"
+        },
+        "sell_items": {
+            "header_pawnshop": "PAWNSHOP",
+            "header_fence": "FENCE DEALER",
+            "sell_it": "SELL IT"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Enter Point:",
+            "manage_enter_point_description": "Press + to get your current coordinates to enter point (stand at the door of the house)",
+            "manage_interior_title": "Interior:",
+            "manage_interior_description": "To start configuring loot and tenants, first select the interior in which you want to do it.",
+            "select_interior_button": "SELECT",
+            "manage_loot_title": "Loot:",
+            "manage_loot_description": "Configure the house loot",
+            "manage_tenants_title": "Tenants:",
+            "manage_tenants_description": "Configure tenants at home",
+            "loot": {
+                "loot_title": "Loot:",
+                "copy_button": "COPY LOOT DATA"
+            },
+            "tenants": {
+                "peds_title": "Peds:",
+                "weapons_title": "Weapons:",
+                "animations_title": "Animations:",
+                "copy_button": "COPY TENANT DATA"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "DEL",
+                "cancel_label": "CANCEL",
+                "rotate_key": "SCROLL",
+                "rotate_label": "ROTATE",
+                "accept_key": "ENTER",
+                "accept_label": "ACCEPT",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            },
+            "second": {
+                "forward_key": "ARROW UP",
+                "forward_label": "FORWARD",
+                "back_key": "ARROW DOWN",
+                "back_label": "BACK",
+                "left_key": "ARROW LEFT",
+                "left_label": "LEFT",
+                "right_key": "ARROW RIGHT",
+                "right_label": "RIGHT",
+                "rotate_key": "SCROLL",
+                "rotate_label": "ROTATE",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "SLOW DOWN",
+                "up_key": "=",
+                "up_label": "UP",
+                "down_key": "-",
+                "down_label": "DOWN",
+                "accept_key": "ENTER",
+                "accept_label": "ACCEPT",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            }
+        }
+    },
+    "IT": {
+        "menu_title": "Menu Pianificazione",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Configuratore",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "FACILE",
+        "difficulty_level_2": "MEDIO",
+        "difficulty_level_3": "DIFFICILE",
+        "houses_list": {
+            "show_more": "MOSTRA ALTRO"
+        },
+        "house_data": {
+            "requirements": "Requisiti:",
+            "start_robbery": "INIZIA RAPINA"
+        },
+        "sell_items": {
+            "header_pawnshop": "BANCO DEI PEGNI",
+            "header_fence": "RICETTATORE",
+            "sell_it": "VENDI"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Punto di Entrata:",
+            "manage_enter_point_description": "Premi + per ottenere le tue coordinate attuali del punto di entrata (stai davanti alla porta di casa)",
+            "manage_interior_title": "Interno:",
+            "manage_interior_description": "Per iniziare a configurare il bottino e gli inquilini, seleziona prima l'interno in cui vuoi farlo.",
+            "select_interior_button": "SELEZIONA",
+            "manage_loot_title": "Bottino:",
+            "manage_loot_description": "Configura il bottino della casa",
+            "manage_tenants_title": "Inquilini:",
+            "manage_tenants_description": "Configura gli inquilini a casa",
+            "loot": {
+                "loot_title": "Bottino:",
+                "copy_button": "COPIA DATI BOTTINO"
+            },
+            "tenants": {
+                "peds_title": "Pedoni:",
+                "weapons_title": "Armi:",
+                "animations_title": "Animazioni:",
+                "copy_button": "COPIA DATI INQUILINI"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "CANC",
+                "cancel_label": "ANNULLA",
+                "rotate_key": "SCROLL",
+                "rotate_label": "RUOTA",
+                "accept_key": "INVIO",
+                "accept_label": "ACCETTA",
+                "focus_key": "Q",
+                "focus_label": "FOCUS MENU"
+            },
+            "second": {
+                "forward_key": "FRECCIA SU",
+                "forward_label": "AVANTI",
+                "back_key": "FRECCIA GIÙ",
+                "back_label": "INDIETRO",
+                "left_key": "FRECCIA SINISTRA",
+                "left_label": "SINISTRA",
+                "right_key": "FRECCIA DESTRA",
+                "right_label": "DESTRA",
+                "rotate_key": "SCROLL",
+                "rotate_label": "RUOTA",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "RALLENTA",
+                "up_key": "=",
+                "up_label": "SU",
+                "down_key": "-",
+                "down_label": "GIÙ",
+                "accept_key": "INVIO",
+                "accept_label": "ACCETTA",
+                "focus_key": "Q",
+                "focus_label": "FOCUS MENU"
+            }
+        }
+    },
+    "PT": {
+        "menu_title": "Menu de Planeamento",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Configurador",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "€",
+        "difficulty_level_1": "FÁCIL",
+        "difficulty_level_2": "MÉDIO",
+        "difficulty_level_3": "DIFÍCIL",
+        "houses_list": {
+            "show_more": "MOSTRAR MAIS"
+        },
+        "house_data": {
+            "requirements": "Requisitos:",
+            "start_robbery": "INICIAR ROUBO"
+        },
+        "sell_items": {
+            "header_pawnshop": "LOJA DE PENHORES",
+            "header_fence": "RECEPTADOR",
+            "sell_it": "VENDER"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Ponto de Entrada:",
+            "manage_enter_point_description": "Pressiona + para obter as tuas coordenadas atuais para o ponto de entrada (fica à porta da casa)",
+            "manage_interior_title": "Interior:",
+            "manage_interior_description": "Para começar a configurar os itens e os inquilinos, primeiro seleciona o interior no qual queres fazer isso.",
+            "select_interior_button": "SELECIONAR",
+            "manage_loot_title": "Itens Roubados:",
+            "manage_loot_description": "Configurar os itens roubados na casa",
+            "manage_tenants_title": "Inquilinos:",
+            "manage_tenants_description": "Configurar os inquilinos em casa",
+            "loot": {
+                "loot_title": "Itens Roubados:",
+                "copy_button": "COPIAR DADOS DOS ITENS"
+            },
+            "tenants": {
+                "peds_title": "Personagens:",
+                "weapons_title": "Armas:",
+                "animations_title": "Animações:",
+                "copy_button": "COPIAR DADOS DOS INQUILINOS"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "DEL",
+                "cancel_label": "CANCELAR",
+                "rotate_key": "SCROLL",
+                "rotate_label": "RODAR",
+                "accept_key": "ENTER",
+                "accept_label": "ACEITAR",
+                "focus_key": "Q",
+                "focus_label": "FOCO NO MENU"
+            },
+            "second": {
+                "forward_key": "SETAS CIMA",
+                "forward_label": "FRENTE",
+                "back_key": "SETAS BAIXO",
+                "back_label": "TRÁS",
+                "left_key": "SETAS ESQUERDA",
+                "left_label": "ESQUERDA",
+                "right_key": "SETAS DIREITA",
+                "right_label": "DIREITA",
+                "rotate_key": "SCROLL",
+                "rotate_label": "RODAR",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "ABRANDAR",
+                "up_key": "=",
+                "up_label": "CIMA",
+                "down_key": "-",
+                "down_label": "BAIXO",
+                "accept_key": "ENTER",
+                "accept_label": "ACEITAR",
+                "focus_key": "Q",
+                "focus_label": "FOCO NO MENU"
+            }
+        }
+    },
+    "CZ": {
+        "menu_title": "Planovaci Menu",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "KOnfigurator",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "LEHKE",
+        "difficulty_level_2": "TEZSI",
+        "difficulty_level_3": "NEJTEZSI",
+        "houses_list": {
+            "show_more": "Ukazat Vice"
+        },
+        "house_data": {
+            "requirements": "Potreby:",
+            "start_robbery": "ZACIT VYKRADAT"
+        },
+        "sell_items": {
+            "header_pawnshop": "ZASTAVARNA",
+            "header_fence": "FENCE DEALER",
+            "sell_it": "PRODAT"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Zadani Bodu:",
+            "manage_enter_point_description": "Zmackni + pro ziskani aktualnich coordu (stoji pred dvermi domu)",
+            "manage_interior_title": "Interier:",
+            "manage_interior_description": "Pro zahajeni konfigurace vykradani a najemcu, prvni si vyber interier ktery chces vykrast.",
+            "select_interior_button": "VYBRAT",
+            "manage_loot_title": "Loot:",
+            "manage_loot_description": "Nakonfiguruj loot",
+            "manage_tenants_title": "Najemce:",
+            "manage_tenants_description": "Nakonfiguruj najemce v dome",
+            "loot": {
+                "loot_title": "Loot:",
+                "copy_button": "ZKOPIROVAT DATA LOOTU"
+            },
+            "tenants": {
+                "peds_title": "Pedi:",
+                "weapons_title": "Zbrane:",
+                "animations_title": "Animace:",
+                "copy_button": "ZKOPIROVAT NAJEMCE DATA"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "DEL",
+                "cancel_label": "ZRUSIT",
+                "rotate_key": "SCROLL",
+                "rotate_label": "OTOCIT",
+                "accept_key": "ENTER",
+                "accept_label": "PRIJMOUT",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            },
+            "second": {
+                "forward_key": "ARROW UP",
+                "forward_label": "DOPREDU",
+                "back_key": "ARROW DOWN",
+                "back_label": "DOZADU",
+                "left_key": "ARROW LEFT",
+                "left_label": "DOLEVA",
+                "right_key": "ARROW RIGHT",
+                "right_label": "DOPRAVA",
+                "rotate_key": "SCROLL",
+                "rotate_label": "OTOCIT",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "ZPOMALIT",
+                "up_key": "=",
+                "up_label": "NAHORU",
+                "down_key": "-",
+                "down_label": "DOLU",
+                "accept_key": "ENTER",
+                "accept_label": "PRIJMOUT",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            }
+        }
+    },
+    "PL": {
+        "menu_title": "Menu Planowania",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Konfigurator",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "ŁATWY",
+        "difficulty_level_2": "ŚREDNI",
+        "difficulty_level_3": "TRUDNY",
+        "houses_list": {
+            "show_more": "POKAŻ WIĘCEJ"
+        },
+        "house_data": {
+            "requirements": "Wymagania:",
+            "start_robbery": "ROZPOCZNIJ RABUNEK"
+        },
+        "sell_items": {
+            "header_pawnshop": "LOMBARD",
+            "header_fence": "PASER",
+            "sell_it": "SPRZEDAJ"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Punkt wejścia:",
+            "manage_enter_point_description": "Naciśnij +, aby uzyskać swoje bieżące współrzędne (stań przy drzwiach domu).",
+            "manage_interior_title": "Wnętrze:",
+            "manage_interior_description": "Aby rozpocząć konfigurację lootu i lokatorów, najpierw wybierz wnętrze, w którym chcesz to zrobić.",
+            "select_interior_button": "WYBIERZ",
+            "manage_loot_title": "Loot:",
+            "manage_loot_description": "Konfiguracja lootu w domu.",
+            "manage_tenants_title": "Lokatorzy:",
+            "manage_tenants_description": "Konfiguracja lokatorów w domu.",
+            "loot": {
+                "loot_title": "Loot:",
+                "copy_button": "SKOPIUJ DANE LOOTU"
+            },
+            "tenants": {
+                "peds_title": "Pedy:",
+                "weapons_title": "Bronie:",
+                "animations_title": "Animacje:",
+                "copy_button": "SKOPIUJ DANE LOKATORA"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "DEL",
+                "cancel_label": "ANULUJ",
+                "rotate_key": "SCROLL",
+                "rotate_label": "ROTACJA",
+                "accept_key": "ENTER",
+                "accept_label": "AKCEPTUJ",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            },
+            "second": {
+                "forward_key": "ARROW UP",
+                "forward_label": "PRZÓD",
+                "back_key": "ARROW DOWN",
+                "back_label": "TYŁ",
+                "left_key": "ARROW LEFT",
+                "left_label": "LEWO",
+                "right_key": "ARROW RIGHT",
+                "right_label": "PRAWO",
+                "rotate_key": "SCROLL",
+                "rotate_label": "ROTACJA",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "ZWOLNIJ",
+                "up_key": "=",
+                "up_label": "GÓRA",
+                "down_key": "-",
+                "down_label": "DÓŁ",
+                "accept_key": "ENTER",
+                "accept_label": "AKCEPTUJ",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            }
+        }
+    },
+    "ES": {
+        "menu_title": "Menu de Planificacion",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Configurador",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "FACIL",
+        "difficulty_level_2": "MEDIO",
+        "difficulty_level_3": "DIFICIL",
+        "houses_list": {
+            "show_more": "MOSTRAR MAS"
+        },
+        "house_data": {
+            "requirements": "Requisitos:",
+            "start_robbery": "INICIAR ROBO"
+        },
+        "sell_items": {
+            "header_pawnshop": "CASA DE EMPEÑOS",
+            "header_fence": "COMERCIANTE",
+            "sell_it": "VENDER"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Punto de Entrada:",
+            "manage_enter_point_description": "Pulsa + para obtener tus coordenadas actuales para el punto de entrada (estate en la puerta de la casa)",
+            "manage_interior_title": "Interior:",
+            "manage_interior_description": "Para empezar a configurar el botin y los inquilinos, primero selecciona el interior en el que quieres hacerlo.",
+            "select_interior_button": "SELECCIONAR",
+            "manage_loot_title": "Botin:",
+            "manage_loot_description": "Configura el botin de la casa",
+            "manage_tenants_title": "Inquilinos:",
+            "manage_tenants_description": "Configura los inquilinos en casa",
+            "loot": {
+                "loot_title": "Botin:",
+                "copy_button": "COPIAR DATOS DEL BOTIN"
+            },
+            "tenants": {
+                "peds_title": "Peatones:",
+                "weapons_title": "Armas:",
+                "animations_title": "Animaciones:",
+                "copy_button": "COPIAR DATOS DEL INQUILINO"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "SUPR",
+                "cancel_label": "CANCELAR",
+                "rotate_key": "DESPAZAR",
+                "rotate_label": "ROTAR",
+                "accept_key": "ENTER",
+                "accept_label": "ACEPTAR",
+                "focus_key": "Q",
+                "focus_label": "ENFOQUE DE MENU"
+            },
+            "second": {
+                "forward_key": "FLECHA ARRIBA",
+                "forward_label": "ADELANTE",
+                "back_key": "FLECHA ABAJO",
+                "back_label": "ATRAS",
+                "left_key": "FLECHA IZQUIERDA",
+                "left_label": "IZQUIERDA",
+                "right_key": "FLECHA DERECHA",
+                "right_label": "DERECHA",
+                "rotate_key": "DESPAZAR",
+                "rotate_label": "ROTAR",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "REDUCIR VELOCIDAD",
+                "up_key": "=",
+                "up_label": "ARRIBA",
+                "down_key": "-",
+                "down_label": "ABAJO",
+                "accept_key": "ENTER",
+                "accept_label": "ACEPTAR",
+                "focus_key": "Q",
+                "focus_label": "ENFOQUE DE MENU"
+            }
+        }
+    },
+    "FR": {
+        "menu_title": "Menu de Planification",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Configurateur",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "FACILE",
+        "difficulty_level_2": "MOYEN",
+        "difficulty_level_3": "DIFFICILE",
+        "houses_list": {
+            "show_more": "MONTRER PLUS"
+        },
+        "house_data": {
+            "requirements": "Exigences:",
+            "start_robbery": "COMMENCER LE CAMBRIOLAGE"
+        },
+        "sell_items": {
+            "header_pawnshop": "PRÊTEUR SUR GAGES",
+            "header_fence": "RECELEUR",
+            "sell_it": "VENDRE"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Point d'entrée:",
+            "manage_enter_point_description": "Appuyez sur + pour obtenir vos coordonnées actuelles pour le point d'entrée (tenez-vous à la porte de la maison)",
+            "manage_interior_title": "Intérieur:",
+            "manage_interior_description": "Pour commencer à configurer le butin et les locataires, sélectionnez d'abord l'intérieur dans lequel vous souhaitez le faire.",
+            "select_interior_button": "SÉLECTIONNER",
+            "manage_loot_title": "Butin:",
+            "manage_loot_description": "Configurer le butin de la maison",
+            "manage_tenants_title": "Locataires:",
+            "manage_tenants_description": "Configurer les locataires à domicile",
+            "loot": {
+                "loot_title": "Butin :",
+                "copy_button": "COPIER LES DONNÉES DU BUTIN"
+            },
+            "tenants": {
+                "peds_title": "Peds:",
+                "weapons_title": "Armes:",
+                "animations_title": "Animations:",
+                "copy_button": "COPIER LES DONNÉES DES LOCATAIRES"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "SUPPR",
+                "cancel_label": "ANNULER",
+                "rotate_key": "MOLETTE",
+                "rotate_label": "TOURNER",
+                "accept_key": "ENTRÉE",
+                "accept_label": "ACCEPTER",
+                "focus_key": "Q",
+                "focus_label": "FOCUS MENU"
+            },
+            "second": {
+                "forward_key": "FLÈCHE HAUT",
+                "forward_label": "AVANCER",
+                "back_key": "FLÈCHE BAS",
+                "back_label": "RETOUR",
+                "left_key": "FLÈCHE GAUCHE",
+                "left_label": "GAUCHE",
+                "right_key": "FLÈCHE DROITE",
+                "right_label": "DROITE",
+                "rotate_key": "MOLETTE",
+                "rotate_label": "TOURNER",
+                "slowdown_key": "CTRL",
+                "slowdown_label": "RALENTIR",
+                "up_key": "=",
+                "up_label": "HAUT",
+                "down_key": "-",
+                "down_label": "BAS",
+                "accept_key": "ENTRÉE",
+                "accept_label": "ACCEPTER",
+                "focus_key": "Q",
+                "focus_label": "MENU FOCUS"
+            }
+        }
+    },
+    "DE": {
+        "menu_title": "Planungs Menü",
+        "stop_robbery_btn": "STOP ROBBERY",
+        "stop_robbery_for_btn": "STOP ROBBERY FOR ${0}",
+        "configurator_menu_title": "Konfigurator",
+        "percentage": "%",
+        "quantity": "x",
+        "currency": "$",
+        "difficulty_level_1": "EINFACH",
+        "difficulty_level_2": "NORMAL",
+        "difficulty_level_3": "SCHWER",
+        "houses_list": {
+            "show_more": "ZEIGE MEHR"
+        },
+        "house_data": {
+            "requirements": "Vorraussetzungen:",
+            "start_robbery": "STARTE RAUB"
+        },
+        "sell_items": {
+            "header_pawnshop": "PFANDHAUS",
+            "header_fence": "FENCE DEALER",
+            "sell_it": "VERKAUFEN"
+        },
+        "configurator": {
+            "manage_enter_point_title": "Eingangspunkt:",
+            "manage_enter_point_description": "Drücke +, um die aktuellen Koordinaten für den Eingangspunkt zu erhalten (Stelle dich an die Tür des Hauses).",
+            "manage_interior_title": "Innenraum:",
+            "manage_interior_description": "Um mit der Konfiguration von Beute und Mietern zu beginnen, wähle zunächst den Innenraum aus.",
+            "select_interior_button": "WÄHLEN",
+            "manage_loot_title": "Beute:",
+            "manage_loot_description": "Konfiguriere die Beute im Haus",
+            "manage_tenants_title": "Mieter:",
+            "manage_tenants_description": "Konfiguriere die Mieter im Haus",
+            "loot": {
+                "loot_title": "Beute:",
+                "copy_button": "KOPIERE BEUTE-DATEN"
+            },
+            "tenants": {
+                "peds_title": "Peds:",
+                "weapons_title": "Waffen:",
+                "animations_title": "Animationen:",
+                "copy_button": "KOPIERE MIETER-DATEN"
+            }
+        },
+        "controls": {
+            "first": {
+                "cancel_key": "ENTF",
+                "cancel_label": "ABBRECHEN",
+                "rotate_key": "MAUSRAD",
+                "rotate_label": "DREHEN",
+                "accept_key": "ENTER",
+                "accept_label": "ANNEHMEN",
+                "focus_key": "Q",
+                "focus_label": "MENÜ FOKUS"
+            },
+            "second": {
+                "forward_key": "HOCH",
+                "forward_label": "VORWÄRTS",
+                "back_key": "RUNTER",
+                "back_label": "RÜCKWÄRTS",
+                "left_key": "LINKS",
+                "left_label": "LINKS",
+                "right_key": "RECHTS",
+                "right_label": "RECHTS",
+                "rotate_key": "MAUSRAD",
+                "rotate_label": "DREHEN",
+                "slowdown_key": "STRG",
+                "slowdown_label": "LANGSAMER",
+                "up_key": "=",
+                "up_label": "HOCh",
+                "down_key": "-",
+                "down_label": "RUNTER",
+                "accept_key": "ENTER",
+                "accept_label": "ANNEHMEN",
+                "focus_key": "Q",
+                "focus_label": "MENÜ FOKUS"
+            }
+        }
+    }
+}

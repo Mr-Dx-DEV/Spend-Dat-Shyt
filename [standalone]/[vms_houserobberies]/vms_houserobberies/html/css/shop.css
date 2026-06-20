@@ -1,0 +1,132 @@
+.sell-items {
+    display: none;
+    
+    overflow: hidden;
+    opacity: 0.95;
+}
+
+.sell-items .center {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-items .menu {
+	position: relative;
+    
+    width: 30em;
+    height: 40em;
+    background: var(--menu-background);
+    border-radius: 12px;
+}
+
+.sell-items .header-name {
+    position: relative;
+    display: flex;
+    color: white;
+    padding-inline: 1em;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 0.5em;
+    height: fit-content;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.sell-items .products-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: 8.3em 8.3em 8.3em;
+    gap: 1em;
+    padding-top: 1.5em;
+    padding-inline: 1.5em;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 35em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+.sell-items .products-list > .product {
+    position: relative;
+    background: var(--submenu-background);
+    border-radius: 0.4em;
+    height: 12em;
+}
+
+.sell-items .products-list .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: white;
+    padding-top: 0.25em;
+    padding-inline: 0.5em;
+}
+
+.sell-items .products-list .info > .label {
+    position: absolute;
+    top: 0.5em;
+    width: 6em;
+    line-height: 1;
+}
+
+.sell-items .products-list .info > .price {
+    margin-left: auto;
+}
+
+.sell-items .products-list .icon > img {
+    display: block;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 10%;
+    max-width: 70%;
+    max-height: 70%;
+}
+
+.sell-items .products-list .actions {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    border-top: 1px solid #ffffff3b;
+}
+
+.sell-items .products-list .actions input[type="number"] {
+    width: 3em;
+    height: 2em;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+.sell-items .products-list .actions .sell-item {
+    width: 100%;
+    height: 2.85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    font-size: 0.7em;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.sell-items .products-list .actions .sell-item:hover {
+    background: var(--main-color-hover);
+}
+
+.sell-items .products-list .actions .sell-item:active {
+    background: var(--main-color-active);
+}

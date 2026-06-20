@@ -1,0 +1,53 @@
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES 
+('sdcb_tire', 'Tire', 5, 0, 1),
+('sdcb_wheel', 'Wheel', 10, 0, 1),
+
+('sdcb_brakepad', 'Brake Pad', 1, 0, 1),
+('sdcb_brakepad2', 'Race Brake Pad', 1, 0, 1),
+('sdcb_brakerotor', 'Brake Pad', 5, 0, 1),
+('sdcb_brakerotor2', 'Race Brake Rotor', 5, 0, 1),
+('sdcb_spring', 'Spring', 5, 0, 1),
+('sdcb_spring2', 'Race Spring', 5, 0, 1),
+('sdcb_shock', 'Shock', 5, 0, 1),
+('sdcb_shock2', 'Race Shock', 5, 0, 1),
+
+('sdcb_door', 'Door', 50, 0, 1),
+('sdcb_doorrepairkit', 'Door Reapir Kit', 5, 0, 1),
+('sdcb_window', 'Window', 5, 0, 1),
+
+('sdcb_intake', 'Intake', 5, 0, 1),
+('sdcb_intake2', 'Race Intake', 5, 0, 1),
+('sdcb_header', 'Header', 5, 0, 1),
+('sdcb_header2', 'Race Header', 5, 0, 1),
+('sdcb_radiator', 'Radiator', 15, 0, 1),
+('sdcb_radiator2', 'Race Radiator', 15, 0, 1),
+('sdcb_turbo', 'Turbo', 10, 0, 1),
+('sdcb_camshaft', 'Camshaft', 5, 0, 1),
+('sdcb_camshaft2', 'Race Camshaft', 5, 0, 1),
+('sdcb_piston', 'Piston', 1, 0, 1),
+('sdcb_piston2', 'Race Piston', 1, 0, 1),
+('sdcb_sparkplug', 'Spark Plug', 1, 0, 1),
+('sdcb_sparkplug2', 'Race Spark Plug', 1, 0, 1),
+('sdcb_oil', 'Oil', 1, 0, 1),
+('sdcb_oil2', 'Race Oil', 1, 0, 1),
+('sdcb_rod', 'Engine Rod', 1, 0, 1),
+('sdcb_rod2', 'Race Engine Rod', 1, 0, 1),
+('sdcb_rocker', 'Rocker', 1, 0, 1),
+('sdcb_rocker2', 'Race Rocker', 1, 0, 1),
+('sdcb_cylinderhead', 'Cylinder Head', 5, 0, 1),
+('sdcb_cylinderhead2', 'Race Cylinder Head', 5, 0, 1),
+('sdcb_alternator', 'Alternator', 15, 0, 1),
+('sdcb_starter', 'Starter', 15, 0, 1),
+
+('sdcb_clutch', 'Clutch', 5, 0, 1),
+('sdcb_clutch2', 'Race Clutch', 5, 0, 1),
+('sdcb_torqueconverter', 'Torque Converter', 10, 0, 1),
+('sdcb_torqueconverter2', 'Race Torque Converter', 10, 0, 1),
+('sdcb_gearset', 'Gear Set', 5, 0, 1),
+('sdcb_gearset2', 'Race Gear Set', 5, 0, 1),
+
+('sdcb_exhaust', 'Exhuast', 15, 0, 1),
+('sdcb_exhaust2', 'Race Exhuast', 15, 0, 1),
+('sdcb_axel', 'Axel', 25, 0, 1)
+;
+

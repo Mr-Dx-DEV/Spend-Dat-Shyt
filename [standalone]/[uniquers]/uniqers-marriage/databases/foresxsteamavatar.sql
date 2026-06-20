@@ -1,0 +1,2 @@
+ALTER TABLE users ADD COLUMN steamhex VARCHAR(50);  
+  

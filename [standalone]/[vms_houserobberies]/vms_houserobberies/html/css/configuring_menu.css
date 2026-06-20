@@ -1,0 +1,391 @@
+.configuring-menu {
+    display: none;
+    z-index: 0;
+    position: relative;
+    margin-left: 5em;
+    top: 8.5em;
+    width: 28em;
+    height: 45em;
+    background: var(--menu-background);
+    color: var(--primary-text-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.configuring-menu>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.configuring-menu>.header .title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.configuring-menu>.header .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 0.8em;
+}
+
+.configuring-menu>.header .back:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.configuring-menu>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.configuring-menu>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.configuring-menu>.menu {
+    z-index: 34000;
+    height: 40.5em;
+    padding: 1em;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info>.text>p.title,
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.info>p.title,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info>.text>p.title,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info>.text>p.title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info>.text>p.description,
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.info>p.description,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info>.text>p.description,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info>.text>p.description {
+    font-size: 0.9em;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords,
+.configuring-menu>.menu>div[data-type="house-config"]>#interior,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants {
+    margin-bottom: 1.5em;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#loot.interiorNotSelected,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants.interiorNotSelected {
+    opacity: 0.3;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info>.button,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info>.button,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info>.button {
+    width: 2em;
+    min-width: 2em;
+    max-width: 2em;
+    height: 2em;
+    min-height: 2em;
+    max-height: 2em;
+    background: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info>.button:hover,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info>.button:hover,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info>.button:hover {
+    background: var(--main-color-hover);
+}
+    
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info>.button:active,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info>.button:active,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info>.button:active {
+    background: var(--main-color-active);
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.info {
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data {
+    display: flex;
+    align-items: center;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-left {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.3em 0em 0em 0.3em;
+    background: var(--back-btn-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-left:hover {
+    background: var(--back-btn-color-hover);
+
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-name {
+    width: 100%;
+    text-align: center;
+    height: inherit;
+    height: 2.2em;
+    line-height: 2.2;
+    background: var(--back-btn-color);
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-right {
+    width: 2.5em;
+    min-width: 2.5em;
+    height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--back-btn-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-right:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-select {
+    width: 7.2em;
+    min-width: 7.2em;
+    height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0em 0.3em 0.3em 0em;
+    background: var(--main-color);
+    font-weight: 600;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-select:hover {
+    background: var(--main-color-hover);
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>#interior>.data>.interior-select:active {
+    background: var(--main-color-active);
+}
+
+
+.configuring-menu>.menu>div[data-type="house-config"]>#enter-coords>.info,
+.configuring-menu>.menu>div[data-type="house-config"]>#loot>.info,
+.configuring-menu>.menu>div[data-type="house-config"]>#tenants>.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+    
+.configuring-menu>.menu>div[data-type="house-config"]>.controls {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>.controls > div {
+    display: flex;
+    align-items: center;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>.controls > div > div {
+    background: #80808040;
+    text-align: center;
+    padding-inline: 0.7em;
+    padding-block: 0.2em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.configuring-menu>.menu>div[data-type="house-config"]>.controls > div > span {
+    margin-left: 0.5em;
+}
+
+
+
+
+.configuring-menu>.menu>div[data-type="tenants-config"],
+.configuring-menu>.menu>div[data-type="loot-config"] {
+    display: none;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .info > p.title,
+.configuring-menu>.menu>div[data-type="loot-config"] > .info > p.title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .info > p.description,
+.configuring-menu>.menu>div[data-type="loot-config"] > .info > p.description {
+    font-size: 0.9em;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+.configuring-menu>.menu>div[data-type="loot-config"] > .data {
+    height: 25em;
+    overflow: auto;
+    overflow: auto;
+    background: #dddddd0d;
+    border-radius: 0.4em;
+    padding-inline: 0.5em;
+    padding-block: 0.1em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .data > div,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div {
+    display: flex;
+    height: 2em;
+    line-height: 0.9;
+    align-items: center;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .data > div > .name,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .name {
+    margin-right: auto;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .data > div > .name > span,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .name > span {
+    font-size: 0.65em;
+    opacity: 0.8;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .data > div > .view,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .add-loot,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .remove-loot,
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .view-loot {
+    width: 1.5em;
+    min-width: 1.5em;
+    height: 1.5em;
+    min-height: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ababab6b;
+    border-radius: 0.3em;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="loot-config"] > .data > div > .view-loot {
+    margin-left: 0.3em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .copy-data,
+.configuring-menu>.menu>div[data-type="loot-config"] > .copy-object {
+    text-align: center;
+    padding-block: 0.4em;
+    background: var(--main-color);
+    border-radius: 0.3em;
+    margin-top: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .copy-data:hover,
+.configuring-menu>.menu>div[data-type="loot-config"] > .copy-object:hover {
+    background: var(--main-color-hover);
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .copy-data:active,
+.configuring-menu>.menu>div[data-type="loot-config"] > .copy-object:active {
+    background: var(--main-color-active);
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls {
+    margin-top: 0.5em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls > .second,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls > .second {
+    display: none;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls > div > div,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls > div > div {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 0.5em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls > div > div > div,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls > div > div > div {
+    display: flex;
+    align-items: center;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls > div > div  > div > div,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls > div > div  > div > div {
+    background: #80808040;
+    text-align: center;
+    padding-inline: 0.7em;
+    padding-block: 0.2em;
+    border-radius: 0.3em;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .controls > div > div > div > span,
+.configuring-menu>.menu>div[data-type="loot-config"] > .controls > div > div > div > span {
+    margin-left: 0.5em;
+}
+
+.configuring-menu>.menu>div[data-type="tenants-config"] > .data {
+    height: 6.8em;
+    margin-bottom: 0.5em;
+    overflow: auto;
+    background: #dddddd0d;
+    border-radius: 0.4em;
+    padding-inline: 0.5em;
+    padding-block: 0.1em;
+}

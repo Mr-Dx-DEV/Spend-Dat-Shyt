@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Market</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: transparent;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        /* ── Container (transparent overlay; only the panel is filled) ── */
+        #container {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: transparent;
+            justify-content: center;
+            align-items: center;
+            pointer-events: none;
+        }
+        #container.active {
+            display: flex;
+            pointer-events: none;
+        }
+        #container.active .panel {
+            pointer-events: auto;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeIn   { from { opacity: 0; }                                     to { opacity: 1; } }
+        @keyframes slideUp  { from { transform: translateY(24px); opacity: 0; }        to { transform: translateY(0); opacity: 1; } }
+        @keyframes slideIn  { from { transform: translateX(80px); opacity: 0; }       to { transform: translateX(0); opacity: 1; } }
+        @keyframes fadeOut  { from { opacity: 1; }                                     to { opacity: 0; } }
+        @keyframes shimmer { 0%, 100% { opacity: 1; } 50% { opacity: 0.85; } }
+
+        /* ── Panel ── */
+        .panel {
+            background: linear-gradient(165deg, #0a0a0a 0%, #0d0d0d 35%, #111 70%, #0a0a0a 100%);
+            border: 1px solid rgba(232, 90, 135, 0.35);
+            border-radius: 14px;
+            width: 440px;
+            max-height: 80vh;
+            overflow: hidden;
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.65),
+                        0 0 0 1px rgba(232, 90, 135, 0.08),
+                        0 0 60px rgba(232, 90, 135, 0.06);
+            animation: slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* ── Header ── */
+        .header {
+            padding: 22px 26px 18px;
+            border-bottom: 1px solid rgba(232, 90, 135, 0.18);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            color: #f5f5f5;
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .header h1 span { color: #e85a87; letter-spacing: 4px; }
+
+        .close-btn {
+            width: 34px; height: 34px;
+            background: rgba(232, 90, 135, 0.12);
+            border: 1px solid rgba(232, 90, 135, 0.28);
+            border-radius: 10px;
+            color: #e85a87;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+        }
+        .close-btn:hover {
+            background: rgba(232, 90, 135, 0.28);
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(232, 90, 135, 0.15);
+        }
+
+        /* ── Items list ── */
+        .items-list {
+            padding: 14px 18px 18px;
+            overflow-y: auto;
+            max-height: calc(80vh - 80px);
+        }
+        .items-list::-webkit-scrollbar       { width: 3px; }
+        .items-list::-webkit-scrollbar-track  { background: rgba(0, 0, 0, 0.3); }
+        .items-list::-webkit-scrollbar-thumb  { background: rgba(232, 90, 135, 0.4); border-radius: 4px; }
+
+        /* ── Item card ── */
+        .item-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(232, 90, 135, 0.12);
+            border-radius: 10px;
+            padding: 18px;
+            margin-bottom: 12px;
+            transition: all 0.25s ease;
+        }
+        .item-card:hover {
+            background: rgba(232, 90, 135, 0.05);
+            border-color: rgba(232, 90, 135, 0.25);
+            box-shadow: 0 2px 16px rgba(232, 90, 135, 0.06);
+        }
+        .item-card:last-child { margin-bottom: 0; }
+
+        .item-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        .item-name {
+            color: #e8e8e8;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        .item-price {
+            color: #e85a87;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            letter-spacing: 1px;
+        }
+        .item-desc {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 14px;
+            line-height: 1.5;
+        }
+        .item-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ── Quantity control ── */
+        .qty-control { display: flex; align-items: center; }
+
+        .qty-btn {
+            width: 28px; height: 28px;
+            background: rgba(232, 90, 135, 0.12);
+            border: 1px solid rgba(232, 90, 135, 0.25);
+            color: #e85a87;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .qty-btn:first-child { border-radius: 8px 0 0 8px; }
+        .qty-btn:last-child  { border-radius: 0 8px 8px 0; }
+        .qty-btn:hover       { background: rgba(232, 90, 135, 0.28); }
+
+        .qty-display {
+            width: 36px; height: 28px;
+            background: rgba(0, 0, 0, 0.4);
+            border-top: 1px solid rgba(232, 90, 135, 0.2);
+            border-bottom: 1px solid rgba(232, 90, 135, 0.2);
+            color: #e8e8e8;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ── Buy section ── */
+        .buy-section {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .total-price {
+            color: #e85a87;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .buy-btn {
+            padding: 8px 22px;
+            background: linear-gradient(135deg, #e85a87 0%, #c83250 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .buy-btn:hover {
+            background: linear-gradient(135deg, #f06a97 0%, #d84260 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(232, 90, 135, 0.35);
+        }
+        .buy-btn:active  { transform: translateY(0); }
+        .buy-btn.loading { opacity: 0.6; pointer-events: none; }
+
+        /* ── Toast notification ── */
+        .toast {
+            position: fixed;
+            top: 24px; right: 24px;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 0.5px;
+            animation: slideIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            z-index: 1000;
+            pointer-events: none;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .toast.success {
+            background: linear-gradient(135deg, rgba(232, 90, 135, 0.95) 0%, rgba(200, 50, 80, 0.95) 100%);
+            box-shadow: 0 8px 32px rgba(232, 90, 135, 0.4);
+        }
+        .toast.error {
+            background: linear-gradient(135deg, rgba(120, 20, 40, 0.95) 0%, rgba(80, 10, 30, 0.95) 100%);
+            border-color: rgba(232, 90, 135, 0.4);
+            box-shadow: 0 8px 32px rgba(200, 50, 80, 0.35);
+        }
+        .toast.fade-out { animation: fadeOut 0.3s ease forwards; }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="panel">
+        <div class="header">
+            <h1><span>Black</span> Market</h1>
+            <button class="close-btn" onclick="closeMenu()">&times;</button>
+        </div>
+        <div class="items-list" id="items-list"></div>
+    </div>
+</div>
+
+<script>
+    /* ================================================================
+       State
+       ================================================================ */
+    const quantities = {};
+    let items = [];
+    let purchasing = false;
+
+    /* ================================================================
+       NUI message handler
+       ================================================================ */
+    window.addEventListener("message", function (event) {
+        const data = event.data;
+
+        if (data.action === "openBlackMarket") {
+            items = data.items || [];
+            items.forEach(function (item) { quantities[item.id] = 1; });
+            renderItems();
+            document.getElementById("container").classList.add("active");
+        }
+
+        if (data.action === "closeBlackMarket") {
+            document.getElementById("container").classList.remove("active");
+        }
+    });
+
+    /* ================================================================
+       Escape key closes menu
+       ================================================================ */
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    /* ================================================================
+       Close helper
+       ================================================================ */
+    function closeMenu() {
+        document.getElementById("container").classList.remove("active");
+        fetch("https://" + GetParentResourceName() + "/blackmarket:close", {
+            method: "POST",
+            body: JSON.stringify({}),
+        });
+    }
+
+    /* ================================================================
+       Render items into the DOM
+       ================================================================ */
+    function renderItems() {
+        var list = document.getElementById("items-list");
+        list.innerHTML = "";
+
+        items.forEach(function (item) {
+            var qty   = quantities[item.id] || 1;
+            var total = item.price * qty;
+
+            var card = document.createElement("div");
+            card.className = "item-card";
+            card.id = "card-" + item.id;
+
+            card.innerHTML =
+                '<div class="item-top">' +
+                    '<span class="item-name">' + escHtml(item.label) + '</span>' +
+                    '<span class="item-price">$' + item.price.toLocaleString() + ' each</span>' +
+                '</div>' +
+                '<div class="item-desc">' + escHtml(item.description || "") + '</div>' +
+                '<div class="item-bottom">' +
+                    '<div class="qty-control">' +
+                        '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\', -1)">&minus;</button>' +
+                        '<div class="qty-display" id="qty-' + item.id + '">' + qty + '</div>' +
+                        '<button class="qty-btn" onclick="changeQty(\'' + item.id + '\', 1)">+</button>' +
+                    '</div>' +
+                    '<div class="buy-section">' +
+                        '<span class="total-price" id="total-' + item.id + '">$' + total.toLocaleString() + '</span>' +
+                        '<button class="buy-btn" id="btn-' + item.id + '" onclick="purchase(\'' + item.id + '\')">Buy</button>' +
+                    '</div>' +
+                '</div>';
+
+            list.appendChild(card);
+        });
+    }
+
+    /* ================================================================
+       Quantity adjustment
+       ================================================================ */
+    function changeQty(itemId, delta) {
+        var item = items.find(function (i) { return i.id === itemId; });
+        if (!item) return;
+
+        var qty = (quantities[itemId] || 1) + delta;
+        qty = Math.max(1, Math.min(qty, item.max));
+        quantities[itemId] = qty;
+
+        document.getElementById("qty-" + itemId).textContent = qty;
+        document.getElementById("total-" + itemId).textContent =
+            "$" + (item.price * qty).toLocaleString();
+    }
+
+    /* ================================================================
+       Purchase request
+       ================================================================ */
+    function purchase(itemId) {
+        if (purchasing) return;
+        purchasing = true;
+
+        var btn = document.getElementById("btn-" + itemId);
+        btn.classList.add("loading");
+        btn.textContent = "...";
+
+        fetch("https://" + GetParentResourceName() + "/blackmarket:purchase", {
+            method: "POST",
+            body: JSON.stringify({
+                itemId: itemId,
+                amount: quantities[itemId] || 1,
+            }),
+        })
+        .then(function (resp) { return resp.json(); })
+        .then(function (data) {
+            purchasing = false;
+            btn.classList.remove("loading");
+            btn.textContent = "Buy";
+
+            if (data.success) {
+                showToast(data.message || "Purchase complete!", "success");
+            } else {
+                showToast(data.message || "Purchase failed.", "error");
+            }
+        })
+        .catch(function () {
+            purchasing = false;
+            btn.classList.remove("loading");
+            btn.textContent = "Buy";
+            showToast("Something went wrong.", "error");
+        });
+    }
+
+    /* ================================================================
+       In-UI toast notification
+       ================================================================ */
+    function showToast(msg, type) {
+        var toast = document.createElement("div");
+        toast.className = "toast " + (type || "success");
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+
+        setTimeout(function () {
+            toast.classList.add("fade-out");
+            setTimeout(function () { toast.remove(); }, 300);
+        }, 3000);
+    }
+
+    /* ================================================================
+       XSS helper
+       ================================================================ */
+    function escHtml(str) {
+        var div = document.createElement("div");
+        div.appendChild(document.createTextNode(str));
+        return div.innerHTML;
+    }
+</script>
+</body>
+</html>

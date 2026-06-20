@@ -1,0 +1,37 @@
+---------------------------------------------------------------------
+-------------------------Language Table------------------------------
+---------------------------------------------------------------------
+SDC.Lang = {
+    SiteMangerLabel = "Talk To Site Manager",
+    NotOnJob = "You Need The Crane Job To Talk To Me!",
+    SiteManager = "Site Manager",
+    SiteManager2 = "Find A Crane",
+    SiteManager3 = "Select This To Get Told What Crane You Will Be Operating!",
+    SiteManager4 = "Finish Working",
+    SiteManager5 = "Select This To Finish Working!",
+    AssignedCrane = "Assigned Crane",
+    AssignedCraneMsg = "You have been assigned a Crane! Go to it and get to work!",
+    UseElevator = "Use Elevator",
+    EnterCrane = "Enter Crane",
+    Exit = "Exit Crane",
+    CraneRot = "Crane Rotation",
+    TrolleyExt = "Trolley Extension",
+    Degrees = "Degrees",
+    Meters = "Meters",
+    TurnCrane = "Turn Crane",
+    HookHeight = "Hook Height",
+    HookStatus = "Hook Status",
+    Hooked = "Hooked",
+    Unhooked = "Unhooked",
+    ChangeCamera = "Change View",
+    CraneObjectsToSite = "Crane All Materials Off Trailer To Site!",
+    CraneObjectsToTrailer = "Crane All Materials To Trailer!",
+    HookUnhookObject = "Hook/Unhook Material",
+    DeliverObjectToMarkedPosition = "Deliver The Attached Material To Its Marked Position!",
+    GrabAnother = "Good Job! Deliver The Other Materials!",
+    WaitForAnotherTruck = "Wait For The Next Truck To Pull In!",
+    WaitingForTruck = "Waiting For Truck",
+    InRange = "You are now in range of the Crane Site. If you walk too far away your crane spot will be given away!",
+    OutRange = "You walked too far away from the Crane Site. If you want to do more crane work go and talk to Site Manager!",
+    NotAssignedToThisCrane = "You are not Assigned to this Crane Site!"
+}

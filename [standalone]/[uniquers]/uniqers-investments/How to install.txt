@@ -1,0 +1,21 @@
+Thank you for buying this amazing script!
+
+First
+Please import uniqers-investments-database.sql your database.
+after open your server server.cfg or what u use cfg.
+add this code 
+
+ensure uniqers-investments
+or
+start uniqers-investments
+
+save and close.
+
+and open config at script select your framework and mysql service and save close
+
+and start your server and login your character then use open command for script.
+
+done anjoy!
+
+Support and updates info at > 
+https://discord.gg/MyrGhbf9tM

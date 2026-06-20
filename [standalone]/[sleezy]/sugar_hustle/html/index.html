@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SugarHustle - Premium Dating</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        console.log('Body loading, checking for app-container...');
+    </script>
+    <!-- Main Container -->
+    <div id="app-container" class="hidden" style="display: none;">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-gem"></i>
+                    <h1>SugarHustle</h1>
+                </div>
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="browse">
+                <i class="fas fa-search"></i>
+                <span>Browse</span>
+            </button>
+            <button class="nav-tab" data-tab="messages">
+                <i class="fas fa-envelope"></i>
+                <span>Messages</span>
+            </button>
+            <button class="nav-tab" data-tab="settings">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </button>
+        </nav>
+
+        <!-- Content Area -->
+        <main class="content-area">
+            <!-- Browse Tab -->
+            <div class="tab-content active" id="browse-tab">
+                <div class="browse-container">
+                    <!-- No Partner State -->
+                    <div id="no-partner" class="no-partner-state">
+                        <div class="empty-state">
+                            <i class="fas fa-heart-broken"></i>
+                            <h2>No Active Arrangement</h2>
+                            <p>Find your perfect sugar partner and start your luxury lifestyle</p>
+                            <button class="primary-btn" id="findPartnerBtn">
+                                <i class="fas fa-heart"></i>
+                                Find Partner
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Partner Profile Card -->
+                    <div id="partner-profile" class="partner-profile hidden">
+                        <!-- Partner selector (when multiple partners) -->
+                        <div id="partner-selector-wrap" class="partner-selector-wrap hidden">
+                            <label class="partner-selector-label">Current partner</label>
+                            <select id="partnerSelector" class="partner-selector" aria-label="Select partner">
+                                <!-- Options filled by JS -->
+                            </select>
+                        </div>
+                        <!-- Find another partner (visible when under max and already have a partner) -->
+                        <div id="find-another-partner-wrap" class="find-another-partner-wrap hidden">
+                            <button type="button" class="primary-btn find-another-btn" id="findAnotherPartnerBtn">
+                                <i class="fas fa-heart"></i>
+                                Find another partner
+                            </button>
+                        </div>
+                        <div class="profile-card">
+                            <!-- Profile Image -->
+                            <div class="profile-image">
+                                <div class="image-container">
+                                    <img id="profilePicture" class="profile-pic" src="" alt="Profile Picture" onerror="this.style.display='none'; document.getElementById('profileIconFallback').style.display='flex';">
+                                    <div id="profileIconFallback" class="profile-icon-fallback" style="display: none;">
+                                        <i class="fas fa-user-circle profile-icon"></i>
+                                    </div>
+                                    <div class="personality-badge" id="personalityBadge">
+                                        <span id="personalityIcon">💎</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Profile Info -->
+                            <div class="profile-info">
+                                <div class="profile-header">
+                                    <h2 class="profile-name" id="partnerName">Loading...</h2>
+                                    <span class="profile-age" id="partnerAge">32</span>
+                                </div>
+                                <p class="profile-occupation" id="partnerOccupation">Entrepreneur</p>
+                                <p class="profile-bio" id="partnerBio">Elite lifestyle companion</p>
+                                <div class="profile-tags">
+                                    <span class="tag gender-tag" id="genderTag">
+                                        <i class="fas fa-venus" id="genderIcon"></i>
+                                        <span id="genderText">Female</span>
+                                    </span>
+                                    <span class="tag personality-tag" id="personalityTag">Generous</span>
+                                </div>
+                                <div class="profile-traits" id="profileTraits">
+                                    <!-- Traits will be inserted here -->
+                                </div>
+                            </div>
+
+                            <!-- Relationship Bar -->
+                            <div class="relationship-section">
+                                <div class="relationship-header">
+                                    <span class="relationship-label">Connection Level</span>
+                                    <span class="relationship-value" id="relationshipValue">0/100</span>
+                                </div>
+                                <div class="relationship-bar">
+                                    <div class="relationship-fill" id="relationshipFill"></div>
+                                    <div class="relationship-hearts">
+                                        <i class="fas fa-heart heart-icon"></i>
+                                        <i class="fas fa-heart heart-icon"></i>
+                                        <i class="fas fa-heart heart-icon"></i>
+                                        <i class="fas fa-heart heart-icon"></i>
+                                        <i class="fas fa-heart heart-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="relationship-tier" id="relationshipTier">Cold</div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="action-buttons">
+                                <button class="action-btn flirt-btn" id="flirtBtn">
+                                    <i class="fas fa-heart"></i>
+                                    <span>Flirt</span>
+                                </button>
+                                <button class="action-btn gift-btn" id="giftBtn">
+                                    <i class="fas fa-gift"></i>
+                                    <span>Ask Gift</span>
+                                </button>
+                                <button class="action-btn argue-btn" id="argueBtn">
+                                    <i class="fas fa-angry"></i>
+                                    <span>Argue</span>
+                                </button>
+                                <button class="action-btn plug-btn" id="plugBtn" style="display: none;">
+                                    <i class="fas fa-plug"></i>
+                                    <span>The Plug</span>
+                                </button>
+                            </div>
+
+                            <!-- Date Button (Special) -->
+                            <button class="date-btn" id="dateBtn">
+                                <i class="fas fa-utensils"></i>
+                                <span>Go on Date</span>
+                                <small>Sit & dine together for rewards</small>
+                            </button>
+
+                            <!-- Robbery Button (Dark) -->
+                            <button class="robbery-btn" id="robberyBtn">
+                                <i class="fas fa-mask"></i>
+                                <span>Lure & Rob</span>
+                                <small>⚠️ Requires weapon - High risk!</small>
+                            </button>
+
+                            <!-- End Arrangement -->
+                            <button class="danger-btn" id="endArrangementBtn">
+                                <i class="fas fa-times-circle"></i>
+                                End Arrangement
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages Tab -->
+            <div class="tab-content" id="messages-tab">
+                <div class="messages-container">
+                    <div class="message-header">
+                        <h2>Recent Messages</h2>
+                    </div>
+                    <div class="messages-list" id="messagesList">
+                        <!-- Messages will be populated here -->
+                        <div class="empty-messages">
+                            <i class="fas fa-envelope-open"></i>
+                            <p>No messages yet. Find a partner to start chatting!</p>
+                        </div>
+                    </div>
+                    <!-- AI Text Partner (shown when partner exists) -->
+                    <div id="partnerChatCompose" class="partner-chat-compose hidden">
+                        <input type="text" id="partnerChatInput" class="partner-chat-input" placeholder="Text your partner..." maxlength="300" />
+                        <button type="button" id="partnerChatSend" class="partner-chat-send" aria-label="Send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="settings-container">
+                    <div class="settings-header">
+                        <h2>Settings</h2>
+                    </div>
+                    <div class="settings-list">
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i class="fas fa-bell"></i>
+                                <div>
+                                    <h3>Notifications</h3>
+                                    <p>Get alerts for new messages and encounters</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i class="fas fa-volume-up"></i>
+                                <div>
+                                    <h3>Sound Effects</h3>
+                                    <p>Play sounds for interactions</p>
+                                </div>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <i class="fas fa-info-circle"></i>
+                                <div>
+                                    <h3>About</h3>
+                                    <p>SugarHustle v1.0.0 - Premium lifestyle dating</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Cooldown Overlay -->
+        <div id="cooldownOverlay" class="cooldown-overlay hidden">
+            <div class="cooldown-content">
+                <i class="fas fa-clock"></i>
+                <h3>Please Wait</h3>
+                <p id="cooldownMessage">Action on cooldown</p>
+                <div class="cooldown-timer" id="cooldownTimer">00:00</div>
+            </div>
+        </div>
+
+        <!-- Notification Toast -->
+        <div id="notification" class="notification hidden">
+            <div class="notification-content">
+                <i class="fas fa-check-circle notification-icon"></i>
+                <p class="notification-text">Action completed!</p>
+            </div>
+        </div>
+
+        <!-- Plug Conversation Overlay -->
+        <div id="plugConversation" class="plug-conversation hidden">
+            <div class="plug-conversation-panel">
+                <div class="plug-conversation-header">
+                    <button class="plug-conversation-back" id="plugConversationBack" aria-label="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="plug-conversation-title">
+                        <i class="fas fa-plug"></i>
+                        <span id="plugConversationName">The Plug</span>
+                    </div>
+                </div>
+                <div class="plug-conversation-messages" id="plugConversationMessages">
+                    <!-- Messages and reply options inserted here -->
+                </div>
+                <div class="plug-conversation-replies" id="plugConversationReplies">
+                    <!-- Reply buttons inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Hearts Animation Container -->
+    <div id="heartsContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

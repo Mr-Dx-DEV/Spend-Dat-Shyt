@@ -1,0 +1,975 @@
+<html>
+    <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Cinzel+Decorative:wght@700&family=Courier+Prime:wght@700&family=Dancing+Script:wght@700&family=Exo+2:wght@300;700&family=Fredoka+One&family=Orbitron:wght@500;900&family=Outfit:wght@400;700&family=Rock+Salt&family=Sacramento&family=Syncopate:wght@400;700&family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+		<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css' crossorigin='anonymous' />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+		<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+		<link rel="stylesheet" href="index-DDb6qaGN.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+        <script src="index-Cvf4ixyU.js"></script>
+		</head>
+		    <body style="margin: 0px !important">
+          <audio id="mysoundclip" preload="auto">
+              <source src="levelup.mp3" type="audio/mpeg">
+          </audio>
+		  <div id="nui-notify-container"></div>
+		  <div class="editinfos" style="position:absolute;"></div>
+        <div class="promotetext" >
+		<img src="./img/promote.gif" class="promotegif">
+          <p style="
+    position: relative;
+    font-size: 2.5vh;
+    color: #000000;
+    padding: 10px;
+    left: 51%;
+    top: 27%;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 100;
+    background: #ffffff;
+    box-shadow: 0px 0px 20px 1px #ffffff;
+
+" id="levelinfo">You just level up</p>
+		  <p style="
+    position: relative;
+    left: 51%;
+    top: 23%;
+    font-size: 2vh;
+    text-align: left;
+    text-transform: uppercase;
+    background: #ffc107;
+    padding: 10px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 20px 1px #ffc107;
+" id="levelpromote">NEW LEVEL</p>
+        </div>		
+<div id="custom-marriage-menu" style="display: none;">
+    <!-- TAM EKRAN OLACAK ARKA PLAN RESMİ -->
+    <img src="./img/menu.webp" class="menuimg"/>
+    
+    <!-- SADECE SAĞ TARAFTA DURACAK MENÜ KUTUSU -->
+    <div class="custom-menu-box">
+        <div class="marriage-menu-header" id="marriage-menu-header">Rahip Menüsü</div>
+        <div class="marriage-menu-items" id="marriage-menu-items">
+            <!-- JS ile dolacak -->
+        </div>
+        <div class="marriage-menu-close"><i class="fas fa-times"></i> Kapat (ESC)</div>
+    </div>
+</div>
+<div id="cinematic-bars" style="display: none;">
+    <div class="cinematic-bar top-bar"></div>
+    <div class="cinematic-bar bottom-bar"></div>
+</div>
+<div class="valentine-container">
+    <div class="valentine-hud">
+        <div class="hud-noise"></div>
+        <div class="hud-header">
+            <div class="hud-event-tag" id="val-title-text">Valentine's Event</div>
+            <i class="fas fa-heart heart-icon"></i>
+        </div>
+        <div class="timer-section">
+            <div class="timer-value" id="val-timer">00:00</div>
+        </div>
+        <div class="status-footer">
+            <div class="status-msg" id="val-status">Bekleniyor...</div>
+            <div id="val-reward-display"></div>
+            <div class="status-indicator offline" id="val-online-status">OFFLINE</div>
+        </div>
+    </div>
+</div>
+
+<div class="valentine-finish" style="display: none;">
+    <div class="finish-content-wrapper">
+        <div class="finish-icon-area">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <h1 class="finish-title-text" id="val-win-header">
+            GÖREV TAMAMLANDI
+        </h1>
+        
+        <p class="finish-desc-text" id="val-win-desc">
+            Aşkınız tüm engelleri aştı!
+        </p>
+        
+        <div class="finish-reward-display">
+            <div class="reward-amount" id="val-win-reward">
+                $500.000
+            </div>
+        </div>
+    </div>
+
+    <div class="auto-close-bar-container">
+        <div class="auto-close-bar" id="finishProgressBar"></div>
+    </div>
+</div>
+
+<div id="photoModal" class="photo-modal-overlay" style="display: none;">
+    <div class="photo-modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="polaroid-frame">
+            <img src="./img/val_memory.webp" alt="Sevgililer Günü">
+            <div class="polaroid-caption">
+                <i class="fas fa-heart"></i> <span id="polaroid-text">Happy Valentine's Day</span> <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="valentine-mission-ui">
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="ui-container">
+        <div class="header-box">
+            <h1 id="ui-header-title">AŞK GÖREVLERİ</h1>
+            <p id="ui-header-desc">Ruh eşini bul, kalbi doldur</p>
+        </div>
+
+        <div class="heart-stage">
+            <div class="glass-heart-wrapper">
+                <svg class="heart-svg" viewBox="0 0 100 100">
+                    <defs>
+                        <linearGradient id="liquidGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" style="stop-color:#580018;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#ff0f5b;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff5e8e;stop-opacity:1" />
+                        </linearGradient>
+                        
+                        <linearGradient id="shineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:white;stop-opacity:0.8" />
+                            <stop offset="40%" style="stop-color:white;stop-opacity:0" />
+                            <stop offset="100%" style="stop-color:white;stop-opacity:0" />
+                        </linearGradient>
+
+                        <mask id="heartMask">
+                            <path d="M50 90 C10 60 -10 35 10 15 C25 -5 45 10 50 25 C55 10 75 -5 90 15 C110 35 90 60 50 90 Z" fill="white"/>
+                        </mask>
+                    </defs>
+
+                    <path class="liquid-bg" d="M50 90 C10 60 -10 35 10 15 C25 -5 45 10 50 25 C55 10 75 -5 90 15 C110 35 90 60 50 90 Z" fill="rgba(0,0,0,0.5)"/>
+
+                    <g mask="url(#heartMask)">
+                        <rect id="heart-liquid" x="-50" y="100" width="200" height="0" fill="url(#liquidGradient)" opacity="0.9">
+                            <animateTransform 
+                                attributeName="transform" 
+                                type="translate" 
+                                from="0 0" to="-20 0" 
+                                dur="2s" 
+                                repeatCount="indefinite" 
+                                additive="sum"
+                            />
+                        </rect>
+                        
+                        <path id="wavePath" d="M0 0 Q 25 5, 50 0 T 100 0 V 20 H 0 Z" fill="#ff7eb3" opacity="0.3" transform="translate(0, 100)">
+                        </path>
+                    </g>
+
+                    <path class="glass-shine" d="M50 90 C10 60 -10 35 10 15 C25 -5 45 10 50 25 C55 10 75 -5 90 15 C110 35 90 60 50 90 Z" transform="scale(0.9) translate(5.5,5)"/>
+                    
+                    <path class="heart-border" d="M50 90 C10 60 -10 35 10 15 C25 -5 45 10 50 25 C55 10 75 -5 90 15 C110 35 90 60 50 90 Z" />
+                </svg>
+
+                <div class="progress-indicator"><span id="heart-percent">0%</span></div>
+
+                <div class="task-node pos-1" id="task-1">
+                    <div class="task-line"></div>
+                    <div class="task-marker"></div>
+                    <div class="task-label" id="task-label-1">Fotoğraf Çekilin</div>
+                    
+                    <div class="task-action-area">
+                        <button id="btn-take-photo" class="val-action-btn"><i class="fas fa-camera"></i> <span id="btn-text-1">Çek</span></button>
+                        
+                        <div id="val-photo-thumb" class="val-photo-frame" style="display: none;">
+                            <img src="./img/val_memory.webp" alt="Hatıra">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-node pos-2" id="task-2">
+                    <div class="task-line"></div>
+                    <div class="task-marker"></div>
+                    <div class="task-label" id="task-label-2">Hediye Gönder</div>
+                    
+                    <div class="task-action-area" id="gift-action-area" style="display: none;">
+                        <div class="gift-slider" id="gift-list-container">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-node pos-3" id="task-3">
+                    <div class="task-line"></div>
+                    <div class="task-marker"></div>
+                    <div class="task-label" id="task-label-3">Birlikte Şarap İçin</div>
+                    
+                    <div class="task-action-area">
+                        <button id="btn-drink-wine" class="val-action-btn" onclick="startWineMission()"><i class="fas fa-wine-glass"></i> <span id="btn-text-3">İç</span></button>
+                    </div>
+                </div>
+
+                <div class="task-node pos-4" id="task-4">
+                    <div class="task-line"></div>
+                    <div class="task-marker"></div>
+                    <div class="task-label" id="task-label-4">Aşkını Göster</div>
+                    
+                    <div class="task-action-area">
+                        <button id="btn-love-emoji" class="val-action-btn" onclick="startLoveEmojiMission()">
+                            <i class="fas fa-heart"></i> <span id="btn-text-4">Emojiyi Yak</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task-node pos-5" id="task-5">
+                    <div class="task-line"></div>
+                    <div class="task-marker"></div>
+                    <div class="task-label" id="task-label-5">Birlikte Uyu</div>
+
+                    <div class="task-action-area">
+                        <button id="btn-sleep-mission" class="val-action-btn" onclick="startSleepMission()">
+                            <i class="fas fa-bed"></i> <span id="btn-text-5">Uyu</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="reward-container" id="reward-box">
+            <div class="gift-icon">🎁</div>
+            <div class="reward-details">
+                <div class="reward-title" id="reward-title-text">GÖREV ÖDÜLÜ</div>
+                <div class="reward-name" id="reward-name">Efsanevi Aşk Paketi</div>
+            </div>
+            <button id="claim-valentine-reward" disabled>KİLİTLİ</button>
+        </div>
+    </div>
+</div>
+<div id="ceremony-announcement">
+    <img src="./img/pigeon.webp" class="pigeon"/>
+    <div class="ceremony-ann-content">
+        <div class="bell-icon"><i class="fas fa-bell fa-shake"></i></div>
+        <h1 class="ceremony-ann-title"></h1>
+        <p class="ceremony-ann-names"><span id="ann-owner"></span> <i class="fas fa-heart"></i> <span id="ann-married"></span></p>
+        <div class="ceremony-ann-details">
+            <p><i class="fas fa-clock"></i> <span id="ann-time"></span></p>
+            <p><i class="fas fa-map-marker-alt"></i> <span id="ann-location"></span></p>
+        </div>
+    </div>
+</div>
+<div id="multimarried-exclusive-ui" style="display: none;">
+    <div class="mm-container">
+        <div class="mm-header">
+            <h2 id="mm-title"></h2>
+            <button class="mm-close-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="mm-search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="mm-search-input" placeholder="">
+        </div>
+        <div class="mm-list-container" id="mm-list">
+        </div>
+    </div>
+</div>
+<div id="ceremonyModal" class="cyber-modal" style="display:none;">
+    <div class="cyber-modal-content">
+        <div class="cyber-modal-header">
+            <h2><i class="fas fa-ring"></i> SEREMONİ KURULUMU</h2>
+            <div class="cyber-glow-line"></div>
+        </div>
+
+        <button id="btnViewCalendar" class="cyber-btn-outline">
+            <i class="fas fa-calendar-alt"></i> DOLU SAATLERİ GÖRÜNTÜLE
+        </button>
+
+        <div class="cyber-input-group">
+            <label for="cDate"><i class="fas fa-calendar-day"></i> Tarih</label>
+            <input type="date" id="cDate" class="cyber-input">
+        </div>
+
+<div class="cyber-input-group">
+            <label for="cTime"><i class="fas fa-clock"></i> Saat</label>
+            <input type="time" id="cTime" class="cyber-input">
+        </div>
+
+        <!-- YENİ EKLENEN KISIM BAŞLANGICI -->
+        <div class="cyber-input-group">
+            <label for="cSurnameChoice"><i class="fas fa-signature"></i> Soyadı Seçimi</label>
+            <select id="cSurnameChoice" class="cyber-input" style="background: rgba(0,0,0,0.5); color: #fff; border: 1px solid #7a5cff; padding: 10px; border-radius: 5px; width: 100%; outline: none;">
+                <option value="none" style="background: #1a1a1a;">Kendi Soyadımız Kalsın</option>
+                <option value="take" style="background: #1a1a1a;">Eşimin Soyadını Alayım</option>
+                <option value="custom" style="background: #1a1a1a;">Özel Soyadı Belirle</option>
+            </select>
+        </div>
+
+        <div class="cyber-input-group" id="cCustomSurnameGroup" style="display:none;">
+            <label for="cCustomSurname"><i class="fas fa-pen"></i> Özel Soyadı</label>
+            <input type="text" id="cCustomSurname" class="cyber-input" placeholder="Yeni Soyadınız" maxlength="25">
+        </div>
+        <!-- YENİ EKLENEN KISIM BİTİŞİ -->
+<div class="cyber-input-group">
+            <label for="cSongUrl"><i class="fas fa-music"></i> Giriş Müziği (Opsiyonel)</label>
+            <input type="text" id="cSongUrl" class="cyber-input" placeholder="Youtube Linki (xSound uyumlu)">
+        </div>
+        <label class="cyber-checkbox-label">
+            <input type="checkbox" id="cAnnounce" class="cyber-checkbox">
+            <span class="cyber-checkbox-custom"></span>
+            Global Duyuru (5 dakika kala)
+        </label>
+
+        <div class="cyber-modal-actions">
+            <button id="btnCancelCeremony" class="cyber-btn-danger"><i class="fas fa-times"></i> İPTAL</button>
+            <button id="btnPayCeremony" class="cyber-btn-success"><i class="fas fa-check"></i> ONAYLA & ÖDE</button>
+        </div>
+    </div>
+</div>
+
+<div id="ceremonyCalendarModal" class="cyber-modal" style="display:none;">
+    <div class="cyber-modal-content calendar-variant">
+        <div class="cyber-modal-header">
+            <h2><i class="fas fa-calendar-times"></i> DOLU SAATLER</h2>
+            <div class="cyber-glow-line"></div>
+        </div>
+        <div id="calendarList" class="cyber-calendar-list">
+        </div>
+        <button id="btnCloseCalendar" class="cyber-btn-danger w-100"><i class="fas fa-times"></i> KAPAT</button>
+    </div>
+</div>
+<div id="vowModal" style="display:none;">
+    <div class="vow-modal-content">
+        <div class="vow-header">
+            <i class="fas fa-heart heartbeat-icon"></i>
+            <h2 id="vowTitle">Yemin Eder Misin?</h2>
+        </div>
+        <p class="vow-subtitle">Sonsuzluğa adım atmadan önce son sözlerini söyle...</p>
+        
+        <textarea id="vowText" class="vow-textarea" maxlength="150" placeholder="İçinden geçenleri buraya yaz..."></textarea>
+        
+        <div class="vow-buttons">
+            <button id="btnVowNo" class="vow-btn vow-btn-no"><i class="fas fa-times"></i> Hayır</button>
+            <button id="btnVowYes" class="vow-btn vow-btn-yes"><i class="fas fa-check"></i> Evet, Kabul Ediyorum</button>
+        </div>
+    </div>
+</div>
+    <div class="device-container">
+        <div class="device-inner">
+            <div class="device-header">
+                <div>
+                    <div class="device-brand">AUTOTECH ECU</div>
+                    <div class="device-model">Model: X-BYPASS v3.2</div>
+                </div>
+                <div class="power-indicator"></div>
+            </div>
+
+            <div class="screen">
+                <div class="terminal-output" id="terminal"></div>
+
+                <div class="ecu-interface">
+                    <div class="ecu-label">ECU Pin Interface</div>
+                    <div class="pin-grid" id="pinGrid"></div>
+                    <div class="sequence-display" id="sequenceDisplay"></div>
+                </div>
+
+                <div class="progress-section">
+                    <div class="progress-label">
+                        <span>BYPASS PROGRESS</span>
+                        <span id="progressPercent">0%</span>
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar-fill" id="progressBar"></div>
+                    </div>
+                </div>
+
+                <div class="status-section">
+                    <div class="status-item">
+                        <span class="status-label">Attempts</span>
+                        <span class="status-value" id="attemptsValue">3</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Timer</span>
+                        <span class="status-value" id="timerValue">45s</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Sequence</span>
+                        <span class="status-value" id="sequenceValue">0/5</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="status-label">Status</span>
+                        <span class="status-value" id="statusValue">IDLE</span>
+                    </div>
+                </div>
+
+                <div class="button-panel">
+                    <button class="device-button" id="startBtn">INIT BYPASS</button>
+                </div>
+
+                <div id="resultBanner"></div>
+            </div>
+        </div>
+    </div>
+<div id="marriage-skillbar-container" style="display: none;">
+    <div class="skillbar-wrapper">
+        <div class="skillbar-header">
+            <i class="fas fa-wrench"></i>
+            <span id="skillbar-text">Kasayı Açıyorsun...</span>
+        </div>
+        <div class="skillbar-main">
+            <div class="skillbar-track">
+                <div class="skillbar-moving-zone" id="skillbar-zone"></div>
+                <div class="skillbar-target-zone" id="skillbar-target"></div>
+                <div class="skillbar-indicator" id="skillbar-indicator"></div>
+            </div>
+            <div class="skillbar-instruction">
+                <i class="fas fa-hand-pointer"></i>
+                <span id="skillbartext"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="robbery-container" style="display: none;">
+    <div id="role-selection" class="role-selection-container">
+        <h2>ROLÜNÜ SEÇ</h2>
+        <div class="role-options">
+            <div class="role-box" id="role-gözcü" data-role="gözcü">
+                <i class="fas fa-eye"></i>
+                <h3 id="lookout">Gözcü & Kontrolcü</h3>
+                <p id="lookout_p">İçeridekileri kontrol altında tut ve polisleri kolla. Eşine zaman kazandır.</p>
+            </div>
+            <div class="role-box" id="role-toplayıcı" data-role="toplayıcı">
+                <i class="fas fa-sack-dollar"></i>
+                <h3 id="vault">Kasa Sorumlusu & Toplayıcı</h3>
+                <p id="vault_p">Olabildiğince hızlı bir şekilde kasadaki tüm parayı topla. Zaman daralıyor.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="robbery-hud" class="robbery-hud-container" style="display: none;">
+        <div id="robbery-timer" class="hud-item">
+            <i class="fas fa-clock"></i>
+            <span id="timer-text">02:00</span>
+        </div>
+    </div>
+</div>
+<div class="loyalty-missions-container" style="display: none;">
+        <button id="close-loyalty-missions"><i class="fa-solid fa-square-xmark"></i></button>
+    <div class="loyalty-selection-view" id="loyalty-selection-view">
+        <!-- <h2 id="loyalty-missions-title">SADAKAT GÖREVLERİ</h2> -->
+        <div class="selection-buttons">
+            <button id="select-legal-missions" class="selection-btn legal">
+                <i class="fas fa-gavel"></i>
+                <span id="legal-missions-btn-text">Legal Görevler</span>
+            </button>
+            <button id="select-illegal-missions" class="selection-btn illegal">
+                <i class="fas fa-user-secret"></i>
+                <span id="illegal-missions-btn-text">Illegal Görevler</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="loyalty-legal-view" style="display: none;">
+        <div class="mission-header">
+             <button class="back-to-selection"><i class="fas fa-arrow-left"></i></button>
+             <h3 id="legal-missions-title"><i class="fas fa-gavel"></i> Legal Görevler</h3>
+        </div>
+		<div class="mission-container">
+        <div class="mission-category">
+            <h4 id="daily-missions-legal-title"><i class="fa-solid fa-clock"></i> Günlük</h4>
+            <div id="legal-daily-missions"></div>
+        </div>
+        <div class="mission-category">
+            <h4 id="onetime-missions-legal-title"><i class="fa-solid fa-plus"></i> Tek Seferlik</h4>
+            <div id="legal-onetime-missions"></div>
+        </div>
+		</div>
+    </div>
+
+    <div id="loyalty-illegal-view" style="display: none;">
+         <div class="mission-header">
+             <button class="back-to-selection"><i class="fas fa-arrow-left"></i></button>
+             <h3 id="illegal-missions-title"><i class="fas fa-user-secret"></i> Illegal Görevler</h3>
+        </div>
+		<div class="mission-container">		
+        <div class="mission-category">
+            <h4 id="daily-missions-illegal-title"><i class="fa-solid fa-clock"></i> Günlük</h4>
+            <div id="illegal-daily-missions"></div>
+        </div>
+        <div class="mission-category">
+            <h4 id="onetime-missions-illegal-title"><i class="fa-solid fa-plus"></i> Tek Seferlik</h4>
+            <div id="illegal-onetime-missions"></div>
+        </div>
+		</div>		
+    </div>
+
+
+</div>
+<div id="love-ui-container" style="display: none;">
+
+    <div id="lovePurchaseModal" class="love-modal-overlay">
+        <div class="love-modal-content">
+            <h2 id="txt_buy_scene_title">Sahne Satın Al</h2>
+            <p id="loveModalText"></p>
+            <div class="love-modal-buttons">
+                <button class="love-btn-cancel" id="btn_love_cancel" onclick="closeLoveModal()">Vazgeç</button>
+                <button class="love-btn-confirm" id="btn_love_confirm" onclick="confirmLovePurchase()">Satın Al & Gönder</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="loveNotificationOverlay">
+        <div class="love-notif-box">
+            <div class="love-notif-icon">💌</div>
+            <div class="love-notif-text" id="txt_special_msg">Özel bir mesajın var...</div>
+            <div class="love-notif-sub" id="txt_loading">(Yükleniyor...)</div>
+        </div>
+    </div>
+
+    <div class="love-main-panel" id="loveDashboard">
+        <h1 class="love-title" id="txt_love_title">Sonsuz Aşkım</h1>
+        <p class="love-subtitle" id="txt_love_subtitle">Ona unutulmaz bir an yaşatmak için bir sahne seç.</p>
+        <div class="love-close-ui" onclick="closeLoveUI()"><i class="fas fa-times"></i></div>
+        
+        <div class="love-input-area">
+            <input type="text" id="loveMsgInput" class="love-message-input" placeholder="Mesajını buraya yaz..." maxlength="50" autocomplete="off">
+            <div class="love-send-icon">➜</div>
+        </div>
+
+        <div class="love-effects-grid">
+            <div class="love-effect-card" onclick="playLoveScenePreview('kiss', 500)">
+                <div class="love-card-icon" style="background: linear-gradient(45deg, #ff416c, #ff4b2b);">💋</div>
+                <div class="love-card-meta"><h3 id="scene_kiss_title">Aşk Öpücüğü</h3><p id="scene_kiss_desc">Ekrana yapışan dev bir öpücük.</p><div class="love-card-price">500 $</div></div>
+            </div>
+            <div class="love-effect-card" onclick="playLoveScenePreview('letter', 750)">
+                <div class="love-card-icon" style="background: linear-gradient(180deg, #2c3e50, #3498db);">💌</div>
+                <div class="love-card-meta"><h3 id="scene_letter_title">Gizli Mektup</h3><p id="scene_letter_desc">Uçarak gelen özel bir mesaj.</p><div class="love-card-price">750 $</div></div>
+            </div>
+            <div class="love-effect-card" onclick="playLoveScenePreview('bear', 1000)">
+                <div class="love-card-icon" style="background: linear-gradient(to top, #f6d365, #fda085);">🧸</div>
+                <div class="love-card-meta"><h3 id="scene_bear_title">Ayıcık Sürprizi</h3><p id="scene_bear_desc">Sevimli bir ayıcık mesajını getirsin.</p><div class="love-card-price">1000 $</div></div>
+            </div>
+            <div class="love-effect-card" onclick="playLoveScenePreview('rose', 1500)">
+                <div class="love-card-icon" style="background: linear-gradient(to right, #000000, #434343); border: 1px solid #ff0055;">🌹</div>
+                <div class="love-card-meta"><h3 id="scene_rose_title">Gül Bahçesi</h3><p id="scene_rose_desc">Büyüyen güller ve dökülen yapraklar.</p><div class="love-card-price">1500 $</div></div>
+            </div>
+            <div class="love-effect-card" onclick="playLoveScenePreview('heartbeat', 1250)">
+                <div class="love-card-icon" style="background: linear-gradient(to right, #240b36, #c31432);">💓</div>
+                <div class="love-card-meta"><h3 id="scene_heartbeat_title">Kalp Ritmi</h3><p id="scene_heartbeat_desc">Heyecandan hızlanan kalp atışları.</p><div class="love-card-price">1250 $</div></div>
+            </div>
+            <div class="love-effect-card" onclick="playLoveScenePreview('fireworks', 2000)">
+                <div class="love-card-icon" style="background: linear-gradient(to bottom, #000428, #004e92);">🎆</div>
+                <div class="love-card-meta"><h3 id="scene_fireworks_title">Havai Fişek</h3><p id="scene_fireworks_desc">Gökyüzünde kutlama.</p><div class="love-card-price">2000 $</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="loveTheater">
+        <div class="love-close-btn" onclick="stopLoveScene(true)">✕</div>
+        <div id="loveWhiteFlash" class="white-flash"></div>
+        <div id="loveSceneStage" class="scene-stage"></div>
+        <div id="loveFinalMessage"></div>
+        <canvas id="loveParticleCanvas" style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
+    </div>
+</div>
+<div class="containerloyalcard">
+        <div class="cardloyal">
+            <div class="glow"></div>
+            <div class="card-content">
+                <h2 id="title">LOYALTY CHAMPIONS</h2>
+                <h3 id="week">WINNERS - WEEK 42</h3>
+                <div class="profile-container">
+                    <div class="profile">
+                        <img id="p1_img" src="img/imgman.webp" alt="Player 1">
+                        <p id="p1_name">Player One</p>
+                    </div>
+                    <div class="ampersand">&</div>
+                    <div class="profile">
+                        <img id="p2_img" src="img/imgwomen.webp" alt="Player 2">
+                        <p id="p2_name">Player Two</p>
+                    </div>
+                </div>
+                <p class="congrats" id="congrats">Congratulations to the most loyal couple!</p>
+            </div>
+        </div>
+    </div>
+
+<div class="loyalty-leaderboard-container" style="display: none;">
+<button id="close-loyalty-leaderboard"><i class="fa-solid fa-square-xmark"></i></button>
+<div class="loyaltylist-conts">
+<h2 id="loyalty-leaderboard-title">EN SADIK ÇİFTLER</h2>
+<div id="weekly-countdown-timer">Sıfırlanmaya Kalan Süre: Hesaplanıyor...</div>
+<input type="text" id="loyalty-search" placeholder="Çift Ara..." class="input-box">
+<div class="leaderboard-content">
+    <div id="leaderboard-list"></div>
+</div>
+<div id="my-rank-container">
+    <h3 id="my-rank-title">Sıralamanız</h3>
+    <p id="my-rank-info">Yükleniyor...</p>
+</div>
+</div>
+</div>		
+		<div class="background">	
+</div>
+    <div class="all-marrieds">
+        <!-- Ödül al butonu -->
+        <div class="rewardarea">
+		<div class="rewardarea-text">
+		TOP 10 Famılıes receive unique awards 
+	    </div>
+		<div class="rewardarea-text2">
+		TOP 10 Famılıes receive unique awards 
+	    </div>	
+<button id="claimRewardBtn">Ödülü Al</button>		
+		</div>	
+	<img class="prize" src='./img/prize.webp'/>
+<img class="womenman" src="./img/women.webp">
+<img class="manwomen" src="./img/man.webp">	
+	        <div class="headerinfo2">	
+        <div class="allm-text"><i class="fas fa-edit" style="background: #26262600;color: #fff;padding: 19px;border-radius: 6px;"></i> MARRIED <span>LIST</span></div>		
+<label class="select" for="sortOrder">
+  <select id="sortOrder">
+    <option value="" disabled="disabled" selected="selected">Select option</option>
+    <option value="longest">From Longest Marriage to Shortest Marriage</option>
+    <option value="shortest">From Shortest Marriage to Longest Marriage</option>
+  </select>
+  <svg>
+    <use xlink:href="#select-arrow-down"></use>
+  </svg>
+</label>
+<!-- SVG Sprites-->
+<svg class="sprites">
+  <symbol id="select-arrow-down" viewbox="0 0 10 6">
+    <polyline points="1 1 5 5 9 1"></polyline>
+  </symbol>
+</svg>			
+<div class="chartmav" style="width: 10%; margin: 0 auto;">
+    <canvas id="marriageChart"></canvas>
+</div>
+    <div style="width: 20%; margin: 0 auto;">
+        <canvas id="averageMarriageDurationChart"></canvas>
+    </div>
+	    <div class="close2"><i class="fas fa-window-close"></i></div>				
+	</div>	
+        <div class="searchdiv2">
+          <input id="search2" type="text" name="" id=""  placeholder="🔍 Search...">    
+        </div>		
+        <div class="allmdiv">
+            <div class="list-allm" id="list-allm"></div>
+        </div>
+    </div>	
+    <div class="job-page">
+	    <div class="edit"></div> 
+	    <div class="save"></div>
+        <div class="headerinfo">	
+		<img class="logo" id="logo" src="./img/logo.webp">
+        <div class="job-text"><i class="fas fa-edit" style="background: #26262600;color: #fff;padding: 19px;border-radius: 6px;"></i> PRIEST <span>PANEL</span></div>		
+	    <img class="profilepicture" id="profilepicture" src="./img/imgpriest.webp">
+		<div class="playername">Emily</div>
+		<div class="requestpage">Requests<span class="numbertotal">0</span></div>
+		<div class="marriedpage">Marrieds<span class="numbertotal2">0</span></div>
+                                   <div class="barcontainer" style="background:#ffffff6b;">
+								   <div class="level-text">LEVEL</div>
+								   <div class="level-text2">Lvl</div>
+                                      <div class="bar">
+                                       </div>
+                                    </div>		  
+    <div class="priest-infos">
+      <div class="header">Total XP</div>
+      <div class="totalxp">0</div>
+      <div class="totalxpdegree">/0</div>
+      <div class="needxp">0</div>
+      <div class="needxpinfo">Need xp for new level.</div>
+    </div>		
+	    <div class="close"><i class="fas fa-window-close"></i></div>		
+		</div>		
+        <div class="searchdiv">
+          <input id="search" type="text" name="" id=""  placeholder="🔍 Search...">    
+        </div>		
+        <div class="last-request-job">
+            <div class="request-list-job" id="request-list-job"></div>
+        </div>
+</div>		
+<div class="ready">
+        <div class="text4">
+          <p>Your documents ready!</p>
+        </div>
+		<div class="certifimgcontainer2">
+		<img src="./img/img1.webp" class="certif" width="600" height="400">
+		</div>
+	</div>		
+        <div class="marriageproposal">
+<div class="container">  
+<div class="valentines">
+  <div class="envelope"></div>
+  <div class="front"></div>
+  <div class="card">
+  <div class="text" id="text">Happy</br> Valentine's</br> Day!</div>
+  <div class="heart">
+  </div>
+  <div class="hearts">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+  </div>
+</div>
+</div>
+<div class="shadow"></div>
+</div>
+			<div class="button fire">No</div>
+            <div class="button ice">Yes</div>
+        </div>
+<div class="checkpriest">
+<div class="fireworkwon">
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework-1"></div>
+<div class="firework-2"></div>
+<div class="firework-3"></div>
+<div class="firework-4"></div>
+<div class="firework-5"></div>
+<div class="firework-6"></div>
+<div class="firework-7"></div>
+<div class="firework-8"></div>
+<div class="firework-9"></div>
+<div class="firework-10"></div>
+<div class="firework-11"></div>
+<div class="firework-12"></div>
+<div class="firework-13"></div>
+<div class="firework-14"></div>
+<div class="firework-15"></div>
+</div>
+        <div class="checktext2">
+		  <p style="
+    font-size: 10vh;
+    margin-top: -12vh;
+    margin-bottom: -5vh;
+    background: #28a745;
+    padding: 2vh;
+    border-radius: 15px;
+    text-shadow: 7px 2px 2px #00c32c;
+    box-shadow: 0px 0px 20px 0px #28a745;
+" id="progress">50</p>
+          <p>Your documents are being prepared, be here when they are ready and let's finish the process.</p> 
+		  <p style="
+    margin-bottom: 11vh;
+    margin-top: -6vh;
+">If you want to cancel, you can press cancel.</p>
+		 <div class="interbutton">
+		  <div class="button6" id="delete">Cancel</div>
+		  </div>		  
+        </div>		
+		<div class="checkcertifimgcontainer">
+		<img src="./img/img1.webp" class="certif" width="600" height="400">
+		</div>
+	</div>		
+<div class="priest">
+        <div class="text2">
+          <p>Do you want to get married?</p>
+		 <div class="interbutton">
+		  <div class="button6" id="accept">Yes</div>
+          <div class="button7" id="cancel">No</div>
+		  </div>
+        </div>
+		<div class="certifimgcontainer">
+		<img src="./img/img1.webp" class="certif" width="600" height="400">
+		</div>
+	</div>	
+		<div class="SelectWifeBox">
+    <div class="WifePlayers"></div>
+        <div class="textinfo">
+          <p>Select your wife.</p>
+        </div>	
+</div>	
+<div class="marriagemini-hud" id="marriageHud"> 
+<div class="fireworkwon">
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework"></div>
+<div class="firework-1"></div>
+<div class="firework-2"></div>
+<div class="firework-3"></div>
+<div class="firework-4"></div>
+<div class="firework-5"></div>
+<div class="firework-6"></div>
+<div class="firework-7"></div>
+<div class="firework-8"></div>
+<div class="firework-9"></div>
+<div class="firework-10"></div>
+<div class="firework-11"></div>
+<div class="firework-12"></div>
+<div class="firework-13"></div>
+<div class="firework-14"></div>
+<div class="firework-15"></div>
+</div>
+        <div class="text3">
+          <p id="marriageduration">-</p>
+		  <p class="getting">-</p>
+        </div><img src="./img/img2.webp" class="being" width="600" height="400">
+		</div>
+        <div class="marriedtext" >
+		<img src="./img/img3.webp" class="iconmarried">
+          <p style="
+    position: relative;
+    font-size: 1.5vh;
+    left: 50%;
+    top: 34%;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 100;
+" id="whomarried">Married</p>
+		  <p style="
+    position: relative;
+    left: 50%;
+    top: 32%;
+    font-size: 2vh;
+    text-align: left;
+    text-transform: uppercase;
+" id="who">ADAM AND EMILY</p>
+        </div>	
+		<div class="certifbackground">
+          <p style="
+    font-size: 4vh;
+    position: relative;
+    top: 13vh;
+" id="certifof">Certificate of Marriage</p>
+		  <p style="
+    position: relative;
+    top: 8vh;
+    font-weight: lighter;
+    color: #818181;
+" id="thisiscertif">This is to certify that</p>
+		  <p id="family" style="
+    position: relative;
+    font-size: 4vh;
+    top: 1vh;
+">Married</p>
+		  <p style="
+position: relative;
+    top: -5vh;
+    color: #8d8d8d;
+" id="wereunited">were united in marriage at Church of love honesty on</p>	
+		  <p id="date" style="
+    position: relative;
+    top: -7vh;
+">ADAM AND EMILY</p>		  
+          <p id="owner" style="
+position: relative;
+    top: -0.5vh;
+    left: -20vh;
+    text-transform: capitalize;
+">Married</p>
+		  <p id="married" style="
+position: relative;
+    top: -6vh;
+    left: 21vh;
+    text-transform: capitalize;
+">ADAM AND EMILY</p>
+		  <p id="ownersign" style="
+    position: relative;
+    top: -8vh;
+    left: -19.5vh;
+    font-family: 'Birthstone Bounce', cursive;
+    font-size: 3vh;
+    text-transform: capitalize;
+
+">ADAM AND EMILY</p>
+		  <p id="marriedsign" style="
+position: relative;
+    top: -18.6vh;
+    right: -21vh;
+    font-family: 'Birthstone Bounce', cursive;
+    font-size: 3vh;
+    text-transform: capitalize;
+
+">ADAM AND EMILY</p>
+		</div>
+  <div class="ring">
+    <h2 class="free">Free and Fast Delivery!</h2>
+    <div class="box">
+      <h2 class="name">Ring</h2>
+	  <h2 class="price">5000$</h2>
+      <h2 class="buy" id="buyring"><i class="fas fa-shopping-basket"></i> Buy Now</h2>
+      <div class="circle"></div>
+      <img src="./img/img8.webp" class="product">
+    </div>
+  </div>
+<div class="offlinepage">
+
+  <div class="containerofflinepage">
+
+    <!-- CK Listesi -->
+    <div class="section" id="ck-section">
+      <h2 id="ckTitle"><span id="ckNotify" class="notify-badge">0</span></h2>
+      <div id="ckPlayers"></div>
+    </div>
+
+<div class="section" id="unified-delete-section">
+    <h2 id="admin_unified_delete_title">Delete Relationship</h2>
+<div class="type-selector" id="deleteTypeSelector">
+    <button class="type-btn active" data-type="marriage" id="delete_type_marriage_option">Evlilikler</button>
+    <button class="type-btn" data-type="engagement" id="delete_type_engagement_option">Nişanlılar</button>
+</div>
+
+    <input type="text" id="unifiedSearch" placeholder="Search..." class="input-box">
+    <div id="unifiedList"></div> </div>
+
+<div class="section" id="unified-add-section">
+    <h2 id="admin_unified_add_title">Add Relationship</h2>
+<div class="type-selector" id="addTypeSelectorContainer"> <button class="type-btn active" data-type="marriage" id="add_type_marriage_option">Evlilik Ekle</button>
+    <button class="type-btn" data-type="engagement" id="add_type_engagement_option">Nişan Ekle</button>
+</div>
+    <input id="ownerInputUnified" placeholder="Owner CitizenID" class="input-box" readonly>
+    <button class="select-button" id="selectOwnerUnified">Select</button>
+
+    <input id="marriedInputUnified" placeholder="Married CitizenID" class="input-box" readonly>
+    <button class="select-button" id="selectMarriedUnified">Select</button>
+    
+    <button class="save-button" id="saveUnified">Save</button>
+
+    <div id="playerListContainer" class="player-list-container">
+        <h3 class="player-list-title">select</h3>
+        <button id="closePlayerList" class="close-playerlist-btn">X</button>
+        <input type="text" id="playerSearch" placeholder="search... " class="player-search">
+        <div id="playerList"></div>
+    </div>
+</div>
+
+  </div>
+
+  <!-- Confirm Modal -->
+  <div id="confirmModal" class="confirm-modal">
+    <div class="confirm-modal-content">
+      <p class="confirm-modal-text">SURE?</p>
+      <button id="confirmYes" class="confirm-yes">yes</button>
+      <button id="confirmNo" class="confirm-no">no</button>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="playerList"></div>
+</div>  
+<!-- Name Change Page -->
+<div id="namechange" style="display:none;">
+    <div class="namechange-container">
+        <h1 id="changenametext">Change Name</h1>
+		<h3 id="nameinfo">I think you just got divorced or something like that... Don't worry, there is still a long period in your life. This period will be great, maybe you will be a boss or a new doctor in the future. Come on, take the first step now and choose your new surname.</h3>
+        <input type="text" id="newlastname" placeholder="Yeni Soyadın" maxlength="15">
+        <div class="namechange-buttons">
+            <button id="confirm-namechange">yes</button>
+            <button id="cancel-namechange">no</button>
+        </div>
+    </div>
+</div>		
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    </body>
+</html>

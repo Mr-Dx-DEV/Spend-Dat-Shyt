@@ -1,0 +1,60 @@
+   <head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>RTX Housing</title>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+		<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/smoothness/jquery-ui.css">
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>  
+		<script src="https://code.createjs.com/1.0.0/soundjs.min.js"></script>
+		<link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+  <div id="pcui-keymap" class="pcui-keymap">
+    <div class="pcui-keymap-card">
+      <div class="pcui-keymap-header">
+        <i class="fa-solid fa-location-dot pcui-keymap-icon"></i>
+        <span id="pcui-keymap-action" class="pcui-keymap-title">
+          Enter Point
+        </span>
+      </div>
+
+      <ul id="pcui-keymap-list" class="pcui-keymap-list">
+        <!-- rows doplní JS -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== 2) CONFIRM MODAL ======================= -->
+  <div id="pcui-confirm-modal" class="pcui-modal">
+    <div class="pcui-modal-card">
+      <div class="pcui-modal-head">
+        <span id="pcui-confirm-header">Confirm Action</span>
+        <button id="pcui-confirm-close" class="pcui-icon-btn">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="pcui-modal-body">
+        <p id="pcui-confirm-text">
+          Do you really want to perform this action?
+        </p>
+      </div>
+
+      <div class="pcui-modal-footer">
+        <button id="pcui-confirm-cancel" class="pcui-btn pcui-btn-ghost">
+          <i class="fa-solid fa-xmark"></i>
+          <span>Cancel</span>
+        </button>
+        <button id="pcui-confirm-accept" class="pcui-btn pcui-btn-primary">
+          <i class="fa-solid fa-check"></i>
+          <span>Confirm</span>
+        </button>
+      </div>
+    </div>
+  </div>
+	  <script src="modals.js"></script>
+   </body>
+</html>

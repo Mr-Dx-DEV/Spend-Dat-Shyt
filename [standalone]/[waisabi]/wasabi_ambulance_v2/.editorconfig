@@ -1,0 +1,50 @@
+# EditorConfig - https://editorconfig.org
+
+root = true
+
+# Default settings for all files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+max_line_length = 500
+
+# Lua files - 4 space indentation
+[*.lua]
+indent_style = space
+indent_size = 4
+
+# TypeScript/JavaScript/TSX/JSX files - 2 space indentation
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_style = space
+indent_size = 4
+
+# JSON files - 4 space indentation
+[*.json]
+indent_style = space
+indent_size = 4
+
+# CSS files - 4 space indentation
+[*.css]
+indent_style = space
+indent_size = 4
+
+# HTML files - 2 space indentation
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+
+# YAML files
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 2
+
+# FiveM manifest
+[fxmanifest.lua]
+indent_style = space
+indent_size = 4

@@ -1,0 +1,379 @@
+.planning-menu {
+    display: none;
+    z-index: 0;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 8.5em;
+    width: 70em;
+    height: 45em;
+    background: var(--menu-background);
+    color: var(--primary-text-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.planning-menu::before,
+.planning-menu::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+}
+
+.planning-menu::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+    background: var(--menu-shadow-before-color);
+}
+
+.planning-menu::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+    background: var(--menu-shadow-after-color);
+}
+
+.planning-menu>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.planning-menu>.header .title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.planning-menu>.header .stop-robbery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 0.8em;
+    font-weight: 600;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: #d52e3ea3;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 0.8em;
+}
+
+.planning-menu>.header .back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 0.8em;
+}
+
+.planning-menu>.header .back:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.planning-menu>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.planning-menu>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.planning-menu .menu {
+    position: relative;
+    width: 100%;
+    height: 93%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.planning-menu .menu .main {
+    position: relative;
+    height: 39.5em;
+    border-radius: 0.5em;
+    background: var(--submenu-background);
+}
+
+
+.planning-menu div[data-type="houses-list"] {
+    display: none;
+    padding: 1em;
+    height: 38.5em;
+    overflow: auto;
+}
+
+.planning-menu div[data-type="houses-list"]>div {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1em;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house {
+    position: relative;
+    height: fit-content;
+    overflow: hidden;
+    width: 15.7em;
+    background: #ffffff0d;
+    padding: 1em;
+    border-radius: 0.4em;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house::before {
+    content: "";
+    position: absolute;
+    width: 45rem !important;
+    height: 35rem !important;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: -40;
+    transform: translate(50%, -50%);
+    right: 0rem;
+    top: 0rem;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house.level-1::before {
+    background: var(--house-level1-shadow);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house.level-2::before {
+    background: var(--house-level2-shadow);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house.level-3::before {
+    background: var(--house-level3-shadow);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.difficulty-ribbon {
+    position: absolute;
+    right: -2em;
+    rotate: 45deg;
+    width: 8em;
+    text-align: center;
+    opacity: 1.0;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.difficulty-ribbon.level-1 {
+    background: var(--house-level1-ribbon);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.difficulty-ribbon.level-2 {
+    background: var(--house-level2-ribbon);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.difficulty-ribbon.level-3 {
+    background: var(--house-level3-ribbon);
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.difficulty-ribbon>span {
+    opacity: 0.8;
+    font-weight: 600;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.address {
+    line-height: 1.1;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.address > p.zone {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>.address > p.street {
+    font-weight: 400;
+    margin-bottom: 0.5em;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house>img {
+    width: 100%;
+    border-radius: 0.4em;
+    z-index: 100;
+}
+
+.planning-menu div[data-type="houses-list"]>div>.house > .show_more {
+    font-size: 1.1em;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0.5em;
+    background: var(--main-color);
+    border-radius: 0.3em;
+    padding-block: 0.33em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+.planning-menu div[data-type="house-data"] {
+
+}
+
+.planning-menu div[data-type="house-data"] > div {
+    padding: 1em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.difficulty {
+    width: fit-content;
+    font-size: 1.2em;
+    font-weight: 700;
+    padding-inline: 0.8em;
+    border-radius: 0.3em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.easy {
+    background: rgba(60, 250, 104, 0.65);
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.medium {
+    background: rgba(250, 155, 60, 0.65);
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.hard {
+    background: rgba(250, 60, 60, 0.65);
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.address {
+    font-weight: 700;
+    margin-left: 0.5em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .title > div.address > span {
+    font-weight: 400;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar {
+    display: flex;
+    gap: 1em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > img {
+    width: 25em;
+    height: 100%;
+    border-radius: 0.3em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div {
+    width: 100%;
+}
+
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .title {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .requirements {
+    height: 9em;
+    margin-bottom: 0.6em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .locked-robbery {
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    padding-block: 0.6em;
+    border-radius: 0.4em;
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .start-robbery {
+    width: 100%;
+    font-weight: 700;
+    text-align: center;
+    padding-block: 0.6em;
+    border-radius: 0.4em;
+    background: var(--main-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .start-robbery:hover {
+    background: var(--main-color-hover);
+}
+
+.planning-menu div[data-type="house-data"] > div > .first-bar > div > .start-robbery:active {
+    background: var(--main-color-active);
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar {
+    height: 17.5em;
+    overflow: auto;
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.7em;
+    border-radius: 0.4em;
+    height: 2em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > span {
+    display: flex;
+    align-items: center;
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > span > i {
+    font-size: 1.3em;
+    opacity: 0.85;
+    margin-right: 0.5em;
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > span > .info {
+
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > .buy-info {
+    font-weight: 600;
+    border-radius: 0.4em;
+    line-height: 2;
+    height: 100%;
+    /* padding-block: 0.4em; */
+    padding-inline: 1.0em;
+    background: var(--main-color);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > .buy-info:hover {
+    background: var(--main-color-hover);
+}
+
+.planning-menu div[data-type="house-data"] > div > .second-bar > div > .buy-info:active {
+    background: var(--main-color-active);
+}

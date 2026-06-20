@@ -1,0 +1,35 @@
+---------------------------------------------------------------------
+-------------------------Language Table------------------------------
+---------------------------------------------------------------------
+SDC.Lang = {
+    Manager = "Talk To Manager",
+    Manager2 = "Tug Boat Manager",
+    AlreadyRaising = "Bridge Is Already Raising!",
+    ManagerMenu1 = "Clock Onto Job",
+    ManagerMenu2 = "This will clock you onto the job!",
+    ManagerMenu3 = "Clock Off Job",
+    ManagerMenu4 = "This will clock you off the job!",
+    ManagerMenu5 = "Spawn Tug Boat",
+    ManagerMenu6 = "This will spawn you a tug boat to work your job!",
+    ManagerMenu7 = "Respawn Tug Boat",
+    ManagerMenu8 = "This will delete your old tug boat and respawn it!",
+    CantSpawnTug = "Cant Spawn Tug! All Spawns Occupied!",
+    MyTug = "My Tug Boat",
+    AvailableBarge = "Available Barge",
+    LackPermissionForVehicle = "You Lack Permission For This Vehicle!",
+    GoFindBarge = "Go To A Available Barge To Start Task!",
+    ConnectBarge = "Connect Barge",
+    DisconnectBarge = "Disconnect Barge",
+    CouldntClaimBarge = "Couldnt Claim Barge!",
+    GoToDropoff = "Bring Barge To Dropoff!",
+    ReconnectBargeToContinue = "Reconnect Barge To Continue!",
+    BringBargeToDestination = "Bring Barge To Destination",
+    CouldntFindDestination = "Couldnt Claim Barge Due To No Available Destinations!",
+    DropoffBargeHere = "Barge Dropoff Location",
+    DropoffBarge = "Dropoff Barge",
+    CouldntDropoffBarge = "Had An Issue Dropping Off Barge! Duplicated Dropoff Location!",
+    DroppedOffBarge = "Successfully Dropped Off Barge! Money Was Sent To Your Bank!",
+    JobName = "Tug Boat Job",
+    YouNeedABoatingLicense = "Missing Boating License!",
+    ClockedOffDueToDist = "You Were Clocked Off! You Went Too Far From Job!"
+}

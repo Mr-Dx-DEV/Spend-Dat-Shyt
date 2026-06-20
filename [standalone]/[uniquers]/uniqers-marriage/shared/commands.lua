@@ -1,0 +1,20 @@
+UniqersMarriage = UniqersMarriage or {}
+
+UniqersMarriage.LoyaltyMissionsCommand = "loyaltymission" -- Command to open the mission menu
+UniqersMarriage.ToggleValentineHud = "togglevalhud" -- open and close
+UniqersMarriage.LoyaltyLeaderboardCommand = "loyalty" -- Command to open the leaderboard
+UniqersMarriage.ToggleEmojiCommand = "showspouseemoji" -- show spouse emoji top
+UniqersMarriage.offlinepagecommand = "marriedadmin" -- opening offline admin page 
+UniqersMarriage.DivorceCommand = "divorce" -- divorce command name
+UniqersMarriage.BreakEngagementCommand = "breakengagement" -- Admin/Priest için nişan bozma komutu
+UniqersMarriage.MarriageCommand = "marriage" -- marriage command name
+UniqersMarriage.PriestPanelCommand = "priestpanel" -- open priest job panel.
+UniqersMarriage.MarriedPanelCommand = "marriedpanel" -- maried panel command
+UniqersMarriage.BuyRingCommand = "buyring" -- Ring shopping page command name
+UniqersMarriage.Showminihudmarriage = "showuiwedding" -- show minihud
+UniqersMarriage.Offminihudmarriage = "offuiwedding" -- hide mini hud
+UniqersMarriage.EditUiCommand = "edituiwedding" -- hide mini hud
+UniqersMarriage.ResetUiCommand = "resetuiwedding" -- hide mini hud
+UniqersMarriage.PutTheRing = "putthering" -- ring can be put finger your character
+UniqersMarriage.PutTheRingOff = "puttheringoff" -- ring can be out finger your character
+UniqersMarriage.MultiMarriedCommand = "multimarried" --multimarried command name

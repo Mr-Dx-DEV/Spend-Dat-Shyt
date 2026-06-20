@@ -1,0 +1,1 @@
+https://docs.wasabiscripts.com/wasabi-scripts/advanced-series/wasabi_ambulance_v2

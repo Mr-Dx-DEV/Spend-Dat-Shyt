@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Police Dispatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="dispatch-container" class="hidden">
+        <!-- Multiple dispatch alerts can stack -->
+    </div>
+    
+    <!-- MDT Panel -->
+    <div id="mdt-container" class="hidden">
+        <div class="mdt-panel">
+            <div class="mdt-header">
+                <div class="mdt-title">
+                    <span class="mdt-icon">💻</span>
+                    <h1>MOBILE DATA TERMINAL</h1>
+                </div>
+                <button class="mdt-close" onclick="closeMDT()">✕</button>
+            </div>
+            
+            <div class="mdt-content">
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">👤</span>
+                        <h2>OFFICER INFORMATION</h2>
+                    </div>
+                    <div class="mdt-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Officer Name:</span>
+                            <span class="info-value" id="officer-name">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Badge Number:</span>
+                            <span class="info-value" id="badge-number">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">🚔</span>
+                        <h2>PATROL STATUS</h2>
+                    </div>
+                    <div class="mdt-status-display">
+                        <div class="status-badge" id="patrol-status-badge">
+                            <span class="status-indicator" id="patrol-indicator"></span>
+                            <span class="status-text" id="patrol-status-text">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">📞</span>
+                        <h2>ACTIVE CALL</h2>
+                    </div>
+                    <div class="mdt-call-info" id="call-info">
+                        <div class="call-item">
+                            <span class="call-label">Call Type:</span>
+                            <span class="call-value" id="call-label">No Active Calls</span>
+                        </div>
+                        <div class="call-item" id="call-priority-item" style="display: none;">
+                            <span class="call-label">Priority:</span>
+                            <span class="call-value" id="call-priority">-</span>
+                        </div>
+                        <div class="call-item" id="call-location-item" style="display: none;">
+                            <span class="call-label">Location:</span>
+                            <span class="call-value" id="call-location">-</span>
+                        </div>
+                        <div class="call-item" id="call-status-item" style="display: none;">
+                            <span class="call-label">Status:</span>
+                            <span class="call-value" id="call-status">-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">📋</span>
+                        <h2>CRIME RESPONSE RECORDS</h2>
+                    </div>
+                    <div class="mdt-crime-responses" id="crime-responses">
+                        <div class="crime-responses-loading">Loading records...</div>
+                    </div>
+                </div>
+                
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">📊</span>
+                        <h2>MY DISPATCH HISTORY</h2>
+                    </div>
+                    <div class="mdt-dispatch-history" id="dispatch-history">
+                        <div class="dispatch-history-loading">Loading history...</div>
+                    </div>
+                </div>
+                
+                <div class="mdt-section">
+                    <div class="mdt-section-header">
+                        <span class="section-icon">🏆</span>
+                        <h2>TOP RESPONDERS</h2>
+                    </div>
+                    <div class="mdt-leaderboard" id="dispatch-leaderboard">
+                        <div class="leaderboard-loading">Loading leaderboard...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mdt-footer">
+                <span class="mdt-footer-text">Press ESC or click X to close</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Alert Template (cloned for each dispatch) -->
+    <template id="dispatch-template">
+        <div class="dispatch-alert" data-dispatch-id="">
+            <div class="alert-header">
+                <div class="priority-badge">
+                    <span class="priority-icon">⚠</span>
+                    <span class="priority-text">PRIORITY 1</span>
+                </div>
+                <div class="expire-timer">
+                    <svg class="timer-ring" viewBox="0 0 36 36">
+                        <path class="timer-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="timer-fg" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                    </svg>
+                    <span class="timer-text">30</span>
+                </div>
+            </div>
+            
+            <div class="alert-body">
+                <div class="crime-icon">
+                    <span>🚨</span>
+                </div>
+                <div class="crime-details">
+                    <h2 class="crime-title">Armed Robbery</h2>
+                    <div class="crime-location">
+                        <span class="location-icon">📍</span>
+                        <span class="location-text">Vinewood Blvd & Alta St</span>
+                    </div>
+                    <div class="crime-zone">
+                        <span class="zone-icon">🏢</span>
+                        <span class="zone-text">Vinewood</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert-status">
+                <div class="status-indicator">
+                    <span class="pulse"></span>
+                    <span class="status-text">AWAITING RESPONSE</span>
+                </div>
+            </div>
+            
+            <div class="alert-actions">
+                <button class="btn btn-accept" onclick="acceptCall(this)">
+                    <span class="btn-icon">✓</span>
+                    <span class="btn-text">RESPOND</span>
+                </button>
+                <button class="btn btn-ignore" onclick="ignoreCall(this)">
+                    <span class="btn-icon">✕</span>
+                    <span class="btn-text">IGNORE</span>
+                </button>
+            </div>
+            
+            <div class="alert-keybind">
+                <span class="key">E</span> Accept
+                <span class="separator">|</span>
+                <span class="key">Q</span> Ignore
+            </div>
+        </div>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
