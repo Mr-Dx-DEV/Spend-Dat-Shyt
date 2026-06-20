@@ -1,0 +1,451 @@
+{
+  "presence": {
+    "__comment__": "Bot presence settings. Set enabled=false to disable auto presence updates.",
+    "__hint_status_values__": "online | idle | dnd | invisible",
+    "__hint_activity_type_values__": "0=Playing, 1=Streaming, 2=Listening, 3=Watching, 5=Competing",
+    "__hint_dynamic_template__": "Use {players} in template, example: \"Watching {players} players\"",
+    "enabled": true,
+    "status": "online",
+    "activity": {
+      "name": "The eye in the sky",
+      "type": 1,
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    "dynamic_player_count": {
+      "enabled": false,
+      "template": "Watching {players} players",
+      "interval_seconds": 60
+    }
+  },
+  "commands": [
+    {
+      "name": "ban",
+      "enabled": true,
+      "description": "Ban a player from the server",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to ban",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "reason",
+          "description": "Reason for the ban",
+          "type": 3,
+          "required": true
+        },
+        {
+          "name": "duration",
+          "description": "Ban duration (e.g., 1d 2h 30m or 0 for permanent)",
+          "type": 3,
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "kick",
+      "enabled": true,
+      "description": "Kick a player from the server",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to kick",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "reason",
+          "description": "Reason for the kick",
+          "type": 3,
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "giveitem",
+      "enabled": true,
+      "description": "Give an item to a player",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to receive the item",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "item",
+          "description": "Item name",
+          "type": 3,
+          "required": true
+        },
+        {
+          "name": "amount",
+          "description": "Quantity of the item",
+          "type": 4,
+          "required": false,
+          "min_value": 1
+        }
+      ]
+    },
+    {
+      "name": "revive",
+      "enabled": true,
+      "description": "Revive a player",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to revive",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        }
+      ]
+    },
+    {
+      "name": "getaccountbalances",
+      "enabled": true,
+      "description": "View a player's account balances",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to inspect",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        }
+      ]
+    },
+    {
+      "name": "jail",
+      "enabled": true,
+      "description": "Jail a player",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to jail",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "reason",
+          "description": "Reason for the jail sentence",
+          "type": 3,
+          "required": true
+        },
+        {
+          "name": "durationminutes",
+          "description": "Duration of the sentence in minutes",
+          "type": 4,
+          "required": true,
+          "min_value": 1
+        },
+        {
+          "name": "cell",
+          "description": "Cell name to place the player in",
+          "type": 3,
+          "required": false
+        },
+        {
+          "name": "bucket",
+          "description": "Bucket to place the player in",
+          "type": 4,
+          "required": false,
+          "min_value": 0
+        }
+      ]
+    },
+    {
+      "name": "setaccountbalance",
+      "enabled": true,
+      "description": "Set a player account balance",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "Player ID to update",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "account",
+          "description": "Account name (e.g. cash, bank)",
+          "type": 3,
+          "required": true
+        },
+        {
+          "name": "amount",
+          "description": "New account balance",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        }
+      ]
+    },
+    {
+      "name": "log",
+      "enabled": true,
+      "description": "Define the channel to send logs to",
+      "type": 1,
+      "options": [
+        {
+          "name": "type",
+          "description": "The type of log",
+          "type": 3,
+          "required": true,
+          "choices": [
+            {
+              "name": "Staff Actions",
+              "value": "staff"
+            },
+            {
+              "name": "Player Deaths",
+              "value": "deaths"
+            },
+            {
+              "name": "Player Actions",
+              "value": "players"
+            },
+            {
+              "name": "Reports Open / Closed",
+              "value": "reports"
+            },
+            {
+              "name": "Chat Actions",
+              "value": "chat"
+            },
+            {
+              "name": "Bans",
+              "value": "bans"
+            },
+            {
+              "name": "Warnings",
+              "value": "warnings"
+            }
+          ]
+        },
+        {
+          "name": "channel",
+          "description": "The channel to send the log to",
+          "type": 7,
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "totalplayers",
+      "enabled": true,
+      "description": "Total players",
+      "type": 1
+    },
+    {
+      "name": "setstatus",
+      "enabled": true,
+      "description": "Set the status of the bot",
+      "type": 1,
+      "options": [
+        {
+          "name": "status",
+          "description": "The status to set",
+          "type": 3,
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "staff",
+      "enabled": true,
+      "description": "Staff actions",
+      "type": 1,
+      "options": [
+        {
+          "name": "action",
+          "description": "Action to perform",
+          "type": 3,
+          "choices": [
+            {
+              "name": "list",
+              "value": "list"
+            },
+            {
+              "name": "groups",
+              "value": "groups"
+            },
+            {
+              "name": "bindrole",
+              "value": "bindrole"
+            },
+            {
+              "name": "add",
+              "value": "add"
+            },
+            {
+              "name": "remove",
+              "value": "remove"
+            }
+          ],
+          "required": true
+        },
+        {
+          "name": "group",
+          "description": "Staff group name (required for bindrole)",
+          "type": 3,
+          "required": false
+        },
+        {
+          "name": "role",
+          "description": "Discord role to bind (required for bindrole)",
+          "type": 8,
+          "required": false
+        },
+        {
+          "name": "page",
+          "description": "Page number for list action",
+          "type": 4,
+          "required": false,
+          "min_value": 1
+        }
+      ]
+    },
+    {
+      "name": "clearlogchannel",
+      "enabled": true,
+      "description": "Remove the Discord log channel for a specific log type or all log types",
+      "type": 1,
+      "options": [
+        {
+          "name": "type",
+          "description": "The log channel association to remove",
+          "type": 3,
+          "required": true,
+          "choices": [
+            {
+              "name": "All Log Types",
+              "value": "all"
+            },
+            {
+              "name": "Staff Actions",
+              "value": "staff"
+            },
+            {
+              "name": "Player Deaths",
+              "value": "deaths"
+            },
+            {
+              "name": "Player Actions",
+              "value": "players"
+            },
+            {
+              "name": "Reports Open / Closed",
+              "value": "reports"
+            },
+            {
+              "name": "Chat Actions",
+              "value": "chat"
+            },
+            {
+              "name": "Bans",
+              "value": "bans"
+            },
+            {
+              "name": "Warnings",
+              "value": "warnings"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "screenshot",
+      "enabled": true,
+      "description": "Take a screenshot of a player",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "The player ID to screenshot",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        }
+      ]
+    },
+    {
+      "name": "unban",
+      "enabled": true,
+      "description": "Unban a player by ban ID",
+      "type": 1,
+      "options": [
+        {
+          "name": "banid",
+          "description": "The ban ID to remove",
+          "type": 4,
+          "required": true,
+          "min_value": 1
+        }
+      ]
+    },
+    {
+      "name": "bans",
+      "enabled": true,
+      "description": "View paginated ban list",
+      "type": 1,
+      "options": [
+        {
+          "name": "page",
+          "description": "Page number to view",
+          "type": 4,
+          "required": false,
+          "min_value": 1
+        }
+      ]
+    },
+    {
+      "name": "playerlist",
+      "enabled": true,
+      "description": "View paginated player list",
+      "type": 1,
+      "options": [
+        {
+          "name": "page",
+          "description": "Page number to view",
+          "type": 4,
+          "required": false,
+          "min_value": 1
+        }
+      ]
+    },
+    {
+      "name": "spawn_vehicle",
+      "enabled": true,
+      "description": "Spawn a vehicle for a player",
+      "type": 1,
+      "options": [
+        {
+          "name": "targetid",
+          "description": "The player ID to spawn the vehicle for",
+          "type": 4,
+          "required": true,
+          "min_value": 0
+        },
+        {
+          "name": "model",
+          "description": "The model of the vehicle to spawn",
+          "type": 3,
+          "required": true
+        }
+      ]
+    }
+  ]
+}

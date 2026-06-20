@@ -1,0 +1,338 @@
+{
+  "install_sql_automatically": true,
+  "allow_second_fivem_instance": true,
+  "owners": ["license2:d020a5e4212b8f58fe054a92393dde19c9576361", "license2:85276b4347e328371328427b3b125b38fdacb011"],
+  "hierarchy_protection": true,
+  "default_duty": true,
+  "default_dark_mode": true,
+  "props_render_distance": 1000,
+  "branding": {
+    "name": "FiveM Community",
+    "logo": "./server_logo.png",
+    "link": "https://luxu.gg"
+  },
+  "notify": {
+    "script": "auto",
+    "__comment__": "auto | ox_lib | okokNotify | mythic_notify | is_ui | add more inside bridge/client/notify.lua"
+  },
+  "cdn": {
+    "service": "fivemanage"
+  },
+  "ban": {
+    "skip_identifiers": ["ip"],
+    "__comment__": "In case you have a reverse proxy, you can skip the ip identifier, otherwise all players may be banned."
+  },
+  "locales": {
+    "lang": "en",
+    "code": "en-US",
+    "github": {
+      "enabled": false,
+      "account": "luxu-gg",
+      "repo": "luxu_locales",
+      "branch": "main",
+      "__comment__": "Automatically fetches locales from the specified GitHub repository",
+      "__comment2__": "This will fetch every 2 hours, if you want to force refresh, use /luxu:refresh_locales"
+    },
+    "__comment__": "Find locale codes at https://simplelocalize.io/data/locales/"
+  },
+  "inventory": {
+    "auto_detect": true,
+    "name": "qb-inventory",
+    "images_url": "https://cfx-nui-qb-inventory/html/images/%s.png",
+    "_comment_": "If auto_detect is true, the inventory will be detected automatically. If it is false, you need to specify the inventory resource name."
+  },
+  "snapshots": {
+    "retention_days": 3,
+    "cleanup_interval_minutes": 60,
+    "death_inventory": {
+      "enabled": true,
+      "min_delay_seconds": 60
+    }
+  },
+  "vehicles": {
+    "use_ox_lib_for_mods": false,
+    "images_url": "https://docs.fivem.net/vehicles/%s.webp",
+    "_comment_": "Replace the url with your own website or resource that contains the custom vehicles images, keep the %s placeholder, it will be replaced with the vehicle model name."
+  },
+  "jail": {
+    "enabled": true,
+    "time_mode": "playtime",
+    "jail_cells": [
+      { "name": "Jail Cell 1", "coords": { "x": 459.57, "y": -1001.68, "z": 24.9, "w": 266.29 }, "safeRadius": 5.0 },
+      { "name": "Jail Cell 2", "coords": { "x": 458.89, "y": -998.03, "z": 24.9, "w": 269.29 }, "safeRadius": 5.0 },
+      { "name": "Jail Cell 3", "coords": { "x": 460.5, "y": -994.34, "z": 24.9, "w": 269.29 }, "safeRadius": 5.0 }
+    ],
+    "_comment_": "time_mode can be 'date' or 'playtime'. Date sentences expire at the exact timestamp. Playtime sentences only count down while the player is online, loaded, and actively jailed. Jail cell names must be unique. The safe radius is the radius around the jail cell where the player walk freely. If the player is not within the safe radius, they will be teleported to the cell."
+  },
+  "weather": {
+    "enabled": false,
+    "__comment__": "Use luxu's built-in weather system"
+  },
+  "reports": {
+    "enabled": true
+  },
+  "external_web_panel": {
+    "enabled": true,
+    "__comment__": "Available at: https://luxu.app"
+  },
+  "custom_map": {
+    "enabled": false,
+    "_comment_": "Enable or disable here",
+    "type": {
+      "active": "image",
+      "_comment_": "set active to tile or image",
+      "tile": {
+        "url": "https://map_locations.com/{z}/{x}/{y}.webp",
+        "options": {
+          "minZoom": 0,
+          "maxNativeZoom": 5,
+          "noWrap": true,
+          "id": "My Custom Map"
+        }
+      },
+      "image": {
+        "url": "https://imagedelivery.net/xMNIukUvBnTcljSQ6wCsQg/d69bfcd1-773e-489a-201e-6ec358ec6500/MAPS",
+        "options": {
+          "bounds": [
+            [-4000, -5500],
+            [8000, 6000]
+          ]
+        }
+      }
+    },
+    "options": {
+      "minZoom": 2,
+      "maxZoom": 8,
+      "zoom": 2,
+      "center": [0, 0],
+      "maxBounds": [
+        [-4000, -5500],
+        [8000, 6000]
+      ]
+    },
+    "color": "rgb(15,168,210)"
+  },
+  "warnings": {
+    "maximum_warnings_until_ban": 3,
+    "message_duration_seconds": 15,
+    "ban_duration_days": 1,
+    "ban_message": "Maximum Warnings Reached!"
+  },
+  "flags": [
+    {
+      "id": "suspicious",
+      "label": "Suspicious",
+      "color": "#ff6201"
+    },
+    {
+      "id": "trusted",
+      "label": "Trusted",
+      "color": "#1e6cf9"
+    },
+    {
+      "id": "streamer",
+      "label": "Streamer",
+      "color": "#9146ff"
+    }
+  ],
+  "notifications": {
+    "staff_login": true
+  },
+  "commands": {
+    "__comment__": "",
+    "open_panel": {
+      "enabled": true,
+      "name": "admin",
+      "label": "Open Luxu Admin Menu",
+      "description": "Open the main admin menu",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "open_menu": {
+      "enabled": true,
+      "name": "luxu",
+      "description": "Open the quick menu",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "teleport_marker": {
+      "enabled": true,
+      "name": "tpm",
+      "description": "Teleport to a marker",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "teleport_go_back": {
+      "enabled": true,
+      "name": "back",
+      "description": "Teleport back to your last position",
+      "keybind": true,
+      "defaultKey": false,
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID (optional)",
+          "type": "number"
+        }
+      ]
+    },
+    "teleport_player": {
+      "enabled": true,
+      "name": "tp",
+      "description": "Teleport to a player or coordinates x y z | (vector3)",
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID (optional) or coordinates x y z | (vector3)",
+          "type": "number"
+        }
+      ]
+    },
+    "teleport_bring_player": {
+      "enabled": true,
+      "name": "bring",
+      "description": "Bring a player to you",
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID (optional)",
+          "type": "number"
+        }
+      ]
+    },
+    "player_report": {
+      "enabled": true,
+      "name": "report",
+      "description": "Opens report menu (All players)",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "noclip": {
+      "enabled": true,
+      "name": "noclip",
+      "description": "Toggle Noclip",
+      "keybind": true,
+      "defaultKey": false
+    },
+    "spectate": {
+      "enabled": true,
+      "name": "spectate",
+      "description": "Spectate a player"
+    },
+    "staff": {
+      "enabled": true,
+      "name": "staff",
+      "description": "See all online staff members"
+    },
+    "ban": {
+      "enabled": true,
+      "name": "ban",
+      "description": "Ban a player",
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID (optional)",
+          "type": "number"
+        },
+        {
+          "name": "duration",
+          "help": "Duration of ban (1y2d3h4m)",
+          "type": "number"
+        },
+        {
+          "name": "reason",
+          "help": "Reason for ban",
+          "type": "string"
+        }
+      ]
+    },
+    "sentence": {
+      "enabled": true,
+      "name": "sentence",
+      "description": "Check your remaining jail time",
+      "auto_close_seconds": 5,
+      "__comment__": "Set auto_close_seconds to 0 to make it persistent"
+    },
+    "jail": {
+      "enabled": true,
+      "name": "jail",
+      "description": "Jail a player",
+      "params": [
+        {
+          "name": "player",
+          "help": "Player ID",
+          "type": "number"
+        },
+        {
+          "name": "duration",
+          "help": "Duration of jail (1y2d3h4m)",
+          "type": "string"
+        },
+        {
+          "name": "reason",
+          "help": "Reason for jail",
+          "type": "string"
+        }
+      ]
+    },
+    "admincar": {
+      "enabled": true,
+      "name": "admincar",
+      "description": "Give a player a vehicle with mods"
+    }
+  },
+
+  "logs": {
+    "_comment_": "Adjust as needed",
+    "enabled": true,
+    "max_age_days": 7,
+    "tag_discord_user": true,
+
+    "options": {
+      "chat_messages": false,
+      "player_deaths": true,
+      "_comment_": "chat messages logs might crash your server"
+    }
+  },
+
+  "chats": {
+    "character_limit": 500,
+    "defaul_notification_position": "bottom-right",
+    "__comment__": "'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'top-center' | 'bottom-center'"
+  },
+  "loop_delays": {
+    "coords_update": 10000,
+    "jail_coordinate_check": 5000
+  },
+  "optimization": {
+    "_comment_": "Tweak these settings based on your server performance",
+    "items_db_include_offline_players": false
+  },
+  "force_resource_shutdowns": ["_resource_name_"],
+  "esx_boss_grades_names": ["boss", "owner"],
+  "announcements": {
+    "messages": {
+      "position": {
+        "left": "0%",
+        "top": "0%",
+        "margin": "1.5rem"
+      }
+    }
+  },
+  "brandoff": false,
+  "ui": {
+    "disable": {
+      "player_count": false
+    }
+  },
+  "telemetry": {
+    "enabled": true,
+    "__comment__": "No personal data is sent. Fully anonymous data is sent. Disable this if you don't want luxu to receive errors and relevant logs."
+  },
+
+  "advanced_configuration": {
+    "disable_map": false,
+    "disable_coords_history": true,
+    "__coords_history_comment__": "This feature consumes a lot of space in the database, use it only for a short period of time and disable it after that."
+  }
+}
