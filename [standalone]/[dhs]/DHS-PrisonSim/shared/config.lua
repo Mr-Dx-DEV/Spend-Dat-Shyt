@@ -13,7 +13,7 @@ Config.UsingClothingSystem = true -- If true, You will use the built in clothing
 Config.Clothing = "illenium-appearance" -- "illenium-appearance" or "custom" modify in editablefunctions_cl.lua
 Config.MedicalSystem = 'wasabi' -- Options: 'builtin', 'p_ambulancejob', 'wasabi', 'brutal', 'qb-ambulancejob' modify in editablefunctions_cl.lua
 
-Config.MLOSelection = 'molo-alcatraz' -- 'molo-alcatraz' or 'prompt-prison' or 'gabz-prison' or 'custom'
+Config.MLOSelection = 'prompt-prison' -- 'molo-alcatraz' or 'prompt-prison' or 'gabz-prison' or 'custom'
 
 Config.Phone = 'lb-phone' -- 'lb-phone' or 'custom'
 Config.PayPhoneCallerID = "Prison Inmate"
