@@ -1,6 +1,0 @@
-		['WEAPON_PREME_G17'] = {
-			label = 'PREME G17',
-			weight = 1500,
-			durability = 0.1,
-			ammoname = 'ammo-9'
-		},

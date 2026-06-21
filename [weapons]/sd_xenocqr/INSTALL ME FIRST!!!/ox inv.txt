@@ -1,6 +1,0 @@
-		['WEAPON_XENO_CQR'] = {
-			label = 'XENO CQR',
-			weight = 1500,
-			durability = 0.1,
-			ammoname = 'ammo-rifle'
-		},

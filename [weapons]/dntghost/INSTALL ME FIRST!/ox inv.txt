@@ -1,6 +1,0 @@
-		['WEAPON_GHOST_M4'] = {
-			label = 'DNT GHOST M4',
-			weight = 1500,
-			durability = 0.1,
-			ammoname = 'ammo-rifle'
-		},
