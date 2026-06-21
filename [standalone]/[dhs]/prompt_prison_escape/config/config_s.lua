@@ -5,7 +5,8 @@ return {
         if GetResourceState('rcore_prison') == 'started' then
             return exports.rcore_prison:IsPrisoner(source)
         elseif GetResourceState('DHS-PrisonSim') == 'started' then
-            return exports['DHS-PrisonSim']:IsPrisoner(source)
+            local remainingTime = exports['DHS-PrisonSim']:GetRemainingPrisonTime(source)
+            return remainingTime ~= nil and remainingTime > 0
 
         elseif GetResourceState('dynyx_prison') == 'started' then 
             return exports.dynyx_prison:IsActivePrisoner(source)
