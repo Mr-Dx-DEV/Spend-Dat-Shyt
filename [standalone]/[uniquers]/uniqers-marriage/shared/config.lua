@@ -3,7 +3,7 @@ UniqersMarriage.DatabaseSelect = "oxmysql" --change your mysql service oxmysql o
 UniqersMarriage.Framework = "auto" -- "auto" or "qbcore" or "esx" or "qbus" or "oldesx" - if you need custom framework contact us  https://discord.gg/MyrGhbf9tM
 UniqersMarriage.CoreName = "auto" -- "auto" or for qbcore = "QBCore", for qbus = "QBCore", for esx = "ESX", forold esx = "ESX", for qbcore or esx variation like ASDCore, Blabla core = "BLABLACore",
 UniqersMarriage.CoreName2 = "auto" -- "auto" or for qbcore = "qb-core", for qbus = "QBCore:GetObject", for esx = "es_extended", forold esx = "esx:getSharedObject", for qbcore or esx variation like ASDCore, Blabla core = "blabla-core",
-UniqersMarriage.Notify = "uniqers-notify" -- if u use custom notify write "custom" if u dont write "qbcore" - "esx" -  or "uniqers-notify" what u using
+UniqersMarriage.Notify = "qbcore" -- if u use custom notify write "custom" if u dont write "qbcore" - "esx" -  or "uniqers-notify" what u using
 UniqersMarriage.Inventory = "auto" -- "auto" or select your inventory - qb-inventory = "qbcore" or other qbcore inventory like ox-inventory and others = "otherqb" or esx-inventory = "esx"  or like ox-inventory and others esx inventory = "otheresx"
 UniqersMarriage.Clothes = "auto" -- "auto" or select your clothes script "qb-clothing" or "esx-skinchanger" or "fivem-apperance" or "illenum-apperance" or "rcore-clothing" or "tgiann-clothing" or "custom" if u use custom add your custom code below the function function customclothes
 UniqersMarriage.ForEsxAvatar = "steam" --- select your for esx framework avatar system "steam" or "discord" or ""
@@ -15,13 +15,13 @@ UniqersMarriage.Society = false -- if you want all married pay going to qb-manag
 UniqersMarriage.ClothingChange = true -- if true players can change clothing with target if false players cant change clothings.
 UniqersMarriage.NeedTwoRing = false -- if true aach couple needs 1 ring. If false, only the person proposing will need 1 ring.
 UniqersMarriage.UseRing = true -- if true copules can use ring if false cant this mean gps at the tag map. 
-UniqersMarriage.WeddingPay = 25000 -- wedding pay amount
-UniqersMarriage.WeddingClothingPay = 2500 -- wedding clothes pay amount
+UniqersMarriage.WeddingPay = 250 -- wedding pay amount
+UniqersMarriage.WeddingClothingPay = 250 -- wedding clothes pay amount
 UniqersMarriage.PreparationTime = 60 -- minutes
 UniqersMarriage.MarriedNotifyVisible = true -- global married notify true or false 
 UniqersMarriage.MarriedNotify = 30 -- 30 >> 3 seconds
 UniqersMarriage.LevelUpNotify = 40 -- 30 >> 3 seconds
-UniqersMarriage.RingPay = 100000 -- ring pay amount
+UniqersMarriage.RingPay = 5000 -- ring pay amount
 UniqersMarriage.SpouseTopEmojiVisible = true -- your spouse emoji at top head if is true visible if false hidden.
 UniqersMarriage.SpouseBlipVisible = true -- your spouse emoji at top head if is true visible if false hidden.
 UniqersMarriage.BlipType = "normal" -- "hard" for big server cpu  "normal" for normal
@@ -42,7 +42,7 @@ UniqersMarriage.StaffPermissionNames = { -- write your staff names for qbcore li
 }
 UniqersMarriage.CeremonyFee = 10000 -- ceremony fee amount
 UniqersMarriage.CarRentPrice = 5000 -- wedding car rent price amount
-UniqersMarriage.CarDeposit = 8000 -- wedding car deposit amount
+UniqersMarriage.CarDeposit = 2000 -- wedding car deposit amount
 UniqersMarriage.WeddingCarModel = "stretch" -- wedding car model
 
 UniqersMarriage.CeremonyData = {
