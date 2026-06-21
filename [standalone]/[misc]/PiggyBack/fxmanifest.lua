@@ -1,4 +1,4 @@
-﻿shared_script '@WaveShield/resource/include.lua'
+
 
 -- Resource Metadata
 fx_version 'bodacious'

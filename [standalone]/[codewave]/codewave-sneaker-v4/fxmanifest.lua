@@ -1,4 +1,4 @@
-﻿fx_version 'adamant'
+fx_version 'adamant'
 game 'gta5'
 author 'CodeWave, Jamie'
 lua54 'yes'

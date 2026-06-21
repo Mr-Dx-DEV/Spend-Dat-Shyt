@@ -1,4 +1,4 @@
-﻿lua54 "yes" -- needed for Reaper
+lua54 "yes" -- needed for Reaper
 
 fx_version          "bodacious"
 game                "gta5"

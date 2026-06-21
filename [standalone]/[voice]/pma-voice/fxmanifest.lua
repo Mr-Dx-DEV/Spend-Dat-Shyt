@@ -1,4 +1,4 @@
-﻿lua54 "yes" -- needed for Reaper
+lua54 "yes" -- needed for Reaper
 
 game 'common'
 version '7.0.1'

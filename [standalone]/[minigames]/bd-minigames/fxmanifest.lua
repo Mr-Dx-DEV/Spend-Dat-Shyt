@@ -1,4 +1,4 @@
-﻿fx_version "cerulean"
+fx_version "cerulean"
 
 description "FiveM Minigames by Bulgar Development"
 author "kristiyanpts"

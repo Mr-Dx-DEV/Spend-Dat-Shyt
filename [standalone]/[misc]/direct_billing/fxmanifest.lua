@@ -1,4 +1,4 @@
-﻿fx_version 'cerulean'
+fx_version 'cerulean'
 game 'gta5'
 
 description "Direct Billing/Invoice System For Whitelisted Jobs"

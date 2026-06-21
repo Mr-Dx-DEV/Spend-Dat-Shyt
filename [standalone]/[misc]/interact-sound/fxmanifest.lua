@@ -1,4 +1,4 @@
-﻿lua54 "yes" -- needed for Reaper
+lua54 "yes" -- needed for Reaper
 
 -- FXVersion Version
 fx_version 'adamant'

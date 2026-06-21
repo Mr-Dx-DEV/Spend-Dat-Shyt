@@ -1,4 +1,4 @@
-﻿fx_version 'cerulean'
+fx_version 'cerulean'
 game 'gta5'
 author 'Project Sloth'
 description 'UI Library'

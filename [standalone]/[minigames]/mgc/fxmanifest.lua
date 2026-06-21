@@ -1,4 +1,4 @@
-﻿--[[ 
+--[[ 
     This file is part of MGC and is licensed under the MIT License.
     See the LICENSE file in the root directory for full terms.
 

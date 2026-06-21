@@ -1,6 +1,6 @@
-﻿lua54 "yes" -- needed for Reaper
+lua54 "yes" -- needed for Reaper
 
-shared_script '@WaveShield/resource/include.lua'
+
 fx_version 'cerulean'
 game 'gta5'
 description 'rpemotes-reborn'

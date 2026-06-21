@@ -1,4 +1,4 @@
-﻿shared_script '@WaveShield/resource/include.lua'
+
 
 description 'ammo boxes'
 author 'donk'

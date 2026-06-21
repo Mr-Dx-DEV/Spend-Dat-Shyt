@@ -1,4 +1,4 @@
-﻿-----------------For support, scripts, and more----------------
+-----------------For support, scripts, and more----------------
 --------------- https://discord.gg/wasabiscripts  -------------
 ---------------------------------------------------------------
 fx_version 'cerulean'

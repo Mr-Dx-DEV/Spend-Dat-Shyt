@@ -1,4 +1,4 @@
-﻿shared_script '@WaveShield/resource/include.lua'
+
 
 lua54 'yes'
 fx_version 'cerulean'

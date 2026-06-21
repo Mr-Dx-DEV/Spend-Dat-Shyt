@@ -1,4 +1,4 @@
-﻿shared_script '@WaveShield/resource/include.lua'
+
 
 fx_version 'bodacious'
 lua54 'yes' 

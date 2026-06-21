@@ -1,4 +1,4 @@
-﻿--[[ FX Information ]] --
+--[[ FX Information ]] --
 fx_version 'cerulean'
 use_experimental_fxv2_oal 'yes'
 lua54 'yes'
