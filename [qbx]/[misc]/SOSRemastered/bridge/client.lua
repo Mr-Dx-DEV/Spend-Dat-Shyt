@@ -88,7 +88,7 @@ function isDead()
 		return true
 	elseif IsPlayerDead(PlayerId()) then
 		return true
-	elseif exports.wasabi_ambulance_v2:IsDead() then
+	elseif exports.wasabi_ambulance_v2:isPlayerDead() then
 		return true
 	end
 	return false
