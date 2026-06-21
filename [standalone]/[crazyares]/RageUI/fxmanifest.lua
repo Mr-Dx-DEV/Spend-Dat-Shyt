@@ -1,5 +1,4 @@
-client_script '@ElectronAC/src/include/client.lua'
-shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
+﻿shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
 
 fx_version 'adamant'
 games { 'gta5' };

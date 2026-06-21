@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-fx_version 'adamant'
+﻿fx_version 'adamant'
 game 'gta5'
 author 'CodeWave, Jamie'
 lua54 'yes'

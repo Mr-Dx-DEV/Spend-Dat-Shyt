@@ -1,9 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-shared_script "@ReaperV4/imports/bypass.lua"
-shared_script "@ReaperV4/imports/bypass_s.lua"
-shared_script "@ReaperV4/imports/bypass_c.lua"
-lua54 "yes" -- needed for Reaper
+﻿lua54 "yes" -- needed for Reaper
 
 fx_version 'cerulean'
 game 'gta5'
@@ -15,14 +10,14 @@ lua54 'yes'
 shared_scripts {
     'configs/locales.lua',
     'configs/config.lua',
-    --'@ox_lib/init.lua', --⚠️PLEASE READ⚠️; Uncomment this line if you use 'ox_lib'.⚠️
-    --'@qbx_core/modules/lib.lua', --⚠️PLEASE READ⚠️; Uncomment this line if you use 'qbx_core'.⚠️
+    --'@ox_lib/init.lua', --âš ï¸PLEASE READâš ï¸; Uncomment this line if you use 'ox_lib'.âš ï¸
+    --'@qbx_core/modules/lib.lua', --âš ï¸PLEASE READâš ï¸; Uncomment this line if you use 'qbx_core'.âš ï¸
 }
 
 client_scripts {
     'configs/client_customise_me.lua',
     'client/*.lua',
-    --'@qbx_core/modules/playerdata.lua', --⚠️PLEASE READ⚠️; Uncomment this line if you use 'qbx_core'.⚠️
+    --'@qbx_core/modules/playerdata.lua', --âš ï¸PLEASE READâš ï¸; Uncomment this line if you use 'qbx_core'.âš ï¸
 }
 
 server_scripts {

@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-fx_version 'cerulean'
+﻿fx_version 'cerulean'
 games { 'gta5' }
 
 author 'HoboDevCo#3011'

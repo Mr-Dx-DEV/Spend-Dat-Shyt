@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
--- Resource Metadata
+﻿-- Resource Metadata
 fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'

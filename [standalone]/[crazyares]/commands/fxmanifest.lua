@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-shared_script '@WaveShield/resource/include.lua'
+﻿shared_script '@WaveShield/resource/include.lua'
 
 fx_version 'cerulean'
 game 'gta5'

@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
---                _
+﻿--                _
 --               | |
 --   _____      _| | _____  ___ _ __
 --  / __\ \ /\ / / |/ / _ \/ _ \ '_ \

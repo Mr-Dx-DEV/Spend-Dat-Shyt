@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-fx_version 'bodacious'
+﻿fx_version 'bodacious'
 lua54 'yes'
 game 'gta5'
 

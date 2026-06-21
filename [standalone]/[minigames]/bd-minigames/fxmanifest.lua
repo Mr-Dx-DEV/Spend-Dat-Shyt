@@ -1,5 +1,4 @@
-client_script '@ElectronAC/src/include/client.lua'
-fx_version "cerulean"
+﻿fx_version "cerulean"
 
 description "FiveM Minigames by Bulgar Development"
 author "kristiyanpts"

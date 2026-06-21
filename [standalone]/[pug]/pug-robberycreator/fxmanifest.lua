@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-lua54 'yes'
+﻿lua54 'yes'
 fx_version 'cerulean'
 game 'gta5'
 

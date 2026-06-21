@@ -1,6 +1,4 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
---[[---------------------------------------------------------------------------------------
+﻿--[[---------------------------------------------------------------------------------------
 
 	Wraith ARS 2X
 	Created by WolfKnight

@@ -1,5 +1,4 @@
-client_script '@ElectronAC/src/include/client.lua'
-fx_version 'adamant'
+﻿fx_version 'adamant'
 
 game 'gta5'
 

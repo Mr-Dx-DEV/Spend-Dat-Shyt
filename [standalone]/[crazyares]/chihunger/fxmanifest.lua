@@ -1,5 +1,4 @@
-client_script '@ElectronAC/src/include/client.lua'
-fx_version 'cerulean'
+﻿fx_version 'cerulean'
 game 'gta5'
 
 author 'Grim Development'

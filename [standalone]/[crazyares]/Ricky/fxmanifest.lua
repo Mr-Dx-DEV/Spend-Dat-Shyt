@@ -1,12 +1,10 @@
-server_script '@ElectronAC/src/include/server.lua'
-client_script '@ElectronAC/src/include/client.lua'
-shared_script '@WaveShield/resource/include.lua'
+﻿shared_script '@WaveShield/resource/include.lua'
 
 fx_version 'bodacious'
 lua54 'yes' 
 game 'gta5' 
 
-author 'R1CKY®#2220'
+author 'R1CKYÂ®#2220'
 description 'Vinewood Sign'
 version '1.0'
 
