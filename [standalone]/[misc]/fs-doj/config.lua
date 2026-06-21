@@ -145,7 +145,7 @@ Config.Gavels = {
         coords = vector3(-516.02, -589.89, 36.2),
         jobs = {['doj'] = 0},
         volume = 0.5,       -- sound volume [0.0 - 1.0]
-        distance = 25.5,    -- sound distance
+        distance = 17.5,    -- sound distance
         courtroom = 1       -- Link to courtroom index (optional)
     },
 }
@@ -161,7 +161,7 @@ Config.Microphones = {
     ['Judge'] = {
         coords = vector3(-516.6304, -589.6918, 36.2142),
         volume = 0.7,         -- Voice volume multiplier [0.0 - 1.0]
-        distance = 45.0,      -- Voice range distance (radius in meters)
+        distance = 20.0,      -- Voice range distance (radius in meters)
         boost = 2.5,          -- Voice range boost multiplier
         courtroom = 1         -- Link to courtroom index
     },

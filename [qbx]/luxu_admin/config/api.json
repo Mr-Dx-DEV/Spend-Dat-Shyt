@@ -1,8 +1,8 @@
 {
   "fivemanage": {
-    "image": "",
-    "video": "",
-    "audio": ""
+    "image": "nZzvFNiv00eSNdrtNoDNvpH30LBBjO0q",
+    "video": "nZzvFNiv00eSNdrtNoDNvpH30LBBjO0q",
+    "audio": "nZzvFNiv00eSNdrtNoDNvpH30LBBjO0q"
   },
   "discord_bot": {
     "enabled": false,
@@ -12,7 +12,7 @@
   },
   "cloudflare_turn_keys": {
     "__comment__": "Add your turn server id and api key here to generate servers automaticaly.",
-    "enabled": true,
+    "enabled": false,
     "turn_token_id": "",
     "api_token": ""
   },
