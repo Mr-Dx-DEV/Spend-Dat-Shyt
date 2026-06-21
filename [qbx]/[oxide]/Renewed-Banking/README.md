@@ -18,7 +18,6 @@ Note: Supports QBCore and ESX. You can easily add support for other frameworks b
 # Features
 * Personal, Job, Gang, Shared Accounts
 * Withdraw, Deposit, Transfer between accounts
-* Credit score based bank loans with repayments
 * Optimized Resource (0.00ms Running At All Times)
 
 # Installation
@@ -26,22 +25,6 @@ Note: Supports QBCore and ESX. You can easily add support for other frameworks b
 1) Insert the SQL provided
 
 2) Integrate the exports found below in any external resource that needs them
-
-## Credit Score Loans
-
-Loan approval is controlled in `config.lua` under `Config.creditScore`. Players start with the configured starting score, qualify by score tier, and can only borrow up to the tier limit minus their active loan balance. Defaults use a 300-800 score range: under 500 is denied, 500+ unlocks up to $10,000, 600+ up to $25,000, 700+ up to $40,000, and 800 up to $50,000.
-
-Each loan stores the eligibility limit used at approval, payment due date, overdue days, and credit score lost from missed payments. If a loan passes its due date, it is marked overdue and the player's score drops by the configured penalty interval until the loan is paid off. Paying off an overdue loan stops the penalty; lost score is only restored automatically when `restoreLostScoreOnPayoff` is enabled.
-
-Useful exports:
-
-```lua
-exports['Renewed-Banking']:getCreditScore(citizenid)
-exports['Renewed-Banking']:setCreditScore(citizenid, score)
-exports['Renewed-Banking']:adjustCreditScore(citizenid, amount)
-exports['Renewed-Banking']:getActiveLoans(citizenid)
-exports['Renewed-Banking']:getLoanOverview(citizenid)
-```
  
 ## Transaction Integrations
 

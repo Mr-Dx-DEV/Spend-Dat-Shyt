@@ -66,7 +66,7 @@ end)
 
 RegisterCommand('closeBankUI', function() nuiHandler(false) end, false)
 
-local bankActions = {'deposit', 'withdraw', 'transfer', 'applyLoan', 'repayLoan'}
+local bankActions = {'deposit', 'withdraw', 'transfer'}
 CreateThread(function ()
     for k=1, #bankActions do
         RegisterNUICallback(bankActions[k], function(data, cb)

@@ -5,28 +5,6 @@ Config = {
     renewedMultiJob = false, -- QBCORE ONLY! https://github.com/Renewed-Scripts/qb-phone  
     progressbar = 'circle', -- circle or rectangle (Anything other than circle will default to rectangle)
     currency = 'USD', -- USD, EUR, GBP ect.....
-    creditScore = {
-        enabled = true,
-        startingScore = 650,
-        minScore = 300,
-        maxScore = 800,
-        minimumLoan = 10000,
-        maxActiveLoans = 3,
-        loanTakenScoreCost = 5,
-        paymentScoreGain = 0,
-        payoffScoreGain = 0,
-        paymentTermDays = 7,
-        overdueCheckMinutes = 30,
-        overduePenaltyPoints = 10,
-        overduePenaltyIntervalHours = 24,
-        restoreLostScoreOnPayoff = false,
-        tiers = {
-            { min = 800, maxLoan = 50000, interest = 6 },
-            { min = 700, maxLoan = 40000, interest = 10 },
-            { min = 600, maxLoan = 25000, interest = 14 },
-            { min = 500, maxLoan = 10000, interest = 18 }
-        }
-    },
     atms = {
         `prop_atm_01`,
         `prop_atm_02`,
