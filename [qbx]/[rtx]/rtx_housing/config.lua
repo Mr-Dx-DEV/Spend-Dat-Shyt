@@ -1253,7 +1253,7 @@ Config.RealEstateSettings = {
 	-- If enabled, the defined percentage below will be automatically calculated
 	-- from the final sale price and added to the real estate society account.
 
-	realestatepercentage = 10, 
+	realestatepercentage = 90, 
 	-- Commission percentage taken from the total selling price.
 	-- Example: If a house is sold for $100,000 and percentage = 20,
 	-- the real estate society will receive $20,000.
