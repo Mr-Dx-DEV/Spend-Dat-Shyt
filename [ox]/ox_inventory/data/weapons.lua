@@ -1,5 +1,12 @@
 return {
 	Weapons = {
+		['WEAPON_HACKINGDEVICE'] = {
+    label = 'Plant Scanner',
+    weight = 1200,
+},
+
+
+
 		['WEAPON_BATTLERIFLE'] = {
 			label = 'Battle Rifle',
 			weight = 3300,
