@@ -419,19 +419,25 @@
     "ui_retail_selling_min_police_desc": "Minimum number of police officers required for retail selling",
 
     "ui_swim_speed": "Swim Speed",
-    "ui_swim_speed_desc": "Multiplier for swimming speed (1.0 = normal, 2.0 = double speed)",
+    "ui_swim_speed_desc": "Multiplier for swimming speed and stamina boost while swimming (1.0 = normal)",
     "ui_stamina_effect": "Stamina Boost",
-    "ui_stamina_effect_desc": "Amount of stamina restored per tick (100 = infinite stamina)",
+    "ui_stamina_effect_desc": "Enable stamina boost - adds random stamina every 0.5s (does NOT affect movement speed)",
 
     "ui_special_abilities": "Special Abilities",
     "ui_night_vision": "Night Vision",
+    "ui_night_vision_desc": "Enables enhanced vision in dark environments",
     "ui_thermal_vision": "Thermal Vision",
+    "ui_thermal_vision_desc": "See heat signatures through walls and in darkness",
     "ui_super_jump": "Super Jump",
+    "ui_super_jump_desc": "Grants enhanced jumping ability",
     "ui_health_regen": "Health Regeneration",
     "ui_health_regen_desc": "HP to regenerate every 5 seconds during the effect duration (e.g., 10 = gain 10 HP every 5 seconds)",
     "ui_armour_regen": "Armour Regeneration",
     "ui_armour_regen_desc": "Armor to regenerate every 5 seconds during the effect duration (e.g., 5 = gain 5 armor every 5 seconds)",
     "ui_no_ragdoll": "No Ragdoll",
+    "ui_no_ragdoll_desc": "Prevents player from stumbling or falling over",
     "ui_invincibility": "Invincibility",
-    "ui_invisibility": "Invisibility"
+    "ui_invincibility_desc": "Temporary godmode - player cannot take any damage from bullets, explosions, melee, fire, or falling",
+    "ui_invisibility": "Invisibility",
+    "ui_invisibility_desc": "Player becomes invisible to others"
 }
