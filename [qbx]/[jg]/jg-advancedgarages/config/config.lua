@@ -522,6 +522,69 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
+      [6] = {
+        model = "c3nforcevicb",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "c3nforcevicb",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [7] = {
+        model = "c3alamopdblue",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "c3alamopdblue",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [8] = {
+        model = "c324dominatorb",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "c324dominatorb",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [9] = {
+        model = "c3txdpscatb",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "c3txdpscatb",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [10] = {
+        model = "c3vigeropdb",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "c3vigeropdb",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [11] = {
+        model = "B407",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "B407",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [12] = {
+        model = "duraambo",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "duraambo",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
     }
 },
 
