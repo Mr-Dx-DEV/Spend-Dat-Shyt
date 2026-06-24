@@ -10450,6 +10450,15 @@ scout20 = {
         type = 'automobile',
         hash = `marocjtrackhawk2`,
     },
+    ['nm_amgg63'] = {
+        name = 'nm_amgg63',
+        brand = 'amgg63',
+        model = 'duraambo',
+        price = 75000,
+        category = 'dono',
+        type = 'automobile',
+        hash = `nm_amgg63`,
+    },
 
 
 
