@@ -495,16 +495,16 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [3] = {
-        model = "c3coqheatb",
-        plate = false,
-        minJobGrade = 0,
-        nickname = "c3coqheatb",
-        livery = 1,
-        extras = {1, 2},
-        maxMods = true
-      },
-     [4] = {
+      -- [3] = {
+      --   model = "c3coqheatb",
+      --   plate = false,
+      --   minJobGrade = 0,
+      --   nickname = "c3coqheatb",
+      --   livery = 1,
+      --   extras = {1, 2},
+      --   maxMods = true
+      -- },
+     [3] = {
         model = "c3thrustpdb",
         plate = false,
         minJobGrade = 0,
@@ -513,7 +513,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [5] = {
+      [4] = {
         model = "c3bufslickb",
         plate = false,
         minJobGrade = 0,
@@ -522,7 +522,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [6] = {
+      [5] = {
         model = "c3nforcevicb",
         plate = false,
         minJobGrade = 0,
@@ -531,7 +531,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [7] = {
+      [6] = {
         model = "c3alamopdblue",
         plate = false,
         minJobGrade = 0,
@@ -540,7 +540,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [8] = {
+      [7] = {
         model = "c324dominatorb",
         plate = false,
         minJobGrade = 0,
@@ -549,7 +549,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [9] = {
+      [8] = {
         model = "c3txdpscatb",
         plate = false,
         minJobGrade = 0,
@@ -558,7 +558,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [10] = {
+      [9] = {
         model = "c3vigeropdb",
         plate = false,
         minJobGrade = 0,
@@ -567,7 +567,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [11] = {
+      [10] = {
         model = "B407",
         plate = false,
         minJobGrade = 0,
@@ -576,7 +576,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [12] = {
+      [11] = {
         model = "duraambo",
         plate = false,
         minJobGrade = 0,
