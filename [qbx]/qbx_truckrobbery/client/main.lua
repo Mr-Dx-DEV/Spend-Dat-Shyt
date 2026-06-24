@@ -110,6 +110,22 @@ RegisterNetEvent('qbx_truckrobbery:client:missionStarted', function(vehicleSpawn
 	exports.qbx_core:Notify('Go to the designated location to find the bank truck')
 	config.emailNotification()
 
+	if GetResourceState('ps-dispatch') == 'started' then
+		local pCoords = GetEntityCoords(cache.ped)
+		local zone    = GetLabelText(GetNameOfZone(pCoords.x, pCoords.y, pCoords.z))
+		local street  = GetStreetNameFromHashKey(GetStreetNameAtCoord(pCoords.x, pCoords.y, pCoords.z))
+		TriggerServerEvent('ps-dispatch:server:notify', {
+			message  = 'Armored Truck Robbery in Progress',
+			codeName = 'qbx_truckrobbery',
+			code     = '10-90',
+			icon     = 'fas fa-truck-ramp-box',
+			priority = 1,
+			coords   = vehicleSpawnCoords,
+			street   = street .. ', ' .. zone,
+			jobs     = { 'leo' },
+		})
+	end
+
 	area = AddBlipForRadius(vehicleSpawnCoords.x, vehicleSpawnCoords.y, vehicleSpawnCoords.z, 250.0)
 	SetBlipHighDetail(area, true)
 	SetBlipAlpha(area, 90)

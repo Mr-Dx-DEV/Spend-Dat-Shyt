@@ -144,6 +144,22 @@ local function next_ped(drugToSell)
 	PlaceObjectOnGroundProperly(npc.ped)
 	SetEntityAsMissionEntity(npc.ped)
 
+	if GetResourceState('ps-dispatch') == 'started' then
+		local pCoords = GetEntityCoords(PlayerPedId())
+		local zone    = GetLabelText(GetNameOfZone(pCoords.x, pCoords.y, pCoords.z))
+		local street  = GetStreetNameFromHashKey(GetStreetNameAtCoord(pCoords.x, pCoords.y, pCoords.z))
+		TriggerServerEvent('ps-dispatch:server:notify', {
+			message  = 'Drug Deal in Progress',
+			codeName = 'fsg_selldrugs',
+			code     = '10-13',
+			icon     = 'fas fa-pills',
+			priority = 2,
+			coords   = pCoords,
+			street   = street .. ', ' .. zone,
+			jobs     = { 'leo' },
+		})
+	end
+
 	if IsEntityDead(npc.ped) or GetEntityCoords(npc.ped) == vector3(0.0, 0.0, 0.0) then
 		lib.notify({
 			title = Config.notify.title,

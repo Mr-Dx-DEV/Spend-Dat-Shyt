@@ -631,6 +631,49 @@ Config.Blips = {
         sound2 = 'GTAO_FM_Events_Soundset',
         offset = true,
         flash = false
+    },
+    -- Additional script alerts
+    ['fearx_moneywash'] = {
+        radius = 0,
+        sprite = 500,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['qbx_truckrobbery'] = {
+        radius = 0,
+        sprite = 67,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
+    },
+    ['fsg_selldrugs'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
+    },
+    ['safecracker'] = {
+        radius = 0,
+        sprite = 500,
+        color = 3,
+        scale = 1.5,
+        length = 2,
+        sound = 'robberysound',
+        offset = false,
+        flash = false
     }
 }
 

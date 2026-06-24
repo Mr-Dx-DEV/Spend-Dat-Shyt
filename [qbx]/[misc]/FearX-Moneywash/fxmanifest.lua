@@ -24,6 +24,7 @@ server_scripts {
     'server/sv_discord.lua',
     'server/sv_restart.lua',
     'server/sv_main.lua',
+    'server/sv_dispatch.lua',
 }
 
 ui_page 'html/index.html'

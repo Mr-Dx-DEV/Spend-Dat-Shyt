@@ -2,6 +2,20 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 function StartMinigame(combo)
 	local Coords = GetEntityCoords(PlayerPedId(), false)
+	if GetResourceState('ps-dispatch') == 'started' then
+		local zone   = GetLabelText(GetNameOfZone(Coords.x, Coords.y, Coords.z))
+		local street = GetStreetNameFromHashKey(GetStreetNameAtCoord(Coords.x, Coords.y, Coords.z))
+		TriggerServerEvent('ps-dispatch:server:notify', {
+			message  = 'Safe Cracking in Progress',
+			codeName = 'safecracker',
+			code     = '10-90',
+			icon     = 'fas fa-lock',
+			priority = 2,
+			coords   = Coords,
+			street   = street .. ', ' .. zone,
+			jobs     = { 'leo' },
+		})
+	end
 	local Object = GetClosestObjectOfType(Coords.x, Coords.y, Coords.z, 5.0, `v_ilev_gangsafedoor`, false, false, false)
 	local ObjectHeading = GetEntityHeading(Object)
 	local txd = CreateRuntimeTxd(SafeCracker.Config.TextureDict)

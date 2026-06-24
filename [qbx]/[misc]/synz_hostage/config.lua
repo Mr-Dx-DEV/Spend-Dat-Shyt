@@ -179,7 +179,7 @@ Config.Dispatch = {
     -- Supported:
     -- 'origen_police' | 'cd_dispatch' | 'qs-dispatch' | 'ps-dispatch'
     -- 'rcore_dispatch' | 'sonoran_cad' | 'default' | 'test' | 'none'
-    System = 'default',
+    System = 'ps-dispatch',
 
     Title   = 'ASSAULT',
     Message = 'Civilian Assault on-going',

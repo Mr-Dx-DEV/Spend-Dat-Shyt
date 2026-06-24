@@ -12,7 +12,7 @@ during script execution for troubleshooting purposes. Set to `false` to disable.
 ]]
 Config.debug = false
 Config.max5GAdapterUse = 4 -- Maximum times player can use 5G Adapter
-Config.dispatch = 'ps' -- [ps, rcore, cd, or custom (configurable in client/open.lua)]
+Config.Dispatch = 'ps' -- [ps, rcore, cd, or custom (configurable in client/open.lua)]
 Config.chequeBouncechance = 75 -- Chance for cheque to bounce (0-100)
 
 Config.items = {
