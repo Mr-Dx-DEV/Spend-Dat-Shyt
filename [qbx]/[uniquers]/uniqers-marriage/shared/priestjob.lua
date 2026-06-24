@@ -70,7 +70,7 @@ UniqersMarriage.JobsNames = { -- write job name send announce
 	-- "others", -- add more	
 }
 UniqersMarriage.JobsRequest = "no" -- If you set it to yes, the marriage request accepted by priest job. if "no" npc doing everything.
-UniqersMarriage.CommandsJobs = "yes" -- priest jobs can use divorce and marriage command
+UniqersMarriage.CommandsJobs = "no" -- priest jobs can use divorce and marriage command
 
 UniqersMarriage.PermsVehicle = { -- Grade is key, don't add same vehicle in multiple grades. Higher rank can see lower
     [0] = {
