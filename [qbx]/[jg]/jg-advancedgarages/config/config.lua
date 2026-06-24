@@ -39,7 +39,7 @@ Config.RadialMenu = "ox_lib"
 
 
 -- Little vehicle preview images in the garage UI - learn more/add custom images: https://docs.jgscripts.com/advanced-garages/vehicle-images
-Config.ShowVehicleImages = true
+Config.ShowVehicleImages = false
 
 -- Vehicle Spawning & Storing
 Config.DoNotSpawnInsideVehicle = false
@@ -453,8 +453,8 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
   },
  
 ["pd station"] = {
-    coords = vector3(450.9995, -974.0800, 21.4498),
-    spawn = vector4(453.691315, -974.896606, 21.449804, 75.899788),
+    coords = vector3(411.9288, -987.1273, 21.3117),
+    spawn = vector4(411.9288, -987.1273, 21.3117, 90.3534),
     distance = 15,
     job = {"police"},
     type = "car",
@@ -590,8 +590,8 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
 
 ------------------ems
 ["pillbox"] = {
-    coords = vector3(296.3783, -600.8176, 43.3037),
-    spawn = vector4(290.1733, -588.6425, 43.1810, 342.8846),
+    coords = vector3(295.7327, -605.1873, 43.3189),
+    spawn = vector4(295.7327, -605.1873, 43.3189, 69.4016),
     distance = 15,
     job = {"ambulance"},
     type = "car",
@@ -628,6 +628,15 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         plate = false,
         minJobGrade = 0,
         nickname = "fd20exp",
+        livery = 1,
+        extras = {1, 2},
+        maxMods = true
+      },
+      [3] = {
+        model = "duraambo",
+        plate = false,
+        minJobGrade = 0,
+        nickname = "duraambo",
         livery = 1,
         extras = {1, 2},
         maxMods = true
