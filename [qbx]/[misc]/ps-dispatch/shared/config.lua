@@ -443,6 +443,194 @@ Config.Blips = {
         sound2 = 'GTAO_FM_Events_Soundset',
         offset = true,
         flash = false
+    },
+    -- 0r-illegalpack alerts
+    ['0r_bag_snatch'] = {
+        radius = 0,
+        sprite = 595,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_car_theft'] = {
+        radius = 0,
+        sprite = 225,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_chicken_kidnapping'] = {
+        radius = 0,
+        sprite = 66,
+        color = 37,
+        scale = 0.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_chop_shop'] = {
+        radius = 0,
+        sprite = 595,
+        color = 60,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_cocaine_job'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
+    },
+    ['0r_container_heli'] = {
+        radius = 0,
+        sprite = 422,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_corner_deal'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
+    },
+    ['0r_counterfeit_money'] = {
+        radius = 0,
+        sprite = 500,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_diving'] = {
+        radius = 0,
+        sprite = 427,
+        color = 60,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_fraud'] = {
+        radius = 0,
+        sprite = 76,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_gun_smuggling'] = {
+        radius = 0,
+        sprite = 110,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_illegal_delivery'] = {
+        radius = 0,
+        sprite = 67,
+        color = 59,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_meth_job'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
+    },
+    ['0r_moonshine'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
+    },
+    ['0r_npc_boxing'] = {
+        radius = 0,
+        sprite = 685,
+        color = 69,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_plane_drug_delivery'] = {
+        radius = 0,
+        sprite = 90,
+        color = 1,
+        scale = 1.5,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = false,
+        flash = false
+    },
+    ['0r_weed_job'] = {
+        radius = 120.0,
+        sprite = 469,
+        color = 52,
+        scale = 0,
+        length = 2,
+        sound = 'Lose_1st',
+        sound2 = 'GTAO_FM_Events_Soundset',
+        offset = true,
+        flash = false
     }
 }
 
