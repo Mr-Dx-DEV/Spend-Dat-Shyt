@@ -76,7 +76,7 @@ Config.EngineToggle      = {
 }
 
 Config.metadataKeys      = { -- Metadata keys options (Requires inventory integrated into wasabi_bridge)
-    enabled = false,         -- Enable metadata keys feature?
+    enabled = true,         -- Enable metadata keys feature?
     keyItem = 'carkeys',     -- Item to use as car key
 }
 
