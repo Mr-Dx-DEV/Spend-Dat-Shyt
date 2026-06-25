@@ -1,5 +1,5 @@
 return {
-   
+
 
 -- Recipe Book
 ['fsg_recipebook'] = {
@@ -1748,7 +1748,7 @@ return {
     stack = true,
     close = true,
     description = 'A juicy cooked sausages',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1761,7 +1761,7 @@ return {
     stack = true,
     close = true,
     description = 'A juicy cooked chicken',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1774,7 +1774,7 @@ return {
     stack = true,
     close = true,
     description = 'A juicy cooked vegetables',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1787,7 +1787,7 @@ return {
     stack = true,
     close = true,
     description = 'Slow cooked pulled pork',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1800,7 +1800,7 @@ return {
     stack = true,
     close = true,
     description = 'Slow cooked oatmeal',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1813,7 +1813,7 @@ return {
     stack = true,
     close = true,
     description = 'Slow cooked potato',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1826,7 +1826,7 @@ return {
     stack = true,
     close = true,
     description = 'Scrambled eggs',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1839,7 +1839,7 @@ return {
     stack = true,
     close = true,
     description = 'Microwave ramen',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1863,7 +1863,7 @@ return {
     stack = true,
     close = true,
     description = 'Grilled salmon',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1883,7 +1883,7 @@ return {
     stack = true,
     close = true,
     description = 'Chicken sandwich',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1896,7 +1896,7 @@ return {
     stack = true,
     close = true,
     description = 'Beef stir fry',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1909,7 +1909,7 @@ return {
     stack = true,
     close = true,
     description = 'Beef fried rice',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1922,7 +1922,7 @@ return {
     stack = true,
     close = true,
     description = 'Chicken fried rice',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1936,7 +1936,7 @@ return {
     stack = true,
     close = true,
     description = 'Pepper shrimp',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1950,7 +1950,7 @@ return {
     stack = true,
     close = true,
     description = 'Toast',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -1980,7 +1980,7 @@ return {
     stack = true,
     close = true,
     description = 'Waffle',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2002,7 +2002,7 @@ return {
     stack = true,
     close = true,
     description = 'Ham toastie',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2032,7 +2032,7 @@ return {
     stack = true,
     close = true,
     description = 'Apple sauce',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2046,7 +2046,7 @@ return {
     stack = true,
     close = true,
     description = 'Banana cream',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2100,7 +2100,7 @@ return {
     stack = true,
     close = true,
     description = 'Banana pudding',
-	client = {  
+	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2113,7 +2113,7 @@ return {
     stack = true,
     close = true,
     description = 'Fancy steak',
-    client = {  
+    client = {
         status = { hunger = 250000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2126,7 +2126,7 @@ return {
     stack = true,
     close = true,
     description = 'Fish and chips',
-    client = {  
+    client = {
         status = { hunger = 300000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2147,7 +2147,7 @@ return {
     stack = true,
     close = true,
     description = 'Microwaved popcorn',
-    client = {  
+    client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
         usetime = 2500,
@@ -2721,8 +2721,8 @@ return {
     stack = true
 },
 
-	
-   
+
+
 
     ['dna_result'] = {
         label = 'DNA Test Result',
@@ -2903,7 +2903,7 @@ return {
         }
     },
 
-   
+
     ['ejection_seat_kit'] = {
     label = 'Ejection Seat Kit',
     weight = 2500,
@@ -2916,15 +2916,12 @@ return {
     }
 },
 
+	["weddingring"] = { label = "Wedding Ring", weight = 10, stack = true, close = true },
+	["weddingcertificate"] = { label = "Wedding Certificate", weight = 10, stack = true, close = true },
+	["loyaltycard"] = { label = "Loyalty Card", weight = 10, stack = true, close = true },
 
-    ['wedding_ring'] = {
-        label = 'Wedding Ring',
-        weight = 5,
-        stack = false,
-        close = false,
-        description = 'A symbol of eternal commitment.',
-        client = { image = 'wedding_ring.png' }
-    },
+
+
     ['engagement_ring'] = {
         label = 'Engagement Ring',
         weight = 5,
@@ -3034,14 +3031,14 @@ return {
         weight = 160,
     },
 
-    
+
 
     ['phone'] = {
         label = 'Phone',
         weight = 190,
         stack = false,
         consume = 0,
-       
+
     },
 
      ['tablet'] = {
@@ -3049,15 +3046,15 @@ return {
         weight = 190,
         stack = false,
         consume = 0,
-       
+
     },
 
-    
-
-    
 
 
-   
+
+
+
+
 
    ['water'] = {
     label = 'Water',
@@ -3068,10 +3065,10 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        prop = { 
-            model = `prop_ld_flow_bottle`, 
-            pos = vec3(0.03, 0.03, 0.02), 
-            rot = vec3(0.0, 0.0, -1.5) 
+        prop = {
+            model = `prop_ld_flow_bottle`,
+            pos = vec3(0.03, 0.03, 0.02),
+            rot = vec3(0.0, 0.0, -1.5)
         },
         usetime = 2500,
         cancel = true,
@@ -3128,7 +3125,7 @@ return {
         }
     },
 
-   
+
 
     ['advancedlockpick'] = {
         label = 'Advanced Lockpick',
@@ -3549,42 +3546,42 @@ return {
             export = "wasabi_ambulance_v2.medbag"
         }
     },
-		
+
 		['tweezers'] = {
 			label = 'Tweezers',
 			weight = 2,
 			stack = true,
 			close = true,
 		},
-	
+
 		['suturekit'] = {
 			label = 'Suture Kit',
 			weight = 15,
 			stack = true,
 			close = true,
 		},
-	
+
 		['icepack'] = {
 			label = 'Ice Pack',
 			weight = 29,
 			stack = true,
 			close = true,
 		},
-	
+
 		['burncream'] = {
 			label = 'Burn Cream',
 			weight = 19,
 			stack = true,
 			close = true,
 		},
-	
+
 		['defib'] = {
 			label = 'Defibrillator',
 			weight = 225,
 			stack = false,
 			close = true,
 		},
-	
+
 		['sedative'] = {
 			label = 'Sedative',
 			weight = 15,
@@ -3640,7 +3637,7 @@ return {
 			stack = true,
 			close = true,
 		},
-	
+
 		['recoveredbullet'] = {
 			label = 'Recovered Bullet',
 			weight = 1,
@@ -3648,7 +3645,7 @@ return {
 			close = false,
 		},
 
-    
+
     ['radio'] = {
         label = 'Radio',
         weight = 200,
@@ -3846,7 +3843,7 @@ return {
         }
     },
 
-    -- Wasabi Evidence 
+    -- Wasabi Evidence
 
     ['uvlight'] = {
 		label = 'UV Light',
@@ -4673,7 +4670,7 @@ return {
     client = {
         export = 'fadetrap-plus.openBoxItem'
     }
-}, 
+},
 
 
 
@@ -5003,7 +5000,7 @@ return {
 },
 
     -- BIG BANG SCRIPTS (FOODS/DRINKS)
-    
+
     -- BBS DRINKS
 
     -- Cans
@@ -5412,7 +5409,7 @@ return {
             notification = 'You quenched your thirst with a milk glass'
         }
     },
-    
+
     -- Beers & Ciders
     ['bbs_hardcider'] = {
         label = 'Hard Cider Can',
@@ -5748,7 +5745,7 @@ return {
             usetime = 5500,
             notification = 'You quenched your thirst with a glass'
         }
-    }, 
+    },
     ['bbs_virgin_mohito_glass'] = {
         label = 'Virgin Mohito',
         weight = 350,
@@ -5958,7 +5955,7 @@ return {
         }
     },
 
-    
+
     -- National Drinks
     ['bbs_ecuador_canelazo'] = {
         label = 'Ecuador Canelazo',
@@ -6985,7 +6982,7 @@ return {
                 bone = 18905,
                 pos = vec3(0.067000, 0.024000, 0.061000),
                 rot = vec3(-115.000000, 0.000000, -64.000000)
-            }, 
+            },
             usetime = 8500,
             notification = 'You quenched your thirst with a bottle'
         }
@@ -7001,7 +6998,7 @@ return {
                 bone = 18905,
                 pos = vec3(0.121000, -0.072000, 0.052000),
                 rot = vec3(-103.000000, 0.000000, -13.000000)
-            },  
+            },
             usetime = 8500,
             notification = 'You quenched your thirst with a bottle'
         }
@@ -7246,9 +7243,9 @@ return {
             notification = 'You quenched your thirst with a glass'
         }
     },
-    
+
     -- COFFEE
-    
+
     ['bbs_pumpkin_spice_large'] = {
         label = 'Pumpkin Spice Large',
         weight = 350,
@@ -7988,7 +7985,7 @@ return {
             notification = 'You quenched your thirst with a cup'
         }
     },
-    
+
     -- Capped Drinks
     ['bbs_mocha_tea_capped'] = {
         label = 'Mocha Tea Capped',
@@ -8166,7 +8163,7 @@ return {
             notification = 'You quenched your thirst with a cup'
         }
     },
-    
+
     -- Juices
     ['bbs_apple_juice'] = {
         label = 'Apple Juice',
@@ -8392,7 +8389,7 @@ return {
             notification = 'You quenched your thirst with a cup'
         }
     },
-    
+
     -- Slushes
     ['bbs_green_slush'] = {
         label = 'Green Slush',
@@ -8490,7 +8487,7 @@ return {
             notification = 'You quenched your thirst with a cup'
         }
     },
-    
+
     -- Smoothie Pack 1
     ['bbs_apple_smoothie'] = {
         label = 'Apple Smoothie',
@@ -8653,7 +8650,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
     ['bbs_grape_juice_glass'] = {
         label = 'Grape Juice glass',
         weight = 350,
@@ -8669,7 +8666,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
     ['bbs_guava_juice_glass'] = {
         label = 'Guava Juice glass',
         weight = 350,
@@ -8685,7 +8682,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
     ['bbs_orange_juice_glass'] = {
         label = 'Orange Juice glass',
         weight = 350,
@@ -8701,7 +8698,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
     ['bbs_sewer_juice_glass'] = {
         label = 'Sewer Juice glass',
         weight = 350,
@@ -8717,7 +8714,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
     ['bbs_watermelon_juice_glass'] = {
         label = 'Watermelon Juice glass',
         weight = 350,
@@ -8733,7 +8730,7 @@ return {
             usetime = 2500,
             notification = 'You quenched your thirst with a cup'
         }
-    }, 
+    },
 
     --Water
     ['bbs_bestle'] = {
@@ -11016,7 +11013,7 @@ return {
             notification = 'You quenched your hunger'
         }
     },
-    
+
     -- Italian Food
     ['bbs_italian_tiramisu'] = {
         label = 'Italian tiramisu',
@@ -13202,7 +13199,7 @@ return {
         --     -56.0
         -- },
     },
-    
+
 
     -- Extra rice dishes
     ['bbs_pomegranate_rice'] = {
@@ -15088,7 +15085,7 @@ return {
     weight = 1000,
   },
 
- 
+
 
 ['outfitbag'] = {
     label = 'Outfit Bag',
@@ -15353,7 +15350,7 @@ return {
     }
 },
 
-  
+
 
         ["clothing_chain"] = {
         label = "Clothing Chain",
@@ -15416,7 +15413,7 @@ return {
 		stack = true,
 		close = true,
 	},
-    
+
     ["buff_ruby"] = {
 		label = "Buff Ruby",
 		weight = 1,
@@ -15534,7 +15531,7 @@ return {
 	stack = false,
 	close = true,
 },
-	
+
 ['burgercheese'] = {
 	label = "Burger",
 	weight = 1,
@@ -15852,7 +15849,7 @@ return {
 	weight = 1,
 	stack = true,
 	close = true,
-},	
+},
 ['pasta'] = {
 	label = "Pasta",
 	weight = 1,
@@ -15983,7 +15980,7 @@ return {
 	weight = 1,
 	stack = true,
 	close = true,
-},		
+},
 
 ------------------------------SDC_CarBuilder Items------------------------------
 ['sdcb_tire'] = {
@@ -16405,7 +16402,7 @@ return {
     stack = true,
     close = true,
     description = 'Just Some Fries',
-    
+
 },
 ['sdft_milkshake'] = {
     label = 'Milkshake',
@@ -16413,7 +16410,7 @@ return {
     stack = true,
     close = true,
     description = 'Just A Milkshake',
-    
+
 },
 ['sdft_hotdog'] = {
     label = 'Hotdog',
@@ -16421,7 +16418,7 @@ return {
     stack = true,
     close = true,
     description = 'Just a Tasty Dog',
-    
+
 },
 ['sdft_sausagedog'] = {
     label = 'Sausage Dog',
@@ -16429,7 +16426,7 @@ return {
     stack = true,
     close = true,
     description = 'Just a Sausage Dog',
-    
+
 },
 ['sdft_pretzel'] = {
     label = 'Pretzel',
@@ -16437,7 +16434,7 @@ return {
     stack = true,
     close = true,
     description = 'Just a Yummy Pretzel',
-    
+
 },
 ['sdft_minipretzels'] = {
     label = 'Mini Pretzels',
@@ -16445,7 +16442,7 @@ return {
     stack = true,
     close = true,
     description = 'Just 3 Mini Pretzels',
-    
+
 },
 ['sdft_roastednuts'] = {
     label = 'Roasted Nuts',
@@ -16453,7 +16450,7 @@ return {
     stack = true,
     close = true,
     description = 'Just Some Roasted Nuts',
-    
+
 },
 ['sdft_burger'] = {
     label = 'Burger',
@@ -16461,7 +16458,7 @@ return {
     stack = true,
     close = true,
     description = 'Just a Burger',
-    
+
 },
 ['sdft_megacheese'] = {
     label = 'Mega Cheese Burger',
@@ -16469,7 +16466,7 @@ return {
     stack = true,
     close = true,
     description = 'A Super Cheesy Burger',
-    
+
 },
 ['sdft_doubleburger'] = {
     label = 'Double Burger',
@@ -16477,7 +16474,7 @@ return {
     stack = true,
     close = true,
     description = 'A Double Burger',
-    
+
 },
 ['sdft_kingsizeburger'] = {
     label = 'King Size Burger',
@@ -16485,7 +16482,7 @@ return {
     stack = true,
     close = true,
     description = 'A Huge Burger',
-    
+
 },
 ['sdft_baconburger'] = {
     label = 'Bacon Burger',
@@ -16493,7 +16490,7 @@ return {
     stack = true,
     close = true,
     description = 'A Bacon Burger',
-    
+
 },
 ['sdft_pizzaslice'] = {
     label = 'Pizza Slice',
@@ -16501,7 +16498,7 @@ return {
     stack = true,
     close = true,
     description = 'Yummy Pizza',
-    
+
 },
 ['sdft_donut'] = {
     label = 'Donut',
@@ -16509,7 +16506,7 @@ return {
     stack = true,
     close = true,
     description = 'A Large Donut',
-    
+
 },
 ['sdft_smoothie'] = {
     label = 'Smoothie',
@@ -16517,7 +16514,7 @@ return {
     stack = true,
     close = true,
     description = 'Just A Smoothie',
-    
+
 },
 ['sdft_taco_carneasada'] = {
     label = 'Carne Asada Taco',
@@ -16525,7 +16522,7 @@ return {
     stack = true,
     close = true,
     description = 'Taco With Carne Asada',
-    
+
 },
 ['sdft_taco_elpastor'] = {
     label = 'El Pastor Taco',
@@ -16533,7 +16530,7 @@ return {
     stack = true,
     close = true,
     description = 'Taco With El Pastor',
-    
+
 },
 ['sdft_burrito_carneasada'] = {
     label = 'Carne Asada Burrito',
@@ -16541,7 +16538,7 @@ return {
     stack = true,
     close = true,
     description = 'Burrito With Carne Asada',
-    
+
 },
 ['sdft_burrito_elpastor'] = {
     label = 'El Pastor Burrito',
@@ -16549,7 +16546,7 @@ return {
     stack = true,
     close = true,
     description = 'Burrito With El Pastor',
-    
+
 },
 ['sdft_torta_carneasada'] = {
     label = 'Carne Asada Torta',
@@ -16557,7 +16554,7 @@ return {
     stack = true,
     close = true,
     description = 'Torta With Carne Asada',
-    
+
 },
 ['sdft_torta_elpastor'] = {
     label = 'El Pastor Torta',
@@ -16565,7 +16562,7 @@ return {
     stack = true,
     close = true,
     description = 'Torta With El Pastor',
-    
+
 },
 ['sdft_quesadilla'] = {
     label = 'Quesadilla',
@@ -16573,7 +16570,7 @@ return {
     stack = true,
     close = true,
     description = 'A Tasty Quesadilla',
-    
+
 },
 ['sdft_tostada'] = {
     label = 'Tostada',
@@ -16581,7 +16578,7 @@ return {
     stack = true,
     close = true,
     description = 'A Tasty Tostada',
-    
+
 },
 ['sdft_lettuce'] = {
     label = 'Lettuce',
@@ -17304,7 +17301,7 @@ return {
     ['watch_2'] = {["name"] = 'watch_2', ["label"] = 'Watch 2', ["weight"] = 10, ["type"] = "item", ["image"] = "watch_2.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = ""},
     ['cocaine'] = {["name"] = 'cocaine', ["label"] = "Cocaine", ["weight"] = 10, ["type"] = "item", ["image"] = "cocaine.png", ["unique"] = false, ["useable"] = true, ["shouldClose"] = false, ["combinable"] = nil, ["description"] = ""},
 
-   
+
 
 ['condom'] = {
     label = 'condom',
@@ -17588,7 +17585,7 @@ return {
 		weight = 250,
 		stack = true
 	},
-	
+
 		['braidwigs'] = {
 		label = 'Braid wigs',
 		weight = 250,
@@ -17926,7 +17923,7 @@ return {
 		stack = true,
 		close = true,
 	},
-    
+
     ["buff_ruby"] = {
 		label = "Buff Ruby",
 		weight = 1,
@@ -17943,7 +17940,7 @@ return {
 	bobby_pin = { name = 'bobby_pin', label = 'Bobby Pin', weight = 2500, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
 tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', weight = 2500, type = 'item', image = 'tracking_bracelet.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used for tracking a suspect' },
 
-	
+
 
  ["bandage"] = {      -- Make sure no duplicates exist in the original items.lua
         label = 'Bandage',
@@ -18098,7 +18095,7 @@ tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', 
 		}
 	},
 
-    -- Chains As Items 
+    -- Chains As Items
 
     --[[["test_chain"] = {
         label = "Test Chain",
@@ -18113,7 +18110,7 @@ tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', 
 
     -- Pickels
 
-    
+
 
 -- Add to qb-core/shared/items.lua
 	['crutch'] 		 			 = {['name'] = 'crutch', 					['label'] = 'Crutch', 				['weight'] = 650, 		['type'] = 'item', 		['image'] = 'crutch.png', 			['unique'] = false, 	['useable'] = true, 	['shouldClose'] = true,	   ['combinable'] = nil,   ['description'] = 'A device used to assist with walking.'},
@@ -18180,8 +18177,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_ogkush_seed'] = {
@@ -18189,8 +18186,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_amnesia_seed'] = {
@@ -18198,8 +18195,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_ak47_seed'] = {
@@ -18207,8 +18204,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_purplehaze_seed'] = {
@@ -18216,8 +18213,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_whitewidow_seed'] = {
@@ -18225,8 +18222,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_seed.png" 
+        client = {
+           image = "weed_seed.png"
          },
     },
     ['weed_whitewidow'] = {
@@ -18234,8 +18231,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_baggy.png" 
+        client = {
+           image = "weed_baggy.png"
          },
     },
     ['weed_skunk'] = {
@@ -18243,8 +18240,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_baggy.png" 
+        client = {
+           image = "weed_baggy.png"
          },
     },
      ['weed_purplehaze'] = {
@@ -18252,8 +18249,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 200,
         stack = true,
         close = false,
-        client = { 
-           image = "weed_baggy.png" 
+        client = {
+           image = "weed_baggy.png"
          },
     },
     ['weed_ogkush'] = {
@@ -18261,8 +18258,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
       weight = 200,
       stack = true,
       close = false,
-      client = { 
-         image = "weed_baggy.png" 
+      client = {
+         image = "weed_baggy.png"
        },
     },
     ['weed_amnesia'] = {
@@ -18270,8 +18267,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
       weight = 200,
       stack = true,
       close = false,
-      client = { 
-         image = "weed_baggy.png" 
+      client = {
+         image = "weed_baggy.png"
        },
     },
     ['weed_ak47'] = {
@@ -18279,8 +18276,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
       weight = 200,
       stack = true,
       close = false,
-      client = { 
-         image = "weed_baggy.png" 
+      client = {
+         image = "weed_baggy.png"
        },
     },
    ['coke'] = {
@@ -18288,8 +18285,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 1000,
         stack = true,
         close = false,
-        client = { 
-           image = "coke.png" 
+        client = {
+           image = "coke.png"
          },
     },
     ['coca_leaf'] = {
@@ -18297,8 +18294,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 1500,
         stack = true,
         close = false,
-        client = { 
-           image = "coca_leaf.png" 
+        client = {
+           image = "coca_leaf.png"
          },
     },
     ['bakingsoda'] = {
@@ -18306,8 +18303,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 300,
         stack = true,
         close = false,
-        client = { 
-           image = "bakingsoda.png" 
+        client = {
+           image = "bakingsoda.png"
          },
     },
     ['loosecoke'] = {
@@ -18315,8 +18312,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'loosecoke.png' 
+        client = {
+           image = 'loosecoke.png'
          },
     },
     ['loosecokestagetwo'] = {
@@ -18324,8 +18321,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'loosecokestagetwo.png' 
+        client = {
+           image = 'loosecokestagetwo.png'
          },
     },
     ['loosecokestagethree'] = {
@@ -18333,8 +18330,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'loosecokestagethree.png' 
+        client = {
+           image = 'loosecokestagethree.png'
          },
     },
     ['cokebaggy'] = {
@@ -18342,8 +18339,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 0,
         stack = true,
         close = true,
-        client = { 
-           image = 'cocaine_baggy.png' 
+        client = {
+           image = 'cocaine_baggy.png'
          },
     },
     ['cokebaggystagetwo'] = {
@@ -18351,8 +18348,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'cocaine_baggystagetwo.png' 
+        client = {
+           image = 'cocaine_baggystagetwo.png'
          },
     },
     ['cokebaggystagethree'] = {
@@ -18360,8 +18357,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'cocaine_baggystagethree.png' 
+        client = {
+           image = 'cocaine_baggystagethree.png'
          },
     },
     ['cokestagetwo'] = {
@@ -18369,8 +18366,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = false,
-        client = { 
-           image = "cokestagetwo.png" 
+        client = {
+           image = "cokestagetwo.png"
          },
     },
     ['cokestagethree'] = {
@@ -18378,8 +18375,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = false,
-        client = { 
-           image = "cokestagethree.png" 
+        client = {
+           image = "cokestagethree.png"
          },
     },
     ['empty_weed_bag'] = {
@@ -18387,8 +18384,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 0,
         stack = true,
         close = true,
-        client = { 
-           image = 'weed_baggy_empty.png' 
+        client = {
+           image = 'weed_baggy_empty.png'
          },
     },
     ['bakingsoda'] = {
@@ -18396,8 +18393,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 300,
         stack = true,
         close = false,
-        client = { 
-           image = "bakingsoda.png" 
+        client = {
+           image = "bakingsoda.png"
          },
     },
     ['baggedcracked'] = {
@@ -18405,8 +18402,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackbag1.png" 
+        client = {
+           image = "crackbag1.png"
          },
     },
     ['baggedcrackedstagetwo'] = {
@@ -18414,8 +18411,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackbag2.png" 
+        client = {
+           image = "crackbag2.png"
          },
     },
     ['baggedcrackedstagethree'] = {
@@ -18423,8 +18420,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackbag3.png" 
+        client = {
+           image = "crackbag3.png"
          },
     },
     ['crackrock'] = {
@@ -18432,8 +18429,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackrock1.png" 
+        client = {
+           image = "crackrock1.png"
          },
     },
     ['crackrockstagetwo'] = {
@@ -18441,8 +18438,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackrock2.png" 
+        client = {
+           image = "crackrock2.png"
          },
     },
     ['crackrockstagethree'] = {
@@ -18450,8 +18447,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "crackrock3.png" 
+        client = {
+           image = "crackrock3.png"
          },
     },
     ['empty_weed_bag'] = {
@@ -18459,8 +18456,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 0,
         stack = true,
         close = true,
-        client = { 
-           image = 'weed_baggy_empty.png' 
+        client = {
+           image = 'weed_baggy_empty.png'
          },
     },
     ['bakingsoda'] = {
@@ -18468,8 +18465,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 300,
         stack = true,
         close = false,
-        client = { 
-           image = "bakingsoda.png" 
+        client = {
+           image = "bakingsoda.png"
          },
     },
     ['poppyresin'] = {
@@ -18477,8 +18474,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 2000,
         stack = true,
         close = false,
-        client = { 
-           image = "poppyresin.png" 
+        client = {
+           image = "poppyresin.png"
          },
     },
     ['heroin'] = {
@@ -18486,8 +18483,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 500,
         stack = true,
         close = false,
-        client = { 
-           image = "heroinpowder.png" 
+        client = {
+           image = "heroinpowder.png"
          },
     },
     ['heroinstagetwo'] = {
@@ -18495,8 +18492,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroinpowderstagetwo.png" 
+        client = {
+           image = "heroinpowderstagetwo.png"
          },
     },
     ['heroinstagethree'] = {
@@ -18504,8 +18501,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroinpowderstagethree.png" 
+        client = {
+           image = "heroinpowderstagethree.png"
          },
     },
     ['heroincut'] = {
@@ -18513,8 +18510,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroincut.png" 
+        client = {
+           image = "heroincut.png"
          },
     },
     ['heroincutstagetwo'] = {
@@ -18522,8 +18519,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroincut2.png" 
+        client = {
+           image = "heroincut2.png"
          },
     },
     ['heroincutstagethree'] = {
@@ -18531,8 +18528,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroincut3.png" 
+        client = {
+           image = "heroincut3.png"
          },
     },
     ['heroinlabkit'] = {
@@ -18540,8 +18537,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "labkit.png" 
+        client = {
+           image = "labkit.png"
          },
     },
     ['heroinvial'] = {
@@ -18549,8 +18546,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroin.png" 
+        client = {
+           image = "heroin.png"
          },
     },
     ['heroinvialstagetwo'] = {
@@ -18558,8 +18555,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroinstagetwo.png" 
+        client = {
+           image = "heroinstagetwo.png"
          },
     },
     ['heroinvialstagethree'] = {
@@ -18567,8 +18564,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroinstagethree.png" 
+        client = {
+           image = "heroinstagethree.png"
          },
     },
     ['heroin_ready'] = {
@@ -18576,8 +18573,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroin_ready.png" 
+        client = {
+           image = "heroin_ready.png"
          },
     },
     ['heroin_readystagetwo'] = {
@@ -18585,8 +18582,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroin_readystagetwo.png" 
+        client = {
+           image = "heroin_readystagetwo.png"
          },
     },
     ['heroin_readystagethree'] = {
@@ -18594,8 +18591,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "heroin_readystagethree.png" 
+        client = {
+           image = "heroin_readystagethree.png"
          },
     },
     ['emptyvial'] = {
@@ -18603,8 +18600,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "emptyvial.png" 
+        client = {
+           image = "emptyvial.png"
          },
     },
     ['needle'] = {
@@ -18612,8 +18609,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "syringe.png" 
+        client = {
+           image = "syringe.png"
          },
     },
     ['sprunk'] = {
@@ -18621,8 +18618,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "sprunk.png" 
+        client = {
+           image = "sprunk.png"
          },
     },
     ['leancup'] = {
@@ -18630,8 +18627,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "leancup.png" 
+        client = {
+           image = "leancup.png"
          },
     },
     ['cupoflean'] = {
@@ -18639,8 +18636,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "cupoflean.png" 
+        client = {
+           image = "cupoflean.png"
          },
     },
     ['cupofdextro'] = {
@@ -18648,8 +18645,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "cupofdextro.png" 
+        client = {
+           image = "cupofdextro.png"
          },
     },
     ['mdlean'] = {
@@ -18657,8 +18654,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "Sizzurup.png" 
+        client = {
+           image = "Sizzurup.png"
          },
     },
     ['mdreddextro'] = {
@@ -18666,8 +18663,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "reddextro.png" 
+        client = {
+           image = "reddextro.png"
          },
     },
     ['lysergic_acid'] = {
@@ -18675,8 +18672,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lysergic_acid.png' 
+        client = {
+           image = 'lysergic_acid.png'
          },
     },
     ['diethylamide'] = {
@@ -18684,8 +18681,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'diethylamide.png' 
+        client = {
+           image = 'diethylamide.png'
          },
     },
     ['lsd_one_vial'] = {
@@ -18693,8 +18690,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_one_vial.png' 
+        client = {
+           image = 'lsd_one_vial.png'
          },
     },
     ['lsd_vial_two'] = {
@@ -18702,8 +18699,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_vial_two.png' 
+        client = {
+           image = 'lsd_vial_two.png'
          },
     },
     ['lsd_vial_three'] = {
@@ -18711,8 +18708,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_vial_three.png' 
+        client = {
+           image = 'lsd_vial_three.png'
          },
     },
     ['lsd_vial_four'] = {
@@ -18720,8 +18717,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_vial_four.png' 
+        client = {
+           image = 'lsd_vial_four.png'
          },
     },
     ['lsd_vial_five'] = {
@@ -18729,8 +18726,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_vial_five.png' 
+        client = {
+           image = 'lsd_vial_five.png'
          },
     },
     ['lsd_vial_six'] = {
@@ -18738,8 +18735,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'lsd_vial_six.png' 
+        client = {
+           image = 'lsd_vial_six.png'
          },
     },
     ['tab_paper'] = {
@@ -18747,8 +18744,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'tab_paper.png' 
+        client = {
+           image = 'tab_paper.png'
          },
     },
     ['smileyfacesheet'] = {
@@ -18756,8 +18753,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'smileysheet.png' 
+        client = {
+           image = 'smileysheet.png'
          },
     },
     ['wildcherrysheet'] = {
@@ -18765,8 +18762,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'wildcherrysheet.png' 
+        client = {
+           image = 'wildcherrysheet.png'
          },
     },
     ['yinyangsheet'] = {
@@ -18774,8 +18771,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'yinyangsheet.png' 
+        client = {
+           image = 'yinyangsheet.png'
          },
     },
     ['pineapplesheet'] = {
@@ -18783,8 +18780,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pineapplesheet.png' 
+        client = {
+           image = 'pineapplesheet.png'
          },
     },
     ['bart_tabs'] = {
@@ -18792,8 +18789,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'bart_tabs.png' 
+        client = {
+           image = 'bart_tabs.png'
          },
     },
     ['bartsheet'] = {
@@ -18801,8 +18798,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'bartsheet.png' 
+        client = {
+           image = 'bartsheet.png'
          },
     },
     ['gratefuldeadsheet'] = {
@@ -18810,8 +18807,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'gratefuldeadsheet.png' 
+        client = {
+           image = 'gratefuldeadsheet.png'
          },
     },
     ['smiley_tabs'] = {
@@ -18819,8 +18816,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'smiley_tabs.png' 
+        client = {
+           image = 'smiley_tabs.png'
          },
     },
     ['wildcherry_tabs'] = {
@@ -18828,8 +18825,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'wildcherry_tabs.png' 
+        client = {
+           image = 'wildcherry_tabs.png'
          },
     },
     ['yinyang_tabs'] = {
@@ -18837,8 +18834,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'yinyang_tabs.png' 
+        client = {
+           image = 'yinyang_tabs.png'
          },
     },
     ['pineapple_tabs'] = {
@@ -18846,8 +18843,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pineapple_tabs.png' 
+        client = {
+           image = 'pineapple_tabs.png'
          },
     },
     ['gratefuldead_tabs'] = {
@@ -18855,8 +18852,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'gratefuldead_tabs.png' 
+        client = {
+           image = 'gratefuldead_tabs.png'
          },
     },
     ['lsdlabkit'] = {
@@ -18864,8 +18861,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 1000,
         stack = true,
         close = true,
-        client = { 
-           image = 'labkit.png' 
+        client = {
+           image = 'labkit.png'
          },
     },
     ['cactusbulb'] = {
@@ -18873,8 +18870,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "cactusbulb.png" 
+        client = {
+           image = "cactusbulb.png"
          },
     },
     ['driedmescaline'] = {
@@ -18882,8 +18879,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "driedmescaline.png" 
+        client = {
+           image = "driedmescaline.png"
          },
     },
     ['ephedrine'] = {
@@ -18891,8 +18888,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "ephedrine.png" 
+        client = {
+           image = "ephedrine.png"
          },
     },
     ['acetone'] = {
@@ -18900,8 +18897,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "acetone.png" 
+        client = {
+           image = "acetone.png"
          },
     },
     ['methbags'] = {
@@ -18909,8 +18906,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "methbags.png" 
+        client = {
+           image = "methbags.png"
          },
     },
     ['empty_weed_bag'] = {
@@ -18918,8 +18915,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 0,
         stack = true,
         close = true,
-        client = { 
-           image = 'weed_baggy_empty.png' 
+        client = {
+           image = 'weed_baggy_empty.png'
          },
     },
     ['prescription_pad'] = {
@@ -18927,8 +18924,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 10,
         stack = true,
         close = false,
-        client = { 
-           image = 'prescriptionpad.png' 
+        client = {
+           image = 'prescriptionpad.png'
          },
     },
     ['vicodin_prescription'] = {
@@ -18936,8 +18933,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "adderalprescription.png" 
+        client = {
+           image = "adderalprescription.png"
          },
     },
     ['adderal_prescription'] = {
@@ -18945,8 +18942,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "adderalprescription.png" 
+        client = {
+           image = "adderalprescription.png"
          },
     },
     ['morphine_prescription'] = {
@@ -18954,8 +18951,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "adderalprescription.png" 
+        client = {
+           image = "adderalprescription.png"
          },
     },
     ['xanax_prescription'] = {
@@ -18963,8 +18960,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "adderalprescription.png" 
+        client = {
+           image = "adderalprescription.png"
          },
     },
     ['adderal'] = {
@@ -18972,8 +18969,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'adderal.png' 
+        client = {
+           image = 'adderal.png'
          },
     },
     ['vicodin'] = {
@@ -18981,8 +18978,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'vicodin.png' 
+        client = {
+           image = 'vicodin.png'
          },
     },
     ['morphine'] = {
@@ -18990,8 +18987,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'morphine.png' 
+        client = {
+           image = 'morphine.png'
          },
     },
     ['xanax'] = {
@@ -18999,8 +18996,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'xanax.png' 
+        client = {
+           image = 'xanax.png'
          },
     },
     ['adderalbottle'] = {
@@ -19008,8 +19005,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pillbottle.png' 
+        client = {
+           image = 'pillbottle.png'
          },
     },
     ['vicodinbottle'] = {
@@ -19017,8 +19014,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pillbottle.png' 
+        client = {
+           image = 'pillbottle.png'
          },
     },
     ['morphinebottle'] = {
@@ -19026,8 +19023,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pillbottle.png' 
+        client = {
+           image = 'pillbottle.png'
          },
     },
     ['xanaxbottle'] = {
@@ -19035,8 +19032,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'pillbottle.png' 
+        client = {
+           image = 'pillbottle.png'
          },
     },
     ['shrooms'] = {
@@ -19044,8 +19041,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 250,
         stack = true,
         close = false,
-        client = { 
-           image = "shrooms.png" 
+        client = {
+           image = "shrooms.png"
          },
     },
     ['wetcannabis'] = {
@@ -19053,8 +19050,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "wetcannabis.png" 
+        client = {
+           image = "wetcannabis.png"
          },
     },
     ['drycannabis'] = {
@@ -19062,8 +19059,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "driedcannabis.png" 
+        client = {
+           image = "driedcannabis.png"
          },
     },
     ['weedgrinder'] = {
@@ -19071,8 +19068,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "weedgrinder.png" 
+        client = {
+           image = "weedgrinder.png"
          },
     },
     ['mdbutter'] = {
@@ -19080,8 +19077,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "butter.png" 
+        client = {
+           image = "butter.png"
          },
     },
     ['cannabutter'] = {
@@ -19089,8 +19086,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "cannabutter.png" 
+        client = {
+           image = "cannabutter.png"
          },
     },
     ['specialbrownie'] = {
@@ -19098,8 +19095,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "specialbrownie.png" 
+        client = {
+           image = "specialbrownie.png"
          },
     },
     ['specialcookie'] = {
@@ -19107,8 +19104,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "specialcookie.png" 
+        client = {
+           image = "specialcookie.png"
          },
     },
     ['specialmuffin'] = {
@@ -19116,8 +19113,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "specialmuffin.png" 
+        client = {
+           image = "specialmuffin.png"
          },
     },
     ['specialchocolate'] = {
@@ -19125,8 +19122,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "specialchocolate.png" 
+        client = {
+           image = "specialchocolate.png"
          },
     },
     ['grindedweed'] = {
@@ -19134,8 +19131,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "keef.png" 
+        client = {
+           image = "keef.png"
          },
     },
     ['flour'] = {
@@ -19143,8 +19140,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "flour.png" 
+        client = {
+           image = "flour.png"
          },
     },
     ['chocolate'] = {
@@ -19152,8 +19149,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "chocolate.png" 
+        client = {
+           image = "chocolate.png"
          },
     },
     ['blunt'] = {
@@ -19161,8 +19158,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "blunt.png" 
+        client = {
+           image = "blunt.png"
          },
     },
     ['butane'] = {
@@ -19170,8 +19167,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "butane.png" 
+        client = {
+           image = "butane.png"
          },
     },
     ['butanetorch'] = {
@@ -19179,8 +19176,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "butanetorch.png" 
+        client = {
+           image = "butanetorch.png"
          },
     },
     ['dabrig'] = {
@@ -19188,8 +19185,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "dabrig2.png" 
+        client = {
+           image = "dabrig2.png"
          },
     },
     ['mdwoods'] = {
@@ -19197,8 +19194,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "mdwoods.png" 
+        client = {
+           image = "mdwoods.png"
          },
     },
     ['ciggie'] = {
@@ -19206,8 +19203,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "ciggie.png" 
+        client = {
+           image = "ciggie.png"
          },
     },
     ['tobacco'] = {
@@ -19215,8 +19212,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "tobacco.png" 
+        client = {
+           image = "tobacco.png"
          },
     },
     ['shatter'] = {
@@ -19224,8 +19221,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "shatter.png" 
+        client = {
+           image = "shatter.png"
          },
     },
     ['bluntwrap'] = {
@@ -19233,8 +19230,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "bluntwrap.png" 
+        client = {
+           image = "bluntwrap.png"
          },
     },
     ['leanbluntwrap'] = {
@@ -19242,8 +19239,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "leanbluntwrap.png" 
+        client = {
+           image = "leanbluntwrap.png"
          },
     },
     ['dextrobluntwrap'] = {
@@ -19251,8 +19248,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "dextrobluntwrap.png" 
+        client = {
+           image = "dextrobluntwrap.png"
          },
     },
     ['leanblunts'] = {
@@ -19260,8 +19257,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "leanblunts.png" 
+        client = {
+           image = "leanblunts.png"
          },
     },
     ['dextroblunts'] = {
@@ -19269,8 +19266,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "dextroblunts.png" 
+        client = {
+           image = "dextroblunts.png"
          },
     },
     ['chewyblunt'] = {
@@ -19278,8 +19275,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "blunt.png" 
+        client = {
+           image = "blunt.png"
          },
     },
     ['cokeburner'] = {
@@ -19287,8 +19284,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "gta5phone.png" 
+        client = {
+           image = "gta5phone.png"
          },
     },
     ['crackburner'] = {
@@ -19296,8 +19293,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "gta5phone.png" 
+        client = {
+           image = "gta5phone.png"
          },
     },
     ['heroinburner'] = {
@@ -19305,8 +19302,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "gta5phone.png" 
+        client = {
+           image = "gta5phone.png"
          },
     },
     ['lsdburner'] = {
@@ -19314,8 +19311,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "gta5phone.png" 
+        client = {
+           image = "gta5phone.png"
          },
     },
     ['xtcburner'] = {
@@ -19323,8 +19320,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "gta5phone.png" 
+        client = {
+           image = "gta5phone.png"
          },
     },
     ['isosafrole'] = {
@@ -19332,8 +19329,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'isosafrole.png' 
+        client = {
+           image = 'isosafrole.png'
          },
     },
     ['mdp2p'] = {
@@ -19341,8 +19338,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = 'mdp2p.png' 
+        client = {
+           image = 'mdp2p.png'
          },
     },
     ['raw_xtc'] = {
@@ -19350,8 +19347,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "raw_xtc.png" 
+        client = {
+           image = "raw_xtc.png"
          },
     },
     ['singlepress'] = {
@@ -19359,8 +19356,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "pillpress.png" 
+        client = {
+           image = "pillpress.png"
          },
     },
     ['dualpress'] = {
@@ -19368,8 +19365,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "pillpress.png" 
+        client = {
+           image = "pillpress.png"
          },
     },
     ['triplepress'] = {
@@ -19377,8 +19374,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "pillpress.png" 
+        client = {
+           image = "pillpress.png"
          },
     },
     ['quadpress'] = {
@@ -19386,8 +19383,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "pillpress.png" 
+        client = {
+           image = "pillpress.png"
          },
     },
     ['white_xtc'] = {
@@ -19395,8 +19392,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_white.png" 
+        client = {
+           image = "unstamped_white.png"
          },
     },
     ['white_xtc2'] = {
@@ -19404,8 +19401,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_white2.png" 
+        client = {
+           image = "unstamped_white2.png"
          },
     },
     ['white_xtc3'] = {
@@ -19413,8 +19410,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_white3.png" 
+        client = {
+           image = "unstamped_white3.png"
          },
     },
     ['white_xtc4'] = {
@@ -19422,8 +19419,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_white4.png" 
+        client = {
+           image = "unstamped_white4.png"
          },
     },
     ['red_xtc'] = {
@@ -19431,8 +19428,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_red.png" 
+        client = {
+           image = "unstamped_red.png"
          },
     },
     ['red_xtc2'] = {
@@ -19440,8 +19437,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_red2.png" 
+        client = {
+           image = "unstamped_red2.png"
          },
     },
     ['red_xtc3'] = {
@@ -19449,8 +19446,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_red3.png" 
+        client = {
+           image = "unstamped_red3.png"
          },
     },
     ['red_xtc4'] = {
@@ -19458,8 +19455,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_red4.png" 
+        client = {
+           image = "unstamped_red4.png"
          },
     },
     ['orange_xtc'] = {
@@ -19467,8 +19464,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_orange.png" 
+        client = {
+           image = "unstamped_orange.png"
          },
     },
     ['orange_xtc2'] = {
@@ -19476,8 +19473,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_orange2.png" 
+        client = {
+           image = "unstamped_orange2.png"
          },
     },
     ['orange_xtc3'] = {
@@ -19485,8 +19482,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_orange3.png" 
+        client = {
+           image = "unstamped_orange3.png"
          },
     },
     ['orange_xtc4'] = {
@@ -19494,8 +19491,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_orange4.png" 
+        client = {
+           image = "unstamped_orange4.png"
          },
     },
     ['blue_xtc'] = {
@@ -19503,8 +19500,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_blue.png" 
+        client = {
+           image = "unstamped_blue.png"
          },
     },
     ['blue_xtc2'] = {
@@ -19512,8 +19509,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_blue2.png" 
+        client = {
+           image = "unstamped_blue2.png"
          },
     },
     ['blue_xtc3'] = {
@@ -19521,8 +19518,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_blue3.png" 
+        client = {
+           image = "unstamped_blue3.png"
          },
     },
     ['blue_xtc4'] = {
@@ -19530,8 +19527,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "unstamped_blue4.png" 
+        client = {
+           image = "unstamped_blue4.png"
          },
     },
     ['white_playboys'] = {
@@ -19539,8 +19536,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_white.png" 
+        client = {
+           image = "playboy_white.png"
          },
     },
     ['white_playboys2'] = {
@@ -19548,8 +19545,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_white2.png" 
+        client = {
+           image = "playboy_white2.png"
          },
     },
     ['white_playboys3'] = {
@@ -19557,8 +19554,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_white3.png" 
+        client = {
+           image = "playboy_white3.png"
          },
     },
     ['white_playboys4'] = {
@@ -19566,8 +19563,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_white4.png" 
+        client = {
+           image = "playboy_white4.png"
          },
     },
     ['blue_playboys'] = {
@@ -19575,8 +19572,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_blue.png" 
+        client = {
+           image = "playboy_blue.png"
          },
     },
     ['blue_playboys2'] = {
@@ -19584,8 +19581,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_blue2.png" 
+        client = {
+           image = "playboy_blue2.png"
          },
     },
     ['blue_playboys3'] = {
@@ -19593,8 +19590,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_blue3.png" 
+        client = {
+           image = "playboy_blue3.png"
          },
     },
     ['blue_playboys4'] = {
@@ -19602,8 +19599,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_blue4.png" 
+        client = {
+           image = "playboy_blue4.png"
          },
     },
     ['red_playboys'] = {
@@ -19611,8 +19608,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_red.png" 
+        client = {
+           image = "playboy_red.png"
          },
     },
     ['red_playboys2'] = {
@@ -19620,8 +19617,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_red2.png" 
+        client = {
+           image = "playboy_red2.png"
          },
     },
     ['red_playboys3'] = {
@@ -19629,8 +19626,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_red3.png" 
+        client = {
+           image = "playboy_red3.png"
          },
     },
     ['red_playboys4'] = {
@@ -19638,8 +19635,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_red4.png" 
+        client = {
+           image = "playboy_red4.png"
          },
     },
     ['orange_playboys'] = {
@@ -19647,8 +19644,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_orange.png" 
+        client = {
+           image = "playboy_orange.png"
          },
     },
     ['orange_playboys2'] = {
@@ -19656,8 +19653,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_orange2.png" 
+        client = {
+           image = "playboy_orange2.png"
          },
     },
     ['orange_playboys3'] = {
@@ -19665,8 +19662,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_orange3.png" 
+        client = {
+           image = "playboy_orange3.png"
          },
     },
     ['orange_playboys4'] = {
@@ -19674,8 +19671,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "playboy_orange4.png" 
+        client = {
+           image = "playboy_orange4.png"
          },
     },
     ['white_aliens'] = {
@@ -19683,8 +19680,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_white.png" 
+        client = {
+           image = "alien_white.png"
          },
     },
     ['white_aliens2'] = {
@@ -19692,8 +19689,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_white2.png" 
+        client = {
+           image = "alien_white2.png"
          },
     },
     ['white_aliens3'] = {
@@ -19701,8 +19698,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_white3.png" 
+        client = {
+           image = "alien_white3.png"
          },
     },
     ['white_aliens4'] = {
@@ -19710,8 +19707,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_white4.png" 
+        client = {
+           image = "alien_white4.png"
          },
     },
     ['blue_aliens'] = {
@@ -19719,8 +19716,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_blue.png" 
+        client = {
+           image = "alien_blue.png"
          },
     },
     ['blue_aliens2'] = {
@@ -19728,8 +19725,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_blue2.png" 
+        client = {
+           image = "alien_blue2.png"
          },
     },
     ['blue_aliens3'] = {
@@ -19737,8 +19734,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_blue3.png" 
+        client = {
+           image = "alien_blue3.png"
          },
     },
     ['blue_aliens4'] = {
@@ -19746,8 +19743,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_blue4.png" 
+        client = {
+           image = "alien_blue4.png"
          },
     },
     ['red_aliens'] = {
@@ -19755,8 +19752,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_red.png" 
+        client = {
+           image = "alien_red.png"
          },
     },
     ['red_aliens2'] = {
@@ -19764,8 +19761,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_red2.png" 
+        client = {
+           image = "alien_red2.png"
          },
     },
     ['red_aliens3'] = {
@@ -19773,8 +19770,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_red3.png" 
+        client = {
+           image = "alien_red3.png"
          },
     },
     ['red_aliens4'] = {
@@ -19782,8 +19779,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_red4.png" 
+        client = {
+           image = "alien_red4.png"
          },
     },
     ['orange_aliens'] = {
@@ -19791,8 +19788,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_orange.png" 
+        client = {
+           image = "alien_orange.png"
          },
     },
     ['orange_aliens2'] = {
@@ -19800,8 +19797,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_orange2.png" 
+        client = {
+           image = "alien_orange2.png"
          },
     },
     ['orange_aliens3'] = {
@@ -19809,8 +19806,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_orange3.png" 
+        client = {
+           image = "alien_orange3.png"
          },
     },
     ['orange_aliens4'] = {
@@ -19818,8 +19815,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "alien_orange4.png" 
+        client = {
+           image = "alien_orange4.png"
          },
     },
     ['white_pl'] = {
@@ -19827,8 +19824,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_white.png" 
+        client = {
+           image = "PL_white.png"
          },
     },
     ['white_pl2'] = {
@@ -19836,8 +19833,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_white2.png" 
+        client = {
+           image = "PL_white2.png"
          },
     },
     ['white_pl3'] = {
@@ -19845,8 +19842,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_white3.png" 
+        client = {
+           image = "PL_white3.png"
          },
     },
     ['white_pl4'] = {
@@ -19854,8 +19851,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_white4.png" 
+        client = {
+           image = "PL_white4.png"
          },
     },
     ['blue_pl'] = {
@@ -19863,8 +19860,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_blue.png" 
+        client = {
+           image = "PL_blue.png"
          },
     },
     ['blue_pl2'] = {
@@ -19872,8 +19869,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_blue2.png" 
+        client = {
+           image = "PL_blue2.png"
          },
     },
     ['blue_pl3'] = {
@@ -19881,8 +19878,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_blue3.png" 
+        client = {
+           image = "PL_blue3.png"
          },
     },
     ['blue_pl4'] = {
@@ -19890,8 +19887,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_blue4.png" 
+        client = {
+           image = "PL_blue4.png"
          },
     },
     ['red_pl'] = {
@@ -19899,8 +19896,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_red.png" 
+        client = {
+           image = "PL_red.png"
          },
     },
     ['red_pl2'] = {
@@ -19908,8 +19905,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_red2.png" 
+        client = {
+           image = "PL_red2.png"
          },
     },
     ['red_pl3'] = {
@@ -19917,8 +19914,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_red3.png" 
+        client = {
+           image = "PL_red3.png"
          },
     },
     ['red_pl4'] = {
@@ -19926,8 +19923,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_red4.png" 
+        client = {
+           image = "PL_red4.png"
          },
     },
     ['orange_pl'] = {
@@ -19935,8 +19932,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_orange.png" 
+        client = {
+           image = "PL_orange.png"
          },
     },
     ['orange_pl2'] = {
@@ -19944,8 +19941,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_orange2.png" 
+        client = {
+           image = "PL_orange2.png"
          },
     },
     ['orange_pl3'] = {
@@ -19953,8 +19950,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_orange3.png" 
+        client = {
+           image = "PL_orange3.png"
          },
     },
     ['orange_pl4'] = {
@@ -19962,8 +19959,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "PL_orange4.png" 
+        client = {
+           image = "PL_orange4.png"
          },
     },
     ['white_trolls'] = {
@@ -19971,8 +19968,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_white.png" 
+        client = {
+           image = "troll_white.png"
          },
     },
     ['white_trolls2'] = {
@@ -19980,8 +19977,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_white2.png" 
+        client = {
+           image = "troll_white2.png"
          },
     },
     ['white_trolls3'] = {
@@ -19989,8 +19986,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_white3.png" 
+        client = {
+           image = "troll_white3.png"
          },
     },
     ['white_trolls4'] = {
@@ -19998,8 +19995,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_white4.png" 
+        client = {
+           image = "troll_white4.png"
          },
     },
     ['blue_trolls'] = {
@@ -20007,8 +20004,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_blue.png" 
+        client = {
+           image = "troll_blue.png"
          },
     },
     ['blue_trolls2'] = {
@@ -20016,8 +20013,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_blue2.png" 
+        client = {
+           image = "troll_blue2.png"
          },
     },
     ['blue_trolls3'] = {
@@ -20025,8 +20022,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_blue3.png" 
+        client = {
+           image = "troll_blue3.png"
          },
     },
     ['blue_trolls4'] = {
@@ -20034,8 +20031,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_blue4.png" 
+        client = {
+           image = "troll_blue4.png"
          },
     },
     ['red_trolls'] = {
@@ -20043,8 +20040,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_red.png" 
+        client = {
+           image = "troll_red.png"
          },
     },
     ['red_trolls2'] = {
@@ -20052,8 +20049,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_red2.png" 
+        client = {
+           image = "troll_red2.png"
          },
     },
     ['red_trolls3'] = {
@@ -20061,8 +20058,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_red3.png" 
+        client = {
+           image = "troll_red3.png"
          },
     },
     ['red_trolls4'] = {
@@ -20070,8 +20067,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_red4.png" 
+        client = {
+           image = "troll_red4.png"
          },
     },
     ['orange_trolls'] = {
@@ -20079,8 +20076,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_orange.png" 
+        client = {
+           image = "troll_orange.png"
          },
     },
     ['orange_trolls2'] = {
@@ -20088,8 +20085,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_orange2.png" 
+        client = {
+           image = "troll_orange2.png"
          },
     },
     ['orange_trolls3'] = {
@@ -20097,8 +20094,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_orange3.png" 
+        client = {
+           image = "troll_orange3.png"
          },
     },
     ['orange_trolls4'] = {
@@ -20106,8 +20103,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "troll_orange4.png" 
+        client = {
+           image = "troll_orange4.png"
          },
     },
     ['white_cats'] = {
@@ -20115,8 +20112,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_white.png" 
+        client = {
+           image = "kitty_white.png"
          },
     },
     ['white_cats2'] = {
@@ -20124,8 +20121,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_white2.png" 
+        client = {
+           image = "kitty_white2.png"
          },
     },
     ['white_cats3'] = {
@@ -20133,8 +20130,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_white3.png" 
+        client = {
+           image = "kitty_white3.png"
          },
     },
     ['white_cats4'] = {
@@ -20142,8 +20139,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_white4.png" 
+        client = {
+           image = "kitty_white4.png"
          },
     },
     ['blue_cats'] = {
@@ -20151,8 +20148,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_blue.png" 
+        client = {
+           image = "kitty_blue.png"
          },
     },
     ['blue_cats2'] = {
@@ -20160,8 +20157,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_blue2.png" 
+        client = {
+           image = "kitty_blue2.png"
          },
     },
     ['blue_cats3'] = {
@@ -20169,8 +20166,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_blue3.png" 
+        client = {
+           image = "kitty_blue3.png"
          },
     },
     ['blue_cats4'] = {
@@ -20178,8 +20175,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_blue4.png" 
+        client = {
+           image = "kitty_blue4.png"
          },
     },
     ['red_cats'] = {
@@ -20187,8 +20184,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_red.png" 
+        client = {
+           image = "kitty_red.png"
          },
     },
     ['red_cats2'] = {
@@ -20196,8 +20193,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_red2.png" 
+        client = {
+           image = "kitty_red2.png"
          },
     },
     ['red_cats3'] = {
@@ -20205,8 +20202,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_red3.png" 
+        client = {
+           image = "kitty_red3.png"
          },
     },
     ['red_cats4'] = {
@@ -20214,8 +20211,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_red4.png" 
+        client = {
+           image = "kitty_red4.png"
          },
     },
     ['orange_cats'] = {
@@ -20223,8 +20220,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_orange.png" 
+        client = {
+           image = "kitty_orange.png"
          },
     },
     ['orange_cats2'] = {
@@ -20232,8 +20229,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_orange2.png" 
+        client = {
+           image = "kitty_orange2.png"
          },
     },
     ['orange_cats3'] = {
@@ -20241,8 +20238,8 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_orange3.png" 
+        client = {
+           image = "kitty_orange3.png"
          },
     },
     ['orange_cats4'] = {
@@ -20250,81 +20247,81 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
         weight = 100,
         stack = true,
         close = true,
-        client = { 
-           image = "kitty_orange4.png" 
+        client = {
+           image = "kitty_orange4.png"
          },
     },
-    ["blue_uninflated_balloon"] = { 
-    label = 'Blue Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'blue_uninflated_balloon.png' } 
+    ["blue_uninflated_balloon"] = {
+    label = 'Blue Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'blue_uninflated_balloon.png' }
 },
-["cracker"] = { 
-    label = 'Cracker', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'cracker.png' } 
+["cracker"] = {
+    label = 'Cracker',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'cracker.png' }
 },
-["green_uninflated_balloon"] = { 
-    label = 'Green Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'green_uninflated_balloon.png' } 
+["green_uninflated_balloon"] = {
+    label = 'Green Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'green_uninflated_balloon.png' }
 },
-["orange_uninflated_balloon"] = { 
-    label = 'Orange Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'orange_uninflated_balloon.png' } 
+["orange_uninflated_balloon"] = {
+    label = 'Orange Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'orange_uninflated_balloon.png' }
 },
-["purple_uninflated_balloon"] = { 
-    label = 'Purple Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'purple_uninflated_balloon.png' } 
+["purple_uninflated_balloon"] = {
+    label = 'Purple Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'purple_uninflated_balloon.png' }
 },
-["red_uninflated_balloon"] = { 
-    label = 'Red Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'red_uninflated_balloon.png' } 
+["red_uninflated_balloon"] = {
+    label = 'Red Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'red_uninflated_balloon.png' }
 },
-["whipped_cream_cannister"] = { 
-    label = 'Whipped Cream Cannister', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'whipped_cream_cannister.png' } 
+["whipped_cream_cannister"] = {
+    label = 'Whipped Cream Cannister',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'whipped_cream_cannister.png' }
 },
-["white_uninflated_balloon"] = { 
-    label = 'White Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'white_uninflated_balloon.png' } 
+["white_uninflated_balloon"] = {
+    label = 'White Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'white_uninflated_balloon.png' }
 },
-["yellow_uninflated_balloon"] = { 
-    label = 'Yellow Uninflated Balloon', 
-    description = "", 
-    weight = 100, 
-    stack = true, 
-    close = true, 
-    client = { image = 'yellow_uninflated_balloon.png' } 
+["yellow_uninflated_balloon"] = {
+    label = 'Yellow Uninflated Balloon',
+    description = "",
+    weight = 100,
+    stack = true,
+    close = true,
+    client = { image = 'yellow_uninflated_balloon.png' }
 },
 
 oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type = 'item',  image = 'oldphone.png',  unique = true, useable = true, shouldClose = true, combinable = nil, description = 'A Old ass phone, texting still works though!!!!'},
@@ -20531,7 +20528,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
     },
     ["recyclable_material_block"] = {
         label = "Recyclable Material Block",
-        weight = 100,   
+        weight = 100,
         stack = true,
         close = true,
         description = "Recyclable Material Block",
@@ -21325,142 +21322,142 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		image = "unmarkedsimcard.png",
 	}
 },
-["bandsofnotes"] = { 
-	label = "Bands of Notes", 
-	weight = 10, 
-	stack = true, 
-	close = true, 
-	description = "A bundle of high-value notes, could be valuable.", 
-	client = { image = "bandsofnotes.png" } 
-}, 
-["bankcard"] = { 
-	label = "Bank Card", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "A standard bank card for transactions.", 
-	client = { image = "bankcard.png" } 
-}, 
-["group6card"] = { 
-	label = "Group 6 Security Card", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "A Group 6 security card granting access to restricted areas.", 
-	client = { image = "group6card.png" } 
-}, 
-["humaneco2"] = { 
-	label = "Compound X2", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "A Compound X2, potentially useful for specific tasks.", 
-	client = { image = "humaneco2.png" } 
-}, 
-["paletobankcard"] = { 
-	label = "Paleto Bank Card", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "An ID card for Paleto Bank employees.", 
-	client = { image = "paletobankcard.png" } 
-}, 
-["rubynecklace"] = { 
-	label = "Ruby Necklace", 
-	weight = 3, 
-	stack = true, 
-	close = true, 
-	description = "A valuable ruby necklace.", 
-	client = { image = "rubynecklace.png" } 
-}, 
-["stacksofcash"] = { 
-	label = "Stacks of Cash", 
-	weight = 15, 
-	stack = true, 
-	close = true, 
-	description = "A large stack of cash.", 
-	client = { image = "stacksofcash.png" } 
-}, 
-["thermite"] = { 
-	label = "Thermite", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "An explosive thermite device, useful for breaking through strong barriers.", 
-	client = { image = "thermite.png" } 
+["bandsofnotes"] = {
+	label = "Bands of Notes",
+	weight = 10,
+	stack = true,
+	close = true,
+	description = "A bundle of high-value notes, could be valuable.",
+	client = { image = "bandsofnotes.png" }
 },
-["handsaw"] = { 
-	label = "Hand Saw", 
-	weight = 3, 
-	stack = true, 
-	close = true, 
-	description = "A basic hand saw, useful for cutting wood and other materials.", 
-	client = { image = "handsaw.png" } 
+["bankcard"] = {
+	label = "Bank Card",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "A standard bank card for transactions.",
+	client = { image = "bankcard.png" }
 },
-["harddrive"] = { 
-	label = "Hard Drive", 
-	weight = 1, 
-	stack = true, 
-	close = false, 
-	description = "An internal hard drive, useful for storing data.", 
-	client = { image = "harddrive.png" } 
+["group6card"] = {
+	label = "Group 6 Security Card",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "A Group 6 security card granting access to restricted areas.",
+	client = { image = "group6card.png" }
 },
-["silverbar"] = { 
-	label = "Silver Bar", 
-	weight = 5, 
-	stack = true, 
-	close = false, 
-	description = "A bar of pure silver, valuable for trading and crafting.", 
-	client = { image = "silverbar.png" } 
+["humaneco2"] = {
+	label = "Compound X2",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "A Compound X2, potentially useful for specific tasks.",
+	client = { image = "humaneco2.png" }
 },
-["wirecutters"] = { 
-	label = "Wire Cutters", 
-	weight = 2, 
-	stack = true, 
-	close = true, 
-	description = "A tool for cutting wires, essential for various tasks.", 
-	client = { image = "wirecutters.png" } 
+["paletobankcard"] = {
+	label = "Paleto Bank Card",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "An ID card for Paleto Bank employees.",
+	client = { image = "paletobankcard.png" }
 },
-["pincracker"] = { 
-	label = "Pin Cracker", 
-	weight = 1, 
-	stack = true, 
-	close = true, 
-	description = "A tool used for cracking pin-based locks, essential for skilled lockpickers.", 
-	client = { image = "pincracker.png" } 
+["rubynecklace"] = {
+	label = "Ruby Necklace",
+	weight = 3,
+	stack = true,
+	close = true,
+	description = "A valuable ruby necklace.",
+	client = { image = "rubynecklace.png" }
 },
-["bigbankcard"] = { 
-	label = "Big Bank Card", 
-	weight = 5, 
-	stack = true, 
-	close = true, 
-	description = "A bank card that provides access to bank services.", 
-	client = { image = "bigbankcard.png" } 
+["stacksofcash"] = {
+	label = "Stacks of Cash",
+	weight = 15,
+	stack = true,
+	close = true,
+	description = "A large stack of cash.",
+	client = { image = "stacksofcash.png" }
+},
+["thermite"] = {
+	label = "Thermite",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "An explosive thermite device, useful for breaking through strong barriers.",
+	client = { image = "thermite.png" }
+},
+["handsaw"] = {
+	label = "Hand Saw",
+	weight = 3,
+	stack = true,
+	close = true,
+	description = "A basic hand saw, useful for cutting wood and other materials.",
+	client = { image = "handsaw.png" }
+},
+["harddrive"] = {
+	label = "Hard Drive",
+	weight = 1,
+	stack = true,
+	close = false,
+	description = "An internal hard drive, useful for storing data.",
+	client = { image = "harddrive.png" }
+},
+["silverbar"] = {
+	label = "Silver Bar",
+	weight = 5,
+	stack = true,
+	close = false,
+	description = "A bar of pure silver, valuable for trading and crafting.",
+	client = { image = "silverbar.png" }
+},
+["wirecutters"] = {
+	label = "Wire Cutters",
+	weight = 2,
+	stack = true,
+	close = true,
+	description = "A tool for cutting wires, essential for various tasks.",
+	client = { image = "wirecutters.png" }
+},
+["pincracker"] = {
+	label = "Pin Cracker",
+	weight = 1,
+	stack = true,
+	close = true,
+	description = "A tool used for cracking pin-based locks, essential for skilled lockpickers.",
+	client = { image = "pincracker.png" }
+},
+["bigbankcard"] = {
+	label = "Big Bank Card",
+	weight = 5,
+	stack = true,
+	close = true,
+	description = "A bank card that provides access to bank services.",
+	client = { image = "bigbankcard.png" }
 },
 
-["c4"] = { 
-	label = "C4 Explosive", 
-	weight = 10, 
-	stack = true, 
-	close = true, 
-	description = "A powerful explosive device, useful for breaching strong barriers.", 
-	client = { image = "c4.png" } 
+["c4"] = {
+	label = "C4 Explosive",
+	weight = 10,
+	stack = true,
+	close = true,
+	description = "A powerful explosive device, useful for breaching strong barriers.",
+	client = { image = "c4.png" }
 },
-["humaneusb"] = { 
-	label = "Humane Labs USB", 
-	weight = 1, 
-	stack = true, 
-	close = true, 
-	description = "A USB stick containing sensitive data, property of Humane Labs.", 
-	client = { image = "humaneusb.png" } 
+["humaneusb"] = {
+	label = "Humane Labs USB",
+	weight = 1,
+	stack = true,
+	close = true,
+	description = "A USB stick containing sensitive data, property of Humane Labs.",
+	client = { image = "humaneusb.png" }
 },
-["bankidcard"] = { 
-	label = "Bank ID Card", 
-	weight = 1, 
-	stack = true, 
-	close = true, 
-	description = "An ID card for bank employees, granting access to certain areas.", 
-	client = { image = "bankidcard.png" } 
+["bankidcard"] = {
+	label = "Bank ID Card",
+	weight = 1,
+	stack = true,
+	close = true,
+	description = "An ID card for bank employees, granting access to certain areas.",
+	client = { image = "bankidcard.png" }
 },
 
 -- Low Tier Valuables
@@ -22916,7 +22913,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 
      -------------mythic
 
-    
+
 ['fraud_phone'] = {
     label = 'Encrypted Fraud Phone',
     weight = 500,
@@ -22962,7 +22959,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = '5mg prescription painkiller'
 	},
-	
+
 	['perc_5_bottle'] = {
 		label = 'Bottle of Percocet 5mg',
 		weight = 500,
@@ -22970,7 +22967,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'A prescription bottle filled with 5mg Percocet tablets'
 	},
-	
+
 	['perc_7_5'] = {
 		label = 'Percocet 7.5mg',
 		weight = 50,
@@ -22978,7 +22975,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = '7.5mg prescription painkiller'
 	},
-	
+
 	['perc_7_5_bottle'] = {
 		label = 'Bottle of Percocet 7.5mg',
 		weight = 500,
@@ -22986,7 +22983,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'A prescription bottle filled with 7.5mg Percocet tablets'
 	},
-	
+
 	['perc_10'] = {
 		label = 'Percocet 10mg',
 		weight = 50,
@@ -22994,7 +22991,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = '10mg prescription painkiller'
 	},
-	
+
 	['perc_10_bottle'] = {
 		label = 'Bottle of Percocet 10mg',
 		weight = 500,
@@ -23002,7 +22999,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'A prescription bottle filled with 10mg Percocet tablets'
 	},
-	
+
 	['perc_15'] = {
 		label = 'Percocet 15mg',
 		weight = 50,
@@ -23010,7 +23007,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = '15mg prescription painkiller'
 	},
-	
+
 	['perc_15_bottle'] = {
 		label = 'Bottle of Percocet 15mg',
 		weight = 500,
@@ -23018,7 +23015,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'A prescription bottle filled with 15mg Percocet tablets'
 	},
-	
+
 	['perc_30'] = {
 		label = 'Percocet 30mg',
 		weight = 50,
@@ -23026,7 +23023,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = '30mg prescription painkiller'
 	},
-	
+
 	['perc_30_bottle'] = {
 		label = 'Bottle of Percocet 30mg',
 		weight = 500,
@@ -23042,7 +23039,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'A handheld tool used to crush pills into powder.',
 	},
-	
+
 	['crushed_perc_5'] = {
 		label = 'Crushed Percocet 5mg',
 		weight = 25,
@@ -23050,7 +23047,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'Powdered form of Percocet 5mg.'
 	},
-	
+
 	['crushed_perc_7_5'] = {
 		label = 'Crushed Percocet 7.5mg',
 		weight = 25,
@@ -23058,7 +23055,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'Powdered form of Percocet 7.5mg.'
 	},
-	
+
 	['crushed_perc_10'] = {
 		label = 'Crushed Percocet 10mg',
 		weight = 25,
@@ -23066,7 +23063,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'Powdered form of Percocet 10mg.'
 	},
-	
+
 	['crushed_perc_15'] = {
 		label = 'Crushed Percocet 15mg',
 		weight = 25,
@@ -23074,7 +23071,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 		description = 'Powdered form of Percocet 15mg.'
 	},
-	
+
 	['crushed_perc_30'] = {
 		label = 'Crushed Percocet 30mg',
 		weight = 25,
@@ -23597,12 +23594,12 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 	},
 
-    
 
-    
+
+
 
 
 
 }
 
-    
+

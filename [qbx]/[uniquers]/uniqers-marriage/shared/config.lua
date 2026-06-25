@@ -4,9 +4,9 @@ UniqersMarriage.Framework = "auto" -- "auto" or "qbcore" or "esx" or "qbus" or "
 UniqersMarriage.CoreName = "auto" -- "auto" or for qbcore = "QBCore", for qbus = "QBCore", for esx = "ESX", forold esx = "ESX", for qbcore or esx variation like ASDCore, Blabla core = "BLABLACore",
 UniqersMarriage.CoreName2 = "auto" -- "auto" or for qbcore = "qb-core", for qbus = "QBCore:GetObject", for esx = "es_extended", forold esx = "esx:getSharedObject", for qbcore or esx variation like ASDCore, Blabla core = "blabla-core",
 UniqersMarriage.Notify = "qbcore" -- if u use custom notify write "custom" if u dont write "qbcore" - "esx" -  or "uniqers-notify" what u using
-UniqersMarriage.Inventory = "auto" -- "auto" or select your inventory - qb-inventory = "qbcore" or other qbcore inventory like ox-inventory and others = "otherqb" or esx-inventory = "esx"  or like ox-inventory and others esx inventory = "otheresx"
+UniqersMarriage.Inventory = "otherqb" -- "auto" or select your inventory - qb-inventory = "qbcore" or other qbcore inventory like ox-inventory and others = "otherqb" or esx-inventory = "esx"  or like ox-inventory and others esx inventory = "otheresx"
 UniqersMarriage.Clothes = "auto" -- "auto" or select your clothes script "qb-clothing" or "esx-skinchanger" or "fivem-apperance" or "illenum-apperance" or "rcore-clothing" or "tgiann-clothing" or "custom" if u use custom add your custom code below the function function customclothes
-UniqersMarriage.ForEsxAvatar = "steam" --- select your for esx framework avatar system "steam" or "discord" or ""
+UniqersMarriage.ForEsxAvatar = "discord" --- select your for esx framework avatar system "steam" or "discord" or ""
 UniqersMarriage.NPCFunction = "yes" -- If you say "yes". The player and the NPC in the priest job can use the marriage and divorce functions. /marriage and divorce command for the player. If you say "no", the NPC cannot use it and everything related to the NPC will be destroyed and everything will remain with the player in the priest profession.
 UniqersMarriage.ConsensualDivorce = "yes" -- if no, no need spouse with you for divorce if yes, need online and with you for spouse
 UniqersMarriage.MultiMarriage = false -- if is true, players can marry more than one person. if false, players can only marry one person.
