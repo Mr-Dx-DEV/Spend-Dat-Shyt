@@ -193,7 +193,7 @@ Config.StreetSelling = {
     Blip = {
         sprite = 280,
         color  = 8,
-        scale  = 0.7,
+        scale  = 0.5,
         label  = "BBL Sell Zone",
     },
 
@@ -217,7 +217,7 @@ Config.BlackMarketPed = {
         enabled = true,
         sprite  = 110,
         color   = 1,
-        scale   = 0.7,
+        scale   = 0.5,
         label   = "Shady Dealer",
     },
 
@@ -276,7 +276,7 @@ Config.Robbery = {
     Blip = {
         sprite = 61,
         color  = 1,
-        scale  = 0.9,
+        scale  = 0.5,
         label  = "Hospital Robbery",
     },
 
@@ -391,7 +391,7 @@ Config.Delivery = {
     Blip = {
         sprite = 501,
         color  = 5,
-        scale  = 0.8,
+        scale  = 0.5,
         label  = "Delivery Drop-off",
     },
 
