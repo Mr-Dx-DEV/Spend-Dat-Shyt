@@ -614,16 +614,16 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
     vehiclesType = "spawner",
     showLiveriesExtrasMenu = true,
     vehicles = {
+      -- [1] = {
+      --   model = "ambo1",
+      --   plate = false,
+      --   minJobGrade = 0,
+      --   nickname = "ambo1",
+      --   livery = 1,
+      --   extras = {1, 2},
+      --   maxMods = true
+      -- },
       [1] = {
-        model = "ambo1",
-        plate = false,
-        minJobGrade = 0,
-        nickname = "ambo1",
-        livery = 1,
-        extras = {1, 2},
-        maxMods = true
-      },
-      [2] = {
         model = "fd20exp",
         plate = false,
         minJobGrade = 0,
@@ -632,7 +632,7 @@ Config.JobGarageLocations = { -- IMPORTANT - Every garage name must be unique
         extras = {1, 2},
         maxMods = true
       },
-      [3] = {
+      [2] = {
         model = "duraambo",
         plate = false,
         minJobGrade = 0,
