@@ -185,11 +185,11 @@
                             </div>
 
                             <div id="access-discord" class="access-section hidden space-y-2">
-                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Discord Role IDs</label>
+                                <label class="text-gray-400 text-xs font-bold uppercase tracking-wider block">Discord Role / User IDs</label>
                                 <div class="bg-[#1a1a1a] border border-white/10 rounded-lg p-3">
                                     <div id="discord-tags" class="flex flex-wrap gap-2 mb-2"></div>
                                     <div class="flex gap-2">
-                                        <input type="text" id="discord-input" placeholder="Add role ID..." class="flex-1 bg-transparent text-white text-sm focus:outline-none">
+                                        <input type="text" id="discord-input" placeholder="Add role or user ID..." class="flex-1 bg-transparent text-white text-sm focus:outline-none">
                                         <button type="button" id="add-discord-btn" class="bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 px-3 py-1 rounded text-xs font-bold transition-all flex items-center gap-1">
                                             <i data-lucide="plus" class="w-3 h-3"></i> Add
                                         </button>
@@ -313,6 +313,24 @@
                                     <button type="button" class="item-browse-btn" data-browse-target="recipe-result-item"><i data-lucide="search" class="w-4 h-4"></i></button>
                                 </div>
                                 <input type="number" id="recipe-result-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="bg-[#111111] border border-white/5 rounded-lg p-4 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" id="recipe-blueprint-enabled" class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                                <label for="recipe-blueprint-enabled" class="text-white text-sm">Require Blueprint</label>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="recipe-blueprint-item" placeholder="Blueprint item" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="recipe-blueprint-item"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                                <input type="number" id="recipe-blueprint-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" id="recipe-blueprint-consume" class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                                <label for="recipe-blueprint-consume" class="text-gray-400 text-sm">Consume blueprint on success</label>
                             </div>
                         </div>
 
@@ -518,6 +536,24 @@
                                     <button type="button" class="item-browse-btn" data-browse-target="group-recipe-result-item"><i data-lucide="search" class="w-4 h-4"></i></button>
                                 </div>
                                 <input type="number" id="group-recipe-result-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="bg-[#111111] border border-white/5 rounded-lg p-4 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" id="group-recipe-blueprint-enabled" class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                                <label for="group-recipe-blueprint-enabled" class="text-white text-sm">Require Blueprint</label>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="flex gap-2 items-center">
+                                    <input type="text" id="group-recipe-blueprint-item" placeholder="Blueprint item" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors" style="flex:1;min-width:0;">
+                                    <button type="button" class="item-browse-btn" data-browse-target="group-recipe-blueprint-item"><i data-lucide="search" class="w-4 h-4"></i></button>
+                                </div>
+                                <input type="number" id="group-recipe-blueprint-amount" placeholder="Amount" value="1" min="1" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg px-4 py-3 text-white font-medium focus:outline-none focus:border-white/30 transition-colors">
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <input type="checkbox" id="group-recipe-blueprint-consume" class="w-4 h-4 rounded bg-[#1a1a1a] border-white/20">
+                                <label for="group-recipe-blueprint-consume" class="text-gray-400 text-sm">Consume blueprint on success</label>
                             </div>
                         </div>
 

@@ -105,6 +105,8 @@ function sendToLua(action, payload) {
 }
 window.addEventListener('message', function(e) {
     const data = e.data;
+    if (!data || typeof data.action !== 'string') return;
+
     switch(data.action) {
         case 'openCreator':
             openCreator(data);
@@ -131,6 +133,9 @@ window.addEventListener('message', function(e) {
             break;
         case 'startCrafting':
             startCraftingAnimation(data);
+            break;
+        case 'craftRejected':
+            craftRejected(data);
             break;
         case 'craftSuccess':
             craftComplete(true, data);
@@ -227,7 +232,7 @@ function translateStaticElements() {
         else if (text === 'Allowed Groups') label.textContent = t('allowedGroups', 'Allowed Groups');
         else if (text === 'Allowed Jobs') label.textContent = t('allowedJobs', 'Allowed Jobs');
         else if (text === 'Allowed Gangs') label.textContent = t('allowedGangs', 'Allowed Gangs');
-        else if (text === 'Discord Role IDs') label.textContent = t('discordRoleIds', 'Discord Role IDs');
+        else if (text === 'Discord Role IDs' || text === 'Discord Role / User IDs') label.textContent = t('discordRoleIds', 'Discord Role / User IDs');
         else if (text === 'Player Server ID') label.textContent = t('playerServerId', 'Player Server ID');
         else if (text === 'Player Name') label.textContent = t('playerName', 'Player Name');
         else if (text === 'License') label.textContent = t('license', 'License');
@@ -622,6 +627,58 @@ function removeGroupRecipe(index) {
     currentGroupRecipes.splice(index, 1);
     renderGroupRecipesEditor();
 }
+function getRecipeBlueprint(recipe) {
+    if (!recipe) return null;
+    if (recipe.blueprint && typeof recipe.blueprint === 'object') {
+        const item = recipe.blueprint.item || recipe.blueprint.name || '';
+        if (!item) return null;
+        return {
+            item: item,
+            amount: parseInt(recipe.blueprint.amount) || 1,
+            consume: recipe.blueprint.consume === true
+        };
+    }
+    if (typeof recipe.blueprint === 'string' && recipe.blueprint) {
+        return {
+            item: recipe.blueprint,
+            amount: parseInt(recipe.blueprintAmount) || 1,
+            consume: recipe.consumeBlueprint === true
+        };
+    }
+    if (typeof recipe.blueprintItem === 'string' && recipe.blueprintItem) {
+        return {
+            item: recipe.blueprintItem,
+            amount: parseInt(recipe.blueprintAmount) || 1,
+            consume: recipe.consumeBlueprint === true
+        };
+    }
+    return null;
+}
+function setBlueprintInputs(prefix, recipe) {
+    const blueprint = getRecipeBlueprint(recipe);
+    const enabled = document.getElementById(prefix + '-blueprint-enabled');
+    const item = document.getElementById(prefix + '-blueprint-item');
+    const amount = document.getElementById(prefix + '-blueprint-amount');
+    const consume = document.getElementById(prefix + '-blueprint-consume');
+    if (enabled) enabled.checked = !!blueprint;
+    if (item) item.value = blueprint?.item || '';
+    if (amount) amount.value = blueprint?.amount || 1;
+    if (consume) consume.checked = blueprint?.consume === true;
+}
+function readBlueprintInputs(prefix) {
+    const enabled = document.getElementById(prefix + '-blueprint-enabled');
+    if (!enabled || !enabled.checked) return null;
+    const item = document.getElementById(prefix + '-blueprint-item')?.value.trim() || '';
+    if (!item) {
+        showAlert(t('enterBlueprintItem', 'Please enter a blueprint item'));
+        return false;
+    }
+    return {
+        item: item,
+        amount: Math.max(parseInt(document.getElementById(prefix + '-blueprint-amount')?.value) || 1, 1),
+        consume: document.getElementById(prefix + '-blueprint-consume')?.checked === true
+    };
+}
 function openGroupRecipeModal(recipe = null, index = null) {
     const modal = getElement('group-recipe-modal');
     const title = getElement('group-recipe-modal-title');
@@ -637,6 +694,7 @@ function openGroupRecipeModal(recipe = null, index = null) {
         getElement('group-recipe-xp-reward').value = recipe.xpReward || 10;
         getElement('group-recipe-fail-chance').value = recipe.failChance || 10;
         getElement('group-recipe-skill-check').checked = recipe.skillCheck !== false;
+        setBlueprintInputs('group-recipe', recipe);
         window.tempGroupIngredients = [...(recipe.ingredients || [])];
     } else {
         title.textContent = t('addRecipe', 'Add Recipe');
@@ -649,6 +707,7 @@ function openGroupRecipeModal(recipe = null, index = null) {
         getElement('group-recipe-xp-reward').value = 10;
         getElement('group-recipe-fail-chance').value = 10;
         getElement('group-recipe-skill-check').checked = true;
+        setBlueprintInputs('group-recipe', null);
         window.tempGroupIngredients = [];
     }
     renderGroupIngredientsList();
@@ -703,6 +762,8 @@ function saveGroupRecipe() {
         showAlert(t('enterRecipeName', 'Please enter a recipe name'));
         return;
     }
+    const blueprint = readBlueprintInputs('group-recipe');
+    if (blueprint === false) return;
     const recipe = {
         name: name,
         label: label || name,
@@ -717,6 +778,7 @@ function saveGroupRecipe() {
         failChance: parseInt(document.getElementById('group-recipe-fail-chance').value) || 10,
         skillCheck: document.getElementById('group-recipe-skill-check').checked
     };
+    if (blueprint) recipe.blueprint = blueprint;
     const editIndex = document.getElementById('edit-group-recipe-index').value;
     if (editIndex !== '') {
         currentGroupRecipes[parseInt(editIndex)] = recipe;
@@ -728,6 +790,9 @@ function saveGroupRecipe() {
 }
 function saveRecipeGroups() {
     sendToLua('saveRecipeGroups', { groups: recipeGroups });
+}
+function valueOrDefault(value, fallback) {
+    return value === null || value === undefined || Number.isNaN(value) ? fallback : value;
 }
 function renderCreatorSettings() {
     const settings = globalSettings || {};
@@ -850,7 +915,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('xpPerCraftDesc', 'Experience gained per successful craft')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${xpSystem.xpPerCraft || 10}" data-setting="xp-percraft" min="0">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(xpSystem.xpPerCraft, 10)}" data-setting="xp-percraft" min="0">
                             </div>
                         </div>
                     </div>
@@ -861,7 +926,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('xpPerLevelDesc', 'XP required for each level')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${xpSystem.xpPerLevel || 100}" data-setting="xp-perlevel" min="1">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(xpSystem.xpPerLevel, 100)}" data-setting="xp-perlevel" min="1">
                             </div>
                         </div>
                     </div>
@@ -872,7 +937,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('maxLevelDesc', 'Maximum crafting level')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${xpSystem.maxLevel || 100}" data-setting="xp-maxlevel" min="1">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(xpSystem.maxLevel, 100)}" data-setting="xp-maxlevel" min="1">
                             </div>
                         </div>
                     </div>
@@ -899,7 +964,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('baseFailChanceDesc', 'Starting failure percentage')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${failureSystem.baseFailChance || 10}" data-setting="fail-chance" min="0" max="100">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(failureSystem.baseFailChance, 10)}" data-setting="fail-chance" min="0" max="100">
                             </div>
                         </div>
                     </div>
@@ -910,7 +975,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('reductionPerLevelDesc', 'Fail chance reduction per level')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${failureSystem.failChanceReduction || 0.5}" data-setting="fail-reduction" min="0" step="0.1">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(failureSystem.failChanceReduction, 0.5)}" data-setting="fail-reduction" min="0" step="0.1">
                             </div>
                         </div>
                     </div>
@@ -932,7 +997,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('itemsLostPercentDesc', 'Percentage of materials lost on fail')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${failureSystem.losePercentOnFail || 50}" data-setting="fail-losepercent" min="0" max="100">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(failureSystem.losePercentOnFail, 50)}" data-setting="fail-losepercent" min="0" max="100">
                             </div>
                         </div>
                     </div>
@@ -970,7 +1035,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('craftingDurationDesc', 'Default crafting time in ms')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${crafting.animations?.crafting?.duration || 5000}" data-setting="anim-craft-duration" min="1000">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(crafting.animations?.crafting?.duration, 5000)}" data-setting="anim-craft-duration" min="1000">
                             </div>
                         </div>
                     </div>
@@ -1008,7 +1073,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('interactionDistanceDesc', 'Distance to interact with bench')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${interaction.interactionDistance || 2.0}" data-setting="interact-distance" min="0.5" step="0.5">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(interaction.interactionDistance, 2.0)}" data-setting="interact-distance" min="0.5" step="0.5">
                             </div>
                         </div>
                     </div>
@@ -1019,7 +1084,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('drawDistanceDesc', 'Distance to draw markers')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${interaction.drawDistance || 10.0}" data-setting="interact-drawdist" min="1" step="1">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(interaction.drawDistance, 10.0)}" data-setting="interact-drawdist" min="1" step="1">
                             </div>
                         </div>
                     </div>
@@ -1046,7 +1111,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('craftingBlipSpriteDesc', 'Blip icon for crafting benches')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${blips.crafting?.sprite || 566}" data-setting="blips-craft-sprite" min="1">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(blips.crafting?.sprite, 566)}" data-setting="blips-craft-sprite" min="1">
                             </div>
                         </div>
                     </div>
@@ -1057,7 +1122,7 @@ function renderCreatorSettings() {
                                 <div class="setting-item-desc">${t('craftingBlipColorDesc', 'Color ID for crafting blips')}</div>
                             </div>
                             <div class="setting-item-control">
-                                <input type="number" class="settings-input-inline" value="${blips.crafting?.color || 2}" data-setting="blips-craft-color" min="0">
+                                <input type="number" class="settings-input-inline" value="${valueOrDefault(blips.crafting?.color, 2)}" data-setting="blips-craft-color" min="0">
                             </div>
                         </div>
                     </div>
@@ -1156,9 +1221,11 @@ function getSettingValue(settingName, type = 'text') {
     const input = document.querySelector(`input[data-setting="${settingName}"]`);
     if (input) {
         if (type === 'number') {
-            return parseFloat(input.value) || 0;
+            const value = parseFloat(input.value);
+            return Number.isFinite(value) ? value : null;
         } else if (type === 'int') {
-            return parseInt(input.value) || 0;
+            const value = parseInt(input.value, 10);
+            return Number.isFinite(value) ? value : null;
         }
         return input.value;
     }
@@ -1179,23 +1246,23 @@ function saveGlobalSettings() {
             },
             xpSystem: {
                 enabled: getSettingValue('xp-enabled'),
-                xpPerCraft: getSettingValue('xp-percraft', 'int') || 10,
-                xpPerLevel: getSettingValue('xp-perlevel', 'int') || 100,
-                maxLevel: getSettingValue('xp-maxlevel', 'int') || 100,
-                xpBonusOnLevelUp: globalSettings?.crafting?.xpSystem?.xpBonusOnLevelUp || 50
+                xpPerCraft: valueOrDefault(getSettingValue('xp-percraft', 'int'), 10),
+                xpPerLevel: valueOrDefault(getSettingValue('xp-perlevel', 'int'), 100),
+                maxLevel: valueOrDefault(getSettingValue('xp-maxlevel', 'int'), 100),
+                xpBonusOnLevelUp: valueOrDefault(globalSettings?.crafting?.xpSystem?.xpBonusOnLevelUp, 50)
             },
             failureSystem: {
                 enabled: getSettingValue('fail-enabled'),
-                baseFailChance: getSettingValue('fail-chance', 'int') || 10,
-                failChanceReduction: getSettingValue('fail-reduction', 'number') || 0.5,
+                baseFailChance: valueOrDefault(getSettingValue('fail-chance', 'int'), 10),
+                failChanceReduction: valueOrDefault(getSettingValue('fail-reduction', 'number'), 0.5),
                 loseItemsOnFail: getSettingValue('fail-loseitems'),
-                losePercentOnFail: getSettingValue('fail-losepercent', 'int') || 50
+                losePercentOnFail: valueOrDefault(getSettingValue('fail-losepercent', 'int'), 50)
             },
             animations: {
                 crafting: {
                     dict: getSettingValue('anim-craft-dict') || 'mini@repair',
                     anim: getSettingValue('anim-craft-anim') || 'fixing_a_player',
-                    duration: getSettingValue('anim-craft-duration', 'int') || 5000
+                    duration: valueOrDefault(getSettingValue('anim-craft-duration', 'int'), 5000)
                 }
             },
             sounds: globalSettings?.crafting?.sounds || {
@@ -1207,20 +1274,20 @@ function saveGlobalSettings() {
         interaction: {
             useTarget: getSettingValue('interact-target'),
             useMarker: getSettingValue('interact-marker'),
-            interactionKey: globalSettings?.interaction?.interactionKey || 38,
-            markerType: globalSettings?.interaction?.markerType || 27,
+            interactionKey: valueOrDefault(globalSettings?.interaction?.interactionKey, 38),
+            markerType: valueOrDefault(globalSettings?.interaction?.markerType, 27),
             markerColor: globalSettings?.interaction?.markerColor || [255, 255, 255, 100],
             markerSize: globalSettings?.interaction?.markerSize || [1.0, 1.0, 0.5],
-            interactionDistance: getSettingValue('interact-distance', 'number') || 2.0,
-            drawDistance: getSettingValue('interact-drawdist', 'number') || 10.0
+            interactionDistance: valueOrDefault(getSettingValue('interact-distance', 'number'), 2.0),
+            drawDistance: valueOrDefault(getSettingValue('interact-drawdist', 'number'), 10.0)
         },
         blips: {
             enabled: getSettingValue('blips-enabled'),
             crafting: {
-                sprite: getSettingValue('blips-craft-sprite', 'int') || 566,
-                color: getSettingValue('blips-craft-color', 'int') || 2,
-                scale: globalSettings?.blips?.crafting?.scale || 0.7,
-                display: globalSettings?.blips?.crafting?.display || 4
+                sprite: valueOrDefault(getSettingValue('blips-craft-sprite', 'int'), 566),
+                color: valueOrDefault(getSettingValue('blips-craft-color', 'int'), 2),
+                scale: valueOrDefault(globalSettings?.blips?.crafting?.scale, 0.7),
+                display: valueOrDefault(globalSettings?.blips?.crafting?.display, 4)
             }
         },
         permissions: globalSettings?.permissions || {
@@ -1680,6 +1747,7 @@ function openRecipeModal(recipe = null, index = null) {
         document.getElementById('recipe-xp-reward').value = recipe.xpReward || 10;
         document.getElementById('recipe-fail-chance').value = recipe.failChance || 10;
         document.getElementById('recipe-skill-check').checked = recipe.skillCheck !== false;
+        setBlueprintInputs('recipe', recipe);
         renderIngredientsEditor(recipe.ingredients || []);
     } else {
         title.textContent = t('addRecipe', 'Add Recipe');
@@ -1693,6 +1761,7 @@ function openRecipeModal(recipe = null, index = null) {
         document.getElementById('recipe-xp-reward').value = 10;
         document.getElementById('recipe-fail-chance').value = 10;
         document.getElementById('recipe-skill-check').checked = true;
+        setBlueprintInputs('recipe', null);
         renderIngredientsEditor([]);
     }
     modal.classList.remove('hidden');
@@ -1742,6 +1811,8 @@ function saveRecipe() {
         showAlert(t('enterRecipeName', 'Please enter a recipe name'));
         return;
     }
+    const blueprint = readBlueprintInputs('recipe');
+    if (blueprint === false) return;
     const recipe = {
         name: name,
         label: label,
@@ -1756,6 +1827,7 @@ function saveRecipe() {
         failChance: parseInt(document.getElementById('recipe-fail-chance').value) || 10,
         skillCheck: document.getElementById('recipe-skill-check').checked
     };
+    if (blueprint) recipe.blueprint = blueprint;
     if (indexStr !== '') {
         currentRecipes[parseInt(indexStr)] = recipe;
     } else {
@@ -2073,6 +2145,11 @@ function craftComplete(success, data) {
     renderBenchRecipesGrid();
     lucide.createIcons();
 }
+function craftRejected(data) {
+    isBenchCrafting = false;
+    renderBenchRecipesGrid();
+    lucide.createIcons();
+}
 
 function hideCraftingOverlay() {
     isBenchCrafting = false;
@@ -2338,6 +2415,7 @@ function attachItemAutocomplete(input, onSelect) {
 function attachAutocompletesToRecipeModal() {
     const nameInput = document.getElementById('recipe-input-name');
     const resultInput = document.getElementById('recipe-result-item');
+    const blueprintInput = document.getElementById('recipe-blueprint-item');
     if (nameInput) {
         attachItemAutocomplete(nameInput, (itemName, itemData) => {
             const labelInput = document.getElementById('recipe-input-label');
@@ -2352,11 +2430,15 @@ function attachAutocompletesToRecipeModal() {
     if (resultInput) {
         attachItemAutocomplete(resultInput);
     }
+    if (blueprintInput) {
+        attachItemAutocomplete(blueprintInput);
+    }
 }
 
 function attachAutocompletesToGroupRecipeModal() {
     const nameInput = document.getElementById('group-recipe-input-name');
     const resultInput = document.getElementById('group-recipe-result-item');
+    const blueprintInput = document.getElementById('group-recipe-blueprint-item');
     if (nameInput) {
         attachItemAutocomplete(nameInput, (itemName, itemData) => {
             const labelInput = document.getElementById('group-recipe-input-label');
@@ -2370,6 +2452,9 @@ function attachAutocompletesToGroupRecipeModal() {
     }
     if (resultInput) {
         attachItemAutocomplete(resultInput);
+    }
+    if (blueprintInput) {
+        attachItemAutocomplete(blueprintInput);
     }
 }
 

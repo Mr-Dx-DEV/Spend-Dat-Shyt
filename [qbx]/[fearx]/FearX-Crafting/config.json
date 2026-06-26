@@ -9,8 +9,8 @@
             "label": "Gang Required"
         },
         "discord": {
-            "description": "Only players with specific Discord roles can use",
-            "label": "Discord Role"
+            "description": "Only players with specific Discord roles or Discord IDs can use",
+            "label": "Discord Role / ID"
         },
         "group": {
             "description": "Only specific framework groups can use",

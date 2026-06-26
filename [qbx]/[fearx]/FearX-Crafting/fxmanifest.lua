@@ -4,11 +4,10 @@ lua54 'yes'
 
 author 'FearX Scripts'
 description 'Advanced Crafting & Repair Bench Creator System'
-version '1.1.4'
+version '1.1.6'
 
 
 shared_scripts {
-    'helpers/index.js',
     '@ox_lib/init.lua',
     'locales/*.lua',
     'config/config.lua',
@@ -44,10 +43,9 @@ files {
 }
 
 dependencies {
+    'ox_lib',
     'oxmysql',
-    'fearx_bridge',
-    'object_gizmo',
-    'ox_inventory'
+    'fearx_bridge'
 }
 
 escrow_ignore {

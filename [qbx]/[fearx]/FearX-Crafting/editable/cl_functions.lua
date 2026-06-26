@@ -1,46 +1,8 @@
---[[
-    FearX-Crafting | Editable Client Functions
-    ============================================
-    This file contains client-side customizable values and functions.
-    Edit these to match your inventory system's image paths or add
-    custom weapon preview models.
-
-    These functions are loaded BEFORE core client files.
-]]
-
-----------------------------------------------------------------
--- FearXCrafting.GetItemImagePath(itemName)
--- @param itemName: string - the item name (e.g. 'water', 'weapon_pistol')
--- @return: string - full URL/path to the item's image
---
--- Default: ox_inventory image path.
--- Change this if you use a different inventory with different image paths.
---
--- Example for qs-inventory:
---   return 'nui://qs-inventory/html/images/' .. itemName .. '.png'
---
--- Example for codem-inventory:
---   return 'nui://codem-inventory/html/img/' .. itemName .. '.png'
---
--- Example for custom web URL:
---   return 'https://your-cdn.com/images/' .. itemName .. '.png'
-----------------------------------------------------------------
 function FearXCrafting.GetItemImagePath(itemName)
     local path = FearXCrafting.ItemImagePath or 'nui://ox_inventory/web/images/'
     return path .. itemName .. '.png'
 end
 
-----------------------------------------------------------------
--- FearXCrafting.ItemPropModels
--- Table mapping weapon/item names to their GTA V prop model hashes.
--- Used for the 3D weapon preview on crafting benches.
---
--- Keys: uppercase weapon name (e.g. 'WEAPON_PISTOL')
--- Values: model hash (use backtick syntax: `model_name`)
---
--- Add or remove entries to match the items available on your server.
--- If an item has no entry here, no 3D preview will be shown.
-----------------------------------------------------------------
 FearXCrafting.ItemPropModels = {
     ['WEAPON_CARBINERIFLE'] = `w_ar_carbinerifle`,
     ['WEAPON_PISTOL'] = `w_pi_pistol`,

@@ -7,6 +7,24 @@ Config.Discord = {
         "1234567890123456789",
         "1234567890123456789",
     },
+    craftingLogs = {
+        enabled = false,
+        webhook = "",
+        username = "FearX Crafting",
+        avatar = "",
+        events = {
+            success = true,
+            failed = true,
+            rejected = true,
+            cancelled = false,
+        },
+        colors = {
+            success = 5763719,
+            failed = 15548997,
+            rejected = 16776960,
+            cancelled = 5793266,
+        },
+    },
 }
 
 function Config.GetDiscordSettings()
