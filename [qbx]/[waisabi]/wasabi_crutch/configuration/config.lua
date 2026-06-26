@@ -27,8 +27,8 @@ Config.jobRequirement = { -- Job requirement settings
 }
 
 Config.maxAssignTime = { -- Max time someone can be assigned - set false if undesired(In minutes)
-    crutch = 20, -- Crutch / default: 10 minutes(set false if not desired a limit)
-    wheelchair = 20 -- Wheelchair / default: 10 minutes(set false if not desired a limit)
+    crutch = 10, -- Crutch / default: 10 minutes(set false if not desired a limit)
+    wheelchair = 10 -- Wheelchair / default: 10 minutes(set false if not desired a limit)
  }
 
 
