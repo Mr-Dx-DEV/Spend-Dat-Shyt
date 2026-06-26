@@ -5,7 +5,7 @@ Config = {}
 -- ============================================================================
 
 -- Framework Configuration
-Config.Framework = "ESX" -- Options: "ESX", "QBCORE", "QBOX"
+Config.Framework = "QBOX" -- Options: "ESX", "QBCORE", "QBOX"
 
 -- Inventory System
 Config.Inventory = "ox_inventory" -- Options: "ox_inventory", "qb-inventory", "qs-inventory", "lj-inventory", "esx_inventoryhud"
