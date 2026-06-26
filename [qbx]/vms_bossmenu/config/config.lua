@@ -154,8 +154,8 @@ Config.BossMenus = {
         job = "police",
         requireOnDuty = true,
 
-        menuCoords = vector3(448.11, -973.39, 30.69),
-        targetCoords = vector4(447.17, -974.43, 30.47, 179.1), 
+        menuCoords = vector3(477.59, -984.44, 30.39),
+        targetCoords = vector4(477.59, -984.44, 30.39, 247.46), 
         targetSize = vec3(2.92, 1.6, 1.8),
     },
     {
@@ -166,8 +166,8 @@ Config.BossMenus = {
         job = "ambulance",
         requireOnDuty = true,
 
-        menuCoords = vector3(311.8, -1424.58, 28.85),
-        targetCoords = vector4(311.8, -1424.58, 28.85, 12.0), 
+        menuCoords = vector3(300.07, -589.6, 57.84),
+        targetCoords = vector4(300.07, -589.6, 57.84, 72.02), 
         targetSize = vec3(1.8, 1.8, 2.0),
     },
     {
