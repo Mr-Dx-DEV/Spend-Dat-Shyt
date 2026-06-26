@@ -512,7 +512,7 @@ Config.Locations = {
     LSPD = {
         blip = {
             enabled = true,
-            coords = vec3(464.57, -992.0, 30.69),
+            coords = vec3(434.0, -983.0, 30.7),
             sprite = 60,
             color = 29,
             scale = 0.6,
@@ -522,7 +522,7 @@ Config.Locations = {
         clockInAndOut = {
             enabled = true,                        -- Enable clocking in and out at a set location? (If using ESX you must have a off duty job for each e.x. offpolice for police offsheriff for sheriff AND have grades for each pd grade - QBCORE REQUIRES NOTHING)
             jobLock = 'police',                    -- This must be set to which job will be utilizing (ESX MUST HAVE OFF DUTY JOB / GRADES FOR THIS - ex. offpolice or offsheriff)
-            coords = vec3(464.87, -977.37, 30.69), -- Location of where to go on and off duty(If not using target)
+            coords = vec3(440.085, -974.924, 30.689), -- Location of where to go on and off duty(If not using target)
             label = '[E] - Go On/Off Duty',        -- Text to display(If not using target)
             distance = 3.0,                        -- Distance to display text UI(If not using target)
             target = {
@@ -539,7 +539,7 @@ Config.Locations = {
         },
 
         bossMenu = {
-            enabled = true,                        -- Enable boss menu?
+            enabled = false,                        -- Enable boss menu?
             jobLock = 'police',                    -- Lock to specific police job? Set to false if not desired
             coords = vec3(460.64, -985.64, 30.73), -- Location of boss menu (If not using target)
             label = '[E] - Access Boss Menu',      -- Text UI label string (If not using target)
@@ -558,7 +558,7 @@ Config.Locations = {
         },
 
         armoury = {
-            enabled = true,                              -- Set to false if you don't want to use
+            enabled = false,                              -- Set to false if you don't want to use
             coords = vec3(480.32, -996.67, 30.69 - 0.9), -- Coords of armoury
             heading = 86.95,                             -- Heading of armoury NPC
             ped = 's_f_y_cop_01',                        -- Ped model or false for no ped
@@ -609,7 +609,7 @@ Config.Locations = {
         },
 
         cloakroom = {
-            enabled = true,                        -- WILL NOT SHOW IN QBCORE INSTEAD USE QB-CLOTHING CONFIG! Set to false if you don't want to use (Compatible with esx_skin & wasabi fivem-appearance fork)
+            enabled = false,                        -- WILL NOT SHOW IN QBCORE INSTEAD USE QB-CLOTHING CONFIG! Set to false if you don't want to use (Compatible with esx_skin & wasabi fivem-appearance fork)
             jobLock = 'police',                    -- Allow only one of Config.policeJob listings / Set to false if allow all Config.policeJobs
             coords = vec3(462.36, -999.62, 30.69), -- Coords of cloakroom
             label = '[E] - Change Clothes',        -- String of text ui of cloakroom
@@ -774,7 +774,7 @@ Config.Locations = {
 
 
         vehicles = {                                   -- Vehicle Garage
-            enabled = true,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
+            enabled = false,                            -- Enable? False if you have you're own way for medics to obtain vehicles.
             jobLock = 'police',                        -- Job lock? or access to all police jobs by using false
             zone = {
                 coords = vec3(463.69, -1019.72, 28.1), -- Area to prompt vehicle garage
