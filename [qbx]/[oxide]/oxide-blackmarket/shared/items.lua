@@ -24,6 +24,7 @@ Config.SellableItems = {
     ['meth_baggy_ice'] = { price = 375, rep = 16 },
     -- Misc
     ['phone'] = { price = 100, rep = 2 },
+    ['bleachwipes'] = { price = 100, rep = 2 },
 }
 
 -- Items available for PURCHASE from dealers (dealer sells these)
