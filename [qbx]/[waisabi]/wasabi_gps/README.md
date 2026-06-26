@@ -1,0 +1,1 @@
+https://docs.wasabiscripts.com/wasabi-scripts/free-releases/wasabi_gps
