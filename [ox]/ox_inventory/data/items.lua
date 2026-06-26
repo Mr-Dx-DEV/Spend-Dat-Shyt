@@ -1,4 +1,27 @@
 return {
+    	['handcuffs'] = {
+			label = 'Hand Cuffs',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+
+	['bobby_pin'] = {
+			label = 'Bobby Pin',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+
+	['tracking_bracelet '] = {
+			label = 'Tracking Bracelet',
+			weight = 2,
+			stack = true,
+			close = true,
+		},
+
+
+
     ["bandage"] = {      -- Make sure no duplicates exist in the original items.lua
         label = 'Bandage',
         description = 'A simple bandage to stop minor bleeding',
@@ -3617,10 +3640,6 @@ return {
         weight = 200,
     },
 
-    ['handcuffs'] = {
-        label = 'Handcuffs',
-        weight = 200,
-    },
 
 
     		['medikit'] = { -- Make sure not already a medikit
@@ -18003,15 +18022,6 @@ return {
 		stack = true,
 		close = true,
 	},
-['handcuffs'] = {
-			label = 'Hand Cuffs',
-			weight = 2,
-			stack = true,
-			close = true,
-		},
-
-	bobby_pin = { name = 'bobby_pin', label = 'Bobby Pin', weight = 5000, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
-tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', weight = 5000, type = 'item', image = 'tracking_bracelet.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used for tracking a suspect' },
 
 
 
