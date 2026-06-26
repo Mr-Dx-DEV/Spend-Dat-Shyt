@@ -501,5 +501,139 @@ return {
     },
 },
 
+    ['pizza_delivery'] = {
+        label = 'Pizza Delivery',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Delivery Driver', payment = 0 },
+        },
+    },
+
+    ['news_delivery'] = {
+        label = 'News Delivery',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'News Carrier', payment = 0 },
+        },
+    },
+
+    ['mobile_hotdog'] = {
+        label = 'Mobile Hotdog',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Vendor', payment = 0 },
+        },
+    },
+
+    ['forklifter'] = {
+        label = 'Forklifter',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Forklift Operator', payment = 0 },
+        },
+    },
+
+    ['gardener'] = {
+        label = 'Gardener',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Gardener', payment = 0 },
+        },
+    },
+
+    ['trucker'] = {
+        label = 'Trucker',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Truck Driver', payment = 0 },
+        },
+    },
+
+    ['roadhelper'] = {
+        label = 'Road Helper',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Road Worker', payment = 0 },
+        },
+    },
+
+    ['bus_driver'] = {
+        label = 'Bus Driver',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Bus Driver', payment = 0 },
+        },
+    },
+
+    ['fire_department'] = {
+        label = 'Fire Department',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Firefighter', payment = 0 },
+        },
+    },
+
+    ['hunter'] = {
+        label = 'Hunter',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Hunter', payment = 0 },
+        },
+    },
+
+    ['detectorist'] = {
+        label = 'Detectorist',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Detectorist', payment = 0 },
+        },
+    },
+
+    ['project_car'] = {
+        label = 'Project Car',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Mechanic', payment = 0 },
+        },
+    },
+
+    ['diver'] = {
+        label = 'Diver',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Diver', payment = 0 },
+        },
+    },
+
+    ['farmer'] = {
+        label = 'Farmer',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Farmer', payment = 0 },
+        },
+    },
+
+    ['electrician'] = {
+        label = 'Electrician',
+        defaultDuty = true,
+        offDutyPay = false,
+        grades = {
+            [0] = { name = 'Electrician', payment = 0 },
+        },
+    },
 
 }
