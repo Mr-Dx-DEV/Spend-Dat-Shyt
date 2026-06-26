@@ -299,11 +299,11 @@ return {
 			{ name = 'WEAPON_PDDDM416', price = 0 },
 		},
 		locations = {
-			vec4(454.34, -977.98, 30.71, 95.9),
+			vec4(465.36, -1009.72, 30.71, 0.73),
 		},
 		targets = {
-			{ loc = vec3(454.34, -977.98, 30.71), length = 0.5, width = 3.0, heading = 95.9, minZ = 29.1, maxZ = 31.9, distance = 6 },
-			{ ped = `s_m_y_cop_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(454.34, -977.98, 29.71), heading = 95.9 },
+			{ loc = vec3(465.36, -1009.72, 30.71), length = 0.5, width = 3.0, heading = 0.73, minZ = 29.1, maxZ = 31.9, distance = 6 },
+			{ ped = `s_m_y_cop_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(465.36, -1009.72, 30.71), heading = 0.73 },
 		}
 	},
 
