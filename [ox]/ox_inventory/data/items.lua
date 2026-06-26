@@ -1,4 +1,105 @@
 return {
+    ["bandage"] = {      -- Make sure no duplicates exist in the original items.lua
+        label = 'Bandage',
+        description = 'A simple bandage to stop minor bleeding',
+        weight = 25,
+        server = {
+            export = "wasabi_ambulance_v2.bandage"
+        }
+    },
+    ["medkit"] = {
+        label = 'Med-Kit',
+        description = 'A medical kit for treating injuries',
+        weight = 250,
+        server = {
+            export = "wasabi_ambulance_v2.medkit"
+        }
+    },
+    ["firstaidkit"] = {
+        label = 'First Aid Kit',
+        description = 'A comprehensive first aid kit for serious injuries',
+        weight = 350,
+        server = {
+            export = "wasabi_ambulance_v2.firstaidkit"
+        }
+    },
+    ["painkillers"] = {
+        label = 'Painkillers',
+        description = 'Pills to temporarily relieve pain and reduce stun effects',
+        weight = 10,
+        server = {
+            export = "wasabi_ambulance_v2.painkillers"
+        }
+    },
+    ["ifak"] = {
+        label = 'IFAK',
+        description = 'Individual First Aid Kit',
+        weight = 150,
+        server = {
+            export = "wasabi_ambulance_v2.ifak"
+        }
+    },
+
+    -- =====================================
+    -- MEDICAL TREATMENT ITEMS (uses medicalItems config)
+    -- These are used via the inspection UI by dragging onto limbs
+    -- They do NOT have exports - the UI system handles their usage
+    -- Wasabi Advanced Ambulance
+    -- =====================================
+    ["forceps"] = {
+        label = 'Forceps',
+        description = 'Used to treat gunshot wounds',
+        weight = 100,
+    },
+    ["pliers"] = {
+        label = 'Pliers',
+        description = 'Used to treat taser prong wounds',
+        weight = 25,
+    },
+    ["suture"] = {
+        label = 'Suture',
+        description = 'Used to treat cuts',
+        weight = 25,
+    },
+    ["splint"] = {
+        label = 'Splint',
+        description = 'Used to treat broken bones',
+        weight = 50,
+    },
+    ["icepack"] = {
+        label = 'Ice Pack',
+        description = 'Used to treat punches and bruises',
+        weight = 25,
+    },
+    ["traumakit"] = {
+        label = 'Trauma Kit',
+        description = 'Used to treat blunt force trauma',
+        weight = 75,
+    },
+    ["burncream"] = {
+        label = 'Burn Cream',
+        description = 'Used to treat burns',
+        weight = 10,
+    },
+
+    -- =====================================
+    -- EQUIPMENT ITEMS
+    -- Wasabi Advanced Ambulance
+    -- =====================================
+    ["medbag"] = {
+        label = 'Medbag',
+        description = 'A portable medical bag containing supplies',
+        weight = 50,
+        stack = false,
+        close = true,
+        consume = 0,
+        server = {
+            export = "wasabi_ambulance_v2.medbag"
+        }
+    },
+
+
+
 
 
 -- Recipe Book
@@ -2963,10 +3064,6 @@ return {
         client = { image = 'name_change_form.png' }
     },
 
-    ['bandage'] = {
-        label = 'Bandage',
-        weight = 115,
-    },
 
     ['burger'] = {
         label = 'Burger',
@@ -3308,10 +3405,7 @@ return {
         weight = 5000,
     },
 
-    ['painkillers'] = {
-        label = 'Painkillers',
-        weight = 400,
-    },
+
 
     ['firework1'] = {
         label = '2Brothers',
@@ -3536,17 +3630,7 @@ return {
 			close = true,
 		},
 
-         ["medbag"] = {
-        label = 'Medbag',
-        description = 'A portable medical bag containing supplies',
-        weight = 50,
-        stack = false,
-        close = true,
-        consume = 0,
-        server = {
-            export = "wasabi_ambulance_v2.medbag"
-        }
-    },
+
 
 		['tweezers'] = {
 			label = 'Tweezers',
@@ -3562,19 +3646,7 @@ return {
 			close = true,
 		},
 
-		['icepack'] = {
-			label = 'Ice Pack',
-			weight = 29,
-			stack = true,
-			close = true,
-		},
 
-		['burncream'] = {
-			label = 'Burn Cream',
-			weight = 19,
-			stack = true,
-			close = true,
-		},
 
 		['defib'] = {
 			label = 'Defibrillator',
@@ -17943,89 +18015,6 @@ tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', 
 
 
 
- ["bandage"] = {      -- Make sure no duplicates exist in the original items.lua
-        label = 'Bandage',
-        description = 'A simple bandage to stop minor bleeding',
-        weight = 25,
-        server = {
-            export = "wasabi_ambulance_v2.bandage"
-        }
-    },
-    ["medkit"] = {
-        label = 'Med-Kit',
-        description = 'A medical kit for treating injuries',
-        weight = 500,
-        server = {
-            export = "wasabi_ambulance_v2.medkit"
-        }
-    },
-    ["firstaidkit"] = {
-        label = 'First Aid Kit',
-        description = 'A comprehensive first aid kit for serious injuries',
-        weight = 350,
-        server = {
-            export = "wasabi_ambulance_v2.firstaidkit"
-        }
-    },
-    ["painkillers"] = {
-        label = 'Painkillers',
-        description = 'Pills to temporarily relieve pain and reduce stun effects',
-        weight = 10,
-        server = {
-            export = "wasabi_ambulance_v2.painkillers"
-        }
-    },
-    ["ifak"] = {
-        label = 'IFAK',
-        description = 'Individual First Aid Kit',
-        weight = 150,
-        server = {
-            export = "wasabi_ambulance_v2.ifak"
-        }
-    },
-
-    -- =====================================
-    -- MEDICAL TREATMENT ITEMS (uses medicalItems config)
-    -- These are used via the inspection UI by dragging onto limbs
-    -- They do NOT have exports - the UI system handles their usage
-    -- Wasabi Advanced Ambulance
-    -- =====================================
-    ["forceps"] = {
-        label = 'Forceps',
-        description = 'Used to treat gunshot wounds',
-        weight = 100,
-    },
-    ["pliers"] = {
-        label = 'Pliers',
-        description = 'Used to treat taser prong wounds',
-        weight = 25,
-    },
-    ["suture"] = {
-        label = 'Suture',
-        description = 'Used to treat cuts',
-        weight = 25,
-    },
-    ["splint"] = {
-        label = 'Splint',
-        description = 'Used to treat broken bones',
-        weight = 50,
-    },
-    ["icepack"] = {
-        label = 'Ice Pack',
-        description = 'Used to treat punches and bruises',
-        weight = 25,
-    },
-    ["traumakit"] = {
-        label = 'Trauma Kit',
-        description = 'Used to treat blunt force trauma',
-        weight = 75,
-    },
-    ["burncream"] = {
-        label = 'Burn Cream',
-        description = 'Used to treat burns',
-        weight = 10,
-    },
-
     -- =====================================
     -- EQUIPMENT ITEMS
     -- Wasabi Advanced Ambulance
@@ -18050,9 +18039,8 @@ tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', 
 ['plastic'] = { label = 'Plastic', weight = 100, stack = true },
 ['glass'] = { label = 'Glass', weight = 100, stack = true },
 ['copperwire'] = { label = 'Copper Wire', weight = 100, stack = true },
-['bandage'] = { label = 'Bandage', weight = 100, stack = true },
-['painkiller'] = { label = 'Painkiller', weight = 100, stack = true },
-['medkit'] = { label = 'Medkit', weight = 100, stack = true },
+
+
 ['adrenaline'] = { label = 'Adrenaline', weight = 100, stack = true },
 ['unpacked_coke'] = { label = 'Unpacked Coke', weight = 1000, stack = true },
 ['cutted_coke'] = { label = 'Cutted Coke', weight = 1000, stack = true },
@@ -23514,13 +23502,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
     close = true,
     description = 'Sterile injection syringe.'
 },
-['painkillers'] = {
-    label = 'Painkillers',
-    weight = 30,
-    stack = true,
-    close = true,
-    description = 'Strong prescription painkillers.'
-},
+
 ['sterile_gauze'] = {
     label = 'Sterile Gauze',
     weight = 40,
@@ -23595,26 +23577,26 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		close = true,
 	},
 
-    ['cheque_common'] = { 
-	label = 'Fleeca Bank Cheque', 
+    ['cheque_common'] = {
+	label = 'Fleeca Bank Cheque',
 	weight = 1,
 	stack = true
 },
 
-['cheque_blaine'] = { 
-	label = 'Blaine Country Cheque', 
+['cheque_blaine'] = {
+	label = 'Blaine Country Cheque',
 	weight = 1,
 	stack = true
 },
 
-['cheque_ultra_rare'] = { 
-	label = 'Maze Bank Cheque', 
+['cheque_ultra_rare'] = {
+	label = 'Maze Bank Cheque',
 	weight = 1,
 	stack = true
 },
 
-['cheque_rare'] = { 
-	label = 'Union Depo Cheque', 
+['cheque_rare'] = {
+	label = 'Union Depo Cheque',
 	weight = 1,
 	stack = true
 },
