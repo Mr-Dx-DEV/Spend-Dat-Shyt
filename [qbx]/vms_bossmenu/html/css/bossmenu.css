@@ -1,0 +1,1715 @@
+.bossmenu {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: margin 0.4s;
+}
+
+.bossmenu.inClothesManage {
+    margin-left: -14em;
+}
+
+.bossmenu>div {
+    display: none;
+    position: relative;
+    width: 80em;
+    height: 50em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.bossmenu>div::before,
+.bossmenu>div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.bossmenu>div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.bossmenu>div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.bossmenu>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.bossmenu>div>.header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.bossmenu>div>.header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bossmenu>div>.header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.bossmenu>div>.menu {
+    position: relative;
+    display: grid;
+    grid-template-columns: 15em auto;
+    column-gap: 1em;
+    width: 100%;
+    height: 93%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.bossmenu .menu .side-bar {
+    position: relative;
+    width: 15em;
+    height: 44.5em;
+    padding: 0.6em;
+    background: var(--submenu-background);
+    border-radius: 0.5em;
+    overflow-y: overlay;
+}
+
+.bossmenu .menu .side-bar>.button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    background: var(--submenu-background);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.bossmenu .menu .side-bar>.button.selected {
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu .menu .side-bar>.button>.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-color);
+    border-radius: 0.5em;
+    max-height: 3em;
+    height: 3em;
+    min-height: 3em;
+    max-width: 3em;
+    width: 3em;
+    min-width: 3em;
+}
+
+.bossmenu .menu .side-bar>.button.selected>.icon-box {
+    background: var(--main-color-active);
+}
+
+.bossmenu .menu .side-bar>.button>.icon-box>i {
+    font-size: 1.35em;
+}
+
+.bossmenu .menu .side-bar>.button>.name {
+    margin-left: 0.75em;
+    width: 10em;
+}
+
+.bossmenu .menu .side-bar>.button>.name>.title {
+    margin-bottom: 0;
+    font-weight: 700;
+
+}
+
+.bossmenu .menu .side-bar>.button>.name>.description {
+    margin-bottom: 0;
+    font-size: 0.75em;
+    font-weight: 400;
+    color: rgb(197, 197, 197);
+    line-height: 1.0;
+}
+
+.bossmenu .table-first {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    padding-left: 1em;
+}
+
+.bossmenu .table-last {
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    padding-right: 1em;
+    width: 7em;
+}
+
+.bossmenu table tbody div {
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    position: relative;
+    font-weight: 600;
+    padding-inline: 1.0em;
+    padding-block: 0.1em;
+    width: auto;
+    text-align: center;
+    border-radius: 0.3em;
+    cursor: pointer;
+    margin-inline: auto;
+    transition: 0.2s;
+    z-index: 50000;
+}
+
+.bossmenu table tbody div:hover {
+    background: var(--main-color-hover);
+}
+
+.bossmenu table tbody div:active {
+    background: var(--main-color-active);
+}
+
+
+/*
+    MAIN
+*/
+.bossmenu .menu .main {
+    position: relative;
+    height: 44.5em;
+    border-radius: 0.5em;
+    background: var(--submenu-background);
+}
+
+
+.bossmenu div[data-type="main"],
+.bossmenu div[data-type="employees"],
+.bossmenu div[data-type="grades"],
+.bossmenu div[data-type="grades-manage"],
+.bossmenu div[data-type="clothing"],
+.bossmenu div[data-type="clothing-manage"],
+.bossmenu div[data-type="safe"],
+.bossmenu div[data-type="safe-manage"],
+.bossmenu div[data-type="safe-transactions"],
+.bossmenu div[data-type="announcements"] {
+    display: none;
+    position: relative;
+    padding: 1em;
+    overflow: hidden;
+    height: 98%;
+}
+
+.bossmenu div[data-type="main"]>div,
+.bossmenu div[data-type="employees"]>div,
+.bossmenu div[data-type="grades"]>div,
+.bossmenu div[data-type="grades-manage"]>div,
+.bossmenu div[data-type="clothing"]>div,
+.bossmenu div[data-type="clothing-manage"]>div,
+.bossmenu div[data-type="safe"]>div,
+.bossmenu div[data-type="safe-manage"]>div,
+.bossmenu div[data-type="safe-transactions"]>div,
+.bossmenu div[data-type="announcements"]>div {
+    position: absolute;
+    overflow: hidden;
+    width: 60em;
+    height: 42.5em;
+    border-radius: 0.5em;
+}
+
+.bossmenu div[data-type="safe-transactions"]>div {
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu div[data-type="main"]>div>i,
+.bossmenu div[data-type="employees"]>div>i,
+.bossmenu div[data-type="grades"]>div>i,
+.bossmenu div[data-type="grades-manage"]>div>i,
+.bossmenu div[data-type="clothing"]>div>i,
+.bossmenu div[data-type="clothing-manage"]>div>i,
+.bossmenu div[data-type="safe"]>div>i,
+.bossmenu div[data-type="safe-manage"]>div>i,
+.bossmenu div[data-type="safe-transactions"]>div>i,
+.bossmenu div[data-type="announcements"]>div>i {
+    position: absolute;
+    z-index: 0;
+    font-size: 10em;
+    opacity: 0.2;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px #00000040;
+    transform: skew(-25deg, 25deg);
+    top: 0.1em;
+    right: 0.2em;
+}
+
+
+.bossmenu div[data-type="business-taxes-company"] .text,
+.bossmenu div[data-type="employees"] .text,
+.bossmenu div[data-type="grades"] .text,
+.bossmenu div[data-type="grades-manage"] .text,
+.bossmenu div[data-type="clothing"] .text,
+.bossmenu div[data-type="clothing-manage"] .text,
+.bossmenu div[data-type="safe"] .text,
+.bossmenu div[data-type="safe-manage"] .text,
+.bossmenu div[data-type="safe-transactions"] .text {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.bossmenu div[data-type="main"] .header,
+.bossmenu div[data-type="employees"] .header,
+.bossmenu div[data-type="grades"] .header,
+.bossmenu div[data-type="grades-manage"] .header,
+.bossmenu div[data-type="clothing"] .header,
+.bossmenu div[data-type="clothing-manage"] .header,
+.bossmenu div[data-type="safe"] .header,
+.bossmenu div[data-type="safe-manage"] .header,
+.bossmenu div[data-type="safe-transactions"] .header,
+.bossmenu div[data-type="announcements"] .header {
+    z-index: 5;
+    font-size: 1em;
+    font-weight: 300;
+    color: rgb(183, 183, 183);
+}
+
+.bossmenu div[data-type="main"] .title,
+.bossmenu div[data-type="employees"] .title,
+.bossmenu div[data-type="grades"] .title,
+.bossmenu div[data-type="grades-manage"] .title,
+.bossmenu div[data-type="clothing"] .title,
+.bossmenu div[data-type="clothing-manage"] .title,
+.bossmenu div[data-type="safe"] .title,
+.bossmenu div[data-type="safe-manage"] .title,
+.bossmenu div[data-type="safe-transactions"] .title,
+.bossmenu div[data-type="announcements"] .title {
+    z-index: 5;
+    line-height: 1;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.bossmenu .side-boxes>.box>i {
+    position: absolute;
+    z-index: 0;
+    font-size: 10em;
+    opacity: 0.2;
+    color: rgb(255, 255, 255);
+    text-shadow: 0px 0px 15px #00000040;
+    transform: skew(-25deg, 25deg);
+    top: -0.1em;
+    right: 0.2em;
+}
+
+.bossmenu div .btn {
+    width: fit-content;
+    min-width: 7em;
+    line-height: 1;
+    height: 2em;
+    background: var(--main-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.bossmenu div .btn:hover {
+    background: var(--main-color-hover);
+}
+
+.bossmenu div .btn:active {
+    background: var(--main-color-active);
+}
+
+/* 
+
+     ██████╗ ██████╗  █████╗ ██████╗ ███████╗███████╗
+    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝
+    ██║  ███╗██████╔╝███████║██║  ██║█████╗  ███████╗
+    ██║   ██║██╔══██╗██╔══██║██║  ██║██╔══╝  ╚════██║
+    ╚██████╔╝██║  ██║██║  ██║██████╔╝███████╗███████║
+     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝
+
+*/
+
+.bossmenu div[data-type="grades"]>div>.side-boxes>.box[data-type="list"],
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>.box[data-type="grade"],
+.bossmenu div[data-type="clothing"]>div>.side-boxes>.box[data-type="list"],
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="clothes"] {
+    position: absolute;
+    background: var(--submenu-background-selected);
+    padding: 1em;
+    border-radius: 0.3em;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list,
+.bossmenu div[data-type="grades"]>div>.side-boxes>div[data-type="list"]>.grades-list {
+    display: grid;
+    grid-template-columns: 18.6em 18.6em 18.6em;
+    grid-template-rows: min-content;
+    gap: 1em;
+    margin-top: 1em;
+    overflow: overlay;
+    max-height: 36em;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div,
+.bossmenu div[data-type="grades"]>div>.side-boxes>div[data-type="list"]>.grades-list>div {
+    position: relative;
+    overflow: hidden;
+    height: 7em;
+    background: var(--submenu-background);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+    z-index: 5000;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div>.title,
+.bossmenu div[data-type="grades"]>div>.side-boxes>div[data-type="list"]>.grades-list>div>.title {
+    font-weight: 700;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.bossmenu div[data-type="grades"]>div>.side-boxes>div[data-type="list"]>.grades-list>div>.title>span {
+    font-weight: 700;
+    color: #ffffff9e;
+    background: #0000002e;
+    padding-block: 0.4em;
+    padding-inline: 0.6em;
+    border-radius: 0.4em;
+    font-size: 0.7em;
+    margin-right: 0.5em;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div>.btn,
+.bossmenu div[data-type="grades"]>div>.side-boxes>div[data-type="list"]>.grades-list>div>.btn {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+/* 
+
+     ██████╗ ██████╗  █████╗ ██████╗ ███████╗███████╗    ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗
+    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██╔════╝██╔════╝    ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝
+    ██║  ███╗██████╔╝███████║██║  ██║█████╗  ███████╗    ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  
+    ██║   ██║██╔══██╗██╔══██║██║  ██║██╔══╝  ╚════██║    ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  
+    ╚██████╔╝██║  ██║██║  ██║██████╔╝███████╗███████║    ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗
+     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝     ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+*/
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data {
+    margin-top: 2em;
+    width: 26em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#label-settings>.settings,
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#salary-settings>.settings {
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#salary-settings {
+    margin-top: 2em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#label-settings>.settings>.description,
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#salary-settings>.settings>.description {
+    color: var(--secondary-text-color);
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#label-settings>.settings>input,
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#salary-settings>.settings>input {
+    height: 2em;
+    font-weight: 600;
+    z-index: 5;
+    color: white;
+    padding-inline: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    outline: none;
+    border-right: 0;
+    background: var(--submenu-background-selected);
+    font-size: 1.3em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#label-settings>.settings>.btn,
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data>#salary-settings>.settings>.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 2.6em;
+    line-height: 1.8;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2 {
+    width: 30em;
+    margin-top: 2em;
+    left: 28em;
+    position: absolute;
+    top: 4.5em;
+    height: 34em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings {
+    height: 28em;
+    overflow: overlay;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>.btn {
+    display: block !important;
+    position: absolute !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>p {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 1.35em;
+    color: var(--secondary-text-color);
+    margin-top: 0.5em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>div {
+    display: grid;
+    grid-template-columns: 10em 10em 10em;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>div>div {
+    display: flex;
+    align-items: center;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>div>div>label {
+    scale: 0.6;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings>.settings>div>div>p {
+    margin-bottom: 0;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+.bossmenu div[data-type="grades-manage"]>div>.side-boxes>div[data-type="grade"]>.data2>#permissions-settings hr {
+    margin-block: 0.5em;
+}
+
+
+
+/*
+
+     ██████╗██╗      ██████╗ ████████╗██╗  ██╗███████╗███████╗
+    ██╔════╝██║     ██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔════╝
+    ██║     ██║     ██║   ██║   ██║   ███████║█████╗  ███████╗
+    ██║     ██║     ██║   ██║   ██║   ██╔══██║██╔══╝  ╚════██║
+    ╚██████╗███████╗╚██████╔╝   ██║   ██║  ██║███████╗███████║
+     ╚═════╝╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝
+
+*/
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>.add-new {
+    opacity: 0.7;
+    transition: 0.2s
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>.add-new:hover {
+    opacity: 1.0;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>.add-new>.create-new {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 2.4em;
+    opacity: 0.8;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div>.title>span {
+    font-weight: 700;
+    color: #ffffff9e;
+    padding-block: 0.4em;
+    padding-inline: 0.6em;
+    border-radius: 0.4em;
+    font-size: 0.7em;
+    margin-right: 0.5em;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list #btn[data-option="clothing_delete"] {
+    position: absolute;
+    text-align: center;
+    width: 2em;
+    line-height: 2;
+    height: 2em;
+    background: var(--close-color);
+    color: var(--primary-text-color);
+    border-radius: 6px;
+    cursor: pointer;
+    left: 1em;
+    bottom: 1em;
+    transition: 0.25s;
+    opacity: 0.5;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list #btn[data-option="clothing_delete"]:hover {
+    opacity: 1.0;
+    background: var(--close-color-hover);
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list #btn[data-option="clothing_delete"]:active {
+    background: var(--close-color-active);
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div>.title>span.male {
+    background: #3f98c82e;
+}
+
+.bossmenu div[data-type="clothing"]>div>.side-boxes>div[data-type="list"]>.clothing-list>div>.title>span.female {
+    background: #c147ab2e;
+}
+
+
+
+
+/*
+     ██████╗██╗      ██████╗ ████████╗██╗  ██╗███████╗███████╗    ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗
+    ██╔════╝██║     ██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔════╝    ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝
+    ██║     ██║     ██║   ██║   ██║   ███████║█████╗  ███████╗    ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  
+    ██║     ██║     ██║   ██║   ██║   ██╔══██║██╔══╝  ╚════██║    ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  
+    ╚██████╗███████╗╚██████╔╝   ██║   ██║  ██║███████╗███████║    ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗
+     ╚═════╝╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+*/
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="settings"] {
+    position: absolute;
+    right: 0;
+    position: absolute;
+    width: 20em;
+    height: 100%;
+    background: var(--submenu-background-selected);
+    padding: 1em;
+    border-radius: 0.3em;
+    overflow: hidden;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="settings"]>.data {
+    position: relative;
+    height: 34.5em;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 0.4em;
+    background: #58585814;
+    backdrop-filter: var(--blur);
+    overflow: overlay;
+    z-index: 1;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="settings"]>.data>div {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="settings"]>.data>div>div {
+    font-size: 1.15em;
+    font-weight: 500;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="settings"]>.buttons {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+}
+
+
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="clothes"] {
+    width: 39em !important;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="clothes"] > .title > input {
+    background: #fdfdfd0a;
+    border: 1px solid #ffffff36;
+    border-radius: 0.2em;
+    backdrop-filter: var(--blur);
+    z-index: 50000000;
+    position: relative;
+    margin-left: 0.1em;
+    padding-inline: 0.3em;
+    font-weight: 700;
+    color: white;
+    outline: none;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>.box[data-type="clothes"] > .title > input.required {
+    animation: pulseEffect 2s forwards;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data {
+    display: grid;
+    grid-template-columns: 18em 18em;
+    grid-template-rows: min-content;
+    gap: 1em;
+    margin-top: 1em;
+    overflow: overlay;
+    height: 36em;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div {
+    position: relative;
+    overflow: hidden;
+    height: 7.6em;
+    background: var(--submenu-background);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    line-height: 1.2;
+    z-index: 5000;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: opacity 0.3s;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div.disabled {
+    opacity: 0.5;
+}
+
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div > .custom-checkbox {
+    position: absolute;
+    top: 0.35em;
+    right: 0.35em;
+    scale: 0.75;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>img {
+    filter: invert(1);
+    width: 2.5em;
+    height: 1.8em;
+    opacity: 0.35;
+    position: absolute;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>p {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-left: 2.4em;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* .bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div {} */
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div {
+    display: flex;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>.label {
+    align-items: center;
+    justify-content: space-between;
+    color: var(--secondary-text-color);
+    opacity: 0.7;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>.label>p {
+    margin-bottom: 0.3em;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#left,
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#right {
+    width: 1.8em;
+    background: var(--submenu-background-selected);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid solid solid;
+    border-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.25);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div.disabled>div>div>div>div#left,
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div.disabled>div>div>div>div#right {
+    cursor: none !important;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#left:hover,
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#right:hover {
+    background: var(--submenu-background);
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#left {
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border-right: 0;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>div#right {
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    border-left: 0;
+}
+
+.bossmenu div[data-type="clothing-manage"]>div>.side-boxes>div[data-type="clothes"]>.data>div>div>div>div>input {
+    width: 3em;
+    text-align: center;
+    font-weight: 600;
+    z-index: 5;
+    color: white;
+    font-size: 1.3em;
+    padding-inline: 0.3em;
+    border-width: 1px 0px 1px 1px;
+    border-style: solid solid solid;
+    border-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.25);
+    outline: none;
+    border-inline: 0;
+    background: var(--submenu-background-selected);
+}
+
+
+/*
+
+     ██████╗██╗      ██████╗ ████████╗██╗  ██╗██╗███╗   ██╗ ██████╗      ██████╗██████╗ ███████╗ █████╗ ████████╗███████╗
+    ██╔════╝██║     ██╔═══██╗╚══██╔══╝██║  ██║██║████╗  ██║██╔════╝     ██╔════╝██╔══██╗██╔════╝██╔══██╗╚══██╔══╝██╔════╝
+    ██║     ██║     ██║   ██║   ██║   ███████║██║██╔██╗ ██║██║  ███╗    ██║     ██████╔╝█████╗  ███████║   ██║   █████╗  
+    ██║     ██║     ██║   ██║   ██║   ██╔══██║██║██║╚██╗██║██║   ██║    ██║     ██╔══██╗██╔══╝  ██╔══██║   ██║   ██╔══╝  
+    ╚██████╗███████╗╚██████╔╝   ██║   ██║  ██║██║██║ ╚████║╚██████╔╝    ╚██████╗██║  ██║███████╗██║  ██║   ██║   ███████╗
+     ╚═════╝╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝
+
+*/
+.bossmenu>div>.menu>.select-clothing-gender {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: var(--blur);
+    z-index: 500000;
+    display: none;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div {
+    display: none;
+    position: relative;
+    width: 38em;
+    height: 16em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1em;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.header>p.name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.header>div.back-to-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 50000;
+    padding: 1em;
+    background: var(--submenu-background);
+    margin: 1em;
+    border-radius: 0.3em;
+    width: 36em;
+    height: 10.5em;
+    overflow-y: overlay;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.menu > div {
+    width: 8em;
+    padding-block: 0.6em;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.menu > div[data-gender="0"] {
+    background: #3f98c82e;
+}
+
+.bossmenu>div>.menu>.select-clothing-gender>div>.menu > div[data-gender="1"] {
+    background: #c147ab2e;
+}
+
+
+
+/*
+
+    ███████╗ █████╗ ███████╗███████╗
+    ██╔════╝██╔══██╗██╔════╝██╔════╝
+    ███████╗███████║█████╗  █████╗  
+    ╚════██║██╔══██║██╔══╝  ██╔══╝  
+    ███████║██║  ██║██║     ███████╗
+    ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝
+
+*/
+
+.bossmenu div[data-type="safe"]>div>.side-boxes>.box[data-type="balance"],
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance"],
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-account-name"] {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    width: 60em;
+    height: 11.5em;
+}
+
+.bossmenu.noSafeBalance div[data-type="safe"]>div>.side-boxes>.box[data-type="balance"] {
+    display: none;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance"] {
+    width: 36em;
+}
+
+.bossmenu.noAccouneName div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance"] {
+    width: 100%;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-account-name"] {
+    right: 0;
+    width: 23em;
+}
+
+.bossmenu.noAccouneName div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-account-name"] {
+    display: none;
+}
+
+.bossmenu div[data-type="safe"]>div>.side-boxes>.box[data-type="balance"] .buttons {
+    right: 1em;
+    position: absolute;
+    bottom: 1em;
+    z-index: 5;
+}
+
+.bossmenu.noSafeWithdraw.noSafeDeposit.noSafeTransfer div[data-type="safe"]>div>.side-boxes>.box[data-type="balance"] .buttons {
+    display: none;
+}
+
+.bossmenu div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] {
+    position: absolute;
+    width: 60em;
+    height: 30em;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    right: 0;
+    bottom: 0;
+}
+
+.bossmenu.noSafeBalance div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] {
+    height: 43em;
+}
+
+.bossmenu div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] .buttons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: fit-content;
+    z-index: 5;
+    top: 1.9em;
+    right: 1em;
+}
+
+.bossmenu.noSafeTransactions div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] .buttons {
+    display: none;
+}
+
+.bossmenu div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] .chart {
+    position: absolute;
+    left: 1em;
+    top: 5.5em;
+    width: 58em;
+    height: 23.5em;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+    overflow: hidden;
+}
+
+.bossmenu.noSafeBalance div[data-type="safe"]>div>.side-boxes>.box[data-type="balance-chart"] .chart {
+    height: 36.5em;
+}
+
+
+
+/*
+
+    ███████╗ █████╗ ███████╗███████╗    ███╗   ███╗ █████╗ ███╗   ██╗ █████╗  ██████╗ ███████╗
+    ██╔════╝██╔══██╗██╔════╝██╔════╝    ████╗ ████║██╔══██╗████╗  ██║██╔══██╗██╔════╝ ██╔════╝
+    ███████╗███████║█████╗  █████╗      ██╔████╔██║███████║██╔██╗ ██║███████║██║  ███╗█████╗  
+    ╚════██║██╔══██║██╔══╝  ██╔══╝      ██║╚██╔╝██║██╔══██║██║╚██╗██║██╔══██║██║   ██║██╔══╝  
+    ███████║██║  ██║██║     ███████╗    ██║ ╚═╝ ██║██║  ██║██║ ╚████║██║  ██║╚██████╔╝███████╗
+    ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+
+*/
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"] {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    width: 25em;
+    top: 12.5em;
+    height: 17em;
+}
+
+.bossmenu.noSafeWithdraw.noSafeDeposit div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"] {
+    display: none;
+}
+
+.bossmenu.noSafeTransactions div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"] {
+    height: 30em;
+}
+
+.bossmenu.noSafeTransfer div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"] {
+    width: 100%;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>label {
+    margin-left: 1em;
+    position: absolute;
+    top: 6.4em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>input {
+    margin-left: 0.5em;
+    position: absolute;
+    top: 4em;
+    height: 2em;
+    width: 11.5em;
+    font-size: 2em;
+    font-weight: 600;
+    outline: none;
+    padding-inline: 0.3em;
+    z-index: 5;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: block;
+    border-radius: 0.25em;
+    outline: none;
+    backdrop-filter: var(--blur);
+    background: var(--submenu-background-selected);
+    color: white;
+}
+
+.bossmenu.noSafeTransfer div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>input {
+    width: 29em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>.buttons {
+    margin-inline: 1em;
+    width: 23em;
+    display: flex;
+    justify-content: space-between;
+    bottom: 1em;
+    position: absolute;
+}
+
+.bossmenu.noSafeWithdraw div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>.buttons > .btn[data-option="withdraw"] {
+    display: none;
+}
+
+.bossmenu.noSafeDeposit div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>.buttons > .btn[data-option="deposit"] {
+    display: none;
+}
+
+.bossmenu.noSafeTransfer div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-internal"]>.buttons {
+    width: 58em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transactions"] {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    width: 25em;
+    height: 12em;
+    bottom: 0em;
+}
+
+.bossmenu.noSafeTransfer:not(.noSafeTransactions) div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transactions"] {
+    width: 60em;
+}
+
+.bossmenu.noSafeWithdraw.noSafeDeposit div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transactions"] {
+    height: 30em;
+}
+
+.bossmenu.noSafeTransactions div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transactions"] {
+    display: none;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transactions"]>.buttons {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"] {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    height: 30em;
+    right: 0;
+    width: 34em;
+    bottom: 0;
+}
+
+.bossmenu.noSafeTransfer div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"] {
+    display: none;
+}
+
+.bossmenu.noSafeWithdraw.noSafeDeposit.noSafeTransactions div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"] {
+    width: 100%;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"]>.data {
+    margin-left: 1em;
+    margin-top: 3em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"]>.data>label {
+    font-weight: 600;
+    opacity: 0.7;
+    margin-bottom: 0.2em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"]>.data>input {
+    display: block;
+    top: 4em;
+    height: 2em;
+    width: 21.3em;
+    font-size: 1.5em;
+    font-weight: 600;
+    z-index: 5;
+    backdrop-filter: var(--blur);
+    color: white;
+    padding-inline: 0.3em;
+    border-radius: 0.25em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-image: initial;
+    outline: none;
+    background: var(--submenu-background-selected);
+    margin-bottom: 1em;
+}
+
+.bossmenu.noSafeWithdraw.noSafeDeposit.noSafeTransactions div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"]>.data>input {
+    width: 38.6em;
+}
+
+.bossmenu div[data-type="safe-manage"]>div>.side-boxes>.box[data-type="balance-transfer"]>.buttons {
+    width: 23em;
+    display: flex;
+    bottom: 1em;
+    margin-left: 1em;
+    position: absolute;
+}
+
+
+
+/* 
+
+    ███████╗ █████╗ ███████╗███████╗    ████████╗██████╗  █████╗ ███╗   ██╗███████╗ █████╗  ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
+    ██╔════╝██╔══██╗██╔════╝██╔════╝    ╚══██╔══╝██╔══██╗██╔══██╗████╗  ██║██╔════╝██╔══██╗██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+    ███████╗███████║█████╗  █████╗         ██║   ██████╔╝███████║██╔██╗ ██║███████╗███████║██║        ██║   ██║██║   ██║██╔██╗ ██║███████╗
+    ╚════██║██╔══██║██╔══╝  ██╔══╝         ██║   ██╔══██╗██╔══██║██║╚██╗██║╚════██║██╔══██║██║        ██║   ██║██║   ██║██║╚██╗██║╚════██║
+    ███████║██║  ██║██║     ███████╗       ██║   ██║  ██║██║  ██║██║ ╚████║███████║██║  ██║╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║
+    ╚══════╝╚═╝  ╚═╝╚═╝     ╚══════╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+
+*/
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block {
+    position: absolute;
+    left: 1em;
+    top: 5.5em;
+    width: 58em;
+    height: 36em;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table {
+    width: 100%;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table>thead {
+    height: 2em;
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table tbody>tr {
+    height: 2.85em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table thead tr th:first-child {
+    padding-left: 1em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table thead tr th:last-child {
+    padding-right: 1em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table tbody tr td:first-child {
+    padding-left: 1em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table tbody tr td:last-child {
+    padding-right: 1em;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-withdraw,
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-deposit,
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-transfer_outgoing,
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-transfer_incoming,
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-tax_payment,
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-payout {
+    border-radius: 0.4em;
+    width: fit-content;
+    height: 1.5em;
+    padding: 0.2em 0.5em;
+    font-weight: 700;
+}
+
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-withdraw {
+    background: rgba(255, 63, 63, 0.08);
+    color: rgb(200, 51, 51);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-deposit {
+    background: rgba(79, 255, 144, 0.08);
+    color: rgb(54, 177, 99);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-transfer_outgoing {
+    background: rgba(66, 97, 255, 0.08);
+    color: rgb(52, 73, 175);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-transfer_incoming {
+    background: rgba(134, 225, 255, 0.08);
+    color: rgb(83, 143, 163);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-tax_payment {
+    background: rgba(255, 219, 113, 0.08);
+    color: rgb(160, 138, 73);
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#transactions-table .transaction-type-payout {
+    background: rgba(147, 255, 123, 0.08);
+    color: rgb(89, 160, 73);
+}
+
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#pagination {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#pagination>#prev-page {
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 0.4em;
+    transition: 200ms;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#pagination>#page-info {
+    width: 9em;
+    display: block;
+    text-align: center;
+}
+
+.bossmenu div[data-type="safe-transactions"] .transactions-block>#pagination>#next-page {
+    width: 2.5em;
+    height: 2.5em;
+    border: none;
+    border-radius: 0.4em;
+    transition: 200ms;
+}
+
+
+
+/* 
+
+    ███████╗███╗   ███╗██████╗ ██╗      ██████╗ ██╗   ██╗███████╗███████╗███████╗
+    ██╔════╝████╗ ████║██╔══██╗██║     ██╔═══██╗╚██╗ ██╔╝██╔════╝██╔════╝██╔════╝
+    █████╗  ██╔████╔██║██████╔╝██║     ██║   ██║ ╚████╔╝ █████╗  █████╗  ███████╗
+    ██╔══╝  ██║╚██╔╝██║██╔═══╝ ██║     ██║   ██║  ╚██╔╝  ██╔══╝  ██╔══╝  ╚════██║
+    ███████╗██║ ╚═╝ ██║██║     ███████╗╚██████╔╝   ██║   ███████╗███████╗███████║
+    ╚══════╝╚═╝     ╚═╝╚═╝     ╚══════╝ ╚═════╝    ╚═╝   ╚══════╝╚══════╝╚══════╝
+    
+*/
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box {
+    position: absolute;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="count"] {
+    width: 29.45em;
+    height: 8em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="count"] > .text > .title > span {
+    font-size: 0.6em;
+    color: var(--secondary-text-color);
+}
+
+.bossmenu.noResumesAccess div[data-type="employees"]>div>.side-boxes>.box[data-type="count"] {
+    width: 100%;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="check-resumes"] {
+    left: 30.5em;
+    width: 29.45em;
+    height: 8em;
+}
+
+.bossmenu.noResumesAccess div[data-type="employees"]>div>.side-boxes>.box[data-type="check-resumes"] {
+    display: none;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="check-resumes"]>.buttons {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"] {
+    width: 41em;
+    height: 33.5em;
+    bottom: 0;
+}
+
+.bossmenu.noEmployeesHireManage div[data-type="employees"]>div>.side-boxes>.box[data-type="list"] {
+    width: 100%;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list {
+    position: absolute;
+    width: 39em;
+    height: 29.5em;
+    top: 3em;
+    left: 1em;
+    background: var(--submenu-background-selected);
+    border-radius: 0.5em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.bossmenu.noEmployeesHireManage div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list {
+    width: 58em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table {
+    width: 100%;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table>thead {
+    height: 2em;
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr {
+    height: 2.85em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr td:first-child {
+    width: 3em;
+    padding-inline: 1em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr td:last-child {
+    padding-right: 1em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table>thead .center {
+    text-align: center;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr #player-status {
+    display: block;
+    height: 1.1em;
+    width: 1.1em;
+    border-radius: 0.38em !important;
+    opacity: 0.8;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr #player-status.online {
+    background: limegreen;
+    box-shadow: 0px 0px 12px #32cd326e;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="list"]>.employees-list>#employees-table tbody>tr #player-status.offline {
+    background: red;
+    box-shadow: 0px 0px 12px #ff00006e;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] {
+    bottom: 0;
+    height: 33.5em;
+    right: 0;
+    width: 18em;
+}
+
+.bossmenu.noEmployeesHireManage div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] {
+    display: none;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data {
+    left: 1em;
+    height: 26.4em;
+    margin-top: 0.5em;
+    width: 16em;
+    border-radius: 0.5em;
+    outline: none;
+    background: none;
+    backdrop-filter: var(--blur);
+    background: var(--submenu-background-selected);
+    color: white;
+    position: relative;
+    z-index: 1;
+    padding: 1em;
+    overflow: overlay;
+}
+
+.bossmenu.noEmployeesHire div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data {
+    height: 29.5em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.hire-list {
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2em;
+    opacity: 0.3;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>span,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>span,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#grades-list>span,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#fire>span {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>div,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>div {
+    display: flex;
+    align-items: center;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>div>input,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>div>input {
+    outline: transparent;
+    height: 2em;
+    font-weight: 600;
+    z-index: 5;
+    backdrop-filter: var(--blur);
+    color: white;
+    padding-inline: 0.3em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.25);
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    outline: none;
+    border-right: 0;
+    width: 8em;
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>div>div.bonus,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>div>div.badge-id {
+    text-align: center;
+    width: -webkit-fill-available;
+    height: 2em;
+    background: var(--main-color);
+    line-height: 1.9;
+    font-weight: 300;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>div>div.bonus:hover,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>div>div.badge-id:hover {
+    background: var(--main-color-hover);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#bonus>div>div.bonus:active,
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#badge>div>div.badge-id:active {
+    background: var(--main-color-active);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#grades-list>div {
+    display: grid;
+    gap: 0.5em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#grades-list>div>div.changegrade {
+    padding: 0.2em 0.5em;
+    text-align: center;
+    background: var(--main-color);
+    border-radius: 0.3em;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#grades-list>div>div.changegrade:hover {
+    background: var(--main-color-hover);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#grades-list>div>div.changegrade:active {
+    background: var(--main-color-active);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#fire>div>div.fire {
+    padding: 0.2em 0.5em;
+    text-align: center;
+    background: var(--close-color);
+    border-radius: 0.3em;
+    font-weight: 300;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#fire>div>div.fire:hover {
+    background: var(--close-color-hover);
+
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.employee-manage>#fire>div>div.fire:active {
+    background: var(--close-color-active);
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.closest-players {
+    display: grid;
+    gap: 0.5em;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.closest-players>.hire-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    background: #41434c26;
+    border: 1px solid #41434c57;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"] div.data>.closest-players>.hire-player>span {
+    font-weight: 400;
+}
+
+.bossmenu div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"]>.buttons {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+}
+
+.bossmenu.noEmployeesHire div[data-type="employees"]>div>.side-boxes>.box[data-type="manage"]>.buttons {
+    display: none;
+}
+
+
+/*
+
+     █████╗ ███╗   ██╗███╗   ██╗ ██████╗ ██╗   ██╗███╗   ██╗ ██████╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗███████╗
+    ██╔══██╗████╗  ██║████╗  ██║██╔═══██╗██║   ██║████╗  ██║██╔════╝██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝██╔════╝
+    ███████║██╔██╗ ██║██╔██╗ ██║██║   ██║██║   ██║██╔██╗ ██║██║     █████╗  ██╔████╔██║█████╗  ██╔██╗ ██║   ██║   ███████╗
+    ██╔══██║██║╚██╗██║██║╚██╗██║██║   ██║██║   ██║██║╚██╗██║██║     ██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║
+    ██║  ██║██║ ╚████║██║ ╚████║╚██████╔╝╚██████╔╝██║ ╚████║╚██████╗███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║   ███████║
+    ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
+
+*/
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"] {
+    position: absolute;
+    width: 60em;
+    height: 44em;
+    overflow: hidden;
+    background: var(--submenu-background-selected);
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages {
+    width: 100%;
+    border-radius: 0.5em;
+    outline: none;
+    background: none;
+    backdrop-filter: blur(10px);
+    background: var(--submenu-background-selected);
+    color: white;
+    margin-top: 4em;
+    position: relative;
+    height: 36.5em;
+    padding: 1em;
+    overflow: auto;
+
+    overflow-wrap: anywhere;
+    scroll-behavior: smooth;
+    z-index: 1;
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div {
+    background: #c7c7ff38;
+    border-radius: 0.5em;
+    padding: 0.6em;
+    margin-bottom: 1em;
+    z-index: 5000;
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div#cityhall {
+    background: #ff626238;
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div .user {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ffffff3b;
+    padding-bottom: 0.3em;
+    color: rgb(235, 235, 235);
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div .user .avatar {
+    width: 1.7em;
+    height: 1.7em;
+    background: #00000061;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50em;
+    overflow: hidden;
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div .user .name {
+    font-weight: 700;
+    margin-left: 0.4em;
+}
+
+.bossmenu div[data-type="announcements"]>div>.side-boxes>.box[data-type="announcements"]>.announcements-messages>div .message {
+    padding-top: 0.3em;
+    padding-bottom: 0.5em;
+}
+
+
+
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f20f;
+}
+
+
+/* ANIMATIONS */
+@keyframes scaleIn {
+    0% {
+        scale: 0.5;
+    }
+
+    100% {
+        scale: 1.0;
+    }
+}

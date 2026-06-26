@@ -1,0 +1,234 @@
+:root {
+    --primary-text-color: #e7e7e7;
+    --secondary-text-color: #c8c8c8;
+
+    --back-btn-color: #d1d1d130;
+    --back-btn-color-hover: #92929269;
+
+    --main-color: #573cfa;
+    --main-color-hover: #452ec7;
+    --main-color-active: #29159c;
+
+    --ok-color: #4cdb28b3;
+    --ok-color-hover: #32b623b3;
+    --ok-color-active: #2a7116b3;
+
+    --close-color: #db2828b3;
+    --close-color-hover: #a0101073;
+    --close-color-active: #64121273;
+
+    --scrollbar-color: #573cfa;
+    --scrollbar-color-hover: #452ec7;
+    --scrollbar-background: #07070cfa;
+
+    --menu-shadow-before-color: radial-gradient(circle, #583cfaa6 0%, rgba(255, 255, 255, 0.0) 70%);
+    --menu-shadow-after-color: radial-gradient(circle, #452ec7b3 0%, rgba(255, 255, 255, 0.0) 70%);
+
+    --menu-background: #07070cfa;
+    --submenu-background: #4d51850f;
+    --submenu-background-selected: #24252a5e;
+    --border-radius: 0.4em;
+
+    --blur: blur(3px);
+}
+
+* {
+    user-select: none;
+}
+
+body {
+    position: absolute;
+    font-family: 'Titillium Web', sans-serif;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    opacity: 0.085 !important;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-background);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-color-hover);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.select2-container {
+    z-index: 50000;
+}
+
+
+.dots-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    scale: 0.45;
+    opacity: 0.5;
+}
+
+.dot {
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #b3d4fc;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.dot:last-child {
+    margin-right: 0;
+}
+
+.dot:nth-child(1) {
+    animation-delay: -0.3s;
+}
+
+.dot:nth-child(2) {
+    animation-delay: -0.1s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.1s;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        background-color: #fbf8ff;
+        box-shadow: 0 0 0 0 rgba(246, 241, 255, 0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+        background-color: #e9d7ff;
+        box-shadow: 0 0 0 10px rgba(243, 237, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.8);
+        background-color: #ccb3fc;
+        box-shadow: 0 0 0 0 rgba(209, 178, 252, 0.7);
+    }
+}
+
+
+/* Hide the default checkbox */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: 300ms;
+}
+
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked~.checkmark {
+    background-color: var(--main-color);
+    border-radius: .5rem;
+    animation: pulse-checkbox 500ms ease-in-out;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+    left: 0.55em;
+    top: 0.35em;
+    width: 0.25em;
+    height: 0.5em;
+    border: solid #E0E0E2;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+
+@keyframes pulse-checkbox {
+    0% {
+        box-shadow: 0 0 0 var(--main-color);
+        rotate: 20deg;
+    }
+
+    50% {
+        rotate: -20deg;
+    }
+
+    75% {
+        box-shadow: 0 0 0 10px var(--main-color-hover);
+    }
+
+    100% {
+        box-shadow: 0 0 0 13px var(--main-color-active);
+        rotate: 0;
+    }
+}
+
+@keyframes pulseEffect {
+    0% {
+        border: 1px solid #ffffff36;
+        background: #fdfdfd0a;
+    }
+
+    10% {
+        border: 1px solid rgba(255, 0, 0, 0.4);
+        background: #ff00000a;
+    }
+
+    100% {
+        border: 1px solid #ffffff36;
+        background: #fdfdfd0a;
+    }
+}

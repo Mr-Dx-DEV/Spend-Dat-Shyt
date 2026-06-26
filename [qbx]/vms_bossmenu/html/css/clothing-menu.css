@@ -1,0 +1,159 @@
+.dressing-room {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transition: margin 0.4s;
+}
+
+.dressing-room > div {
+    display: none;
+    position: relative;
+    width: 32em;
+    height: 50em;
+    margin-right: 5em;
+    background: var(--menu-background);
+    color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0px 0px 4em #0d0d0d8c;
+    animation: scaleIn 0.2s;
+}
+
+.dressing-room > div::before,
+.dressing-room > div::after {
+    content: "";
+    position: absolute;
+    width: 70rem;
+    height: 50rem;
+    border-radius: 50%;
+    opacity: .1;
+    z-index: 1;
+    background: radial-gradient(var(--main-color) 10%, transparent 70%);
+}
+
+.dressing-room > div::before {
+    transform: translate(-50%, -50%);
+    top: 0rem;
+    left: 10em;
+}
+
+.dressing-room > div::after {
+    transform: translate(50%, 50%);
+    bottom: 0rem;
+    right: 10em;
+}
+
+.dressing-room > div > .header {
+    position: relative;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    height: 3.5em;
+    padding-inline: 1.0em;
+}
+
+.dressing-room > div > .header .name {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: auto;
+}
+
+.dressing-room > div > .header .my-clothes {
+    margin-right: 0.5em;
+    font-weight: 500;
+    background: var(--back-btn-color);
+    height: 1.8em;
+    padding-inline: 1.2em;
+    line-height: 1.7;
+    cursor: pointer;
+    transition: 0.3s;
+    max-width: 13em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.dressing-room > div > .header .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border-radius: var(--border-radius);
+    background: var(--back-btn-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dressing-room > div > .header .close:hover {
+    background: var(--back-btn-color-hover);
+}
+
+.dressing-room > div > .menu {
+    position: relative;
+    width: 100%;
+    height: 93%;
+    padding: 1em;
+    z-index: 100;
+}
+
+.dressing-room > div > .menu > div {
+    position: relative;
+    height: 44.5em;
+    width: 100%;
+    /* width: 30em; */
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow: overlay;
+    background: var(--submenu-background);
+}
+
+.dressing-room > div > .menu > div > div {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 4em;
+    gap: 1.5em;
+    margin-bottom: 0.5em;
+    background: var(--submenu-background);
+    border-radius: 0.3em;
+    padding: 0.8em;
+    gap: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    line-height: 1.2;
+    z-index: 5000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dressing-room > div > .menu > div > div:hover {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    
+}
+
+.dressing-room > div > .menu > div > div:active {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+}
+
+.dressing-room > div > .menu > div > div > i {
+    font-size: 1.7em;
+}
+
+.dressing-room > div > .menu > div > div > p {
+    font-size: 1.35em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+}

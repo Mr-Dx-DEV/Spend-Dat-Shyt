@@ -1,0 +1,2405 @@
+{
+    "EN": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Management of {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Main",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Employees",
+                    "description": "Managing employees and finding new ones..."
+                },
+                "grades": {
+                    "title": "Grades",
+                    "description": "Manage grades in your company..."
+                },
+                "clothing": {
+                    "title": "Clothing",
+                    "description": "Manage clothing in your company..."
+                },
+                "safe": {
+                    "title": "Safe",
+                    "description": "Balance of company money...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Announcements",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Resumes",
+                    "description": "Recruit new employees who have submitted resumes..."
+                },
+                "taxes": {
+                    "title": "Taxes",
+                    "description": "Pay your taxes, check your business status..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Employees:"
+                },
+                "resumes": {
+                    "header": "Recruit new employees who have submitted resumes.",
+                    "title": "Resumes",
+                    "view_resumes_btn": "VIEW RESUMES"
+                },
+                "list": {
+                    "header": "List of employees.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Employee",
+                        "grade": "Grade",
+                        "option": "Option"
+                    },
+                    "manage_btn": "Manage"
+                },
+                "manage": {
+                    "header": "Hire new employees.",
+                    "citizen": "Citizen {0}",
+                    "no_players": "no players around",
+                    "hire_btn": "Hire",
+                    "bonus_label": "Grant Bonus:",
+                    "bonus_btn": "Bonus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Change Grade:",
+                    "setjob_btn": "Make him a ",
+                    "fire_label": "Fire the Employee:",
+                    "fire_btn": "Fire",
+                    "search_closest_btn": "SEARCH CLOSEST"
+                }
+            },
+            "grades": {
+                "header": "Manage grades",
+                "title": "Grades",
+                "manage_btn": "MANAGE"
+            },
+            "grades_manage": {
+                "header": "Manage grade",
+                "grade_name_label": "Grade Label",
+                "grade_name_save_btn": "UPDATE",
+                "salary_label": "Salary:",
+                "salary_range_label": "Range ${0} - ${1}",
+                "salary_save_btn": "UPDATE",
+                "permissions_label": "Permissions",
+                "permissions_save_btn": "UPDATE PERMISSIONS",
+                "permissions_list": {
+                    "employees_label": "Employees:",
+                    "employees_access": "Section Access",
+                    "employees_grant_bonus": "Grant Bonus",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Change Grade",
+                    "employees_fire": "Fire",
+                    "employees_hire": "Hire",
+                    "clothing_label": "Clothing",
+                    "clothing_access": "Section Access",
+                    "clothing_create": "Create",
+                    "clothing_modify": "Modify",
+                    "safe_label": "Safe",
+                    "safe_access": "Section Access",
+                    "safe_balance": "View balance",
+                    "safe_withdraw": "Withdraw",
+                    "safe_deposit": "Deposit",
+                    "safe_transfer": "Transfers",
+                    "safe_transactions": "View all transactions",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Announcements",
+                    "announcements_access": "Section Access",
+                    "resumes_label": "Resumes",
+                    "resumes_access": "Section Access",
+                    "taxes_label": "Taxes",
+                    "taxes_access": "Section Access"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Select Clothing Gender",
+                "header": "Create new or customize outfits.",
+                "gender_m": "MALE",
+                "gender_f": "FEMALE",
+                "title": "Clothing",
+                "manage_btn": "MANAGE"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Clothing {0}",
+                    "helmet_label": "Hat",
+                    "helmet_1": "Type",
+                    "helmet_2": "Texture",
+                    "glasses_label": "Glasses",
+                    "glasses_1": "Type",
+                    "glasses_2": "Texture",
+                    "mask_label": "Mask",
+                    "mask_1": "Type",
+                    "mask_2": "Texture",
+                    "tshirt_label": "T-Shirt",
+                    "tshirt_1": "Type",
+                    "tshirt_2": "Texture",
+                    "torso_label": "Torso",
+                    "torso_1": "Type",
+                    "torso_2": "Texture",
+                    "decals_label": "Decals",
+                    "decals_1": "Type",
+                    "decals_2": "Texture",
+                    "arms_label": "Arms",
+                    "arms": "Type",
+                    "arms_2": "Texture",
+                    "pants_label": "Pants",
+                    "pants_1": "Type",
+                    "pants_2": "Texture",
+                    "shoes_label": "Shoes",
+                    "shoes_1": "Type",
+                    "shoes_2": "Texture",
+                    "bproof_label": "Buletproof",
+                    "bproof_1": "Type",
+                    "bproof_2": "Texture",
+                    "chain_label": "Chain",
+                    "chain_1": "Type",
+                    "chain_2": "Texture",
+                    "watches_label": "Watches",
+                    "watches_1": "Type",
+                    "watches_2": "Texture",
+                    "bracelets_label": "Bracelets",
+                    "bracelets_1": "Type",
+                    "bracelets_2": "Texture",
+                    "bags_label": "Bags",
+                    "bags_1": "Type",
+                    "bags_2": "Texture"
+                },
+                "settings": {
+                    "title": "Grades Access",
+                    "save_btn": "SAVE"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Company balance.",
+                    "make_transaction_btn": "MAKE TRANSACTION"
+                },
+                "balance_chart": {
+                    "header": "Check the financial inforamation of your company.",
+                    "title": "Chart of daily income",
+                    "view_transactions_btn": "VIEW ALL TRANSACTIONS"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Company balance."
+                },
+                "account_name": {
+                    "header": "Company account name for transfers"
+                },
+                "balance_internal": {
+                    "header": "Withdraw or deposit company money.",
+                    "title": "Internal Transactions",
+                    "label_amount": "Amount:",
+                    "withdraw_btn": "WITHDRAW",
+                    "deposit_btn": "DEPOSIT"
+                },
+                "balance_transactions": {
+                    "header": "Check all transactions.",
+                    "title": "Safe Transactions",
+                    "view_transactions_btn": "VIEW ALL TRANSACTIONS"
+                },
+                "balance_transfer": {
+                    "header": "Financial transfer between company accounts.",
+                    "title": "Transfers",
+                    "label_account": "Account:",
+                    "label_title": "Title:",
+                    "label_amount": "Amount:",
+                    "transfer_btn": "CONFIRM TRANSFER"
+                }
+            },
+            "safe_transactions": {
+                "header": "All company transactions list.",
+                "title": "Safe Transactions",
+                "table": {
+                    "id": "#",
+                    "executor": "Name",
+                    "type": "Action",
+                    "amount": "Amount",
+                    "title": "Title",
+                    "date": "Date"
+                },
+                "page": "Page {0} of {1}",
+                "types": {
+                    "tax_payment": "Tax Payment",
+                    "withdraw": "Withdrawal",
+                    "deposit": "Deposit",
+                    "transfer_outgoing": "Outgoing Transfer",
+                    "transfer_incoming": "Incoming Transfer",
+                    "payout": "Payout"
+                }
+            },
+            "announcements": {
+                "header": "News",
+                "title": "Announcements"
+            },
+            "resumes": {
+                "list_header": "List of resumes received from citizens.",
+                "list_title": "Resumes list",
+                "manage_header": "Manage the ability to send resumes.",
+                "manage_title": "Manage applications",
+                "manage_description": "Applications for your company are now:",
+                "manage_description_not_active": "not active",
+                "manage_description_active": "active",
+                "manage_toggle_btn": "Toggle",
+                "table_citizen": "Citizen Name",
+                "table_date": "Date",
+                "table_option": "Option"
+            },
+            "taxes": {
+                "taxes_header": "Regulate taxes on your business.",
+                "taxes_title": "Taxes"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Dressing Room",
+            "my_clothes_btn": "Wear private clothes"
+        }
+    },
+    "DE": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Management von {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Hauptmenü",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Mitarbeiter",
+                    "description": "Mitarbeiter verwalten und neue finden..."
+                },
+                "grades": {
+                    "title": "Hierarchien",
+                    "description": "Hierarchien in deinem Unternehmen verwalten..."
+                },
+                "clothing": {
+                    "title": "Kleidung",
+                    "description": "Kleidung in deinem Unternehmen verwalten..."
+                },
+                "safe": {
+                    "title": "Sicherheit",
+                    "description": "Bilanz des Firmengeldes..."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Ankündigungen",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Bewerbungen",
+                    "description": "Neue Mitarbeiter einstellen, die Lebensläufe eingereicht haben..."
+                },
+                "taxes": {
+                    "title": "Steuern",
+                    "description": "Zahle deine Steuern, überprüfe den Status deines Geschäfts..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Mitarbeiter:"
+                },
+                "resumes": {
+                    "header": "Neue Mitarbeiter einstellen, die Lebensläufe eingereicht haben.",
+                    "title": "Bewerbungen",
+                    "view_resumes_btn": "LEBENSLÄUFE ANZEIGEN"
+                },
+                "list": {
+                    "header": "Liste der Mitarbeiter.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Mitarbeiter",
+                        "grade": "Hierarchie",
+                        "option": "Option"
+                    },
+                    "manage_btn": "Verwalten"
+                },
+                "manage": {
+                    "header": "Neue Mitarbeiter einstellen.",
+                    "citizen": "Bürger {0}",
+                    "no_players": "keine Spieler in der Nähe",
+                    "hire_btn": "Einstellen",
+                    "bonus_label": "Bonus gewähren:",
+                    "bonus_btn": "Bonus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Hierarchie ändern:",
+                    "setjob_btn": "Mach ihn zu einem ",
+                    "fire_label": "Mitarbeiter entlassen:",
+                    "fire_btn": "Entlassen",
+                    "search_closest_btn": "NÄCHSTES SUCHEN"
+                }
+            },
+            "grades": {
+                "header": "Noten verwalten",
+                "title": "Noten",
+                "manage_btn": "VERWALTEN"
+            },
+            "grades_manage": {
+                "header": "Note verwalten",
+                "grade_name_label": "Notenbezeichnung",
+                "grade_name_save_btn": "AKTUALISIEREN",
+                "salary_label": "Gehalt:",
+                "salary_range_label": "Bereich ${0} - ${1}",
+                "salary_save_btn": "AKTUALISIEREN",
+                "permissions_label": "Berechtigungen",
+                "permissions_save_btn": "BERECHTIGUNGEN AKTUALISIEREN",
+                "permissions_list": {
+                    "employees_label": "Mitarbeiter:",
+                    "employees_access": "Abschnittszugriff",
+                    "employees_grant_bonus": "Bonus gewähren",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Note ändern",
+                    "employees_fire": "Kündigung",
+                    "employees_hire": "Einstellen",
+                    "clothing_label": "Kleidung",
+                    "clothing_access": "Abschnittszugriff",
+                    "clothing_create": "Erstellen",
+                    "clothing_modify": "Ändern",
+                    "safe_label": "Tresor",
+                    "safe_access": "Abschnittszugriff",
+                    "safe_balance": "Kontostand anzeigen",
+                    "safe_withdraw": "Abheben",
+                    "safe_deposit": "Einzahlen",
+                    "safe_transfer": "Überweisungen",
+                    "safe_transactions": "Alle Transaktionen anzeigen",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Ankündigungen",
+                    "announcements_access": "Abschnittszugriff",
+                    "resumes_label": "Lebensläufe",
+                    "resumes_access": "Abschnittszugriff",
+                    "taxes_label": "Steuern",
+                    "taxes_access": "Abschnittszugriff"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Geschlecht der Kleidung auswählen",
+                "header": "Neue Kleidung erstellen oder Outfits anpassen.",
+                "gender_m": "MÄNNLICH",
+                "gender_f": "WEIBLICH",
+                "title": "Kleidung",
+                "manage_btn": "VERWALTEN"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Kleidung {0}",
+                    "helmet_label": "Hut",
+                    "helmet_1": "Typ",
+                    "helmet_2": "Textur",
+                    "glasses_label": "Brille",
+                    "glasses_1": "Typ",
+                    "glasses_2": "Textur",
+                    "mask_label": "Maske",
+                    "mask_1": "Typ",
+                    "mask_2": "Textur",
+                    "tshirt_label": "T-Shirt",
+                    "tshirt_1": "Typ",
+                    "tshirt_2": "Textur",
+                    "torso_label": "Torso",
+                    "torso_1": "Typ",
+                    "torso_2": "Textur",
+                    "decals_label": "Aufkleber",
+                    "decals_1": "Typ",
+                    "decals_2": "Textur",
+                    "arms_label": "Arme",
+                    "arms": "Typ",
+                    "arms_2": "Textur",
+                    "pants_label": "Hose",
+                    "pants_1": "Typ",
+                    "pants_2": "Textur",
+                    "shoes_label": "Schuhe",
+                    "shoes_1": "Typ",
+                    "shoes_2": "Textur",
+                    "bproof_label": "Schutzweste",
+                    "bproof_1": "Typ",
+                    "bproof_2": "Textur",
+                    "chain_label": "Kette",
+                    "chain_1": "Typ",
+                    "chain_2": "Textur",
+                    "watches_label": "Uhren",
+                    "watches_1": "Typ",
+                    "watches_2": "Textur",
+                    "bracelets_label": "Armbänder",
+                    "bracelets_1": "Typ",
+                    "bracelets_2": "Textur",
+                    "bags_label": "Taschen",
+                    "bags_1": "Typ",
+                    "bags_2": "Textur"
+                },
+                "settings": {
+                    "title": "Zugriff auf Noten",
+                    "save_btn": "SPEICHERN"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Firmenbilanz",
+                    "make_transaction_btn": "TRANSAKTION DURCHFÜHREN"
+                },
+                "balance_chart": {
+                    "header": "Überprüfen Sie die finanziellen Informationen Ihres Unternehmens.",
+                    "title": "Diagramm des täglichen Einkommens",
+                    "view_transactions_btn": "ALLE TRANSAKTIONEN ANZEIGEN"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Firmenbilanz"
+                },
+                "account_name": {
+                    "header": "Firmenkontoname für Überweisungen"
+                },
+                "balance_internal": {
+                    "header": "Unternehmensgeld abheben oder einzahlen.",
+                    "title": "Interne Transaktionen",
+                    "label_amount": "Betrag:",
+                    "withdraw_btn": "ABHEBEN",
+                    "deposit_btn": "EINZAHLEN"
+                },
+                "balance_transactions": {
+                    "header": "Alle Transaktionen überprüfen.",
+                    "title": "Sichere Transaktionen",
+                    "view_transactions_btn": "ALLE TRANSAKTIONEN ANZEIGEN"
+                },
+                "balance_transfer": {
+                    "header": "Finanztransfer zwischen Unternehmenskonten.",
+                    "title": "Überweisungen",
+                    "label_account": "Konto:",
+                    "label_title": "Titel:",
+                    "label_amount": "Betrag:",
+                    "transfer_btn": "TRANSFER BESTÄTIGEN"
+                }
+            },
+            "safe_transactions": {
+                "header": "Liste aller Unternehmenstransaktionen.",
+                "title": "Sichere Transaktionen",
+                "table": {
+                    "id": "#",
+                    "executor": "Name",
+                    "type": "Aktion",
+                    "amount": "Betrag",
+                    "title": "Titel",
+                    "date": "Datum"
+                },
+                "page": "Seite {0} von {1}",
+                "types": {
+                    "tax_payment": "Steuern zahlen",
+                    "withdraw": "Abhebung",
+                    "deposit": "Einzahlung",
+                    "transfer_outgoing": "Ausgehende Überweisung",
+                    "transfer_incoming": "Eingehende Überweisung",
+                    "payout": "Auszahlung"
+                }
+            },
+            "announcements": {
+                "header": "Nachrichten",
+                "title": "Ankündigungen"
+            },
+            "resumes": {
+                "list_header": "Liste der von Bürgern eingereichten Lebensläufe.",
+                "list_title": "Lebenslauf Liste",
+                "manage_header": "Verwalten Sie die Möglichkeit, Lebensläufe zu senden.",
+                "manage_title": "Bewerbungen verwalten",
+                "manage_description": "Bewerbungen für Ihr Unternehmen sind jetzt:",
+                "manage_description_not_active": "nicht aktiv",
+                "manage_description_active": "aktiv",
+                "manage_toggle_btn": "Umschalten",
+                "table_citizen": "Name des Bürgers",
+                "table_date": "Datum",
+                "table_option": "Option"
+            },
+            "taxes": {
+                "taxes_header": "Regulieren Sie Steuern in Ihrem Unternehmen.",
+                "taxes_title": "Steuern"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Umkleide",
+            "my_clothes_btn": "Private Kleidung tragen"
+        }
+    },
+    "FR": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Gestion de {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Principal",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Employés",
+                    "description": "Gérer les employés et en trouver de nouveaux..."
+                },
+                "grades": {
+                    "title": "Classes",
+                    "description": "Gérer les grades dans votre entreprise..."
+                },
+                "clothing": {
+                    "title": "Vêtements",
+                    "description": "Gérer les vêtements dans votre entreprise..."
+                },
+                "safe": {
+                    "title": "Coffre-fort",
+                    "description": "Solde de l'argent de l'entreprise...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Annonces",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "CV",
+                    "description": "Recruter de nouveaux employés qui ont soumis des CV..."
+                },
+                "taxes": {
+                    "title": "Impôts",
+                    "description": "Payez vos impôts, vérifiez le statut de votre entreprise..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Employés :"
+                },
+                "resumes": {
+                    "header": "Recruter de nouveaux employés qui ont soumis des CV.",
+                    "title": "CV",
+                    "view_resumes_btn": "VOIR LES CV"
+                },
+                "list": {
+                    "header": "Liste des employés.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Employé",
+                        "grade": "Grade",
+                        "option": "Option"
+                    },
+                    "manage_btn": "Gérer"
+                },
+                "manage": {
+                    "header": "Embaucher de nouveaux employés.",
+                    "citizen": "Citoyen {0}",
+                    "no_players": "aucun joueur autour",
+                    "hire_btn": "Embaucher",
+                    "bonus_label": "Octroyer une prime :",
+                    "bonus_btn": "Prime",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Changer de grade :",
+                    "setjob_btn": "Le promouvoir au grade de ",
+                    "fire_label": "Licencier l'employé :",
+                    "fire_btn": "Licencier",
+                    "search_closest_btn": "RECHERCHER LE PLUS PROCHE"
+                }
+            },
+            "grades": {
+                "header": "Gérer les grades",
+                "title": "Classes",
+                "manage_btn": "GÉRER"
+            },
+            "grades_manage": {
+                "header": "Gérer un grade",
+                "grade_name_label": "Nom du Grade",
+                "grade_name_save_btn": "METTRE À JOUR",
+                "salary_label": "Salaire :",
+                "salary_range_label": "Gamme de ${0} - ${1}",
+                "salary_save_btn": "METTRE À JOUR",
+                "permissions_label": "Permissions",
+                "permissions_save_btn": "METTRE À JOUR LES PERMISSIONS",
+                "permissions_list": {
+                    "employees_label": "Employés :",
+                    "employees_access": "Accès à la section",
+                    "employees_grant_bonus": "Octroyer une prime",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Changer de grade",
+                    "employees_fire": "Licencier",
+                    "employees_hire": "Embaucher",
+                    "clothing_label": "Vêtements",
+                    "clothing_access": "Accès à la section",
+                    "clothing_create": "Créer",
+                    "clothing_modify": "Modifier",
+                    "safe_label": "Coffre-fort",
+                    "safe_access": "Accès à la section",
+                    "safe_balance": "Consulter le solde",
+                    "safe_withdraw": "Retirer",
+                    "safe_deposit": "Déposer",
+                    "safe_transfer": "Transferts",
+                    "safe_transactions": "Voir toutes les transactions",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Annonces",
+                    "announcements_access": "Accès à la section",
+                    "resumes_label": "CV",
+                    "resumes_access": "Accès à la section",
+                    "taxes_label": "Impôts",
+                    "taxes_access": "Accès à la section"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Sélectionner le genre des vêtements",
+                "header": "Créer de nouveaux vêtements ou personnaliser des tenues.",
+                "gender_m": "HOMME",
+                "gender_f": "FEMME",
+                "title": "Vêtements",
+                "manage_btn": "GÉRER"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Vêtements {0}",
+                    "helmet_label": "Chapeau",
+                    "helmet_1": "Type",
+                    "helmet_2": "Texture",
+                    "glasses_label": "Lunettes",
+                    "glasses_1": "Type",
+                    "glasses_2": "Texture",
+                    "mask_label": "Masque",
+                    "mask_1": "Type",
+                    "mask_2": "Texture",
+                    "tshirt_label": "T-shirt",
+                    "tshirt_1": "Type",
+                    "tshirt_2": "Texture",
+                    "torso_label": "Torse",
+                    "torso_1": "Type",
+                    "torso_2": "Texture",
+                    "decals_label": "Décalcomanies",
+                    "decals_1": "Type",
+                    "decals_2": "Texture",
+                    "arms_label": "Bras",
+                    "arms": "Type",
+                    "arms_2": "Texture",
+                    "pants_label": "Pantalon",
+                    "pants_1": "Type",
+                    "pants_2": "Texture",
+                    "shoes_label": "Chaussures",
+                    "shoes_1": "Type",
+                    "shoes_2": "Texture",
+                    "bproof_label": "Gilet pare-balles",
+                    "bproof_1": "Type",
+                    "bproof_2": "Texture",
+                    "chain_label": "Chaîne",
+                    "chain_1": "Type",
+                    "chain_2": "Texture",
+                    "watches_label": "Montres",
+                    "watches_1": "Type",
+                    "watches_2": "Texture",
+                    "bracelets_label": "Bracelets",
+                    "bracelets_1": "Type",
+                    "bracelets_2": "Texture",
+                    "bags_label": "Sacs",
+                    "bags_1": "Type",
+                    "bags_2": "Texture"
+                },
+                "settings": {
+                    "title": "Accès des Grades",
+                    "save_btn": "ENREGISTRER"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Solde de l'entreprise.",
+                    "make_transaction_btn": "RÉALISER UNE TRANSACTION"
+                },
+                "balance_chart": {
+                    "header": "Vérifier les informations financières de votre entreprise.",
+                    "title": "Graphique des revenus quotidiens",
+                    "view_transactions_btn": "VOIR TOUTES LES TRANSACTIONS"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Solde de l'entreprise."
+                },
+                "account_name": {
+                    "header": "Nom du compte de l'entreprise pour les transferts"
+                },
+                "balance_internal": {
+                    "header": "Retirer ou déposer l'argent de l'entreprise.",
+                    "title": "Transactions internes",
+                    "label_amount": "Montant :",
+                    "withdraw_btn": "RETIRER",
+                    "deposit_btn": "DÉPOSER"
+                },
+                "balance_transactions": {
+                    "header": "Vérifier toutes les transactions.",
+                    "title": "Transactions sûres",
+                    "view_transactions_btn": "VOIR TOUTES LES TRANSACTIONS"
+                },
+                "balance_transfer": {
+                    "header": "Transfert financier entre les comptes de l'entreprise.",
+                    "title": "Transferts",
+                    "label_account": "Compte :",
+                    "label_title": "Titre :",
+                    "label_amount": "Montant :",
+                    "transfer_btn": "CONFIRMER LE TRANSFERT"
+                }
+            },
+            "safe_transactions": {
+                "header": "Liste de toutes les transactions de l'entreprise.",
+                "title": "Transactions sûres",
+                "table": {
+                    "id": "#",
+                    "executor": "Nom",
+                    "type": "Action",
+                    "amount": "Montant",
+                    "title": "Titre",
+                    "date": "Date"
+                },
+                "page": "Page {0} sur {1}",
+                "types": {
+                    "tax_payment": "Paiement des impôts",
+                    "withdraw": "Retrait",
+                    "deposit": "Dépôt",
+                    "transfer_outgoing": "Transfert sortant",
+                    "transfer_incoming": "Transfert entrant",
+                    "payout": "Paiement"
+                }
+            },
+            "announcements": {
+                "header": "Actualités",
+                "title": "Annonces"
+            },
+            "resumes": {
+                "list_header": "Liste des CV reçus des citoyens.",
+                "list_title": "Liste des CV",
+                "manage_header": "Gérer la possibilité d'envoyer des CV.",
+                "manage_title": "Gérer les candidatures",
+                "manage_description": "Les demandes pour votre entreprise sont actuellement :",
+                "manage_description_not_active": "non actives",
+                "manage_description_active": "actives",
+                "manage_toggle_btn": "Basculer",
+                "table_citizen": "Nom du citoyen",
+                "table_date": "Date",
+                "table_option": "Option"
+            },
+            "taxes": {
+                "taxes_header": "Réguler les impôts sur votre entreprise.",
+                "taxes_title": "Impôts"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Vestiaire",
+            "my_clothes_btn": "Porter des vêtements privés"
+        }
+    },
+    "ES": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Gestión de {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Principal",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Empleados",
+                    "description": "Gestiona empleados y encuentra nuevos..."
+                },
+                "grades": {
+                    "title": "Grados",
+                    "description": "Administra los grados en tu empresa..."
+                },
+                "clothing": {
+                    "title": "Ropa",
+                    "description": "Administra la ropa en tu empresa..."
+                },
+                "safe": {
+                    "title": "Caja fuerte",
+                    "description": "Saldo de dinero de la empresa...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Anuncios",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Currículums",
+                    "description": "Recluta nuevos empleados que han enviado currículums..."
+                },
+                "taxes": {
+                    "title": "Impuestos",
+                    "description": "Paga tus impuestos, verifica el status de tu negocio..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Empleados:"
+                },
+                "resumes": {
+                    "header": "Recluta nuevos empleados que han enviado currículums.",
+                    "title": "Currículums",
+                    "view_resumes_btn": "VER CURRÍCULUMS"
+                },
+                "list": {
+                    "header": "Lista de empleados.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Empleado",
+                        "grade": "Grado",
+                        "option": "Opción"
+                    },
+                    "manage_btn": "Administrar"
+                },
+                "manage": {
+                    "header": "Contrata nuevos empleados.",
+                    "citizen": "Ciudadano {0}",
+                    "no_players": "no hay jugadores alrededor",
+                    "hire_btn": "Contratar",
+                    "bonus_label": "Concesión de bonificación:",
+                    "bonus_btn": "Bonificación",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Cambiar Grado:",
+                    "setjob_btn": "Hazlo un ",
+                    "fire_label": "Despedir al Empleado:",
+                    "fire_btn": "Despedir",
+                    "search_closest_btn": "BUSCAR MÁS CERCANO"
+                }
+            },
+            "grades": {
+                "header": "Administrar grados",
+                "title": "Grados",
+                "manage_btn": "ADMINISTRAR"
+            },
+            "grades_manage": {
+                "header": "Administrar grado",
+                "grade_name_label": "Etiqueta del Grado",
+                "grade_name_save_btn": "ACTUALIZAR",
+                "salary_label": "Salario:",
+                "salary_range_label": "Rango ${0} - ${1}",
+                "salary_save_btn": "ACTUALIZAR",
+                "permissions_label": "Permisos",
+                "permissions_save_btn": "ACTUALIZAR PERMISOS",
+                "permissions_list": {
+                    "employees_label": "Empleados:",
+                    "employees_access": "Acceso a la Sección",
+                    "employees_grant_bonus": "Concesión de Bonificación",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Cambiar Grado",
+                    "employees_fire": "Despedir",
+                    "employees_hire": "Contratar",
+                    "clothing_label": "Ropa",
+                    "clothing_access": "Acceso a la Sección",
+                    "clothing_create": "Crear",
+                    "clothing_modify": "Modificar",
+                    "safe_label": "Caja fuerte",
+                    "safe_access": "Acceso a la Sección",
+                    "safe_balance": "Ver saldo",
+                    "safe_withdraw": "Retirar",
+                    "safe_deposit": "Depositar",
+                    "safe_transfer": "Transferencias",
+                    "safe_transactions": "Ver todas las transacciones",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Anuncios",
+                    "announcements_access": "Acceso a la Sección",
+                    "resumes_label": "Currículums",
+                    "resumes_access": "Acceso a la Sección",
+                    "taxes_label": "Impuestos",
+                    "taxes_access": "Acceso a la Sección"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Seleccionar Género de Ropa",
+                "header": "Crea o personaliza atuendos nuevos.",
+                "gender_m": "HOMBRE",
+                "gender_f": "MUJER",
+                "title": "Ropa",
+                "manage_btn": "ADMINISTRAR"
+            },
+            "clothing_manage": {
+            "clothes": {
+                "header": "",
+                "title": "Ropa {0}",
+                "helmet_label": "Sombrero",
+                "helmet_1": "Tipo",
+                "helmet_2": "Textura",
+                "glasses_label": "Gafas",
+                "glasses_1": "Tipo",
+                "glasses_2": "Textura",
+                "mask_label": "Máscara",
+                "mask_1": "Tipo",
+                "mask_2": "Textura",
+                "tshirt_label": "Camiseta",
+                "tshirt_1": "Tipo",
+                "tshirt_2": "Textura",
+                "torso_label": "Torso",
+                "torso_1": "Tipo",
+                "torso_2": "Textura",
+                "decals_label": "Calcomanías",
+                "decals_1": "Tipo",
+                "decals_2": "Textura",
+                "arms_label": "Brazos",
+                "arms": "Tipo",
+                "arms_2": "Textura",
+                "pants_label": "Pantalones",
+                "pants_1": "Tipo",
+                "pants_2": "Textura",
+                "shoes_label": "Zapatos",
+                "shoes_1": "Tipo",
+                "shoes_2": "Textura",
+                "bproof_label": "Chaleco antibalas",
+                "bproof_1": "Tipo",
+                "bproof_2": "Textura",
+                "chain_label": "Cadena",
+                "chain_1": "Tipo",
+                "chain_2": "Textura",
+                "watches_label": "Relojes",
+                "watches_1": "Tipo",
+                "watches_2": "Textura",
+                "bracelets_label": "Pulseras",
+                "bracelets_1": "Tipo",
+                "bracelets_2": "Textura",
+                "bags_label": "Bolsas",
+                "bags_1": "Tipo",
+                "bags_2": "Textura"
+            },
+            "settings": {
+                "title": "Acceso a Grados",
+                "save_btn": "GUARDAR"
+            }
+        },
+        "safe": {
+            "balance": {
+                "header": "Saldo de la empresa.",
+                "make_transaction_btn": "REALIZAR TRANSACCIÓN"
+            },
+            "balance_chart": {
+                "header": "Consulta la información financiera de tu empresa.",
+                "title": "Gráfico de ingresos diarios",
+                "view_transactions_btn": "VER TODAS LAS TRANSACCIONES"
+            }
+        },
+        "safe_manage": {
+            "balance": {
+                "header": "Saldo de la empresa."
+            },
+            "account_name": {
+                "header": "Nombre de cuenta de la empresa para transferencias"
+            },
+            "balance_internal": {
+                "header": "Retirar o depositar dinero de la empresa.",
+                "title": "Transacciones internas",
+                "label_amount": "Cantidad:",
+                "withdraw_btn": "RETIRAR",
+                "deposit_btn": "DEPOSITAR"
+            },
+            "balance_transactions": {
+                "header": "Consulta todas las transacciones.",
+                "title": "Transacciones seguras",
+                "view_transactions_btn": "VER TODAS LAS TRANSACCIONES"
+            },
+            "balance_transfer": {
+                "header": "Transferencia financiera entre cuentas de empresa.",
+                "title": "Transferencias",
+                "label_account": "Cuenta:",
+                "label_title": "Título:",
+                "label_amount": "Cantidad:",
+                "transfer_btn": "CONFIRMAR TRANSFERENCIA"
+            }
+        },
+        "safe_transactions": {
+            "header": "Lista de todas las transacciones de la empresa.",
+            "title": "Transacciones seguras",
+            "table": {
+                "id": "#",
+                "executor": "Nombre",
+                "type": "Acción",
+                "amount": "Cantidad",
+                "title": "Título",
+                "date": "Fecha"
+            },
+            "page": "Página {0} de {1}",
+            "types": {
+                "tax_payment": "Pago de impuestos",
+                "withdraw": "Retiro",
+                "deposit": "Depósito",
+                "transfer_outgoing": "Transferencia saliente",
+                "transfer_incoming": "Transferencia entrante",
+                "payout": "Pago"
+            }
+        },
+        "announcements": {
+            "header": "Noticias",
+            "title": "Anuncios"
+        },
+        "resumes": {
+            "list_header": "Lista de currículums recibidos de ciudadanos.",
+            "list_title": "Lista de currículums",
+            "manage_header": "Administra la capacidad de enviar currículums.",
+            "manage_title": "Gestionar aplicaciones",
+            "manage_description": "Las solicitudes para tu empresa están actualmente:",
+            "manage_description_not_active": "inactivas",
+            "manage_description_active": "activas",
+            "manage_toggle_btn": "Alternar",
+            "table_citizen": "Nombre del ciudadano",
+            "table_date": "Fecha",
+            "table_option": "Opción"
+        },
+        "taxes": {
+            "taxes_header": "Regula los impuestos de tu negocio.",
+            "taxes_title": "Impuestos"
+        }
+        },
+        "dressing_room": {
+            "menu_title": "Vestidor",
+            "my_clothes_btn": "Usar ropa privada"
+        }
+    },
+    "PT": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Gestão de {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Principal",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Funcionários",
+                    "description": "Gerenciar funcionários e encontrar novos..."
+                },
+                "grades": {
+                    "title": "Cargos",
+                    "description": "Gerenciar os cargos na sua empresa..."
+                },
+                "clothing": {
+                    "title": "Vestuário",
+                    "description": "Gerenciar o vestuário na sua empresa..."
+                },
+                "safe": {
+                    "title": "Cofre",
+                    "description": "Saldo do dinheiro da empresa...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Anúncios",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Currículos",
+                    "description": "Recrutar novos funcionários que enviaram currículos..."
+                },
+                "taxes": {
+                    "title": "Impostos",
+                    "description": "Pague seus impostos, verifique o status do seu negócio..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Funcionários:"
+                },
+                "resumes": {
+                    "header": "Recrutar novos funcionários que enviaram currículos.",
+                    "title": "Currículos",
+                    "view_resumes_btn": "VER CURRÍCULOS"
+                },
+                "list": {
+                    "header": "Lista de funcionários.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Funcionário",
+                        "grade": "Cargo",
+                        "option": "Opção"
+                    },
+                    "manage_btn": "Gerenciar"
+                },
+                "manage": {
+                    "header": "Contratar novos funcionários.",
+                    "citizen": "Cidadão {0}",
+                    "no_players": "nenhum jogador por perto",
+                    "hire_btn": "Contratar",
+                    "bonus_label": "Conceder Bônus:",
+                    "bonus_btn": "Bônus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Alterar Cargo:",
+                    "setjob_btn": "Torná-lo um ",
+                    "fire_label": "Demitir o Funcionário:",
+                    "fire_btn": "Demitir",
+                    "search_closest_btn": "PESQUISAR MAIS PRÓXIMO"
+                }
+            },
+            "grades": {
+                "header": "Gerenciar cargos",
+                "title": "Cargos",
+                "manage_btn": "GERENCIAR"
+            },
+            "grades_manage": {
+                "header": "Gerenciar cargo",
+                "grade_name_label": "Nome do Cargo",
+                "grade_name_save_btn": "ATUALIZAR",
+                "salary_label": "Salário:",
+                "salary_range_label": "Intervalo ${0} - ${1}",
+                "salary_save_btn": "ATUALIZAR",
+                "permissions_label": "Permissões",
+                "permissions_save_btn": "ATUALIZAR PERMISSÕES",
+                "permissions_list": {
+                    "employees_label": "Funcionários:",
+                    "employees_access": "Acesso à Seção",
+                    "employees_grant_bonus": "Conceder Bônus",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Alterar Cargo",
+                    "employees_fire": "Demitir",
+                    "employees_hire": "Contratar",
+                    "clothing_label": "Vestuário",
+                    "clothing_access": "Acesso à Seção",
+                    "clothing_create": "Criar",
+                    "clothing_modify": "Modificar",
+                    "safe_label": "Cofre",
+                    "safe_access": "Acesso à Seção",
+                    "safe_balance": "Ver saldo",
+                    "safe_withdraw": "Sacar",
+                    "safe_deposit": "Depositar",
+                    "safe_transfer": "Transferências",
+                    "safe_transactions": "Ver todas as transações",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Anúncios",
+                    "announcements_access": "Acesso à Seção",
+                    "resumes_label": "Currículos",
+                    "resumes_access": "Acesso à Seção",
+                    "taxes_label": "Impostos",
+                    "taxes_access": "Acesso à Seção"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Selecionar Gênero de Vestuário",
+                "header": "Criar ou personalizar roupas.",
+                "gender_m": "MASCULINO",
+                "gender_f": "FEMININO",
+                "title": "Vestuário",
+                "manage_btn": "GERENCIAR"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Vestuário {0}",
+                    "helmet_label": "Chapéu",
+                    "helmet_1": "Tipo",
+                    "helmet_2": "Textura",
+                    "glasses_label": "Óculos",
+                    "glasses_1": "Tipo",
+                    "glasses_2": "Textura",
+                    "mask_label": "Máscara",
+                    "mask_1": "Tipo",
+                    "mask_2": "Textura",
+                    "tshirt_label": "Camiseta",
+                    "tshirt_1": "Tipo",
+                    "tshirt_2": "Textura",
+                    "torso_label": "Torso",
+                    "torso_1": "Tipo",
+                    "torso_2": "Textura",
+                    "decals_label": "Decalques",
+                    "decals_1": "Tipo",
+                    "decals_2": "Textura",
+                    "arms_label": "Braços",
+                    "arms": "Tipo",
+                    "arms_2": "Textura",
+                    "pants_label": "Calças",
+                    "pants_1": "Tipo",
+                    "pants_2": "Textura",
+                    "shoes_label": "Sapatos",
+                    "shoes_1": "Tipo",
+                    "shoes_2": "Textura",
+                    "bproof_label": "À Prova de Balas",
+                    "bproof_1": "Tipo",
+                    "bproof_2": "Textura",
+                    "chain_label": "Corrente",
+                    "chain_1": "Tipo",
+                    "chain_2": "Textura",
+                    "watches_label": "Relógios",
+                    "watches_1": "Tipo",
+                    "watches_2": "Textura",
+                    "bracelets_label": "Pulseiras",
+                    "bracelets_1": "Tipo",
+                    "bracelets_2": "Textura",
+                    "bags_label": "Bolsas",
+                    "bags_1": "Tipo",
+                    "bags_2": "Textura"
+                },
+                "settings": {
+                    "title": "Acesso dos Cargos",
+                    "save_btn": "SALVAR"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Saldo da empresa.",
+                    "make_transaction_btn": "REALIZAR TRANSFERÊNCIA"
+                },
+                "balance_chart": {
+                    "header": "Verifique as informações financeiras da sua empresa.",
+                    "title": "Gráfico de renda diária",
+                    "view_transactions_btn": "VER TODAS AS TRANSAÇÕES"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Saldo da empresa."
+                },
+                "account_name": {
+                    "header": "Nome da conta da empresa para transferências"
+                },
+                "balance_internal": {
+                    "header": "Sacar ou depositar dinheiro da empresa.",
+                    "title": "Transações Internas",
+                    "label_amount": "Valor:",
+                    "withdraw_btn": "SACAR",
+                    "deposit_btn": "DEPOSITAR"
+                },
+                "balance_transactions": {
+                    "header": "Verificar todas as transações.",
+                    "title": "Transações Seguras",
+                    "view_transactions_btn": "VER TODAS AS TRANSAÇÕES"
+                },
+                "balance_transfer": {
+                    "header": "Transferência financeira entre contas da empresa.",
+                    "title": "Transferências",
+                    "label_account": "Conta:",
+                    "label_title": "Título:",
+                    "label_amount": "Valor:",
+                    "transfer_btn": "CONFIRMAR TRANSFERÊNCIA"
+                }
+            },
+            "safe_transactions": {
+                "header": "Lista de todas as transações da empresa.",
+                "title": "Transações Seguras",
+                "table": {
+                    "id": "#",
+                    "executor": "Nome",
+                    "type": "Ação",
+                    "amount": "Valor",
+                    "title": "Título",
+                    "date": "Data"
+                },
+                "page": "Página {0} de {1}",
+                "types": {
+                    "tax_payment": "Pagamento de Impostos",
+                    "withdraw": "Retirada",
+                    "deposit": "Depósito",
+                    "transfer_outgoing": "Transferência de Saída",
+                    "transfer_incoming": "Transferência de Entrada",
+                    "payout": "Pagamento"
+                }
+            },
+            "announcements": {
+                "header": "Notícias",
+                "title": "Anúncios"
+            },
+            "resumes": {
+                "list_header": "Lista de currículos recebidos de cidadãos.",
+                "list_title": "Lista de Currículos",
+                "manage_header": "Gerenciar a habilidade de enviar currículos.",
+                "manage_title": "Gerenciar inscrições",
+                "manage_description": "As inscrições para a sua empresa estão agora:",
+                "manage_description_not_active": "inativas",
+                "manage_description_active": "ativas",
+                "manage_toggle_btn": "Alternar",
+                "table_citizen": "Nome do Cidadão",
+                "table_date": "Data",
+                "table_option": "Opção"
+            },
+            "taxes": {
+                "taxes_header": "Regule os impostos sobre o seu negócio.",
+                "taxes_title": "Impostos"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Camarim",
+            "my_clothes_btn": "Vestir roupas privadas"
+        }
+    },
+    "PL": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Zarządzanie {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Główne",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Pracownicy",
+                    "description": "Zarządzanie pracownikami i zatrudnij nowych..."
+                },
+                "grades": {
+                    "title": "Stopnie",
+                    "description": "Zarządzaj stopniami w swojej firmie..."
+                },
+                "clothing": {
+                    "title": "Stroje",
+                    "description": "Zarządzaj strojami w swojej firmie..."
+                },
+                "safe": {
+                    "title": "Sejf",
+                    "description": "Saldo pieniędzy firmy...."
+                },
+                "stash": {
+                    "title": "Magazyn",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Ogłoszenia",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "CV",
+                    "description": "Rekrutowanie nowych pracowników, którzy przesłali CV..."
+                },
+                "taxes": {
+                    "title": "Podatki",
+                    "description": "Płać podatki, sprawdzaj status swojej firmy..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Pracownicy:"
+                },
+                "resumes": {
+                    "header": "Rekrutuj nowych pracowników, którzy przesłali CV.",
+                    "title": "CV",
+                    "view_resumes_btn": "ZOBACZ CV"
+                },
+                "list": {
+                    "header": "Lista pracowników.",
+                    "table": {
+                        "badge": "Odznaka",
+                        "employee": "Pracownik",
+                        "grade": "Stopień",
+                        "option": "Opcja"
+                    },
+                    "manage_btn": "Zarządzaj"
+                },
+                "manage": {
+                    "header": "Zatrudnij nowych pracowników.",
+                    "citizen": "Obywatel {0}",
+                    "no_players": "brak graczy w okolicy",
+                    "hire_btn": "Zatrudnij",
+                    "bonus_label": "Przyznaj Premię:",
+                    "bonus_btn": "Premia",
+                    "badge_label": "Odznaka:",
+                    "badge_btn": "Ustaw",
+                    "setjob_label": "Zmień Stopień:",
+                    "setjob_btn": "Zrobimy go ",
+                    "fire_label": "Zwolnij Pracownika:",
+                    "fire_btn": "Zwolnij",
+                    "search_closest_btn": "SZUKAJ NAJBLIŻSZEGO"
+                }
+            },
+            "grades": {
+                "header": "Zarządzaj stopniami",
+                "title": "Stopnie",
+                "manage_btn": "ZARZĄDZAJ"
+            },
+            "grades_manage": {
+                "header": "Zarządzaj stopniem",
+                "grade_name_label": "Etykieta Stopnia",
+                "grade_name_save_btn": "ZAKTUALIZUJ",
+                "salary_label": "Pensja:",
+                "salary_range_label": "Zakres ${0} - ${1}",
+                "salary_save_btn": "ZAKTUALIZUJ",
+                "permissions_label": "Uprawnienia",
+                "permissions_save_btn": "ZAKTUALIZUJ UPRZAWNIONIENIA",
+                "permissions_list": {
+                    "employees_label": "Pracownicy:",
+                    "employees_access": "Dostęp do Sekcji",
+                    "employees_grant_bonus": "Przyznaj Premię",
+                    "employees_change_badge": "Odznaka",
+                    "employees_change_grade": "Zmień Stopień",
+                    "employees_fire": "Zwolnij",
+                    "employees_hire": "Zatrudnij",
+                    "clothing_label": "Odzież",
+                    "clothing_access": "Dostęp do Sekcji",
+                    "clothing_create": "Stwórz",
+                    "clothing_modify": "Modyfikuj",
+                    "safe_label": "Skarb",
+                    "safe_access": "Dostęp do Sekcji",
+                    "safe_balance": "Zobacz saldo",
+                    "safe_withdraw": "Wypłać",
+                    "safe_deposit": "Wpłać",
+                    "safe_transfer": "Przelewy",
+                    "safe_transactions": "Zobacz wszystkie transakcje",
+                    "stash_label": "Magazyn",
+                    "stash_access": "Dostęp do sekcji",
+                    "announcements_label": "Ogłoszenia",
+                    "announcements_access": "Dostęp do Sekcji",
+                    "resumes_label": "CV",
+                    "resumes_access": "Dostęp do Sekcji",
+                    "taxes_label": "Podatki",
+                    "taxes_access": "Dostęp do Sekcji"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Wybierz Płeć Odzieży",
+                "header": "Stwórz nowe lub dostosuj stroje.",
+                "gender_m": "MĘŻCZYZNA",
+                "gender_f": "KOBIETA",
+                "title": "Odzież",
+                "manage_btn": "ZARZĄDZAJ"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Odzież {0}",
+                    "helmet_label": "Czapka",
+                    "helmet_1": "Typ",
+                    "helmet_2": "Tekstura",
+                    "glasses_label": "Okulary",
+                    "glasses_1": "Typ",
+                    "glasses_2": "Tekstura",
+                    "mask_label": "Maska",
+                    "mask_1": "Typ",
+                    "mask_2": "Tekstura",
+                    "tshirt_label": "Koszulka",
+                    "tshirt_1": "Typ",
+                    "tshirt_2": "Tekstura",
+                    "torso_label": "Tułów",
+                    "torso_1": "Typ",
+                    "torso_2": "Tekstura",
+                    "decals_label": "Naklejki",
+                    "decals_1": "Typ",
+                    "decals_2": "Tekstura",
+                    "arms_label": "Ręce",
+                    "arms": "Typ",
+                    "arms_2": "Tekstura",
+                    "pants_label": "Spodnie",
+                    "pants_1": "Typ",
+                    "pants_2": "Tekstura",
+                    "shoes_label": "Buty",
+                    "shoes_1": "Typ",
+                    "shoes_2": "Tekstura",
+                    "bproof_label": "Kamizelka Kuloodporna",
+                    "bproof_1": "Typ",
+                    "bproof_2": "Tekstura",
+                    "chain_label": "Łańcuch",
+                    "chain_1": "Typ",
+                    "chain_2": "Tekstura",
+                    "watches_label": "Zegarki",
+                    "watches_1": "Typ",
+                    "watches_2": "Tekstura",
+                    "bracelets_label": "Bransoletki",
+                    "bracelets_1": "Typ",
+                    "bracelets_2": "Tekstura",
+                    "bags_label": "Torby",
+                    "bags_1": "Typ",
+                    "bags_2": "Tekstura"
+                },
+                "settings": {
+                    "title": "Dostęp do Stopni",
+                    "save_btn": "ZAPISZ"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Saldo firmy.",
+                    "make_transaction_btn": "WYKONAJ TRANSAKCJĘ"
+                },
+                "balance_chart": {
+                    "header": "Sprawdź informacje finansowe swojej firmy.",
+                    "title": "Wykres dziennych dochodów",
+                    "view_transactions_btn": "POKAŻ WSZYSTKIE TRANSAKCJE"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Saldo firmy."
+                },
+                "account_name": {
+                    "header": "Nazwa konta firmy do przelewów"
+                },
+                "balance_internal": {
+                    "header": "Wypłać lub wpłać pieniądze firmy.",
+                    "title": "Transakcje Wewnętrzne",
+                    "label_amount": "Kwota:",
+                    "withdraw_btn": "WYPŁAĆ",
+                    "deposit_btn": "WPLAĆ"
+                },
+                "balance_transactions": {
+                    "header": "Sprawdź wszystkie transakcje.",
+                    "title": "Transakcje Safu",
+                    "view_transactions_btn": "POKAŻ WSZYSTKIE TRANSAKCJE"
+                },
+                "balance_transfer": {
+                    "header": "Transfer finansowy między kontami firmy.",
+                    "title": "Przelewy",
+                    "label_account": "Konto:",
+                    "label_title": "Tytuł:",
+                    "label_amount": "Kwota:",
+                    "transfer_btn": "POTWIERDŹ PRZELEW"
+                }
+            },
+            "safe_transactions": {
+                "header": "Wszystkie transakcje firmy.",
+                "title": "Transakcje Safu",
+                "table": {
+                    "id": "#",
+                    "executor": "Imię",
+                    "type": "Akcja",
+                    "amount": "Kwota",
+                    "title": "Tytuł",
+                    "date": "Data"
+                },
+                "page": "Strona {0} z {1}",
+                "types": {
+                    "tax_payment": "Płatność podatku",
+                    "withdraw": "Wypłata",
+                    "deposit": "Wpłata",
+                    "transfer_outgoing": "Przelew wychodzący",
+                    "transfer_incoming": "Przelew przychodzący",
+                    "payout": "Wypłata"
+                }
+            },
+            "announcements": {
+                "header": "Aktualności",
+                "title": "Ogłoszenia"
+            },
+            "resumes": {
+                "list_header": "Lista CV otrzymana od obywateli.",
+                "list_title": "Lista CV",
+                "manage_header": "Zarządzaj możliwością wysyłania CV.",
+                "manage_title": "Zarządzaj zgłoszeniami",
+                "manage_description": "Aplikacje do twojej firmy są teraz:",
+                "manage_description_not_active": "nieaktywny",
+                "manage_description_active": "aktywny",
+                "manage_toggle_btn": "Przełącz",
+                "table_citizen": "Imię Obywatela",
+                "table_date": "Data",
+                "table_option": "Opcja"
+            },
+            "taxes": {
+                "taxes_header": "Reguluj podatki w swojej firmie.",
+                "taxes_title": "Podatki"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Garderoba",
+            "my_clothes_btn": "Ubrania prywatne"
+        }
+    },
+    "IT": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Gestione di {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Principale",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Dipendenti",
+                    "description": "Gestione dei dipendenti e ricerca di nuovi..."
+                },
+                "grades": {
+                    "title": "Livelli",
+                    "description": "Gestisci i livelli nella tua azienda..."
+                },
+                "clothing": {
+                    "title": "Abbigliamento",
+                    "description": "Gestisci l'abbigliamento nella tua azienda..."
+                },
+                "safe": {
+                    "title": "Cassa",
+                    "description": "Saldo dei soldi dell'azienda...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Annunci",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Curriculum",
+                    "description": "Assumi nuovi dipendenti che hanno inviato curriculum..."
+                },
+                "taxes": {
+                    "title": "Tasse",
+                    "description": "Paga le tasse, controlla lo stato della tua azienda..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Dipendenti:"
+                },
+                "resumes": {
+                    "header": "Assumi nuovi dipendenti che hanno inviato curriculum.",
+                    "title": "Curriculum",
+                    "view_resumes_btn": "VISUALIZZA CURRICULUM"
+                },
+                "list": {
+                    "header": "Elenco dipendenti.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Dipendente",
+                        "grade": "Livello",
+                        "option": "Opzione"
+                    },
+                    "manage_btn": "Gestisci"
+                },
+                "manage": {
+                    "header": "Assumi nuovi dipendenti.",
+                    "citizen": "Cittadino {0}",
+                    "no_players": "nessun giocatore in giro",
+                    "hire_btn": "Assumi",
+                    "bonus_label": "Concedi Bonus:",
+                    "bonus_btn": "Bonus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Cambia Livello:",
+                    "setjob_btn": "Fallo diventare un ",
+                    "fire_label": "Licenzia il Dipendente:",
+                    "fire_btn": "Licenzia",
+                    "search_closest_btn": "CERCA IL PIÙ VICINO"
+                }
+            },
+            "grades": {
+                "header": "Gestisci i livelli",
+                "title": "Livelli",
+                "manage_btn": "GESTISCI"
+            },
+            "grades_manage": {
+                "header": "Gestisci livello",
+                "grade_name_label": "Etichetta Livello",
+                "grade_name_save_btn": "AGGIORNA",
+                "salary_label": "Salario:",
+                "salary_range_label": "Range ${0} - ${1}",
+                "salary_save_btn": "AGGIORNA",
+                "permissions_label": "Permessi",
+                "permissions_save_btn": "AGGIORNA PERMESSI",
+                "permissions_list": {
+                    "employees_label": "Dipendenti:",
+                    "employees_access": "Accesso Sezione",
+                    "employees_grant_bonus": "Concedi Bonus",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Cambia Livello",
+                    "employees_fire": "Licenzia",
+                    "employees_hire": "Assumi",
+                    "clothing_label": "Abbigliamento",
+                    "clothing_access": "Accesso Sezione",
+                    "clothing_create": "Crea",
+                    "clothing_modify": "Modifica",
+                    "safe_label": "Cassa",
+                    "safe_access": "Accesso Sezione",
+                    "safe_balance": "Visualizza saldo",
+                    "safe_withdraw": "Prelievo",
+                    "safe_deposit": "Deposito",
+                    "safe_transfer": "Trasferimenti",
+                    "safe_transactions": "Visualizza tutte le transazioni",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Annunci",
+                    "announcements_access": "Accesso Sezione",
+                    "resumes_label": "Curriculum",
+                    "resumes_access": "Accesso Sezione",
+                    "taxes_label": "Tasse",
+                    "taxes_access": "Accesso Sezione"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Seleziona il Genere dell'Abbigliamento",
+                "header": "Crea nuovi o personalizza outfit.",
+                "gender_m": "UOMO",
+                "gender_f": "DONNA",
+                "title": "Abbigliamento",
+                "manage_btn": "GESTISCI"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Abbigliamento {0}",
+                    "helmet_label": "Cappello",
+                    "helmet_1": "Tipo",
+                    "helmet_2": "Texture",
+                    "glasses_label": "Occhiali",
+                    "glasses_1": "Tipo",
+                    "glasses_2": "Texture",
+                    "mask_label": "Maschera",
+                    "mask_1": "Tipo",
+                    "mask_2": "Texture",
+                    "tshirt_label": "Maglietta",
+                    "tshirt_1": "Tipo",
+                    "tshirt_2": "Texture",
+                    "torso_label": "Torso",
+                    "torso_1": "Tipo",
+                    "torso_2": "Texture",
+                    "decals_label": "Decalcomanie",
+                    "decals_1": "Tipo",
+                    "decals_2": "Texture",
+                    "arms_label": "Braccia",
+                    "arms": "Tipo",
+                    "arms_2": "Texture",
+                    "pants_label": "Pantaloni",
+                    "pants_1": "Tipo",
+                    "pants_2": "Texture",
+                    "shoes_label": "Scarpe",
+                    "shoes_1": "Tipo",
+                    "shoes_2": "Texture",
+                    "bproof_label": "Antiproiettile",
+                    "bproof_1": "Tipo",
+                    "bproof_2": "Texture",
+                    "chain_label": "Catena",
+                    "chain_1": "Tipo",
+                    "chain_2": "Texture",
+                    "watches_label": "Orologi",
+                    "watches_1": "Tipo",
+                    "watches_2": "Texture",
+                    "bracelets_label": "Braccialetti",
+                    "bracelets_1": "Tipo",
+                    "bracelets_2": "Texture",
+                    "bags_label": "Borse",
+                    "bags_1": "Tipo",
+                    "bags_2": "Texture"
+                },
+                "settings": {
+                    "title": "Accesso ai gradi",
+                    "save_btn": "SALVA"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Bilancio aziendale.",
+                    "make_transaction_btn": "EFFETTUA TRANSAZIONE"
+                },
+                "balance_chart": {
+                    "header": "Controlla le informazioni finanziarie della tua azienda.",
+                    "title": "Grafico del reddito giornaliero",
+                    "view_transactions_btn": "VISUALIZZA TUTTE LE TRANSAZIONI"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Bilancio aziendale."
+                },
+                "account_name": {
+                    "header": "Nome del conto aziendale per i trasferimenti"
+                },
+                "balance_internal": {
+                    "header": "Preleva o deposita denaro aziendale.",
+                    "title": "Transazioni interne",
+                    "label_amount": "Importo:",
+                    "withdraw_btn": "PRELEVA",
+                    "deposit_btn": "DEPOSITA"
+                },
+                "balance_transactions": {
+                    "header": "Controlla tutte le transazioni.",
+                    "title": "Transazioni sicure",
+                    "view_transactions_btn": "VISUALIZZA TUTTE LE TRANSAZIONI"
+                },
+                "balance_transfer": {
+                    "header": "Trasferimento finanziario tra conti aziendali.",
+                    "title": "Trasferimenti",
+                    "label_account": "Conto:",
+                    "label_title": "Titolo:",
+                    "label_amount": "Importo:",
+                    "transfer_btn": "CONFERMA TRASFERIMENTO"
+                }
+            },
+            "safe_transactions": {
+                "header": "Elenco di tutte le transazioni aziendali.",
+                "title": "Transazioni sicure",
+                "table": {
+                    "id": "#",
+                    "executor": "Nome",
+                    "type": "Azione",
+                    "amount": "Importo",
+                    "title": "Titolo",
+                    "date": "Data"
+                },
+                "page": "Pagina {0} di {1}",
+                "types": {
+                    "tax_payment": "Pagamento delle tasse",
+                    "withdraw": "Prelievo",
+                    "deposit": "Deposito",
+                    "transfer_outgoing": "Trasferimento in uscita",
+                    "transfer_incoming": "Trasferimento in entrata",
+                    "payout": "Pagamento"
+                }
+            },
+            "announcements": {
+                "header": "Notizie",
+                "title": "Annunci"
+            },
+            "resumes": {
+                "list_header": "Elenco dei curriculum ricevuti dai cittadini.",
+                "list_title": "Elenco dei curriculum",
+                "manage_header": "Gestisci la possibilità di inviare curriculum.",
+                "manage_title": "Gestisci candidature",
+                "manage_description": "Le candidature per la tua azienda sono attualmente:",
+                "manage_description_not_active": "non attive",
+                "manage_description_active": "attive",
+                "manage_toggle_btn": "Attiva/Disattiva",
+                "table_citizen": "Nome del cittadino",
+                "table_date": "Data",
+                "table_option": "Opzione"
+            },
+            "taxes": {
+                "taxes_header": "Regola le tasse sulla tua attività commerciale.",
+                "taxes_title": "Tasse"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Camera da Vestizione",
+            "my_clothes_btn": "Indossa vestiti privati"
+        }
+    },
+    "CZ": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Management of {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Hlavní",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Zaměstnanci",
+                    "description": "Správa zaměstnanců a hledání nových..."
+                },
+                "grades": {
+                    "title": "Hodnosti",
+                    "description": "Spravujte hodnosti ve vaší společnosti..."
+                },
+                "clothing": {
+                    "title": "Oblečení",
+                    "description": "Spravujte oblečení ve vaší společnosti..."
+                },
+                "safe": {
+                    "title": "Bezpečný",
+                    "description": "Stav účtu společnosti...."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Oznámení",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "Životopisy",
+                    "description": "Najměte nové zaměstnance, kteří podali životopisy..."
+                },
+                "taxes": {
+                    "title": "Daně",
+                    "description": "Zaplacení daní, kontrola stavu vašeho podnikání..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Zaměstnanci:"
+                },
+                "resumes": {
+                    "header": "Najměte nové zaměstnance, kteří podali životopisy.",
+                    "title": "Životopisy",
+                    "view_resumes_btn": "ZOBRAZIT ŽIVOTOPISY"
+                },
+                "list": {
+                    "header": "Seznam zaměstnanců.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Zaměstnanec",
+                        "grade": "Hodnost",
+                        "option": "Možnost"
+                    },
+                    "manage_btn": "Spravovat"
+                },
+                "manage": {
+                    "header": "Najměte nové zaměstnance.",
+                    "citizen": "Občan {0}",
+                    "no_players": "žádní hráči kolem",
+                    "hire_btn": "Najmout",
+                    "bonus_label": "Udělit bonus:",
+                    "bonus_btn": "Bonus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Změnit hodnost:",
+                    "setjob_btn": "Udělat ho ",
+                    "fire_label": "Propustit zaměstnance:",
+                    "fire_btn": "Propustit",
+                    "search_closest_btn": "HLEDAT NEJBLIŽŠÍHO"
+                }
+            },
+            "grades": {
+                "header": "Spravovat hodnosti",
+                "title": "Hodnosti",
+                "manage_btn": "SPRAVOVAT"
+            },
+            "grades_manage": {
+                "header": "Spravujte hodnost",
+                "grade_name_label": "Název hodnosti",
+                "grade_name_save_btn": "AKTUALIZOVAT",
+                "salary_label": "Plat:",
+                "salary_range_label": "Rozsah ${0} - ${1}",
+                "salary_save_btn": "AKTUALIZOVAT",
+                "permissions_label": "Oprávnění",
+                "permissions_save_btn": "AKTUALIZOVAT OPRÁVNĚNÍ",
+                "permissions_list": {
+                    "employees_label": "Zaměstnanci:",
+                    "employees_access": "Přístup ke sekci",
+                    "employees_grant_bonus": "Udělit bonus",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Změnit hodnost",
+                    "employees_fire": "Propustit",
+                    "employees_hire": "Najmout",
+                    "clothing_label": "Oblečení",
+                    "clothing_access": "Přístup ke sekci",
+                    "clothing_create": "Vytvořit",
+                    "clothing_modify": "Upravit",
+                    "safe_label": "Bezpečný",
+                    "safe_access": "Přístup ke sekci",
+                    "safe_balance": "Zobrazit stav",
+                    "safe_withdraw": "Výběr",
+                    "safe_deposit": "Vklad",
+                    "safe_transfer": "Převody",
+                    "safe_transactions": "Zobrazit všechny transakce",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Oznámení",
+                    "announcements_access": "Přístup ke sekci",
+                    "resumes_label": "Životopisy",
+                    "resumes_access": "Přístup ke sekci",
+                    "taxes_label": "Daně",
+                    "taxes_access": "Přístup ke sekci"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Vyberte pohlaví oblečení",
+                "header": "Vytvořte nové nebo upravte outfity.",
+                "gender_m": "MUŽ",
+                "gender_f": "ŽENA",
+                "title": "Oblečení",
+                "manage_btn": "SPRAVOVAT"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Oblečení {0}",
+                    "helmet_label": "Klobouk",
+                    "helmet_1": "Typ",
+                    "helmet_2": "Textura",
+                    "glasses_label": "Brýle",
+                    "glasses_1": "Typ",
+                    "glasses_2": "Textura",
+                    "mask_label": "Maska",
+                    "mask_1": "Typ",
+                    "mask_2": "Textura",
+                    "tshirt_label": "Tričko",
+                    "tshirt_1": "Typ",
+                    "tshirt_2": "Textura",
+                    "torso_label": "Torzo",
+                    "torso_1": "Typ",
+                    "torso_2": "Textura",
+                    "decals_label": "Nálepky",
+                    "decals_1": "Typ",
+                    "decals_2": "Textura",
+                    "arms_label": "Paže",
+                    "arms": "Typ",
+                    "arms_2": "Textura",
+                    "pants_label": "Kalhoty",
+                    "pants_1": "Typ",
+                    "pants_2": "Textura",
+                    "shoes_label": "Boty",
+                    "shoes_1": "Typ",
+                    "shoes_2": "Textura",
+                    "bproof_label": "Balistická vesta",
+                    "bproof_1": "Typ",
+                    "bproof_2": "Textura",
+                    "chain_label": "Řetízek",
+                    "chain_1": "Typ",
+                    "chain_2": "Textura",
+                    "watches_label": "Hodinky",
+                    "watches_1": "Typ",
+                    "watches_2": "Textura",
+                    "bracelets_label": "Náramky",
+                    "bracelets_1": "Typ",
+                    "bracelets_2": "Textura",
+                    "bags_label": "Tašky",
+                    "bags_1": "Typ",
+                    "bags_2": "Textura"
+                },
+                "settings": {
+                    "title": "Přístup ke hodnostem",
+                    "save_btn": "ULOŽIT"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Stav účtu společnosti.",
+                    "make_transaction_btn": "PROVÉST TRANSAKCI"
+                },
+                "balance_chart": {
+                    "header": "Zkontrolujte finanční informace vaší společnosti.",
+                    "title": "Graf denního příjmu",
+                    "view_transactions_btn": "ZOBRAZIT VŠECHNY TRANSAKCE"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Stav účtu společnosti."
+                },
+                "account_name": {
+                    "header": "Název účtu společnosti pro převody"
+                },
+                "balance_internal": {
+                    "header": "Vyberte si peníze z účtu společnosti.",
+                    "title": "Interní transakce",
+                    "label_amount": "Částka:",
+                    "withdraw_btn": "VÝBĚR",
+                    "deposit_btn": "VKLAD"
+                },
+                "balance_transactions": {
+                    "header": "Zkontrolujte všechny transakce.",
+                    "title": "Bezpečné transakce",
+                    "view_transactions_btn": "ZOBRAZIT VŠECHNY TRANSAKCE"
+                },
+                "balance_transfer": {
+                    "header": "Finanční převod mezi účty společnosti.",
+                    "title": "Převody",
+                    "label_account": "Účet:",
+                    "label_title": "Název:",
+                    "label_amount": "Částka:",
+                    "transfer_btn": "POTVRDIT PŘEVOD"
+                }
+            },
+            "safe_transactions": {
+                "header": "Seznam všech firemních transakcí.",
+                "title": "Bezpečné transakce",
+                "table": {
+                    "id": "#",
+                    "executor": "Jméno",
+                    "type": "Akce",
+                    "amount": "Částka",
+                    "title": "Název",
+                    "date": "Datum"
+                },
+                "page": "Stránka {0} z {1}",
+                "types": {
+                    "tax_payment": "Platba daně",
+                    "withdraw": "Výběr",
+                    "deposit": "Vklad",
+                    "transfer_outgoing": "Odchozí převod",
+                    "transfer_incoming": "Příchozí převod",
+                    "payout": "Výplata"
+                }
+            },
+            "announcements": {
+                "header": "Zprávy",
+                "title": "Oznámení"
+            },
+            "resumes": {
+                "list_header": "Seznam životopisů občanů.",
+                "list_title": "Seznam životopisů",
+                "manage_header": "Správa možnosti odesílat životopisy.",
+                "manage_title": "Spravovat aplikace",
+                "manage_description": "Žádosti do vaší společnosti jsou nyní:",
+                "manage_description_not_active": "neaktivní",
+                "manage_description_active": "aktivní",
+                "manage_toggle_btn": "Přepnout",
+                "table_citizen": "Jméno občana",
+                "table_date": "Datum",
+                "table_option": "Možnost"
+            },
+            "taxes": {
+                "taxes_header": "Regulujte daně ve vašem podnikání.",
+                "taxes_title": "Daně"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Šatna",
+            "my_clothes_btn": "Nosit soukromé oblečení"
+        }
+    },
+    "SV": {
+        "currency": "$",
+        "bossmenu": {
+            "menu_title": "Ledning av {0}",
+            "side_bar": {
+                "main": {
+                    "title": "Huvud",
+                    "description": ""
+                },
+                "employees": {
+                    "title": "Anställda",
+                    "description": "Hantera anställda och hitta nya..."
+                },
+                "grades": {
+                    "title": "Grader",
+                    "description": "Hantera grader i ditt företag..."
+                },
+                "clothing": {
+                    "title": "Kläder",
+                    "description": "Hantera kläder i ditt företag..."
+                },
+                "safe": {
+                    "title": "Säkerhet",
+                    "description": "Företagets ekonomiska balans..."
+                },
+                "stash": {
+                    "title": "Stash",
+                    "description": ""
+                },
+                "announcements": {
+                    "title": "Meddelanden",
+                    "description": ""
+                },
+                "resumes": {
+                    "title": "CV",
+                    "description": "Rekrytera nya medarbetare som har skickat in CV..."
+                },
+                "taxes": {
+                    "title": "Skatter",
+                    "description": "Betala dina skatter, kontrollera din företagsstatus..."
+                }
+            },
+            "employees": {
+                "count": {
+                    "header": "Anställda:"
+                },
+                "resumes": {
+                    "header": "Rekrytera nya medarbetare som har skickat in CV.",
+                    "title": "CV",
+                    "view_resumes_btn": "VISA CV"
+                },
+                "list": {
+                    "header": "Lista över anställda.",
+                    "table": {
+                        "badge": "Badge",
+                        "employee": "Anställd",
+                        "grade": "Grad",
+                        "option": "Alternativ"
+                    },
+                    "manage_btn": "Hantera"
+                },
+                "manage": {
+                    "header": "Anställa nya medarbetare.",
+                    "citizen": "Medborgare {0}",
+                    "no_players": "inga spelare runt",
+                    "hire_btn": "Anställa",
+                    "bonus_label": "Ge Bonus:",
+                    "bonus_btn": "Bonus",
+                    "badge_label": "Badge:",
+                    "badge_btn": "Set new",
+                    "setjob_label": "Ändra Grad:",
+                    "setjob_btn": "Gör honom till en ",
+                    "fire_label": "Avskeda Anställd:",
+                    "fire_btn": "Avskeda",
+                    "search_closest_btn": "SÖK NÄRMASTE"
+                }
+            },
+            "grades": {
+                "header": "Hantera grader",
+                "title": "Grader",
+                "manage_btn": "HANTERA"
+            },
+            "grades_manage": {
+                "header": "Hantera grad",
+                "grade_name_label": "Gradenamn",
+                "grade_name_save_btn": "UPPDATERA",
+                "salary_label": "Lön:",
+                "salary_range_label": "Intervall ${0} - ${1}",
+                "salary_save_btn": "UPPDATERA",
+                "permissions_label": "Behörigheter",
+                "permissions_save_btn": "UPPDATERA BEHÖRIGHETER",
+                "permissions_list": {
+                    "employees_label": "Anställda:",
+                    "employees_access": "Avdelningstillgång",
+                    "employees_grant_bonus": "Ge Bonus",
+                    "employees_change_badge": "Change Badge",
+                    "employees_change_grade": "Ändra Grad",
+                    "employees_fire": "Avskeda",
+                    "employees_hire": "Anställa",
+                    "clothing_label": "Kläder",
+                    "clothing_access": "Avdelningstillgång",
+                    "clothing_create": "Skapa",
+                    "clothing_modify": "Modifiera",
+                    "safe_label": "Säkerhet",
+                    "safe_access": "Avdelningstillgång",
+                    "safe_balance": "Visa balans",
+                    "safe_withdraw": "Ta ut",
+                    "safe_deposit": "Insättning",
+                    "safe_transfer": "Överföringar",
+                    "safe_transactions": "Visa alla transaktioner",
+                    "stash_label": "Stash",
+                    "stash_access": "Section Access",
+                    "announcements_label": "Meddelanden",
+                    "announcements_access": "Avdelningstillgång",
+                    "resumes_label": "CV",
+                    "resumes_access": "Avdelningstillgång",
+                    "taxes_label": "Skatter",
+                    "taxes_access": "Avdelningstillgång"
+                }
+            },
+            "clothing": {
+                "select_clothing_gender_title": "Välj Klädgender",
+                "header": "Skapa nytt eller anpassa outfit.",
+                "gender_m": "MANLIG",
+                "gender_f": "KVINNLIG",
+                "title": "Kläder",
+                "manage_btn": "HANTERA"
+            },
+            "clothing_manage": {
+                "clothes": {
+                    "header": "",
+                    "title": "Kläder {0}",
+                    "helmet_label": "Hatt",
+                    "helmet_1": "Typ",
+                    "helmet_2": "Textur",
+                    "glasses_label": "Glasögon",
+                    "glasses_1": "Typ",
+                    "glasses_2": "Textur",
+                    "mask_label": "Mask",
+                    "mask_1": "Typ",
+                    "mask_2": "Textur",
+                    "tshirt_label": "T-Tröja",
+                    "tshirt_1": "Typ",
+                    "tshirt_2": "Textur",
+                    "torso_label": "Bål",
+                    "torso_1": "Typ",
+                    "torso_2": "Textur",
+                    "decals_label": "Dekaler",
+                    "decals_1": "Typ",
+                    "decals_2": "Textur",
+                    "arms_label": "Armar",
+                    "arms": "Typ",
+                    "arms_2": "Textur",
+                    "pants_label": "Byxor",
+                    "pants_1": "Typ",
+                    "pants_2": "Textur",
+                    "shoes_label": "Skor",
+                    "shoes_1": "Typ",
+                    "shoes_2": "Textur",
+                    "bproof_label": "Kroppsskydd",
+                    "bproof_1": "Typ",
+                    "bproof_2": "Textur",
+                    "chain_label": "Kedja",
+                    "chain_1": "Typ",
+                    "chain_2": "Textur",
+                    "watches_label": "Klockor",
+                    "watches_1": "Typ",
+                    "watches_2": "Textur",
+                    "bracelets_label": "Armband",
+                    "bracelets_1": "Typ",
+                    "bracelets_2": "Textur",
+                    "bags_label": "Väskor",
+                    "bags_1": "Typ",
+                    "bags_2": "Textur"
+                },
+                "settings": {
+                    "title": "Tillgång till grader",
+                    "save_btn": "SPARA"
+                }
+            },
+            "safe": {
+                "balance": {
+                    "header": "Företagets balans.",
+                    "make_transaction_btn": "GÖRA TRANSATION"
+                },
+                "balance_chart": {
+                    "header": "Kontrollera den ekonomiska informationen för ditt företag.",
+                    "title": "Diagram för daglig inkomst",
+                    "view_transactions_btn": "VISA ALLA TRANSATIONER"
+                }
+            },
+            "safe_manage": {
+                "balance": {
+                    "header": "Företagets balans."
+                },
+                "account_name": {
+                    "header": "Företagets kontonamn för överföringar"
+                },
+                "balance_internal": {
+                    "header": "Ta ut eller sätt in företagspengar.",
+                    "title": "Internationella transaktioner",
+                    "label_amount": "Belopp:",
+                    "withdraw_btn": "TA UT",
+                    "deposit_btn": "SÄTT IN"
+                },
+                "balance_transactions": {
+                    "header": "Kontrollera alla transaktioner.",
+                    "title": "Säkra transaktioner",
+                    "view_transactions_btn": "VISA ALLA TRANSATIONER"
+                },
+                "balance_transfer": {
+                    "header": "Finansiell överföring mellan företagskonton.",
+                    "title": "Överföringar",
+                    "label_account": "Konto:",
+                    "label_title": "Titel:",
+                    "label_amount": "Belopp:",
+                    "transfer_btn": "BEKRÄFTA ÖVERFÖRING"
+                }
+            },
+            "safe_transactions": {
+                "header": "All företagstransaktioners lista.",
+                "title": "Säkra transaktioner",
+                "table": {
+                    "id": "#",
+                    "executor": "Namn",
+                    "type": "Åtgärd",
+                    "amount": "Belopp",
+                    "title": "Titel",
+                    "date": "Datum"
+                },
+                "page": "Sida {0} av {1}",
+                "types": {
+                    "tax_payment": "Skattebetalning",
+                    "withdraw": "Uttag",
+                    "deposit": "Insättning",
+                    "transfer_outgoing": "Utgående överföring",
+                    "transfer_incoming": "Inkommande överföring",
+                    "payout": "Utbetalning"
+                }
+            },
+            "announcements": {
+                "header": "Nyheter",
+                "title": "Meddelanden"
+            },
+            "resumes": {
+                "list_header": "Lista över CV som mottagits från medborgare.",
+                "list_title": "CV-lista",
+                "manage_header": "Hantera möjligheten att skicka CV.",
+                "manage_title": "Hantera ansökningar",
+                "manage_description": "Ansökningar för ditt företag är nu:",
+                "manage_description_not_active": "inte aktiva",
+                "manage_description_active": "aktiva",
+                "manage_toggle_btn": "Växla",
+                "table_citizen": "Medborgarnamn",
+                "table_date": "Datum",
+                "table_option": "Alternativ"
+            },
+            "taxes": {
+                "taxes_header": "Reglera skatter i ditt företag.",
+                "taxes_title": "Skatter"
+            }
+        },
+        "dressing_room": {
+            "menu_title": "Omklädningsrum",
+            "my_clothes_btn": "Bär privata kläder"
+        }
+    }
+}

@@ -2,9 +2,9 @@
 title Spend Dat Shyt Backup Monitor
 
 set DB_USER=root
-set DB_NAME=qbox_e24256
-set BACKUP_DIR=C:\Users\Administrator\Desktop\COC\resources\BACKUP\DatabaseBackups
-set MYSQL_BIN=C:\Program Files\MariaDB 11.6\bin
+set DB_NAME=spenddatshyt
+set BACKUP_DIR=D:\COC\resources\BACKUP\DatabaseBackups
+set MYSQL_BIN=D:\C DRIVE\MaraDB\bin
 
 if not exist "%BACKUP_DIR%" mkdir "%BACKUP_DIR%"
 
