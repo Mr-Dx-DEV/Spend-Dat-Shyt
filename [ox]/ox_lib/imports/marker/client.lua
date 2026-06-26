@@ -101,11 +101,11 @@ end
 
 ---@param options MarkerProps
 function lib.marker.new(options)
-  local self = setmetatable(table.clone(options), marker_mt)
+  options.type =
+    type(options.type) == 'string' and markerTypes[options.type]
+    or type(options.type) == 'number' and options.type or nil
 
-  self.type =
-    type(self.type) == 'string' and markerTypes[self.type]
-    or type(self.type) == 'number' and self.type or nil
+  local self = setmetatable(options, marker_mt)
 
   self.width += .0
   self.height += .0

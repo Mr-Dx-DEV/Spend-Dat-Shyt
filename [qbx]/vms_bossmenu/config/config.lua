@@ -126,8 +126,8 @@ Config.MenuOptions = {
         SafeMoney = 'bank',
         SafeMoneyOnWithdrawAndDeposit = 'cash',
 
-        AllowManageGradeLabel = true, -- ONLY FOR ESX
-        AllowManageGradeSalary = true, -- ONLY FOR ESX
+        AllowManageGradeLabel = false, -- ONLY FOR ESX
+        AllowManageGradeSalary = false, -- ONLY FOR ESX
 
         AllowAnyTransfers = true,
         ShowAnnouncements = true,
