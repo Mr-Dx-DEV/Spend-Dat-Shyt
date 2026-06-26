@@ -30,9 +30,9 @@ Config.Jobs = {
 }
 
 Config.NPC = {
-    Model       = "CSB_CallGirl_01",
-    Coords      = vector3(975.4017, -313.8904, 66.6298), -- IF PED IS FLOATING, DECREASE THE Z COORDINATE BY 1
-    Heading     = 137.1861,
+    Model       = "s_f_m_fembarber",
+    Coords      = vector3(210.5888, -1521.8571, 28.3610), -- IF PED IS FLOATING, DECREASE THE Z COORDINATE BY 1
+    Heading     = 323.7095,
     BlipEnabled = true,
     BlipSprite  = 621,
     BlipScale   = 1.0,
@@ -124,17 +124,17 @@ Config.XP = {
 
 -- NPC sale base prices (before level multiplier)
 Config.RequiredItems = {
-    { item = 'long_curly', priceMin = 1800, priceMax = 2200 },
-    { item = 'short_hair_wig', priceMin = 1600, priceMax = 2000 },
-    { item = 'short_curled_wig', priceMin = 1800, priceMax = 2200 },
-    { item = 'long_blonde_wig', priceMin = 2000, priceMax = 2400 },
-    { item = '40inchwigs', priceMin = 2400, priceMax = 3000 },
-    { item = 'braidwigs', priceMin = 1600, priceMax = 1900 },
-    { item = 'bodywavewigs', priceMin = 2000, priceMax = 2400 },    
-    { item = 'bangwigs', priceMin = 1800, priceMax = 2200 },
-    { item = 'straightwigs', priceMin = 2000, priceMax = 2400 },
-    { item = 'naturalwavewigs', priceMin = 2000, priceMax = 2500 },
-    { item = 'deepwavewigs', priceMin = 2400, priceMax = 3000 }
+    { item = 'long_curly', priceMin = 500, priceMax = 1800 },
+    { item = 'short_hair_wig', priceMin = 500, priceMax = 1800 },
+    { item = 'short_curled_wig', priceMin = 500, priceMax = 1800 },
+    { item = 'long_blonde_wig', priceMin = 500, priceMax = 1800 },
+    { item = '40inchwigs', priceMin = 500, priceMax = 1800 },
+    { item = 'braidwigs', priceMin = 500, priceMax = 1800 },
+    { item = 'bodywavewigs', priceMin = 500, priceMax = 1800 },    
+    { item = 'bangwigs', priceMin = 500, priceMax = 1800 },
+    { item = 'straightwigs', priceMin = 500, priceMax = 1800 },
+    { item = 'naturalwavewigs', priceMin = 500, priceMax = 1800 },
+    { item = 'deepwavewigs', priceMin = 500, priceMax = 1800 }
 }
 
 

@@ -11,7 +11,7 @@ return {
     },
 
     ['police'] = {
-        label = 'CPD',
+        label = 'SDS PD',
         type = 'leo',
         defaultDuty = true,
         offDutyPay = false,

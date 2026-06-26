@@ -6905,7 +6905,7 @@ return {
         hash = `towtruck4`,
     },
      c3pwrollback = {
-        name = 'Chicago Wrecker',
+        name = 'SDS Wrecker',
         brand = 'Vapid',
         model = 'c3pwrollback',
         price = 62901,
@@ -6914,7 +6914,7 @@ return {
         hash = `c3pwrollback`,
     },
       c3ramwrecker = {
-        name = 'Chicago Wrecker',
+        name = 'SDS Wrecker',
         brand = 'Vapid',
         model = 'c3ramwrecker',
         price = 62901,
@@ -9877,7 +9877,7 @@ scout20 = {
 
      ['fd20exp'] = {
         name = 'fd20exp',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'fd20exp',
         price = 75000,
         category = 'CPD',
@@ -9887,7 +9887,7 @@ scout20 = {
 
      ['B407'] = {
         name = 'B407',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'B407',
         price = 75000,
         category = 'CPD',
@@ -9897,7 +9897,7 @@ scout20 = {
 
     ['c3bufslickb'] = {
         name = 'c3bufslickb',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'c3bufslickb',
         price = 75000,
         category = 'CPD',
@@ -9907,7 +9907,7 @@ scout20 = {
 
     ['c324alamopdb'] = {
         name = 'c324alamopdb',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'c324alamopdb',
         price = 75000,
         category = 'CPD',
@@ -9917,7 +9917,7 @@ scout20 = {
 
      ['c3coqheatb'] = {
         name = 'c3coqheatb',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'c3coqheatb',
         price = 75000,
         category = 'CPD',
@@ -9927,7 +9927,7 @@ scout20 = {
 
     ['c3thrustpdb'] = {
         name = 'c3thrustpdb',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'c3thrustpdb',
         price = 75000,
         category = 'CPD',
@@ -9937,7 +9937,7 @@ scout20 = {
    
  ['carrierpete'] = {
         name = 'carrierpete',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'carrierpete',
         price = 75000,
         category = 'CPD',
@@ -9947,7 +9947,7 @@ scout20 = {
 
      ['carrier'] = {
         name = 'carrier',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'carrier',
         price = 75000,
         category = 'CPD',
@@ -9957,7 +9957,7 @@ scout20 = {
 
      ['JeepTrailer'] = {
         name = 'JeepTrailer',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'JeepTrailer',
         price = 75000,
         category = 'CPD',
@@ -9967,7 +9967,7 @@ scout20 = {
 
      ['popo43b'] = {
         name = 'popo43b',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'popo43b',
         price = 75000,
         category = 'CPD',
@@ -9977,7 +9977,7 @@ scout20 = {
 
      ['popo37'] = {
         name = 'popo37',
-        brand = 'Chicago Police Department',
+        brand = 'SDS Police Department',
         model = 'popo37',
         price = 75000,
         category = 'CPD',
@@ -9987,7 +9987,7 @@ scout20 = {
 
      ['DBDaiebuddyc8'] = {
         name = 'DBDaiebuddyc8',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaiebuddyc8',
         price = 75000,
         category = 'dono',
@@ -9997,7 +9997,7 @@ scout20 = {
 
      ['DBDaiecamsz71race'] = {
         name = 'DBDaiecamsz71race',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaiecamsz71race',
         price = 75000,
         category = 'dono',
@@ -10007,7 +10007,7 @@ scout20 = {
 
       ['DBDaiecamsz71race'] = {
         name = 'DBDaiecamsz71race',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaiecamsz71race',
         price = 75000,
         category = 'dono',
@@ -10017,7 +10017,7 @@ scout20 = {
 
      ['DBDaieddc69maro'] = {
         name = 'DBDaieddc69maro',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieddc69maro',
         price = 75000,
         category = 'dono',
@@ -10027,7 +10027,7 @@ scout20 = {
 
     ['DBDaieddc69maro'] = {
         name = 'DBDaieddc69maro',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieddc69maro',
         price = 75000,
         category = 'dono',
@@ -10037,7 +10037,7 @@ scout20 = {
 
      ['DBDaielactruck'] = {
         name = 'DBDaielactruck',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaielactruck',
         price = 75000,
         category = 'dono',
@@ -10047,7 +10047,7 @@ scout20 = {
 
      ['DBDaieonlyfx'] = {
         name = 'DBDaieonlyfx',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieonlyfx',
         price = 75000,
         category = 'dono',
@@ -10057,7 +10057,7 @@ scout20 = {
 
      ['DBDaiespace760'] = {
         name = 'DBDaiespace760',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaiespace760',
         price = 75000,
         category = 'dono',
@@ -10067,7 +10067,7 @@ scout20 = {
 
      ['DBDaieRTGurus'] = {
         name = 'DBDaieRTGurus',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieRTGurus',
         price = 75000,
         category = 'dono',
@@ -10077,7 +10077,7 @@ scout20 = {
 
      ['DBDaieRTGsunflowerGwagon'] = {
         name = 'DBDaieRTGsunflowerGwagon',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieRTGsunflowerGwagon',
         price = 75000,
         category = 'dono',
@@ -10087,7 +10087,7 @@ scout20 = {
 
      ['DBDaieRTGdurango'] = {
         name = 'DBDaieRTGdurango',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaieRTGdurango',
         price = 75000,
         category = 'dono',
@@ -10097,7 +10097,7 @@ scout20 = {
 
      ['DBDaierrtruck'] = {
         name = 'DBDaierrtruck',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaierrtruck',
         price = 75000,
         category = 'dono',
@@ -10107,7 +10107,7 @@ scout20 = {
 
      ['DBDaiepnutcybertruck'] = {
         name = 'DBDaiepnutcybertruck',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'DBDaiepnutcybertruck',
         price = 75000,
         category = 'dono',
@@ -10117,7 +10117,7 @@ scout20 = {
 
      ['4roadglide41'] = {
         name = '4roadglide41',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = '4roadglide41',
         price = 75000,
         category = 'dono',
@@ -10128,7 +10128,7 @@ scout20 = {
    
  ['70challen'] = {
         name = '70challen',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = '70challen',
         price = 75000,
         category = 'dono',
@@ -10139,7 +10139,7 @@ scout20 = {
     -------------iconic
 ['23D170'] = {
         name = '23D170',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = '23D170',
         price = 75000,
         category = 'addon',
@@ -10149,7 +10149,7 @@ scout20 = {
 
     ['33hellcat'] = {
         name = '33hellcat',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = '33hellcat',
         price = 75000,
         category = 'addon',
@@ -10159,7 +10159,7 @@ scout20 = {
 
      ['1016rwdevo'] = {
         name = '1016rwdevo',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = '1016rwdevo',
         price = 75000,
         category = 'addon',
@@ -10169,7 +10169,7 @@ scout20 = {
 
      ['Benefactor_GTS'] = {
         name = 'Benefactor_GTS',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'Benefactor_GTS',
         price = 75000,
         category = 'addon',
@@ -10179,7 +10179,7 @@ scout20 = {
 
      ['brabusp900'] = {
         name = 'brabusp900',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'brabusp900',
         price = 75000,
         category = 'addon',
@@ -10189,7 +10189,7 @@ scout20 = {
 
      ['calithekid'] = {
         name = 'calithekid',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'calithekid',
         price = 75000,
         category = 'addon',
@@ -10199,7 +10199,7 @@ scout20 = {
 
     ['cbtnlargos'] = {
         name = 'cbtnlargos',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'cbtnlargos',
         price = 75000,
         category = 'addon',
@@ -10209,7 +10209,7 @@ scout20 = {
 
       ['durangocrb'] = {
         name = 'durangocrb',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'durangocrb',
         price = 75000,
         category = 'addon',
@@ -10219,7 +10219,7 @@ scout20 = {
 
      ['fab675lt'] = {
         name = 'fab675lt',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'fab675lt',
         price = 75000,
         category = 'addon',
@@ -10229,7 +10229,7 @@ scout20 = {
 
     ['gintanisvjtt'] = {
         name = 'gintanisvjtt',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'gintanisvjtt',
         price = 75000,
         category = 'addon',
@@ -10239,7 +10239,7 @@ scout20 = {
 
      ['glsmansory850'] = {
         name = 'glsmansory850',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'glsmansory850',
         price = 75000,
         category = 'addon',
@@ -10249,7 +10249,7 @@ scout20 = {
 
     ['JR765LT'] = {
         name = 'JR765LT',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'JR765LT',
         price = 75000,
         category = 'addon',
@@ -10259,7 +10259,7 @@ scout20 = {
 
      ['lrevuelto'] = {
         name = 'lrevuelto',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'lrevuelto',
         price = 75000,
         category = 'addon',
@@ -10269,7 +10269,7 @@ scout20 = {
 
      ['m3csf80'] = {
         name = 'm3csf80',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'm3csf80',
         price = 75000,
         category = 'addon',
@@ -10279,7 +10279,7 @@ scout20 = {
 
     ['pagassi20'] = {
         name = 'pagassi20',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'pagassi20',
         price = 75000,
         category = 'addon',
@@ -10289,7 +10289,7 @@ scout20 = {
 
     ['playabrick300'] = {
         name = 'playabrick300',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'playabrick300',
         price = 75000,
         category = 'addon',
@@ -10299,7 +10299,7 @@ scout20 = {
 
      ['sbg87'] = {
         name = 'sbg87',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'sbg87',
         price = 75000,
         category = 'addon',
@@ -10309,7 +10309,7 @@ scout20 = {
 
      ['tuffgbach'] = {
         name = 'tuffgbach',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'tuffgbach',
         price = 75000,
         category = 'addon',
@@ -10319,7 +10319,7 @@ scout20 = {
 
      ['tuffwbach'] = {
         name = 'tuffwbach',
-        brand = 'Chicago Customs',
+        brand = 'SDS Customs',
         model = 'tuffwbach',
         price = 75000,
         category = 'addon',
@@ -10330,7 +10330,7 @@ scout20 = {
 
      ['esko89bro'] = {
         name = 'esko89bro',
-        brand = 'Chicagos',
+        brand = 'SDS',
         model = 'esko89bro',
         price = 75000,
         category = '1of1',

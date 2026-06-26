@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KLB Economy Overview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --klb-teal:#00E6B8; --klb-purple:#7B5CFF;
+      --bg-1:#0b0d12; --bg-2:#11131a;
+      --text:#E6E9F0; --muted:#9AA3B2;
+      --card:#0f131aee; --shadow:0 10px 30px rgba(0,0,0,.45);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--text);
+      background:transparent;
+      overflow:hidden;
+    }
+    #nui-wrapper{
+      position:fixed;
+      inset:0;
+      display:none;
+      flex-direction:column;
+      align-items:center;
+      overflow:hidden;
+      padding:40px 0;
+      background:
+        radial-gradient(1200px 600px at 10% 0%, rgba(0,230,184,.18), transparent 60%),
+        radial-gradient(1200px 600px at 90% 100%, rgba(123,92,255,.20), transparent 60%),
+        linear-gradient(180deg, var(--bg-1), var(--bg-2));
+    }
+    
+    #nui-wrapper[data-visible="true"]{display:flex}
+    #nui-wrapper[data-visible="false"]{pointer-events:none}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px; width:100%}
+
+    /* Header */
+    .topbar{display:flex; align-items:center; gap:16px; justify-content:space-between; margin-bottom:22px}
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:44px; height:44px; border-radius:12px;
+      background:linear-gradient(135deg, var(--klb-teal), var(--klb-purple));
+      box-shadow:0 6px 18px rgba(123,92,255,.35), 0 2px 10px rgba(0,230,184,.25); position:relative}
+    .logo:after{content:""; position:absolute; inset:2px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.02));}
+    .title{font-weight:800; letter-spacing:.3px; font-size:20px}
+    .subtitle{color:var(--muted); font-size:12.5px}
+
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{appearance:none; border:0; background:transparent; color:var(--text); cursor:pointer}
+    .btn[disabled]{opacity:.55; cursor:not-allowed}
+    .btn-ghost{padding:10px 14px; border-radius:12px; backdrop-filter: blur(8px);
+      background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .btn-primary{padding:12px 16px; border-radius:14px; font-weight:600;
+      background:linear-gradient(135deg, var(--klb-teal), var(--klb-purple));
+      box-shadow:0 8px 24px rgba(123,92,255,.35), 0 3px 12px rgba(0,230,184,.25)}
+    .btn-danger{padding:10px 14px; border-radius:12px; background:rgba(255,99,132,.1); border:1px solid rgba(255,99,132,.35); color:#ff97aa}
+
+    .status-banner{display:flex; align-items:center; gap:12px; padding:14px 18px; border-radius:16px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); color:var(--text);
+      box-shadow:0 6px 16px rgba(0,0,0,.25); margin-bottom:22px; font-size:13px}
+    .status-banner strong{font-size:13px; letter-spacing:.3px}
+    .status-banner[hidden]{display:none !important}
+
+    /* Pretty inputs & selects */
+    .input{padding:10px 12px; border-radius:12px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05); color:var(--text); font-family:inherit; transition:border .2s, background .2s}
+    .input:focus{border-color:var(--klb-teal); outline:none; background:rgba(255,255,255,.08)}
+    select.input{appearance:none; background-image:linear-gradient(45deg,transparent 50%,var(--klb-teal) 50%),linear-gradient(135deg,var(--klb-teal) 50%,transparent 50%); background-position:calc(100% - 16px) calc(1em + 2px),calc(100% - 11px) calc(1em + 2px); background-size:5px 5px; background-repeat:no-repeat}
+
+    /* Grid & cards */
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:16px}
+    .card{grid-column:span 3; border-radius:var(--radius); padding:18px; background:var(--card);
+      border:1px solid rgba(255,255,255,.08); backdrop-filter: blur(10px); box-shadow:var(--shadow)}
+    .card.half{grid-column:span 6}
+    .card.full{grid-column:span 12}
+
+    .k-label{color:var(--muted); font-size:12px; letter-spacing:.3px}
+    .k-value{font-size:var(--k-font-size,26px); letter-spacing:var(--k-letter-spacing,-0.1px); font-weight:800; line-height:1.15; margin-top:6px; transition:font-size .2s ease, letter-spacing .2s ease}
+    .k-chip{display:inline-flex; align-items:center; gap:8px; font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.05)}
+    .split{display:flex; gap:16px; align-items:center; justify-content:space-between}
+
+    /* Table */
+    table{width:100%; border-collapse:separate; border-spacing:0 10px}
+    thead th{font-size:12px; color:var(--muted); font-weight:600; text-align:left; padding:0 14px}
+    tbody tr{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    tbody td{padding:14px; font-size:14px}
+    tbody tr{border-radius:14px; overflow:hidden}
+    tbody tr td:first-child{border-top-left-radius:14px; border-bottom-left-radius:14px}
+    tbody tr td:last-child{border-top-right-radius:14px; border-bottom-right-radius:14px}
+
+    .pill{padding:6px 10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px; font-size:12px}
+    .muted{color:var(--muted)}
+
+    /* Extra sections */
+    .bars{display:flex; flex-direction:column; gap:10px}
+    .bar{display:grid; grid-template-columns:80px 1fr 110px; align-items:center; gap:10px}
+    .bartrack{height:10px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:999px; overflow:hidden}
+    .barfill{height:100%; width:0%; background:linear-gradient(90deg, var(--klb-teal), var(--klb-purple))}
+    .statsgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px}
+
+    /* Responsive */
+    @media (max-width:980px){.card{grid-column: span 6}.card.half{grid-column: span 12}.statsgrid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{gap:12px}.card{grid-column: span 12}.statsgrid{grid-template-columns:1fr}}
+
+    /* Edit form grid */
+    .formgrid{display:grid; grid-template-columns:1.2fr 1fr 1fr 1fr auto; gap:10px; align-items:center}
+    @media (max-width:980px){.formgrid{grid-template-columns:1fr 1fr 1fr 1fr 1fr}}
+    @media (max-width:640px){.formgrid{grid-template-columns:1fr}}
+
+    /* Modal */
+    .backdrop{position:fixed; inset:0; background:rgba(0,0,0,.6); backdrop-filter:blur(6px); display:none; align-items:center; justify-content:center; z-index:50}
+    .modal{width:min(680px,92vw); border-radius:20px; background:linear-gradient(180deg,#0f131a,#0b0d12); border:1px solid rgba(255,255,255,.08); box-shadow:0 10px 40px rgba(0,0,0,.5); padding:22px; animation:pop .28s ease}
+    .modal-header{display:flex; align-items:center; justify-content:space-between; margin-bottom:12px}
+    .modal-title{font-weight:800}
+    .modal-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .kv{display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .btn-icon{border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.06); border-radius:12px; padding:8px 10px; cursor:pointer}
+    .row{display:flex; gap:10px; align-items:center}
+    .srch-row{display:grid; grid-template-columns:1fr auto; gap:10px}
+    @keyframes pop{from{opacity:0; transform:scale(.96)}to{opacity:1; transform:scale(1)}}
+    /* --- Scrollable cards/tables --- */
+    .card.scroll { padding: 0; overflow: hidden; } /* selve kortet får ikke global scroll */
+    .card.scroll .card-header{
+      position: sticky; top: 0; z-index: 2;
+      padding: 14px 18px; background: var(--card);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .card.scroll .card-body{ padding: 10px 14px 16px; }
+
+    /* max-højder til desktop/mobil */
+    .table-scroll{ max-height: 360px; overflow: auto; }
+    @media (max-width: 980px){ .table-scroll{ max-height: 300px; } }
+    @media (max-width: 640px){ .table-scroll{ max-height: 240px; } }
+
+    /* sticky table header inde i scroll-området */
+    .table-scroll thead th{
+      position: sticky; top: 0; z-index: 3;
+      background: var(--card);
+      padding-top: 10px; padding-bottom: 10px;
+    }
+
+    /* pæn scrollbar (valgfrit) */
+    .table-scroll::-webkit-scrollbar{ height: 10px; width: 10px; }
+    .table-scroll::-webkit-scrollbar-thumb{
+      background: rgba(255,255,255,.12); border-radius: 8px;
+      border: 2px solid rgba(0,0,0,.15);
+    }
+    .table-scroll::-webkit-scrollbar-track{ background: transparent; }
+/* tving ny række i grid */
+    .row-break{ grid-column:1 / -1; height:0; }
+
+    /* kolonne-spans (12-col grid) */
+    .col-span-6{ grid-column: span 6; }
+
+    /* ens højder i de to lister */
+    .card.scroll .table-scroll{ max-height: 320px; min-height: 320px; overflow:auto; }
+    @media (max-width:980px){
+      .card.scroll .table-scroll{ max-height:280px; min-height:280px; }
+    }
+/* KLB custom select */
+.klb-select{position:relative;display:inline-block;width:100%}
+.klb-select-btn{
+  width:100%; height:42px; border-radius:14px; padding:10px 40px 10px 12px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+  color:var(--text); font:inherit; text-align:left; cursor:pointer;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06), 0 4px 18px rgba(0,0,0,.25);
+  backdrop-filter:blur(8px); transition:border-color .18s, box-shadow .18s;
+}
+.klb-select-btn:after{
+  content:""; position:absolute; right:12px; top:50%; width:18px; height:18px; transform:translateY(-50%);
+  background: center / contain no-repeat
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2300E6B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  opacity:.9;
+}
+.klb-select.open .klb-select-btn{border-color:var(--klb-teal); box-shadow:0 0 0 3px rgba(0,230,184,.25), inset 0 1px 0 rgba(255,255,255,.08)}
+.klb-options{
+  position:absolute; z-index:60; left:0; right:0; top:calc(100% + 6px);
+  background:linear-gradient(180deg,#10151d,#0b0f15); border:1px solid rgba(255,255,255,.12);
+  border-radius:14px; padding:6px; box-shadow:0 12px 32px rgba(0,0,0,.45); display:none; max-height:220px; overflow:auto;
+}
+.klb-select.open .klb-options{display:block}
+.klb-option{
+  border-radius:10px; padding:9px 10px; cursor:pointer; user-select:none;
+}
+.klb-option:hover{background:rgba(255,255,255,.06)}
+.klb-option[aria-selected="true"]{outline:1px solid rgba(0,230,184,.55); background:rgba(0,230,184,.08)}
+/* Red X */
+#pm-close{color:#ff6b6b;border:1px solid rgba(255,107,107,.45);background:rgba(255,107,107,.10)}
+#pm-close:hover{background:rgba(255,107,107,.18);border-color:rgba(255,107,107,.65);box-shadow:0 6px 16px rgba(255,107,107,.22)}
+
+  </style>
+</head>
+<body>
+  <div id="nui-wrapper" data-visible="false">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <div class="title">KLB · Economy Overview</div>
+            <div class="subtitle">Live totals, player rankings & export</div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn btn-danger" id="btnClose">Close</button>
+          <button class="btn btn-ghost" id="btnExport">Export CSV</button>
+          <button class="btn btn-primary" id="btnRefresh">Refresh</button>
+        </div>
+      </div>
+
+      <div id="status-banner" class="status-banner" hidden>
+        <strong id="status-banner-title">Awaiting data</strong>
+        <span id="status-banner-msg">Requesting latest totals…</span>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="grid" style="margin-bottom:10px">
+        <div class="card"><div class="k-label">TOTAL CASH</div><div class="k-value" id="total-cash">$0</div></div>
+        <div class="card"><div class="k-label">TOTAL BANK</div><div class="k-value" id="total-bank">$0</div></div>
+        <div class="card"><div class="k-label">ONLINE</div><div class="split"><div class="k-value" id="online-count">0</div><span class="k-chip" data-testid="sync-chip">OK · syncing</span></div></div>
+        <div class="card"><div class="k-label">OFFLINE</div><div class="k-value" id="offline-count">0</div></div>
+
+        <div class="card half">
+          <div class="split" style="margin-bottom:6px">
+            <div><div class="k-label">GRAND TOTAL</div><div class="k-value" id="grand-total">$0</div></div>
+            <div class="muted" id="last-updated">—</div>
+          </div>
+          <div style="height:6px; border-radius:999px; background:linear-gradient(90deg, var(--klb-teal), var(--klb-purple)); opacity:.75"></div>
+        </div>
+
+      <div class="card half">
+        <div class="split" style="margin-bottom:8px">
+          <div class="k-label">EDIT PLAYER</div>
+          <div class="muted" style="font-size:12px">Open a player by CID, then edit inside the popup.</div>
+        </div>
+        <div class="formgrid">
+          <div class="srch-row" style="grid-column:1/-1">
+            <input id="ep-cid" class="input" placeholder="CitizenID (CID) e.g. KLB1003" />
+            <button class="btn btn-primary" id="ep-view" title="View player">View</button>
+          </div>
+        </div>
+        <div class="muted" id="ep-status" style="margin-top:8px; font-size:12px"></div>
+      </div>
+
+
+
+        <!-- Accounts Breakdown -->
+        <div class="card half">
+          <div class="split" style="margin-bottom:8px"><div class="k-label">ACCOUNTS BREAKDOWN</div><div class="muted" style="font-size:12px">Share of total wealth by account</div></div>
+          <div class="bars">
+            <div class="bar"><span>Cash</span><div class="bartrack"><div id="bar-cash" class="barfill"></div></div><strong id="bar-cash-val">$0</strong></div>
+            <div class="bar"><span>Bank</span><div class="bartrack"><div id="bar-bank" class="barfill"></div></div><strong id="bar-bank-val">$0</strong></div>
+            <div class="bar"><span>Dirty</span><div class="bartrack"><div id="bar-dirty" class="barfill"></div></div><strong id="bar-dirty-val">$0</strong></div>
+            <div class="bar"><span>Crypto</span><div class="bartrack"><div id="bar-crypto" class="barfill"></div></div><strong id="bar-crypto-val">$0</strong></div>
+          </div>
+        </div>
+
+        <!-- Server Stats -->
+        <div class="card half">
+          <div class="split" style="margin-bottom:8px"><div class="k-label">SERVER STATS</div><div class="muted" style="font-size:12px">Population & distribution</div></div>
+          <div class="statsgrid">
+            <div><div class="k-label">Registered Players</div><div class="k-value" id="stat-total-players">0</div></div>
+            <div><div class="k-label">Avg Wealth / Player</div><div class="k-value" id="stat-avg">$0</div></div>
+            <div><div class="k-label">Median Wealth</div><div class="k-value" id="stat-median">$0</div></div>
+            <div><div class="k-label">90th Percentile</div><div class="k-value" id="stat-p90">$0</div></div>
+  
+          </div>
+        </div>
+
+<!-- Start en ny række til tabellerne -->
+<div class="row-break"></div>
+
+<!-- Venstre: Largest single accounts -->
+<div class="card scroll col-span-6">
+  <div class="card-header split" style="margin-bottom:0">
+    <div class="k-label">🏦 LARGEST SINGLE ACCOUNTS</div>
+    <div class="muted" style="font-size:12px">Top balances across all accounts</div>
+  </div>
+  <div class="card-body">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Name</th><th>CID</th><th>Account</th><th>Balance</th></tr>
+        </thead>
+        <tbody id="largest-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Højre: Top 10 richest -->
+<div class="card scroll col-span-6">
+  <div class="card-header split" style="margin-bottom:0">
+    <div class="k-label">🏆 TOP 10 RICHEST</div>
+    <div class="muted" style="font-size:12px">CID · Cash · Bank · Total</div>
+  </div>
+  <div class="card-body">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Name</th><th>CID</th><th>Cash</th><th>Bank</th><th>Total</th></tr>
+        </thead>
+        <tbody id="top-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+    <!-- Player modal -->
+    <div id="player-modal" class="backdrop" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+      <div class="modal">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title" id="pm-title">Player Overview</div>
+            <div class="muted" id="pm-sub">—</div>
+          </div>
+          <button class="btn-icon" id="pm-close">✕</button>
+        </div>
+        <div class="modal-grid">
+          <div>
+            <div class="k-label">Balances</div>
+            <div class="kv"><span>Cash</span><strong id="pm-cash">$0</strong></div>
+            <div class="kv"><span>Bank</span><strong id="pm-bank">$0</strong></div>
+            <div class="kv"><span>Dirty</span><strong id="pm-dirty">$0</strong></div>
+            <div class="kv"><span>Crypto</span><strong id="pm-crypto">$0</strong></div>
+            <div class="kv"><span>Total</span><strong id="pm-total">$0</strong></div>
+          </div>
+          <div>
+            <div class="k-label">Edit balance</div>
+            <div class="row" style="margin-bottom:8px">
+              <select id="pm-account" class="input" style="flex:1">
+                <option value="cash">Cash</option>
+                <option value="bank">Bank</option>
+                <option value="dirty">Dirty</option>
+                <option value="crypto">Crypto</option>
+              </select>
+              <select id="pm-op" class="input" style="flex:1">
+                <option value="add">Add</option>
+                <option value="remove">Remove</option>
+                <option value="set">Set</option>
+              </select>
+            </div>
+            <div class="row" style="margin-bottom:8px">
+              <input id="pm-amount" type="number" class="input" placeholder="Amount" min="0" step="1" style="flex:1" />
+              <button class="btn btn-primary" id="pm-apply">Apply</button>
+            </div>
+            <div class="k-label" style="margin-top:6px">Quick actions</div>
+            <div class="row">
+              <button class="btn btn-ghost" data-pm-action="cash+1000">+1k Cash</button>
+              <button class="btn btn-ghost" data-pm-action="bank+5000">+5k Bank</button>
+            </div>
+            <div class="row" style="margin-top:8px">
+              <button class="btn btn-ghost" data-pm-action="cash-set-0">Set Cash = 0</button>
+              <button class="btn btn-ghost" data-pm-action="dirty-set-0">Clear Dirty</button>
+            </div>
+            <div class="muted" id="pm-status" style="margin-top:10px; font-size:12px">—</div>
+            <div class="muted" style="margin-top:6px; font-size:12px">Applies using the same logic as in-game server call.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const wrapper = document.getElementById('nui-wrapper')
+    const isFiveM = typeof GetParentResourceName === 'function'
+    let resourceName = 'klb-economycore'
+    if (isFiveM) {
+      try { resourceName = GetParentResourceName() } catch (e) { resourceName = 'klb-economycore' }
+    }
+
+    const state = {
+      totals: { cash: 0, bank: 0, dirty: 0, crypto: 0, sum: 0 },
+      counts: { online: 0, offline: 0 },
+      history: [],
+      players: [],
+      lastUpdated: null,
+      error: null,
+      refreshPending: false
+    }
+
+    let editPending = false
+    let pmCurrent = null
+
+    function formatCompactNumber(value, decimals = 1) {
+      const num = Number(value) || 0
+      const abs = Math.abs(num)
+      const sign = num < 0 ? '-' : ''
+      const format = (divisor, suffix) => {
+        const scaled = abs / divisor
+        const precision = scaled >= 100 ? 0 : decimals
+        const fixed = scaled.toFixed(precision)
+        const trimmed = fixed.replace(/\.0+$/, '').replace(/(\.[0-9]*[1-9])0+$/, '$1')
+        return `${sign}${trimmed}${suffix}`
+      }
+      if (abs >= 1e12) return format(1e12, 'bio')
+      if (abs >= 1e9) return format(1e9, 'mia')
+      if (abs >= 1e6) return format(1e6, 'mio')
+      if (abs >= 1e3) return format(1e3, 'k')
+      return num.toLocaleString()
+    }
+
+    function fmtCurrency(value, options = {}) {
+      const amount = Number(value) || 0
+      const {
+        compact = false,
+        threshold = 100000,
+        decimals = 1,
+        symbol = '$'
+      } = options
+      const abs = Math.abs(amount)
+      if (compact && abs >= threshold) {
+        const compacted = formatCompactNumber(amount, decimals)
+        if (compacted.startsWith('-')) {
+          return '-' + symbol + compacted.slice(1)
+        }
+        return symbol + compacted
+      }
+      const formatted = abs.toLocaleString()
+      return (amount < 0 ? '-' : '') + symbol + formatted
+    }
+
+    function recomputeTotalsFromPlayers(players = state.players) {
+      return players.reduce((acc, p) => {
+        const cash = Number(p.cash || 0)
+        const bank = Number(p.bank || 0)
+        const dirty = Number(p.dirty || 0)
+        const crypto = Number(p.crypto || 0)
+        acc.cash += cash
+        acc.bank += bank
+        acc.dirty += dirty
+        acc.crypto += crypto
+        acc.sum += cash + bank + dirty + crypto
+        return acc
+      }, { cash: 0, bank: 0, dirty: 0, crypto: 0, sum: 0 })
+    }
+
+    function normalizePlayers(players = []) {
+      return players
+        .filter(p => p && typeof p === 'object')
+        .map(p => {
+          const cash = Number(p.cash) || 0
+          const bank = Number(p.bank) || 0
+          const dirty = Number(p.dirty) || 0
+          const crypto = Number(p.crypto) || 0
+          const sum = Number(p.sum)
+          return {
+            cid: String(p.cid ?? ''),
+            name: String(p.name ?? 'Unknown'),
+            cash,
+            bank,
+            dirty,
+            crypto,
+            sum: Number.isFinite(sum) ? sum : cash + bank + dirty + crypto
+          }
+        })
+    }
+
+    function adjustMetricSize(el, displayText) {
+      if (!el) return
+      const cleaned = String(displayText || '').replace(/[^0-9a-zA-Z]/g, '')
+      const length = cleaned.length || 1
+      const base = 30
+      const step = 1.8
+      const min = 18
+      const size = Math.max(min, base - Math.max(0, length - 4) * step)
+      const letter = length >= 9 ? -0.6 : length >= 7 ? -0.4 : length >= 5 ? -0.2 : 0
+      el.style.setProperty('--k-font-size', size + 'px')
+      el.style.setProperty('--k-letter-spacing', letter + 'px')
+      el.dataset.len = String(length)
+    }
+
+    function updateMoneyMetric(el, value, options = {}) {
+      if (!el) return
+      const compactValue = fmtCurrency(value, { compact: true, ...options })
+      const fullValue = fmtCurrency(value, { compact: false, ...options })
+      el.textContent = compactValue
+      el.setAttribute('title', fullValue)
+      adjustMetricSize(el, compactValue)
+    }
+
+    function updateCountMetric(el, value, decimals = 1) {
+      if (!el) return
+      const compactValue = formatCompactNumber(value, decimals)
+      el.textContent = compactValue
+      el.setAttribute('title', Number(value || 0).toLocaleString())
+      adjustMetricSize(el, compactValue)
+    }
+
+    function setPlayerStatus(message = '—', isError = false) {
+      const status = document.getElementById('pm-status')
+      if (!status) return
+      status.textContent = message || '—'
+      const defaultColor = getComputedStyle(document.documentElement).getPropertyValue('--muted').trim() || '#9AA3B2'
+      status.style.color = isError ? '#ff97aa' : defaultColor
+    }
+
+    function setEditPending(pending) {
+      editPending = Boolean(pending)
+      const btn = document.getElementById('pm-apply')
+      if (btn) {
+        btn.disabled = editPending
+        btn.textContent = editPending ? 'Saving…' : 'Apply'
+      }
+      document.querySelectorAll('[data-pm-action]').forEach(actionBtn => {
+        actionBtn.disabled = editPending
+      })
+    }
+
+    function setRefreshPending(pending) {
+      const next = Boolean(pending)
+      if (state.refreshPending === next) return
+      state.refreshPending = next
+      render()
+    }
+
+    function parseAmountInput(value) {
+      if (value === null || value === undefined) return NaN
+      const normalized = String(value).replace(/[^0-9.-]/g, '').trim()
+      if (normalized === '' || normalized === '-' || normalized === '.' || normalized === '-.') {
+        return NaN
+      }
+      const parsed = Number(normalized)
+      return Number.isFinite(parsed) ? parsed : NaN
+    }
+
+    function setLastUpdated(value) {
+      if (value === undefined || value === null) return
+      if (value instanceof Date) {
+        state.lastUpdated = value.toLocaleString()
+        return
+      }
+      if (typeof value === 'number') {
+        const d = new Date(value)
+        if (!Number.isNaN(d.getTime())) {
+          state.lastUpdated = d.toLocaleString()
+          return
+        }
+      }
+      if (typeof value === 'string') {
+        const trimmed = value.trim()
+        if (!trimmed) return
+        const parsed = Date.parse(trimmed)
+        state.lastUpdated = Number.isNaN(parsed) ? trimmed : new Date(parsed).toLocaleString()
+        return
+      }
+      state.lastUpdated = String(value)
+    }
+
+    function applyPayload(payload = {}) {
+      if (!payload || typeof payload !== 'object') return
+
+      setRefreshPending(false)
+
+      state.error = null
+      const possibleError = payload.error || payload.err || (payload.data && payload.data.error)
+      if (possibleError) {
+        if (typeof possibleError === 'string') {
+          state.error = possibleError
+        } else if (possibleError) {
+          state.error = possibleError.message || possibleError.code || JSON.stringify(possibleError)
+        }
+        if (!state.error) {
+          state.error = 'Unknown error'
+        }
+        state.players = []
+        state.totals = { cash: 0, bank: 0, dirty: 0, crypto: 0, sum: 0 }
+        state.counts = { online: 0, offline: 0 }
+        state.history = []
+        render()
+        return
+      }
+
+      if (Array.isArray(payload.players)) {
+        const normalizedPlayers = normalizePlayers(payload.players)
+        state.players = normalizedPlayers
+
+        if (pmCurrent) {
+          const currentCid = String(pmCurrent.cid || '').toLowerCase()
+          if (currentCid) {
+            const refreshed = normalizedPlayers.find(pl => String(pl.cid || '').toLowerCase() === currentCid)
+            if (refreshed) {
+              pmCurrent = refreshed
+              fillPlayerModal(pmCurrent)
+            }
+          }
+        }
+      }
+
+      if (payload.totals && typeof payload.totals === 'object') {
+        const totals = {
+          cash: Number(payload.totals.cash) || 0,
+          bank: Number(payload.totals.bank) || 0,
+          dirty: Number(payload.totals.dirty) || 0,
+          crypto: Number(payload.totals.crypto) || 0,
+          sum: Number(payload.totals.sum)
+        }
+        if (!Number.isFinite(totals.sum)) {
+          totals.sum = totals.cash + totals.bank + totals.dirty + totals.crypto
+        }
+        state.totals = totals
+      } else if (payload.players) {
+        state.totals = recomputeTotalsFromPlayers()
+      }
+
+      if (state.totals && typeof state.totals === 'object') {
+        const numericSum = Number(state.totals.sum)
+        if (Number.isFinite(numericSum)) {
+          state.totals.sum = numericSum
+        } else {
+          state.totals.sum = Number(state.totals.cash || 0) + Number(state.totals.bank || 0) + Number(state.totals.dirty || 0) + Number(state.totals.crypto || 0)
+        }
+      }
+
+      if (payload.counts && typeof payload.counts === 'object') {
+        state.counts = {
+          online: Number(payload.counts.online) || 0,
+          offline: Number(payload.counts.offline) || 0
+        }
+      }
+
+      if (Array.isArray(payload.history)) {
+        const numeric = payload.history
+          .map(n => Number(n))
+          .filter(n => Number.isFinite(n))
+        state.history = numeric.slice(-48)
+      }
+
+      setLastUpdated(payload.lastUpdated || payload.updatedAt || payload.timestamp)
+
+      render()
+    }
+
+    function postNui(eventName, payload = {}) {
+      if (!isFiveM) return
+      fetch(`https://${resourceName}/${eventName}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+        body: JSON.stringify(payload)
+      }).catch(() => {
+        setRefreshPending(false)
+      })
+    }
+
+    function handleEditResult(payload = {}) {
+      setEditPending(false)
+      setRefreshPending(false)
+
+      if (!payload || typeof payload !== 'object') {
+        setPlayerStatus('Edit result unavailable', true)
+        return
+      }
+
+      if (payload.success === false || payload.error) {
+        const err = typeof payload.error === 'string'
+          ? payload.error
+          : (payload.error && (payload.error.message || payload.error.code)) || 'failed'
+        setPlayerStatus('Error: ' + err, true)
+        if (String(err).toLowerCase() === 'unauthorized') {
+          state.error = 'unauthorized'
+          render()
+        }
+        return
+      }
+
+      const data = payload.data || payload.result || payload
+      if (!data || typeof data !== 'object') {
+        setPlayerStatus('Edit applied', false)
+        return
+      }
+
+      if (data.error) {
+        const err = typeof data.error === 'string'
+          ? data.error
+          : (data.error && (data.error.message || data.error.code)) || 'failed'
+        setPlayerStatus('Error: ' + err, true)
+        if (String(err).toLowerCase() === 'unauthorized') {
+          state.error = 'unauthorized'
+          render()
+        }
+        return
+      }
+
+      if (data.totals && typeof data.totals === 'object') {
+        const totals = {
+          cash: Number(data.totals.cash) || 0,
+          bank: Number(data.totals.bank) || 0,
+          dirty: Number(data.totals.dirty) || 0,
+          crypto: Number(data.totals.crypto) || 0,
+          sum: Number(data.totals.sum)
+        }
+        if (!Number.isFinite(totals.sum)) {
+          totals.sum = totals.cash + totals.bank + totals.dirty + totals.crypto
+        }
+        state.totals = totals
+      }
+
+      let normalizedPlayer = null
+      if (data.player && typeof data.player === 'object') {
+        const [player] = normalizePlayers([data.player])
+        if (player) {
+          const targetCid = String(player.cid || '').toLowerCase()
+          const idx = state.players.findIndex(pl => String(pl.cid || '').toLowerCase() === targetCid)
+          if (idx >= 0) {
+            state.players[idx] = player
+          } else {
+            state.players.push(player)
+          }
+          normalizedPlayer = player
+        }
+      }
+
+      if (!data.totals && state.players.length) {
+        state.totals = recomputeTotalsFromPlayers()
+      }
+
+      state.error = null
+      state.lastUpdated = new Date().toLocaleString()
+      render()
+
+      if (normalizedPlayer && pmCurrent && String(pmCurrent.cid || '').toLowerCase() === String(normalizedPlayer.cid || '').toLowerCase()) {
+        pmCurrent = normalizedPlayer
+        fillPlayerModal(pmCurrent)
+      }
+
+      const amountInput = document.getElementById('pm-amount')
+      if (amountInput) amountInput.value = ''
+
+      setPlayerStatus('Changes saved')
+    }
+
+    function safeQuery() {
+      const el = document.getElementById('search')
+      return (el && typeof el.value === 'string') ? el.value.toLowerCase() : ''
+    }
+
+    function topListFromPlayers(players, key, q) {
+      const base = Array.isArray(players) ? players : []
+      const filtered = base.filter(p => (String(p.name || '') + ' ' + String(p.cid || '')).toLowerCase().includes(q || ''))
+      const arr = filtered.length ? filtered : base
+      return arr
+        .slice()
+        .sort((a, b) => Number(b[key] || 0) - Number(a[key] || 0))
+        .slice(0, Math.min(10, arr.length))
+    }
+
+    function openPanel() {
+      if (wrapper) {
+        wrapper.setAttribute('data-visible', 'true')
+        if (typeof wrapper.scrollTo === 'function') { wrapper.scrollTo(0, 0) }
+      }
+    }
+
+    function closePanel(emit = true) {
+      if (wrapper) { wrapper.setAttribute('data-visible', 'false') }
+      closePlayerModal()
+      if (emit) { postNui('close') }
+    }
+
+    // Modal helpers
+    function fillPlayerModal(p) {
+      document.getElementById('pm-title').textContent = p.name
+      document.getElementById('pm-sub').textContent = p.cid
+      document.getElementById('pm-cash').textContent = fmtCurrency(p.cash)
+      document.getElementById('pm-bank').textContent = fmtCurrency(p.bank)
+      document.getElementById('pm-dirty').textContent = fmtCurrency(p.dirty)
+      document.getElementById('pm-crypto').textContent = fmtCurrency(p.crypto)
+      document.getElementById('pm-total').textContent = fmtCurrency(p.sum)
+    }
+
+    function openPlayerModal(p) {
+      pmCurrent = p
+      fillPlayerModal(p)
+      setPlayerStatus('—')
+      setEditPending(false)
+      document.getElementById('player-modal').style.display = 'flex'
+    }
+
+    function closePlayerModal() {
+      const modal = document.getElementById('player-modal')
+      if (modal) { modal.style.display = 'none' }
+      pmCurrent = null
+      setEditPending(false)
+      setPlayerStatus('—')
+    }
+
+    function render() {
+      const banner = document.getElementById('status-banner')
+      const bannerTitle = document.getElementById('status-banner-title')
+      const bannerMsg = document.getElementById('status-banner-msg')
+
+      if (banner) {
+        if (state.error) {
+          banner.hidden = false
+          const normalized = state.error.toLowerCase()
+          if (normalized === 'unauthorized') {
+            bannerTitle.textContent = 'Access denied'
+            bannerMsg.textContent = 'You do not have permission to view the economy data. Ensure you have the klb.economy ACE or the configured QBCore admin group.'
+          } else {
+            bannerTitle.textContent = 'Error'
+            bannerMsg.textContent = state.error
+          }
+        } else if (state.refreshPending) {
+          banner.hidden = false
+          bannerTitle.textContent = state.players.length ? 'Refreshing' : 'Awaiting data'
+          bannerMsg.textContent = state.players.length
+            ? 'Fetching the latest totals from the server…'
+            : 'Requesting latest totals from the server…'
+        } else if (!state.players.length) {
+          const totals = state.totals || {}
+          const hasTotals = ['cash', 'bank', 'dirty', 'crypto'].some(k => Number(totals[k] || 0) > 0)
+          if (hasTotals) {
+            banner.hidden = true
+          } else {
+            banner.hidden = false
+            bannerTitle.textContent = 'Awaiting data'
+            bannerMsg.textContent = 'Requesting latest totals from the server…'
+          }
+        } else {
+          banner.hidden = true
+        }
+      }
+
+      const totals = state.totals || { cash: 0, bank: 0, dirty: 0, crypto: 0, sum: 0 }
+      const counts = state.counts || { online: 0, offline: 0 }
+      const pending = state.refreshPending
+      const grand = Number.isFinite(Number(totals.sum))
+        ? Number(totals.sum)
+        : Number(totals.cash || 0) + Number(totals.bank || 0) + Number(totals.dirty || 0) + Number(totals.crypto || 0)
+
+      const lastUpdated = pending ? 'Updating…' : (state.lastUpdated || (state.players.length ? new Date().toLocaleString() : '—'))
+
+      const elCash = document.getElementById('total-cash')
+      const elBank = document.getElementById('total-bank')
+      const elGrand = document.getElementById('grand-total')
+      const elOnline = document.getElementById('online-count')
+      const elOffline = document.getElementById('offline-count')
+      const elUpdated = document.getElementById('last-updated')
+      const btnRefresh = document.getElementById('btnRefresh')
+
+      updateMoneyMetric(elCash,  totals.cash,  { compact: true })
+      updateMoneyMetric(elBank,  totals.bank,  { compact: true })
+      updateMoneyMetric(elGrand, grand,        { compact: true })
+
+      updateCountMetric(elOnline,  counts.online,  { compact: true })
+      updateCountMetric(elOffline, counts.offline, { compact: true })
+      if (elUpdated) elUpdated.textContent = lastUpdated
+      if (btnRefresh) {
+        btnRefresh.disabled = pending
+        btnRefresh.textContent = pending ? 'Refreshing…' : 'Refresh'
+      }
+
+      const setBar = (id, val) => {
+        const el = document.getElementById(id)
+        if (!el) return
+        const width = grand > 0 ? Math.max(2, (Number(val || 0) / grand) * 100) : 0
+        el.style.width = width + '%'
+      }
+
+      setBar('bar-cash', totals.cash)
+      setBar('bar-bank', totals.bank)
+      setBar('bar-dirty', totals.dirty)
+      setBar('bar-crypto', totals.crypto)
+      ;['cash', 'bank', 'dirty', 'crypto'].forEach(k => {
+        const valEl = document.getElementById('bar-' + k + '-val')
+    if (valEl) { valEl.textContent = fmtCurrency(totals[k] || 0, { compact: true }) }
+      })
+
+      const sums = state.players.map(p => Number(p.sum || 0)).sort((a, b) => a - b)
+      const n = sums.length
+      const avg = n ? (sums.reduce((a, b) => a + b, 0) / n) : 0
+      const median = n ? (n % 2 ? sums[(n - 1) / 2] : (sums[n / 2 - 1] + sums[n / 2]) / 2) : 0
+      const p90 = n ? sums[Math.floor(0.9 * (n - 1))] : 0
+
+      const elStatPlayers = document.getElementById('stat-total-players')
+      const elStatAvg = document.getElementById('stat-avg')
+      const elStatMedian = document.getElementById('stat-median')
+      const elStatP90 = document.getElementById('stat-p90')
+
+      if (elStatPlayers) elStatPlayers.textContent = (n + Number(counts.offline || 0)).toLocaleString()
+      if (elStatAvg)    elStatAvg.textContent    = fmtCurrency(avg   | 0, { compact: true })
+      if (elStatMedian) elStatMedian.textContent = fmtCurrency(median| 0, { compact: true })
+      if (elStatP90)    elStatP90.textContent    = fmtCurrency(p90   | 0, { compact: true })
+
+      const svg = document.getElementById('hist-spark')
+      if (svg) {
+        const history = state.history.length ? state.history : [0]
+        const max = Math.max(...history)
+        const min = Math.min(...history)
+        const span = max - min || 1
+        const pts = history.map((v, i) => {
+          const x = history.length > 1 ? (i / (history.length - 1)) * 120 : 0
+          const y = 26 - ((v - min) / span) * 24
+          return `${x.toFixed(1)},${y.toFixed(1)}`
+        }).join(' ')
+        const teal = getComputedStyle(document.documentElement).getPropertyValue('--klb-teal').trim()
+        const purple = getComputedStyle(document.documentElement).getPropertyValue('--klb-purple').trim()
+        svg.innerHTML = `<polyline points="${pts}" fill="none" stroke="url(#spark-gradient)" stroke-width="2" />
+          <defs><linearGradient id="spark-gradient" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="${teal}"/><stop offset="100%" stop-color="${purple}"/></linearGradient></defs>`
+      }
+
+      const q = safeQuery()
+      const acctEl = document.getElementById('acct')
+      const key = (acctEl && acctEl.value) || 'sum'
+      const list = topListFromPlayers(state.players, key, q)
+
+      const tbody = document.getElementById('top-body')
+      if (tbody) {
+        tbody.innerHTML = ''
+        if (!list.length) {
+          const tr = document.createElement('tr')
+          tr.innerHTML = `<td colspan="6" class="muted" style="text-align:center; padding:18px">No players to display</td>`
+          tbody.appendChild(tr)
+        } else {
+          list.forEach((p, idx) => {
+            const tr = document.createElement('tr')
+            tr.innerHTML = `
+              <td>${idx + 1}</td>
+              <td>${p.name}</td>
+              <td class="muted">${p.cid}</td>
+              <td>${fmtCurrency(p.cash)}</td>
+              <td>${fmtCurrency(p.bank)}</td>
+              <td><span class="pill">${fmtCurrency(p.sum)}</span></td>
+            `
+            tbody.appendChild(tr)
+          })
+        }
+      }
+
+// 🏦 LARGEST SINGLE ACCOUNTS — robust render
+{
+  const lbody = document.getElementById('largest-body')
+  if (lbody) {
+    lbody.innerHTML = ''
+
+    // helper til sikker tekst (så navne ikke kan ødelægge HTML)
+    const esc = (v) => String(v ?? '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')
+
+    // byg alle konto-rækker
+    const rows = []
+    for (const p of (state.players || [])) {
+      const name  = esc(p?.name ?? 'Unknown')
+      const cid   = esc(p?.cid ?? '')
+      rows.push({ name, cid, account: 'Cash',   balance: Number(p?.cash   || 0) })
+      rows.push({ name, cid, account: 'Bank',   balance: Number(p?.bank   || 0) })
+      rows.push({ name, cid, account: 'Dirty',  balance: Number(p?.dirty  || 0) })
+      rows.push({ name, cid, account: 'Crypto', balance: Number(p?.crypto || 0) })
+    }
+
+    // sortér højeste først og tag top 10
+    rows.sort((a, b) => (b.balance || 0) - (a.balance || 0))
+    const top = rows.slice(0, Math.min(10, rows.length))
+
+    if (!top.length) {
+      const tr = document.createElement('tr')
+      tr.innerHTML = `<td colspan="5" class="muted" style="text-align:center; padding:18px">No account balances available</td>`
+      lbody.appendChild(tr)
+    } else {
+      const frag = document.createDocumentFragment()
+      top.forEach((r, i) => {
+        const tr = document.createElement('tr')
+        tr.innerHTML = `
+          <td>${i + 1}</td>
+          <td>${r.name}</td>
+          <td class="muted">${r.cid}</td>
+          <td>${r.account}</td>
+          <td><span class="pill">${fmtCurrency(r.balance, { compact: true })}</span></td>
+        `
+        frag.appendChild(tr)
+      })
+      lbody.appendChild(frag)
+    }
+  }
+}
+
+      const chip = document.querySelector('[data-testid="sync-chip"]')
+      if (chip) {
+        if (state.error) {
+          chip.textContent = 'ERROR · ' + state.error
+        } else if (pending) {
+          chip.textContent = 'LIVE · refreshing'
+        } else {
+          chip.textContent = state.players.length ? 'LIVE · synced' : 'LIVE · awaiting data'
+        }
+      }
+    }
+
+    function findPlayerByCid(cid) {
+      const target = (cid || '').trim().toLowerCase()
+      if (!target) return null
+      return state.players.find(pl => String(pl.cid || '').toLowerCase() === target) || null
+    }
+
+    function applyEditPreview(p, account, op, amount) {
+      if (!p) return
+      const allowed = ['cash', 'bank', 'dirty', 'crypto']
+      if (!allowed.includes(account)) return
+      let current = Number(p[account] || 0)
+      const delta = Math.max(0, Math.floor(Number(amount) || 0))
+      if (op === 'add') current += delta
+      else if (op === 'remove') current = Math.max(0, current - delta)
+      else if (op === 'set') current = delta
+      else return
+      p[account] = Math.floor(current)
+      p.sum = Number(p.cash || 0) + Number(p.bank || 0) + Number(p.dirty || 0) + Number(p.crypto || 0)
+      state.totals = recomputeTotalsFromPlayers()
+      render()
+      fillPlayerModal(p)
+    }
+
+    // Event wiring
+    const searchInput = document.getElementById('search')
+    if (searchInput) { searchInput.addEventListener('input', render) }
+
+    const acctSelect = document.getElementById('acct')
+    if (acctSelect) { acctSelect.addEventListener('change', render) }
+
+    const btnClose = document.getElementById('btnClose')
+    if (btnClose) { btnClose.addEventListener('click', () => closePanel(true)) }
+
+    const btnRefresh = document.getElementById('btnRefresh')
+    if (btnRefresh) {
+      btnRefresh.addEventListener('click', () => {
+        setRefreshPending(true)
+        if (isFiveM) {
+          postNui('refresh', { force: true })
+        } else {
+          // simple preview refresh
+          applyPayload({ lastUpdated: new Date() })
+          setRefreshPending(false)
+        }
+      })
+    }
+
+    const btnExport = document.getElementById('btnExport')
+    if (btnExport) {
+      btnExport.addEventListener('click', () => {
+        const key = (acctSelect && acctSelect.value) || 'sum'
+        const q = safeQuery()
+        const list = topListFromPlayers(state.players, key, q)
+        if (!list.length) return
+        let csv = 'rank,name,cid,cash,bank,dirty,crypto,total\n'
+        list.forEach((p, i) => {
+          csv += `${i + 1},${p.name},${p.cid},${p.cash},${p.bank},${p.dirty},${p.crypto},${p.sum}\n`
+        })
+        const blob = new Blob([csv], { type: 'text/csv' })
+        const url = URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'klb_economy_top10.csv'
+        a.click()
+        URL.revokeObjectURL(url)
+      })
+    }
+
+    const btnView = document.getElementById('ep-view')
+    if (btnView) {
+      btnView.addEventListener('click', async () => {
+        const input = document.getElementById('ep-cid')
+        const status = document.getElementById('ep-status')
+        const cid = input ? String(input.value || '').trim() : ''
+        if (!cid) { if (status) status.textContent = 'Enter a CID'; return }
+
+        // prøv lokalt (Top-10)
+        const local = findPlayerByCid(cid)
+        if (local) {
+          if (status) status.textContent = '—'
+          openPlayerModal(local)
+          return
+        }
+
+        // fallback: hent fra server (kun FiveM)
+        if (!isFiveM) { if (status) status.textContent = 'Player not found'; return }
+        if (status) status.textContent = 'Searching on server…'
+
+        // NUI-callback: getPlayer -> client.lua -> QB callback -> SendNUIMessage('playerData', ...)
+        postNui('getPlayer', { cid })
+      })
+    }
+
+
+    const epCid = document.getElementById('ep-cid')
+    if (epCid) {
+      epCid.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') { btnView && btnView.click() }
+      })
+    }
+
+    const pmClose = document.getElementById('pm-close')
+    if (pmClose) { pmClose.addEventListener('click', closePlayerModal) }
+
+    const playerModal = document.getElementById('player-modal')
+    if (playerModal) {
+      playerModal.addEventListener('click', (e) => { if (e.target && e.target.id === 'player-modal') closePlayerModal() })
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const modalVisible = playerModal && playerModal.style.display === 'flex'
+        if (modalVisible) {
+          closePlayerModal()
+        } else if (wrapper && wrapper.getAttribute('data-visible') === 'true') {
+          closePanel(true)
+        }
+      }
+    })
+
+      const pmApply = document.getElementById('pm-apply')
+      if (pmApply) {
+        pmApply.addEventListener('click', () => {
+          if (editPending) return
+          if (!pmCurrent) {
+            setPlayerStatus('Open a player first: use the View button with a CID.', true)
+            return
+          }
+          const account = document.getElementById('pm-account').value
+          const op = document.getElementById('pm-op').value
+          const amountInput = document.getElementById('pm-amount')
+          const parsed = parseAmountInput(amountInput ? amountInput.value : '')
+          if (!Number.isFinite(parsed)) {
+            setPlayerStatus('Enter a valid amount', true)
+            return
+          }
+          const amount = Math.max(0, Math.floor(parsed))
+          if ((op === 'add' || op === 'remove') && amount <= 0) {
+            setPlayerStatus('Enter an amount greater than zero', true)
+            return
+          }
+          if (!isFiveM) {
+            applyEditPreview(pmCurrent, account, op, amount)
+            setPlayerStatus('Preview updated (offline mode)')
+            return
+          }
+          setRefreshPending(true)
+          setEditPending(true)
+          setPlayerStatus('Applying changes…')
+          postNui('applyEdit', { cid: pmCurrent.cid, account, operation: op, amount })
+        })
+      }
+
+
+    const pmAmount = document.getElementById('pm-amount')
+    if (pmAmount) {
+      pmAmount.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') { pmApply && pmApply.click() }
+      })
+    }
+
+    document.querySelectorAll('[data-pm-action]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (editPending) return
+        if (!pmCurrent) { setPlayerStatus('Open a player first: use the View button with a CID.', true); return }
+        const act = btn.getAttribute('data-pm-action')
+        const map = {
+          'cash+1000':    { account: 'cash',  op: 'add', amount: 1000 },
+          'bank+5000':    { account: 'bank',  op: 'add', amount: 5000 },
+          'cash-set-0':   { account: 'cash',  op: 'set', amount: 0    },
+          'dirty-set-0':  { account: 'dirty', op: 'set', amount: 0    }
+        }
+        const cfg = map[act]; if (!cfg) return
+        const accountSelect = document.getElementById('pm-account');
+        const opSelect = document.getElementById('pm-op');
+        const amountInput = document.getElementById('pm-amount');
+
+        if (accountSelect && accountSelect.klbSetValue) accountSelect.klbSetValue(cfg.account);
+        else if (accountSelect) { accountSelect.value = cfg.account; accountSelect.dispatchEvent(new Event('change',{bubbles:true})); }
+
+        if (opSelect && opSelect.klbSetValue) opSelect.klbSetValue(cfg.op);
+        else if (opSelect) { opSelect.value = cfg.op; opSelect.dispatchEvent(new Event('change',{bubbles:true})); }
+
+        if (amountInput) amountInput.value = cfg.amount;
+
+
+        if (!isFiveM) {
+          applyEditPreview(pmCurrent, cfg.account, cfg.op, cfg.amount)
+          setPlayerStatus('Preview updated (offline mode)')
+          return
+        }
+        setRefreshPending(true)
+        setEditPending(true)
+        setPlayerStatus('Applying changes…')
+        postNui('applyEdit', { cid: pmCurrent.cid, account: cfg.account, operation: cfg.op, amount: cfg.amount })
+      })
+    })
+
+
+    function getPayload(data) {
+      if (!data || typeof data !== 'object') return {}
+      if (data.payload && typeof data.payload === 'object') return data.payload
+      if (data.state && typeof data.state === 'object') return data.state
+      return data
+    }
+
+    window.addEventListener('message', (event) => {
+      const data = event?.data
+      const action = data?.action ?? data?.type
+      if (action === 'open') {
+        applyPayload(getPayload(data))
+        openPanel()
+        return
+      }
+      if (action === 'update' || action === 'setData' || action === 'data') {
+        applyPayload(getPayload(data))
+        return
+      }
+      if (action === 'editResult') {
+        handleEditResult(getPayload(data))
+        return
+      }
+      if (action === 'refreshPending') {
+        setRefreshPending(Boolean(getPayload(data).pending))
+        return
+      }
+      if (action === 'playerData') {
+        const p = getPayload(event.data)
+        if (p && p.cid) {
+          const arr = normalizePlayers([p])
+          if (arr[0]) {
+            const idx = state.players.findIndex(pl => String(pl.cid).toLowerCase() === String(arr[0].cid).toLowerCase())
+            if (idx >= 0) state.players[idx] = arr[0]; else state.players.push(arr[0])
+            render()
+            openPlayerModal(arr[0])
+            const st = document.getElementById('ep-status'); if (st) st.textContent = '—'
+            return
+          }
+        }
+        const st = document.getElementById('ep-status'); if (st) st.textContent = 'Player not found'
+        return
+      }
+
+
+      if (action === 'toggle') {
+        const visible = wrapper && wrapper.getAttribute('data-visible') === 'true'
+        if (visible) {
+          closePanel(false)
+        } else {
+          applyPayload(getPayload(data))
+          openPanel()
+        }
+        return
+      }
+      if (action === 'close') {
+        closePanel(false)
+        return
+      }
+      if (typeof data?.visible === 'boolean') {
+        if (data.visible) { openPanel() } else { closePanel(false) }
+      }
+    })
+// Turn a native <select> into a custom KLB select (keeps original in sync)
+function enhanceKLBSelect(native){
+  if (!native) return;
+  native.style.display = 'none';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'klb-select';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'klb-select-btn';
+  const list = document.createElement('div');
+  list.className = 'klb-options';
+
+  function labelFor(val){
+    const opt = Array.from(native.options).find(o => o.value === val);
+    return opt ? opt.textContent : '';
+  }
+
+  function setValue(val, emit=true){
+    native.value = val;
+    btn.textContent = labelFor(val);
+    list.querySelectorAll('.klb-option').forEach(o => o.setAttribute('aria-selected', o.dataset.value===val ? 'true':'false'));
+    if (emit) native.dispatchEvent(new Event('change', { bubbles:true }));
+  }
+
+  Array.from(native.options).forEach(o=>{
+    const item = document.createElement('div');
+    item.className = 'klb-option';
+    item.textContent = o.textContent;
+    item.dataset.value = o.value;
+    item.setAttribute('aria-selected', o.selected ? 'true':'false');
+    item.addEventListener('click', ()=>{
+      setValue(o.value);
+      wrap.classList.remove('open');
+    });
+    list.appendChild(item);
+  });
+
+  btn.textContent = labelFor(native.value);
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); wrap.classList.toggle('open'); });
+  document.addEventListener('click', ()=> wrap.classList.remove('open'));
+
+  wrap.appendChild(btn); wrap.appendChild(list);
+  native.parentNode.insertBefore(wrap, native);
+  // keep in sync if code changes native.value
+  native.addEventListener('change', ()=> btn.textContent = labelFor(native.value));
+  // expose a helper so your quick-action code can update and fire change:
+  native.klbSetValue = (v)=> setValue(v, true);
+}
+
+// Enhance your two selects in the modal
+enhanceKLBSelect(document.getElementById('pm-account'));
+enhanceKLBSelect(document.getElementById('pm-op'));
+
+    // Initial render + non-FiveM guard
+    render()
+    if (!isFiveM && wrapper) {
+      wrapper.innerHTML = `
+        <div class="container" style="padding-top:80px; padding-bottom:80px; text-align:center">
+          <div class="card full" style="margin:0 auto; max-width:520px">
+            <h2 style="margin-top:0; margin-bottom:12px">In-game Only</h2>
+            <p class="muted" style="margin:0">
+              This economy panel is designed to be opened from within FiveM. Launch the game and use the in-game command to view live data.
+            </p>
+          </div>
+        </div>`
+      wrapper.setAttribute('data-visible', 'true')
+    }
+  </script>
+</body>
+</html>

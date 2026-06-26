@@ -27,9 +27,9 @@ Config.MalePedModels = {
 }
 
 Config.NPC = {
-    Model = "a_f_m_soucentmc_01", -- Change to your desired NPC model
-    Coords = vector3(983.3790, -326.3153, 66.6154), -- Change to your desired NPC spawn location # !!!! DECREASE THE LAST VALUE BY 1 IF FLOATING !!!! #
-    Heading = 341.9086, -- Adjust the heading as needed
+    Model = "s_f_m_fembarber", -- Change to your desired NPC model
+    Coords = vector3(212.2207, -1523.3300, 28.3610), -- Change to your desired NPC spawn location # !!!! DECREASE THE LAST VALUE BY 1 IF FLOATING !!!! #
+    Heading = 315.6622, -- Adjust the heading as needed
     BlipSprite = 621,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
     BlipScale = 1.0,
     BlipColour = 8,

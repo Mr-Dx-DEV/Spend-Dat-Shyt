@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horror Overlay</title>
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&family=Poppins:wght@400;600&display=swap">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Initial Game Start Overlay -->
+    <div id="overlay" style="display: none;">
+        <div class="overlay-content">
+            <h1 class="game-title"><i class="fas fa-ghost"></i> Haunted House</h1>
+            <p class="game-intro">Do you dare to enter?</p>
+            
+            <!-- Warning message for jump scares and flashing lights -->
+            <p class="warning">
+                <i class="fas fa-exclamation-triangle"></i> <strong>WARNING:</strong> This game contains jump scares, loud noises, and flashing lights. 
+                Not suitable for players with heart conditions, epilepsy, or similar medical conditions.
+            </p>
+
+            <p>
+                <i class="fas fa-exclamation-triangle"></i>
+                <strong>DO NOT ENTER THIS GAME IF YOU DO NOT HAVE TIME TO COMPLETE IT!</strong> 
+            </p>
+            
+            <!-- Enter Button -->
+            <button id="start-btn" class="start-button">
+                <i class="fas fa-door-open"></i> Enter if you dare...
+            </button>
+
+            <!-- Exit Button (placed symmetrically below the start button) -->
+            <button id="exit-btn" class="exit-button">
+                <i class="fas fa-sign-out-alt"></i> Exit
+            </button>
+        </div>
+    </div>
+
+    <!-- Dark Player Overlay (Initially hidden, shown when player starts) -->
+    <div id="player-overlay" style="display: none;">
+        <div class="fog"></div>
+        <div class="vignette"></div>
+        <div class="custom-border"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="horror-music" preload="auto" loop>
+        <source src="sounds/horror_music.mp3" type="audio/mp3">
+        <source src="sounds/horror_music.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Jump Scare Overlay (Initially hidden) -->
+    <div id="jump-scare" style="display: none;" class="jump-scare">
+        <!-- Jump Scare Images (3 different possibilities) -->
+        <img id="jump-scare-image-1" src="image/jump-scare-1.png" alt="Scary Character 1" class="jump-scare-image" style="display: none;">
+        <img id="jump-scare-image-2" src="image/jump-scare-2.png" alt="Scary Character 2" class="jump-scare-image" style="display: none;">
+        <img id="jump-scare-image-3" src="image/jump-scare-3.png" alt="Scary Character 3" class="jump-scare-image" style="display: none;">
+        
+        <audio id="jump-scare-sound">
+            <source src="sounds/horror_scream.mp3" type="audio/mp3">
+            <source src="sounds/horror_scream.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <!-- Flash Effect -->
+    <div id="flash"></div>
+
+    <!-- JavaScript to activate dark overlay -->
+    <script>
+        document.getElementById('start-btn').addEventListener('click', function() {
+            // Show the player overlay and apply the dark overlay effect
+            document.getElementById('player-overlay').style.display = 'block';
+            document.getElementById('player-overlay').classList.add('dark-overlay');
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

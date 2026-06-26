@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap">
+    <style>
+        /* ── TOKENS (match makeup UI exactly) ── */
+        :root {
+            --pink:       #d63384;
+            --pink-light: #e875b8;
+            --pink-pale:  #fdf2f8;
+            --pink-soft:  #fce4f2;
+            --pink-mid:   #f5d5e8;
+            --pink-muted: #b8679a;
+            --white:      #ffffff;
+            --font:       'Poppins', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font);
+            display: none !important;
+            background: transparent !important;
+            margin: 0;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        body.active {
+            display: flex !important;
+            background: rgba(253, 242, 248, 0.18) !important;
+            backdrop-filter: blur(2px);
+            height: 100vh;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.lb-only,
+        body.overlay-only {
+            display: block !important;
+            background: transparent !important;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95) translateY(-8px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* ── PHOTO VIEWER ── */
+        #singlePhoto {
+            display: none;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #singlePhoto img {
+            max-width: 90%;
+            max-height: 90%;
+            border: 3px solid var(--pink-mid);
+            border-radius: 12px;
+            box-shadow: 0 12px 60px rgba(199, 80, 160, 0.4);
+            cursor: pointer;
+        }
+
+        /* ── BUNDLE GALLERY ── */
+        #bundleViewer {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            user-select: none;
+        }
+
+        .bundle-title {
+            color: var(--pink);
+            font-family: var(--font);
+            font-size: 18px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(214, 51, 132, 0.25);
+        }
+
+        .bundle-gallery {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .bundle-gallery img {
+            max-width: 70vw;
+            max-height: 75vh;
+            border: 3px solid var(--pink-mid);
+            border-radius: 12px;
+            box-shadow: 0 12px 60px rgba(199, 80, 160, 0.35);
+            transition: opacity 0.2s ease;
+        }
+
+        .bundle-gallery img.fade { opacity: 0; }
+
+        .arrow-btn {
+            background: var(--white);
+            border: 2px solid var(--pink-mid);
+            color: var(--pink);
+            width: 46px; height: 46px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            box-shadow: 0 4px 14px rgba(214, 51, 132, 0.12);
+        }
+
+        .arrow-btn:hover { background: var(--pink); color: var(--white); border-color: var(--pink); box-shadow: 0 4px 18px rgba(214,51,132,0.3); }
+        .arrow-btn:active { transform: scale(0.92); }
+        .arrow-btn.disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+
+        .bundle-counter { display: flex; align-items: center; gap: 8px; }
+
+        .counter-dot {
+            width: 9px; height: 9px;
+            border-radius: 50%;
+            background: var(--pink-mid);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .counter-dot.active {
+            background: var(--pink);
+            transform: scale(1.35);
+            box-shadow: 0 0 8px rgba(214, 51, 132, 0.4);
+        }
+
+        .counter-dot:hover { background: var(--pink-light); }
+
+        .counter-text {
+            color: var(--pink-muted);
+            font-family: var(--font);
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        /* close button on viewer */
+        #viewerCloseBtn {
+            position: fixed;
+            top: 20px; right: 24px;
+            background: var(--white);
+            border: 2px solid var(--pink-mid);
+            color: var(--pink);
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 4px 14px rgba(214,51,132,0.15);
+        }
+
+        #viewerCloseBtn:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+
+        .hint-text {
+            position: fixed;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--pink-muted);
+            font-family: var(--font);
+            font-size: 11px;
+            font-weight: 500;
+            display: none;
+            background: rgba(253,242,248,0.85);
+            padding: 4px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--pink-mid);
+        }
+
+        /* ── SHARED PANEL BASE ── */
+        .panel-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(253, 242, 248, 0.75);
+            backdrop-filter: blur(6px);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            font-family: var(--font);
+        }
+
+        .panel-overlay.active { display: flex; }
+
+        .panel-container {
+            background: var(--white);
+            border: 2px solid rgba(219, 112, 180, 0.3);
+            border-radius: 24px;
+            padding: 0;
+            min-width: 480px;
+            max-width: 680px;
+            width: 90%;
+            max-height: 84vh;
+            overflow-y: auto;
+            box-shadow: 0 12px 60px rgba(199, 80, 160, 0.25);
+            animation: fadeIn 0.25s ease;
+        }
+
+        .panel-container::-webkit-scrollbar { width: 6px; }
+        .panel-container::-webkit-scrollbar-track { background: var(--pink-soft); border-radius: 10px; }
+        .panel-container::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--pink-light), var(--pink)); border-radius: 10px; }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 28px;
+            background: linear-gradient(135deg, var(--pink-pale), #fff0f6, var(--pink-soft));
+            border-radius: 22px 22px 0 0;
+            border-bottom: 3px solid var(--pink-light);
+        }
+
+        .panel-title {
+            font-family: var(--font);
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--pink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .panel-title i { color: var(--pink); }
+
+        .panel-body { padding: 22px 28px 28px; }
+
+        .panel-close {
+            background: rgba(214, 51, 132, 0.08);
+            border: 2px solid rgba(214, 51, 132, 0.2);
+            color: var(--pink);
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-family: var(--font);
+        }
+
+        .panel-close:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+
+        /* ── LEADERBOARD ── */
+        #leaderboard {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(253, 242, 248, 0.75);
+            backdrop-filter: blur(6px);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            font-family: var(--font);
+        }
+
+        #leaderboard.active { display: flex; }
+
+        .lb-container {
+            background: var(--white);
+            border: 2px solid rgba(219, 112, 180, 0.3);
+            border-radius: 24px;
+            padding: 0;
+            min-width: 560px;
+            max-width: 680px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 12px 60px rgba(199, 80, 160, 0.25);
+            animation: fadeIn 0.25s ease;
+        }
+
+        .lb-container::-webkit-scrollbar { width: 6px; }
+        .lb-container::-webkit-scrollbar-track { background: var(--pink-soft); border-radius: 10px; }
+        .lb-container::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--pink-light), var(--pink)); border-radius: 10px; }
+
+        .lb-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 28px;
+            background: linear-gradient(135deg, var(--pink-pale), #fff0f6, var(--pink-soft));
+            border-radius: 22px 22px 0 0;
+            border-bottom: 3px solid var(--pink-light);
+        }
+
+        .lb-title {
+            font-family: var(--font);
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: var(--pink);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .lb-title i { color: var(--pink); font-size: 1rem; }
+
+        .lb-close {
+            background: rgba(214, 51, 132, 0.08);
+            border: 2px solid rgba(214, 51, 132, 0.2);
+            color: var(--pink);
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            font-family: var(--font);
+        }
+
+        .lb-close:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+
+        .lb-inner { padding: 16px 20px 24px; }
+
+        .lb-columns {
+            display: grid;
+            grid-template-columns: 44px 1fr 100px 60px 70px 110px;
+            padding: 0 12px 10px;
+            color: var(--pink-muted);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .lb-row {
+            display: grid;
+            grid-template-columns: 44px 1fr 100px 60px 70px 110px;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 12px;
+            margin-bottom: 4px;
+            border: 1.5px solid transparent;
+            transition: all 0.15s;
+        }
+
+        .lb-row:hover { background: var(--pink-pale); border-color: var(--pink-mid); }
+
+        .lb-rank { font-weight: 800; font-size: 15px; color: var(--pink-muted); }
+        .lb-row:nth-child(1) .lb-rank { color: var(--pink); font-size: 18px; }
+        .lb-row:nth-child(2) .lb-rank { color: #c06090; font-size: 17px; }
+        .lb-row:nth-child(3) .lb-rank { color: var(--pink-muted); font-size: 16px; }
+
+        .lb-name { font-size: 14px; font-weight: 600; color: #333; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .lb-rank-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 9px;
+            border-radius: 10px;
+            text-align: center;
+            white-space: nowrap;
+            background: var(--pink-pale);
+            border: 1px solid var(--pink-mid);
+        }
+
+        .lb-stat { font-size: 13px; color: var(--pink-muted); text-align: center; font-weight: 600; }
+        .lb-earned { font-size: 14px; font-weight: 800; color: var(--pink); text-align: right; }
+
+        .lb-mystats { margin-top: 16px; padding-top: 14px; border-top: 2px solid var(--pink-mid); display: none; }
+        .lb-mystats-label { color: var(--pink-muted); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; margin-bottom: 8px; }
+
+        .lb-mystats-row {
+            display: grid;
+            grid-template-columns: 44px 1fr 100px 60px 70px 110px;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--pink-soft), var(--pink-pale));
+            border: 1.5px solid var(--pink-light);
+        }
+
+        .lb-empty { text-align: center; color: var(--pink-muted); font-size: 14px; padding: 40px 0; }
+
+        /* ── STATS PANEL ── */
+        .stats-identity {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stats-avatar {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-light), var(--pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--white);
+            flex-shrink: 0;
+            border: 2px solid var(--pink-mid);
+        }
+
+        .stats-name { font-size: 18px; font-weight: 900; color: #333; margin-bottom: 4px; }
+        .stats-rank-line { font-size: 13px; color: var(--pink-muted); font-weight: 600; }
+
+        .stats-rank-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 10px;
+            background: var(--pink-pale);
+            border: 1px solid var(--pink-mid);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--pink);
+            margin-left: 6px;
+        }
+
+        .stats-xpbar-wrap { margin-bottom: 20px; }
+
+        .stats-xpbar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--pink-muted);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .stats-xpbar {
+            width: 100%;
+            height: 10px;
+            background: var(--pink-soft);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .stats-xpbar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink-light), var(--pink));
+            border-radius: 10px;
+            transition: width 0.4s ease;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .stat-card {
+            background: var(--pink-pale);
+            border: 1.5px solid var(--pink-mid);
+            border-radius: 14px;
+            padding: 14px 10px;
+            text-align: center;
+        }
+
+        .stat-card-label {
+            font-size: 10px;
+            color: var(--pink-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .stat-card-value { font-size: 1.2rem; font-weight: 900; color: var(--pink); }
+
+        .stats-unlocks {
+            margin-top: 14px;
+            padding: 10px 14px;
+            background: var(--pink-pale);
+            border: 1.5px solid var(--pink-mid);
+            border-radius: 12px;
+            font-size: 13px;
+            color: #555;
+            border-left: 3px solid var(--pink);
+            font-style: italic;
+        }
+
+        .stats-unlocks-label {
+            font-size: 10px;
+            color: var(--pink-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            font-style: normal;
+        }
+
+        /* ── CHALLENGES PANEL ── */
+        .challenge-section-title {
+            font-size: 11px;
+            color: var(--pink-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin: 8px 0 10px;
+        }
+
+        .challenge-row {
+            background: var(--pink-pale);
+            border: 1.5px solid var(--pink-mid);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-bottom: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .challenge-row.completed {
+            background: rgba(74, 222, 128, 0.08);
+            border-color: rgba(74, 222, 128, 0.4);
+        }
+
+        .challenge-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .challenge-label { font-size: 13px; font-weight: 700; color: #333; }
+        .challenge-reward { font-size: 11px; color: var(--pink); font-weight: 700; }
+
+        .challenge-bar {
+            width: 100%;
+            height: 7px;
+            background: var(--pink-soft);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .challenge-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--pink-light), var(--pink));
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .challenge-row.completed .challenge-bar-fill {
+            background: linear-gradient(90deg, #4ade80, #22c55e);
+        }
+
+        .challenge-progress-text {
+            font-size: 10px;
+            color: var(--pink-muted);
+            margin-top: 4px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        /* ── ACHIEVEMENTS PANEL ── */
+        .ach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .ach-card {
+            background: #fafafa;
+            border: 1.5px solid var(--pink-mid);
+            border-radius: 14px;
+            padding: 14px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.2s ease;
+            opacity: 0.6;
+        }
+
+        .ach-card.unlocked {
+            opacity: 1;
+            background: linear-gradient(135deg, var(--pink-pale), #fff0f6);
+            border-color: var(--pink-light);
+        }
+
+        .ach-card:hover { transform: translateY(-2px); }
+
+        .ach-icon {
+            width: 44px; height: 44px;
+            border-radius: 12px;
+            background: var(--pink-soft);
+            border: 1.5px solid var(--pink-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: var(--pink-muted);
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+
+        .ach-card.unlocked .ach-icon {
+            background: linear-gradient(135deg, var(--pink-light), var(--pink));
+            border-color: var(--pink);
+            color: var(--white);
+        }
+
+        .ach-label { font-size: 13px; font-weight: 800; color: var(--pink); margin-bottom: 3px; }
+        .ach-card:not(.unlocked) .ach-label { color: var(--pink-muted); }
+        .ach-desc { font-size: 11px; color: #aaa; margin-bottom: 6px; line-height: 1.4; }
+        .ach-reward {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--pink);
+            background: var(--pink-soft);
+            padding: 3px 9px;
+            border-radius: 8px;
+            border: 1px solid var(--pink-mid);
+            display: inline-block;
+        }
+        .ach-card:not(.unlocked) .ach-reward { color: var(--pink-muted); }
+
+        /* ── XP TOAST ── */
+        #xpToast {
+            position: fixed;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--white);
+            border: 2px solid var(--pink-light);
+            border-radius: 12px;
+            padding: 8px 22px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 20px rgba(199, 80, 160, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            z-index: 4000;
+            font-family: var(--font);
+            white-space: nowrap;
+        }
+
+        #xpToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        #xpToast .xp-plus { font-size: 1rem; font-weight: 900; color: var(--pink); }
+
+        /* ── RANK UP SPLASH ── */
+        #rankUp {
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            background: var(--white);
+            border: 3px solid var(--pink-light);
+            border-radius: 24px;
+            padding: 40px 60px;
+            text-align: center;
+            opacity: 0;
+            z-index: 3500;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(.2,.7,.2,1);
+            box-shadow: 0 16px 60px rgba(199, 80, 160, 0.3);
+            font-family: var(--font);
+        }
+
+        #rankUp.show { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+        .rankup-icon { font-size: 2.2rem; color: var(--pink); margin-bottom: 8px; }
+        .rankup-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--pink-muted); font-weight: 800; margin-bottom: 6px; }
+        .rankup-rank { font-size: 2.2rem; font-weight: 900; color: var(--pink); letter-spacing: 2px; text-transform: uppercase; }
+        .rankup-unlocks { font-size: 13px; color: var(--pink-muted); margin-top: 8px; font-style: italic; }
+
+        /* ── VIRAL SPLASH ── */
+        #viralSplash {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(253, 242, 248, 0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 3200;
+            pointer-events: none;
+            animation: viralPulse 2.5s ease-out;
+        }
+
+        #viralSplash.show { display: flex; }
+
+        .viral-box { text-align: center; font-family: var(--font); }
+
+        .viral-title {
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--pink);
+            letter-spacing: 4px;
+            text-shadow: 0 4px 20px rgba(214,51,132,0.3);
+            animation: viralShake 0.4s ease-in-out;
+        }
+
+        .viral-payout {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--pink-muted);
+            margin-top: 10px;
+        }
+
+        @keyframes viralPulse { 0%{opacity:0} 15%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+        @keyframes viralShake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-8px)} 75%{transform:translateX(8px)} }
+
+        /* ── ACHIEVEMENT / CHALLENGE TOASTS ── */
+        #achToast, #chalToast {
+            position: fixed;
+            top: 24px; right: 24px;
+            background: var(--white);
+            border: 2px solid var(--pink-light);
+            border-radius: 14px;
+            padding: 14px 18px 14px 58px;
+            font-family: var(--font);
+            font-size: 13px;
+            max-width: 300px;
+            z-index: 4000;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.35s cubic-bezier(.2,.7,.2,1);
+            pointer-events: none;
+            box-shadow: 0 4px 20px rgba(199, 80, 160, 0.2);
+        }
+
+        #chalToast { top: 110px; }
+
+        #achToast.show, #chalToast.show { opacity: 1; transform: translateX(0); }
+
+        .toast-icon {
+            position: absolute;
+            left: 14px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 22px;
+            color: var(--pink);
+        }
+
+        .toast-label { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--pink-muted); font-weight: 800; margin-bottom: 2px; }
+        .toast-title { font-size: 14px; font-weight: 800; color: var(--pink); }
+        .toast-desc  { font-size: 11px; color: var(--pink-muted); margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- ── PHOTO / BUNDLE VIEWER ── -->
+    <button id="viewerCloseBtn" onclick="closeViewer()"><i class="fa-solid fa-xmark"></i></button>
+
+    <div id="singlePhoto">
+        <img id="photo" src="">
+    </div>
+
+    <div id="bundleViewer">
+        <div class="bundle-title" id="bundleTitle">Photo Bundle</div>
+        <div class="bundle-gallery">
+            <button class="arrow-btn" id="prevBtn" onclick="prevPhoto()"><i class="fa-solid fa-chevron-left"></i></button>
+            <img id="bundleImage" src="">
+            <button class="arrow-btn" id="nextBtn" onclick="nextPhoto()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="bundle-counter" id="bundleCounter"></div>
+    </div>
+
+    <div class="hint-text" id="hintText"><i class="fa-solid fa-keyboard" style="margin-right:6px"></i>ESC to close &nbsp;|&nbsp; ← → to browse</div>
+
+    <!-- ── LEADERBOARD ── -->
+    <div id="leaderboard">
+        <div class="lb-container">
+            <div class="lb-header">
+                <div class="lb-title">
+                    <i class="fa-solid fa-crown"></i>
+                    <span id="lbTitle">ONLYPICS TOP EARNERS</span>
+                </div>
+                <button class="lb-close" onclick="closeLeaderboard()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="lb-inner">
+                <div class="lb-columns">
+                    <span>#</span>
+                    <span>Name</span>
+                    <span>Rank</span>
+                    <span style="text-align:center">Photos</span>
+                    <span style="text-align:center">Bundles</span>
+                    <span style="text-align:right">Earned</span>
+                </div>
+                <div id="lbRows"></div>
+                <div class="lb-mystats" id="lbMyStats">
+                    <div class="lb-mystats-label">Your Stats</div>
+                    <div class="lb-mystats-row" id="lbMyStatsRow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── MY STATS PANEL ── -->
+    <div id="statsPanel" class="panel-overlay">
+        <div class="panel-container">
+            <div class="panel-header">
+                <div class="panel-title"><i class="fa-solid fa-chart-line"></i> MY STATS</div>
+                <button class="panel-close" onclick="closeStats()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="panel-body">
+                <div class="stats-identity">
+                    <div class="stats-avatar" id="statsAvatar">?</div>
+                    <div>
+                        <div class="stats-name" id="statsName">—</div>
+                        <div class="stats-rank-line">
+                            Rank <span id="statsRankNum">1</span>
+                            <span class="stats-rank-pill" id="statsRankPill">Rookie</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-xpbar-wrap">
+                    <div class="stats-xpbar-label">
+                        <span id="statsXPLabel">0 / 0 XP</span>
+                        <span id="statsNextRankLabel">Next: —</span>
+                    </div>
+                    <div class="stats-xpbar">
+                        <div class="stats-xpbar-fill" id="statsXPFill" style="width:0%"></div>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card"><div class="stat-card-label">Followers</div><div class="stat-card-value" id="statFollowers">0</div></div>
+                    <div class="stat-card"><div class="stat-card-label">Total Earned</div><div class="stat-card-value" id="statEarned">$0</div></div>
+                    <div class="stat-card"><div class="stat-card-label">Photos Sold</div><div class="stat-card-value" id="statPhotos">0</div></div>
+                    <div class="stat-card"><div class="stat-card-label">Bundles Sold</div><div class="stat-card-value" id="statBundles">0</div></div>
+                    <div class="stat-card"><div class="stat-card-label">Viral Photos</div><div class="stat-card-value" id="statViral">0</div></div>
+                    <div class="stat-card"><div class="stat-card-label">Total XP</div><div class="stat-card-value" id="statXP">0</div></div>
+                </div>
+                <div class="stats-unlocks">
+                    <div class="stats-unlocks-label">Rank Unlocks</div>
+                    <span id="statsUnlocks">—</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CHALLENGES PANEL ── -->
+    <div id="challengesPanel" class="panel-overlay">
+        <div class="panel-container">
+            <div class="panel-header">
+                <div class="panel-title"><i class="fa-solid fa-bullseye"></i> CHALLENGES</div>
+                <button class="panel-close" onclick="closeChallenges()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="panel-body">
+                <div class="challenge-section-title">Daily</div>
+                <div id="dailyChallenges"></div>
+                <div class="challenge-section-title" style="margin-top:20px">Weekly</div>
+                <div id="weeklyChallenges"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── ACHIEVEMENTS PANEL ── -->
+    <div id="achievementsPanel" class="panel-overlay">
+        <div class="panel-container">
+            <div class="panel-header">
+                <div class="panel-title"><i class="fa-solid fa-medal"></i> ACHIEVEMENTS</div>
+                <button class="panel-close" onclick="closeAchievements()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="panel-body">
+                <div class="ach-grid" id="achGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PHOTO OFFER PREVIEW (v2.x: player-to-player) ── -->
+    <div id="offerPreview" style="display:none;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;">
+        <div style="background:var(--white);border:3px solid var(--pink-mid);border-radius:18px;padding:26px 32px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 12px 60px rgba(199,80,160,0.45);max-width:460px;font-family:var(--font);animation:fadeIn 0.25s ease-out;">
+            <div style="color:var(--pink);font-weight:900;letter-spacing:2px;font-size:16px;text-transform:uppercase;"><i class="fa-solid fa-camera-retro"></i>&nbsp; Incoming Photo Offer</div>
+            <div id="offerSeller" style="color:var(--pink-muted);font-size:12px;font-weight:600;">From: —</div>
+            <div style="position:relative;overflow:hidden;border-radius:14px;border:2px solid var(--pink-mid);background:var(--pink-pale);">
+                <img id="offerPhoto" src="" alt="" style="width:320px;height:320px;object-fit:cover;display:block;">
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
+                    <div style="background:rgba(214,51,132,0.85);color:var(--white);padding:6px 16px;border-radius:20px;font-weight:700;font-size:11px;letter-spacing:1.5px;"><i class="fa-solid fa-lock"></i>&nbsp; PREVIEW</div>
+                </div>
+            </div>
+            <div id="offerCaption" style="color:var(--pink-muted);font-size:13px;font-style:italic;text-align:center;max-width:320px;">—</div>
+            <div id="offerPrice" style="color:var(--pink);font-weight:900;font-size:32px;margin-top:2px;">$0</div>
+            <div style="display:flex;gap:14px;margin-top:8px;">
+                <button type="button" onclick="sendOfferResponse(false)" style="padding:11px 26px;border-radius:22px;font-family:var(--font);font-weight:700;cursor:pointer;font-size:13px;background:var(--white);color:var(--pink);border:2px solid var(--pink-mid);">Decline</button>
+                <button type="button" onclick="sendOfferResponse(true)"  style="padding:11px 26px;border-radius:22px;font-family:var(--font);font-weight:700;cursor:pointer;font-size:13px;background:var(--pink);color:var(--white);border:2px solid var(--pink);">Accept &amp; Pay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── TOASTS & SPLASHES ── -->
+    <div id="xpToast"><span class="xp-plus">+<span id="xpToastAmount">0</span> XP</span></div>
+
+    <div id="rankUp">
+        <div class="rankup-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="rankup-label">RANK UP</div>
+        <div class="rankup-rank" id="rankUpName">Rookie</div>
+        <div class="rankup-unlocks" id="rankUpUnlocks">New features unlocked!</div>
+    </div>
+
+    <div id="viralSplash">
+        <div class="viral-box">
+            <div class="viral-title"><i class="fa-solid fa-fire"></i> VIRAL! <i class="fa-solid fa-fire"></i></div>
+            <div class="viral-payout" id="viralPayout">$0</div>
+        </div>
+    </div>
+
+    <div id="achToast">
+        <div class="toast-icon"><i class="fa-solid fa-medal"></i></div>
+        <div class="toast-label">Achievement Unlocked</div>
+        <div class="toast-title" id="achToastTitle">—</div>
+        <div class="toast-desc"  id="achToastDesc">—</div>
+    </div>
+
+    <div id="chalToast">
+        <div class="toast-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="toast-label">Challenge Complete</div>
+        <div class="toast-title" id="chalToastTitle">—</div>
+        <div class="toast-desc"  id="chalToastDesc">—</div>
+    </div>
+
+    <script>
+        // ── STATE ──
+        let viewerMode = null;
+        let bundlePhotos = [];
+        let currentIndex = 0;
+
+        // ── NUI MESSAGES ──
+        window.addEventListener('message', (event) => {
+            const data = event.data;
+
+            if (data.type === 'show') {
+                viewerMode = 'single';
+                document.getElementById('singlePhoto').style.display = 'flex';
+                document.getElementById('bundleViewer').style.display = 'none';
+                document.getElementById('viewerCloseBtn').style.display = 'none';
+                document.getElementById('hintText').style.display = 'none';
+                if (data.url) {
+                    document.getElementById('photo').src = data.url;
+                    document.body.classList.add('active');
+                }
+            }
+
+            if (data.type === 'showBundle') {
+                viewerMode = 'bundle';
+                bundlePhotos = data.photos || [];
+                currentIndex = 0;
+                document.getElementById('singlePhoto').style.display = 'none';
+                document.getElementById('bundleViewer').style.display = 'flex';
+                document.getElementById('viewerCloseBtn').style.display = 'flex';
+                document.getElementById('hintText').style.display = 'block';
+                document.getElementById('bundleTitle').textContent = data.title || 'Photo Bundle';
+                buildDots();
+                updateBundleView();
+                document.body.classList.add('active');
+            }
+
+            if (data.type === 'close') closeViewer();
+            if (data.type === 'showLeaderboard')  showLeaderboard(data);
+            if (data.type === 'showStats')         showStats(data.data);
+            if (data.type === 'showChallenges')    showChallenges(data.data);
+            if (data.type === 'showAchievements')  showAchievements(data.data);
+            if (data.type === 'xpGained')          showXPToast(data.amount);
+            if (data.type === 'rankUp')            showRankUp(data.rank, data.rankData);
+            if (data.type === 'viral')             showViral(data.payout);
+            if (data.type === 'achievementUnlocked') showAchToast(data.achievement);
+            if (data.type === 'challengeComplete')   showChalToast(data.challenge);
+            // v2.x: player-to-player photo offer
+            if (data.type === 'showOffer')         showOfferPreview(data);
+            if (data.type === 'dismissOffer')      closeOfferPreview();
+        });
+
+        // ── v2.x: PHOTO OFFER PREVIEW ──
+        let currentOfferId = null;
+
+        function showOfferPreview(data) {
+            currentOfferId = data.offerId;
+            document.getElementById('offerSeller').textContent = 'From: ' + (data.sellerName || 'Unknown');
+            const img = document.getElementById('offerPhoto');
+            img.src = data.photoUrl || '';
+            // Blur intensity comes from Config.PlayerOffer.PreviewBlurPx (server-side).
+            img.style.filter = (data.blurPx && data.blurPx > 0) ? ('blur(' + data.blurPx + 'px)') : 'none';
+            document.getElementById('offerCaption').textContent = data.isBundle
+                ? ('Bundle: ' + (data.caption || 'Untitled'))
+                : (data.caption || 'Untitled');
+            const priceNum = Number(data.price) || 0;
+            document.getElementById('offerPrice').textContent = '$' + priceNum.toLocaleString();
+            // Hide other panels just in case one was open.
+            document.getElementById('singlePhoto').style.display = 'none';
+            document.getElementById('bundleViewer').style.display = 'none';
+            document.getElementById('offerPreview').style.display = 'flex';
+            document.body.classList.add('active');
+        }
+
+        function closeOfferPreview() {
+            currentOfferId = null;
+            document.getElementById('offerPreview').style.display = 'none';
+            document.body.classList.remove('active');
+        }
+
+        function sendOfferResponse(accept) {
+            if (!currentOfferId) return;
+            const offerId = currentOfferId;
+            // Clear local state before fetch so a slow request can't double-fire.
+            closeOfferPreview();
+            fetch('https://' + GetParentResourceName() + '/respondToOffer', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json; charset=UTF-8' },
+                body: JSON.stringify({ offerId: offerId, accept: !!accept })
+            }).catch(() => { /* silent — Lua side handles its own state */ });
+        }
+
+        // ── LEADERBOARD ──
+        function showLeaderboard(data) {
+            const container = document.getElementById('lbRows');
+            document.getElementById('lbTitle').textContent = (data.title || 'OnlyPics Top Earners').toUpperCase();
+            container.innerHTML = '';
+
+            const lb = data.leaderboard || [];
+            if (lb.length === 0) {
+                container.innerHTML = '<div class="lb-empty"><i class="fa-solid fa-box-open"></i><br>No sales recorded yet.</div>';
+            } else {
+                lb.forEach(entry => {
+                    const row = document.createElement('div');
+                    row.className = 'lb-row';
+                    const icons = {
+                        1: '<i class="fa-solid fa-crown" style="color:#d63384;font-size:16px"></i>',
+                        2: '<i class="fa-solid fa-medal" style="color:#c06090;font-size:15px"></i>',
+                        3: '<i class="fa-solid fa-award" style="color:#b8679a;font-size:14px"></i>',
+                    };
+                    const rankDisplay = icons[entry.rank] || `<span style="color:#b8679a;font-weight:700">${entry.rank}</span>`;
+                    const color = entry.playerRankColor || '#b8679a';
+                    row.innerHTML = `
+                        <span class="lb-rank">${rankDisplay}</span>
+                        <span class="lb-name">${escapeHtml(entry.name)}</span>
+                        <span class="lb-rank-badge" style="color:${color};border-color:${color}44">${escapeHtml(entry.playerRankName || 'Rookie')}</span>
+                        <span class="lb-stat">${entry.sales}</span>
+                        <span class="lb-stat">${entry.bundleSales || 0}</span>
+                        <span class="lb-earned">$${formatNumber(entry.totalEarned)}</span>
+                    `;
+                    container.appendChild(row);
+                });
+            }
+
+            const msDiv = document.getElementById('lbMyStats');
+            if (data.myStats && data.myStats.totalSales > 0) {
+                msDiv.style.display = 'block';
+                const ms = data.myStats;
+                const icons = {
+                    1: '<i class="fa-solid fa-crown" style="color:#d63384"></i>',
+                    2: '<i class="fa-solid fa-medal" style="color:#c06090"></i>',
+                    3: '<i class="fa-solid fa-award" style="color:#b8679a"></i>',
+                };
+                const myRankDisplay = icons[ms.rank] || ('#' + ms.rank);
+                const color = ms.playerRankColor || '#d63384';
+                document.getElementById('lbMyStatsRow').innerHTML = `
+                    <span class="lb-rank">${myRankDisplay}</span>
+                    <span class="lb-name" style="color:#d63384">You</span>
+                    <span class="lb-rank-badge" style="color:${color};border-color:${color}44">${escapeHtml(ms.playerRankName || 'Rookie')}</span>
+                    <span class="lb-stat">${ms.sales}</span>
+                    <span class="lb-stat">${ms.bundleSales || 0}</span>
+                    <span class="lb-earned">$${formatNumber(ms.totalEarned)}</span>
+                `;
+            } else {
+                msDiv.style.display = 'none';
+            }
+
+            document.body.classList.add('lb-only');
+            document.getElementById('leaderboard').classList.add('active');
+        }
+
+        function closeLeaderboard() {
+            document.getElementById('leaderboard').classList.remove('active');
+            document.body.classList.remove('lb-only');
+            fetch(`https://${GetParentResourceName()}/closeLeaderboard`, { method: 'POST' });
+        }
+
+        // ── STATS ──
+        function showStats(data) {
+            if (!data) return;
+            document.getElementById('statsName').textContent = data.name || 'Unknown';
+            document.getElementById('statsAvatar').textContent = (data.name || '?').charAt(0).toUpperCase();
+            document.getElementById('statsRankNum').textContent = data.rank;
+            const pill = document.getElementById('statsRankPill');
+            pill.textContent = data.rankName;
+            pill.style.color = data.rankColor || '#d63384';
+
+            const pct = Math.min(100, Math.max(0, (data.progress || 0) * 100));
+            document.getElementById('statsXPFill').style.width = pct + '%';
+            document.getElementById('statsXPLabel').textContent = formatNumber(data.xpIntoRank || 0) + ' / ' + formatNumber(data.xpForNext || 0) + ' XP';
+            document.getElementById('statsNextRankLabel').textContent = data.nextRankName ? ('Next: ' + data.nextRankName) : 'Max rank reached';
+
+            document.getElementById('statFollowers').textContent = formatNumber(data.followers);
+            document.getElementById('statEarned').textContent   = '$' + formatNumber(data.totalEarned);
+            document.getElementById('statPhotos').textContent   = formatNumber(data.sales);
+            document.getElementById('statBundles').textContent  = formatNumber(data.bundleSales);
+            document.getElementById('statViral').textContent    = formatNumber(data.viralPhotos);
+            document.getElementById('statXP').textContent       = formatNumber(data.xp);
+            document.getElementById('statsUnlocks').textContent = data.unlocks || 'None';
+
+            document.body.classList.add('lb-only');
+            document.getElementById('statsPanel').classList.add('active');
+        }
+
+        function closeStats() {
+            document.getElementById('statsPanel').classList.remove('active');
+            document.body.classList.remove('lb-only');
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' });
+        }
+
+        // ── CHALLENGES ──
+        function showChallenges(data) {
+            if (!data) return;
+            document.getElementById('dailyChallenges').innerHTML  = renderChallengeRows(data.daily  || []);
+            document.getElementById('weeklyChallenges').innerHTML = renderChallengeRows(data.weekly || []);
+            document.body.classList.add('lb-only');
+            document.getElementById('challengesPanel').classList.add('active');
+        }
+
+        function renderChallengeRows(list) {
+            if (list.length === 0) return '<div class="lb-empty" style="padding:20px 0">No active challenges.</div>';
+            return list.map(c => {
+                const pct = Math.min(100, Math.max(0, (c.progress / c.target) * 100));
+                const reward = `+$${formatNumber(c.reward.cash || 0)} &nbsp;•&nbsp; +${formatNumber(c.reward.xp || 0)} XP`;
+                return `
+                    <div class="challenge-row ${c.completed ? 'completed' : ''}">
+                        <div class="challenge-top">
+                            <span class="challenge-label">${c.completed ? '<i class="fa-solid fa-circle-check" style="color:#16a34a;margin-right:6px"></i>' : ''}${escapeHtml(c.label)}</span>
+                            <span class="challenge-reward">${reward}</span>
+                        </div>
+                        <div class="challenge-bar"><div class="challenge-bar-fill" style="width:${pct}%"></div></div>
+                        <div class="challenge-progress-text">${formatNumber(c.progress)} / ${formatNumber(c.target)}</div>
+                    </div>`;
+            }).join('');
+        }
+
+        function closeChallenges() {
+            document.getElementById('challengesPanel').classList.remove('active');
+            document.body.classList.remove('lb-only');
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' });
+        }
+
+        // ── ACHIEVEMENTS ──
+        function showAchievements(list) {
+            if (!list) return;
+            const grid = document.getElementById('achGrid');
+            grid.innerHTML = list.length === 0
+                ? '<div class="lb-empty" style="grid-column:span 2">No achievements yet.</div>'
+                : list.map(a => `
+                    <div class="ach-card ${a.unlocked ? 'unlocked' : ''}">
+                        <div class="ach-icon">${a.unlocked ? '<i class="fa-solid fa-medal"></i>' : '<i class="fa-solid fa-lock"></i>'}</div>
+                        <div class="ach-label">${escapeHtml(a.label)}</div>
+                        <div class="ach-desc">${escapeHtml(a.desc)}</div>
+                        <div class="ach-reward">+$${formatNumber(a.reward.cash||0)} &nbsp;•&nbsp; +${formatNumber(a.reward.xp||0)} XP</div>
+                    </div>`).join('');
+            document.body.classList.add('lb-only');
+            document.getElementById('achievementsPanel').classList.add('active');
+        }
+
+        function closeAchievements() {
+            document.getElementById('achievementsPanel').classList.remove('active');
+            document.body.classList.remove('lb-only');
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' });
+        }
+
+        // ── TOASTS ──
+        let xpToastTimeout;
+        function showXPToast(amount) {
+            const el = document.getElementById('xpToast');
+            document.getElementById('xpToastAmount').textContent = amount;
+            document.body.classList.add('overlay-only');
+            el.classList.add('show');
+            clearTimeout(xpToastTimeout);
+            xpToastTimeout = setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => { if (!anyPanelOpen()) document.body.classList.remove('overlay-only'); }, 350);
+            }, 1800);
+        }
+
+        let rankUpTimeout;
+        function showRankUp(rank, rankData) {
+            document.getElementById('rankUpName').textContent    = rankData.name || 'Unknown';
+            document.getElementById('rankUpUnlocks').textContent = rankData.unlocks ? ('Unlocked: ' + rankData.unlocks) : '';
+            document.body.classList.add('overlay-only');
+            const el = document.getElementById('rankUp');
+            el.classList.add('show');
+            clearTimeout(rankUpTimeout);
+            rankUpTimeout = setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => { if (!anyPanelOpen()) document.body.classList.remove('overlay-only'); }, 450);
+            }, 3500);
+        }
+
+        function showViral(payout) {
+            document.getElementById('viralPayout').textContent = '$' + formatNumber(payout);
+            document.body.classList.add('overlay-only');
+            const el = document.getElementById('viralSplash');
+            el.classList.add('show');
+            setTimeout(() => {
+                el.classList.remove('show');
+                if (!anyPanelOpen()) document.body.classList.remove('overlay-only');
+            }, 2500);
+        }
+
+        let achToastTimeout;
+        function showAchToast(ach) {
+            document.getElementById('achToastTitle').textContent = ach.label;
+            document.getElementById('achToastDesc').textContent  = ach.desc;
+            document.body.classList.add('overlay-only');
+            const el = document.getElementById('achToast');
+            el.classList.add('show');
+            clearTimeout(achToastTimeout);
+            achToastTimeout = setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => { if (!anyPanelOpen()) document.body.classList.remove('overlay-only'); }, 400);
+            }, 4000);
+        }
+
+        let chalToastTimeout;
+        function showChalToast(chal) {
+            document.getElementById('chalToastTitle').textContent = chal.label;
+            const reward = chal.reward || {};
+            document.getElementById('chalToastDesc').textContent  = `+$${formatNumber(reward.cash||0)} • +${formatNumber(reward.xp||0)} XP`;
+            document.body.classList.add('overlay-only');
+            const el = document.getElementById('chalToast');
+            el.classList.add('show');
+            clearTimeout(chalToastTimeout);
+            chalToastTimeout = setTimeout(() => {
+                el.classList.remove('show');
+                setTimeout(() => { if (!anyPanelOpen()) document.body.classList.remove('overlay-only'); }, 400);
+            }, 4000);
+        }
+
+        // ── PHOTO VIEWER ──
+        document.getElementById('singlePhoto').addEventListener('click', () => { if (viewerMode === 'single') closeViewer(); });
+
+        function updateBundleView() {
+            if (!bundlePhotos.length) return;
+            const img = document.getElementById('bundleImage');
+            img.classList.add('fade');
+            setTimeout(() => {
+                img.src = bundlePhotos[currentIndex];
+                img.onload = () => img.classList.remove('fade');
+                setTimeout(() => img.classList.remove('fade'), 200);
+            }, 150);
+            document.getElementById('prevBtn').classList.toggle('disabled', currentIndex === 0);
+            document.getElementById('nextBtn').classList.toggle('disabled', currentIndex === bundlePhotos.length - 1);
+            document.querySelectorAll('.counter-dot').forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+            const ct = document.querySelector('.counter-text');
+            if (ct) ct.textContent = (currentIndex + 1) + ' / ' + bundlePhotos.length;
+        }
+
+        function buildDots() {
+            const c = document.getElementById('bundleCounter');
+            c.innerHTML = '';
+            bundlePhotos.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'counter-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => { currentIndex = i; updateBundleView(); };
+                c.appendChild(dot);
+            });
+            const t = document.createElement('span');
+            t.className = 'counter-text';
+            t.textContent = '1 / ' + bundlePhotos.length;
+            c.appendChild(t);
+        }
+
+        function prevPhoto() { if (currentIndex > 0) { currentIndex--; updateBundleView(); } }
+        function nextPhoto() { if (currentIndex < bundlePhotos.length - 1) { currentIndex++; updateBundleView(); } }
+
+        function closeViewer() {
+            fetch(`https://${GetParentResourceName()}/close`, { method: 'POST' });
+            document.body.classList.remove('active', 'lb-only');
+            document.getElementById('singlePhoto').style.display = 'none';
+            document.getElementById('bundleViewer').style.display = 'none';
+            document.getElementById('viewerCloseBtn').style.display = 'none';
+            document.getElementById('hintText').style.display = 'none';
+            document.getElementById('photo').src = '';
+            document.getElementById('bundleImage').src = '';
+            bundlePhotos = []; currentIndex = 0; viewerMode = null;
+        }
+
+        // ── HELPERS ──
+        function anyPanelOpen() {
+            return document.querySelector('.panel-overlay.active') ||
+                   document.getElementById('leaderboard').classList.contains('active');
+        }
+
+        function escapeHtml(text) {
+            const d = document.createElement('div');
+            d.textContent = text == null ? '' : String(text);
+            return d.innerHTML;
+        }
+
+        function formatNumber(num) {
+            return (num || 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        // ── KEYBOARD ──
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                if (document.getElementById('statsPanel').classList.contains('active'))        { closeStats();        return; }
+                if (document.getElementById('challengesPanel').classList.contains('active'))   { closeChallenges();   return; }
+                if (document.getElementById('achievementsPanel').classList.contains('active')) { closeAchievements(); return; }
+                if (document.getElementById('leaderboard').classList.contains('active'))       { closeLeaderboard();  return; }
+                if (document.body.classList.contains('active'))                                { closeViewer();       return; }
+            }
+            if (!document.body.classList.contains('active')) return;
+            if (viewerMode === 'bundle') {
+                if (e.key === 'ArrowLeft')  prevPhoto();
+                if (e.key === 'ArrowRight') nextPhoto();
+            }
+        });
+    </script>
+
+    <!-- ===================================================================== -->
+    <!-- 📱 BADDIE PHONE — built-in phone + social app (v2.0.2)                 -->
+    <!-- Self-contained. Shows only when client sends action:'openBaddiePhone'. -->
+    <!-- ===================================================================== -->
+    <style>
+        body.bp-open { display:block !important; background:transparent !important; backdrop-filter:none !important; height:100vh; width:100vw; }
+        body.bp-open #viewerCloseBtn, body.bp-open #singlePhoto, body.bp-open #bundleViewer { }
+
+        #bp-wrap {
+            position: fixed; display: none; z-index: 2147483600;
+            right: 24px; bottom: 24px;
+            --bp-w: 360px; --bp-scale: 1;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        #bp-wrap.bp-visible { display: block; }
+        #bp-wrap, #bp-wrap * { box-sizing: border-box; }
+
+        @keyframes bpIn  { 0%{opacity:0;transform:translateY(28px) scale(.92);} 60%{opacity:1;} 100%{opacity:1;transform:translateY(0) scale(1);} }
+        @keyframes bpOut { 0%{opacity:1;transform:translateY(0) scale(1);} 100%{opacity:0;transform:translateY(28px) scale(.92);} }
+        #bp-wrap.bp-anim-in  #bp-phone { animation: bpIn .34s cubic-bezier(.2,.9,.25,1) both; }
+        #bp-wrap.bp-anim-out #bp-phone { animation: bpOut .24s ease-in both; }
+
+        #bp-phone {
+            position: relative; width: var(--bp-w); aspect-ratio: 360 / 745;
+            transform: scale(var(--bp-scale)); transform-origin: bottom right;
+            border-radius: 56px; padding: 13px;
+            background: linear-gradient(150deg,#3a3a40 0%,#1c1c20 28%,#0c0c0e 60%,#26262b 100%);
+            box-shadow: 0 2px 4px rgba(255,255,255,.10) inset, 0 -2px 6px rgba(0,0,0,.55) inset,
+                        0 22px 60px rgba(0,0,0,.65), 0 4px 18px rgba(0,0,0,.55);
+        }
+        #bp-screen {
+            position: relative; width: 100%; height: 100%;
+            border-radius: 44px; overflow: hidden; background: #0d0d0d;
+            box-shadow: 0 0 0 2px #000; color: #fff;
+        }
+        #bp-island {
+            position: absolute; top: 11px; left: 50%; transform: translateX(-50%);
+            width: 41%; height: 30px; background: #000; border-radius: 20px; z-index: 30;
+            display:flex; align-items:center; justify-content:flex-end; padding-right:12px;
+        }
+        #bp-island .bp-cam { width:9px;height:9px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#3a2b52,#0a0f18 70%); }
+        #bp-statusbar {
+            position:absolute; top:0; left:0; right:0; height:52px; z-index:20;
+            display:flex; align-items:center; justify-content:space-between;
+            padding:14px 30px 0 30px; pointer-events:none;
+            color:#fff; font-weight:600; text-shadow:0 1px 2px rgba(0,0,0,.35);
+        }
+        #bp-time { font-size:16px; font-variant-numeric:tabular-nums; }
+        #bp-status-right { display:flex; align-items:center; gap:7px; }
+        #bp-status-right .bp-pct { font-size:13px; }
+        #bp-home { position:absolute; bottom:7px; left:50%; transform:translateX(-50%); width:36%; height:5px; border-radius:3px; background:rgba(255,255,255,.55); z-index:30; }
+
+        /* App body */
+        #bp-app { position:absolute; inset:0; display:flex; flex-direction:column; }
+        .bp-view { display:none; flex:1; overflow:hidden; flex-direction:column; }
+        .bp-view.bp-active { display:flex; }
+        .bp-scroll { flex:1; overflow-y:auto; padding:62px 16px 92px; -webkit-overflow-scrolling:touch; }
+        .bp-scroll::-webkit-scrollbar { width:0; }
+        #bp-feed-view .bp-scroll, #bp-gallery-view .bp-scroll { padding-top:108px; }
+
+        /* Auth */
+        #bp-auth { padding:70px 24px 30px; height:100%; display:flex; flex-direction:column; justify-content:center; text-align:center; }
+        .bp-logo { font-size:30px; font-weight:900; letter-spacing:-.5px; }
+        .bp-logo span { background:linear-gradient(135deg,var(--pink),var(--pink-light)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+        .bp-sub { color:var(--pink-light); font-weight:600; font-size:14px; margin-top:2px; }
+        .bp-tag { color:#777; font-size:12px; margin-top:6px; margin-bottom:24px; }
+        .bp-tabs { display:flex; gap:10px; margin-bottom:18px; }
+        .bp-tab { flex:1; padding:11px; background:transparent; border:1px solid #2a2a2a; border-radius:12px; color:#888; font-weight:700; font-size:13px; cursor:pointer; font-family:inherit; }
+        .bp-tab.bp-on { background:linear-gradient(135deg,var(--pink),var(--pink-light)); border-color:transparent; color:#fff; }
+        .bp-field { text-align:left; margin-bottom:13px; }
+        .bp-field label { display:block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#888; margin:0 0 6px 4px; }
+        .bp-input, .bp-textarea {
+            width:100%; background:#1a1a1a; border:1px solid #2a2a2a; border-radius:12px;
+            padding:12px 14px; color:#fff; font-size:14px; font-family:inherit; outline:none;
+        }
+        .bp-input:focus, .bp-textarea:focus { border-color:var(--pink); }
+        .bp-textarea { resize:none; min-height:70px; }
+        .bp-btn { width:100%; padding:13px; border:none; border-radius:12px; font-weight:800; font-size:14px; cursor:pointer; font-family:inherit; color:#fff; background:linear-gradient(135deg,var(--pink),var(--pink-light)); transition:transform .12s; }
+        .bp-btn:active { transform:scale(.97); }
+        .bp-btn.bp-ghost { background:#1a1a1a; border:1px solid #2a2a2a; color:#ddd; }
+        .bp-err { color:#ff6b6b; font-size:12px; margin-top:8px; min-height:16px; }
+
+        /* Header */
+        .bp-head { position:absolute; top:0; left:0; right:0; padding:58px 18px 10px; display:flex; align-items:flex-end; justify-content:space-between; z-index:10; background:linear-gradient(#0d0d0d 60%, transparent); }
+        .bp-head h2 { font-size:20px; font-weight:800; }
+        .bp-head .bp-mini { font-size:11px; color:#888; font-weight:600; }
+
+        /* Cards / grids */
+        .bp-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+        .bp-card { background:#161616; border:1px solid #232323; border-radius:14px; overflow:hidden; }
+        .bp-card img { width:100%; aspect-ratio:1; object-fit:cover; display:block; background:#000; }
+        .bp-card .bp-meta { padding:8px 9px; }
+        .bp-cap { font-size:11px; color:#ccc; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+        .bp-stats { display:flex; gap:10px; margin-top:5px; font-size:10px; color:#9a9a9a; font-weight:700; }
+        .bp-stats b { color:#fff; }
+        .bp-viral { position:absolute; margin:7px; padding:3px 7px; border-radius:8px; font-size:9px; font-weight:900; letter-spacing:.4px; background:linear-gradient(135deg,#ffb020,#ff6b6b); color:#1a1a1a; text-transform:uppercase; }
+        .bp-card-wrap { position:relative; }
+        .bp-actions { display:flex; gap:6px; padding:0 9px 9px; }
+        .bp-chip { flex:1; text-align:center; padding:7px; border-radius:9px; font-size:11px; font-weight:800; cursor:pointer; border:none; font-family:inherit; }
+        .bp-chip.bp-up { background:linear-gradient(135deg,var(--pink),var(--pink-light)); color:#fff; }
+        .bp-chip.bp-del { background:#241317; color:#ff7a7a; }
+        .bp-empty { text-align:center; color:#666; font-size:13px; padding:40px 10px; }
+        .bp-tagchip { display:inline-block; padding:3px 8px; border-radius:8px; font-size:10px; font-weight:800; background:#1f1f1f; color:#9a9a9a; }
+        .bp-tagchip.bp-live { color:#54e08a; background:#11271a; }
+        .bp-tagchip.bp-done { color:#888; }
+
+        /* Camera tab */
+        #bp-camera-view .bp-shutter { width:84px;height:84px;border-radius:50%;border:5px solid var(--pink); background:#fff1f8; cursor:pointer; display:flex;align-items:center;justify-content:center; }
+        #bp-camera-view .bp-shutter i { font-size:30px;color:var(--pink); }
+
+        /* Profile */
+        .bp-avatar { width:84px;height:84px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-light)); display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:900;color:#fff;margin:0 auto 10px; background-size:cover; background-position:center; }
+        .bp-statrow { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin:14px 0; }
+        .bp-statbox { background:#161616; border:1px solid #232323; border-radius:12px; padding:10px; text-align:center; }
+        .bp-statbox .v { font-size:16px; font-weight:900; }
+        .bp-statbox .l { font-size:9px; color:#888; text-transform:uppercase; letter-spacing:.4px; font-weight:700; margin-top:2px; }
+
+        /* Bottom nav */
+        #bp-nav { position:absolute; bottom:0; left:0; right:0; height:64px; padding-bottom:18px; display:flex; justify-content:space-around; align-items:center; background:#0d0d0d; border-top:1px solid #1a1a1a; z-index:15; }
+        .bp-nav-item { background:none; border:none; color:#555; display:flex; align-items:center; justify-content:center; cursor:pointer; font-family:inherit; padding:8px 14px; transition:color .15s, transform .12s; }
+        .bp-nav-item i { font-size:21px; }
+        .bp-nav-item:active { transform:scale(.9); }
+        .bp-nav-item.bp-on { color:var(--pink); }
+
+        #bp-toast { position:absolute; bottom:80px; left:50%; transform:translateX(-50%) translateY(20px); opacity:0; background:#161616; border:1px solid #2a2a2a; color:#fff; padding:9px 16px; border-radius:12px; font-size:12px; font-weight:700; z-index:40; transition:.25s; pointer-events:none; white-space:nowrap; }
+        #bp-toast.bp-show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+        /* ── Phone-peek notification ── */
+        body.bp-peek { display:block !important; background:transparent !important; backdrop-filter:none !important; height:100vh; width:100vw; pointer-events:none; }
+        body.bp-peek #bp-app .bp-view, body.bp-peek #bp-nav, body.bp-peek #bp-toast { display:none !important; }
+        /* While peeking, the phone slides on a transform; suppress the open pop-in anim */
+        #bp-wrap.bp-peeking #bp-phone { animation:none !important; }
+        #bp-wrap.bp-peeking { display:block; transition:transform .52s cubic-bezier(.18,.86,.26,1); transform:translateY(110%); will-change:transform; }
+        #bp-wrap.bp-peeking.bp-peek-up { transform:translateY(72%); }
+
+        #bp-notif { position:absolute; top:58px; left:0; right:0; padding:0 11px; z-index:26; display:none; }
+        body.bp-peek #bp-notif, #bp-screen.bp-show-notif #bp-notif { display:block; }
+        .bp-notif-card {
+            display:flex; gap:11px; align-items:flex-start;
+            background:rgba(30,30,34,.86); backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:12px 13px;
+            box-shadow:0 12px 30px rgba(0,0,0,.45);
+            animation:bpNotifIn .45s cubic-bezier(.2,.9,.25,1) both;
+        }
+        @keyframes bpNotifIn { 0%{opacity:0;transform:translateY(-10px) scale(.96);} 100%{opacity:1;transform:translateY(0) scale(1);} }
+        .bp-notif-icon { flex:0 0 auto; width:38px; height:38px; border-radius:11px; background:linear-gradient(135deg,var(--pink),var(--pink-light)); display:flex; align-items:center; justify-content:center; color:#fff; font-size:17px; }
+        .bp-notif-body { flex:1; min-width:0; }
+        .bp-notif-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:1px; }
+        .bp-notif-app { font-size:11px; font-weight:800; letter-spacing:.3px; color:#fff; text-transform:uppercase; }
+        .bp-notif-time { font-size:10px; color:#9a9a9a; font-weight:600; }
+        .bp-notif-title { font-size:13px; font-weight:700; color:#fff; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+        .bp-notif-text { font-size:12px; color:#c9c9c9; font-weight:500; margin-top:1px; }
+    </style>
+
+    <div id="bp-wrap">
+        <div id="bp-phone">
+            <div id="bp-screen">
+                <div id="bp-island"><span class="bp-cam"></span></div>
+                <div id="bp-statusbar">
+                    <span id="bp-time">15:39</span>
+                    <span id="bp-status-right">
+                        <svg width="18" height="12" viewBox="0 0 18 12" fill="#fff"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0.5" width="3" height="11.5" rx="1"></rect></svg>
+                        <svg width="17" height="12" viewBox="0 0 17 12" fill="#fff"><path d="M8.5 1C5.4 1 2.6 2.2 0.6 4.2l1.4 1.4C3.7 3.9 6 2.9 8.5 2.9s4.8 1 6.5 2.7l1.4-1.4C14.4 2.2 11.6 1 8.5 1z"></path><path d="M8.5 5.2c-1.8 0-3.4 0.7-4.6 1.9l1.4 1.4c0.9-0.9 2-1.4 3.2-1.4s2.4 0.5 3.2 1.4l1.4-1.4C11.9 5.9 10.3 5.2 8.5 5.2z"></path><path d="M8.5 9.1L10 10.6 8.5 12 7 10.6z"></path></svg>
+                        <span class="bp-pct">100</span>
+                        <svg width="26" height="13" viewBox="0 0 26 13"><rect x="0.5" y="0.5" width="22" height="12" rx="3.5" fill="none" stroke="#fff" stroke-opacity="0.45"></rect><rect x="2" y="2" width="19" height="9" rx="2" fill="#fff"></rect><rect x="24" y="4" width="1.5" height="5" rx="0.75" fill="#fff" fill-opacity="0.45"></rect></svg>
+                    </span>
+                </div>
+
+                <div id="bp-app">
+                    <!-- AUTH -->
+                    <div class="bp-view bp-active" id="bp-auth-view">
+                        <div id="bp-auth">
+                            <div class="bp-logo">Only<span>Pics</span></div>
+                            <div class="bp-sub">Post. Grow. Get paid.</div>
+                            <div class="bp-tag">Your private creator account.</div>
+                            <div class="bp-tabs">
+                                <button class="bp-tab bp-on" data-auth="login">Sign In</button>
+                                <button class="bp-tab" data-auth="register">Create</button>
+                            </div>
+                            <div id="bp-login-form">
+                                <div class="bp-field"><label>Password</label><input class="bp-input" type="password" id="bp-login-pass" placeholder="Your password"></div>
+                                <button class="bp-btn" id="bp-login-btn">Sign In</button>
+                            </div>
+                            <div id="bp-register-form" style="display:none;">
+                                <div class="bp-field"><label>Username</label><input class="bp-input" id="bp-reg-user" placeholder="Pick a username"></div>
+                                <div class="bp-field"><label>Display Name</label><input class="bp-input" id="bp-reg-name" placeholder="Shown on your page"></div>
+                                <div class="bp-field"><label>Password</label><input class="bp-input" type="password" id="bp-reg-pass" placeholder="Create a password"></div>
+                                <button class="bp-btn" id="bp-reg-btn">Create Account</button>
+                            </div>
+                            <div class="bp-err" id="bp-auth-err"></div>
+                        </div>
+                    </div>
+
+                    <!-- FEED -->
+                    <div class="bp-view" id="bp-feed-view">
+                        <div class="bp-head">
+                            <div><h2>Your Page</h2><div class="bp-mini" id="bp-feed-sub">0 followers</div></div>
+                            <div class="bp-mini" id="bp-feed-earned" style="color:var(--pink-light);font-weight:800;">$0</div>
+                        </div>
+                        <div class="bp-scroll"><div id="bp-feed-list"><div class="bp-empty">No posts yet. Take a photo and upload it.</div></div></div>
+                    </div>
+
+                    <!-- CAMERA -->
+                    <div class="bp-view" id="bp-camera-view">
+                        <div class="bp-scroll" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:18px;">
+                            <div style="font-size:18px;font-weight:800;">Camera</div>
+                            <div style="font-size:12px;color:#888;max-width:230px;">Tap to open the camera, frame your shot in‑world, then press Enter to snap. It saves to your Gallery.</div>
+                            <div class="bp-shutter" id="bp-shutter"><i class="fa-solid fa-camera"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- GALLERY -->
+                    <div class="bp-view" id="bp-gallery-view">
+                        <div class="bp-head"><div><h2>Gallery</h2><div class="bp-mini" id="bp-gallery-sub">Upload a photo to start earning</div></div></div>
+                        <div class="bp-scroll"><div class="bp-grid" id="bp-gallery-list"></div></div>
+                    </div>
+
+                    <!-- PROFILE -->
+                    <div class="bp-view" id="bp-profile-view">
+                        <div class="bp-scroll">
+                            <div class="bp-avatar" id="bp-prof-avatar">?</div>
+                            <div style="text-align:center;font-size:18px;font-weight:900;" id="bp-prof-name">—</div>
+                            <div style="text-align:center;font-size:12px;color:#888;" id="bp-prof-handle">@—</div>
+                            <div class="bp-statrow">
+                                <div class="bp-statbox"><div class="v" id="bp-prof-followers">0</div><div class="l">Followers</div></div>
+                                <div class="bp-statbox"><div class="v" id="bp-prof-posts">0</div><div class="l">Posts</div></div>
+                                <div class="bp-statbox"><div class="v" id="bp-prof-earned">$0</div><div class="l">Earned</div></div>
+                            </div>
+                            <div class="bp-field"><label>Display Name</label><input class="bp-input" id="bp-edit-name"></div>
+                            <div class="bp-field"><label>Bio</label><textarea class="bp-textarea" id="bp-edit-bio" placeholder="Tell people about you..."></textarea></div>
+                            <div class="bp-field"><label>Avatar URL</label><input class="bp-input" id="bp-edit-avatar" placeholder="https://..."></div>
+                            <button class="bp-btn" id="bp-save-profile">Save Profile</button>
+                            <button class="bp-btn bp-ghost" id="bp-logout" style="margin-top:8px;">Sign Out</button>
+                        </div>
+                    </div>
+
+                    <!-- NAV -->
+                    <div id="bp-nav" style="display:none;">
+                        <button class="bp-nav-item bp-on" data-tab="feed" aria-label="Feed"><i class="fa-solid fa-house"></i></button>
+                        <button class="bp-nav-item" data-tab="camera" aria-label="Camera"><i class="fa-solid fa-camera"></i></button>
+                        <button class="bp-nav-item" data-tab="gallery" aria-label="Gallery"><i class="fa-solid fa-images"></i></button>
+                        <button class="bp-nav-item" data-tab="profile" aria-label="Profile"><i class="fa-solid fa-user"></i></button>
+                    </div>
+
+                    <div id="bp-toast"></div>
+                </div>
+
+                <div id="bp-notif">
+                    <div class="bp-notif-card">
+                        <div class="bp-notif-icon"><i class="fa-solid fa-camera" id="bp-notif-ic"></i></div>
+                        <div class="bp-notif-body">
+                            <div class="bp-notif-top"><span class="bp-notif-app">OnlyPics</span><span class="bp-notif-time">now</span></div>
+                            <div class="bp-notif-title" id="bp-notif-title">New activity</div>
+                            <div class="bp-notif-text" id="bp-notif-text"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bp-home"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const RES = (typeof GetParentResourceName === 'function') ? GetParentResourceName() : 'orbit-onlypics';
+        const $ = (id) => document.getElementById(id);
+        const wrap = $('bp-wrap');
+        let bpCfg = {}, bpOpen = false, bpAccount = null, clockTimer = null, authMode = 'login', currentTab = 'feed';
+
+        function post(name, body) {
+            return fetch(`https://${RES}/${name}`, {
+                method:'POST', headers:{'Content-Type':'application/json'},
+                body: JSON.stringify(body || {})
+            }).then(r => r.json()).catch(() => ({success:false}));
+        }
+        function money(n){ return '$' + (Number(n)||0).toLocaleString(); }
+        function num(n){ return (Number(n)||0).toLocaleString(); }
+        function toast(msg){ const t=$('bp-toast'); t.textContent=msg; t.classList.add('bp-show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('bp-show'),2200); }
+
+        // Clock
+        function pad(n){return n<10?'0'+n:''+n;}
+        function tick(){ const d=new Date(); let h=d.getHours(); const m=pad(d.getMinutes());
+            if(bpCfg.use24h!==false){ $('bp-time').textContent=pad(h)+':'+m; }
+            else { const ap=h>=12?' PM':' AM'; h=h%12||12; $('bp-time').textContent=h+':'+m+ap; } }
+        function startClock(){ tick(); clearInterval(clockTimer); clockTimer=setInterval(tick,10000); }
+
+        function applyCfg(c){
+            bpCfg=c||{};
+            if(c.width) wrap.style.setProperty('--bp-w', c.width+'px');
+            if(c.scale) wrap.style.setProperty('--bp-scale', c.scale);
+            wrap.style.top=wrap.style.bottom=wrap.style.left=wrap.style.right='auto';
+            const ox=(c.offsetX??24)+'px', oy=(c.offsetY??24)+'px', pos=c.position||'bottom-right';
+            const phone=$('bp-phone');
+            if(pos==='bottom-right'){wrap.style.bottom=oy;wrap.style.right=ox;phone.style.transformOrigin='bottom right';}
+            else if(pos==='bottom-left'){wrap.style.bottom=oy;wrap.style.left=ox;phone.style.transformOrigin='bottom left';}
+            else if(pos==='top-right'){wrap.style.top=oy;wrap.style.right=ox;phone.style.transformOrigin='top right';}
+            else if(pos==='top-left'){wrap.style.top=oy;wrap.style.left=ox;phone.style.transformOrigin='top left';}
+        }
+
+        function openPhone(c){
+            if(bpOpen) return;
+            clearPeek();
+            bpOpen=true; applyCfg(c); startClock();
+            document.body.classList.remove('bp-peek');
+            document.body.classList.add('bp-open');
+            wrap.classList.remove('bp-anim-out','bp-peeking','bp-peek-up'); wrap.classList.add('bp-visible','bp-anim-in');
+            boot();
+        }
+        function closePhone(){
+            if(!bpOpen) return; bpOpen=false; clearInterval(clockTimer);
+            wrap.classList.remove('bp-anim-in'); wrap.classList.add('bp-anim-out');
+            setTimeout(()=>{ wrap.classList.remove('bp-visible','bp-anim-out'); document.body.classList.remove('bp-open'); },240);
+        }
+        function requestClose(){ post('bp_close'); }
+
+        // ---- Phone-peek notification ----
+        let peekTimers = [];
+        function clearPeek(){
+            peekTimers.forEach(clearTimeout); peekTimers = [];
+            wrap.classList.remove('bp-peeking','bp-peek-up');
+            if(!bpOpen){ wrap.classList.remove('bp-visible'); document.body.classList.remove('bp-peek'); }
+        }
+        function fillNotif(n){
+            $('bp-notif-title').textContent = n.title || 'New activity';
+            $('bp-notif-text').textContent  = n.body || '';
+            $('bp-notif-ic').className = 'fa-solid fa-' + (n.icon || 'camera');
+        }
+        function peekNotify(n, cfg, duration){
+            n = n || {};
+            fillNotif(n);
+            // If the phone is already open, just drop a small toast instead of peeking.
+            if(bpOpen){ toast((n.title || 'New activity') + (n.body ? ' — ' + n.body : '')); return; }
+
+            applyCfg(cfg || bpCfg || {});
+            tick();
+            clearPeek();
+            document.body.classList.add('bp-peek');
+            wrap.classList.add('bp-visible','bp-peeking');   // starts at translateY(110%) — off screen
+            void wrap.offsetWidth;                            // commit the start state
+            requestAnimationFrame(()=>{ wrap.classList.add('bp-peek-up'); }); // slide up to the peek
+
+            const dur = Math.max(1500, duration || 4500);
+            peekTimers.push(setTimeout(()=>{
+                wrap.classList.remove('bp-peek-up');          // slide back down
+                peekTimers.push(setTimeout(()=>{
+                    wrap.classList.remove('bp-visible','bp-peeking');
+                    document.body.classList.remove('bp-peek');
+                }, 560));
+            }, dur));
+        }
+
+        // ---- Views ----
+        function showView(id){
+            ['bp-auth-view','bp-feed-view','bp-camera-view','bp-gallery-view','bp-profile-view'].forEach(v=>$(v).classList.remove('bp-active'));
+            $(id).classList.add('bp-active');
+        }
+        function setTab(tab){
+            currentTab=tab;
+            document.querySelectorAll('.bp-nav-item').forEach(b=>b.classList.toggle('bp-on', b.dataset.tab===tab));
+            if(tab==='feed'){ showView('bp-feed-view'); loadFeed(); }
+            else if(tab==='camera'){ showView('bp-camera-view'); }
+            else if(tab==='gallery'){ showView('bp-gallery-view'); loadGallery(); }
+            else if(tab==='profile'){ showView('bp-profile-view'); loadProfile(); }
+        }
+
+        async function boot(){
+            const r = await post('bp_getProfile');
+            if(r && r.success && r.hasAccount){ bpAccount=r.account; enterApp(); }
+            else { bpAccount=null; $('bp-nav').style.display='none'; showView('bp-auth-view'); }
+        }
+        function enterApp(){ $('bp-nav').style.display='flex'; setTab('feed'); }
+
+        // ---- Auth ----
+        document.querySelectorAll('[data-auth]').forEach(b=>b.addEventListener('click',()=>{
+            authMode=b.dataset.auth;
+            document.querySelectorAll('[data-auth]').forEach(x=>x.classList.toggle('bp-on',x===b));
+            $('bp-login-form').style.display = authMode==='login'?'block':'none';
+            $('bp-register-form').style.display = authMode==='register'?'block':'none';
+            $('bp-auth-err').textContent='';
+        }));
+        $('bp-login-btn').addEventListener('click', async ()=>{
+            const r = await post('bp_login',{password:$('bp-login-pass').value});
+            if(r&&r.success){ bpAccount=r.account; enterApp(); } else { $('bp-auth-err').textContent=(r&&r.error)||'Login failed'; }
+        });
+        $('bp-reg-btn').addEventListener('click', async ()=>{
+            const r = await post('bp_register',{
+                username:$('bp-reg-user').value, displayName:$('bp-reg-name').value, password:$('bp-reg-pass').value });
+            if(r&&r.success){ bpAccount=r.account; enterApp(); } else { $('bp-auth-err').textContent=(r&&r.error)||'Could not create account'; }
+        });
+
+        // ---- Feed ----
+        async function loadFeed(){
+            const r = await post('bp_getFeed');
+            const list=$('bp-feed-list');
+            if(r&&r.account){ bpAccount=r.account; $('bp-feed-sub').textContent=num(r.account.followers)+' followers'; $('bp-feed-earned').textContent=money(r.account.totalEarned); }
+            const photos=(r&&r.photos)||[];
+            if(!photos.length){ list.innerHTML='<div class="bp-empty">No posts yet. Take a photo and upload it.</div>'; return; }
+            list.innerHTML='<div class="bp-grid">'+photos.map(p=>cardHtml(p,false)).join('')+'</div>';
+        }
+
+        // ---- Gallery ----
+        async function loadGallery(){
+            const r = await post('bp_getGallery');
+            const list=$('bp-gallery-list');
+            const photos=(r&&r.photos)||[];
+            if(!photos.length){ list.innerHTML='<div class="bp-empty" style="grid-column:1/3;">Your gallery is empty.<br>Open the Camera to take a photo.</div>'; return; }
+            list.innerHTML=photos.map(p=>cardHtml(p,true)).join('');
+            list.querySelectorAll('[data-up]').forEach(b=>b.addEventListener('click',async()=>{
+                b.disabled=true; b.textContent='...';
+                const r=await post('bp_uploadPhoto',{id:Number(b.dataset.up)});
+                if(r&&r.success){ toast(r.viral?'🔥 This one went VIRAL!':'Posted! It will start earning.'); loadGallery(); }
+                else { toast((r&&r.error)||'Upload failed'); b.disabled=false; b.textContent='Upload'; }
+            }));
+            list.querySelectorAll('[data-del]').forEach(b=>b.addEventListener('click',async()=>{
+                await post('bp_deletePhoto',{id:Number(b.dataset.del)}); loadGallery();
+            }));
+        }
+
+        function cardHtml(p, gallery){
+            const viral = p.viral==1 || p.viral===true;
+            const uploaded = p.uploaded==1 || p.uploaded===true;
+            const active = p.active==1 || p.active===true;
+            let badge = viral?'<div class="bp-viral">Viral</div>':'';
+            let tag = '';
+            if(uploaded) tag = active ? '<span class="bp-tagchip bp-live">● Live</span>' : '<span class="bp-tagchip bp-done">Ended</span>';
+            const stats = `<div class="bp-stats"><span><b>${num(p.views)}</b> views</span><span><b>${num(p.likes)}</b> likes</span><span><b>${money(p.earned)}</b></span></div>`;
+            let actions='';
+            if(gallery && !uploaded){
+                actions=`<div class="bp-actions"><button class="bp-chip bp-up" data-up="${p.id}">Upload</button><button class="bp-chip bp-del" data-del="${p.id}">Delete</button></div>`;
+            } else if(gallery && uploaded){
+                actions=`<div class="bp-actions"><div class="bp-chip" style="background:#161616;color:#888;flex:1;">${active?'Earning':'Finished'}</div><button class="bp-chip bp-del" data-del="${p.id}">Delete</button></div>`;
+            }
+            return `<div class="bp-card"><div class="bp-card-wrap">${badge}<img src="${p.url}"></div><div class="bp-meta"><div class="bp-cap">${tag} ${escapeHtml(p.caption||'Untitled')}</div>${stats}</div>${actions}</div>`;
+        }
+        function escapeHtml(s){ const d=document.createElement('div'); d.textContent=s||''; return d.innerHTML; }
+
+        // ---- Camera ----
+        $('bp-shutter').addEventListener('click', ()=>{ post('bp_takePhoto'); });
+
+        // ---- Profile ----
+        async function loadProfile(){
+            const r = await post('bp_getFeed'); // also returns account + posts count
+            const acc = (r&&r.account)||bpAccount||{};
+            bpAccount=acc;
+            $('bp-prof-name').textContent=acc.displayName||'—';
+            $('bp-prof-handle').textContent='@'+(acc.username||'—');
+            $('bp-prof-followers').textContent=num(acc.followers);
+            $('bp-prof-posts').textContent=num((r&&r.photos&&r.photos.length)||0);
+            $('bp-prof-earned').textContent=money(acc.totalEarned);
+            $('bp-edit-name').value=acc.displayName||'';
+            $('bp-edit-bio').value=acc.bio||'';
+            $('bp-edit-avatar').value=acc.avatar||'';
+            const av=$('bp-prof-avatar');
+            if(acc.avatar){ av.style.backgroundImage=`url(${acc.avatar})`; av.textContent=''; }
+            else { av.style.backgroundImage='none'; av.textContent=(acc.displayName||'?').charAt(0).toUpperCase(); }
+        }
+        $('bp-save-profile').addEventListener('click', async ()=>{
+            const r=await post('bp_updateProfile',{ displayName:$('bp-edit-name').value, bio:$('bp-edit-bio').value, avatar:$('bp-edit-avatar').value });
+            if(r&&r.success){ bpAccount=r.account; toast('Profile saved'); loadProfile(); } else { toast('Could not save'); }
+        });
+        $('bp-logout').addEventListener('click', ()=>{ bpAccount=null; $('bp-nav').style.display='none'; showView('bp-auth-view'); });
+
+        // ---- Nav ----
+        document.querySelectorAll('.bp-nav-item').forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
+
+        // ---- Messages from client ----
+        window.addEventListener('message', (e)=>{
+            const d=e.data||{};
+            if(d.action==='openBaddiePhone'){ openPhone(d.config||{}); }
+            else if(d.action==='closeBaddiePhone'){ closePhone(); }
+            else if(d.action==='bp_phoneNotify'){ peekNotify(d.notif||{}, d.config, d.duration); }
+            else if(d.action==='bp_refresh'){
+                if(d.tab){ setTab(d.tab); }
+                else if(currentTab==='feed') loadFeed();
+                else if(currentTab==='gallery') loadGallery();
+                else if(currentTab==='profile') loadProfile();
+            }
+        });
+
+        // ESC closes
+        // Close with Escape or Backspace. Backspace is ignored while typing in a
+        // field so it still deletes characters in the login / caption inputs.
+        document.addEventListener('keyup',(e)=>{
+            if(!bpOpen || bpCfg.closeKey===false) return;
+            if(e.key==='Escape' || e.code==='Escape'){ requestClose(); return; }
+            const el = document.activeElement;
+            const typing = el && (el.tagName==='INPUT' || el.tagName==='TEXTAREA');
+            if((e.key==='Backspace' || e.code==='Backspace') && !typing){ requestClose(); }
+        });
+    })();
+    </script>
+
+</body>
+</html>

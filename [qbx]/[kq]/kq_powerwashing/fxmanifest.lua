@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'KuzQuality | Kuzkay'
 description 'Power Washing Job by KuzQuality'
-version '1.3.0'
+version '1.3.3'
 
 data_file 'DLC_ITYP_REQUEST' 'stream/kq_powerwashing.ytyp'
 
@@ -94,5 +94,3 @@ escrow_ignore {
 }
 
 dependency '/assetpacks'
-
-

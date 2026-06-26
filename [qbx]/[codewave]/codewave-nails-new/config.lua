@@ -31,8 +31,8 @@ Config.OnlyFemales = false
 
 Config.NPC = {
     Model = "a_f_m_soucentmc_01", -- Change to your desired NPC model
-    Coords = vector3(969.1883, -313.7430, 66.6155), -- Change to your desired NPC spawn location
-    Heading = 236.3572, -- Adjust the heading as needed
+    Coords = vector3(215.1895, -1512.2305, 29.3610), -- Change to your desired NPC spawn location
+    Heading = 227.9358, -- Adjust the heading as needed
     BlipEnabled = false,  -- New option to enable/disable blip
     BlipSprite = 621,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
     BlipScale = 1.0,

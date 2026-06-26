@@ -65,7 +65,7 @@ return {
 },
 ['fsg_bread'] = {
     label = 'Bread',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A loaf of bread'
@@ -121,7 +121,7 @@ return {
 },
 ['fsg_chicken_stock'] = {
     label = 'Chicken Stock',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Container of chicken stock'
@@ -156,7 +156,7 @@ return {
 },
 ['fsg_corn'] = {
     label = 'Corn',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'An ear of corn'
@@ -219,7 +219,7 @@ return {
 },
 ['fsg_ham'] = {
     label = 'Ham',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Sliced ham ready for sandwiches'
@@ -303,7 +303,7 @@ return {
 },
 ['fsg_pasta'] = {
     label = 'Pasta',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Dry pasta ready for cooking'
@@ -478,7 +478,7 @@ return {
 },
 ['fsg_vegetables'] = {
     label = 'Mixed Vegetables',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'An assortment of fresh vegetables'
@@ -585,7 +585,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing glass of apple juice'
     }
 },
@@ -598,20 +598,20 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious apple pie'
     }
 },
 ['fsg_avocado_toast'] = {
     label = 'Avocado Toast',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Toasted bread topped with avocado',
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious avocado toast'
     }
 },
@@ -624,7 +624,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious BBQ bacon wraps'
     }
 },
@@ -637,7 +637,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious BBQ chicken flatbread'
     }
 },
@@ -650,7 +650,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious BBQ veggie skewers'
     }
 },
@@ -663,7 +663,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious breakfast burrito'
     }
 },
@@ -676,7 +676,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious breakfast muffin'
     }
 },
@@ -689,7 +689,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a hot cappuccino'
     }
 },
@@ -709,7 +709,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious cheesy toast'
     }
 },
@@ -722,20 +722,20 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken pesto pizza'
     }
 },
 ['fsg_chocolate_mousse'] = {
     label = 'Chocolate Mousse',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A creamy chocolate mousse',
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chocolate mousse'
     }
 },
@@ -748,7 +748,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chocolate spread'
     }
 },
@@ -761,20 +761,20 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious cinnamon toast'
     }
 },
 ['fsg_coffee'] = {
     label = 'Coffee',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A hot cup of coffee',
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a hot cup of coffee'
     }
 },
@@ -787,7 +787,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious crème brûlée'
     }
 },
@@ -800,7 +800,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious donuts'
     }
 },
@@ -813,7 +813,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fried chicken'
     }
 },
@@ -826,7 +826,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious BBQ burger'
     }
 },
@@ -839,7 +839,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fried cheese sticks'
     }
 },
@@ -852,7 +852,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fried potatoes'
     }
 },
@@ -865,7 +865,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing fruit punch'
     }
 },
@@ -878,20 +878,20 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fruit salad'
     }
 },
 ['fsg_grilled_cheese'] = {
     label = 'Grilled Cheese',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A classic grilled cheese sandwich',
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious grilled cheese'
     }
 },
@@ -904,7 +904,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious grilled chicken breast'
     }
 },
@@ -917,20 +917,20 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious grilled corn'
     }
 },
 ['fsg_grilled_pineapple'] = {
     label = 'Grilled Pineapple',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Sweet grilled pineapple slices',
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious grilled pineapple'
     }
 },
@@ -943,7 +943,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious ham and cheese toast'
     }
 },
@@ -956,20 +956,20 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing iced coffee'
     }
 },
 ['fsg_ice_cream'] = {
     label = 'Ice Cream',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A scoop of delicious ice cream',
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a scoop of delicious ice cream'
     }
 },
@@ -982,7 +982,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing glass of lemonade'
     }
 },
@@ -995,7 +995,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious macaroni and cheese'
     }
 },
@@ -1008,33 +1008,33 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pizza'
     }
 },
 ['fsg_microwave_chocolate_mug_cake'] = {
     label = 'Microwave Chocolate Mug Cake',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A chocolate cake made in a mug',
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chocolate cake'
     }
 },
 ['fsg_hot_chocolate'] = {
     label = 'Hot Chocolate',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'A hot chocolate',
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious hot chocolate'
     }
 },
@@ -1047,7 +1047,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious macaroni and cheese'
     }
 },
@@ -1060,7 +1060,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious omelette'
     }
 },
@@ -1073,7 +1073,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pizza slice'
     }
 },
@@ -1086,7 +1086,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a hot mocha coffee'
     }
 },
@@ -1099,7 +1099,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious omelette'
     }
 },
@@ -1112,7 +1112,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing glass of carrot juice'
     }
 },
@@ -1125,7 +1125,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing glass of orange juice'
     }
 },
@@ -1138,7 +1138,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pancakes'
     }
 },
@@ -1151,7 +1151,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pepperoni pizza'
     }
 },
@@ -1164,7 +1164,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pineapple pizza'
     }
 },
@@ -1177,7 +1177,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious quesadilla'
     }
 },
@@ -1190,7 +1190,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious quiche'
     }
 },
@@ -1203,7 +1203,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious ramen noodles'
     }
 },
@@ -1216,7 +1216,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a refreshing fruit smoothie'
     }
 },
@@ -1229,7 +1229,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious stir fry'
     }
 },
@@ -1242,7 +1242,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious toast'
     }
 },
@@ -1255,7 +1255,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious TV dinner'
     }
 },
@@ -1268,7 +1268,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You quenched your thirst with a hot vanilla latte'
     }
 },
@@ -1281,7 +1281,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious veggie puree'
     }
 },
@@ -1294,7 +1294,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious veggie wrap'
     }
 },
@@ -1316,7 +1316,7 @@ return {
 },
 ['fsg_griddle'] = {
     label = 'Griddle',
-    weight = 2500,
+    weight = 5000,
     stack = false,
     close = true,
     description = 'A flat cooking surface for pancakes and more'
@@ -1439,7 +1439,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fried rice'
     }
 },
@@ -1452,7 +1452,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious crêpes'
     }
 },
@@ -1465,7 +1465,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious curry'
     }
 },
@@ -1478,7 +1478,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious homemade soup'
     }
 },
@@ -1491,7 +1491,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pasta'
     }
 },
@@ -1504,7 +1504,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious steak'
     }
 },
@@ -1517,7 +1517,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious okra'
     }
 },
@@ -1530,7 +1530,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious shrimp'
     }
 },
@@ -1543,7 +1543,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious grilled shrimp'
     }
 },
@@ -1556,7 +1556,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious mozzarella sticks'
     }
 },
@@ -1569,7 +1569,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken nuggets'
     }
 },
@@ -1582,7 +1582,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious spring rolls'
     }
 },
@@ -1595,7 +1595,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious cheese curds'
     }
 },
@@ -1608,7 +1608,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious calamari'
     }
 },
@@ -1621,7 +1621,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken wings'
     }
 },
@@ -1634,7 +1634,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fish'
     }
 },
@@ -1647,7 +1647,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious tomato juice'
     }
 },
@@ -1660,7 +1660,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious grape juice'
     }
 },
@@ -1673,7 +1673,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious celery juice'
     }
 },
@@ -1686,7 +1686,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious beet juice'
     }
 },
@@ -1699,7 +1699,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious watermelon juice'
     }
 },
@@ -1712,7 +1712,7 @@ return {
     client = {
         status = { thirst = 200000 },
         anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You drank some delicious pineapple juice'
     }
 },
@@ -1725,7 +1725,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious steak'
     }
 },
@@ -1738,7 +1738,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pork rib'
     }
 },
@@ -1751,7 +1751,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious sausages'
     }
 },
@@ -1764,7 +1764,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken'
     }
 },
@@ -1777,7 +1777,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious vegetables'
     }
 },
@@ -1790,7 +1790,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pulled pork'
     }
 },
@@ -1803,7 +1803,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious oatmeal'
     }
 },
@@ -1816,7 +1816,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious potato'
     }
 },
@@ -1829,7 +1829,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious eggs'
     }
 },
@@ -1842,7 +1842,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious ramen'
     }
 },
@@ -1866,7 +1866,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious salmon'
     }
 },
@@ -1886,7 +1886,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken sandwich'
     }
 },
@@ -1899,7 +1899,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious beef stir fry'
     }
 },
@@ -1912,7 +1912,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious beef fried rice'
     }
 },
@@ -1925,7 +1925,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious chicken fried rice'
     }
 },
@@ -1939,7 +1939,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious pepper shrimp'
     }
 },
@@ -1953,7 +1953,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious toast'
     }
 },
@@ -1983,7 +1983,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious waffle'
     }
 },
@@ -2005,7 +2005,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious ham toastie'
     }
 },
@@ -2035,7 +2035,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious apple sauce'
     }
 },
@@ -2049,7 +2049,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious banana cream'
     }
 },
@@ -2103,7 +2103,7 @@ return {
 	client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious banana pudding'
     }
 },
@@ -2114,9 +2114,9 @@ return {
     close = true,
     description = 'Fancy steak',
     client = {
-        status = { hunger = 250000 },
+        status = { hunger = 500000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fancy steak'
     }
 },
@@ -2129,7 +2129,7 @@ return {
     client = {
         status = { hunger = 300000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious fish and chips'
     }
 },
@@ -2150,7 +2150,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious popcorn'
     }
 },
@@ -2163,7 +2163,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious onion rings'
     }
 },
@@ -2176,7 +2176,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious risotto'
     }
 },
@@ -2189,7 +2189,7 @@ return {
     client = {
         status = { hunger = 200000 },
         anim = { dict = 'mp_player_inteat@burger', clip = 'mp_player_int_eat_burger' },
-        usetime = 2500,
+        usetime = 5000,
         notification = 'You ate some delicious microwave soup'
     }
 },
@@ -2212,7 +2212,7 @@ return {
             status = { hunger = 200000 },
             anim = 'eating',
             prop = 'burger',
-            usetime = 2500,
+            usetime = 5000,
             export = 'ox_inventory_examples.testburger'
         },
         server = {
@@ -2638,7 +2638,7 @@ return {
 
 ['aniline_solution'] = {
     label = 'Aniline solution',
-    weight = 250,
+    weight = 500,
     stack = true,
 },
 
@@ -2656,25 +2656,25 @@ return {
 
 ['meth_table'] = {
     label = 'Meth table',
-    weight = 2250,
+    weight = 2500,
     stack = false
 },
 
 ['coke_table'] = {
     label = 'Coke table',
-    weight = 2250,
+    weight = 2500,
     stack = false
 },
 
 ['weed_table'] = {
     label = 'Weed table',
-    weight = 2250,
+    weight = 2500,
     stack = false
 },
 
 ['chem_table'] = {
     label = 'Chemistry table',
-    weight = 2250,
+    weight = 2500,
     stack = false
 },
 
@@ -2698,26 +2698,26 @@ return {
 
 ['fertilizer'] = {
     label = 'Fertilizer',
-    weight = 250,
+    weight = 500,
     stack = true
 },
 
 ['water_can'] = {
     label = 'Watering can',
-    weight = 250,
+    weight = 500,
     stack = true
 },
 
 
 ['skateboard'] = {
     label = 'Skateboard',
-    weight = 250,
+    weight = 500,
     stack = true
 },
 
 ['scooter'] = {
     label = 'scooter',
-    weight = 250,
+    weight = 500,
     stack = true
 },
 
@@ -2893,7 +2893,7 @@ return {
     },
     ['starterpack'] = {
         label       = 'Starter Pack',
-        weight      = 250,
+        weight      = 500,
         stack       = false,
         close       = true,
         description = 'A welcome package from Grim Starterpack. Use it when you\'re ready to begin your story.',
@@ -2906,7 +2906,7 @@ return {
 
     ['ejection_seat_kit'] = {
     label = 'Ejection Seat Kit',
-    weight = 2500,
+    weight = 5000,
     stack = false,
     close = true,
     description = 'A hidden launch system that installs behind the front passenger seat.',
@@ -2975,7 +2975,7 @@ return {
             status = { hunger = 200000 },
             anim = 'eating',
             prop = 'burger',
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious burger'
         },
     },
@@ -2987,7 +2987,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `prop_ld_can_01`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a sprunk'
         }
     },
@@ -3019,10 +3019,10 @@ return {
         weight = 10,
         consume = 0,
         client = {
-            status = { thirst = -100000, stress = -25000 },
+            status = { thirst = -100000, stress = -50000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `prop_cs_panties_02`, pos = vec3(0.03, 0.0, 0.02), rot = vec3(0.0, -13.5, -1.5) },
-            usetime = 2500,
+            usetime = 5000,
         }
     },
 
@@ -3070,7 +3070,7 @@ return {
             pos = vec3(0.03, 0.03, 0.02),
             rot = vec3(0.0, 0.0, -1.5)
         },
-        usetime = 2500,
+        usetime = 5000,
         cancel = true,
         notification = 'You drank some refreshing water'
     }
@@ -3093,6 +3093,7 @@ return {
 
     ['money'] = {
         label = 'Money',
+        weight = 500,
     },
 
     ['black_money'] = {
@@ -3149,7 +3150,7 @@ return {
 
     ['repairkit'] = {
         label = 'Repair Kit',
-        weight = 2500,
+        weight = 5000,
     },
 
     ['advancedrepairkit'] = {
@@ -3299,12 +3300,12 @@ return {
 
     ['firstaid'] = {
         label = 'First Aid',
-        weight = 2500,
+        weight = 5000,
     },
 
     ['ifaks'] = {
         label = 'Individual First Aid Kit',
-        weight = 2500,
+        weight = 5000,
     },
 
     ['painkillers'] = {
@@ -5011,7 +5012,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bew_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5022,7 +5023,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_tazooka_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5033,7 +5034,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_strite_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5044,7 +5045,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_rango_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5055,7 +5056,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_pooltime_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5066,7 +5067,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_pocalola_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5077,7 +5078,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_panta_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5088,7 +5089,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_palibu_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5099,7 +5100,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_grushapple_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5110,7 +5111,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_grush_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5121,7 +5122,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_drbebber_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5132,7 +5133,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_diva_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5143,7 +5144,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_codeblue_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5154,7 +5155,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bootbeer_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5165,7 +5166,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bipton_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5176,7 +5177,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bimto_red_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5187,7 +5188,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bimto_blue_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5198,7 +5199,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bimto_blue_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5209,7 +5210,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_batorate_orange_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5220,7 +5221,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_batorate_green_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5231,7 +5232,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_batorate_fruit_punch_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5242,7 +5243,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_barinda_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5261,7 +5262,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5277,7 +5278,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5293,7 +5294,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5309,7 +5310,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5325,7 +5326,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5341,7 +5342,7 @@ return {
                 pos = vec3(0.135000, -0.001000, 0.032000),
                 rot = vec3(-119.000000, -65.000000, 5.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk carton'
         }
     },
@@ -5357,7 +5358,7 @@ return {
                 pos = vec3(0.13, 0.04, 0.037),
                 rot = vec3(-138.0, -44.0, -6.0)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk glass'
         }
     },
@@ -5373,7 +5374,7 @@ return {
                 pos = vec3(0.13, 0.04, 0.037),
                 rot = vec3(-138.0, -44.0, -6.0)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk glass'
         }
     },
@@ -5389,7 +5390,7 @@ return {
                 pos = vec3(0.13, 0.04, 0.037),
                 rot = vec3(-138.0, -44.0, -6.0)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk glass'
         }
     },
@@ -5405,7 +5406,7 @@ return {
                 pos = vec3(0.13, 0.04, 0.037),
                 rot = vec3(-138.0, -44.0, -6.0)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a milk glass'
         }
     },
@@ -5418,7 +5419,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_hardcider`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5429,7 +5430,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_gingerbeer`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5440,7 +5441,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_fruitbeer`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5451,7 +5452,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_cchweppes`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -5467,7 +5468,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5483,7 +5484,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5499,7 +5500,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5515,7 +5516,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5531,7 +5532,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5547,7 +5548,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5563,7 +5564,7 @@ return {
                 pos = vec3(0.121000, 0.011000, 0.032000),
                 rot = vec3(-74.000000, 48.000000, -50.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5579,7 +5580,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5608,7 +5609,7 @@ return {
             prop = {
                 model = 'bbs_scotch',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -5624,7 +5625,7 @@ return {
             prop = {
                 model = 'bbs_gin',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -5659,7 +5660,7 @@ return {
                 pos = vec3(0.076000, -0.004000, 0.041000),
                 rot = vec3(-110.000000, 3.000000, -57.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a bottle'
         }
     },
@@ -5675,7 +5676,7 @@ return {
                 pos = vec3(0.103000, -0.007000, 0.126000),
                 rot = vec3(-105.000000, 3.000000, -30.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -5691,7 +5692,7 @@ return {
                 pos = vec3(0.103000, -0.007000, 0.126000),
                 rot = vec3(-105.000000, 3.000000, -30.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -5758,7 +5759,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5774,7 +5775,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5790,7 +5791,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5806,7 +5807,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5822,7 +5823,7 @@ return {
                 pos = vec3(0.110000, 0.050000, 0.060000),
                 rot = vec3(-69.000000, 52.000000, -30.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5838,7 +5839,7 @@ return {
                 pos = vec3(0.150000, 0.010000, 0.030000),
                 rot = vec3(232.000000, -34.000000, -10.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5854,7 +5855,7 @@ return {
                 pos = vec3(0.160000, 0.036000, -0.009000),
                 rot = vec3(-121.000000, 0.000000, -51.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5870,7 +5871,7 @@ return {
                 pos = vec3(0.100000, 0.008000, 0.035000),
                 rot = vec3(-141.000000, -95.000000, 26.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5886,7 +5887,7 @@ return {
                 pos = vec3(0.110000, 0.022000, 0.022000),
                 rot = vec3(-126.000000, -17.000000, -62.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5902,7 +5903,7 @@ return {
                 pos = vec3(0.130000, 0.020000, 0.100000),
                 rot = vec3(-101.000000, 8.000000, -28.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5918,7 +5919,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5934,7 +5935,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5950,7 +5951,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -5969,7 +5970,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -5985,7 +5986,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6001,7 +6002,7 @@ return {
                 pos = vec3(0.140000, -0.040000, 0.070000),
                 rot = vec3(-79.000000, 52.000000, -18.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6017,7 +6018,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6033,7 +6034,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6049,7 +6050,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6065,7 +6066,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6081,7 +6082,7 @@ return {
                 pos = vec3(0.109000, 0.014000, 0.043000),
                 rot = vec3(-103.000000, -15.000000, -25.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6097,7 +6098,7 @@ return {
                 pos = vec3(0.107000, 0.014000, 0.055000),
                 rot = vec3(-137.000000, -45.000000, -15.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -6113,7 +6114,7 @@ return {
                 pos = vec3(0.163000, -0.029000, 0.112000),
                 rot = vec3(-88.000000, 35.000000, -18.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -6129,7 +6130,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6161,7 +6162,7 @@ return {
                 pos = vec3(0.107000, 0.014000, 0.055000),
                 rot = vec3(-137.000000, -45.000000, -15.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6209,7 +6210,7 @@ return {
                 pos = vec3(0.117000, 0.075000, -0.018000),
                 rot = vec3(-70.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6225,7 +6226,7 @@ return {
                 pos = vec3(0.117000, 0.075000, -0.018000),
                 rot = vec3(-70.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6241,7 +6242,7 @@ return {
                 pos = vec3(0.117000, 0.037000, 0.052000),
                 rot = vec3(-121.000000, 7.000000, -94.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6273,7 +6274,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6289,7 +6290,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6305,7 +6306,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6321,7 +6322,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6337,7 +6338,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6353,7 +6354,7 @@ return {
                 pos = vec3(0.150000, 0.049000, 0.020000),
                 rot = vec3(222.000000, -62.000000, 11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6433,7 +6434,7 @@ return {
                 pos = vec3(0.082000, 0.016000, 0.050000),
                 rot = vec3(-107.000000, 2.000000, -52.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -6449,7 +6450,7 @@ return {
                 pos = vec3(0.103000, 0.022000, 0.035000),
                 rot = vec3(-120.000000, -58.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6465,7 +6466,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6481,7 +6482,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6497,7 +6498,7 @@ return {
                 pos = vec3(0.095000, -0.086000, 0.049000),
                 rot = vec3(-100.3, -2.0, -23.3)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6513,7 +6514,7 @@ return {
                 pos = vec3(0.168000, 0.093000, 0.001000),
                 rot = vec3(-106.000000, -22.000000, -16.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6529,7 +6530,7 @@ return {
                 pos = vec3(0.156000, -0.084000, 0.135000),
                 rot = vec3(-60.000000, 142.000000, -20.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6545,7 +6546,7 @@ return {
                 pos = vec3(0.156000, -0.084000, 0.135000),
                 rot = vec3(-60.000000, 142.000000, -20.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6561,7 +6562,7 @@ return {
                 pos = vec3(0.156000, -0.084000, 0.135000),
                 rot = vec3(-60.000000, 142.000000, -20.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6577,7 +6578,7 @@ return {
                 pos = vec3(0.121000, -0.008000, 0.057000),
                 rot = vec3(-54.000000, 128.000000, 4.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6609,7 +6610,7 @@ return {
                 pos = vec3(0.097000, -0.082000, 0.056000),
                 rot = vec3(-64.000000, 132.000000, 2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6625,7 +6626,7 @@ return {
                 pos = vec3(0.097000, -0.082000, 0.056000),
                 rot = vec3(-64.000000, 132.000000, 2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6641,7 +6642,7 @@ return {
                 pos = vec3(0.093000, 0.017000, 0.064000),
                 rot = vec3(-32.000000, 128.000000, 12.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6657,7 +6658,7 @@ return {
                 pos = vec3(0.174000, 0.005000, 0.033000),
                 rot = vec3(-30.000000, 128.000000, 12.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6673,7 +6674,7 @@ return {
                 pos = vec3(0.170000, 0.080000, 0.070000),
                 rot = vec3(-98.000000, 113.000000, -6.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6689,7 +6690,7 @@ return {
                 pos = vec3(0.117000, 0.018000, 0.029000),
                 rot = vec3(-121.000000, -69.000000, 1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -6700,7 +6701,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_malta_binnie`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -6711,7 +6712,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_maldives_raa`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -6836,7 +6837,7 @@ return {
             prop = {
                 model = 'bbs_indonesia_bajigur',
                 bone = 18905,
-                pos = vec3(0.092000, 0.025000, 0.052000),
+                pos = vec3(0.092000, 0.050000, 0.052000),
                 rot = vec3(-117.000000, 0.000000, -61.000000)
             },
             usetime = 8500,
@@ -6852,7 +6853,7 @@ return {
             prop = {
                 model = 'bbs_macedonia_mastika',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -6868,7 +6869,7 @@ return {
             prop = {
                 model = 'bbs_macedonia_mastika',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -7015,7 +7016,7 @@ return {
                 pos = vec3(0.067000, 0.007000, 0.061000),
                 rot = vec3(-115.000000, 0.000000, -64.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -7031,7 +7032,7 @@ return {
                 pos = vec3(0.111000, 0.002000, 0.022000),
                 rot = vec3(-106.000000, 0.000000, -40.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -7044,7 +7045,7 @@ return {
             prop = {
                 model = 'bbs_dominicrepublic_mamajuana',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -7060,7 +7061,7 @@ return {
             prop = {
                 model = 'bbs_columbia_aguardiente',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -7141,7 +7142,7 @@ return {
                 model = 'bbs_bulgaria_rakia',
                 bone = 18905,
                 pos = vec3(0.059000, -0.137000, 0.040000),
-                rot = vec3(-250.000000, -29.000000, -198.000000)
+                rot = vec3(-500.000000, -29.000000, -198.000000)
             },
             usetime = 8500,
             notification = 'You quenched your thirst with a bottle'
@@ -7156,7 +7157,7 @@ return {
             prop = {
                 model = 'bbs_dominicrepublic_mamajuana',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -7175,7 +7176,7 @@ return {
                 pos = vec3(0.106000, -0.000000, 0.061000),
                 rot = vec3(-218.000000, -61.000000, -176.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -7191,7 +7192,7 @@ return {
                 pos = vec3(0.094000, -0.043000, 0.050000),
                 rot = vec3(-240.000000, -61.000000, -180.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -7207,7 +7208,7 @@ return {
                 pos = vec3(0.094000, -0.043000, 0.050000),
                 rot = vec3(-240.000000, -61.000000, -180.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst'
         }
     },
@@ -7223,7 +7224,7 @@ return {
                 pos = vec3(0.104000, 0.054000, 0.040000),
                 rot = vec3(-79.100006, 50.000000, -61.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -7239,7 +7240,7 @@ return {
                 pos = vec3(0.160000, 0.036000, -0.009000),
                 rot = vec3(-121.000000, 0.000000, -51.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -7258,7 +7259,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7274,7 +7275,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7290,7 +7291,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7306,7 +7307,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7322,7 +7323,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7338,7 +7339,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7354,7 +7355,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7370,7 +7371,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7386,7 +7387,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7402,7 +7403,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7418,7 +7419,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7434,7 +7435,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7450,7 +7451,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7466,7 +7467,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7482,7 +7483,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7498,7 +7499,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7514,7 +7515,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7530,7 +7531,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7546,7 +7547,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7562,7 +7563,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7578,7 +7579,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7594,7 +7595,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7610,7 +7611,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7626,7 +7627,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7642,7 +7643,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7658,7 +7659,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7674,7 +7675,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7690,7 +7691,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7706,7 +7707,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7725,7 +7726,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7741,7 +7742,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7757,7 +7758,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7773,7 +7774,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7789,7 +7790,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7805,7 +7806,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7821,7 +7822,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7837,7 +7838,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7853,7 +7854,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7869,7 +7870,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7885,7 +7886,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7901,7 +7902,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7917,7 +7918,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7933,7 +7934,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7949,7 +7950,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7965,7 +7966,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7981,7 +7982,7 @@ return {
                 pos = vec3(0.186000, 0.022000, 0.000000),
                 rot = vec3(-98.000000, 3.000000, -13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -7996,10 +7997,10 @@ return {
             prop = {
                 model = 'bbs_mocha_tea_capped',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8012,10 +8013,10 @@ return {
             prop = {
                 model = 'bbs_icedmocha',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8028,10 +8029,10 @@ return {
             prop = {
                 model = 'bbs_icedlatte',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8044,10 +8045,10 @@ return {
             prop = {
                 model = 'bbs_grunch_capped',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8060,10 +8061,10 @@ return {
             prop = {
                 model = 'bbs_dodi_drink',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8076,10 +8077,10 @@ return {
             prop = {
                 model = 'bbs_dark_drink_2',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8092,10 +8093,10 @@ return {
             prop = {
                 model = 'bbs_dark_drink',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8108,10 +8109,10 @@ return {
             prop = {
                 model = 'bbs_cold_brew',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8124,10 +8125,10 @@ return {
             prop = {
                 model = 'bbs_coffee_smoothie',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8140,10 +8141,10 @@ return {
             prop = {
                 model = 'bbs_bipton_capped',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8156,10 +8157,10 @@ return {
             prop = {
                 model = 'bbs_sweet_tea_capped',
                 bone = 18905,
-                pos = vec3(0.125000, 0.054000, 0.044000),
+                pos = vec3(0.150000, 0.054000, 0.044000),
                 rot = vec3(-61.000000, 136.000000, -1.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8177,7 +8178,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8193,7 +8194,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8209,7 +8210,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8225,7 +8226,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8241,7 +8242,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8257,7 +8258,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8273,7 +8274,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8289,7 +8290,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8305,7 +8306,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8321,7 +8322,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8337,7 +8338,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8353,7 +8354,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8369,7 +8370,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8385,7 +8386,7 @@ return {
                 pos = vec3(0.155000, 0.090000, 0.042000),
                 rot = vec3(-132.600006, -96.000000, 8.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8403,7 +8404,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8419,7 +8420,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8435,7 +8436,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8451,7 +8452,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8467,7 +8468,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8483,7 +8484,7 @@ return {
                 pos = vec3(0.113000, 0.011000, 0.052000),
                 rot = vec3(-113.600006, -96.000000, 32.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8501,7 +8502,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8517,7 +8518,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8533,7 +8534,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8549,7 +8550,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8565,7 +8566,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8581,7 +8582,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8597,7 +8598,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8613,7 +8614,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8629,7 +8630,7 @@ return {
                 pos = vec3(0.132000, 0.091000, 0.004000),
                 rot = vec3(-107.600006, -55.000000, 13.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8647,7 +8648,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8663,7 +8664,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8679,7 +8680,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8695,7 +8696,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8711,7 +8712,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8727,7 +8728,7 @@ return {
                 pos = vec3(0.109000, 0.026000, 0.033000),
                 rot = vec3(-131.600006, -32.000000, -56.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a cup'
         }
     },
@@ -8740,7 +8741,7 @@ return {
             status = { thirst = 200000 },
             anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
             prop = { model = `bbs_bestle`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a Can'
         }
     },
@@ -8769,7 +8770,7 @@ return {
             prop = {
                 model = 'bbs_biji',
                 bone = 57005,
-                pos = vec3(0.125000, 0.061000, -0.040000),
+                pos = vec3(0.150000, 0.061000, -0.040000),
                 rot = vec3(-85.000000, 0.000000, -6.000000)
             },
             usetime = 8500,
@@ -8788,7 +8789,7 @@ return {
                 pos = vec3(0.114000, -0.003000, 0.034000),
                 rot = vec3(-82.800003, 42.000000, -14.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -8804,7 +8805,7 @@ return {
                 pos = vec3(0.116000, -0.048000, 0.047000),
                 rot = vec3(-90.800003, 42.000000, -26.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -8820,7 +8821,7 @@ return {
                 pos = vec3(0.116000, -0.045000, 0.047000),
                 rot = vec3(-90.800003, 42.000000, -26.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -8836,7 +8837,7 @@ return {
                 pos = vec3(0.160000, 0.036000, -0.009000),
                 rot = vec3(-121.000000, 0.000000, -51.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You quenched your thirst with a glass'
         }
     },
@@ -9535,7 +9536,7 @@ return {
             prop = {
                 model = 'bbs_dorayaki_plate',
                 bone = 18905,
-                pos = vec3(0.125000, 0.030000, 0.063000),
+                pos = vec3(0.150000, 0.030000, 0.063000),
                 rot = vec3(-12.000000, 4.000000, 4.000000)
             },
             usetime = 3500,
@@ -10342,7 +10343,7 @@ return {
                 pos = vec3(0.124000, 0.041000, 0.036000),
                 rot = vec3(-51.500000, -228.000000, -188.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pie'
         },
     },
@@ -10358,7 +10359,7 @@ return {
                 pos = vec3(0.124000, 0.041000, 0.036000),
                 rot = vec3(-51.500000, -228.000000, -188.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pie'
         },
     },
@@ -10374,7 +10375,7 @@ return {
                 pos = vec3(0.124000, 0.041000, 0.036000),
                 rot = vec3(-51.500000, -228.000000, -188.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pie'
         },
     },
@@ -10390,7 +10391,7 @@ return {
                 pos = vec3(0.124000, 0.041000, 0.036000),
                 rot = vec3(-51.500000, -228.000000, -188.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pie'
         },
     },
@@ -11730,7 +11731,7 @@ return {
             prop = {
                 model = 'bbs_turkey_kebab_single',
                 bone = 18905,
-                pos = vec3(0.092000, 0.046000, 0.025000),
+                pos = vec3(0.092000, 0.046000, 0.050000),
                 rot = vec3(1.600006, 39.099998, -29.900002)
             },
             usetime = 3500,
@@ -13181,7 +13182,7 @@ return {
             prop = {
                 model = 'bbs_oman_shuwa',
                 bone = 18905,
-                pos = vec3(0.125000, 0.000000, 0.054000),
+                pos = vec3(0.150000, 0.000000, 0.054000),
                 rot = vec3(16.700001, -1.000000, -197.000000)
             },
             usetime = 3500,
@@ -13704,7 +13705,7 @@ return {
                 pos = vec3(0.153000, 0.041000, 0.032000),
                 rot = vec3(-707.500000, 120.000000, 54.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious designer muffin'
         },
     },
@@ -13720,7 +13721,7 @@ return {
                 pos = vec3(0.153000, 0.041000, 0.032000),
                 rot = vec3(-707.500000, 120.000000, 54.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious muffin'
         },
     },
@@ -13736,7 +13737,7 @@ return {
                 pos = vec3(0.153000, 0.041000, 0.032000),
                 rot = vec3(-707.500000, 120.000000, 54.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious muffin'
         },
     },
@@ -13752,7 +13753,7 @@ return {
                 pos = vec3(0.153000, 0.041000, 0.032000),
                 rot = vec3(-707.500000, 120.000000, 54.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious designer muffin'
         },
     },
@@ -13768,7 +13769,7 @@ return {
                 pos = vec3(0.140000, 0.040000, 0.060000),
                 rot = vec3(26.000000, 126.000000, -11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious donut'
         },
     },
@@ -13784,7 +13785,7 @@ return {
                 pos = vec3(0.140000, 0.040000, 0.060000),
                 rot = vec3(26.000000, 126.000000, -11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious donut'
         },
     },
@@ -13800,7 +13801,7 @@ return {
                 pos = vec3(0.140000, 0.040000, 0.060000),
                 rot = vec3(26.000000, 126.000000, -11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious donut'
         },
     },
@@ -13816,7 +13817,7 @@ return {
                 pos = vec3(0.140000, 0.040000, 0.060000),
                 rot = vec3(26.000000, 126.000000, -11.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious donut'
         },
     },
@@ -13832,7 +13833,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13859,7 +13860,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13886,7 +13887,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13913,7 +13914,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13940,7 +13941,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13967,7 +13968,7 @@ return {
                 pos = vec3(0.137000, 0.000000, 0.032000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -13994,7 +13995,7 @@ return {
                 pos = vec3(0.105000, 0.000000, 0.045000),
                 rot = vec3(-7.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Slice'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14021,7 +14022,7 @@ return {
                 pos = vec3(0.105000, 0.000000, 0.045000),
                 rot = vec3(-7.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Slice'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14048,7 +14049,7 @@ return {
                 pos = vec3(0.105000, 0.000000, 0.045000),
                 rot = vec3(-7.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Slice'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14075,7 +14076,7 @@ return {
                 pos = vec3(0.111000, 0.000000, 0.069000),
                 rot = vec3(-7.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Pastry'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14102,7 +14103,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.041000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cup'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14129,7 +14130,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.041000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cup'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14156,7 +14157,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.041000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cup'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14183,7 +14184,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.041000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cup'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14210,7 +14211,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.041000),
                 rot = vec3(-8.000000, 0.000000, 0.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cup'
         },
         -- THE BELOW IS FOR THE OTHER HAND
@@ -14237,7 +14238,7 @@ return {
                 pos = vec3(0.153000, 0.072000, 0.024000),
                 rot = vec3(-954.500000, -48.000000, 175.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Vanilla Ice Cream'
         },
     },
@@ -14253,7 +14254,7 @@ return {
                 pos = vec3(0.153000, 0.072000, 0.024000),
                 rot = vec3(-954.500000, -48.000000, 175.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Strawberry Ice Cream'
         },
     },
@@ -14269,7 +14270,7 @@ return {
                 pos = vec3(0.153000, 0.072000, 0.024000),
                 rot = vec3(-954.500000, -48.000000, 175.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cream'
         },
     },
@@ -14285,7 +14286,7 @@ return {
                 pos = vec3(0.153000, 0.072000, 0.024000),
                 rot = vec3(-954.500000, -48.000000, 175.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cream'
         },
     },
@@ -14301,7 +14302,7 @@ return {
                 pos = vec3(0.153000, 0.072000, 0.024000),
                 rot = vec3(-954.500000, -48.000000, 175.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Ice Cream'
         },
     },
@@ -14317,7 +14318,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.046000),
                 rot = vec3(-38.000000, -28.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Vanilla Biscuit'
         },
     },
@@ -14333,7 +14334,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.046000),
                 rot = vec3(-38.000000, -28.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Biscuit'
         },
     },
@@ -14349,7 +14350,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.046000),
                 rot = vec3(-38.000000, -28.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Biscuit'
         },
     },
@@ -14365,7 +14366,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.046000),
                 rot = vec3(-38.000000, -28.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Strawberry Biscuit'
         },
     },
@@ -14381,7 +14382,7 @@ return {
                 pos = vec3(0.154000, 0.010000, 0.046000),
                 rot = vec3(-38.000000, -28.000000, -2.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Biscuit'
         },
     },
@@ -14397,7 +14398,7 @@ return {
                 pos = vec3(0.094000, 0.014000, 0.030000),
                 rot = vec3(55.000000, 8.000000, -308.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Cheese Cake'
         },
     },
@@ -14413,7 +14414,7 @@ return {
                 pos = vec3(0.094000, 0.014000, 0.030000),
                 rot = vec3(55.000000, 8.000000, -308.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Cheese Cake'
         },
     },
@@ -14429,7 +14430,7 @@ return {
                 pos = vec3(0.094000, 0.014000, 0.030000),
                 rot = vec3(55.000000, 8.000000, -308.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Cheese Cake'
         },
     },
@@ -14445,7 +14446,7 @@ return {
                 pos = vec3(0.094000, 0.014000, 0.030000),
                 rot = vec3(55.000000, 8.000000, -308.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Chiffon Cake'
         },
     },
@@ -14461,7 +14462,7 @@ return {
                 pos = vec3(0.156000, 0.039000, 0.068000),
                 rot = vec3(36.000000, 115.000000, -377.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Macarons'
         },
     },
@@ -14477,7 +14478,7 @@ return {
                 pos = vec3(0.141000, 0.039000, 0.068000),
                 rot = vec3(25.000000, 115.000000, -377.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Dorayaki'
         },
     },
@@ -14493,7 +14494,7 @@ return {
                 pos = vec3(0.143000, 0.039000, 0.024000),
                 rot = vec3(25.000000, 115.000000, -377.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious Cookie'
         },
     },
@@ -14509,7 +14510,7 @@ return {
                 pos = vec3(0.143000, 0.039000, 0.024000),
                 rot = vec3(42.000000, 71.000000, -316.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious biscuit'
         },
     },
@@ -14527,7 +14528,7 @@ return {
                 pos = vec3(0.130000, 0.039000, 0.024000),
                 rot = vec3(8.000000, 15.000000, -213.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14543,7 +14544,7 @@ return {
                 pos = vec3(0.130000, 0.039000, 0.024000),
                 rot = vec3(8.000000, 15.000000, -213.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14559,7 +14560,7 @@ return {
                 pos = vec3(0.130000, 0.039000, 0.024000),
                 rot = vec3(8.000000, 15.000000, -213.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14575,7 +14576,7 @@ return {
                 pos = vec3(0.152000, 0.043000, 0.024000),
                 rot = vec3(-108.000000, 15.000000, -235.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14591,7 +14592,7 @@ return {
                 pos = vec3(0.116000, 0.039000, 0.031000),
                 rot = vec3(-108.000000, 15.000000, -235.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14607,7 +14608,7 @@ return {
                 pos = vec3(0.116000, 0.039000, 0.031000),
                 rot = vec3(-118.000000, -2.000000, -425.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14623,7 +14624,7 @@ return {
                 pos = vec3(0.116000, 0.039000, 0.031000),
                 rot = vec3(-118.000000, -2.000000, -425.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14639,7 +14640,7 @@ return {
                 pos = vec3(0.116000, 0.039000, 0.031000),
                 rot = vec3(-118.000000, -2.000000, -425.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14655,7 +14656,7 @@ return {
                 pos = vec3(0.116000, 0.039000, 0.031000),
                 rot = vec3(-118.000000, -2.000000, -425.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14671,7 +14672,7 @@ return {
                 pos = vec3(0.116000, 0.017000, 0.034000),
                 rot = vec3(-63.000000, -162.000000, -310.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14687,7 +14688,7 @@ return {
                 pos = vec3(0.131000, 0.026000, 0.027000),
                 rot = vec3(-43.000000, -162.000000, -115.000000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious item'
         },
     },
@@ -14703,7 +14704,7 @@ return {
                 pos = vec3(0.111000, -0.002000, 0.008000),
                 rot = vec3(-748.500000, 244.000000, 33.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious banana'
         },
     },
@@ -14719,7 +14720,7 @@ return {
                 pos = vec3(0.131000, 0.038000, -0.000000),
                 rot = vec3(-128.000000, -2.000000, 57.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious apricot'
         },
     },
@@ -14735,7 +14736,7 @@ return {
                 pos = vec3(0.083000, -0.056000, 0.054000),
                 rot = vec3(-650.500000, 341.000000, -14.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious bambooshoot'
         },
     },
@@ -14751,7 +14752,7 @@ return {
                 pos = vec3(0.117000, 0.024000, 0.049000),
                 rot = vec3(-128.000000, -2.000000, 57.500000)
             },
-            usetime = 2500,
+            usetime = 5000,
             notification = 'You ate a delicious apple'
         },
     },
@@ -15443,7 +15444,7 @@ return {
 ['3d_printed_smg_receiver']          = { name = '3d_printed_smg_receiver',          label = 'Printed SMG Receiver',     weight = 300,   type = 'item', image = '3d_printed_smg_receiver.png',          unique = false, useable = false, shouldClose = true, description = 'A 3D printed SMG receiver' },
 ['3d_printed_smg_mag']               = { name = '3d_printed_smg_mag',              label = 'Printed SMG Magazine',     weight = 150,   type = 'item', image = '3d_printed_smg_mag.png',               unique = false, useable = false, shouldClose = true, description = 'A 3D printed SMG magazine' },
 ['3d_printed_compact_barrel']        = { name = '3d_printed_compact_barrel',        label = 'Printed Compact Barrel',   weight = 150,   type = 'item', image = '3d_printed_compact_barrel.png',        unique = false, useable = false, shouldClose = true, description = 'A 3D printed compact barrel' },
-['3d_printed_folding_stock']         = { name = '3d_printed_folding_stock',         label = 'Printed Folding Stock',    weight = 250,   type = 'item', image = '3d_printed_folding_stock.png',         unique = false, useable = false, shouldClose = true, description = 'A 3D printed folding stock' },
+['3d_printed_folding_stock']         = { name = '3d_printed_folding_stock',         label = 'Printed Folding Stock',    weight = 500,   type = 'item', image = '3d_printed_folding_stock.png',         unique = false, useable = false, shouldClose = true, description = 'A 3D printed folding stock' },
 
 -- oxide-weaponprinting: Rifle Parts
 ['3d_printed_rifle_barrel']          = { name = '3d_printed_rifle_barrel',          label = 'Printed Rifle Barrel',     weight = 400,   type = 'item', image = '3d_printed_rifle_barrel.png',          unique = false, useable = false, shouldClose = true, description = 'A 3D printed rifle barrel' },
@@ -16223,14 +16224,14 @@ return {
 },
 ['sdcb_alternator'] = {
     label = 'Alternator',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Use This While Working On A Project Car!',
 },
 ['sdcb_starter'] = {
     label = 'Starter',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Use This While Working On A Project Car!',
@@ -16251,14 +16252,14 @@ return {
 },
 ['sdcb_torqueconverter'] = {
     label = 'Torque Converter',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Use This While Working On A Project Car!',
 },
 ['sdcb_torqueconverter2'] = {
     label = 'Race Torque Converter',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Use This While Working On A Project Car!',
@@ -17558,69 +17559,69 @@ return {
 
 	['wigtable'] = {
 		label = 'Wig table',
-		weight = 250,
+		weight = 1200,
 		stack = true
 	},
 
 	['wigcap'] = {
 		label = 'Wig cap',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 	['sewingkit'] = {
 		label = 'Sewing kit',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 	['wigbundle'] = {
 		label = 'Wig bundle',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 	['40inchwigs'] = {
 		label = '40 inch wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 		['braidwigs'] = {
 		label = 'Braid wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 		['bodywavewigs'] = {
 		label = 'Body wave wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 		['bangwigs'] = {
 		label = 'Bang wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 		['straightwigs'] = {
 		label = 'Straight wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 		['naturalwavewigs'] = {
 		label = 'Natural wave wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 		['deepwavewigs'] = {
 		label = 'Deep wave wigs',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 
 		['wigclientphone'] = {
 		label = 'Wig client phone',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
@@ -17628,25 +17629,25 @@ return {
 
 			['long_curly'] = {
 		label = 'Long Curly Hair',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 			['short_hair_wig'] = {
 		label = 'Short Haired Wig',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 			['short_curled_wig'] = {
 		label = 'Short Curled Wig',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
 			['long_blonde_wig'] = {
 		label = 'Long Blonde Wig',
-		weight = 250,
+		weight = 500,
 		stack = true
 	},
 
@@ -17937,8 +17938,8 @@ return {
 			close = true,
 		},
 
-	bobby_pin = { name = 'bobby_pin', label = 'Bobby Pin', weight = 2500, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
-tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', weight = 2500, type = 'item', image = 'tracking_bracelet.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used for tracking a suspect' },
+	bobby_pin = { name = 'bobby_pin', label = 'Bobby Pin', weight = 5000, type = 'item', image = 'bobby_pin.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used as a makeshift tool for picking locks' },
+tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', weight = 5000, type = 'item', image = 'tracking_bracelet.png', unique = false, useable = true, shouldClose = true, combinable = true, description = 'Can be used for tracking a suspect' },
 
 
 
@@ -17953,7 +17954,7 @@ tracking_bracelet  = { name = 'tracking_bracelet', label = 'Tracking Bracelet', 
     ["medkit"] = {
         label = 'Med-Kit',
         description = 'A medical kit for treating injuries',
-        weight = 250,
+        weight = 500,
         server = {
             export = "wasabi_ambulance_v2.medkit"
         }
@@ -18399,7 +18400,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['baggedcracked'] = {
         label = 'Bag Of Crack',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18408,7 +18409,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['baggedcrackedstagetwo'] = {
         label = 'Better Bag Of Crack',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18417,7 +18418,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['baggedcrackedstagethree'] = {
         label = 'Best Bag Of Crack',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18426,7 +18427,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['crackrock'] = {
         label = 'Crack Rock',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18435,7 +18436,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['crackrockstagetwo'] = {
         label = 'Better Crack Rock',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18444,7 +18445,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['crackrockstagethree'] = {
         label = 'Best Crack Rock',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18489,7 +18490,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinstagetwo'] = {
         label = 'Heroin Powder',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18498,7 +18499,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinstagethree'] = {
         label = 'Heroin Powder',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18507,7 +18508,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroincut'] = {
         label = 'Cut Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18516,7 +18517,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroincutstagetwo'] = {
         label = 'Cut Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18525,7 +18526,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroincutstagethree'] = {
         label = 'Cut Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18534,7 +18535,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinlabkit'] = {
         label = 'Heroin Lab Kit',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18543,7 +18544,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinvial'] = {
         label = 'Vial Of Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18552,7 +18553,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinvialstagetwo'] = {
         label = 'Vial of Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18561,7 +18562,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroinvialstagethree'] = {
         label = 'Vial Of Heroin',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18570,7 +18571,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroin_ready'] = {
         label = 'Heroin Syringe',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18579,7 +18580,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroin_readystagetwo'] = {
         label = 'Heroin Syringe',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18588,7 +18589,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['heroin_readystagethree'] = {
         label = 'Heroin Syringe',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18606,7 +18607,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['needle'] = {
         label = 'Syringe',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18930,7 +18931,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['vicodin_prescription'] = {
         label = 'Vicie Prescription',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18939,7 +18940,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['adderal_prescription'] = {
         label = 'Mdderal Prescription',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18948,7 +18949,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['morphine_prescription'] = {
         label = 'Morphin Prescription',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -18957,7 +18958,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['xanax_prescription'] = {
         label = 'Zany Prescription',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -19038,7 +19039,7 @@ tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', imag
     },
     ['shrooms'] = {
         label = 'Shrooms',
-        weight = 250,
+        weight = 500,
         stack = true,
         close = false,
         client = {
@@ -20891,7 +20892,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 
 ['trowel'] = {
     label = 'Trowel',
-    weight = 250,
+    weight = 500,
     stack = true,
     close = true,
     description = 'Required to plant seeds'
@@ -21025,7 +21026,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 
 ['wine_glass'] = {
     label = 'Wine Glass',
-    weight = 250,
+    weight = 500,
     stack = true,
 },
 
@@ -21043,7 +21044,7 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 
 ['champagne_glass'] = {
     label = 'Champagne Glass',
-    weight = 250,
+    weight = 500,
     stack = true,
 },
 
@@ -23085,35 +23086,35 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 ---------------------------------
 ["promethazine_codeine"] = {
 	label = "Promethazine w/ Codeine",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A prescription purple syrup often used in lean."
 },
 ["actavis_og"] = {
 	label = "Actavis OG",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "Rare and discontinued high-quality purple syrup."
 },
 ["hitech_syrup"] = {
 	label = "Hi-Tech Syrup",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "Pharmaceutical-grade purple syrup, commonly used in lean."
 },
 ["tussionex_yellow"] = {
 	label = "Tussionex Syrup",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "Thick yellow syrup containing hydrocodone."
 },
 ["robitussin_ac"] = {
 	label = "Robitussin AC",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "Weaker red syrup containing codeine, often used as a cheap lean alternative."
@@ -23210,35 +23211,35 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 ---------------------------------
 ["cup_lemon_lime_promethazine_codeine"] = {
 	label = "Lemon-Lime Soda with Codeine",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with codeine syrup."
 },
 ["cup_lemon_lime_actavis_og"] = {
 	label = "Lemon-Lime Soda with Actavis",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Actavis syrup."
 },
 ["cup_lemon_lime_hitech_syrup"] = {
 	label = "Lemon-Lime Soda with Hi-Tech",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Hi-Tech syrup."
 },
 ["cup_lemon_lime_tussionex_yellow"] = {
 	label = "Lemon-Lime Soda with Tussionex",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with yellow Tussionex syrup."
 },
 ["cup_lemon_lime_robitussin_ac"] = {
 	label = "Lemon-Lime Soda with Robitussin AC",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Robitussin AC syrup."
@@ -23249,35 +23250,35 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 ---------------------------------
 ["cup_orange_promethazine_codeine"] = {
 	label = "Orange Soda with Codeine",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with codeine syrup."
 },
 ["cup_orange_actavis_og"] = {
 	label = "Orange Soda with Actavis",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Actavis syrup."
 },
 ["cup_orange_hitech_syrup"] = {
 	label = "Orange Soda with Hi-Tech",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Hi-Tech syrup."
 },
 ["cup_orange_tussionex_yellow"] = {
 	label = "Orange Soda with Tussionex",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with yellow Tussionex syrup."
 },
 ["cup_orange_robitussin_ac"] = {
 	label = "Orange Soda with Robitussin AC",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Robitussin AC syrup."
@@ -23288,35 +23289,35 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 ---------------------------------
 ["cup_lemon_lime_promethazine_codeine_ice"] = {
 	label = "Lemon-Lime Soda with Codeine (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with codeine syrup and ice cubes."
 },
 ["cup_lemon_lime_actavis_og_ice"] = {
 	label = "Lemon-Lime Soda with Actavis (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Actavis syrup and ice cubes."
 },
 ["cup_lemon_lime_hitech_syrup_ice"] = {
 	label = "Lemon-Lime Soda with Hi-Tech (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Hi-Tech syrup and ice cubes."
 },
 ["cup_lemon_lime_tussionex_yellow_ice"] = {
 	label = "Lemon-Lime Soda with Tussionex (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with yellow Tussionex syrup and ice cubes."
 },
 ["cup_lemon_lime_robitussin_ac_ice"] = {
 	label = "Lemon-Lime Soda with Robitussin AC (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of lemon-lime soda mixed with Robitussin AC syrup and ice cubes."
@@ -23327,35 +23328,35 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 ---------------------------------
 ["cup_orange_promethazine_codeine_ice"] = {
 	label = "Orange Soda with Codeine (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with codeine syrup and ice cubes."
 },
 ["cup_orange_actavis_og_ice"] = {
 	label = "Orange Soda with Actavis (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Actavis syrup and ice cubes."
 },
 ["cup_orange_hitech_syrup_ice"] = {
 	label = "Orange Soda with Hi-Tech (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Hi-Tech syrup and ice cubes."
 },
 ["cup_orange_tussionex_yellow_ice"] = {
 	label = "Orange Soda with Tussionex (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with yellow Tussionex syrup and ice cubes."
 },
 ["cup_orange_robitussin_ac_ice"] = {
 	label = "Orange Soda with Robitussin AC (Ice)",
-	weight = 250,
+	weight = 500,
 	stack = true,
 	close = true,
 	description = "A cup of orange soda mixed with Robitussin AC syrup and ice cubes."
@@ -23593,6 +23594,349 @@ oldphone      = { name = 'oldphone',   label = 'Trap Phone', weight = 35,  type 
 		stack = true,
 		close = true,
 	},
+
+    ['cheque_common'] = { 
+	label = 'Fleeca Bank Cheque', 
+	weight = 1,
+	stack = true
+},
+
+['cheque_blaine'] = { 
+	label = 'Blaine Country Cheque', 
+	weight = 1,
+	stack = true
+},
+
+['cheque_ultra_rare'] = { 
+	label = 'Maze Bank Cheque', 
+	weight = 1,
+	stack = true
+},
+
+['cheque_rare'] = { 
+	label = 'Union Depo Cheque', 
+	weight = 1,
+	stack = true
+},
+
+['vortex_x_shell'] = {
+    label = 'Vortex X Shell',
+    weight = 1,
+    stack = true
+},
+
+['prodigy_5_shell'] = {
+    label = 'Prodigy 5 Shell',
+    weight = 1,
+    stack = true
+},
+
+['novadeck_shell'] = {
+    label = 'NovaDeck Shell',
+    weight = 1,
+    stack = true
+},
+
+['phantom_shell'] = {
+    label = 'Phantom Shell',
+    weight = 1,
+    stack = true
+},
+
+['lcd_screen'] = {
+    label = 'LCD Screen',
+    weight = 1,
+    stack = true
+},
+
+['console_motherboard'] = {
+    label = 'Console Motherboard',
+    weight = 1,
+    stack = true
+},
+
+['power_unit'] = {
+    label = 'Power Unit',
+    weight = 1,
+    stack = true
+},
+
+['cooling_kit'] = {
+    label = 'Cooling Kit',
+    weight = 1,
+    stack = true
+},
+
+['storage_module'] = {
+    label = 'Storage Module',
+    weight = 1,
+    stack = true
+},
+
+['disc_drive'] = {
+    label = 'Disc Drive',
+    weight = 1,
+    stack = true
+},
+
+['network_module'] = {
+    label = 'Network Module',
+    weight = 1,
+    stack = true
+},
+
+['vortex_x_controller_parts'] = {
+    label = 'Vortex X Controller Parts',
+    weight = 1,
+    stack = true
+},
+
+['prodigy_5_controller_parts'] = {
+    label = 'Prodigy 5 Controller Parts',
+    weight = 1,
+    stack = true
+},
+
+['vortex_x_battery'] = {
+    label = 'Vortex X Battery',
+    weight = 1,
+    stack = true
+},
+
+['prodigy_5_battery'] = {
+    label = 'Prodigy 5 Battery',
+    weight = 1,
+    stack = true
+},
+
+['vortex_x'] = {
+    label = 'Vortex X Console',
+    weight = 1,
+    stack = false
+},
+
+['prodigy_5'] = {
+    label = 'Prodigy 5 Console',
+    weight = 1,
+    stack = false
+},
+
+['novadeck'] = {
+    label = 'NovaDeck Console',
+    weight = 1,
+    stack = false
+},
+
+['phantom'] = {
+    label = 'Phantom Console',
+    weight = 1,
+    stack = false
+},
+
+['vortex_x_controller'] = {
+    label = 'Vortex X Controller',
+    weight = 1,
+    stack = false
+},
+
+['prodigy_5_controller'] = {
+    label = 'Prodigy 5 Controller',
+    weight = 1,
+    stack = false
+},
+
+['vortex_x_jailbreak'] = {
+    label = 'Vortex X Jailbreak Kit',
+    weight = 1,
+    stack = true
+},
+
+['phantom_jailbreak'] = {
+    label = 'Phantom Jailbreak Kit',
+    weight = 1,
+    stack = true
+},
+
+['prodigy_5_jailbreak'] = {
+    label = 'Prodigy 5 Jailbreak Kit',
+    weight = 1,
+    stack = true
+},
+
+['novadeck_jailbreak'] = {
+    label = 'NovaDeck Jailbreak Kit',
+    weight = 1,
+    stack = true
+},
+
+['workz_usb'] = {
+    label = 'TechworkZ USB',
+    weight = 1,
+    stack = true
+},
+
+['techworkz_station'] = {
+    label = 'TechWorkz Table',
+    weight = 1,
+    stack = true
+},
+
+
+
+-- ─── Console packaging ──────────────────────────────────────────────────────
+
+['vortex_x_box'] = {
+    label = 'Vortex X Box',
+    weight = 1,
+    stack = true
+},
+
+['prodigy_5_box'] = {
+    label = 'Prodigy 5 Box',
+    weight = 1,
+    stack = true
+},
+
+['novadeck_box'] = {
+    label = 'NovaDeck Box',
+    weight = 1,
+    stack = true
+},
+
+['phantom_box'] = {
+    label = 'Phantom Box',
+    weight = 1,
+    stack = true
+},
+
+-- ─── Boxed consoles (standard) ──────────────────────────────────────────────
+
+['vortex_x_boxed'] = {
+    label = 'Vortex X (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['prodigy_5_boxed'] = {
+    label = 'Prodigy 5 (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['novadeck_boxed'] = {
+    label = 'NovaDeck (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['phantom_boxed'] = {
+    label = 'Phantom (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+-- ─── Boxed consoles (jailbroken) ────────────────────────────────────────────
+
+['vortex_x_jailbreak_boxed'] = {
+    label = 'Vortex X Jailbroken (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['prodigy_5_jailbreak_boxed'] = {
+    label = 'Prodigy 5 Jailbroken (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['novadeck_jailbreak_boxed'] = {
+    label = 'NovaDeck Jailbroken (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['phantom_jailbreak_boxed'] = {
+    label = 'Phantom Jailbroken (Boxed)',
+    weight = 2,
+    stack = false
+},
+
+['kodeinee_paperwork'] = {
+    label = 'Police Paperwork',
+    weight = 0,
+    stack = false,
+    close = true,
+    description = 'Unique police paperwork for one player.',
+    client = {
+        event = 'kodeinee-paperworkV2:client:usedItem'
+    }
+},
+
+-- Optional old item name support if your server already uses paperwork:
+['paperwork'] = {
+    label = 'Paperwork',
+    weight = 0,
+    stack = false,
+    close = true,
+    description = 'Unique police paperwork for one player.',
+    client = {
+        event = 'kodeinee-paperworkV2:client:usedItem'
+    }
+},
+
+['strikerpad'] = { label = 'Striker Pad', weight = 500, stack = true, close = true },
+['keyfob'] = { label = 'Key Fob', weight = 50, stack = true, close = true },
+['stolendoor'] = { label = 'Stolen Door', weight = 100, stack = true, close = true },
+['stolenrim'] = { label = 'Stolen Rim', weight = 100, stack = true, close = true },
+['stolencarpart'] = { label = 'Stolen Car Part', weight = 100, stack = true, close = true },
+
+
+['baddie_cam'] = {
+    label = 'Baddie Camera',
+    weight = 200,
+    stack = false,
+    close = true,
+    description = 'An exclusive camera for taking photos.',
+    client = {
+        export = 'orbit-onlypics.useCamera'
+    }
+},
+
+['baddie_pic'] = {
+    label = 'Photograph',
+    weight = 10,
+    stack = false,
+    close = true,
+    description = 'A developed photograph.',
+    client = {
+        export = 'orbit-onlypics.viewPhoto'
+    }
+},
+
+['baddie_bundle'] = {
+    label = 'Photo Bundle',
+    weight = 50,
+    stack = false,
+    close = true,
+    description = 'A collection of photographs.',
+    client = {
+        export = 'orbit-onlypics.viewBundle'
+    }
+},
+
+['baddie_phone'] = {
+    label = 'Baddie Phone',
+    weight = 190,
+    stack = false,
+    close = true,
+    description = 'A phone with the OnlyPics app on it.',
+    client = {
+        export = 'orbit-onlypics.useBaddiePhone'
+    }
+},
+
+
+
 
 
 

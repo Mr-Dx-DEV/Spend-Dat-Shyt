@@ -105,6 +105,14 @@ Dummy = {
         -- This gets called when a player finishes a contract
     end,
 
+    OnContractEnded = function(playersInContract, vehicle)
+        -- This gets called when a contract ends. Either successfully or unsuccessfully
+    end,
+
+    OnContractLeave = function(player)
+        -- This gets called when a player leaves a contract
+    end,
+
     -- Gets triggered short after the vehicle in the contract gets spawned
     OnVehicleSpawned = function(vehicle, playersInContract)
         for k, playerId in pairs(playersInContract) do
@@ -114,6 +122,15 @@ Dummy = {
 
     -- Gets triggered right before the vehicle gets deleted
     BeforeVehicleDelete = function(vehicle, playersInContract)
+        for k, playerId in pairs(playersInContract) do
+            exports.kq_link:RemoveVehicleKeys(playerId, vehicle)
+        end
+    end,
+
+    -- Gets triggered when a vehicle stays in the world, after a contract ends
+    -- (Vehicles more than 50 meters away from the HQ don't get deleted instantly in case someone is still using them.
+    -- They will just be marked for deletion by the game engine)
+    OnVehicleAbandon = function(vehicle, playersInContract)
         for k, playerId in pairs(playersInContract) do
             exports.kq_link:RemoveVehicleKeys(playerId, vehicle)
         end
