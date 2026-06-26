@@ -28,7 +28,7 @@ AddEventHandler('devm-fraud:dispatchPolice', function()
             sound = 1,
             blip = {
                 sprite = 431, 
-                scale = 1.2, 
+                scale = 0.5,
                 colour = 3,
                 flashes = false, 
                 text = 'Credit Card Fraud',
@@ -50,7 +50,7 @@ AddEventHandler('devm-fraud:dispatchPolice', function()
             blip = {
                 sprite = 431, 
                 colour = 3, 
-                scale = 1.2, 
+                scale = 0.5,
                 text = 'Credit Card Fraud', 
                 flashes = false, 
                 radius = 0, 
@@ -66,7 +66,7 @@ AddEventHandler('devm-fraud:dispatchPolice', function()
             radius = 0,
             sprite = 431,
             color = 3,
-            scale = 1.2,
+            scale = 0.5,
             length = 3,
         })
         

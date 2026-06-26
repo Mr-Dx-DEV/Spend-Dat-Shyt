@@ -63,7 +63,7 @@ function Dispatch.call(coords, data)
             sound = 1,
             blip = {
                 sprite = 431,
-                scale = 1.2,
+                scale = 0.5,
                 colour = 3,
                 flashes = false,
                 text = title,
@@ -85,7 +85,7 @@ function Dispatch.call(coords, data)
             sound = 1,
             blip = {
                 sprite = 431,
-                scale = 1.2,
+                scale = 0.5,
                 colour = 3,
                 flashes = false,
                 text = title,
@@ -106,7 +106,7 @@ function Dispatch.call(coords, data)
             image = nil,
             blip = {
                 sprite = 431,
-                scale = 1.2,
+                scale = 0.5,
                 colour = 3,
                 flashes = true,
                 text = title,
@@ -129,7 +129,7 @@ function Dispatch.call(coords, data)
                 recipientList = Config.Dispatch.Jobs,
                 sprite = 431,
                 color = 3,
-                scale = 1.2,
+                scale = 0.5,
                 length = 20,
                 sound = "Lose_1st",
                 flash = true
@@ -148,7 +148,7 @@ function Dispatch.call(coords, data)
             blip = {
                 sprite = 431,
                 colour = 3,
-                scale = 1.2,
+                scale = 0.5,
                 text = data.Title,
                 flashes = true,
                 radius = 0,
@@ -170,7 +170,7 @@ function Dispatch.call(coords, data)
             blip = {
                 sprite = 431,
                 color = 3,
-                size = 1.2,
+                size = 0.5,
                 shortRange = false,
                 label = data.Title
             }
@@ -202,7 +202,7 @@ function Dispatch.call(coords, data)
                 blip = {
                     sprite = 52,
                     colour = 1,
-                    scale = 1.0,
+                    scale = 0.5,
                     text = data.Title,
                 },
                 info = {
@@ -239,7 +239,7 @@ function Dispatch.call(coords, data)
                 radius = 1.2,
                 sprite = 431,
                 color = 3,
-                scale = 1.2,
+                scale = 0.5,
                 length = 20,
                 sound = "Lose_1st",
                 flash = true

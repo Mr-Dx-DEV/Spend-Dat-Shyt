@@ -887,7 +887,7 @@ Config.BlipList = {
         Options = {
             name = "Galaxy club",
             type = 4,
-            scale = 1.0,
+            scale = 0.5,
             shortRange = true,
         },
     },

@@ -5,7 +5,7 @@ return {
             coords = vector3(-809.7993, -2415.1545, 14.7550),
             sprite = 227,
             color = 3,
-            scale = 0.7,
+            scale = 0.5,
             shortRange = true
         },
         Return = {

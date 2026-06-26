@@ -41,7 +41,7 @@ Config.NPC = {
     Heading = 157.0, -- Adjust the heading as needed
     BlipEnabled = true,  -- New option to enable/disable blip
     BlipSprite = 389,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
-    BlipScale = 1.0,
+    BlipScale = 0.5,
     BlipColour = 3,
     BlipName = "Perfumes & Colognes"
 }

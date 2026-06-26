@@ -79,7 +79,7 @@ Config.DutyBlipOptions = {
     FriendIndicator = true,
     Outline = false,
     OutlineColour = { 93, 182, 229 },
-    Scale = 0.9,
+    Scale = 0.5,
     ShortRange = true,
     ShowHeading = true,
     Name = "{name} - {callsign}",
@@ -146,7 +146,7 @@ Config.DispatchBlip = {
         Radius = 50.0,
         Sprite = 161, -- https://docs.fivem.net/docs/game-references/blips/#blips
         Color = 1, -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
-        Size = 1.5,
+        Size = 0.5,
         ShortRange = false, -- show blip only when close to it?
         Label = "{dispatch_title}", -- Available placeholders: {dispatch_title}, {id}, {priority}
     }

@@ -15,7 +15,7 @@ function createBlip(name, blip, coords, options)
         SetBlipDisplay(ourBlip, options.type)
     end
     if options.scale then
-        SetBlipScale(ourBlip, options.scale)
+        SetBlipScale(ourBlip, 0.5)
     end
     if options.color then
         SetBlipColour(ourBlip, options.color)

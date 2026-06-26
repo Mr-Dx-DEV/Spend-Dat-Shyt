@@ -165,7 +165,7 @@ SDC.VitalSettings = { --DO NOT TOUCH UNLESS YOU KNOW WHAT YOU ARE DOING (MODIFIC
 SDC.RandomAge = {18, 55} --Random Age Assigned To Civilian, min/max
 SDC.RandomHeight = {55, 80}  --Random Height Assigned To Civilian, min/max (Default Is Inches)
 
-SDC.DropOffBlip = {Sprite = 153, Color = 1, Size = 1.5} --Blip Configs For Dropping Off Civilian
+SDC.DropOffBlip = {Sprite = 153, Color = 1, Size = 0.5} --Blip Configs For Dropping Off Civilian
 SDC.HospitalDropOff = { --All Drop Off Locations For Injury Calls
     {
         Label = "Pillbox Medical Center",
@@ -187,7 +187,7 @@ SDC.HospitalDropOff = { --All Drop Off Locations For Injury Calls
 ---------------------------------------------------------------------------------
 -------------------------Injury Call Configs-------------------------------------
 ---------------------------------------------------------------------------------
-SDC.InjuryBlip = {Sprite = 280, Color = 35, Size = 1.5} --Blip Configs For Injured Civilians
+SDC.InjuryBlip = {Sprite = 280, Color = 35, Size = 0.5} --Blip Configs For Injured Civilians
 SDC.CheckupAnimTime = 10 --Animation Time For Preforming A Checkup (In Seconds)
 SDC.CallCoords = { --All Random Injury Call Coords
     vec4(1044.5402, 201.8757, 80.9911, 159.4642),
@@ -213,7 +213,7 @@ SDC.CallCoords = { --All Random Injury Call Coords
 ---------------------------------------------------------------------------------
 ----------------------------Transport Call Configs-------------------------------
 ---------------------------------------------------------------------------------
-SDC.TransportBlip = {Sprite = 280, Color = 16, Size = 1.5} --Blip Configs For Picking Up Transport Patient
+SDC.TransportBlip = {Sprite = 280, Color = 16, Size = 0.5} --Blip Configs For Picking Up Transport Patient
 SDC.PickupAnimTime = 10 --Animation Time For Picking Up The Transport Patient (In Seconds)
 SDC.PickupDropoffs = { --All Hospital Locations For Medical Transports
     {

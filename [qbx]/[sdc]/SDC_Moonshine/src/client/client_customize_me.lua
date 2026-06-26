@@ -185,7 +185,7 @@ AddEventHandler("SDMS:Client:WarnCops", function(coords)
         if SDC.DispatchResource == "none" then
             local saleBlip = AddBlipForCoord(coords.x, coords.y, coords.z)
             SetBlipSprite(saleBlip, SDC.SaleNotificationForCops.SaleBlip.Sprite)
-            SetBlipScale(saleBlip, SDC.SaleNotificationForCops.SaleBlip.Size)
+            SetBlipScale(saleBlip, 0.5)
             SetBlipColour(saleBlip, SDC.SaleNotificationForCops.SaleBlip.Color)
             BeginTextCommandSetBlipName("STRING")
             AddTextComponentString(SDC.Lang.MoonshineSale2)

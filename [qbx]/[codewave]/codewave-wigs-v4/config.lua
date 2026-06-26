@@ -35,7 +35,7 @@ Config.NPC = {
     Heading     = 323.7095,
     BlipEnabled = true,
     BlipSprite  = 621,
-    BlipScale   = 1.0,
+    BlipScale   = 0.5,
     BlipColour  = 8,
     BlipName    = "Wigs & Bundles"
 }

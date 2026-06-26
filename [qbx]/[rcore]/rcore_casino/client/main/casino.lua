@@ -1921,7 +1921,7 @@ function OnEnterCasino()
     if MONEYLOAD_TAKE then
         local blip = AddBlipForCoord(CashierDatas[1].coords)
         SetBlipSprite(blip, 1)
-        SetBlipScale(blip, 1.0)
+        SetBlipScale(blip, 0.5)
         SetBlipAsFriendly(blip, false)
         SetBlipColour(blip, 2)
         BeginTextCommandSetBlipName("STRING")

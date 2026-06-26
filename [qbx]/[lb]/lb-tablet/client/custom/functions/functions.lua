@@ -70,7 +70,7 @@ function ApplyBlipProperties(blip, properties)
     end
 
     if properties.size then
-        SetBlipScale(blip, properties.size)
+        SetBlipScale(blip, 0.5)
     end
 
     if properties.label then

@@ -18,10 +18,10 @@ SDC.NeedJobForResource = false --If you need the job to work a crane
 SDC.SiteManager = { --Site Manger Configs
     Ped = "a_m_m_eastsa_02", --Ped model of the site manager
     Coords = vec4(721.8976, -909.4210, 25.4327, 93.5018), --Coords for the site manager
-    Blip = {Enabled = true, Sprite = 440, Color = 17, Size = 0.7}, --Blip for site manager, if you don't want one then set "Enabled" to false
+    Blip = {Enabled = true, Sprite = 440, Color = 17, Size = 0.5}, --Blip for site manager, if you don't want one then set "Enabled" to false
     SpawnPedDist = 75 --How close/far you have to be for it spawn/despawn the site manager ped
 }
-SDC.CraneBlip = {Enabled = true, Sprite = 527, Color = 47, Size = 1.0} --Blip for Assigned Crane, if you don't want one then set "Enabled" to false
+SDC.CraneBlip = {Enabled = true, Sprite = 527, Color = 47, Size = 0.5} --Blip for Assigned Crane, if you don't want one then set "Enabled" to false
 SDC.CraneWaypoint = {Enabled = true} --If you want it to set their waypoint to the assigned crane site, if you don't want this then set "Enabled" to false
 SDC.CloseJobDistance = 100 --How far you have to get from the crane site for it to cancel your assigned crane
 

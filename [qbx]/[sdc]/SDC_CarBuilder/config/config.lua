@@ -95,20 +95,20 @@ SDC.Icons = { --All Icon Settings
 -------------------------------Pick & Build Configs------------------------------
 ---------------------------------------------------------------------------------
 SDC.PBCoords = vec3(1019.5541, -2273.0901, 30.5022) --Pick & Build General Coords
-SDC.PBBlip = {Enabled = true, Sprite = 402, Color = 0, Size = 1.0} --Pick & Build Blip Settings
+SDC.PBBlip = {Enabled = true, Sprite = 402, Color = 0, Size = 0.5} --Pick & Build Blip Settings
 SDC.PBPed = { --Pick & Build Ped Settings
     Model = "a_m_m_bevhills_02", --Ped Model
     SpawnCoords = vec4(1017.1036, -2261.4211, 30.5058, 209.0843), --Spawncoords For Ped
     SpawnDist = 50, --How close/far you have to be for it to spawn/delete the ped
     InteractDist = 2.5, --How close you have to be to interact with ped (TEXT UI ONLY)
-    Blip = {Enabled = true, Sprite = 389, Color = 17, Size = 0.7} --Blip Settings
+    Blip = {Enabled = true, Sprite = 389, Color = 17, Size = 0.5} --Blip Settings
 }
 SDC.TSPed = { --Transport Specialist Ped Settings
     Model = "s_m_m_autoshop_02", --Ped Model
     SpawnCoords = vec4(1001.5427, -2263.3420, 30.5248, 90.5294), --Spawncoords For Ped
     SpawnDist = 50, --How close/far you have to be for it to spawn/delete the ped
     InteractDist = 1.5, --How close you have to be to interact with ped (TEXT UI ONLY)
-    Blip = {Enabled = true, Sprite = 388, Color = 29, Size = 0.7} --Blip Settings
+    Blip = {Enabled = true, Sprite = 388, Color = 29, Size = 0.5} --Blip Settings
 }
 SDC.TransportVehicle = { --Transport Vehicle Settings
     Model = "flatbed", --Transport Truck Model
@@ -173,7 +173,7 @@ SDC.PBSpawns = { --All car spawns for Pick & Build
 SDC.ShowProjectCarDist = 75 --How close/far you have to be for it to spawn/delete nearby project cars
 SDC.PJInteractDist = 2.5 --How close you have to be to interact with a nearby project car
 
-SDC.PJCarBlip = {Enabled = true, Sprite = 326, Color = 47, Size = 0.7} --Blip Settings For Owned Project Cars
+SDC.PJCarBlip = {Enabled = true, Sprite = 326, Color = 47, Size = 0.5} --Blip Settings For Owned Project Cars
 
 SDC.PJInteractDists = { --All Repair/Part Swap Distances For Every Area
     Wheels = 1.0,
@@ -553,7 +553,7 @@ SDC.Stores = { --All Store Configs
             {
                 Label = "store_label", --Label Of Store
                 Ped = {Model = "ped_model", SpawnCoords = vec4(0.0, 0.0, 0.0, 0.0), SpawnDist = 50}, --Ped Configs For Store
-                Blip = {Enabled = true, Sprite = 1, Color = 1, Size = 0.7}, --Blip Settings
+                Blip = {Enabled = true, Sprite = 1, Color = 1, Size = 0.5}, --Blip Settings
                 Products = { --All Products In Store
                     --EX: {Item = "item_name", Label = "item_label", Price = 1},
 
@@ -566,7 +566,7 @@ SDC.Stores = { --All Store Configs
         {
             Label = "Car Parts Store",
             Ped = {Model = "a_f_y_eastsa_02", SpawnCoords = vec4(765.2484, -1225.6588, 25.2063, 358.7312), SpawnDist = 50},
-            Blip = {Enabled = true, Sprite = 59, Color = 14, Size = 0.7},
+            Blip = {Enabled = true, Sprite = 59, Color = 14, Size = 0.5},
             Products = {
                 {Item = "sdcb_tire", Label = "Tire", Price = 50},
                 {Item = "sdcb_wheel", Label = "Wheel", Price = 100},
@@ -605,7 +605,7 @@ SDC.Stores = { --All Store Configs
         {
             Label = "Race Parts Store",
             Ped = {Model = "a_f_y_eastsa_02", SpawnCoords = vec4(-1375.5327, -336.3630, 38.8908, 30.0053), SpawnDist = 50},
-            Blip = {Enabled = true, Sprite = 59, Color = 15, Size = 0.7},
+            Blip = {Enabled = true, Sprite = 59, Color = 15, Size = 0.5},
             Products = {
                 {Item = "sdcb_brakepad2", Label = "Race Brake Pad", Price = 30},
                 {Item = "sdcb_brakerotor2", Label = "Race Brake Rotor", Price = 100},

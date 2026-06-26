@@ -106,7 +106,7 @@ CodeWave_TechWorkz_Config.NPC = {
     Heading     = 276.0,
     BlipEnabled = true,
     BlipSprite  = 521,
-    BlipScale   = 1.0,
+    BlipScale   = 0.5,
     BlipColour  = 3,
     BlipName    = "TechWorkz"
 }

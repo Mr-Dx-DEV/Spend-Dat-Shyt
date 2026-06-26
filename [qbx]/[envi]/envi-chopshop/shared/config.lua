@@ -226,7 +226,7 @@ Config.HardcoreModeOwnerWarnings = {               -- NEW FOR 3.0.7!!
         Enabled = true,
         Sprite = 161,
         Color = 1,
-        Scale = 1.0,
+        Scale = 0.5,
         ShortRange = true,
         Name = '!! YOUR VEHICLE IS BEING CHOPPED !!',
     }

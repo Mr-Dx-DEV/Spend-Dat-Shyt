@@ -1769,7 +1769,7 @@ function AlarmAlert(propertyid, alarmside)
 				  sound = 1,
 				  blip = {
 					  sprite = 431,
-					  scale = 1.2,
+					  scale = 0.5,
 					  colour = 3,
 					  flashes = false,
 					  text = '911 - Property Alarm',
@@ -1812,7 +1812,7 @@ function RobberyAlert(propertyid, robberyside)
 				  sound = 1,
 				  blip = {
 					  sprite = 431,
-					  scale = 1.2,
+					  scale = 0.5,
 					  colour = 3,
 					  flashes = false,
 					  text = '911 - Property Robbery',

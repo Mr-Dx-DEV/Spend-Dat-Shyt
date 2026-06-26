@@ -40,7 +40,7 @@ function ShowGraffitiBlip(coords, text)
 
     SetBlipSprite(blip, settings.sprite)
     SetBlipDisplay(blip, settings.display)
-    SetBlipScale(blip, settings.scale)
+    SetBlipScale(blip, 0.5)
     SetBlipColour(blip, settings.color)
     SetBlipAlpha(blip, alpha)
     SetBlipAsShortRange(blip, true)

@@ -10,7 +10,7 @@ function Utils.Blips.createBlipForCoords(x,y,z,idtype,idcolor,text,scale,set_rou
 		SetBlipSprite(blip,idtype)
 		SetBlipAsShortRange(blip,true)
 		SetBlipColour(blip,idcolor)
-		SetBlipScale(blip,scale)
+		SetBlipScale(blip, 0.5)
 
 		if text then
 			BeginTextCommandSetBlipName("STRING")

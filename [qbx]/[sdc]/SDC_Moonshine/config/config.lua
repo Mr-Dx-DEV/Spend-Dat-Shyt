@@ -697,7 +697,7 @@ SDC.PreWarnCopsAboutSale = true --If you want it to warn cops of a possible sale
 SDC.SpawnBuyerDist = 75 --How close you have to be for it to spawn the buyer ped in (MUST keep this a lower distance then SDC.EndSaleDist)
 SDC.SellToBuyerDist = 1.5 --How close you have to be to sell to the buyer
 SDC.EndSaleDist = 110 --How far you have to get from the buyer before it cancels the mission (Note this only goes into effect after the ped is spawned)
-SDC.BuyerBlip = {Sprite = 108, Color = 25, Size = 1.0} --Blip Configs for the buyer
+SDC.BuyerBlip = {Sprite = 108, Color = 25, Size = 0.5} --Blip Configs for the buyer
 
 SDC.SortSaleDemandsTimer = 10 --How often the server will resort all the moonshines for their respective demands (Keep between 10-30)(In Seconds)
 SDC.SalePricesPerDemand = { --This is amount per bottle for the respective demand
@@ -709,7 +709,7 @@ SDC.SalePricesPerDemand = { --This is amount per bottle for the respective deman
 SDC.SaleNotificationForCops = { --Sale Notification Configs
     Enabled = true, --If you want it to use the notification configs from my resource
     PreWarnBlip = {Enabled = true, Color = 1, Radius = 75.0}, --Pre warn alert blip for cops  
-    SaleBlip = {Enabled = true, Sprite = 108, Color = 1, Size = 1.0},  --Sale alert blip for cops
+    SaleBlip = {Enabled = true, Sprite = 108, Color = 1, Size = 0.5},  --Sale alert blip for cops
 }
 
 SDC.PossibleBuyerLocs = { --All possible buyer locations
@@ -750,7 +750,7 @@ SDC.BuyerPeds = { --All buyer ped models
 -------------------------------Old Man Configs-----------------------------------
 ---------------------------------------------------------------------------------
 SDC.OldManModel = "cs_old_man2" --Old Man Ped Model
-SDC.OldManBlip = {Enabled = true, Sprite = 387, Color = 13, Size = 0.7} --Old man blip Configs
+SDC.OldManBlip = {Enabled = true, Sprite = 387, Color = 13, Size = 0.5} --Old man blip Configs
 SDC.SpawnOldManDist = 50 --How close/far you have to be for it spawn/despawn the old man ped
 SDC.OldManSpawns = { --All old man spawn locations (will select random location out of table on every server restart)
     --EX: vec4(0.0, 0.0, 0.0, 0.0)
@@ -781,7 +781,7 @@ SDC.SpawnPCPedDist = 45 --How close you have to be for it to spawn the peds (KEE
 SDC.EndMissionDist = 160 --How far you have to get for it to forcefully end the mission
 SDC.MaxPCMissionTime = 15 --The max amount of time a Part Collection Mission can last before it auto ends (In Minutes)
 SDC.PCMissionCooldown = 15 --The cooldown time for a Part Collection Mission (In Minutes)
-SDC.PCBlip = {Sprite = 119, Color = 1, Size = 1.0} --Blip Configs For Part Collection
+SDC.PCBlip = {Sprite = 119, Color = 1, Size = 0.5} --Blip Configs For Part Collection
 SDC.PartCollectionSpawns = { --All possible Part Collection Mission spawns
     --[[
         --Example/Template for new entry
@@ -865,7 +865,7 @@ SDC.Stores = { --All Store configs
             Label = "", --Label Of Store
             PedModel = "", --Model Of Ped For Store
             Coords = vec4(0.0, 0.0, 0.0, 0.0), --Coords For The Store Ped
-            Blip = {Enabled = false, Sprite = 59, Color = 10, Size = 0.7}, --Blip Configs For Stores
+            Blip = {Enabled = false, Sprite = 59, Color = 10, Size = 0.5}, --Blip Configs For Stores
             Products = { --All Product Configs
                 --EX: {Label = "item_label", Item = "item_name", Price = 0}, 
             }
@@ -876,7 +876,7 @@ SDC.Stores = { --All Store configs
         Label = "Farmers Market",
         PedModel = "a_m_m_eastsa_01",
         Coords = vec4(418.0383, 6470.7705, 28.8122, 47.9667),
-        Blip = {Enabled = true, Sprite = 59, Color = 23, Size = 0.7},
+        Blip = {Enabled = true, Sprite = 59, Color = 23, Size = 0.5},
         Products = {
             {Label = "Bag of Corn", Item = "sdam_bagofcorn", Price = 10},
             {Label = "Bag of Sugar", Item = "sdam_bagofsugar", Price = 10},
@@ -890,7 +890,7 @@ SDC.Stores = { --All Store configs
         Label = "Log Market",
         PedModel = "a_m_m_farmer_01",
         Coords = vec4(-579.6486, 5368.4819, 70.2837, 346.6604),
-        Blip = {Enabled = true, Sprite = 59, Color = 10, Size = 0.7},
+        Blip = {Enabled = true, Sprite = 59, Color = 10, Size = 0.5},
         Products = {
             {Label = "Firewood", Item = "sdam_firewood", Price = 10},
         }

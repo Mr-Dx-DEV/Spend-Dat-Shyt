@@ -535,7 +535,7 @@ function AlarmBlip(houselocationid, alarmcoords)
 
 	SetBlipSprite(alarmblip, Config.BlipSettings.alarm.blipiconid)
 	SetBlipDisplay(alarmblip, Config.BlipSettings.alarm.blipdisplay)
-	SetBlipScale(alarmblip, Config.BlipSettings.alarm.blipscale)
+	SetBlipScale(alarmblip, 0.5)
 	SetBlipColour(alarmblip, Config.BlipSettings.alarm.blipcolor)
 	SetBlipAsShortRange(alarmblip, Config.BlipSettings.alarm.blipshortrange)
 

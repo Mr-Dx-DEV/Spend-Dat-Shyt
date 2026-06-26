@@ -176,7 +176,7 @@ RegisterNetEvent('synz_hostage:client:policeAlert', function(coords, title, mess
         local blipCfg = Config.Dispatch.Blip or {}
         local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
         SetBlipSprite(blip, blipCfg.sprite or 431)
-        SetBlipScale(blip, blipCfg.scale or 1.2)
+        SetBlipScale(blip, 0.5)
         SetBlipColour(blip, blipCfg.colour or 3)
         SetBlipAsShortRange(blip, false)
         BeginTextCommandSetBlipName("STRING")

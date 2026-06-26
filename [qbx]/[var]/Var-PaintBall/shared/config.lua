@@ -144,7 +144,7 @@ Config.Blip = {
     coords = vec3(146.04, -2955.03, 6.19),  -- same as join interact point
     sprite = 311,       -- paintball / target sprite
     color = 27,         -- purple
-    scale = 0.85,
+    scale = 0.5,
     name = "Paintball",
     shortRange = true,
 }

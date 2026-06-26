@@ -68,7 +68,7 @@ Config.Locations = {
         pedModel = 'a_m_y_business_03',
 
         -- Map blip. Set show = false (or omit the blip table) to hide.
-        blip = { sprite = 207, color = 2, scale = 0.8, show = false },
+        blip = { sprite = 207, color = 2, scale = 0.5, show = false },
 
         -- Optional interior teleport flow. Omit this whole table to disable.
         interior = {

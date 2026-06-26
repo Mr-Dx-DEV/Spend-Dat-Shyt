@@ -122,7 +122,7 @@ function AlertPolice(settings)
             blip = {
                 color = data.color,
                 sprite = data.sprite,
-                scale = 1.0,
+                scale = 0.5,
             },
             jobs = data.job
         })
@@ -344,7 +344,7 @@ function SendBankTruckAlert()
         -- Blip Settings
         blipSprite = 67, -- Blip sprite (58 = red marker)
         blipColor = 2, -- Blip color (2 = green)
-        blipScale = 1.0, -- Blip size/scale
+        blipScale = 0.5, -- Blip size/scale
         blipFlash = false, -- Enable blip flashing
         alertSound1 = "Lose_1st", -- Sound for alert
     }
@@ -366,7 +366,7 @@ function SendAtmRobberyAlert()
         -- Blip Settings
         blipSprite = 500, -- Blip sprite (58 = red marker)
         blipColor = 2, -- Blip color (2 = green)
-        blipScale = 1.0, -- Blip size/scale
+        blipScale = 0.5, -- Blip size/scale
         blipFlash = false, -- Enable blip flashing
         alertSound1 = "Lose_1st", -- Sound for alert
     }
@@ -389,7 +389,7 @@ function SendSuspiciousActivityCallToPolice()
         -- Blip Settings
         blipSprite = 58, -- Blip sprite (58 = red marker)
         blipColor = 1, -- Blip color (1 = red)
-        blipScale = 1.0, -- Blip size/scale
+        blipScale = 0.5, -- Blip size/scale
         blipFlash = true, -- Enable blip flashing
         alertSound1 = "Lose_1st", -- Sound for alert
     }

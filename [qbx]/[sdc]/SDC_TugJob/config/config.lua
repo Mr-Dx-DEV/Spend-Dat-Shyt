@@ -45,7 +45,7 @@ SDC.Icons = { --All Icon Configs
 SDC.Manager = { --Manager Ped Configs
     PedModel = "a_m_y_busicas_01", --Ped Model Of Manager
     SpawnCoords = vec4(-316.6743, -2780.2742, 4.9953, 272.2263), --Spawn Coords For Manager
-    Blip = {Enabled = true, Sprite = 404, Color = 32, Size = 0.7} --Blip Configs For Manager
+    Blip = {Enabled = true, Sprite = 404, Color = 32, Size = 0.5} --Blip Configs For Manager
 }
 SDC.ManagerSpawnDist = 50 --How close/far you have to be for it spawn/delete the manager ped
 SDC.ManagerInteractDist = 1 --How close you have to be to interact with Manager(Only If SDC.Target Is "none")
@@ -54,7 +54,7 @@ SDC.ManagerInteractDist = 1 --How close you have to be to interact with Manager(
 -------------------------------Tug Configs---------------------------------------
 ---------------------------------------------------------------------------------
 SDC.TugModel = "tug2" --Model Of Tug Boat
-SDC.TugBlip = {Enabled = true, Sprite = 404, Color = 32, Size = 1.0} --Tug Boat Blip Configs
+SDC.TugBlip = {Enabled = true, Sprite = 404, Color = 32, Size = 0.5} --Tug Boat Blip Configs
 SDC.TugFrontOffset = {vec3(0.0, 14.0, 1.2)} --The Front Offset Coords (DO NOT TOUCH UNLESS YOU KNOW WHAT YOURE DOING)
 SDC.TugSpawns = { --All Spawn Loactions For Tug Boats
     --EX: vec4(0.0, 0.0, 0.0, 0.0)
@@ -88,7 +88,7 @@ SDC.BargeTugOffset = { --The Offset of the Barge From The Tug (DO NOT TOUCH UNLE
 }
 
 
-SDC.DropoffBlip = {Sprite = 479, Color = 1, Size = 1.0} --Drop off Blip Configs
+SDC.DropoffBlip = {Sprite = 479, Color = 1, Size = 0.5} --Drop off Blip Configs
 SDC.DropoffDist = 3.0 --How close the barge has to be from the exact Dropoff location to allow it
 SDC.DropoffHeadingDist = 7 --The Maximum amount of heading difference the barge can have for it to be acceptable
 SDC.DropoffReward = {Min = 500, Max = 1500} --Reward for dropping off a barge

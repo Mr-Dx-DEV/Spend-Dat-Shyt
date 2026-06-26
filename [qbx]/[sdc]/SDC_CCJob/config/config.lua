@@ -51,7 +51,7 @@ SDC.Icons = { --All icon configs (DistToDraw is how close you have to be for the
 -------------------------------Vehicle Configs-----------------------------------
 ---------------------------------------------------------------------------------
 SDC.VehicleName = "vstruck" --Name of the vehicle Model (MAKE SURE THE MODEL IS THE ONE FROM README.MD)
-SDC.VehicleBlip = {Enabled = true, Sprite = 225, Color = 28, Size = 1.0} --Blip Configs for front loader
+SDC.VehicleBlip = {Enabled = true, Sprite = 225, Color = 28, Size = 0.5} --Blip Configs for front loader
 SDC.VehicleSpawnLocations = { --All spawn locations for the front loaders
     --EX: vec4(0.0, 0.0, 0.0, 0.0)
 
@@ -73,7 +73,7 @@ SDC.DeleteVehicleDist = 2.0 --How close you have to be for it to show Text UI
 SDC.ManagerPed = "a_m_m_soucent_02" --Ped Model for Manager
 SDC.ManagerSpawn = vec4(2342.2241, 3127.8494, 48.2087, 355.1588) --Spawn location for the Manager
 SDC.SpawnManagerDist = 50 --How close/far you have to be for it to spawn/delete the manager ped
-SDC.ManagerBlip = {Enabled = true, Sprite = 124, Color = 56, Size = 0.7} --Blip configs for the Manager
+SDC.ManagerBlip = {Enabled = true, Sprite = 124, Color = 56, Size = 0.5} --Blip configs for the Manager
 
 ---------------------------------------------------------------------------------
 -----------------------------Scrap Buyer Configs---------------------------------
@@ -83,7 +83,7 @@ SDC.ScrapBuyer = { --Scrap Buyer Ped Configs
     PedModel = "a_m_m_mexlabor_01", --Ped Model for the Scrap Buyer
     SpawnCoords = vec4(2346.1091, 3137.2439, 48.2087, 166.3705), --Spawn Coords for the Scrap Buyer
     SpawnDist = 50, --How close/far you have to be for it to spawn/delete the scrap buyer ped
-    Blip = {Enabled = true, Sprite = 108, Color = 31, Size = 0.7} --Blip Configs for the Scrap Buyer
+    Blip = {Enabled = true, Sprite = 108, Color = 31, Size = 0.5} --Blip Configs for the Scrap Buyer
 }
 SDC.ScrapBuyerPurchases = { --All things the Scrap Buyer Purchases
     --EX: ["item_name"] = {Label = "Item_Label", PurchasePrice = 1},
@@ -120,7 +120,7 @@ SDC.CrushVehicleSpawns = { --All the crushable car spawns
     vec4(2403.0981, 3138.1689, 48.1533, 65.5914),
     vec4(2408.8604, 3038.6326, 48.1526, 76.8289)
 }
-SDC.CrushedBlip = {Enabled = true, Sprite = 225, Color = 11, Size = 0.3} --All blip configs for crushed cars
+SDC.CrushedBlip = {Enabled = true, Sprite = 225, Color = 11, Size = 0.5} --All blip configs for crushed cars
 SDC.CrushVehicleModels = { --All Crushable car models
     --EX: {Mode l= "vehicle_name", AttachOffsetFromTractor = {vec3(0.0, 0.0, 0.0)}, GrabPointOffset = {vec3(0.0, 0.0, 0.0)}, GrabPointOffsetCrushed = {vec3(0.0, 0.0, 0.0)}, AttachOffsetFromTractorCrushed = {vec(0.0, 0.0, 0.0)}},
 
@@ -200,7 +200,7 @@ SDC.CrusherSound = { --Sound Configs for crusher
     MaxHearDistance = 30 --How close you have to be to hear the sound
 }
 
-SDC.CrusherBlip = {Enabled = true, Sprite = 380, Color = 57, Size = 0.7} --Blip configs for the crushers
+SDC.CrusherBlip = {Enabled = true, Sprite = 380, Color = 57, Size = 0.5} --Blip configs for the crushers
 SDC.SpawnCrusherDist = 125 --How close/far you have to be for it to spawn/delete the crushers
 SDC.CrusherSpawns = { --All crusher spawn locations
     --EX: {BaseSpawn = vec4(0.0, 0.0, 0.0, 0.0)},

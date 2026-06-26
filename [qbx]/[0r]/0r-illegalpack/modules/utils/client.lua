@@ -139,7 +139,7 @@ function Utils.addBlip(target, options, route, longRange)
     SetBlipDisplay(blip, 4)
     SetBlipSprite(blip, options.sprite or 469)
     SetBlipColour(blip, options.color or 0)
-    SetBlipScale(blip, options.scale or 0.85)
+    SetBlipScale(blip, 0.5)
     SetBlipAsShortRange(blip, not longRange)
 
     BeginTextCommandSetBlipName('STRING')

@@ -481,7 +481,7 @@ RegisterNetEvent('qbx_admin:client:Show', function()
 
                 SetBlipRotation(blip, math.ceil(GetEntityHeading(cache.vehicle)))
                 SetBlipNameToPlayerName(blip, playerId)
-                SetBlipScale(blip, 0.85)
+                SetBlipScale(blip, 0.5)
 
                 if IsPauseMenuActive() then
                     SetBlipAlpha(blip, 255)

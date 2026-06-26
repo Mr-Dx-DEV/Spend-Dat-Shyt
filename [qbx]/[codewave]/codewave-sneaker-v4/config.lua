@@ -130,7 +130,7 @@ Config.NPC = {
     Heading     = 301.5443,
     BlipEnabled = true,
     BlipSprite  = 120,
-    BlipScale   = 1.0,
+    BlipScale   = 0.5,
     BlipColour  = 3,
     BlipName    = "Sole Street"
 }

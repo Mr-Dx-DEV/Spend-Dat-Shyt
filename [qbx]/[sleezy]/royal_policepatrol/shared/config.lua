@@ -463,7 +463,7 @@ Config.CrimeSpawn = {
     -- Blip settings
     BlipSprite = 161,           -- Police blip
     BlipColor = 1,              -- Red
-    BlipScale = 0.8,
+    BlipScale = 0.5,
 }
 
 --------------------------------------------------------------------------------

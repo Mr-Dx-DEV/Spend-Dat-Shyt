@@ -4,20 +4,20 @@ Config.NpcScenario = 'WORLD_HUMAN_CLIPBOARD'
 Config.Blip = {
     sprite = 68,
     color = 36,
-    scale = 0.8,
+    scale = 0.5,
     label = 'blip.tow_yard',
 }
 
 Config.EventBlip = {
     sprite = 280,
     color = 33,
-    scale = 1.5,
+    scale = 0.5,
 }
 
 Config.DeliveryBlip = {
     sprite = 225,
     color = 5,
-    scale = 1.0,
+    scale = 0.5,
 }
 
 Config.Waypoints = {

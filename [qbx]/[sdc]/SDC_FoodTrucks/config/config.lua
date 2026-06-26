@@ -555,7 +555,7 @@ SDC.Stores = {--All Store Configs
                 SpawnCoords = vec4(0.0, 0.0, 0.0, 0.0), --Spawn Coords For Store
                 SpawnDist = 50 --How close/far you have to be for it to load/unload the ped
             },
-            Blip = {Enabled = true, Sprite = 59, Color = 1, Size = 0.7}, --All Blip Configs For This Store
+            Blip = {Enabled = true, Sprite = 59, Color = 1, Size = 0.5}, --All Blip Configs For This Store
             Products = { --All Products For This Store
                 --EX: {Item = "item_name", Label = "ITEM_LABEL", Price = 1, Icon = "carrot"},
 
@@ -570,7 +570,7 @@ SDC.Stores = {--All Store Configs
             SpawnCoords = vec4(462.1544, -697.1375, 27.4088, 83.4268), 
             SpawnDist = 50
         },
-        Blip = {Enabled = true, Sprite = 59, Color = 14, Size = 0.7},
+        Blip = {Enabled = true, Sprite = 59, Color = 14, Size = 0.5},
         Products = {
             {Item = "sdft_lettuce", Label = "Lettuce", Price = 10, Icon = "carrot"},
             {Item = "sdft_tomato", Label = "Tomato", Price = 10, Icon = "carrot"},

@@ -4,20 +4,20 @@ Config.NpcScenario = 'WORLD_HUMAN_CLIPBOARD'
 Config.Blip = {
     sprite = 273,
     color = 2,
-    scale = 0.8,
+    scale = 0.5,
     label = 'blip.animal_control',
 }
 
 Config.EventBlip = {
     sprite = 463,
     color = 1,
-    scale = 1.2,
+    scale = 0.5,
 }
 
 Config.DeliveryBlip = {
     sprite = 141,
     color = 2,
-    scale = 1.0,
+    scale = 0.5,
 }
 
 Config.Waypoints = {

@@ -7,7 +7,7 @@ Config.Stores = {
             enabled = true,
             sprite = 52,
             color = 2,
-            scale = 0.6,
+            scale = 0.5,
             display = 4
         },
         ped = {

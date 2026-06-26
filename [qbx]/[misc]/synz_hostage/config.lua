@@ -187,7 +187,7 @@ Config.Dispatch = {
 
     Blip = {
         sprite  = 431,
-        scale   = 1.2,
+        scale   = 0.5,
         colour  = 3,
         flashes = false,
         text    = '911 - Civilian Assault',

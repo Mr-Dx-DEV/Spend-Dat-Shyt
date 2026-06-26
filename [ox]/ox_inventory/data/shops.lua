@@ -2,7 +2,7 @@ return {
 	General = {
 		name = 'Shop',
 		ped = { model = 'mp_m_shopkeep_01' },
-		blip = { id = 59, colour = 69, scale = 0.8 },
+		blip = { id = 59, colour = 69, scale = 0.5 },
 		inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 4 },
@@ -91,7 +91,7 @@ return {
 	Liquor = {
 		name = 'Liquor Store',
 		ped = { model = 'mp_m_shopkeep_01' },
-		blip = { id = 93, colour = 69, scale = 0.8 },
+		blip = { id = 93, colour = 69, scale = 0.5 },
 		inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 4 },
@@ -170,7 +170,7 @@ return {
 	YouTool = {
 		name = 'YouTool',
 		ped = { model = 's_m_m_autoshop_01' },
-		blip = { id = 402, colour = 69, scale = 0.8 },
+		blip = { id = 402, colour = 69, scale = 0.5 },
 		inventory = { { name = 'lockpick', price = 10 } },
         targets = {
             { loc = vec3(2747.15, 3470.89, 55.67), length = 0.6, width = 3.0, heading = 242.22, minZ = 55.2, maxZ = 56.8, distance = 3.0 },
@@ -185,7 +185,7 @@ return {
 	RMobile = {
 		name = 'RMobile',
 		ped = { model = 'a_m_y_business_02' },
-		blip = { id = 402, colour = 69, scale = 0.8 },
+		blip = { id = 402, colour = 69, scale = 0.5 },
 		inventory = {
 			{ name = 'phone', price = 1200 },
 			{ name = 'tablet', price = 1500 },
@@ -199,7 +199,7 @@ return {
 	Movies = {
 		name = 'Movie Concessions',
 		ped = { model = 's_m_y_waiter_01' },
-		blip = { id = 402, colour = 69, scale = 0.8 },
+		blip = { id = 402, colour = 69, scale = 0.5 },
 		inventory = {
 			{ name = 'bbs_jelapeno_poppers', price = 12 },
 			{ name = 'bbs_chicken_hotdog', price = 16 },
@@ -262,7 +262,7 @@ return {
 	PoliceArmoury = {
 		name = 'Police Armoury',
 		groups = shared.police,
-		blip = { id = 110, colour = 84, scale = 0.8 },
+		blip = { id = 110, colour = 84, scale = 0.5 },
 		inventory = {
 			{ name = 'empty_evidence_bag', price = 0 },
 			{ name = 'handcuffs', price = 0 },
@@ -301,7 +301,7 @@ return {
 		name = 'Fade Trap',
 		groups = { ['barber'] = 0 },
 		ped = { model = 's_m_m_hairdress_01' },
-		blip = { id = 110, colour = 84, scale = 0.8 },
+		blip = { id = 110, colour = 84, scale = 0.5 },
 		inventory = {
 			{ name = 'gammaergo', price = 0 },
 			{ name = 'gammaergobox', price = 0 },
@@ -335,7 +335,7 @@ return {
 		name = 'Medicine Cabinet',
 		groups = { ['ambulance'] = 0 },
 		ped = { model = 's_m_m_doctor_01' },
-		blip = { id = 403, colour = 69, scale = 0.8 },
+		blip = { id = 403, colour = 69, scale = 0.5 },
 		inventory = {
 			{ name = 'medikit', price = 26 },
 			{ name = 'bandage', price = 5 }
@@ -356,7 +356,7 @@ return {
 
 	Weed = {
 		name = 'Weed World',
-		blip = { id = 436, colour = 69, scale = 0.8 },
+		blip = { id = 436, colour = 69, scale = 0.5 },
 		inventory = {
 			-- ==================== WEED BAGS ====================
 			{ name = "dc_ak47bag", price = 180 },
@@ -664,7 +664,7 @@ return {
 
 	LemonSteppas = {
 		name = 'Lemon Steppas',
-		blip = { id = 436, colour = 69, scale = 0.8 },
+		blip = { id = 436, colour = 69, scale = 0.5 },
 		inventory = {
 			-- Meals
 			{ name = 'friedchicken', price = 18 },

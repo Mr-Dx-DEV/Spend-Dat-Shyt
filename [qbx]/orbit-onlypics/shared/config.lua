@@ -57,7 +57,7 @@ Config.Shop = {
         Enabled = true,
         Sprite = 617,
         Color = 8,
-        Scale = 0.7,
+        Scale = 0.5,
         Label = 'Photography Shop',
         ShortRange = true,
     },

@@ -58,7 +58,7 @@ Config.PawnShop = {
     BlipEnabled = true, -- Set to true if you want a map blip
     BlipSprite = 52,
     BlipColor = 1,
-    BlipScale = 0.7,
+    BlipScale = 0.5,
     BlipLabel = 'Luxury Goods Dealer',
 }
 

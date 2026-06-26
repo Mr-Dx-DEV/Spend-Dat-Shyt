@@ -65,7 +65,7 @@ Config.ChargeRadius = 3.0 -- Radius
 Config.BlipSettings = {
     sprite = 354,
     color = 3,
-    scale = 0.6,
+    scale = 0.5,
     name = "Charging Station"
 }
 

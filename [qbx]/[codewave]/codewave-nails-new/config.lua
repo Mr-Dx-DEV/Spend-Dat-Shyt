@@ -35,7 +35,7 @@ Config.NPC = {
     Heading = 227.9358, -- Adjust the heading as needed
     BlipEnabled = false,  -- New option to enable/disable blip
     BlipSprite = 621,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
-    BlipScale = 1.0,
+    BlipScale = 0.5,
     BlipColour = 8,
     BlipName = "Nails & Sets"
 }

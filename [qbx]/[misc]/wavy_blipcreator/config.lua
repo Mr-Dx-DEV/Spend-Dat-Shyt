@@ -21,7 +21,7 @@ Config.Storage = {
 }
 
 Config.Defaults = {
-    Scale = 1.0,
+    Scale = 0.5,
     Sprite = 1,
     Radius = 0.0,
     ColorIdFallback = 1 -- red fallback if unknown

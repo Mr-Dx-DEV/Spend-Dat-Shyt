@@ -568,7 +568,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 2, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "For Sale", -- text of blip
 	},	
 	complex = {
@@ -577,7 +577,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 2, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "Apartment Complex", -- text of blip
 	},		
 	owned = {
@@ -586,7 +586,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 3, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "My House", -- text of blip
 	},	
 	furniturestore = {
@@ -595,7 +595,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 2, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "Furniture Store", -- text of blip
 	},	
 	motion = {
@@ -604,7 +604,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 1, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "Motion", -- text of blip
 	},	
 	alarm = {
@@ -613,7 +613,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 1, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "Alarm", -- text of blip
 	},		
 	realestate = {
@@ -622,7 +622,7 @@ Config.BlipSettings = {
 		blipdisplay = 4, -- icon display
 		blipcolor = 2, -- icon color
 		blipshortrange = true, -- icon range
-		blipscale = 1.0, -- icon scale
+		blipscale = 0.5, -- icon scale
 		bliptext = "Real Estate", -- text of blip
 	},		
 }

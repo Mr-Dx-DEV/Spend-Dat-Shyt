@@ -81,7 +81,7 @@ function Interaction.OnSmash(netId, veh)
             blipData = {
                 sprite = 225,
                 color = 1,
-                scale = 1.0
+                scale = 0.5
             },
             time = 60000, -- 1 minutes
             icon = "fas fa-car"

@@ -113,7 +113,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = true, price = 500, percentVehVal = 0.01 },
@@ -178,7 +178,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = true,  price = 500, percentVehVal = 0.01 },
@@ -279,7 +279,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = false,  price = 500, percentVehVal = 0.01 },
@@ -364,7 +364,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = true, price = 500, percentVehVal = 0.01 },
@@ -417,7 +417,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = true,  price = 500, percentVehVal = 0.01 },
@@ -537,7 +537,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = true,  price = 500, percentVehVal = 0.01 },
@@ -638,7 +638,7 @@ Config.MechanicLocations = {
     blip = {
       id = 446,
       color = 47,
-      scale = 0.7
+      scale = 0.5
     },
     mods = {
       repair           = { enabled = false,  price = 500, percentVehVal = 0.01 },

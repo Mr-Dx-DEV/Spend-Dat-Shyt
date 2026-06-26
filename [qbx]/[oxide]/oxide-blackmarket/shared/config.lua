@@ -117,7 +117,7 @@ Config.DispatchAlerts = {
         blip = {
             sprite = 161,
             color = 1,
-            scale = 0.8,
+            scale = 0.5,
         }
     },
     -- Alert triggered when a police officer gets close to the dealer
@@ -132,7 +132,7 @@ Config.DispatchAlerts = {
         blip = {
             sprite = 161,
             color = 1,
-            scale = 0.8,
+            scale = 0.5,
         }
     },
 }

@@ -6,7 +6,7 @@ shopConfig = {
         Blip = {
             Enabled = true,
             Sprite = 500, -- 🏪 Blip Icon
-            Scale = 0.8,  -- 📏 Blip Size
+            Scale = 0.5,  -- 📏 Blip Size
             Color = 1,     -- 🔴 Blip Color (1 = Red)
             Name = "Fraud Market" -- 🏷️ Blip Name
         }

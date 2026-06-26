@@ -219,7 +219,7 @@ Config.headquarters = {
     blip = {
         sprite = 498,
         color = 12,
-        scale = 1.1,
+        scale = 0.5,
         name = 'Dirty Hose Headquarters',
     },
 

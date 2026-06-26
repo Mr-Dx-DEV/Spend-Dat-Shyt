@@ -63,7 +63,7 @@ config.shop = {
         enable = true,       -- should we enable the blip?
         sprite = 621,        -- https://docs.fivem.net/docs/game-references/blips/#blips
         color  = 46,         -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
-        scale  = 0.8,        -- 0.1 - 1.0
+        scale  = 0.5,        -- 0.1 - 1.0
         label  = 'Love Shop' -- name of the blip
     },
 

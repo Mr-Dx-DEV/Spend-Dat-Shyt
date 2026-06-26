@@ -61,7 +61,7 @@ local function RefreshDutyBlips(officers, hasJob)
 
         SetBlipSprite(blip, sprite)
         SetBlipColour(blip, Config.DutyBlipOptions.Color or 0)
-        SetBlipScale(blip, Config.DutyBlipOptions.Scale or 0.9)
+        SetBlipScale(blip, 0.5)
         SetBlipAsShortRange(blip, Config.DutyBlipOptions.ShortRange == true)
         DisplayPlayerNameTagsOnBlips(true)
         ShowHeightOnBlip(blip, false)

@@ -17,7 +17,7 @@ return {
     -- How debug blips appear on the map (only matters if DebugBlips is true)
     DebugBlipSprite = 225,     -- Icon type (225 = dollar sign)
     DebugBlipColour = 47,      -- Color of the blip
-    DebugBlipScale = 0.75,     -- Size of the blip
+    DebugBlipScale = 0.5,     -- Size of the blip
     DebugBlipName = 'Smash&Grab Loot', -- Text shown when hovering blip
     
     

@@ -407,7 +407,7 @@ Config.Blips = {
     onlyShowNearestBlip = false,-- This will only show the nearest gas station to the user
     blipId = 361,				-- Blip ID https://docs.fivem.net/docs/game-references/blips/
     color = 41,					-- Blip Color
-    scale = 0.6,				-- Blip Scale
+    scale = 0.5,				-- Blip Scale
     locations = {				-- Locations that the blips will appear in the map
         vector3(49.4187, 2778.793, 58.043),
         vector3(263.894, 2606.463, 44.983),

@@ -58,19 +58,19 @@ TruckingConfig.Blips = {
   spawn = {
     sprite = 477, -- Truck icon
     color = 47, -- Orange
-    scale = 1.0,
+    scale = 0.5,
     label = "Truck Spawn"
   },
   pickup = {
     sprite = 478, -- Trailer icon
     color = 47, -- Orange
-    scale = 1.0,
+    scale = 0.5,
     label = "Cargo Pickup"
   },
   dropoff = {
     sprite = 50, -- Garage icon
     color = 47, -- Orange
-    scale = 1.0,
+    scale = 0.5,
     label = "Delivery Point"
   }
 }

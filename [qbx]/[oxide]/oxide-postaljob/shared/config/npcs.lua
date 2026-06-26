@@ -4,7 +4,7 @@ Config.NpcScenario = 'WORLD_HUMAN_CLIPBOARD'
 Config.Blip = {
     sprite = 478,
     color = 5,
-    scale = 0.6,
+    scale = 0.5,
     label = 'blip.gopostal_office',
 }
 

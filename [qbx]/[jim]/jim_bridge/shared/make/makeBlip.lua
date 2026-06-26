@@ -36,7 +36,7 @@ function makeBlip(data)
     if gameName == "rdr3" then
         blip = BlipAddForCoords(1664425300, data.coords.x, data.coords.y, data.coords.z)
         SetBlipSprite(blip, data.sprite or `blip_shop_market_stall`)
-        SetBlipScale(blip, data.scale or 0.2)
+        SetBlipScale(blip, 0.5)
         SetBlipName(blip, data.name)
         --BlipSetStyle(blip, data.col or `BLIP_STYLE_CREATOR_DEFAULT`)
     else
@@ -45,7 +45,7 @@ function makeBlip(data)
         SetBlipAsShortRange(blip, true)
         SetBlipSprite(blip, data.sprite or 106)
         SetBlipColour(blip, data.col or 5)
-        SetBlipScale(blip, data.scale or 0.7)
+        SetBlipScale(blip, 0.5)
         SetBlipDisplay(blip, data.disp or 6)
         if data.category then
             SetBlipCategory(blip, data.category)
@@ -116,7 +116,7 @@ function makeEntityBlip(data)
     if gameName == "rdr3" then
         blip = BlipAddForEntity(1664425300, data.entity)
         SetBlipSprite(blip, data.sprite or `blip_ambient_coach`)
-        SetBlipScale(blip, data.scale or 0.2)
+        SetBlipScale(blip, 0.5)
         SetBlipName(blip, data.name)
 
     else
@@ -126,7 +126,7 @@ function makeEntityBlip(data)
         SetBlipAsShortRange(blip, true)
         SetBlipSprite(blip, data.sprite or 106)
         SetBlipColour(blip, data.col or 5)
-        SetBlipScale(blip, data.scale or 0.7)
+        SetBlipScale(blip, 0.5)
         SetBlipDisplay(blip, data.disp or 6)
         if data.category then SetBlipCategory(blip, data.category) end
         BeginTextCommandSetBlipName('STRING')

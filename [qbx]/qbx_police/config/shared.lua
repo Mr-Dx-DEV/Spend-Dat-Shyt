@@ -60,7 +60,7 @@ return {
                 coords = vec3(442.01, -982.12, 30.70),
                 sprite = 60,
                 color = 29,
-                scale = 1.0,
+                scale = 0.5,
                 string = 'AAO PD'
             },
 

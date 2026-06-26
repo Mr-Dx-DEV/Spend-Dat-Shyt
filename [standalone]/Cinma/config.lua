@@ -5,7 +5,7 @@ Config.Blip = {
     {
         coord = vector3(335.538452, 175.635162, 103.183105), 
         Sprite= 23 , 
-        Scale = 1.0 ,
+        Scale = 0.5 ,
         Colour = 1 , 
         Text = 'Cinema'
 

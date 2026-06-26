@@ -31,7 +31,7 @@ Config.NPC = {
     Coords = vector3(212.2207, -1523.3300, 28.3610), -- Change to your desired NPC spawn location # !!!! DECREASE THE LAST VALUE BY 1 IF FLOATING !!!! #
     Heading = 315.6622, -- Adjust the heading as needed
     BlipSprite = 621,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
-    BlipScale = 1.0,
+    BlipScale = 0.5,
     BlipColour = 8,
     BlipName = "Eyelashes & Strips"
 }

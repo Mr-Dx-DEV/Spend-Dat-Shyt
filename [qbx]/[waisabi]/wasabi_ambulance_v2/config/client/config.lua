@@ -48,7 +48,7 @@ local config = {
     blips = {                      -- The blip settings for hospitals/facilities that have blip enabled
         sprite = 61,               -- Sprite of the blip https://docs.fivem.net/docs/game-references/blips/
         color = 2,                 -- Color of the blip https://docs.fivem.net/docs/game-references/blips/
-        scale = 1.0                -- Scale of the blip
+        scale = 0.5                -- Scale of the blip
     },
 
     checkInProximityRadius = 5.0, -- Radius in meters from the check-in point to trigger the check-in while dead

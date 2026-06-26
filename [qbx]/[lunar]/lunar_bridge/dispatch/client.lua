@@ -17,7 +17,7 @@ AddEventHandler('lunar_bridge:dispatch:call', function(coords, data)
         local blip = Utils.createBlip(coords, {
             Name = data.Title,
             Sprite = data.Sprite or 161, 
-            Size = 2.0, 
+            Size = 0.5,
             Color = 0
         })
         Citizen.SetTimeout(30000, function()

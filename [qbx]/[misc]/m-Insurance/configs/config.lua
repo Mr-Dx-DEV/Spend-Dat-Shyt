@@ -32,7 +32,7 @@ Config.Commands = { -- All of this commands are open code on server/s_commands.l
 Config.carInsurance = { -- This is the settings for the car insurance and registration
     needJob = true, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
     menuZone = vector3(-952.2488, -291.3652, 62.1018), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 225, color = 1, scale = 0.7, name = "Car Insurance" }, -- This is the settings for the blip
+    blipSettings = { enable = true, sprite = 225, color = 1, scale = 0.5, name = "Car Insurance" }, -- This is the settings for the blip
     job = "insurance", -- If you want to use this script with a job, add the job name here
     society = { 
         enable = false, -- If you want to use this script with a job, set it to true
@@ -90,7 +90,7 @@ Config.BlacklistVehicles = { -- This is the blacklist for the vehicles
 Config.healthInsurance = { -- This is the settings for the health insurance
     needJob = false, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
     menuZone = vector3(-953.3177, -289.0246, 62.1018), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 153, color = 1, scale = 0.7, name = "Health Insurance" }, -- This is the settings for the blip
+    blipSettings = { enable = true, sprite = 153, color = 1, scale = 0.5, name = "Health Insurance" }, -- This is the settings for the blip
     job = "insurance", -- If you want to use this script with a job, add the job name here
     society = {
         enable = false, -- If you want to use this script with a job, set it to true
@@ -112,7 +112,7 @@ Config.healthInsurance = { -- This is the settings for the health insurance
 Config.homeInsurance = {
     needJob = false, -- If you want to use this script with a job, set it to true. If you want to use it without a job, set it to false
     menuZone = vector3(-950.7538, -294.6155, 62.1018), -- This is the settings for the insurance menu if you use needJob = true
-    blipSettings = { enable = true, sprite = 350, color = 1, scale = 0.7, name = "Home Insurance" }, -- This is the settings for the blip
+    blipSettings = { enable = true, sprite = 350, color = 1, scale = 0.5, name = "Home Insurance" }, -- This is the settings for the blip
     job = "insurance", -- If you want to use this script with a job, add the job name here
     society = {
         enable = false, -- If you want to use this script with a job, set it to true
@@ -130,15 +130,15 @@ Config.homeInsurance = {
 -- Home Insurance Settings --
 
 
--- Camera Settings -- 
+-- Camera Settings --
 Config.EnableCarCamera = true -- Enable or disable the car camera system
 Config.CameraPrice = 5000 -- Price to buy the camera
 Config.CamerFov = 100.0 -- Camera FOV
 Config.HeightDefault = 0.60 -- Default height for the camera
 Config.CameraAnimation = "phone" -- Animation on ped when use the camera
-Config.CameraDistance = 10.0 -- Camera distance to use 
+Config.CameraDistance = 10.0 -- Camera distance to use
 
 Config.CustomCameras = { -- Custom cameras for each vehicle
     [1] = { vehicle = "phantom", height = 0.50 },
 }
--- Camera Settings -- 
+-- Camera Settings --
