@@ -64,7 +64,7 @@ local config = {
     --- Dispatch Settings
     --- Supported types: "internal", "cd_dispatch", "ps-dispatch", "none"
     dispatch = {
-        type = "internal", -- Type of dispatch system to use
+        type = "ps-dispatch", -- Type of dispatch system to use
         allowedJobs = {    -- Jobs that can access the internal dispatch menu / receive dispatch alerts
             'ambulance',
             'ems',
@@ -77,7 +77,7 @@ local config = {
     --- Respawn Settings
     respawn = {
         respawnTime = 180,                    -- Time (in seconds) before a player can respawn
-        forcedRespawnTime = 600,              -- Time (in seconds) before a player is forced to respawn    
+        forcedRespawnTime = 600,              -- Time (in seconds) before a player is forced to respawn
         wipeItems = true,                           -- Whether or not to wipe items when respawning
         itemsToKeep = { 'water', 'bandage' },       -- These items will be kept when respawning
         keepItemsIfNoEMS = true,                    -- Whether or not to keep items if EMS is not available
@@ -92,18 +92,18 @@ local config = {
         defaultDuration = 3, -- Default crutch duration when a flow does not override duration
 
         hospitalRespawn = {
-            enabled = true, -- Give crutch after normal hospital/facility respawn completes
-            duration = 15,
+            enabled = false, -- Give crutch after normal hospital/facility respawn completes
+            duration = 3,
         },
 
         standaloneCheckIn = {
-            enabled = true, -- Give crutch after standalone/special facility respawn completes
-            duration = 15,
+            enabled = false, -- Give crutch after standalone/special facility respawn completes
+            duration = 3,
         },
 
         normalCheckIn = {
-            enabled = true, -- Give crutch after normal check-in treatment completes
-            duration = 15,
+            enabled = false, -- Give crutch after normal check-in treatment completes
+            duration = 3,
         },
 
         policeRespawn = {
@@ -142,7 +142,7 @@ local config = {
     healingItems = {
         ['bandage'] = {
             -- requiredJob = false, -- Uncomment to allow anyone to use this item despite global healingItemJobs restriction.
-            healAmount = 50,
+            healAmount = 25,
             remove = 1,
             healOverTime = {
                 amount = 5,
@@ -184,7 +184,7 @@ local config = {
         },
         ['medkit'] = {
             remove = 1,
-            healAmount = 100,
+            healAmount = 50,
             healOverTime = {
                 amount = 10,
                 interval = 1000,
@@ -263,7 +263,7 @@ local config = {
         },
         ['painkillers'] = {
             remove = 1,
-            healAmount = 25,
+            healAmount = 10,
             useTime = 2000,
             progress = {
                 label = "Taking painkillers...",
@@ -334,15 +334,15 @@ local config = {
         --bone = 'bag_med_01a',
         items = {
             --  { 'water',     10, 'Water' }, -- Item, amount, label (Amount will not apply to non-metadata inventories)
-            { 'bandage',   100, 'Bandage' },
-            { 'medkit',    100, 'Medkit' },
-            { 'forceps',   100, 'Forceps' },
-            { 'pliers',    100, 'Pliers' },
-            { 'suture',    100, 'Suture' },
-            { 'splint',    100, 'Splint' },
-            { 'burncream', 100, 'Burn Cream' },
-            { 'icepack',   100, 'Ice Pack' },
-            { 'traumakit', 100, 'Trauma Kit' },
+            { 'bandage',   10, 'Bandage' },
+            { 'medkit',    10, 'Medkit' },
+            { 'forceps',   10, 'Forceps' },
+            { 'pliers',    10, 'Pliers' },
+            { 'suture',    10, 'Suture' },
+            { 'splint',    10, 'Splint' },
+            { 'burncream', 10, 'Burn Cream' },
+            { 'icepack',   10, 'Ice Pack' },
+            { 'traumakit', 10, 'Trauma Kit' },
         },
     },
 
@@ -531,9 +531,9 @@ local config = {
     --- Future support planned for: "wasabi_garage", "jg_advancedgarage", "cd_garage", "ps_garage",
     --- "qb-garage", "esx_garage"
     garages = {
-        enabled = true,
+        enabled = false,
         requireDuty = false, -- If true, player must be on duty to access garage
-        type = 'jg_advancedgarage',   -- Type of garage system to use
+        type = 'internal',   -- Type of garage system to use
 
 
         -- If type = 'internal', set the garage vehicle options here

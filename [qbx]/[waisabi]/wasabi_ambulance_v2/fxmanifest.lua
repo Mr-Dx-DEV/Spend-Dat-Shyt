@@ -9,7 +9,7 @@ game "gta5"
 
 description 'Advanced Ambulance Job v2 By Wasabi Scripts'
 author 'Wasabi Scripts'
-version '2.1.9'
+version '2.1.9b'
 
 ui_page "ui/build/index.html"
 

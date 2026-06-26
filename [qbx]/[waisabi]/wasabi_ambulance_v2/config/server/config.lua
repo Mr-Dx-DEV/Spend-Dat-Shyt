@@ -26,9 +26,9 @@ local config = {
     --- Allows players to kill themselves (or admins to kill others)
     --- Usage: /kill [playerId] (playerId optional, defaults to self)
     killCommand = {
-        enabled = false,           -- Set to true to enable the /kill command
+        enabled = true,           -- Set to true to enable the /kill command
         command = 'kill',          -- Command name
-        adminOnly = false,         -- If true, only admin groups can use the command
+        adminOnly = true,         -- If true, only admin groups can use the command
         adminCanKillOthers = true, -- If true, admins can specify a playerId to kill another player
     },
 
