@@ -90,13 +90,14 @@ SDC.VehicleKeys = "framework" --[[ SET UP YOUR VEHICLE KEYS RESOURCE HERE
 ]]
 
 
-SDC.FuelResource = "none" --[[ SET UP YOUR FUEL RESOURCE HERE
+SDC.FuelResource = "lc_fuel" --[[ SET UP YOUR FUEL RESOURCE HERE
 
     Can Be Anyone Of The Following Options Below: (If you have others it should be fine to just put the resource name)
 
     "none" --This will disable the fuel functions for all resources
     "LegacyFuel" --This will utilize functions from LegacyFuel
     "MSK_Fuel" --This will utilize functions from MSK_Fuel
+    "lc_fuel" --This will utilize functions from lc_fuel
 
 ]]
 

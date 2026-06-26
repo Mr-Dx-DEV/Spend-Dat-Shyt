@@ -21,7 +21,7 @@ CustomServer.Framework = 'auto'
 -- Uncomment ONE line to override item giving  --
 -- Leave all commented = use built-in default  --
 -------------------------------------------------
-CustomServer.Inventory = 'default'
+CustomServer.Inventory = 'ox_inventory'
 -- CustomServer.Inventory = 'ox_inventory'
 -- CustomServer.Inventory = 'qs-inventory'
 -- CustomServer.Inventory = 'ps-inventory'
@@ -36,7 +36,7 @@ CustomServer.Inventory = 'default'
 -- Uncomment ONE line to override vehicle reg  --
 -- Leave all commented = use built-in default  --
 -------------------------------------------------
-CustomServer.Garage = 'default'
+CustomServer.Garage = 'jg-advancedgarages'
 -- CustomServer.Garage = 'qs-advancedgarages'
 -- CustomServer.Garage = 'jg-advancedgarages'
 -- CustomServer.Garage = 'loaf_garage'
@@ -57,7 +57,7 @@ CustomServer.GarageName = 'pillboxgarage'
 -- Uncomment ONE line for key integration      --
 -- Leave all commented = use built-in events   --
 -------------------------------------------------
-CustomServer.VehicleKeys = 'default'
+CustomServer.VehicleKeys = 'wasabi_carlock'
 -- CustomServer.VehicleKeys = 'qb-vehiclekeys'
 -- CustomServer.VehicleKeys = 'qs-vehiclekeys'
 -- CustomServer.VehicleKeys = 'wasabi_carlock'
@@ -72,7 +72,7 @@ CustomServer.VehicleKeys = 'default'
 -- Uncomment ONE line to override notifs       --
 -- Leave all commented = use fearx_bridge      --
 -------------------------------------------------
-CustomServer.Notification = 'default'
+CustomServer.Notification = 'ox_lib'
 -- CustomServer.Notification = 'ox_lib'
 -- CustomServer.Notification = 'okokNotify'
 -- CustomServer.Notification = 'wasabi_notify'

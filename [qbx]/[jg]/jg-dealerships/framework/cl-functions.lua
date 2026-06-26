@@ -232,7 +232,7 @@ end
 function Framework.Client.VehicleGetFuel(vehicle)
   if not DoesEntityExist(vehicle) then return 0 end
 
-  if (Config.FuelSystem == "LegacyFuel" or Config.FuelSystem == "ps-fuel" or Config.FuelSystem == "lj-fuel" or Config.FuelSystem == "cdn-fuel" or Config.FuelSystem == "hyon_gas_station" or Config.FuelSystem == "okokGasStation" or Config.FuelSystem == "nd_fuel" or Config.FuelSystem == "myFuel" or Config.FuelSystem == "rcore_fuel" or Config.Fuelsystem == "qs-fuelstations") then
+  if (Config.FuelSystem == "LegacyFuel" or Config.FuelSystem == "ps-fuel" or Config.FuelSystem == "lj-fuel" or Config.FuelSystem == "cdn-fuel" or Config.FuelSystem == "hyon_gas_station" or Config.FuelSystem == "okokGasStation" or Config.FuelSystem == "nd_fuel" or Config.FuelSystem == "myFuel" or Config.FuelSystem == "rcore_fuel" or Config.Fuelsystem == "qs-fuelstations" or Config.FuelSystem == "lc_fuel") then
     return exports[Config.FuelSystem]:GetFuel(vehicle)
   elseif Config.FuelSystem == "ti_fuel" then
     local level, type = exports["ti_fuel"]:getFuel(vehicle)
@@ -252,7 +252,7 @@ end
 function Framework.Client.VehicleSetFuel(vehicle, fuel)
   if not DoesEntityExist(vehicle) then return false end
 
-  if (Config.FuelSystem == "LegacyFuel" or Config.FuelSystem == "ps-fuel" or Config.FuelSystem == "lj-fuel" or Config.FuelSystem == "cdn-fuel" or Config.FuelSystem == "hyon_gas_station" or Config.FuelSystem == "okokGasStation" or Config.FuelSystem == "nd_fuel" or Config.FuelSystem == "myFuel" or Config.FuelSystem == "Renewed-Fuel" or Config.FuelSystem == "rcore_fuel" or Config.FuelSystem == "qs-fuelstations") then
+  if (Config.FuelSystem == "LegacyFuel" or Config.FuelSystem == "ps-fuel" or Config.FuelSystem == "lj-fuel" or Config.FuelSystem == "cdn-fuel" or Config.FuelSystem == "hyon_gas_station" or Config.FuelSystem == "okokGasStation" or Config.FuelSystem == "nd_fuel" or Config.FuelSystem == "myFuel" or Config.FuelSystem == "Renewed-Fuel" or Config.FuelSystem == "rcore_fuel" or Config.FuelSystem == "qs-fuelstations" or Config.FuelSystem == "lc_fuel") then
     exports[Config.FuelSystem]:SetFuel(vehicle, fuel)
   elseif Config.FuelSystem == "ti_fuel" then
     local fuelType = lib.callback.await("jg-dealerships:server:get-ti-fuel-type", false, Framework.Client.GetPlate(vehicle))

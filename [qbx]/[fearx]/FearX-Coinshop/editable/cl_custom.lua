@@ -11,7 +11,7 @@ CustomClient = {}
 -- Uncomment ONE line for key integration      --
 -- Leave all commented = use built-in events   --
 -------------------------------------------------
-CustomClient.VehicleKeys = 'default'
+CustomClient.VehicleKeys = 'wasabi_carlock'
 -- CustomClient.VehicleKeys = 'qb-vehiclekeys'
 -- CustomClient.VehicleKeys = 'qs-vehiclekeys'
 -- CustomClient.VehicleKeys = 'wasabi_carlock'
@@ -27,7 +27,7 @@ CustomClient.VehicleKeys = 'default'
 -- Uncomment ONE line to override notifs       --
 -- Leave all commented = use fearx_bridge      --
 -------------------------------------------------
-CustomClient.Notification = 'default'
+CustomClient.Notification = 'ox_lib'
 -- CustomClient.Notification = 'ox_lib'
 -- CustomClient.Notification = 'okokNotify'
 -- CustomClient.Notification = 'wasabi_notify'
@@ -40,7 +40,7 @@ CustomClient.Notification = 'default'
 -- Set purchased vehicles to full fuel         --
 -- Uncomment ONE line for your fuel script     --
 -------------------------------------------------
-CustomClient.Fuel = 'default'
+CustomClient.Fuel = 'ox_fuel'
 -- CustomClient.Fuel = 'ox_fuel'
 -- CustomClient.Fuel = 'LegacyFuel'
 -- CustomClient.Fuel = 'ps-fuel'

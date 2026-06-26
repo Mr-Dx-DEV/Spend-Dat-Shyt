@@ -61,7 +61,7 @@ Link.inventory = 'auto'
 --- '17mov' -- Notifications system made by 17Movement
 ---
 --- 'standalone' -- A standalone solution will be used for notifications (top left display)
-Link.notifications = 'standalone'
+Link.notifications = 'ox'
 
 
 ------------------------
@@ -70,14 +70,14 @@ Link.notifications = 'standalone'
 Link.input = {
     target = {
         -- Whether to use a targeting system
-        enabled = false,
+        enabled = true,
         --- 'ox_target' -- ox targeting system
         --- 'qb-target' -- QBCore targeting system
         --- 'qtarget' -- The classic qtarget system commonly used in esx
         --- 'interact' -- Interact system by darktrovx
         ---
         --- You may also try entering the name of other targeting systems, as they often use very similar exports.
-        system = 'qb-target'
+        system = 'ox_target'
     },
 
     -- Only applicable when target is disabled
@@ -114,7 +114,7 @@ Link.input = {
 ---
 --- 'standalone' -- Built in dispatch system
 Link.dispatch = {
-    system = 'standalone'
+    system = 'ps'
 }
 
 
@@ -130,4 +130,4 @@ Link.dispatch = {
 --- 'renewed' -- Renewed vehicle keys system
 ---
 --- 'standalone' -- Set to this option if you are not using any vehicle keys systems
-Link.vehiclekeys = 'auto'
+Link.vehiclekeys = 'wasabi_carlock'

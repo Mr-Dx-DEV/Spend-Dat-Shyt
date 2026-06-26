@@ -19,10 +19,10 @@ Config.format = {
 -- The "default" option will use the framework's default script
 -- ATTENTION: If you set it to "other," it's necessary to configure the script inside the custom_scripts folder in the respective file. See: https://docs.lixeirocharmoso.com/utils/adding_your_exports
 Config.custom_scripts_compatibility = {
-	['fuel'] = "default",						-- [lc_fuel|ox_fuel|ti_fuel|ps-fuel|sna-fuel|cdn-fuel|LegacyFuel|okokGasStation|default|other] Fuel script Compatibility
+	['fuel'] = "lc_fuel",						-- [lc_fuel|ox_fuel|ti_fuel|ps-fuel|sna-fuel|cdn-fuel|LegacyFuel|okokGasStation|default|other] Fuel script Compatibility
 	['inventory'] = "ox_inventory",				-- [ox_inventory|qs-inventory|ps-inventory|tgiann-inventory|default|other] Inventory script Compatibility
 	['keys'] = "wasabi_carlock",						-- [qs-vehiclekeys|cd_garage|jaksam|wasabi_carlock|MrNewbVehicleKeys|tgiann-hotwire|Renewed|okokGarage|default|other] Keys script Compatibility
-	['mdt'] = "default",						-- [ps-mdt|redutzu-mdt|lb-tablet|default|other] MDT script Compatibility (to log weapon serial)
+	['mdt'] = "lb-tablet",						-- [ps-mdt|redutzu-mdt|lb-tablet|default|other] MDT script Compatibility (to log weapon serial)
 	['target'] = "disabled",					-- [qb-target|ox_target|disabled|other] Target script Compatibility (disabled will use markers)
 	['notification'] = "ox_lib",				-- [okokNotify|qbcore|ox_lib|default|other] Notification script Compatibility
 	['progress_bar'] = "default",				-- [default|other] Progress Bar script Compatibility

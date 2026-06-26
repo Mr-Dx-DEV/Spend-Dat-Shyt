@@ -10,8 +10,8 @@ Config.DistanceUnit = "mi" -- or "km"
 -- Framework & Integrations
 Config.Framework = "auto" -- or "QBCore", "Qbox", "ESX"
 Config.Banking = "Renewed-Banking" -- or "okokBanking", "fd_banking", "Renewed-Banking", "qb-banking", "qb-management", "esx_addonaccount"
-Config.FuelSystem = "none" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "Renewed-Fuel", "rcore_fuel", "qs-fuelstations", "none"
-Config.VehicleKeys = "none" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "tgiann-hotwire", "none"
+Config.FuelSystem = "lc_fuel" -- or "LegacyFuel", "ps-fuel", "lj-fuel", "ox_fuel", "cdn-fuel", "hyon_gas_station", "okokGasStation", "nd_fuel", "myFuel", "ti_fuel", "Renewed-Fuel", "rcore_fuel", "qs-fuelstations", "lc_fuel", "none"
+Config.VehicleKeys = "wasabi_carlock" -- or "qb-vehiclekeys", "MrNewbVehicleKeys", "jaksam-vehicles-keys", "qs-vehiclekeys", "mk_vehiclekeys", "wasabi_carlock", "cd_garage", "okokGarage", "t1ger_keys", "Renewed", "tgiann-hotwire", "none"
 Config.Notifications = "auto" -- or "default", "okokNotify", "ox_lib", "ps-ui"
 
 -- Interactions
