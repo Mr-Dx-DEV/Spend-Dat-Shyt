@@ -40,25 +40,28 @@ Queries.Users.Filter.Gender = "JSON_EXTRACT(user.charinfo, '$.gender') = ?"
 Queries.Users.Filter.License = "JSON_UNQUOTE(JSON_EXTRACT(user.metadata, '$.licences.%s')) = 'true'"
 
 if Config.JailScript == "qb" then
-    Queries.Users.Filter.ExcludeJailed = "NOT EXISTS (SELECT 1 FROM lbtablet_police_jail jail WHERE jail.prisoner = user.citizenid {USERS_COLLATE} AND jail.jail_time > 0)"
+    Queries.Users.Filter.ExcludeJailed = "NOT EXISTS (SELECT 1 FROM lbtablet_mdt_jail jail WHERE jail.prisoner = user.citizenid {USERS_COLLATE} AND jail.remaining_time > 0)"
 end
 
 Queries.Users.FetchProfile = [[
     SELECT
         user.citizenid AS id,
+        profile.id AS profileId,
+        profile.avatar,
         CONCAT(JSON_VALUE(user.charinfo, '$.firstname'), ' ', JSON_VALUE(user.charinfo, '$.lastname')) AS `name`,
         JSON_VALUE(user.charinfo, '$.birthdate') AS dob,
         JSON_EXTRACT(user.charinfo, '$.gender') = 0 AS isMale,
         JSON_UNQUOTE(JSON_EXTRACT(user.metadata, '$.bloodtype')) AS bloodType,
         JSON_UNQUOTE(JSON_EXTRACT(user.metadata, '$.fingerprint')) AS fingerprint,
-        profile.avatar,
-        profile.notes,
         JSON_VALUE(user.job, '$.grade.name') AS jobGrade,
         JSON_VALUE(user.job, '$.label') AS job
 
     FROM players user
 
-    LEFT JOIN {PROFILE_JOIN} profile ON profile.id = user.citizenid {USERS_COLLATE}
+    LEFT JOIN lbtablet_mdt_profiles profile ON
+        profile.profile_id = user.citizenid {USERS_COLLATE}
+        AND profile.profile_type = 'player'
+        AND profile.department = ?
 
     WHERE user.citizenid = ?
 ]]

@@ -16,7 +16,8 @@
     },
     "sound": {
         "volume": 0.5,
-        "silent": false
+        "silent": false,
+        "texttone": "default"
     },
     "lockscreen": {
         "color": "gradient",

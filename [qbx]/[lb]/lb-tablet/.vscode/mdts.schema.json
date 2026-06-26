@@ -1,0 +1,589 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "MDT App Configuration",
+    "type": "object",
+    "properties": {
+        "$schema": { "type": "string" }
+    },
+    "additionalProperties": {
+        "type": "object",
+        "if": {
+            "required": ["copy"]
+        },
+        "then": {},
+        "else": {
+            "required": ["name", "appIcon", "icon", "colorTheme", "defaultPermissions", "tabs"]
+        },
+        "properties": {
+            "copy": {
+                "type": "string",
+                "markdownDescription": "Copy all settings from another MDT key. When present, all other top-level fields become optional."
+            },
+            "disabledTabs": {
+                "type": "array",
+                "items": { "type": "string" },
+                "markdownDescription": "List of tab `type` or `id` values to disable. Only valid when `copy` is set."
+            },
+            "name": {
+                "type": "string",
+                "markdownDescription": "Display name of the MDT app."
+            },
+            "department": {
+                "type": "string",
+                "markdownDescription": "Department name shown in the MDT header."
+            },
+            "deviceName": {
+                "type": "string",
+                "markdownDescription": "Device display name, e.g. `Mobile Database Terminal`."
+            },
+            "appIcon": {
+                "type": "string",
+                "pattern": "^(\\./assets/|https://).*\\.(png|jpg|webp)$",
+                "markdownDescription": "App icon path. Must start with `./assets/` or `https://` and end with `.png`, `.jpg`, or `.webp`."
+            },
+            "icon": {
+                "type": "string",
+                "pattern": "^(\\./assets/|https://).*\\.(png|jpg|webp|png)$",
+                "markdownDescription": "MDT icon path. Must start with `./assets/` or `https://` and end with `.png`, `.jpg`, or `.webp`."
+            },
+            "colorTheme": {
+                "type": "string",
+                "pattern": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+                "markdownDescription": "Hex color theme for this MDT, e.g. `#348de9`."
+            },
+            "jobs": {
+                "type": "array",
+                "items": { "type": "string" },
+                "markdownDescription": "List of job names that can access this MDT. If omitted, the MDT key name is used as the job."
+            },
+            "callsign": {
+                "type": "object",
+                "required": ["enabled", "format"],
+                "properties": {
+                    "enabled": {
+                        "type": "boolean",
+                        "markdownDescription": "Whether callsigns are enabled for this MDT."
+                    },
+                    "format": {
+                        "type": "string",
+                        "markdownDescription": "Callsign format template, e.g. `[11-11]` or `[E-111]`."
+                    },
+                    "requireTemplate": {
+                        "type": "boolean",
+                        "markdownDescription": "Whether the callsign must match the format template."
+                    },
+                    "allowChange": {
+                        "type": "boolean",
+                        "markdownDescription": "Whether users can change their own callsign."
+                    },
+                    "autoGenerate": {
+                        "type": "boolean",
+                        "markdownDescription": "Whether callsigns are auto-generated on duty."
+                    }
+                },
+                "additionalProperties": false
+            },
+            "options": {
+                "type": "object",
+                "markdownDescription": "MDT-specific options. Common keys: `dutyBlips` (boolean), `stackCriminalCharges` (boolean).",
+                "additionalProperties": {
+                    "anyOf": [{ "type": "boolean" }, { "type": "string" }, { "type": "number" }]
+                }
+            },
+            "defaultPermissions": {
+                "type": "object",
+                "markdownDescription": "Default permissions per job. Keys are job names.",
+                "additionalProperties": { "$ref": "#/$defs/permissionMap" }
+            },
+            "tabs": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/tabObject" },
+                "markdownDescription": "Ordered list of tabs shown in this MDT."
+            }
+        }
+    },
+    "$defs": {
+        "perm": {
+            "markdownDescription": "Permission level: a grade threshold, a specific array of grades, or a boolean.",
+            "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }]
+        },
+        "color": {
+            "type": "string",
+            "enum": ["green", "red", "orange", "blue", "yellow", "gray", "purple", "white"]
+        },
+        "permissionMap": {
+            "type": "object",
+            "markdownDescription": "Permission map for a job. Keys are permission names.",
+            "properties": {
+                "view": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**view** — Minimum grade required to open and read entries in this tab."
+                },
+                "create": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**create** — Minimum grade required to create new entries."
+                },
+                "edit": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**edit** — Minimum grade required to edit existing entries."
+                },
+                "delete": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**delete** — Minimum grade required to delete entries."
+                },
+                "pin": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**pin** — Minimum grade required to pin/unpin bulletin posts."
+                },
+                "kick": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**kick** — Minimum grade required to kick members from units or chat rooms."
+                },
+                "stash": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**stash** — Minimum grade required to access the evidence stash on a case."
+                },
+                "private": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**private** — Minimum grade required to create or view private reports and entries."
+                },
+                "fine": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**fine** — Minimum grade required to issue fines to civilians from the Profiles tab."
+                },
+                "triangulate": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**triangulate** — Minimum grade required to triangulate a phone location via cell towers."
+                },
+                "unlock": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**unlock** — Minimum grade required to brute-force unlock a confiscated phone."
+                },
+                "callHistory": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**callHistory** — Minimum grade required to look up a phone's call history."
+                },
+                "createWiretap": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**createWiretap** — Minimum grade required to place a wiretap on a phone number."
+                },
+                "listenWiretap": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**listenWiretap** — Minimum grade required to listen to active wiretaps."
+                },
+                "messageWiretap": {
+                    "anyOf": [
+                        { "type": "integer", "minimum": 0 },
+                        { "type": "boolean" },
+                        { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+                    ],
+                    "markdownDescription": "**messageWiretap** — Minimum grade required to read messages from active wiretaps."
+                },
+                "removeWiretap": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**removeWiretap** — Minimum grade required to remove an existing wiretap placed by another officer."
+                },
+                "invite": {
+                    "anyOf": [{ "type": "integer", "minimum": 0 }, { "type": "boolean" }, { "type": "array", "items": { "type": "integer", "minimum": 0 } }],
+                    "markdownDescription": "**invite** — Minimum grade required to invite other members to a chat room."
+                }
+            },
+            "additionalProperties": false
+        },
+        "tabPermissions": {
+            "type": "object",
+            "markdownDescription": "Per-job permission overrides for this tab.",
+            "additionalProperties": { "$ref": "#/$defs/permissionMap" }
+        },
+        "tabObject": {
+            "type": "object",
+            "required": ["type", "label", "icon"],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": ["home", "bulletin", "units", "dispatch", "users", "vehicles", "properties", "weapons", "reports", "catalog", "employees", "chat", "phone", "jail", "logs"],
+                    "markdownDescription": "Tab type."
+                },
+                "id": {
+                    "type": "string",
+                    "markdownDescription": "Unique tab identifier. Required for `reports` type tabs to distinguish reports / cases / warrants etc."
+                },
+                "label": { "type": "string", "markdownDescription": "Tab label shown in the navigation bar." },
+                "icon": {
+                    "type": "string",
+                    "markdownDescription": "Ionicon component name, e.g. `IoHome`, `IoFolder`, `IoRadio`."
+                },
+                "name": {
+                    "type": "string",
+                    "markdownDescription": "Singular entity name used in buttons and headings, e.g. `report`, `warrant`, `offence`."
+                },
+                "shared": {
+                    "type": "boolean",
+                    "markdownDescription": "When `true`, this tab reads from and writes to the reports stored under the MDT specified by `mdt`. Field definitions are automatically copied from the source MDT's matching tab at startup. Requires `mdt` to be set."
+                },
+                "mdt": {
+                    "type": "string",
+                    "markdownDescription": "The key of the MDT whose reports this shared tab reads from and writes to. Required when `shared` is `true`."
+                },
+                "content": {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "markdownDescription": "Tab `type` or `id` values to render on the home screen. Required for `home` type."
+                },
+                "permissions": { "$ref": "#/$defs/tabPermissions" },
+                "fields": {
+                    "type": "array",
+                    "items": { "$ref": "#/$defs/fieldObject" },
+                    "markdownDescription": "Fields shown when viewing or editing an entry in this tab."
+                },
+                "default": {
+                    "type": "object",
+                    "required": ["status", "units"],
+                    "properties": {
+                        "status": { "type": "string", "markdownDescription": "Default unit status key." },
+                        "units": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": ["name", "status"],
+                                "properties": {
+                                    "name": { "type": "string" },
+                                    "status": { "type": "string" }
+                                },
+                                "additionalProperties": false
+                            },
+                            "markdownDescription": "Default units."
+                        }
+                    },
+                    "additionalProperties": false,
+                    "markdownDescription": "Default state for the units board. Required for `units` type."
+                },
+                "statuses": {
+                    "type": "object",
+                    "markdownDescription": "Available unit statuses. Required for `units` type.",
+                    "additionalProperties": {
+                        "type": "object",
+                        "required": ["label", "color"],
+                        "properties": {
+                            "label": { "type": "string" },
+                            "color": { "$ref": "#/$defs/color" }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "price": {
+                    "type": "string",
+                    "markdownDescription": "Column header label for the fine/price column. Used in `catalog` type."
+                },
+                "jail": {
+                    "type": "boolean",
+                    "markdownDescription": "Whether jail time fields are shown in this catalog."
+                },
+                "severities": {
+                    "type": "array",
+                    "markdownDescription": "Severity levels for a `catalog` tab. Required for `catalog` type.",
+                    "items": {
+                        "type": "object",
+                        "required": ["id", "color"],
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "markdownDescription": "Severity identifier shown in the UI, e.g. `Felony`."
+                            },
+                            "color": { "$ref": "#/$defs/color" }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "triangulation": {
+                    "type": "object",
+                    "markdownDescription": "Phone triangulation settings. Required for `phone` type.",
+                    "required": ["requireCall", "cellTowerTime", "successRate", "rangeMultiplier"],
+                    "properties": {
+                        "requireCall": {
+                            "type": "boolean",
+                            "markdownDescription": "Require an active call to triangulate."
+                        },
+                        "cellTowerTime": {
+                            "type": "number",
+                            "markdownDescription": "Milliseconds between cell tower position updates."
+                        },
+                        "successRate": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "markdownDescription": "Percentage chance of a successful triangulation."
+                        },
+                        "rangeMultiplier": {
+                            "type": "number",
+                            "markdownDescription": "Multiplier applied to cell tower detection range."
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "unlock": {
+                    "type": "object",
+                    "markdownDescription": "Phone unlock (brute-force) settings for `phone` type.",
+                    "required": ["time", "chance", "attempts"],
+                    "properties": {
+                        "time": {
+                            "type": "array",
+                            "items": { "type": "number" },
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "markdownDescription": "[min, max] time range in seconds for the unlock attempt."
+                        },
+                        "chance": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "markdownDescription": "Percentage chance that each attempt succeeds."
+                        },
+                        "attempts": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "markdownDescription": "Maximum number of unlock attempts allowed."
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "wiretap": {
+                    "type": "object",
+                    "markdownDescription": "Wiretap settings for `phone` type.",
+                    "properties": {
+                        "minCallDuration": {
+                            "type": "number",
+                            "minimum": 0,
+                            "markdownDescription": "Minimum call duration in seconds for a wiretap to be recorded."
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "allOf": [
+                {
+                    "if": { "properties": { "type": { "const": "reports" } }, "required": ["type"] },
+                    "then": { "required": ["id"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "home" } }, "required": ["type"] },
+                    "then": { "required": ["content"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "phone" } }, "required": ["type"] },
+                    "then": { "required": ["triangulation", "unlock", "wiretap"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "units" } }, "required": ["type"] },
+                    "then": { "required": ["statuses", "default"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "catalog" } }, "required": ["type"] },
+                    "then": { "required": ["name", "severities"] }
+                },
+                {
+                    "if": { "properties": { "shared": { "const": true } }, "required": ["shared"] },
+                    "then": { "required": ["mdt"] }
+                }
+            ]
+        },
+        "fieldObject": {
+            "type": "object",
+            "required": ["id", "type", "label"],
+            "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "multiple": { "type": "boolean", "markdownDescription": "Allow multiple entries for this field." },
+                "editable": {
+                    "type": "boolean",
+                    "markdownDescription": "Whether this field can be edited by the user. Defaults to `true`."
+                },
+                "color": {
+                    "type": "string",
+                    "markdownDescription": "Display color for entries in this field (named color or hex)."
+                },
+                "showInList": {
+                    "type": "boolean",
+                    "markdownDescription": "Show this field's value in the report list view."
+                },
+                "type": {
+                    "type": "string",
+                    "enum": ["text", "dropdown", "tag", "photo", "weapon", "employee", "person", "linked", "vehicle", "vehicles", "property", "properties", "target", "profile", "charges", "licenses", "entity", "stash", "slider", "date", "location"],
+                    "markdownDescription": "Field type."
+                },
+                "template": {
+                    "type": "string",
+                    "markdownDescription": "Markdown pre-fill template for `text` fields."
+                },
+                "size": {
+                    "type": "string",
+                    "enum": ["short", "medium", "long"],
+                    "markdownDescription": "Display size hint for `text` fields."
+                },
+                "liveEdit": {
+                    "type": "boolean",
+                    "markdownDescription": "Enable the live markdown editor for `text` fields."
+                },
+                "options": {
+                    "type": "array",
+                    "markdownDescription": "Options for `dropdown` fields. Can be plain strings or objects with `id`, `label`, `color`, `default`.",
+                    "items": {
+                        "oneOf": [
+                            { "type": "string" },
+                            {
+                                "type": "object",
+                                "required": ["id", "label"],
+                                "properties": {
+                                    "id": { "type": "string" },
+                                    "label": { "type": "string" },
+                                    "color": { "$ref": "#/$defs/color" },
+                                    "default": {
+                                        "type": "boolean",
+                                        "markdownDescription": "Pre-select this option by default."
+                                    }
+                                },
+                                "additionalProperties": false
+                            }
+                        ]
+                    }
+                },
+                "entityFields": {
+                    "type": "array",
+                    "items": { "$ref": "#/$defs/entityFieldConfig" },
+                    "markdownDescription": "Sub-fields to display for an `entity` field. Required for `entity` type."
+                },
+                "subtitle": {
+                    "markdownDescription": "Subtitle under the name for `entity` (profile) and `target`/`profile` fields. Dot paths into the data; combine with `+` (e.g. `id+color.label`). Formats: `dob~age`, `phone~phone`, `isMale~gender`. `false` hides. If omitted: entity uses `users.default.job`; targets use built-in defaults per target type.",
+                    "anyOf": [{ "type": "string" }, { "type": "boolean" }]
+                },
+                "linkType": {
+                    "type": "string",
+                    "enum": ["reports", "vehicles", "properties", "weapons"],
+                    "markdownDescription": "The category of data to link to. Required for `linked` fields."
+                },
+                "linkId": {
+                    "type": "string",
+                    "markdownDescription": "The specific report tab `id` to link to, e.g. `warrants`, `cases`."
+                },
+                "catalog": {
+                    "type": "boolean",
+                    "markdownDescription": "Show the criminal catalog lookup for `person` fields."
+                },
+                "vehicle": {
+                    "type": "boolean",
+                    "markdownDescription": "Enable vehicle selection for `target` fields."
+                },
+                "person": {
+                    "type": "boolean",
+                    "markdownDescription": "Enable person selection for `target` fields."
+                },
+                "involvement": {
+                    "type": "object",
+                    "additionalProperties": { "type": "boolean" },
+                    "markdownDescription": "Involvement filter map used when querying linked records."
+                },
+                "min": { "type": "number", "markdownDescription": "Minimum value for `slider` fields." },
+                "max": { "type": "number", "markdownDescription": "Maximum value for `slider` fields." },
+                "step": { "type": "number", "markdownDescription": "Step increment for `slider` fields." },
+                "sliderLabels": {
+                    "type": "object",
+                    "additionalProperties": { "type": "string" },
+                    "markdownDescription": "Labels to display at specific positions on a `slider` field."
+                },
+                "dateFormat": {
+                    "type": "string",
+                    "markdownDescription": "Date format string for `date` fields, e.g. `YYYY-MM-DD`."
+                }
+            },
+            "allOf": [
+                {
+                    "if": { "properties": { "type": { "const": "entity" } }, "required": ["type"] },
+                    "then": { "required": ["entityFields"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "linked" } }, "required": ["type"] },
+                    "then": { "required": ["linkType"] }
+                },
+                {
+                    "if": { "properties": { "type": { "const": "dropdown" } }, "required": ["type"] },
+                    "then": { "required": ["options"] }
+                }
+            ]
+        },
+        "entityFieldConfig": {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "value": {
+                    "type": "string",
+                    "markdownDescription": "Dot-notation path into the entity data, e.g. `owner.name`."
+                },
+                "copyable": {
+                    "type": "boolean",
+                    "markdownDescription": "Show a copy-to-clipboard button next to this field."
+                },
+                "clickable": { "type": "boolean", "markdownDescription": "Make this field a clickable link." },
+                "editable": {
+                    "type": "boolean",
+                    "markdownDescription": "Allow this entity field to be edited inline."
+                },
+                "type": {
+                    "type": "string",
+                    "enum": ["boolean"],
+                    "markdownDescription": "Override display type. Use `boolean` to render the field as a labelled badge."
+                },
+                "linkType": {
+                    "type": "string",
+                    "enum": ["profile", "vehicle", "property", "weapon"],
+                    "markdownDescription": "Navigation target when `clickable` is true."
+                },
+                "linkId": {
+                    "type": "string",
+                    "markdownDescription": "Dot-notation path in the data for the link identifier, e.g. `owner.identifier`."
+                },
+                "labels": {
+                    "type": "object",
+                    "markdownDescription": "Labels for `boolean` type entity fields.",
+                    "properties": {
+                        "true": {
+                            "type": "object",
+                            "properties": {
+                                "label": { "type": "string" },
+                                "color": { "$ref": "#/$defs/color" }
+                            }
+                        },
+                        "false": {
+                            "type": "object",
+                            "properties": {
+                                "label": { "type": "string" },
+                                "color": { "$ref": "#/$defs/color" }
+                            }
+                        }
+                    }
+                },
+                "check": {
+                    "type": "object",
+                    "markdownDescription": "Evaluation rule for `boolean` type entity fields. Queries another tab's records to determine the boolean result.",
+                    "required": ["tabType", "id", "type", "field", "value"],
+                    "properties": {
+                        "tabType": {
+                            "type": "string",
+                            "markdownDescription": "The tab `type` to query, e.g. `reports`."
+                        },
+                        "id": { "type": "string", "markdownDescription": "The tab `id` to query, e.g. `warrants`." },
+                        "type": { "type": "string", "markdownDescription": "Query method, e.g. `field`." },
+                        "field": { "type": "string", "markdownDescription": "Field name to match against." },
+                        "value": { "type": "string", "markdownDescription": "Value to match for a `true` result." },
+                        "involvement": {
+                            "type": "string",
+                            "markdownDescription": "How the current entity must be involved, e.g. `target`."
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            }
+        }
+    }
+}

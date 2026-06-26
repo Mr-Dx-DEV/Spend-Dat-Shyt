@@ -1,8 +1,8 @@
-if not Config.Police.AutoRegisterWeapons?.Enabled then
+if not Config.MDT.AutoRegisterWeapons?.Enabled then
     return
 end
 
-local ignoreList = Config.Police.AutoRegisterWeapons.IgnoreList or {}
+local ignoreList = Config.MDT.AutoRegisterWeapons.IgnoreList or {}
 
 Wait(1000)
 
@@ -31,7 +31,7 @@ local function OxInventoryHook(payload)
         end
     end
 
-    if not owner and not Config.Police.AutoRegisterWeapons.AddUnregistered then
+    if not owner and not Config.MDT.AutoRegisterWeapons.AddUnregistered then
         return
     end
 
@@ -40,10 +40,14 @@ local function OxInventoryHook(payload)
         return
     end
 
-    RegisterWeapon(metadata.serial, {
-        owner = owner,
-        weaponName = item.name,
-    })
+    for mdt, _ in pairs(MDTs) do
+        if GetMDTTab(mdt, "weapons") then
+            RegisterWeapon(mdt, metadata.serial, {
+                owner = owner,
+                weaponName = item.name,
+            })
+        end
+    end
 end
 
 if GetResourceState("ox_inventory") == "started" then

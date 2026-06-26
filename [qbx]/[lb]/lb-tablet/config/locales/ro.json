@@ -7,7 +7,6 @@
     "H": "o",
     "M": "m",
     "S": "s",
-
     "APP_NAMES": {
         "Police": "Politie",
         "Ambulance": "Ambulanta",
@@ -25,7 +24,6 @@
         "Services": "Servicii",
         "VoiceMemo": "Memo Vocal"
     },
-
     "APPS": {
         "SETTINGS": {
             "TITLE": "Setari",
@@ -99,7 +97,6 @@
             "OK": "OK",
             "ON": "Pornit",
             "OFF": "Oprit",
-
             "RESET_POPUP": {
                 "TITLE": "Reseteaza Tableta",
                 "TEXT": "Esti sigur ca vrei sa resetezi tableta? [ACEASTA VA STERGE TOT]",
@@ -212,7 +209,6 @@
             "DELETE": "Sterge",
             "SELECT_ITEMS": "Selecteaza Elemente",
             "SELECTED_COUNT": "{count} Elemente selectate",
-
             "PHOTOS": "Fotografii",
             "ALBUMS": "Albume",
             "LIBRARY": "Biblioteca",
@@ -252,12 +248,10 @@
                 "PROCEED": "Importa",
                 "PLACEHOLDER": "URL Imagine"
             },
-
             "NO_PHOTOS": "Fara Fotografii sau Videoclipuri",
             "NO_PHOTOS_INSTRUCTIONS": "Poti face fotografii si videoclipuri folosind camera",
             "PHOTO_COUNT": "{amount} Fotografii",
             "VIDEO_COUNT": "{amount} Videoclipuri",
-
             "DELETE_CONTEXT_TITLE": "Vrei sa stergi {type} sau sa le stergi din acest album",
             "THESE_PHOTOS": "aceste fotografii",
             "THIS_PHOTO": "aceasta fotografie",
@@ -274,7 +268,6 @@
             "MONTHS": "Luni",
             "DAYS": "Zile",
             "ALL_PHOTOS": "Toate Fotografiile",
-
             "FAVOURITES": "Favorite",
             "RECENTS": "Recente"
         },
@@ -346,21 +339,17 @@
             "COMPANIES": "Companii",
             "MESSAGES": "Mesaje",
             "SETTINGS": "Setari",
-
             "CLOSED": "Inchis",
             "YOUR_MESSAGES": "Mesajele Tale",
             "JOB_MESSAGES": "Mesaje de Serviciu",
-
             "DUTY": "Serviciu",
             "DUTY_DESCRIPTION": "Comuta starea ta de serviciu",
             "GO_ON_DUTY": "Intra in Serviciu",
             "GO_OFF_DUTY": "Iesi din Serviciu",
             "JOB_CALLS": "Apeluri de Serviciu",
             "JOB_CALLS_DESCRIPTION": "{toggle} primirea de apeluri de la clienti.",
-
             "ENABLE": "Activeaza",
             "DISABLE": "Dezactiveaza",
-
             "DISABLE_CALLS": "Dezactiveaza Apelurile",
             "ENABLE_CALLS": "Activeaza Apelurile",
             "BALANCE": "Balanta",
@@ -369,11 +358,9 @@
             "HIRE": "Angajeaza",
             "SET_GRADE": "Seteaza Gradul",
             "UNEMPLOYED": "Esti somer",
-
             "ALL": "Toti",
             "AVAILABLE": "Disponibil",
             "SEARCH_EMPLOYEES": "Cauta Angajati",
-
             "PERSONAL": "Personal",
             "JOB": "Serviciu",
             "PLACEHOLDER": "Mesaj Text",
@@ -392,7 +379,6 @@
                 "CANCEL": "Anuleaza",
                 "DELETE": "Sterge"
             },
-
             "DEPOSIT_POPUP": {
                 "TITLE": "Depozit",
                 "DESCRIPTION": "Depoziteaza bani in contul companiei",
@@ -423,1074 +409,7 @@
                 "PROCEED": "Continua"
             }
         },
-        "POLICE": {
-            "CANCEL": "Anuleaza",
-            "CLOSE": "Inchide",
-            "BACK": "Inapoi",
-            "EDIT": "Editeaza",
-            "DELETE": "Sterge",
-            "REMOVE": "Sterge",
-            "SAVE": "Salveaza",
-            "CREATE": "Creeaza",
-            "OK": "OK",
-            "ADD": "Adauga",
-            "NEW": "Nou",
-            "PROCEED": "Continua",
-            "YES": "Da",
-            "NO": "Nu",
-            "ALL": "Toate",
-            "ADD_TAB": "Adauga Tab",
-
-            "SEARCH": "Cauta",
-            "SEARCH_FOR": "Cauta {query} pentru a incepe",
-            "NO_RESULTS_FOR": "Niciun rezultat gasit pentru '{query}'",
-            "CLEAR_HISTORY": "Sterge Istoricul",
-
-            "HOME": {
-                "TITLE": "Acasa",
-                "CREATE": "Creeaza",
-
-                "RECENT_REPORTS": "Rapoarte Recente",
-                "REPORT_FOOTER": "{timestamp} - {author}",
-                "BULLETIN_BOARD": "Panou de Anunturi",
-                "PIN": "Fixeaza",
-                "UNPIN": "Desfixeaza",
-                "SEARCH_BULLETIN": "Cauta Anunt",
-                "SEARCH_UNITS": "Cauta Unitati",
-                "DELETE_BULLETIN": {
-                    "TITLE": "Sterge Anuntul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest anunt?",
-                    "CANCEL": "Anuleaza",
-                    "DELETE": "Sterge"
-                },
-                "RECENT_WARRANTS": "Mandate Recente",
-                "ACTIVE_UNITS": "Unitati Active"
-            },
-            "BULLETIN": {
-                "TITLE": "Anunturi",
-                "LABEL": "Panou cu Anuntur9",
-                "SEARCH": "Cauta Anunturi",
-                "SEARCH_PLACEHOLDER": "Cauta Anunt",
-                "SEARCH_FOR": "Cauta {query} pentru a incepe",
-                "NO_RESULTS_FOR": "Niciun rezultat gasit pentru '{query}'",
-                "NEW_BULLETIN": "Anunt Nou",
-
-                "DELETE_BULLETIN": {
-                    "TITLE": "Sterge Anunt",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest anunt?"
-                }
-            },
-
-            "DISPATCH": {
-                "TITLE": "Dispecerat",
-                "SEARCH_ALARMS": "Cauta Alarme",
-                "SHOW_OFFICERS": "Arata Ofiterii",
-                "SHOW_EMPLOYEES": "Arata Angajati",
-                "SHOW_ALARMS": "Arata Alarme",
-                "SHOW_POPUPS": "Arata Pop-upuri",
-                "OPTIONS": "Optiuni",
-                "OFFICERS": "Ofiteri",
-                "ALARMS": "Alarme",
-                "MAP": "Harta",
-                "LIST": "Lista",
-
-                "RESPOND": "Raspunde",
-                "RESPONDED": "A raspuns",
-                "COLLAPSE": "Restrange",
-                "EXPAND": "Extinde",
-                "DISMISS": "Respinge",
-                "VIEW_IN_TABLET": "Vezi in Tableta",
-                "SET_WAYPOINT": "Seteaza Punct de Trecere",
-                "LOS_SANTOS": "Los Santos",
-                "CAYO_PERICO": "Cayo Perico",
-                "OLD_NOTIFICATION": "{count} notificare veche",
-                "OLD_NOTIFICATIONS": "{count} notificari vechi",
-                "NEW_NOTIFICATION": "{count} notificare noua",
-                "NEW_NOTIFICATIONS": "{count} notificari noi",
-
-                "PRIORITY_LEVELS": {
-                    "HIGH": "Inalta",
-                    "MEDIUM": "Medie",
-                    "LOW": "Joasa"
-                },
-                "PRIORITY": "Prioritate",
-                "TIME": "Timp",
-                "CODE": "Cod",
-                "LOCATION": "Locatie",
-                "RESPONDERS": "Raspunda",
-                "ACTIONS": "Actiuni",
-                "NONE": "Niciuna",
-                "REMOVE": "Sterge",
-                "REMOVE_ALL": "Sterge Toate",
-                "VIEW": "Vezi",
-
-                "JUST_NOW": "Acum",
-                "MINUTES_AGO": "{minutes}m ago",
-                "HOURS_AGO": "{hours}h ago",
-                "REMOVE_ALARM": {
-                    "TITLE": "Sterge Alarma",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi alarma? (Aceasta va sterge dispeceratul pentru toti angajatii)",
-                    "CANCEL": "Anuleaza",
-                    "REMOVE": "Sterge"
-                },
-                "REMOVE_ALL_ALARMS": {
-                    "TITLE": "Sterge Toate Alarmele",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi toate alarmele? (Aceasta va sterge dispeceratul pentru toti angajatii)"
-                },
-
-                "REMOVE_FOR_YOURSELF": "Sterge pentru Tine",
-                "REMOVE_FOR_EVERYONE": "Sterge pentru Toti"
-            },
-
-            "UNITS": {
-                "TITLE": "Unitati",
-                "AVALIABLE_OFFICERS": "Ofiteri Disponibili",
-                "SEARCH_OFFICERS": "Cauta Ofiteri",
-                "DROP_OFFICER": "Lasa ofiterul aici",
-                "DROP_OFFICER_AVAILABLE": "Lasa ofiterul aici pentru a-l face disponibil",
-                "OFFICER": "Ofiter",
-                "OFFICERS": "Ofiteri",
-                "NO_UNITS": "Adauga o unitate pentru a incepe",
-                "ADD_UNIT": {
-                    "TITLE": "Adauga Unitate",
-                    "DESCRIPTION": "Creeaza o noua unitate",
-                    "PLACEHOLDER": "Numele Unitatii"
-                },
-                "RENAME_UNIT": {
-                    "TITLE": "Redenumeste Unitate",
-                    "DESCRIPTION": "Redenumeste Unitatea",
-                    "PLACEHOLDER": "Numele Unitatii"
-                },
-                "DELETE_UNIT": {
-                    "TITLE": "Sterge Unitate",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta unitate?"
-                }
-            },
-
-            "PROFILES": {
-                "TITLE": "Profil",
-                "PERSON": "Persoana",
-                "SEARCH": "Cauta Profiluri",
-                "REMOVE_AVATAR": "Sterge Avatar",
-                "IDENTIFIER": "Identificator",
-                "FINGERPRINT": "Amprenta",
-                "DOB": "Data Nasterii",
-                "PHONE_NR": "Nr. Telefon",
-                "GENDER": "Sex",
-                "JOB": "Serviciu",
-                "MALE": "Masculin",
-                "FEMALE": "Feminin",
-                "NOTES": "Note",
-                "NOTES_PLACEHOLDER": "Introdu note aici...",
-
-                "LICENSES": {
-                    "TITLE": "Licente",
-                    "ADD_LICENSE": "Adauga Licenta",
-                    "ADD": "Adauga",
-                    "NO_LICENSES": "Fara Licente",
-                    "REVOKE_LICENSE": {
-                        "TITLE": "Revoca Licenta",
-                        "DESCRIPTION": "Esti sigur ca vrei sa revoci licenta {license}?",
-                        "CANCEL": "Anuleaza",
-                        "REVOKE": "Revoca"
-                    }
-                },
-
-                "ADD_AVATAR": {
-                    "TITLE": "Adauga Avatar",
-                    "SET_PHOTO": "Seteaza Fotografia",
-                    "PASTE_URL": "Lipeste URL",
-                    "PASTE_URL_DESCRIPTION": "Introdu un URL catre o imagine",
-                    "PASTE_URL_PLACEHOLDER": "URL Imagine",
-
-                    "INVALID_URL": "URL Invalid",
-                    "INVALID_URL_DESCRIPTION": "URL-ul introdus nu este un URL valid pentru o imagine",
-                    "OK": "OK"
-                },
-
-                "VEHICLES": "Vehicule",
-                "NO_VEHICLES": "Fara Vehicule",
-                "PROPERTIES": "Proprietati",
-                "NO_PROPERTIES": "Fara Proprietati",
-                "REPORTS": "Rapoarte",
-                "NO_REPORTS": "Fara Rapoarte",
-                "CASES": "Cazuri",
-                "NO_CASES": "Fara Cazuri",
-                "WEAPONS": "Arme",
-                "NO_WEAPONS": "Nicio arma",
-                "WARRANTS": "Mandate",
-                "NO_WARRANTS": "Niciun Mandat",
-                "ACTIVE_WARRANTS": "Mandat Activ",
-                "INVOLVED": "Implicat",
-                "CHARGES": "Acuzatii",
-                "NO_CHARGES": "Nicio Acuzatie"
-            },
-
-            "VEHICLES": {
-                "TITLE": "Vehicule",
-                "VEHICLE": "Vehicul",
-                "SEARCH": "Cauta Vehicule",
-                "REMOVE_PICTURE": "Sterge Imaginea",
-                "DETAILS": "Detalii",
-
-                "ADD_PHOTO": {
-                    "TITLE": "Adauga Fotografie",
-                    "SELECT_PHOTO": "Selecteaza Fotografia",
-                    "PASTE_URL": "Lipeste URL",
-                    "PASTE_URL_DESCRIPTION": "Introdu un URL catre o imagine",
-                    "PASTE_URL_PLACEHOLDER": "URL Imagine",
-
-                    "INVALID_URL": "URL Invalid",
-                    "INVALID_URL_DESCRIPTION": "URL-ul introdus nu este un URL valid pentru o imagine",
-                    "OK": "OK"
-                },
-                "MODEL": "Model",
-                "PLATE": "Numar",
-                "COLOR": "Culoare",
-                "LOCATION": "Locatie",
-                "OWNER": "Proprietar",
-                "NOTES": "Note",
-                "NOTES_PLACEHOLDER": "Introdu note aici...",
-                "SET_WAYPOINT": "Seteaza Punct de Trecere",
-                "OPEN_IN_MAPS": "Deschide in Harti",
-                "WAYPOINT_SET": "Punct de trecere setat",
-                "WAYPOINT_SET_DESCRIPTION": "Punctul de trecere a fost setat la locatia vehiculului",
-                "CASES": "Cazuri",
-                "NO_CASES": "Fara Cazuri",
-                "WARRANTS": "Mandate",
-                "NO_WARRANTS": "Niciun Mandat",
-                "ACTIVE_WARRANTS": "Mandat Activ"
-            },
-            "PROPERTIES": {
-                "TITLE": "Proprietati",
-                "PROPERTY": "Proprietate",
-                "SEARCH": "Cauta Proprietati",
-                "REMOVE_PICTURE": "Sterge Imaginea",
-                "DETAILS": "Detalii",
-                "ADD_PHOTO": {
-                    "TITLE": "Adauga Fotografie",
-                    "SELECT_PHOTO": "Selecteaza Fotografia",
-                    "PASTE_URL": "Lipeste URL",
-                    "PASTE_URL_DESCRIPTION": "Introdu un URL catre o imagine",
-                    "PASTE_URL_PLACEHOLDER": "URL Imagine",
-
-                    "INVALID_URL": "URL Invalid",
-                    "INVALID_URL_DESCRIPTION": "URL-ul introdus nu este un URL valid pentru o imagine",
-                    "OK": "OK"
-                },
-                "LABEL": "Eticheta",
-                "ADDRESS": "Adresa",
-                "OWNER": "Proprietar",
-                "LOCATION": "Locatie",
-                "OPEN_IN_MAPS": "Deschide in Harti",
-                "NOTES": "Note",
-                "NOTES_PLACEHOLDER": "Introdu note aici..."
-            },
-            "WEAPONS": {
-                "TITLE": "Arme",
-                "WEAPON": "Arma",
-                "SEARCH": "Cauta Arme",
-                "REMOVE_PICTURE": "Sterge Imaginea",
-                "DETAILS": "Detalii",
-                "ADD_PHOTO": {
-                    "TITLE": "Adauga Fotografie",
-                    "SELECT_PHOTO": "Selecteaza Fotografia",
-                    "PASTE_URL": "Lipeste URL",
-                    "PASTE_URL_DESCRIPTION": "Introdu un URL catre o imagine",
-                    "PASTE_URL_PLACEHOLDER": "URL Imagine",
-
-                    "INVALID_URL": "URL Invalid",
-                    "INVALID_URL_DESCRIPTION": "URL-ul introdus nu este un URL valid pentru o imagine",
-                    "OK": "OK"
-                },
-                "MODEL_MAKE": "Model",
-                "SERIAL_NUMBER": "Nr. Serial",
-                "NOTES": "Note",
-                "NOTES_PLACEHOLDER": "Introdu note aici...",
-                "LINKED_REPORTS": "Rapoarte Conectate",
-                "NO_LINKED_REPORTS": "Fara Rapoarte Conectate",
-                "LINKED_CASES": "Cazuri Conectate",
-                "NO_LINKED_CASES": "Fara Cazuri Conectate",
-                "UNREGISTERED": "Neinregistrata",
-                "OWNER": "Proprietar",
-                "SELECT_MODEL": "Selecteaza Modelul",
-                "SELECT_OWNER": "Selecteaza Detinator",
-                "DELETE_WEAPON": {
-                    "TITLE": "Sterge Arma",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta arma?"
-                }
-            },
-
-            "REPORTS": {
-                "TITLE": "Rapoarte",
-                "REPORT": "Raport",
-                "SEARCH": "Cauta Rapoarte",
-                "FOOTER": "{author} - ID Raport: {id}",
-                "NEW_REPORT_TITLE": "Raport Nou",
-                "TYPE": "Tip",
-                "DESCRIPTION": "Descriere",
-                "DESCRIPTION_PLACEHOLDER": "Introdu o descriere...",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Fara Atasamente",
-                "WEAPONS_INVOLVED": "Arme Implicate",
-                "NO_WEAPONS_INVOLVED": "Fara Arme Implicate",
-                "REMOVE_WEAPON": {
-                    "TITLE": "Sterge Arma",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi arma din raport?"
-                },
-                "OFFICERS_INVOLVED": "Ofiteri Implicati",
-                "NO_OFFICERS_INVOLVED": "Fara Ofiteri Implicati",
-                "REMOVE_OFFICER": {
-                    "TITLE": "Sterge Ofiterul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa-l stergi pe {name} din raport?"
-                },
-                "CIVILLIANS_INVOLVED": "Civili Implicati",
-                "NO_CIVILLIANS_INVOLVED": "Fara Civili Implicati",
-                "REMOVE_CIVILIAN": {
-                    "TITLE": "Sterge Civilul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa-l stergi pe {name} din raport?"
-                },
-                "SUSPECTS_INVOLVED": "Suspecti Implicati",
-                "NO_SUSPECTS_INVOLVED": "Fara Suspecti Implicati",
-                "REMOVE_SUSPECT": {
-                    "TITLE": "Sterge Suspectul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa-l stergi pe {name} din raport?"
-                },
-                "DELETE_REPORT": {
-                    "TITLE": "Sterge Raport",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest raport?"
-                },
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "NO_TYPE": "Trebuie sa selectezi un tip de raport",
-                    "TITLE_LENGTH": "Titlul trebuie sa aiba cel putin 3 caractere",
-                    "DESCRIPTION_LENGTH": "Descrierea trebuie sa aiba cel putin 10 caractere"
-                }
-            },
-
-            "CASES": {
-                "TITLE": "Cazuri",
-                "SEARCH": "Cauta Cazuri",
-                "CASE": "Caz",
-                "FOOTER": "{author} - ID Caz: {id}",
-                "TITLE_PLACEHOLDER": "Caz Nou",
-                "DESCRIPTION": "Descriere",
-                "DESCRIPTION_PLACEHOLDER": "Introdu o descriere...",
-                "EVIDENCE": "Dovezi",
-                "NO_EVIDENCE": "Fara Dovezi Atasate",
-                "OPEN_STASH": "Deschide Ascunzisul",
-                "VEHICLES_INVOLVED": "Vehicule Implicate",
-                "NO_VEHICLES_INVOLVED": "Fara Vehicule Implicate",
-                "VIEW_PROFILE": "Vezi Profil",
-                "CHARGES": "{amount} acuzatii",
-                "NO_CHARGES": "Nicio Acuzatie",
-                "REMOVE_VEHICLE": {
-                    "TITLE": "Sterge Vehiculul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi vehiculul din caz?"
-                },
-                "OFFICERS_INVOLVED": "Ofiteri Implicati",
-                "NO_OFFICERS_INVOLVED": "Fara Ofiteri Implicati",
-                "REMOVE_OFFICER": {
-                    "TITLE": "Sterge Ofiterul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi ofiterul din caz?"
-                },
-                "REMOVE_WARRANT": {
-                    "TITLE": "Sterge Mandat",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest mandat?"
-                },
-                "CIVILLIANS_INVOLVED": "Civili Implicati",
-                "NO_CIVILLIANS_INVOLVED": "Fara Civili Implicati",
-                "REMOVE_CIVILIAN": {
-                    "TITLE": "Sterge Civilul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi civilul din caz?"
-                },
-                "CRIMINALS_INVOLVED": "Criminali Implicati",
-                "NO_CRIMINALS_INVOLVED": "Fara Criminali Implicati",
-                "REMOVE_CRIMINAL": {
-                    "TITLE": "Sterge Criminalul",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi criminalul din caz?"
-                },
-                "ADD_CHARGE": "Adauga Acuzatie",
-                "FINE": "Amenda ({amount} recomanda)",
-                "SENTENCE": "Sentina ({amount} recomandat)",
-                "SEND_FINE": {
-                    "TITLE": "Trimite Amenda",
-                    "DESCRIPTION": "Esti sigur ca vrei sa trimiti aceasta amenda  in valoare de {fine} lui {name}?"
-                },
-                "JAIL_PLAYER": {
-                    "TITLE": "Trimite Civil la Inchisoare",
-                    "DESCRIPTION": "Esti sigur ca vrei sa il trimiti pe {name} la inchisoare pentru {sentence} luni?",
-                    "JAILED_DESCRIPTION": "Trimis la inchisoare automat pentru acuzatiile {charges}"
-                },
-                "DELETE_CASE": {
-                    "TITLE": "Sterge Caz",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest caz?"
-                },
-
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "TITLE_LENGTH": "Titlul trebuie sa aiba cel putin 3 caractere",
-                    "DESCRIPTION_LENGTH": "Descrierea trebuie sa aiba cel putin 10 caractere",
-                    "OK": "OK"
-                }
-            },
-
-            "WARRANTS": {
-                "TITLE": "Mandate",
-                "SEARCH": "Cauta Mandate",
-
-                "HIGH_PRIORITY": "Prioritate Inalta",
-                "MEDIUM_PRIORITY": "Prioritate Medie",
-                "LOW_PRIORITY": "Prioritate Scazuta",
-                "FOOTER": "{author} - ID Mandat: {id}",
-                "TITLE_PLACEHOLDER": "Mandat Nou",
-                "DESCRIPTION": "Descriere",
-                "DESCRIPTION_PLACEHOLDER": "Introdu o descriere...",
-                "TYPE": "Tip",
-                "STATUS": "Status",
-                "PRIORITY": "Prioritate",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Fara Atasamente",
-                "LINKED_REPORTS": "Rapoarte Conectate",
-                "NO_LINKED_REPORTS": "Fara Rapoarte Conectate",
-                "SELECT_VEHICLE": "Selecteaza Vehicul",
-                "NO_VEHICLE_SELECTED": "Niciun Vehicul Selectat",
-                "SELECT_PERSON": "Selecteaza Persoana",
-                "NO_PERSON_SELECTED": "Nicio Persoana Selectata",
-                "ACTIVE": "Activ",
-                "INACTIVE": "Inactiv",
-                "CLOSED": "Inchis",
-                "REMOVE_REPORT": {
-                    "TITLE": "Sterge Raport",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi raportul din mandat?"
-                },
-                "DELETE_WARRANT": {
-                    "TITLE": "Sterge Mandat",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest mandat?"
-                },
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "TITLE_LENGTH": "Titlul trebuie sa aiba cel putin 3 caractere",
-                    "DESCRIPTION_LENGTH": "Descrierea trebuie sa aiba cel putin 10 caractere",
-                    "NO_TYPE": "Trebuie sa selectezi un tip de mandat",
-                    "NO_TARGET": "Trebuie sa selectezi o tinta pentru mandat",
-                    "OK": "OK"
-                }
-            },
-            "EVIDENCE": {
-                "TITLE": "Dovezi"
-            },
-
-            "OFFENCES": {
-                "TITLE": "Infractiuni",
-                "SEARCH": "Cauta Infractiuni",
-                "MONTHS": "{amount} Luni",
-                "FINE": "{amount} Amenda",
-
-                "SELECT_SEVERITY": "Selecteaza Gravitatea",
-                "SEVERITIES": {
-                    "INFRACTION": "Infractiune",
-                    "MISDEMEANOR": "Delict",
-                    "FELONY": "Crima"
-                },
-                "NO_OFFENCES_FOUND": "Nicio Infractiune Gasita",
-                "ADD_OFFENCE": {
-                    "TITLE": "Adauga Infractiune",
-                    "DESCRIPTION": "Creeaza o infractiune noua",
-                    "PLACEHOLDER": "Introdu titlul infractiunii",
-                    "DESCRIPTION_PLACEHOLDER": "Introdu o descriere..."
-                },
-                "EDIT_OFFENCE": {
-                    "TITLE": "Modifica Infractiune",
-                    "DESCRIPTION": "Modifica detaliile infractiunii"
-                },
-                "SET_JAILTIME": {
-                    "TITLE": "Timp Recomandat de Incarcerare",
-                    "DESCRIPTION": "Seteaza timpul recomandat de incarcerare pentru infractiune",
-                    "PLACEHOLDER": "Timp recomandat de incarcerare (in luni) (0 doar pentru amenda)"
-                },
-                "SET_FINE": {
-                    "TITLE": "Amenda Recomandata",
-                    "DESCRIPTION": "Seteaza amenda recomandata pentru infractiune",
-                    "PLACEHOLDER": "Suma amenzii recomandate (0 doar pentru incarcerare)"
-                },
-
-                "DELETE_OFFENCE": {
-                    "TITLE": "Sterge Infractiune",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta infractiune?"
-                },
-                "ADD_CATEGORY": {
-                    "TITLE": "Adauga Categorie",
-                    "DESCRIPTION": "Adauga o categorie noua in lista de infractiuni",
-                    "PLACEHOLDER": "Introdu numele categoriei"
-                },
-                "EDIT_CATEGORY": {
-                    "TITLE": "Modifica categoria",
-                    "DESCRIPTION": "Modifica detaliile categoriei",
-                    "PLACEHOLDER": "Introdu noul nume de categorie"
-                },
-                "DELETE_CATEGORY": {
-                    "TITLE": "Sterge Categorie",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta categorie?"
-                }
-            },
-
-            "EMPLOYEES": {
-                "TITLE": "Angajati",
-                "SEARCH": "Cauta Angajati"
-            },
-
-            "CHAT": {
-                "TITLE": "Chat",
-                "SEARCH": "Cauta Chat-uri",
-                "PLACEHOLDER": "Trimite un mesaj...",
-                "JOINED_CHATS": "Chat-uri Inscrise",
-                "PUBLIC_CHATS": "Chat-uri Publice",
-                "JOINED": "Inscris",
-                "PUBLIC": "Public",
-                "PRIVATE_CHATS": "Chat-uri Private",
-                "ROOM_ID": "ID Camera: {id}",
-                "TOGGLE_PRIVATE": "Comuta in Privat",
-                "CHANGE_AVATAR": "Schimba Avatar",
-                "SET_AVATAR": "Seteaza Avatar",
-                "REMOVE_AVATAR": "Sterge Avatar",
-                "MANAGE": "Gestioneaza",
-                "LEAVE": {
-                    "TITLE": "Paraseste",
-                    "DESCRIPTION": "Esti sigur ca vrei sa parasesti camera de chat?"
-                },
-                "KICK": {
-                    "TITLE": "Exclude",
-                    "DESCRIPTION": "Esti sigur ca vrei sa il excludi pe {name} din camera de chat?"
-                },
-
-                "CREATE_CHATROOM": {
-                    "TITLE": "Creeaza Camera de Chat",
-                    "DESCRIPTION": "Introdu un nume pentru camera de chat",
-                    "PLACEHOLDER": "Nume Camera de Chat",
-                    "CREATE": "Creeaza",
-                    "SET_VISIBILITY": "Seteaza Vizibilitatea",
-                    "PUBLIC": "Public",
-                    "PRIVATE": "Privat"
-                },
-                "JOIN_CHAT": {
-                    "TITLE": "Intra in Chat",
-                    "DESCRIPTION": "Esti sigur ca vrei sa intri in {channel}?",
-                    "JOIN": "Intra"
-                },
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "FAILED_JOIN": "Nu s-a putut intra in camera de chat",
-                    "FAILED_INVITE": "Nu s-a putut invita pe {name} in camera de chat",
-                    "FAILED_SET_AVATAR": "Nu s-a putut seta avatarul camerei de chat",
-                    "FAILED_REMOVE_AVATAR": "Nu s-a putut sterge avatarul camerei de chat",
-                    "FAILED_GET_MEMBERS": "Nu s-au putut obtine membrii camerei de chat",
-                    "FAILED_KICK": "Nu s-a putut exclude pe {name} din camera de chat",
-                    "FAILED_LEAVE": "Nu s-a putut parasi camera de chat"
-                },
-                "SUCCESS": {
-                    "TITLE": "Succes",
-                    "INVITED": "L-ai invitat pe {name} in camera de chat",
-                    "KICKED": "L-ai exclus pe {name} din camera de chat"
-                }
-            },
-
-            "PHONE": {
-                "TITLE": "Telefon",
-                "MESSAGES": "Mesaje",
-                "TRIANGULATE": {
-                    "TITLE": "Triangulare",
-                    "DESCRIPTION": "Introdu numarul de telefon pe care vrei sa-l triangulezi",
-                    "PLACEHOLDER": "Nr. de Telefon",
-
-                    "SUCCESS": {
-                        "TITLE": "Triangulare cu Success",
-                        "DESCRIPTION": "Numarul pe care l-ai introdus a fost gasit in apropierea unui Turn de Seman. Uita-te pe Harta pentru a vedea locatia."
-                    },
-                    "FAILED": {
-                        "TITLE": "Triangulare Esuata",
-                        "DESCRIPTION": "Numarul pe care l-ai introdus nu a fost gasit in apropierea niciunui Turn de Semnal."
-                    }
-                },
-                "CALLS": {
-                    "TITLE": "Apeluri",
-                    "CALL_HISTORY": "Istoric Apeluri",
-                    "CALL_STATUS": "Status Apel",
-                    "SEARCH": "Cauta Apel",
-                    "NO_CALLER_ID": "Numar Ascuns",
-                    "UNKNOWN": "Necunoscut",
-                    "INCOMING": "Apel Primit",
-                    "OUTGOING": "Apel Initiat",
-                    "IN_CALL": "In Apel",
-                    "NOT_IN_CALL": "Nu este in Apel",
-                    "SUBSCRIBED": "Abonat",
-                    "NOT_SUBSCRIBED": "Neabonat",
-                    "YES": "Da",
-                    "NO": "Nu",
-                    "GET_NOTIFIED": "Primeste Notificare",
-                    "LISTEN_TO_CALL": "Asculat apelul",
-                    "LISTEN_TO_CALL_DESCRIPTION": "Esti sigur ca vrei sa asculti apelul?",
-                    "STOP_LISTENING": "Opreste-te din a asculta",
-                    "STOP_LISTENING_DESCRIPTION": "Esti sigur ca vrei sa te opresti din a asculta apelul?",
-                    "SUBSCRIBE_TO_CALLS": "Aboneaza-te la Apeluri",
-                    "SUBSCRIBE_TO_CALLS_DESCRIPTION": "Esti sigur ca vrei sa te abonezi la apeluri?",
-                    "UNSUBSCRIBE_FROM_CALLS": "Dezaboneaza-te de la Apeluri",
-                    "UNSUBSCRIBE_FROM_CALLS_DESCRIPTION": "Esti sigur ca vrei sa te dezabonezi de la apel?",
-                    "FOOTER": "de {name}",
-
-                    "WIRETAP_PHONENUMBER": {
-                        "TITLE": "Intercepteaza Numarul",
-                        "DESCRIPTION": "Introdu numarul de telefon pe care vrei sa-l interceptezi",
-                        "PLACEHOLDER": "Numar de Telefon"
-                    },
-                    "REMOVE_WIRETAP": {
-                        "TITLE": "Sterge Interceptare",
-                        "DESCRIPTION": "Esti sigur ca vrei sa stergi interceptarea pentru numarul de telefon {phoneNumber}?"
-                    },
-
-                    "CALL_ENDED": {
-                        "TITLE": "Apel Incheiat",
-                        "DESCRIPTION": "Apelul s-a sfarsit."
-                    }
-                },
-                "UNLOCK": {
-                    "TITLE": "Deblocheaza",
-                    "NO_PHONES": "Nu ai niciun telefon la tine",
-                    "SEARCH": "Cauta un telefon",
-                    "SELECT_PHONE": "Selecteaza un telefon",
-                    "PHONE": "Telefon",
-                    "PROCESSED": "Deblocat",
-                    "PROCESSING": "In Deblocare",
-                    "LOCKED": "Blocat",
-                    "PROCESS_PHONE": "Deblocheaza Telefon",
-                    "PHONE_PROCESSED": "Telefon Deblocat",
-                    "REMAINING_TIME": "Timp Ramas: {time}",
-                    "PROCESSING_PHONE": "Deblochezi telefonul {phone}...",
-                    "ATTEMPTS": "Incercari: {attempts}/{maxAttempts}",
-                    "RESET_PIN": {
-                        "TITLE": "Reseteaza PIN",
-                        "SUCCESS": "Codul PIN a fost resetat cu success."
-                    },
-                    "SUCCESS": {
-                        "TITLE": "Telefon Deblocat",
-                        "DESCRIPTION": "Telefonul a fost deblocat."
-                    },
-                    "FAILED": {
-                        "TITLE": "Deblocarea Telefonului a Esuat",
-                        "DESCRIPTION": "Nu ai reusit sa deblochezi telefonul. Incearca mai tarziu"
-                    }
-                }
-            },
-
-            "JAIL": {
-                "TITLE": "Inchisoare",
-                "SEARCH": "Cauta Detinut",
-                "JAILED_PERSON": "Persoana Incarcerata",
-                "JAILED_BY": "Incarcerat De",
-                "JAILED_BY_NAME": "Incarcerat De {name}",
-                "REMAINING_TIME": "Timp Ramas",
-                "REMAINING_TIME_DATE": "Timp ramas {time} ({date})",
-                "ORIGINAL_SENTENCE": "Sentinta Originala",
-                "RELEASE_DATE": "Data Eliberarii",
-                "DESCRIPTION": "Descriere",
-                "DESCRIPTION_PLACEHOLDER": "Introdu o descriere...",
-                "RELEASED": "Eliberat",
-                "LESS_THAN_MINUTE": "Mai putin de un minut",
-                "UNJAIL": "Elibereaza",
-                "PROFILE": "Profil",
-                "JAILED_AT": "Incarcerat la",
-                "LINKED_CASE": "Caz Conectat",
-                "NO_LINKED_CASE": "Niciun Caz Conectat",
-                "REMOVE_LINKED_CASE": {
-                    "TITLE": "Sterge Caz Conectat",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi cazul conectat?"
-                },
-                "JAIL_PERSON": {
-                    "TITLE": "Incarcereaza",
-                    "DESCRIPTION": "Completeaza detaliile de mai jos pentru a-l incarceza pe {name}",
-                    "SENTENCE_PLACEHOLDER": "Sentinta (in minute)",
-                    "REASON_PLACEHOLDER": "Motiv",
-                    "JAIL_WITH_CASE": "Incarcereaza cu caz conectat",
-                    "JAIL_WITHOUT_CASE": "Incarcereaza fara caz conectat",
-                    "PROCEED": "Continua"
-                },
-                "UNJAIL_PERSON": {
-                    "TITLE": "Elibereaza",
-                    "DESCRIPTION": "Esti sigur ca vrei sa il eliberezi pe {name}?",
-                    "PROCEED": "Continua"
-                },
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "MISSING_DETAILS": "Trebuie sa introduci o sentinta si un motiv"
-                }
-            },
-
-            "LOGS": {
-                "TITLE": "Jurnale",
-                "SEARCH": "Cauta Jurnale",
-                "FILTER": "Filtreaza",
-                "CREATED": "Creat",
-                "UPDATED": "Actualizat",
-                "DELETED": "Sters",
-                "VIEW_FOOTER": "Vezi {type} ({id})",
-                "TAG_TYPES": {
-                    "PROFILE": "profil",
-                    "VEHICLE": "vehicul",
-                    "REPORT": "raport",
-                    "WARRANT": "mandat",
-                    "INCIDENT": "caz"
-                },
-
-                "CREATE_TAG_TITLE": "Creat un Tag",
-                "CREATE_TAG_DESCRIPTION": "Creat un tag {type} \"{name}\"",
-                "DELETE_TAG_TITLE": "Sters un Tag",
-                "DELETE_TAG_DESCRIPTION": "Sters tag-ul {type} \"{name}\"",
-                "UPDATE_PROFILE_TITLE": "Actualizat un profil",
-                "UPDATE_PROFILE_DESCRIPTION": "Actualizat profilul lui {name}",
-                "UPDATE_VEHICLE_TITLE": "Actualizat un vehicul",
-                "UPDATE_VEHICLE_DESCRIPTION": "Actualizat vehiculul {plate}",
-                "UPDATE_PROPERTY_TITLE": "Actualizat o proprietate",
-                "UPDATE_PROPERTY_DESCRIPTION": "Actualizat o proprietate",
-                "UPDATE_WEAPON_TITLE": "Actualizat o arma",
-                "UPDATE_WEAPON_DESCRIPTION": "Actualizat arma cu numarul serial {serial}",
-                "CREATE_REPORT_TITLE": "Creat un raport",
-                "CREATE_REPORT_DESCRIPTION": "Creat un raport {type} cu titlul \"{title}\"",
-                "UPDATE_REPORT_TITLE": "Actualizat un raport",
-                "UPDATE_REPORT_DESCRIPTION": "Actualizat raportul {type} cu titlul \"{title}\"",
-                "DELETE_REPORT_TITLE": "Sters un raport",
-                "DELETE_REPORT_DESCRIPTION": "Sters un raport cu id-ul {id}",
-                "ISSUED_LICENSE_TITLE": "Eliberat o licenta",
-                "ISSUED_LICENSE_DESCRIPTION": "Eliberat licenta {license} lui {name}",
-                "REVOKED_LICENSE_TITLE": "Revocat o licenta",
-                "REVOKED_LICENSE_DESCRIPTION": "Revocat licenta {license} de la {name}",
-                "PINNED_BULLETIN_TITLE": "Fixat un post de buletin",
-                "PINNED_BULLETIN_DESCRIPTION": "Fixat un post de buletin cu id-ul {id}",
-                "UNPINNED_BULLETIN_TITLE": "Desfixat un post de buletin",
-                "UNPINNED_BULLETIN_DESCRIPTION": "Desfixat postul de buletin cu id-ul {id}",
-                "CREATE_BULLETIN_TITLE": "Creat un post de buletin",
-                "CREATE_BULLETIN_DESCRIPTION": "Creat un post de buletin cu titlul \"{title}\"",
-                "DELETE_BULLETIN_TITLE": "Sters un post de buletin",
-                "DELETE_BULLETIN_DESCRIPTION": "Sters postul de buletin cu id-ul {id}",
-                "UPDATE_BULLETIN_TITLE": "Modificat un Anunt",
-                "UPDATE_BULLETIN_DESCRIPTION": "Modificat anuntul cu titlul \"{title}\"",
-                "CREATE_WARRANT_TITLE": "Creat un mandat",
-                "CREATE_WARRANT_DESCRIPTION": "Creat un mandat {type} cu titlul \"{title}\"",
-                "UPDATE_WARRANT_TITLE": "Actualizat un mandat",
-                "UPDATE_WARRANT_DESCRIPTION": "Actualizat mandatul \"{title}\"",
-                "CREATE_CASE_TITLE": "Creat un caz",
-                "CREATE_CASE_DESCRIPTION": "Creat un caz cu titlul \"{title}\"",
-                "UPDATE_CASE_TITLE": "Actualizat un caz",
-                "UPDATE_CASE_DESCRIPTION": "Actualizat cazul cu titlul \"{title}\"",
-                "DELETE_CASE_TITLE": "Sters un caz",
-                "DELETE_CASE_DESCRIPTION": "Sters un caz cu id-ul {id}"
-            },
-
-            "TAGS": {
-                "TITLE": "Tag-uri",
-                "ADD": "Adauga",
-                "NO_TAGS": "Fara Tag-uri",
-                "CREATE_TAG": {
-                    "TITLE": "Creeaza Tag",
-                    "DESCRIPTION": "Introdu un nume de tag",
-                    "PLACEHOLDER": "Nume Tag",
-                    "CANCEL": "Anuleaza",
-                    "NEXT": "Inainte",
-                    "SELECT_COLOR": "Selecteaza o culoare"
-                },
-                "DELETE_TAG": {
-                    "TITLE": "Sterge Tag",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest tag?",
-                    "CANCEL": "Anuleaza",
-                    "DELETE": "Sterge"
-                },
-                "REMOVE_TAG": {
-                    "TITLE": "Sterge Tag",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi tag-ul '{tag}'?",
-                    "CANCEL": "Anuleaza",
-                    "REMOVE": "Sterge"
-                }
-            },
-            "MISC": {
-                "SOON": "Curand",
-                "UNKNOWN": "Necunoscut",
-                "MINUTES": "{minutes}m",
-                "HOURS": "{hours}h",
-                "DAYS": "{days}z",
-                "FORMATTED_DATE": "{day} {month} {year} la {hours}:{minutes}",
-                "CHANGE_AVATAR": "Schimba Avatar",
-                "REMOVE_AVATAR": "Sterge Avatar",
-                "SET_CALLSIGN": "Seteaza Indicativ",
-                "CALLSIGN": {
-                    "TITLE": "Indicativ",
-                    "DESCRIPTION": "Introdu un indicativ",
-                    "CANCEL": "Anuleaza",
-                    "PROCEED": "Continua",
-                    "ERROR": {
-                        "TITLE": "Eroare",
-                        "DESCRIPTION": "Call-sign introdus nu foloseste format presetat ({format}). Incearca iar."
-                    }
-                }
-            }
-        },
-        "AMBULANCE": {
-            "TITLE": "Ambulanta",
-
-            "SEARCH": "Cauta",
-            "CANCEL": "Anuleaza",
-            "CLOSE": "Inchide",
-            "BACK": "Inapoi",
-            "EDIT": "Editeaza",
-            "DELETE": "Sterge",
-            "REMOVE": "Elimina",
-            "SAVE": "Salveaza",
-            "CREATE": "Creeaza",
-            "PROCEED": "Continua",
-            "OK": "OK",
-            "ADD": "Adauga",
-            "NEW": "Nou",
-
-            "SEARCH_FOR": "Cauta {query} pentru a incepe",
-            "NO_RESULTS_FOR": "Niciun rezultat gasit pentru '{query}'",
-            "CLEAR_HISTORY": "Sterge Istoricul",
-
-            "HOME": {
-                "TITLE": "Acasa",
-                "CREATE": "Creeaza",
-
-                "RECENT_REPORTS": "Rapoarte Recente",
-                "REPORT_FOOTER": "{timestamp} - {author}",
-                "BULLETIN_BOARD": "Panou de Anunturi",
-                "PIN": "Fixeaza",
-                "UNPIN": "Desfixeaza",
-                "SEARCH_BULLETIN": "Cauta Anunt",
-                "SEARCH_UNITS": "Cauta Unitati",
-                "ADD_BULLETIN": {
-                    "TITLE": "Adauga Anunt",
-                    "DESCRIPTION": "Creeaza un anunt nou",
-                    "PLACEHOLDER": "Titlu",
-                    "CONTENT": "Continut",
-                    "CANCEL": "Anuleaza",
-                    "PROCEED": "Continua"
-                },
-                "DELETE_BULLETIN": {
-                    "TITLE": "Sterge Anunt",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi acest anunt?",
-                    "CANCEL": "Anuleaza",
-                    "DELETE": "Sterge"
-                },
-                "ACTIVE_UNITS": "Unitati Active"
-            },
-            "BULLETIN": {
-                "TITLE": "Anunturi"
-            },
-
-            "DISPATCH": {
-                "TITLE": "Dispecerat",
-                "TOGGLE_EMPLOYEES": "Afiseaza/Ascunde Angajati",
-                "TOGGLE_ALARMS": "Afiseaza/Ascunde Alarme",
-                "EMPLOYEES": "Angajati",
-                "ALARMS": "Alarme",
-
-                "RESPOND": "Raspunde",
-                "RESPONDED": "Raspuns",
-                "COLLAPSE": "Restrange",
-                "EXPAND": "Extinde",
-                "DISMISS": "Respinge",
-                "VIEW_IN_TABLET": "Vezi in Tableta",
-                "SET_WAYPOINT": "Seteaza Punct de Trecere",
-                "OLD_NOTIFICATION": "{count} notificare veche",
-                "OLD_NOTIFICATIONS": "{count} notificari vechi",
-                "NEW_NOTIFICATION": "{count} notificare noua",
-                "NEW_NOTIFICATIONS": "{count} notificari noi",
-
-                "PRIORITY_LEVELS": {
-                    "HIGH": "Inalta",
-                    "MEDIUM": "Medie",
-                    "LOW": "Scazuta"
-                },
-
-                "JUST_NOW": "Acum",
-                "MINUTES_AGO": "{minutes}m in urma",
-                "HOURS_AGO": "{hours}h in urma"
-            },
-             "UNITS": {
-                "TITLE": "Unitati",
-                "EMPLOYEE": "Angajat",
-                "EMPLOYEES": "Angajati",
-                "AVALIABLE_EMPLOYEES": "Angajati Disponibili",
-                "SEARCH_EMPLOYEES": "Cauta Angajati",
-                "DROP_EMPLOYEE": "Lasa Angajat",
-                "DROP_EMPLOYEE_AVAILABLE": "Lasa Angajatul pentru a-l face disponibil"
-            },
-
-            "JOURNALS": {
-                "TITLE": "Jurnale",
-                "PROFILES": "Profile",
-                "PERSON": "Persoana",
-                "SEARCH": "Cauta Profile",
-                "REMOVE_AVATAR": "Sterge Avatar",
-                "IDENTIFIER": "Identificator",
-                "FINGERPRINT": "Amprenta",
-                "DOB": "Data Nasterii",
-                "PHONE_NR": "Numar de Telefon",
-                "GENDER": "Sex",
-                "JOB": "Job",
-                "MALE": "Masculin",
-                "FEMALE": "Feminin",
-                "HEIGHT": "Inaltime",
-                "HEIGHT_FORMAT": "{height}cm",
-                "BLOOD_TYPE": "Grupa Sanguina",
-                "NOTES": "Note",
-                "NOTES_PLACEHOLDER": "Introdu note aici...",
-                "DIAGNOSES_DISEASES": "Diagnostice / Boli",
-                "NO_DIAGNOSES": "Niciun Diagnostic / Boala",
-                "REPORTS": "Rapoarte",
-                "NO_REPORTS": "Niciun Raport",
-
-                "ADD_AVATAR": {
-                    "TITLE": "Adauga Avatar",
-                    "SET_PHOTO": "Seteaza Fotografie",
-                    "PASTE_URL": "Lipeste URL",
-                    "PASTE_URL_DESCRIPTION": "Introdu un URL catre o imagine",
-                    "PASTE_URL_PLACEHOLDER": "URL Imagine",
-
-                    "INVALID_URL": "URL Invalid",
-                    "INVALID_URL_DESCRIPTION": "URL-ul introdus nu este un URL valid pentru o imagine",
-                    "OK": "OK"
-                }
-            },
-
-            "REPORTS": {
-                "TITLE": "Rapoarte",
-                "REPORT": "Raport",
-                "SEARCH": "Cauta Rapoarte",
-                "FOOTER": "{author} - ID Raport: {id}",
-                "NEW_REPORT_TITLE": "Raport Nou",
-                "TYPE": "Tip",
-                "DESCRIPTION": "Descriere",
-                "DESCRIPTION_PLACEHOLDER": "Introdu o descriere...",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Fara Atasamente",
-                "INJURIES_CONDITIONS": "Raniri / Conditii",
-                "NO_INJURIES": "Nicio Ranire / Conditie",
-                "DOCTORS_INVOLVED": "Doctori Implicati",
-                "NO_DOCTORS_INVOLVED": "Niciun Doctor Implicat",
-                "ADD_PATIENT": "Adauga Pacient",
-
-                "REMOVE_INJURY": {
-                    "TITLE": "Sterge Ranire",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi ranirea din raport?"
-                },
-                "REMOVE_DOCTOR": {
-                    "TITLE": "Sterge Doctor",
-                    "DESCRIPTION": "Esti sigur ca vrei sa il stergi pe {name} din raport?"
-                },
-
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "NO_TYPE": "Trebuie sa selectezi un tip de raport",
-                    "TITLE_LENGTH": "Titlul trebuie sa aiba cel putin 3 caractere",
-                    "DESCRIPTION_LENGTH": "Descrierea trebuie sa aiba cel putin 10 caractere"
-                }
-            },
-
-            "EMPLOYEES": {
-                "TITLE": "Angajati",
-                "SEARCH": "Cauta Angajati"
-            },
-
-            "CHAT": {
-                "TITLE": "Chat",
-                "SEARCH": "Cauta Chat-uri",
-                "PLACEHOLDER": "Trimite un mesaj...",
-                "JOINED_CHATS": "Chat-uri Inscrise",
-                "PUBLIC_CHATS": "Chat-uri Publice",
-                "JOINED": "Inscris",
-                "PUBLIC": "Public",
-                "PRIVATE_CHATS": "Chat-uri Private",
-                "ROOM_ID": "ID Camera: {id}",
-                "TOGGLE_PRIVATE": "Comuta in Privat",
-                "CHANGE_AVATAR": "Schimba Avatar",
-                "SET_AVATAR": "Seteaza Avatar",
-                "REMOVE_AVATAR": "Sterge Avatar",
-                "MANAGE": "Gestioneaza",
-                "LEAVE": {
-                    "TITLE": "Paraseste",
-                    "DESCRIPTION": "Esti sigur ca vrei sa parasesti camera de chat?"
-                },
-                "KICK": {
-                    "TITLE": "Exclude",
-                    "DESCRIPTION": "Esti sigur ca vrei sa il excludi pe {name} din camera de chat?"
-                },
-
-                "CREATE_CHATROOM": {
-                    "TITLE": "Creeaza Camera de Chat",
-                    "DESCRIPTION": "Introdu un nume pentru camera de chat",
-                    "PLACEHOLDER": "Nume Camera de Chat",
-                    "CREATE": "Creeaza",
-                    "SET_VISIBILITY": "Seteaza Vizibilitatea",
-                    "PUBLIC": "Public",
-                    "PRIVATE": "Privat"
-                },
-                "JOIN_CHAT": {
-                    "TITLE": "Intra in Chat",
-                    "DESCRIPTION": "Esti sigur ca vrei sa intri in {channel}?",
-                    "JOIN": "Intra"
-                },
-                "ERROR": {
-                    "TITLE": "Eroare",
-                    "FAILED_JOIN": "Nu s-a putut intra in camera de chat",
-                    "FAILED_INVITE": "Nu s-a putut invita pe {name} in camera de chat",
-                    "FAILED_SET_AVATAR": "Nu s-a putut seta avatarul camerei de chat",
-                    "FAILED_REMOVE_AVATAR": "Nu s-a putut sterge avatarul camerei de chat",
-                    "FAILED_GET_MEMBERS": "Nu s-au putut obtine membrii camerei de chat",
-                    "FAILED_KICK": "Nu s-a putut exclude pe {name} din camera de chat",
-                    "FAILED_LEAVE": "Nu s-a putut parasi camera de chat"
-                },
-                "SUCCESS": {
-                    "TITLE": "Succes",
-                    "INVITED": "L-ai invitat pe {name} in camera de chat",
-                    "KICKED": "L-ai exclus pe {name} din camera de chat"
-                }
-            },
-
-            "CONDITIONS": {
-                "TITLE": "Conditii",
-                "CONDITION": "Conditie",
-                "SEARCH": "Cauta Conditii",
-
-                "SELECT_SEVERITY": "Selecteaza Gravitatea",
-                "SEVERITIES": {
-                    "MINOR": "Minora",
-                    "MODERATE": "Moderata",
-                    "SEVERE": "Severa",
-                    "CRITICAL": "Critica"
-                },
-                "NO_CONDITIONS_FOUND": "Nicio Conditie Gasita",
-                "ADD_CONDITION": {
-                    "TITLE": "Adauga Conditie",
-                    "DESCRIPTION": "Creeaza o conditie noua",
-                    "PLACEHOLDER": "Introdu titlul conditiei"
-                },
-                "DELETE_CONDITION": {
-                    "TITLE": "Sterge Conditie",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta conditie?"
-                },
-                "ADD_CATEGORY": {
-                    "TITLE": "Adauga Categorie",
-                    "DESCRIPTION": "Adauga o categorie noua in lista de conditii",
-                    "PLACEHOLDER": "Introdu numele categoriei"
-                },
-                "DELETE_CATEGORY": {
-                    "TITLE": "Sterge Categorie",
-                    "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta categorie?"
-                }
-            },
-
-            "LOGS": {
-                "TITLE": "Jurnale"
-            }
-        },
+        "MDT": {},
         "BROWSER": {
             "TITLE": "Browser",
             "SEARCH_PLACEHOLDER": "Cauta sau introdu URL",
@@ -1509,7 +428,6 @@
             "DESCRIPTION": "Descriere",
             "DESCRIPTION_PLACEHOLDER": "Aceasta este o descriere...",
             "ADD": "Adauga",
-
             "CHARACTER_INFO": "Informatii Personaj",
             "REMOVE_AVATAR": "Sterge Avatar",
             "FIRSTNAME": "Prenume",
@@ -1522,7 +440,6 @@
             "JOB": "Job",
             "HEIGHT": "Inaltime",
             "FORMATTED_HEIGHT": "{height}cm",
-
             "VEHICLES": "Vehicule",
             "VEHICLE": "Vehicul",
             "REMOVE_PICTURE": "Sterge Imagine",
@@ -1536,14 +453,12 @@
                 "TITLE": "Sterge Vehicul",
                 "DESCRIPTION": "Esti sigur ca vrei sa stergi acest vehicul?"
             },
-
             "LICENSES": "Licente",
             "ADD_LICENSE": "Adauga Licenta",
             "DELETE_LICENSE_POPUP": {
                 "TITLE": "Sterge Licenta",
                 "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta licenta?"
             },
-
             "PROPERTIES": "Proprietati",
             "ADD_PROPERTY_POPUP": {
                 "TITLE": "Proprietate Noua",
@@ -1555,7 +470,6 @@
                 "TITLE": "Sterge Proprietate",
                 "DESCRIPTION": "Esti sigur ca vrei sa stergi aceasta proprietate?"
             },
-
             "ERROR": {
                 "TITLE": "Eroare",
                 "MISSING_FIELDS": "Iti lipsesc urmatoarele campuri: {fields}",
@@ -1619,7 +533,6 @@
             "DECLINE": "Refuza",
             "ACCEPT": "Accepta"
         },
-
         "BATTERY": {
             "LOW_BATTERY": "Baterie Scazuta",
             "BATTERY_REMAINING": "{percent}% baterie ramasa",
@@ -1777,152 +690,8 @@
                 "CODE": "10-31"
             }
         },
-        "POLICE": {
-            "EVIDENCE_LABEL": "Evidenta: Cazul {id}",
-            "NEW_BULLETIN_NOTIFICATION": {
-                "TITLE": "Anunt Nou",
-                "CONTENT": "{title}"
-            },
-            "NEW_CASE_NOTIFICATION": {
-                "TITLE": "Caz Nou",
-                "CONTENT": "{title}"
-            },
-            "NEW_REPORT_NOTIFICATION": {
-                "TITLE": "Raport Nou",
-                "CONTENT": "{title}"
-            },
-            "NEW_WARRANT_NOTIFICATION": {
-                "TITLE": "Mandat Nou",
-                "CONTENT": "{title}"
-            },
-            "NEW_CHAT_CHANNEL_NOTIFICATION": {
-                "TITLE": "Conversatie Noua",
-                "CONTENT": "{channel}"
-            },
-            "CHAT_MESSAGE_NOTIFICATION": {
-                "TITLE": "Mesaj Nou in {channel}",
-                "CONTENT": "{message}"
-            },
-            "LOGS": {
-                "CREATE_OFFENCE_CATEGORY": {
-                    "TITLE": "Creat o categorie de infractiune",
-                    "DESCRIPTION": "Creat categoria '{name}'"
-                },
-                "UPDATE_OFFENCE_CATEGORY": {
-                    "TITLE": "Modificare categorie infractiune",
-                    "DESCRIPTION": "A redenumit categoria de infractiuni din '{oldName}' in {newName}"
-                },
-                "DELETE_OFFENCE_CATEGORY": {
-                    "TITLE": "Sters o categorie de infractiune",
-                    "DESCRIPTION": "Sters categoria '{name}'"
-                },
-                "CREATE_OFFENCE": {
-                    "TITLE": "Creat o infractiune",
-                    "DESCRIPTION": "Creat o infractiune {class} '{name}' in '{category}'"
-                },
-                "DELETE_OFFENCE": {
-                    "TITLE": "Sters o infractiune",
-                    "DESCRIPTION": "Sters infractiunea '{name}' in '{category}'"
-                },
-                "UPDATE_OFFENCE": {
-                    "TITLE": "Modifica o infractiune",
-                    "DESCRIPTION": "A modificat infractiunea '{name}' din categoria '{category}'"
-                }
-            },
-            "WIRETAP_NOTIFICATION": {
-                "TITLE": "Interceptat Apel",
-                "CONTENT": "Numarul supravegheat {number} este intr-un apel."
-            }
-        },
-        "AMBULANCE": {
-            "NOTIFICATIONS": {
-                "CHAT": {
-                    "NEW_CHANNEL": {
-                        "TITLE": "Conversatie Noua",
-                        "CONTENT": "{channel}"
-                    },
-                    "NEW_MESSAGE": {
-                        "TITLE": "Mesaj Nou in {channel}",
-                        "CONTENT": "{message}"
-                    }
-                },
-                "NEW_BULLETIN": {
-                    "TITLE": "Anunt Nou",
-                    "CONTENT": "{title}"
-                },
-                "NEW_REPORT": {
-                    "TITLE": "Raport Nou",
-                    "CONTENT": "{title}"
-                }
-            },
-            "TAG_TYPES": {
-                "PROFILE": "profil",
-                "REPORT": "raport",
-                "PROPERTY": "proprietate",
-                "WEAPON": "arma"
-            },
-            "LOGS": {
-                "CREATE_CONDITION_CATEGORY": {
-                    "TITLE": "Creat o categorie de conditie",
-                    "DESCRIPTION": "Creat categoria '{name}'"
-                },
-                "DELETE_CONDITION_CATEGORY": {
-                    "TITLE": "Sters o categorie de conditie",
-                    "DESCRIPTION": "Sters categoria '{name}'"
-                },
-                "UPDATE_CONDITION_CATEGORY": {
-                    "TITLE": "A modificat o conditie",
-                    "DESCRIPTION": "A modificat conditia '{oldName}' in {newName}"
-                },
-                "CREATE_CONDITION": {
-                    "TITLE": "Creat o conditie",
-                    "DESCRIPTION": "Creat o conditie {severity} '{name}' in '{category}'"
-                },
-                "DELETE_CONDITION": {
-                    "TITLE": "Sters o conditie",
-                    "DESCRIPTION": "Sters conditia '{name}' in '{category}'"
-                },
-                "UPDATE_CONDITION": {
-                    "TITLE": "A modificat conditie",
-                    "DESCRIPTION": "A modificat conditia '{name}' din categoria '{category}'"
-                },
-                "CREATE_BULLETIN": {
-                    "TITLE": "Creat un anunt",
-                    "DESCRIPTION": "Creat un anunt '{title}'"
-                },
-                "UPDATE_BULLETIN": {
-                    "TITLE": "Modificat un anunt",
-                    "DESCRIPTION": "Modificat anuntul cu titlu '{title}'"
-                },
-                "DELETE_BULLETIN": {
-                    "TITLE": "Sters un anunt",
-                    "DESCRIPTION": "Sters anuntul cu id-ul {id}"
-                },
-                "PIN_BULLETIN": {
-                    "TITLE": "Fixat un anunt",
-                    "DESCRIPTION": "Fixat un anunt cu id-ul {id}"
-                },
-                "UNPIN_BULLETIN": {
-                    "TITLE": "Desfixat un anunt",
-                    "DESCRIPTION": "Desfixat anuntul cu id-ul {id}"
-                },
-                "DELETE_TAG": {
-                    "TITLE": "Sters un tag",
-                    "DESCRIPTION": "Sters tag-ul '{name}'"
-                },
-                "UPDATE_PROFILE": {
-                    "TITLE": "Actualizat un profil",
-                    "DESCRIPTION": "Actualizat profilul lui {name}"
-                },
-                "CREATE_REPORT": {
-                    "TITLE": "Creat un raport",
-                    "DESCRIPTION": "Creat un raport {type} '{title}' pentru {patient} cu id-ul {id}"
-                },
-                "UPDATE_REPORT": {
-                    "TITLE": "Actualizat un raport",
-                    "DESCRIPTION": "Actualizat raportul {type} '{title}' cu id-ul {id}"
-                }
-            }
-        }
-    }
+        "MDT": {},
+        "MDT_NOTIFICATIONS": {}
+    },
+    "MDT": {}
 }

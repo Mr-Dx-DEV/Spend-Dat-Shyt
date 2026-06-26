@@ -427,28 +427,38 @@ local function AttemptToCallPolice(ped)
     return CallPoliceScene(netId)
 end
 
+---@param action string
 ---@return boolean
 local function ShouldCreateDispatch(action)
-    if Config.BaseDispatch.IgnorePolice and IsPolice() then
-        debugprint("Not creating dispatch as player is police.")
+    local actionData = Config.BaseDispatch.Actions[action]
+
+    if not actionData then
+        debugprint("Action not found in BaseDispatch.Actions:", action)
         return false
     end
 
-    if action and IsDispatchOnCooldown(action) then
-        return false
+    if actionData.ignoreEmployees then
+        local isEmployee = false
+
+        for i = 1, #actionData.mdts do
+            if IsEmployeeOfMDT(actionData.mdts[i]) then
+                isEmployee = true
+                break
+            end
+        end
+
+        if isEmployee then
+            debugprint("Player is an employee of one of the MDTs for this action, ignoring dispatch.")
+            return false
+        end
     end
 
-    if action and not Config.BaseDispatch.Actions[action] then
-        debugprint("Action not found in BaseDispatch.Actions, skipping.", action)
+    if IsDispatchOnCooldown(action) then
         return false
-    end
-
-    if Config.BaseDispatch.Chance < 100 and math.random(100) > Config.BaseDispatch.Chance then
+    elseif Config.BaseDispatch.Chance < 100 and math.random(100) > Config.BaseDispatch.Chance then
         debugprint("Random chance check failed, not calling police.")
         return false
-    end
-
-    if action and Config.BaseDispatch.Actions[action].chance and math.random(100) > Config.BaseDispatch.Actions[action].chance then
+    elseif actionData.chance and math.random(100) > actionData.chance then
         debugprint("Action specific chance check failed, not calling police.", action)
         return false
     end
@@ -518,7 +528,7 @@ local function CreateBaseDispatch(coords, action, title, description, code, fiel
 end
 
 ---@param vehicle number
----@return { model?: string, plate: string, color: string, class: string, manufacturer: string }
+---@return { model?: string, plate: string, color: string, class: string, manufacturer: string, rawModel: number }
 local function GetVehicleData(vehicle)
     local model = GetEntityModel(vehicle)
     local plate = GetVehicleNumberPlateText(vehicle)
@@ -545,7 +555,8 @@ local function GetVehicleData(vehicle)
         plate = plate,
         color = color,
         class = L("BACKEND.BASE_DISPATCH.VEHICLE_CLASSES." .. class),
-        manufacturer = manufacturer
+        manufacturer = manufacturer,
+        rawModel = model,
     }
 end
 
@@ -573,6 +584,11 @@ AddEventHandler("CEventPedJackingMyVehicle", function(_, perpetrator)
 
     local gender = GetPedGender(perpetrator)
     local vehicleData = GetVehicleData(vehicle)
+
+    if Config.BaseDispatch.IgnoredVehicles and table.contains(Config.BaseDispatch.IgnoredVehicles, vehicleData.rawModel) then
+        debugprint("CEventPedJackingMyVehicle: Vehicle is in the ignored vehicles list, not creating dispatch.")
+        return
+    end
 
     local args = {
         gender = gender,
@@ -656,6 +672,11 @@ AddEventHandler("CEventShockingSeenCarStolen", function(_, perpetrator)
     local gender = GetPedGender(perpetrator)
     local vehicleData = GetVehicleData(vehicle)
 
+    if Config.BaseDispatch.IgnoredVehicles and table.contains(Config.BaseDispatch.IgnoredVehicles, vehicleData.rawModel) then
+        debugprint("CEventShockingSeenCarStolen: Vehicle is in the ignored vehicles list, not creating dispatch.")
+        return
+    end
+
     local args = {
         gender = gender,
         gender_lower = gender:lower(),
@@ -716,7 +737,6 @@ AddEventHandler("CEventGunShot", function(_, perpetrator)
         return
     end
 
-    local options = Config.BaseDispatch.Actions.Gunshot
     local weapon = GetSelectedPedWeapon(perpetrator)
     local weaponGroup = GetWeaponGroup(weapon)
     local weaponGroupName = L("BACKEND.BASE_DISPATCH.WEAPON_TYPES." .. weaponGroup)
@@ -724,15 +744,16 @@ AddEventHandler("CEventGunShot", function(_, perpetrator)
     local coords = GetEntityCoords(perpetrator)
     local location = GetLocationName(coords)
 
-    if options.ignoredWeaponGroups and table.contains(options.ignoredWeaponGroups, weaponGroup) then
-        return
-    end
-
-    if options.ignoredWeapons and table.contains(options.ignoredWeapons, weapon) then
-        return
-    end
-
     if not ShouldCreateDispatch("Gunshot") then
+        return
+    end
+
+    if table.contains(Config.BaseDispatch.Actions.Gunshot.ignoredWeaponGroups, weaponGroup) then
+        return
+    end
+
+    if Config.BaseDispatch.IgnoredWeapons and table.contains(Config.BaseDispatch.IgnoredWeapons, weapon) then
+        debugprint("CEventGunShot: Weapon is in the ignored weapons list, not creating dispatch.")
         return
     end
 
@@ -757,7 +778,7 @@ end)
 ---@type { weapon: number, cooldown: number }?
 local warnedArmed = nil
 
-local function CheckIfArmed()
+Interval:new(function()
     local currentTime = GetGameTimer()
 
     if warnedArmed  then
@@ -768,7 +789,6 @@ local function CheckIfArmed()
         end
     end
 
-    local options = Config.BaseDispatch.Actions.Armed
     local playerPed = PlayerPedId()
     local equippedWeapon = GetSelectedPedWeapon(playerPed)
     local weaponGroup = GetWeaponGroup(equippedWeapon)
@@ -776,15 +796,9 @@ local function CheckIfArmed()
     if
         IsPedInAnyVehicle(playerPed, false)
         or (warnedArmed and warnedArmed.weapon == equippedWeapon)
+        or table.contains(Config.BaseDispatch.Actions.Armed.ignoredWeaponGroups, weaponGroup)
+        or (Config.BaseDispatch.IgnoredWeapons and table.contains(Config.BaseDispatch.IgnoredWeapons, equippedWeapon))
     then
-        return
-    end
-
-    if options.ignoredWeaponGroups and table.contains(options.ignoredWeaponGroups, weaponGroup) then
-        return
-    end
-
-    if options.ignoredWeapons and table.contains(options.ignoredWeapons, equippedWeapon) then
         return
     end
 
@@ -793,7 +807,7 @@ local function CheckIfArmed()
     local location = GetLocationName(coords)
     local gender = GetPedGender(playerPed)
 
-    if not ShouldCreateDispatch() then
+    if not ShouldCreateDispatch("Armed") then
         return
     end
 
@@ -817,8 +831,4 @@ local function CheckIfArmed()
         weapon = equippedWeapon,
         cooldown = currentTime + Config.BaseDispatch.Actions.Armed.cooldown * 1000
     }
-end
-
-if Config.BaseDispatch.Actions.Armed then
-    SetInterval(CheckIfArmed, 1000)
-end
+end, 1000, not not Config.BaseDispatch.Actions.Armed)

@@ -1,7 +1,7 @@
 RegisterCommand("tabletdebug", function()
     Config.Debug = not Config.Debug
 
-    SendReactMessage("toggleDebug", Config.Debug)
+    SendNUIAction("toggleDebug", Config.Debug)
     infoprint("info", "Debug " .. (Config.Debug and "enabled" or "disabled"))
 end, false)
 
@@ -44,8 +44,24 @@ RegisterDebugCommand("adddispatch", function()
         time = 600
     }
 
+    ---@type NewDispatchOptions
+    local combinedData = {
+        job = { "police", "ambulance" },
+        priority = "high",
+        title = "Combined",
+        description = "Combined dispatch notification.",
+        code = "10-31",
+        image = "https://r2.fivemanage.com/image/FQ6AXQrF7WNZ.webp",
+        location = {
+            label = "Highway",
+            coords = GenerateRandomCoords()
+        },
+        time = 600
+    }
+
     TriggerServerEvent("lb-tablet:addDispatch", policeData)
     TriggerServerEvent("lb-tablet:addDispatch", ambulanceData)
+    TriggerServerEvent("lb-tablet:addDispatch", combinedData)
 end)
 
 RegisterDebugCommand("removedispatch", function(_, args)

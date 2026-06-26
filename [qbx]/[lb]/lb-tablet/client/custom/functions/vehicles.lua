@@ -182,8 +182,5 @@ local vehicleColors = {
 }
 
 function GetVehicleColor(color)
-    return color and vehicleColors[color] or {
-        label = "Unknown Color",
-        hex = "#ffffff"
-    }
+    return color and vehicleColors[color]
 end

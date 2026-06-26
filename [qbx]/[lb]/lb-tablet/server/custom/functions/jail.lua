@@ -1,4 +1,4 @@
-if not Config.Police.Jail?.Refresh then
+if not Config.MDT.Jail.Refresh then
     return
 end
 
@@ -7,7 +7,7 @@ while not DatabaseCheckerFinished do
     Wait(1000)
 end
 
-local interval = (Config.Police.Jail.Interval or 60) * 1000
+local interval = (Config.MDT.Jail.Interval or 60) * 1000
 
 Wait(2500)
 
@@ -16,20 +16,20 @@ if not GetRemainingPrisonSentence then
     return
 end
 
-local function UpdateJailTimes()
+Interval:new(function()
     debugprint("Updating jail times...")
 
-    local prisoners = MySQL.query.await("SELECT id, prisoner FROM lbtablet_police_jail WHERE jail_time > 0") --[[@as { id: number, prisoner: string }[] ]]
+    local prisoners = MySQL.query.await("SELECT id, prisoner FROM lbtablet_mdt_jail WHERE remaining_time > 0") --[[@as { id: number, prisoner: string }[] ]]
 
     for i = 1, #prisoners do
         local prisoner = prisoners[i]
         local remainingTime = GetRemainingPrisonSentence(prisoner.prisoner) or 0
 
         MySQL.update.await(
-            "UPDATE lbtablet_police_jail SET jail_time = ? WHERE id = ?",
+            "UPDATE lbtablet_mdt_jail SET remaining_time = ? WHERE id = ?",
             { remainingTime, prisoner.id }
         )
     end
-end
 
-SetInterval(UpdateJailTimes, interval)
+    debugprint("Updated " .. #prisoners .. " jail times")
+end, interval)

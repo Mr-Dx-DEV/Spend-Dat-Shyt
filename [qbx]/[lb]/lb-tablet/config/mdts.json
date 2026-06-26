@@ -1,0 +1,1458 @@
+{
+    "$schema": "../.vscode/mdts.schema.json",
+    "Police": {
+        "name": "Police",
+        "department": "Los Santos Police Department",
+        "deviceName": "Mobile Database Terminal",
+        "appIcon": "./assets/img/icons/apps/Police.png",
+        "icon": "./assets/img/icons/mdt/police.webp",
+        "colorTheme": "#348de9",
+        "callsign": {
+            "enabled": true,
+            "format": "[11-11]",
+            "requireTemplate": true,
+            "allowChange": true,
+            "autoGenerate": true
+        },
+        "options": {
+            "dutyBlips": true,
+            "stackCriminalCharges": true
+        },
+        "defaultPermissions": {
+            "police": {
+                "view": 0,
+                "create": 3,
+                "edit": 3,
+                "delete": 3,
+                "stash": 3,
+                "fine": 3,
+                "pin": 3,
+                "kick": 3,
+                "invite": 2,
+                "private": 3,
+                "triangulate": 2,
+                "unlock": 2,
+                "callHistory": 1,
+                "createWiretap": 2,
+                "listenWiretap": 1,
+                "messageWiretap": 1,
+                "removeWiretap": 2
+            }
+        },
+        "tabs": [
+            {
+                "type": "home",
+                "icon": "IoHome",
+                "label": "Home",
+                "content": ["reports", "cases", "units", "bulletin", "warrants"]
+            },
+            {
+                "type": "bulletin",
+                "label": "Bulletin",
+                "icon": "IoBookmark"
+            },
+            {
+                "type": "dispatch",
+                "label": "Dispatch",
+                "icon": "IoRadio"
+            },
+            {
+                "type": "units",
+                "label": "Units",
+                "icon": "IoGrid",
+                "default": {
+                    "status": "available",
+                    "units": []
+                },
+                "statuses": {
+                    "available": {
+                        "label": "Available",
+                        "color": "green"
+                    },
+                    "busy": {
+                        "label": "Busy",
+                        "color": "red"
+                    }
+                }
+            },
+            {
+                "type": "users",
+                "label": "Profiles",
+                "icon": "IoPerson",
+                "canFine": true,
+                "canJail": true,
+                "fields": [
+                    {
+                        "id": "profile",
+                        "type": "entity",
+                        "label": "Profile Information",
+                        "subtitle": "job",
+                        "entityFields": [
+                            {
+                                "id": "dob",
+                                "label": "Date of Birth",
+                                "value": "dob"
+                            },
+                            {
+                                "id": "phoneNumber",
+                                "label": "Phone Number",
+                                "value": "phoneNumber",
+                                "copyable": true
+                            },
+                            {
+                                "id": "gender",
+                                "label": "Gender",
+                                "value": "gender"
+                            },
+                            {
+                                "id": "job",
+                                "label": "Job",
+                                "value": "job"
+                            },
+                            {
+                                "id": "identifier",
+                                "label": "Identifier",
+                                "value": "identifier",
+                                "copyable": true
+                            },
+                            {
+                                "id": "fingerprint",
+                                "label": "Fingerprint",
+                                "value": "fingerprint",
+                                "copyable": true
+                            },
+                            {
+                                "id": "activeWarrant",
+                                "label": "Active Warrant",
+                                "type": "boolean",
+                                "labels": {
+                                    "true": {
+                                        "label": "Yes",
+                                        "color": "red"
+                                    },
+                                    "false": {
+                                        "label": "No",
+                                        "color": "green"
+                                    }
+                                },
+                                "check": {
+                                    "tabType": "reports",
+                                    "id": "warrants",
+                                    "type": "field",
+                                    "field": "status",
+                                    "value": "active",
+                                    "involvement": "target"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Notes"
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Gallery",
+                        "multiple": true
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "licenses",
+                        "type": "licenses",
+                        "label": "Licenses"
+                    },
+                    {
+                        "id": "vehicles",
+                        "type": "vehicles",
+                        "label": "Vehicles"
+                    },
+                    {
+                        "id": "properties",
+                        "type": "properties",
+                        "label": "Properties"
+                    },
+                    {
+                        "id": "weapons",
+                        "type": "linked",
+                        "label": "Weapons",
+                        "linkType": "weapons"
+                    },
+                    {
+                        "id": "reports",
+                        "type": "linked",
+                        "label": "Reports",
+                        "linkType": "reports",
+                        "linkId": "reports"
+                    },
+                    {
+                        "id": "cases",
+                        "type": "linked",
+                        "label": "Cases",
+                        "linkType": "reports",
+                        "linkId": "cases"
+                    },
+                    {
+                        "id": "warrants",
+                        "type": "linked",
+                        "label": "Warrants",
+                        "linkType": "reports",
+                        "linkId": "warrants"
+                    },
+                    {
+                        "id": "charges",
+                        "type": "charges",
+                        "label": "Charges"
+                    }
+                ]
+            },
+            {
+                "type": "vehicles",
+                "label": "Vehicles",
+                "icon": "IoCarSport",
+                "fields": [
+                    {
+                        "id": "vehicle",
+                        "type": "entity",
+                        "label": "Vehicle Information",
+                        "entityFields": [
+                            {
+                                "id": "model",
+                                "label": "Model",
+                                "value": "model"
+                            },
+                            {
+                                "id": "plate",
+                                "label": "Plate",
+                                "value": "plate",
+                                "copyable": true
+                            },
+                            {
+                                "id": "color",
+                                "label": "Color",
+                                "value": "color.label"
+                            },
+                            {
+                                "id": "owner",
+                                "label": "Owner",
+                                "value": "owner.name",
+                                "clickable": true,
+                                "linkType": "profile",
+                                "linkId": "owner.identifier"
+                            },
+                            {
+                                "id": "activeWarrant",
+                                "label": "Active Warrant",
+                                "type": "boolean",
+                                "labels": {
+                                    "true": {
+                                        "label": "Yes",
+                                        "color": "red"
+                                    },
+                                    "false": {
+                                        "label": "No",
+                                        "color": "green"
+                                    }
+                                },
+                                "check": {
+                                    "tabType": "reports",
+                                    "id": "warrants",
+                                    "type": "field",
+                                    "field": "status",
+                                    "value": "active",
+                                    "involvement": "target"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Notes"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "warrants",
+                        "type": "linked",
+                        "label": "Warrants",
+                        "linkType": "reports",
+                        "linkId": "warrants",
+                        "multiple": true
+                    },
+                    {
+                        "id": "cases",
+                        "type": "linked",
+                        "label": "Cases",
+                        "linkType": "reports",
+                        "linkId": "cases",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "properties",
+                "label": "Properties",
+                "icon": "IoBusiness",
+                "fields": [
+                    {
+                        "id": "property",
+                        "type": "entity",
+                        "label": "Property Information",
+                        "entityFields": [
+                            {
+                                "id": "label",
+                                "label": "Label",
+                                "value": "label"
+                            },
+                            {
+                                "id": "owner",
+                                "label": "Owner",
+                                "value": "owner.name",
+                                "clickable": true,
+                                "linkType": "profile",
+                                "linkId": "owner.identifier"
+                            },
+                            {
+                                "id": "address",
+                                "label": "Address",
+                                "value": "address"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Notes"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "location",
+                        "type": "location",
+                        "label": "Location"
+                    }
+                ]
+            },
+            {
+                "type": "weapons",
+                "label": "Weapons",
+                "icon": "IoLocate",
+                "fields": [
+                    {
+                        "id": "weapon",
+                        "type": "entity",
+                        "label": "Weapon Information",
+                        "entityFields": [
+                            {
+                                "id": "model",
+                                "label": "Model",
+                                "value": "model",
+                                "editable": true
+                            },
+                            {
+                                "id": "serialNumber",
+                                "label": "Serial Number",
+                                "value": "serialNumber",
+                                "copyable": true
+                            },
+                            {
+                                "id": "owner",
+                                "label": "Owner",
+                                "value": "owner.name",
+                                "editable": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Notes"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "reports",
+                        "type": "linked",
+                        "label": "Linked Reports",
+                        "linkType": "reports",
+                        "linkId": "reports",
+                        "multiple": true
+                    },
+                    {
+                        "id": "cases",
+                        "type": "linked",
+                        "label": "Linked Cases",
+                        "linkType": "reports",
+                        "linkId": "cases",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "reports",
+                "id": "reports",
+                "label": "Reports",
+                "name": "report",
+                "icon": "IoFolder",
+                "fields": [
+                    {
+                        "id": "type",
+                        "type": "dropdown",
+                        "label": "Type",
+                        "options": [
+                            "Assault",
+                            "Robbery",
+                            "Burglary",
+                            "Theft",
+                            "Fraud",
+                            "Homicide",
+                            "Kidnapping",
+                            "Arson",
+                            "Vandalism",
+                            "Drug Offense",
+                            "Traffic Violation",
+                            "Domestic Violence",
+                            "Cybercrime",
+                            "Weapons Violation",
+                            "Public Disturbance",
+                            "Trespassing",
+                            "Harassment",
+                            "Missing Person",
+                            "Extortion",
+                            "Identity Theft",
+                            "Interrogation",
+                            "Other"
+                        ]
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Gallery",
+                        "multiple": true
+                    },
+                    {
+                        "id": "weapons",
+                        "type": "weapon",
+                        "label": "Weapons Involved",
+                        "multiple": true
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Description",
+                        "template": "# Report template\n\n**Date:**\n**Reported By:** (Name & Callsign / Badge number)\n\n**Incident Details:**\n**Evidence Collected:**\n**Actions Taken:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "officers",
+                        "label": "Officers Involved",
+                        "type": "employee",
+                        "multiple": true
+                    },
+                    {
+                        "id": "civilians",
+                        "label": "Civilians Involved",
+                        "type": "person",
+                        "multiple": true
+                    },
+                    {
+                        "id": "suspects",
+                        "label": "Suspects Involved",
+                        "type": "person",
+                        "multiple": true
+                    },
+                    {
+                        "id": "linked_warrants",
+                        "type": "linked",
+                        "label": "Linked Warrants",
+                        "multiple": true,
+                        "linkType": "reports",
+                        "linkId": "warrants",
+                        "editable": false
+                    }
+                ]
+            },
+            {
+                "type": "reports",
+                "id": "cases",
+                "label": "Cases",
+                "name": "case",
+                "icon": "IoReceipt",
+                "fields": [
+                    {
+                        "id": "evidence",
+                        "type": "photo",
+                        "label": "Evidence",
+                        "multiple": true
+                    },
+                    {
+                        "id": "stash",
+                        "type": "stash",
+                        "label": "Stash"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "reports",
+                        "type": "linked",
+                        "label": "Linked Reports",
+                        "multiple": true,
+                        "linkType": "reports",
+                        "linkId": "reports"
+                    },
+                    {
+                        "id": "weapons",
+                        "type": "weapon",
+                        "label": "Weapons Involved",
+                        "multiple": true
+                    },
+                    {
+                        "id": "vehicles",
+                        "label": "Vehicles Involved",
+                        "type": "vehicle",
+                        "multiple": true
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Description",
+                        "template": "# Case template\n\n**Date Opened:**\n**Filed by:** (Name & Callsign / Badge number)\n\n**Incident Details:**\n**Key Evidence:**\n**Investigation Progress:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "officers",
+                        "label": "Officers Involved",
+                        "type": "employee",
+                        "multiple": true
+                    },
+                    {
+                        "id": "civilians",
+                        "label": "Civilians Involved",
+                        "type": "person",
+                        "color": "green",
+                        "multiple": true
+                    },
+                    {
+                        "id": "criminals",
+                        "label": "Criminals Involved",
+                        "type": "person",
+                        "multiple": true,
+                        "catalog": true
+                    }
+                ]
+            },
+            {
+                "type": "reports",
+                "id": "warrants",
+                "label": "Warrants",
+                "name": "warrant",
+                "icon": "IoDocumentAttach",
+                "fields": [
+                    {
+                        "id": "target",
+                        "type": "target",
+                        "vehicle": true,
+                        "person": true,
+                        "label": "Target",
+                        "subtitle": "dob"
+                    },
+                    {
+                        "id": "type",
+                        "type": "dropdown",
+                        "label": "Type",
+                        "options": [
+                            "Arrest Warrant",
+                            "Search Warrant",
+                            "Bench Warrant",
+                            "Extradition Warrant",
+                            "Probation Violation Warrant",
+                            "Material Witness Warrant",
+                            "Execution Warrant",
+                            "Parole Violation Warrant",
+                            "Other"
+                        ]
+                    },
+                    {
+                        "id": "status",
+                        "type": "dropdown",
+                        "label": "Status",
+                        "showInList": true,
+                        "options": [
+                            {
+                                "id": "active",
+                                "label": "Active",
+                                "color": "green",
+                                "default": true
+                            },
+                            {
+                                "id": "served",
+                                "label": "Served",
+                                "color": "orange"
+                            },
+                            {
+                                "id": "expired",
+                                "label": "Expired",
+                                "color": "blue"
+                            },
+                            {
+                                "id": "cancelled",
+                                "label": "Cancelled",
+                                "color": "red"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Gallery",
+                        "multiple": true
+                    },
+                    {
+                        "id": "priority",
+                        "type": "dropdown",
+                        "label": "Priority",
+                        "showInList": true,
+                        "options": [
+                            {
+                                "id": "low",
+                                "label": "Low",
+                                "color": "green"
+                            },
+                            {
+                                "id": "medium",
+                                "label": "Medium",
+                                "color": "orange",
+                                "default": true
+                            },
+                            {
+                                "id": "high",
+                                "label": "High",
+                                "color": "red"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Description",
+                        "template": "# Warrant template\n\n**Date Issued:**\n**Requested By:** (Name & Callsign / Badge number)\n\n**Reason:**\n**Location / Target:**\n**Execution Details:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "linked_reports",
+                        "type": "linked",
+                        "label": "Linked Reports",
+                        "multiple": true,
+                        "linkType": "reports",
+                        "linkId": "reports",
+                        "editable": true
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "catalog",
+                "label": "Offences",
+                "name": "offence",
+                "icon": "IoBook",
+                "fine": true,
+                "jail": true,
+                "severities": [
+                    {
+                        "id": "Infraction",
+                        "color": "green"
+                    },
+                    {
+                        "id": "Misdemeanor",
+                        "color": "orange"
+                    },
+                    {
+                        "id": "Felony",
+                        "color": "red"
+                    }
+                ]
+            },
+            {
+                "type": "employees",
+                "label": "Employees",
+                "icon": "IoPeople"
+            },
+            {
+                "type": "chat",
+                "label": "Chat",
+                "icon": "IoChatbubbleEllipses"
+            },
+            {
+                "type": "phone",
+                "label": "Phone",
+                "icon": "IoPhonePortrait",
+                "triangulation": {
+                    "requireCall": false,
+                    "cellTowerTime": 500,
+                    "successRate": 50,
+                    "rangeMultiplier": 1.0
+                },
+                "unlock": {
+                    "time": [120, 240],
+                    "chance": 50,
+                    "attempts": 2
+                },
+                "wiretap": {
+                    "minCallDuration": 0
+                }
+            },
+            {
+                "type": "jail",
+                "label": "Jail",
+                "icon": "IoHandRight",
+                "fields": [
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Description",
+                        "template": "# Reason for Jailing\n\nDescribe the reason for jailing this person..."
+                    },
+                    {
+                        "id": "case",
+                        "type": "linked",
+                        "label": "Linked Case",
+                        "linkType": "reports",
+                        "linkId": "cases"
+                    }
+                ]
+            },
+            {
+                "type": "logs",
+                "label": "Logs",
+                "icon": "IoPrint"
+            }
+        ]
+    },
+    "Ambulance": {
+        "name": "Ambulance",
+        "department": "Los Santos Ambulance Service",
+        "deviceName": "Mobile Database Terminal",
+        "appIcon": "./assets/img/icons/apps/Ambulance.png",
+        "icon": "./assets/img/icons/mdt/ambulance.webp",
+        "colorTheme": "#ff0000",
+        "callsign": {
+            "enabled": true,
+            "format": "[11-1111]",
+            "requireTemplate": true,
+            "allowChange": true,
+            "autoGenerate": true
+        },
+        "options": {
+            "dutyBlips": true,
+            "stackCriminalCharges": true
+        },
+        "defaultPermissions": {
+            "ambulance": {
+                "view": 0,
+                "create": 3,
+                "edit": 3,
+                "delete": 3,
+                "pin": 3,
+                "kick": 2
+            }
+        },
+        "tabs": [
+            {
+                "type": "home",
+                "icon": "IoHome",
+                "label": "Home",
+                "content": ["reports", "bulletin", "units"]
+            },
+            {
+                "type": "bulletin",
+                "label": "Bulletin",
+                "icon": "IoBookmark"
+            },
+            {
+                "type": "dispatch",
+                "label": "Dispatch",
+                "icon": "IoRadio"
+            },
+            {
+                "type": "units",
+                "label": "Units",
+                "icon": "IoGrid",
+                "default": {
+                    "status": "available",
+                    "units": []
+                },
+                "statuses": {
+                    "available": {
+                        "label": "Available",
+                        "color": "green"
+                    },
+                    "busy": {
+                        "label": "Busy",
+                        "color": "red"
+                    },
+                    "at_station": {
+                        "label": "At Station",
+                        "color": "blue"
+                    },
+                    "on_call": {
+                        "label": "On Call",
+                        "color": "yellow"
+                    }
+                }
+            },
+            {
+                "type": "users",
+                "label": "Journals",
+                "icon": "IoPerson",
+                "canFine": true,
+                "fineLabel": "Bill",
+                "fineCatalog": false,
+                "fields": [
+                    {
+                        "id": "profile",
+                        "type": "entity",
+                        "label": "Patient Information",
+                        "subtitle": "dob",
+                        "entityFields": [
+                            {
+                                "id": "dob",
+                                "label": "Date of Birth",
+                                "value": "dob"
+                            },
+                            {
+                                "id": "phoneNumber",
+                                "label": "Phone Number",
+                                "value": "phoneNumber",
+                                "copyable": true
+                            },
+                            {
+                                "id": "gender",
+                                "label": "Gender",
+                                "value": "gender"
+                            },
+                            {
+                                "id": "height",
+                                "label": "Height",
+                                "value": "height"
+                            },
+                            {
+                                "id": "bloodType",
+                                "label": "Blood Type",
+                                "value": "bloodType"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "diagnoses_conditions",
+                        "type": "charges",
+                        "label": "Diagnoses / Conditions",
+                        "editable": true
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Notes"
+                    },
+                    {
+                        "id": "reports",
+                        "type": "linked",
+                        "label": "Medical Reports",
+                        "linkType": "reports",
+                        "linkId": "reports",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "reports",
+                "id": "reports",
+                "label": "Reports",
+                "icon": "IoFolder",
+                "fields": [
+                    {
+                        "id": "target",
+                        "type": "target",
+                        "person": true,
+                        "label": "Patient",
+                        "subtitle": "dob",
+                        "catalog": true
+                    },
+                    {
+                        "id": "type",
+                        "type": "dropdown",
+                        "label": "Type",
+                        "options": [
+                            "Injury",
+                            "Illness",
+                            "Vehicle Accident",
+                            "Overdose",
+                            "Cardiac Arrest",
+                            "Stroke",
+                            "Respiratory Distress",
+                            "Burn Injury",
+                            "Fall Injury",
+                            "Drowning",
+                            "Poisoning",
+                            "Seizure",
+                            "Trauma",
+                            "Allergic Reaction",
+                            "Shock",
+                            "Heatstroke",
+                            "Hypothermia",
+                            "Labor and Delivery",
+                            "Mental Health Crisis",
+                            "Other"
+                        ]
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Report Details",
+                        "template": "# Medical Report\n\n**Date:**\n**Reported By:** (Name & Callsign)\n\n**Patient Information:**\n**Chief Complaint:**\n**Assessment:**\n**Treatment Provided:**\n**Vital Signs:**\n**Medications Administered:**\n**Transportation:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Gallery",
+                        "multiple": true
+                    },
+                    {
+                        "id": "doctors",
+                        "label": "Doctors Involved",
+                        "type": "employee",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "catalog",
+                "label": "Conditions",
+                "name": "condition",
+                "icon": "IoMedical",
+                "severities": [
+                    {
+                        "id": "Minor",
+                        "color": "green"
+                    },
+                    {
+                        "id": "Moderate",
+                        "color": "orange"
+                    },
+                    {
+                        "id": "Severe",
+                        "color": "red"
+                    },
+                    {
+                        "id": "Critical",
+                        "color": "red"
+                    }
+                ]
+            },
+            {
+                "type": "employees",
+                "label": "Employees",
+                "icon": "IoPeople"
+            },
+            {
+                "type": "chat",
+                "label": "Chat",
+                "icon": "IoChatbubbleEllipses"
+            },
+            {
+                "type": "logs",
+                "label": "Logs",
+                "icon": "IoPrint"
+            }
+        ]
+    },
+    "Fire": {
+        "name": "Fire Department",
+        "department": "Los Santos Fire Department",
+        "deviceName": "Mobile Data Terminal",
+        "appIcon": "./assets/img/icons/apps/Fire.png",
+        "icon": "./assets/img/icons/mdt/fire.png",
+        "colorTheme": "#d32f2f",
+        "callsign": {
+            "enabled": true,
+            "format": "[E-111]",
+            "requireTemplate": true,
+            "allowChange": true,
+            "autoGenerate": true
+        },
+        "options": {
+            "dutyBlips": true
+        },
+        "defaultPermissions": {
+            "fire": {
+                "view": 0,
+                "create": 2,
+                "edit": 2,
+                "delete": 3,
+                "pin": 3,
+                "kick": 3
+            }
+        },
+        "tabs": [
+            {
+                "type": "home",
+                "icon": "IoHome",
+                "label": "Home",
+                "content": ["reports", "bulletin", "units"]
+            },
+            {
+                "type": "bulletin",
+                "label": "Bulletin",
+                "icon": "IoBookmark"
+            },
+            {
+                "type": "dispatch",
+                "label": "Dispatch",
+                "icon": "IoRadio"
+            },
+            {
+                "type": "units",
+                "label": "Units",
+                "icon": "IoGrid",
+                "default": {
+                    "status": "in_station",
+                    "units": []
+                },
+                "statuses": {
+                    "in_station": {
+                        "label": "In Station",
+                        "color": "green"
+                    },
+                    "responding": {
+                        "label": "Responding",
+                        "color": "orange"
+                    },
+                    "on_scene": {
+                        "label": "On Scene",
+                        "color": "red"
+                    },
+                    "returning": {
+                        "label": "Returning",
+                        "color": "blue"
+                    },
+                    "out_of_service": {
+                        "label": "Out of Service",
+                        "color": "gray"
+                    }
+                }
+            },
+            {
+                "type": "reports",
+                "id": "reports",
+                "label": "Reports",
+                "name": "report",
+                "icon": "IoFolder",
+                "fields": [
+                    {
+                        "id": "type",
+                        "type": "dropdown",
+                        "label": "Incident Type",
+                        "options": [
+                            "Structure Fire",
+                            "Vehicle Fire",
+                            "Wildfire/Brush Fire",
+                            "Medical Emergency",
+                            "Hazmat Incident",
+                            "Gas Leak",
+                            "Carbon Monoxide Alarm",
+                            "Vehicle Accident",
+                            "Water Rescue",
+                            "False Alarm",
+                            "Public Assist",
+                            "Other"
+                        ]
+                    },
+                    {
+                        "id": "location",
+                        "type": "location",
+                        "label": "Location"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Scene Photos",
+                        "multiple": true
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Incident Report",
+                        "template": "# Incident Report\n\n**Date/Time:**\n**Unit:** (Callsign)\n**Location:**\n\n**Call Type:**\n**Dispatch Time:**\n**Arrival Time:**\n**Cleared Time:**\n\n**Situation:**\n\n**Actions Taken:**\n\n**Patient/Victim Information:**\n\n**Property Damage:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "firefighters",
+                        "label": "Responding Firefighters",
+                        "type": "employee",
+                        "multiple": true
+                    },
+                    {
+                        "id": "civilians",
+                        "label": "Civilians/Patients Involved",
+                        "type": "person",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "employees",
+                "label": "Employees",
+                "icon": "IoPeople"
+            },
+            {
+                "type": "chat",
+                "label": "Chat",
+                "icon": "IoChatbubbleEllipses"
+            },
+            {
+                "type": "logs",
+                "label": "Logs",
+                "icon": "IoPrint"
+            }
+        ]
+    },
+    "Mechanic": {
+        "name": "Mechanic",
+        "department": "Los Santos Auto Shop",
+        "deviceName": "Mobile Data Terminal",
+        "appIcon": "./assets/img/icons/apps/Mechanic.png",
+        "icon": "./assets/img/icons/mdt/mechanic.png",
+        "colorTheme": "#eb8934",
+        "callsign": {
+            "enabled": true,
+            "format": "[M-111]",
+            "requireTemplate": true,
+            "allowChange": true,
+            "autoGenerate": true
+        },
+        "options": {
+            "dutyBlips": true
+        },
+        "defaultPermissions": {
+            "mechanic": {
+                "view": 0,
+                "create": 0,
+                "edit": 2,
+                "delete": 3,
+                "pin": 3,
+                "kick": 2
+            }
+        },
+        "tabs": [
+            {
+                "type": "home",
+                "icon": "IoHome",
+                "label": "Home",
+                "content": ["serviceReports", "bulletin", "units"]
+            },
+            {
+                "type": "bulletin",
+                "label": "Bulletin",
+                "icon": "IoBookmark"
+            },
+            {
+                "type": "dispatch",
+                "label": "Dispatch",
+                "icon": "IoRadio"
+            },
+            {
+                "type": "units",
+                "label": "Units",
+                "icon": "IoGrid",
+                "default": {
+                    "status": "available",
+                    "units": []
+                },
+                "statuses": {
+                    "available": {
+                        "label": "Available",
+                        "color": "green"
+                    },
+                    "busy": {
+                        "label": "Busy",
+                        "color": "orange"
+                    },
+                    "on_call": {
+                        "label": "On Call",
+                        "color": "yellow"
+                    },
+                    "at_shop": {
+                        "label": "At Shop",
+                        "color": "blue"
+                    },
+                    "out_of_service": {
+                        "label": "Out of Service",
+                        "color": "gray"
+                    }
+                }
+            },
+            {
+                "type": "vehicles",
+                "label": "Vehicles",
+                "icon": "IoCarSport",
+                "fields": [
+                    {
+                        "id": "vehicle",
+                        "type": "entity",
+                        "label": "Vehicle Information",
+                        "entityFields": [
+                            {
+                                "id": "model",
+                                "label": "Model",
+                                "value": "model"
+                            },
+                            {
+                                "id": "plate",
+                                "label": "License Plate",
+                                "value": "plate",
+                                "copyable": true
+                            },
+                            {
+                                "id": "color",
+                                "label": "Color",
+                                "value": "color.label"
+                            },
+                            {
+                                "id": "owner",
+                                "label": "Owner",
+                                "value": "owner.name",
+                                "clickable": true,
+                                "linkType": "profile",
+                                "linkId": "owner.identifier"
+                            },
+                            {
+                                "id": "location",
+                                "label": "Last Known Location",
+                                "value": "location.label"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "notes",
+                        "type": "text",
+                        "label": "Vehicle Notes",
+                        "template": "# Vehicle Notes\n\n**Service History:**\n**Known Issues:**\n**Modifications:**\n**Special Instructions:**\n\n**Additional Notes:**"
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "serviceReports",
+                        "type": "linked",
+                        "label": "Service History",
+                        "linkType": "reports",
+                        "linkId": "serviceReports",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "reports",
+                "id": "serviceReports",
+                "label": "Service Reports",
+                "icon": "IoConstruct",
+                "canFine": true,
+                "fineLabel": "Bill",
+                "fineCatalog": true,
+                "fields": [
+                    {
+                        "id": "target",
+                        "type": "target",
+                        "vehicle": true,
+                        "person": false,
+                        "label": "Vehicle",
+                        "subtitle": "plate"
+                    },
+                    {
+                        "id": "customer",
+                        "type": "target",
+                        "vehicle": false,
+                        "person": true,
+                        "label": "Customer",
+                        "details": false
+                    },
+                    {
+                        "id": "services",
+                        "type": "charges",
+                        "label": "Services",
+                        "editable": true
+                    },
+                    {
+                        "id": "status",
+                        "type": "dropdown",
+                        "label": "Status",
+                        "showInList": true,
+                        "options": [
+                            {
+                                "id": "in_progress",
+                                "label": "In Progress",
+                                "color": "yellow"
+                            },
+                            {
+                                "id": "completed",
+                                "label": "Completed",
+                                "color": "green"
+                            },
+                            {
+                                "id": "waiting_parts",
+                                "label": "Waiting for Parts",
+                                "color": "orange"
+                            },
+                            {
+                                "id": "cancelled",
+                                "label": "Cancelled",
+                                "color": "red"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "priority",
+                        "type": "dropdown",
+                        "label": "Priority",
+                        "showInList": true,
+                        "options": [
+                            {
+                                "id": "low",
+                                "label": "Low",
+                                "color": "green"
+                            },
+                            {
+                                "id": "normal",
+                                "label": "Normal",
+                                "color": "orange",
+                                "default": true
+                            },
+                            {
+                                "id": "high",
+                                "label": "High",
+                                "color": "red"
+                            },
+                            {
+                                "id": "urgent",
+                                "label": "Urgent",
+                                "color": "purple"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "tags",
+                        "type": "tag",
+                        "label": "Tags",
+                        "multiple": true
+                    },
+                    {
+                        "id": "gallery",
+                        "type": "photo",
+                        "label": "Photos",
+                        "multiple": true
+                    },
+                    {
+                        "id": "description",
+                        "type": "text",
+                        "label": "Service Report",
+                        "template": "# Service Report\n\n**Date/Time:**\n**Mechanic:** (Name & Callsign)\n**Vehicle:** {plate}\n\n**Service Type:**\n**Customer Request:**\n\n**Diagnosis:**\n**Work Performed:**\n**Parts Used:**\n**Labor Hours:**\n**Total Cost:**\n\n**Notes:**\n**Recommendations:**\n\n**Additional Information:**"
+                    },
+                    {
+                        "id": "mechanics",
+                        "label": "Mechanics Involved",
+                        "type": "employee",
+                        "multiple": true
+                    }
+                ]
+            },
+            {
+                "type": "catalog",
+                "label": "Catalog",
+                "name": "service",
+                "icon": "IoPricetags",
+                "fine": true,
+                "fineLabel": "Bill",
+                "jail": false,
+                "severities": [
+                    {
+                        "id": "Parts",
+                        "color": "blue"
+                    },
+                    {
+                        "id": "Labor",
+                        "color": "orange"
+                    },
+                    {
+                        "id": "Service",
+                        "color": "green"
+                    }
+                ]
+            },
+            {
+                "type": "employees",
+                "label": "Employees",
+                "icon": "IoPeople"
+            },
+            {
+                "type": "chat",
+                "label": "Chat",
+                "icon": "IoChatbubbleEllipses"
+            },
+            {
+                "type": "logs",
+                "label": "Logs",
+                "icon": "IoPrint"
+            }
+        ]
+    }
+}

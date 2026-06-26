@@ -188,14 +188,14 @@ function GetEmployeeList(company)
         WHERE JSON_VALUE(u.job, '$.name') = ?
     ]], { company })
 
-    local players, count = QB.Functions.GetPlayersByJob(company)
     local onlineCitizenIds = {}
+    local players = QB.Functions.GetPlayersByJob and QB.Functions.GetPlayersByJob(company, true) or QB.Functions.GetPlayers()
 
-    for i = 1, count do
-        local qPlayer = QB.Functions.GetPlayer(players[i])
+    for _, player in pairs(players) do
+        local qPlayer = type(player) == "number" and QB.Functions.GetPlayer(player) or player --[[@as table?]]
         local playerData = qPlayer and qPlayer.PlayerData
 
-        if playerData then
+        if playerData and (QB.Functions.GetPlayersByJob or (playerData.job.name == company and playerData.job.onduty)) then
             onlineCitizenIds[playerData.citizenid] = true
         end
     end

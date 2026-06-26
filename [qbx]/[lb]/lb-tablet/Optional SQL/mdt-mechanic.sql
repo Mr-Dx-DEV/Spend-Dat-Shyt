@@ -1,0 +1,116 @@
+INSERT IGNORE INTO lbtablet_mdt_catalog_categories (department, title) VALUES
+	('Mechanic', 'Engine Repair'),
+	('Mechanic', 'Body Work'),
+	('Mechanic', 'Paint Job'),
+	('Mechanic', 'Tire Replacement'),
+	('Mechanic', 'Oil Change'),
+	('Mechanic', 'Battery Replacement'),
+	('Mechanic', 'Transmission Repair'),
+	('Mechanic', 'Brake Service'),
+	('Mechanic', 'Suspension Repair'),
+	('Mechanic', 'Electrical Repair'),
+	('Mechanic', 'Exhaust System'),
+	('Mechanic', 'Diagnostic Check'),
+	('Mechanic', 'Modification'),
+	('Mechanic', 'Inspection'),
+	('Mechanic', 'Towing Service'),
+	('Mechanic', 'Roadside Assistance')
+;
+
+INSERT IGNORE INTO lbtablet_mdt_catalog_items (department, category_id, severity, title, content, fine, jail) VALUES
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'service', 'Oil + filter change', 'Synthetic oil and OEM-spec filter.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'labor', 'Spark plugs replacement', 'Full set replacement and gap check.', 200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'labor', 'Timing belt replacement', 'Timing belt + tensioner replacement.', 800, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'labor', 'Head gasket replacement', 'Full head gasket job, coolant refill.', 1500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'labor', 'Engine swap', 'Full engine swap. Customer-supplied or shop-sourced block.', 8000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Engine Repair'), 'service', 'Coolant flush', 'Drain, flush, and refill with OEM-spec coolant.', 120, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Brake Service'), 'parts', 'Brake pads — front', 'OEM front brake pads (pair).', 400, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Brake Service'), 'parts', 'Brake pads — rear', 'OEM rear brake pads (pair).', 350, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Brake Service'), 'service', 'Brake fluid flush', 'Full flush and bleed.', 80, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Brake Service'), 'parts', 'Brake rotors — pair', 'Replace rotors with OEM-spec discs.', 600, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Brake Service'), 'parts', 'Performance brake kit', '6-piston caliper upgrade with slotted rotors.', 2500, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'service', 'Tire rotation', 'Rotate all four tires and torque to spec.', 40, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'service', 'Wheel alignment', 'Four-wheel alignment.', 100, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'parts', 'Single tire replacement', 'One tire, mount and balance.', 250, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'parts', 'Full set of tires', 'Set of four all-season tires, mounted and balanced.', 1200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'parts', 'Performance tires (set)', 'Set of four performance tires for sport vehicles.', 2500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Tire Replacement'), 'service', 'Tire patching', 'Plug + patch for puncture repair.', 50, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'labor', 'Dent repair (small)', 'Paintless dent repair for minor damage.', 250, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'labor', 'Dent repair (large)', 'Body filler and refinish for larger panels.', 600, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'parts', 'Bumper replacement', 'OEM replacement bumper, primed and ready to paint.', 800, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'parts', 'Fender replacement', 'OEM front fender, prep and install.', 700, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'parts', 'Windshield replacement', 'OEM glass with new molding and seal.', 450, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Body Work'), 'labor', 'Frame straightening', 'Frame pull on shop jig. Required for collision claims.', 2000, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Paint Job'), 'service', 'Standard repaint', 'Single-stage full-body repaint, factory color match.', 1500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Paint Job'), 'service', 'Custom matte finish', 'Full body in matte topcoat.', 3000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Paint Job'), 'service', 'Pearlescent paint', 'Multi-stage pearlescent finish.', 4500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Paint Job'), 'service', 'Vinyl wrap', 'Full-body vinyl wrap, prep and trim.', 2500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Paint Job'), 'labor', 'Touch-up (small area)', 'Spot blend and clearcoat for chips/scratches.', 200, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Oil Change'), 'service', 'Synthetic oil change', 'Premium synthetic oil and OEM filter.', 200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Oil Change'), 'service', 'High-mileage oil change', 'High-mileage formulation for 75k+ vehicles.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Oil Change'), 'service', 'Standard oil change', 'Conventional 5W-30 oil and basic filter.', 80, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Battery Replacement'), 'parts', 'Standard 12V battery', 'OEM-spec lead-acid battery, installed.', 250, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Battery Replacement'), 'parts', 'Performance AGM battery', 'Absorbed glass mat battery for performance/audio builds.', 500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Battery Replacement'), 'service', 'Battery testing & terminal clean', 'Load test, clean terminals, check charging system.', 40, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Transmission Repair'), 'service', 'Transmission fluid flush', 'Full flush and fill with OEM-spec ATF.', 200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Transmission Repair'), 'labor', 'Clutch replacement', 'Clutch kit, throwout bearing, and resurfacing.', 1500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Transmission Repair'), 'labor', 'Full transmission rebuild', 'Complete teardown, clean, and reassembly with new seals.', 4500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Transmission Repair'), 'labor', 'Torque converter replacement', 'Replace torque converter and refill ATF.', 1200, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Suspension Repair'), 'parts', 'Shock absorbers (pair)', 'Replace front or rear pair, OEM-spec.', 600, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Suspension Repair'), 'parts', 'Lowered suspension kit', 'Lowering springs with revised dampers.', 2000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Suspension Repair'), 'parts', 'Adjustable coilovers', 'Full coilover set, height- and damping-adjustable.', 3500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Suspension Repair'), 'parts', 'Air suspension install', 'Air-bag setup with compressor and management.', 5000, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Electrical Repair'), 'service', 'Wiring diagnostic', 'Locate shorts/opens, repair harness.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Electrical Repair'), 'parts', 'Alternator replacement', 'Rebuilt or OEM alternator install.', 600, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Electrical Repair'), 'parts', 'Starter motor replacement', 'OEM starter install.', 500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Electrical Repair'), 'service', 'ECU remap / tune', 'Custom dyno tune for performance or fuel economy.', 1200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Electrical Repair'), 'parts', 'Headlight bulb replacement', 'OEM bulbs, both sides.', 80, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Exhaust System'), 'parts', 'Muffler replacement', 'OEM-style replacement muffler.', 400, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Exhaust System'), 'parts', 'Custom exhaust install', 'Aftermarket cat-back exhaust install.', 1500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Exhaust System'), 'parts', 'Race exhaust (cat-back)', 'Full race-spec cat-back system. Track use.', 3000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Exhaust System'), 'parts', 'Catalytic converter', 'OEM-spec replacement converter.', 1200, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Diagnostic Check'), 'service', 'Diagnostic scan', 'OBD-II read and basic system diagnosis.', 50, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Diagnostic Check'), 'service', 'Full electronic diagnosis', 'Deep scan, live data, and report.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Diagnostic Check'), 'service', 'Pre-purchase inspection', 'Used-vehicle inspection with written report.', 200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Diagnostic Check'), 'service', 'Error code clearing', 'Clear codes after repair, verify no return.', 40, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Turbo install', 'Turbo kit, intercooler, plumbing, and tune.', 5000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Supercharger install', 'Belt-driven supercharger kit with tune.', 6500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'NOS install', 'Wet nitrous kit with solenoids and bottle.', 2500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'service', 'Performance chip / tune', 'Stage 1 ECU flash on dyno.', 1500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Body kit install', 'Full body kit, prep and mount.', 3500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'service', 'Window tint', 'All windows, ceramic film.', 300, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Roll cage install', 'Bolt-in or weld-in cage, race-spec.', 4000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Neon underglow', 'Underbody RGB light kit.', 400, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Carbon fiber hood', 'Lightweight carbon hood, prep and install.', 1800, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Spoiler install', 'Bolt-on rear spoiler, paint-matched.', 800, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Armor plating', 'Discreet armor panels. Off-the-books only.', 10000, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Modification'), 'parts', 'Bulletproof tires', 'Run-flat reinforced tires.', 5000, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Inspection'), 'service', 'State safety inspection', 'State-required safety check.', 75, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Inspection'), 'service', 'Multi-point inspection', '50-point health check with report.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Inspection'), 'service', 'Annual maintenance check', 'Annual service inspection and fluid top-up.', 200, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Towing Service'), 'service', 'Local tow (under 5 miles)', 'Flat rate, in-city.', 200, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Towing Service'), 'service', 'Long-distance tow (per mile)', 'Per-mile rate for out-of-city tows.', 25, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Towing Service'), 'service', 'Heavy duty tow', 'For trucks, vans, and modified vehicles.', 500, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Towing Service'), 'service', 'Flatbed tow', 'Low-profile / damaged vehicle transport.', 300, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Towing Service'), 'service', 'Impound recovery', 'Vehicle recovery from impound lot.', 400, 0),
+
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Roadside Assistance'), 'service', 'Jump start', 'On-site battery jump.', 75, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Roadside Assistance'), 'service', 'Fuel delivery', 'Delivery of up to 5 gal of fuel.', 100, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Roadside Assistance'), 'service', 'Lockout service', 'Vehicle unlock without damage.', 150, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Roadside Assistance'), 'service', 'Flat tire change on-site', 'Swap with spare on-site.', 120, 0),
+	('Mechanic', (SELECT id FROM lbtablet_mdt_catalog_categories WHERE department = 'Mechanic' AND title = 'Roadside Assistance'), 'service', 'Battery boost', 'Quick boost for stalled vehicles.', 60, 0)
+;

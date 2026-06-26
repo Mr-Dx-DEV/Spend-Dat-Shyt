@@ -41,8 +41,6 @@ function GetPhones(source)
         return phones
     end
 
-    debugprint(items)
-
     for i = 1, #items do
         local item = items[i]
 
@@ -53,8 +51,6 @@ function GetPhones(source)
             }
         end
     end
-
-    debugprint("???", phones)
 
     return phones
 end

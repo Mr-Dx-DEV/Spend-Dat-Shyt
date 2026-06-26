@@ -2,6 +2,10 @@ if Config.Framework ~= "standalone" then
     return
 end
 
+RegisterNetEvent("tablet:services:toggleDuty", function()
+    TriggerEvent("lb-tablet:jobUpdated", source, GetJob(source).name, IsOnDuty(source))
+end)
+
 ---@param company string
 ---@return { identifier: string, firstname: string, lastname: string, grade: number, gradeLabel: string, number?: string, online: boolean }[]
 function GetEmployeeList(company)

@@ -1,0 +1,2084 @@
+{
+    "LABEL": "Magyar",
+    "SEARCH": "Keresés",
+    "CANCEL": "Mégse",
+    "OPTIONAL": "Opcionális",
+    "ADD": "Hozzáadás",
+    "NOW": "most",
+    "D": "n",
+    "H": "ó",
+    "M": "p",
+    "S": "m",
+    "APP_NAMES": {
+        "Police": "Robotzsaru",
+        "Ambulance": "Mentőszolgálat",
+        "Registration": "Regisztráció",
+        "Notes": "Jegyzetek",
+        "Browser": "Böngésző",
+        "Settings": "Beállítások",
+        "Photos": "Fotók",
+        "Camera": "Kamera",
+        "Calculator": "Számológép",
+        "Apps": "Alkalmazások",
+        "Clock": "Óra",
+        "Maps": "Térképek",
+        "Mail": "Levelezés",
+        "Services": "Szolgáltatások",
+        "VoiceMemo": "Hangjegyzetek"
+    },
+    "APPS": {
+        "SETTINGS": {
+            "TITLE": "Beállítások",
+            "BACK": "Vissza",
+            "DONE": "Kész",
+            "EDIT": "Szerkesztés",
+            "AIRPLANE_MODE": "Repülő üzemmód",
+            "AIRPLANE_MODE_DESCRIPTION": "Hívások, mobiladat letiltása stb.",
+            "STREAMER_MODE": "Streamer mód",
+            "STREAMER_MODE_DESCRIPTION": "Érzékeny adatokat eltakar",
+            "GENERAL": "Általános",
+            "GENERAL_DESCRIPTION": "Általános beállítások a tablethez",
+            "ABOUT": "Névjegy",
+            "NAME": "Név",
+            "VERSION": "Verzió",
+            "MODEL_NAME": "Modellnév",
+            "SERIAL_NUMBER": "Sorozatszám",
+            "DEVELOPED_BY": "Fejlesztette",
+            "PURCHASE_AT": "Vásárlás helye",
+            "SONGS": "Zenék",
+            "VIDEOS": "Videók",
+            "PHOTOS": "Fotók",
+            "APPLICATIONS": "Alkalmazások",
+            "CAPACITY": "Kapacitás",
+            "AVAILABLE": "Elérhető",
+            "SOFTWARE_UPDATE": "Szoftverfrissítés",
+            "AUTOMATIC_UPDATES": "Automatikus frissítések",
+            "DATE_TIME": "Dátum és idő",
+            "24_HOUR_TIME": "24 órás formátum",
+            "SET_AUTOMATICALLY": "Automatikus beállítás",
+            "TIME_ZONE": "Időzóna",
+            "LANGUAGE_REGION": "Nyelv és régió",
+            "LANGUAGE": "Nyelv",
+            "TEMPERATURE": "Hőmérséklet",
+            "CELCIUS": "Celsius",
+            "FAHRENHEIT": "Fahrenheit",
+            "BATTERY": "Akkumulátor",
+            "BATTERY_DESCRIPTION": "Akkumulátor élettartam és használat megtekintése",
+            "SOUND_HAPTICS": "Hang és rezgés",
+            "SOUND_HAPTICS_DESCRIPTION": "Hangok és rezgések módosítása",
+            "SOUND_HAPTICS_PATTERNS": "Hang- és rezgésminták",
+            "RINGTONE": "Csengőhang",
+            "RINGTONE_VOLUME": "Csengőhang hangereje",
+            "TEXT_TONE": "Üzenethang",
+            "DEFAULT": "Alapértelmezett",
+            "PHONE_STORAGE": "Tablet tárhely",
+            "STORAGE": "Tárhely",
+            "MICROPHONE": "Mikrofon",
+            "MICROPHONE_DESCRIPTION": "Válassza ki, melyik mikrofont szeretné használni a felvételekhez",
+            "USED": "Használt",
+            "OF": "/",
+            "DISPLAY_BRIGHTNESS": "Kijelző és fényerő",
+            "DISPLAY_BRIGHTNESS_DESCRIPTION": "Kijelző és fényerő beállítása",
+            "DARK": "Sötét",
+            "LIGHT": "Világos",
+            "APPEARANCE": "Megjelenés",
+            "AUTOMATIC": "Automatikus",
+            "BRIGHTNESS": "Fényerő",
+            "FRAME_COLOR": "Keret színe",
+            "TABLET_SCALE": "Tablet méretezés",
+            "WALLPAPER": "Háttérkép",
+            "WALLPAPER_DESCRIPTION": "Háttérkép és egyéb háttérbeállítások módosítása",
+            "WALLPAPERS": "Háttérképek",
+            "CHOOSE_NEW_WALLPAPER": "Új háttérkép választása",
+            "NOTIFICATIONS": "Értesítések",
+            "NOTIFICATIONS_DESCRIPTION": "Válaszd ki, mely alkalmazások küldhetnek értesítéseket",
+            "ALLOW_NOTIFICATIONS": "Értesítések engedélyezése",
+            "SOUNDS": "Hangok",
+            "CLOUD_BACKUP": "Felhőmentés",
+            "YOUR_PROFILE": "Profilod",
+            "SUCCESS": "Sikeres",
+            "SUCCESS_TEXT": "A tablet 5 másodpercen belül újraindul...",
+            "OK": "OK",
+            "ON": "Be",
+            "OFF": "Ki",
+            "RESET_POPUP": {
+                "TITLE": "Tablet visszaállítása",
+                "TEXT": "Biztosan visszaállítod a tabletet? [EZ MINDENT TÖRÖL]",
+                "CANCEL": "Mégse",
+                "CONFIRM": "Visszaállítás"
+            },
+            "UP_TO_DATE": "A tablet naprakész",
+            "BLUR_HOMESCREEN": "Kezdőképernyő elmosása"
+        },
+        "NOTES": {
+            "TITLE": "Jegyzetek",
+            "SEARCH_PLACEHOLDER": "Keresés",
+            "FOOTER": "{amount} Jegyzet",
+            "NEW_NOTE": "Új jegyzet",
+            "LAST_EDITED": "Utoljára szerkesztve: {date}",
+            "DELETE_TITLE": "{title} törlése",
+            "DELETE_TEXT": "Biztosan törlöd a(z) '{title}' nevű jegyzetet?",
+            "BUTTON_CANCEL": "Mégse",
+            "BUTTON_DELETE": "Törlés"
+        },
+        "CLOCK": {
+            "WORLDCLOCK": {
+                "TITLE": "Világóra",
+                "TODAY": "Ma",
+                "TOMORROW": "Holnap",
+                "YESTERDAY": "Tegnap",
+                "LOCAL_TIME": "Helyi idő",
+                "HRS": "{time} óra"
+            },
+            "ALARM": {
+                "TITLE": "Ébresztő",
+                "ADD": "Ébresztő hozzáadása",
+                "CANCEL": "Mégse",
+                "EDIT": "Szerkesztés",
+                "DONE": "Kész",
+                "SAVE": "Mentés",
+                "LABEL": "Címke",
+                "SOUND": "Hang",
+                "SNOOZE": "Szundi",
+                "DELETE_TITLE": "Ébresztő törlése",
+                "DELETE_TEXT": "Biztosan törlöd ezt az ébresztőt?",
+                "BUTTON_CANCEL": "Mégse",
+                "BUTTON_DELETE": "Törlés",
+                "ALARMS": "Ébresztők",
+                "NEW_ALARM": "Új ébresztő",
+                "EDIT_ALARM": "Ébresztő szerkesztése"
+            },
+            "STOPWATCH": {
+                "TITLE": "Stopper",
+                "START": "Indítás",
+                "STOP": "Megállítás",
+                "RESET": "Visszaállítás",
+                "LAP": "Kör",
+                "TIME": "Idő",
+                "TOTAL": "Összesen",
+                "NO_LAPS": "Nincsenek körök"
+            },
+            "TIMER": {
+                "TITLE": "Időzítő",
+                "START": "Indítás",
+                "STOP": "Megállítás",
+                "CANCEL": "Mégse",
+                "HOURS": "Óra",
+                "MINUTES": "Perc",
+                "SECONDS": "Másodperc",
+                "NO_RECENTS": "Nincsenek legutóbbiak"
+            },
+            "ALERT": {
+                "STOP": "Megállítás",
+                "RESTART": "Újraindítás"
+            }
+        },
+        "CAMERA": {
+            "VIDEO": "Videó",
+            "PHOTO": "Fotó",
+            "LANDSCAPE": "Fekvő",
+            "UPLOADING": "Feltöltés"
+        },
+        "APPSTORE": {
+            "TITLE": "Alkalmazások",
+            "SEARCH": "Keresés",
+            "GET": "Letöltés",
+            "OPEN": "Megnyitás",
+            "TODAY": "Ma",
+            "POPULAR_APPS": "Népszerű alkalmazások",
+            "GAMES": "Játékok",
+            "APPS": "Alkalmazások",
+            "WHAT_WE_PLAYING": "Amit most játszunk",
+            "INFORMATION": "Információ",
+            "PROVIDER": "Fejlesztő",
+            "SIZE": "Méret",
+            "COMPATIBILITY": "Kompatibilitás",
+            "IN_APP_PURCHASES": "Alkalmazáson belüli vásárlások",
+            "WORKS_WITH_PHONE": "Működik ezzel a tablettel",
+            "NO": "Nem",
+            "YES": "Igen",
+            "PURCHASE_APP_POPUP": {
+                "TITLE": "Alkalmazás vásárlása",
+                "DESCRIPTION": "Megveszed a(z) {app} alkalmazást {price} áron?",
+                "CANCEL": "Mégse",
+                "PROCEED": "Vásárlás"
+            }
+        },
+        "PHOTOS": {
+            "TITLE": "Fotók",
+            "SELECT": "Kiválasztás",
+            "CANCEL": "Mégse",
+            "EDIT": "Szerkesztés",
+            "DONE": "Kész",
+            "DELETE": "Törlés",
+            "SELECT_ITEMS": "Elemek kiválasztása",
+            "SELECTED_COUNT": "{count} elem kiválasztva",
+            "PHOTOS": "Fotók",
+            "ALBUMS": "Albumok",
+            "LIBRARY": "Könyvtár",
+            "GALLERY": "Galéria",
+            "MY_ALBUMS": "Saját albumok",
+            "MEDIA_TYPES": "Médiatípusok",
+            "FROM_MY_PHONE": "A telefonomról",
+            "NEW_ALBUM_POPUP": {
+                "TITLE": "Új album",
+                "DESCRIPTION": "Adj nevet az albumnak",
+                "PLACEHOLDER": "Cím",
+                "CANCEL": "Mégse",
+                "PROCEED": "Mentés"
+            },
+            "REMOVE_ALBUM": {
+                "TITLE": "\"{name}\" eltávolítása",
+                "DESCRIPTION": "Biztosan törlöd a(z) \"{name}\" albumot? A fotók nem törlődnek",
+                "CANCEL": "Mégse",
+                "PROCEED": "Eltávolítás"
+            },
+            "RENAME_ALBUM_POPUP": {
+                "TITLE": "Album átnevezése",
+                "DESCRIPTION": "Adj új nevet az albumnak",
+                "PLACEHOLDER": "Új albumnév",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "DELETE_IMAGE_POPUP": {
+                "TITLE": "Kép törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt a képet?",
+                "CANCEL": "Mégse",
+                "PROCEED": "Törlés"
+            },
+            "IMPORT_IMAGE_POPUP": {
+                "TITLE": "Importálás albumba",
+                "DESCRIPTION": "Kép importálása ebbe az albumba",
+                "CANCEL": "Mégse",
+                "PROCEED": "Importálás",
+                "PLACEHOLDER": "Kép URL-je"
+            },
+            "NO_PHOTOS": "Nincsenek fotók vagy videók",
+            "NO_PHOTOS_INSTRUCTIONS": "Fotókat és videókat a kamerával készíthetsz",
+            "PHOTO_COUNT": "{amount} Fotó",
+            "VIDEO_COUNT": "{amount} Videó",
+            "DELETE_CONTEXT_TITLE": "Törölni szeretnéd a(z) {type} elemet, vagy csak eltávolítani az albumból?",
+            "THESE_PHOTOS": "ezeket a fotókat",
+            "THIS_PHOTO": "ezt a fotót",
+            "REMOVE_FROM_ALBUM": "Eltávolítás az albumból",
+            "ADD_TO_ALBUM": "Hozzáadás albumhoz",
+            "ADD_TO_FAVOURITES": "Hozzáadás a kedvencekhez",
+            "REMOVE_FROM_FAVOURITES": "Eltávolítás a kedvencekből",
+            "VIDEOS": "Videók",
+            "SELFIES": "Selfiek",
+            "SCREENSHOTS": "Képernyőképek",
+            "IMPORTS": "Importáltak",
+            "DUPLICATES": "Duplikátumok",
+            "YEARS": "Évek",
+            "MONTHS": "Hónapok",
+            "DAYS": "Napok",
+            "ALL_PHOTOS": "Összes fotó",
+            "FAVOURITES": "Kedvencek",
+            "RECENTS": "Legutóbbiak"
+        },
+        "MAIL": {
+            "TITLE": "Levelezés",
+            "YOU": "Te",
+            "UPDATED_NOW": "Épp most frissítve",
+            "NEW_MESSAGE": "Új üzenet",
+            "INBOX": "Beérkező",
+            "TO": "Címzett",
+            "FROM": "Feladó",
+            "SUBJECT": "Tárgy",
+            "MESSAGE": "Üzenet",
+            "CANCEL": "Mégse",
+            "SEND": "Küldés",
+            "EMAIL": "E-mail",
+            "EMAIL_INVALID": "Érvénytelen e-mail cím",
+            "EMAIL_EXISTS": "Ez az e-mail cím már létezik",
+            "PASSWORD": "Jelszó",
+            "WRONG_PASSWORD": "Hibás jelszó",
+            "LOGIN": "Bejelentkezés",
+            "NO_EMAIL": "Nincs e-mail címed?",
+            "CREATE_ONE": "Hozz létre egyet",
+            "UNREAD": "Olvasatlan",
+            "CREATE_MAIL": "E-mail létrehozása",
+            "ALREADY_HAVE": "Már van e-mail címed?",
+            "ADD_EMAIL": "E-mail hozzáadása",
+            "RE": "Vá: {subject}",
+            "CHANGE_ACCOUNT": "Fiók módosítása",
+            "CHANGE_PASSWORD": "Jelszó módosítása",
+            "DELETE_ACCOUNT": "Fiók törlése",
+            "SIGN_OUT_POPUP": {
+                "TITLE": "Kijelentkezés",
+                "DESCRIPTION": "Biztosan ki szeretnél jelentkezni?",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "DELETE_MAIL_POPUP": {
+                "TITLE": "E-mail törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt az e-mailt?",
+                "CANCEL": "Mégse",
+                "DELETE": "Törlés"
+            }
+        },
+        "VOICEMEMO": {
+            "TITLE": "Hangjegyzet",
+            "VOICE_RECORDINGS": "Hangfelvételek",
+            "SEARCH_RECORDINGS": "Felvételek keresése",
+            "DEFAULT_NAME": "Új felvétel",
+            "DELETE_POPUP": {
+                "TITLE": "Hangjegyzet törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt a hangjegyzetet?",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "NO_MICROPHONE_POPUP": {
+                "TITLE": "Nincs mikrofon",
+                "DESCRIPTION": "Nincs hozzáférésünk a mikrofonodhoz, győződj meg róla, hogy csatlakoztatva van, és fogadd el a felugró ablakot a képernyő jobb felső sarkában",
+                "OK": "OK"
+            },
+            "EMPTY_RECORDING_POPUP": {
+                "TITLE": "Üres felvétel",
+                "DESCRIPTION": "Nem lehet hanganyag nélküli felvételt menteni",
+                "OK": "OK"
+            }
+        },
+        "SERVICES": {
+            "ACTIONS": "Műveletek",
+            "COMPANIES": "Cégek",
+            "MESSAGES": "Üzenetek",
+            "SETTINGS": "Beállítások",
+            "CLOSED": "Zárva",
+            "YOUR_MESSAGES": "Saját üzenetek",
+            "JOB_MESSAGES": "Munkahelyi üzenetek",
+            "DUTY": "Szolgálat",
+            "DUTY_DESCRIPTION": "Szolgálati státusz kapcsolása",
+            "GO_ON_DUTY": "Szolgálatba lép",
+            "GO_OFF_DUTY": "Szolgálatból kilép",
+            "JOB_CALLS": "Munkahelyi hívások",
+            "JOB_CALLS_DESCRIPTION": "Ügyfelektől érkező hívások {toggle}.",
+            "ENABLE": "Engedélyezés",
+            "DISABLE": "Letiltás",
+            "DISABLE_CALLS": "Hívások letiltása",
+            "ENABLE_CALLS": "Hívások engedélyezése",
+            "BALANCE": "Egyenleg",
+            "CURRENT_BALANCE": "A cég jelenlegi egyenlege",
+            "MANAGE_EMPLOYEES": "Alkalmazottak kezelése",
+            "HIRE": "Felvétel",
+            "SET_GRADE": "Beosztás beállítása",
+            "UNEMPLOYED": "Munkanélküli vagy",
+            "ALL": "Összes",
+            "AVAILABLE": "Elérhető",
+            "SEARCH_EMPLOYEES": "Alkalmazottak keresése",
+            "PERSONAL": "Személyes",
+            "JOB": "Munkahelyi",
+            "PLACEHOLDER": "Szöveges üzenet",
+            "NOT_DELIVERED": "Nem kézbesítve",
+            "SENT_LOCATION": "Megosztotta a tartózkodási helyét, kattints a Térképen való megnyitáshoz",
+            "SENT_LOCATION_SHORT": "Megosztotta a tartózkodási helyét",
+            "SEND_LOCATION_POPUP": {
+                "TITLE": "Helyzet megosztása",
+                "TEXT": "Meg szeretnéd osztani a tartózkodási helyedet?",
+                "CANCEL": "Mégse",
+                "SEND": "Küldés"
+            },
+            "DELETE_CONVERSATION": {
+                "TITLE": "Beszélgetés törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt a beszélgetést?",
+                "CANCEL": "Mégse",
+                "DELETE": "Törlés"
+            },
+            "DEPOSIT_POPUP": {
+                "TITLE": "Befizetés",
+                "DESCRIPTION": "Pénz befizetése a céges számlára",
+                "AMOUNT": "Összeg",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "WITHDRAW_POPUP": {
+                "TITLE": "Kifizetés",
+                "DESCRIPTION": "Pénz kifizetése a céges számláról",
+                "NOT_ENOUGH_MONEY": "Nincs elegendő pénz a céges számlán",
+                "AMOUNT": "Összeg",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "HIRE_POPUP": {
+                "TITLE": "Felvétel",
+                "DESCRIPTION": "Új alkalmazott felvétele",
+                "PLACEHOLDER": "Azonosító",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "FIRE_POPUP": {
+                "TITLE": "Elbocsátás",
+                "DESCRIPTION": "Biztosan elbocsátod {name} nevű alkalmazottat?",
+                "PLACEHOLDER": "Azonosító",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            }
+        },
+        "MDT": {
+            "CANCEL": "Mégse",
+            "CLOSE": "Bezárás",
+            "BACK": "Vissza",
+            "EDIT": "Szerkesztés",
+            "DELETE": "Törlés",
+            "REMOVE": "Eltávolítás",
+            "SAVE": "Mentés",
+            "CREATE": "Létrehozás",
+            "OK": "OK",
+            "ADD": "Hozzáadás",
+            "NEW": "Új",
+            "PROCEED": "Folytatás",
+            "YES": "Igen",
+            "NO": "Nem",
+            "ALL": "Összes",
+            "ADD_TAB": "Lap hozzáadása",
+            "SEARCH": "Keresés",
+            "SEARCH_FOR": "Keress rá a(z) {query} kifejezésre a kezdéshez",
+            "NO_RESULTS_FOR": "Nincs találat erre: '{query}'",
+            "CLEAR_HISTORY": "Előzmények törlése",
+            "EXPORT": {
+                "TITLE": "Exportálás",
+                "DESCRIPTION": "Jelentés exportálása tárgyhoz",
+                "VIEW": "Megtekintés",
+                "EXPORT_TO_ITEM": "Exportálás tárgyhoz",
+                "SUCCESS": "Jelentés sikeresen exportálva",
+                "SUCCESS_DESCRIPTION": "A jelentés exportálva lett a tárgyhoz"
+            },
+            "HOME": {
+                "TITLE": "Főoldal"
+            },
+            "BULLETIN": {
+                "TITLE": "Hirdetőtábla",
+                "SEARCH": "Hirdetőtábla keresése",
+                "BULLETIN_BOARD": "Hirdetőtábla",
+                "SEARCH_PLACEHOLDER": "Hirdetőtábla keresése",
+                "SEARCH_FOR": "Keress rá a(z) {query} kifejezésre a kezdéshez",
+                "NO_RESULTS_FOR": "Nincs találat erre: '{query}'",
+                "NEW_BULLETIN": "Új bejegyzés",
+                "PIN": "Rögzítés",
+                "UNPIN": "Rögzítés megszüntetése",
+                "DELETE_BULLETIN": {
+                    "TITLE": "Bejegyzés törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt a hirdetőtáblai bejegyzést?"
+                }
+            },
+            "DISPATCH": {
+                "TITLE": "Diszpécser",
+                "SEARCH_ALARMS": "Riasztások keresése",
+                "SHOW_EMPLOYEES": "Alkalmazottak mutatása",
+                "SHOW_ALARMS": "Riasztások mutatása",
+                "SHOW_POPUPS": "Felugró ablakok mutatása",
+                "OPTIONS": "Beállítások",
+                "OFFICERS": "Tisztek",
+                "ALARMS": "Riasztások",
+                "MAP": "Térkép",
+                "LIST": "Lista",
+                "RESPOND": "Reagálás",
+                "RESPONDED": "Reagált",
+                "COLLAPSE": "Összecsukás",
+                "EXPAND": "Kinyitás",
+                "DISMISS": "Elutasítás",
+                "VIEW_IN_TABLET": "Megtekintés tabletben",
+                "SET_WAYPOINT": "Útpont beállítása",
+                "LOS_SANTOS": "Los Santos",
+                "CAYO_PERICO": "Cayo Perico",
+                "OLD_NOTIFICATION": "{count} régi értesítés",
+                "OLD_NOTIFICATIONS": "{count} régi értesítés",
+                "NEW_NOTIFICATION": "{count} új értesítés",
+                "NEW_NOTIFICATIONS": "{count} új értesítés",
+                "PRIORITY_LEVELS": {
+                    "HIGH": "Magas",
+                    "MEDIUM": "Közepes",
+                    "LOW": "Alacsony"
+                },
+                "PRIORITY": "Prioritás",
+                "TIME": "Idő",
+                "CODE": "Kód",
+                "LOCATION": "Helyszín",
+                "RESPONDERS": "Reagálók",
+                "ACTIONS": "Műveletek",
+                "NONE": "Nincs",
+                "REMOVE": "Eltávolítás",
+                "REMOVE_ALL": "Összes eltávolítása",
+                "VIEW": "Megtekintés",
+                "CREATE_DISPATCH": "Bevetés létrehozása",
+                "CREATE_DISPATCH_MODAL": {
+                    "TITLE": "Bevetés létrehozása",
+                    "TITLE_LABEL": "Cím",
+                    "TITLE_PLACEHOLDER": "Bevetés címe",
+                    "CODE_LABEL": "Kód",
+                    "CODE_PLACEHOLDER": "00-99",
+                    "PRIORITY_LABEL": "Prioritás",
+                    "DESCRIPTION_LABEL": "Leírás",
+                    "DESCRIPTION_PLACEHOLDER": "Bevetés leírása",
+                    "LOCATION_LABEL": "Helyszín",
+                    "LOCATION_PLACEHOLDER": "Helyszín neve",
+                    "FIELDS_LABEL": "Mezők",
+                    "FIELD_NUMBER": "{number}. mező",
+                    "ICON_LABEL": "Ikon",
+                    "ICON_PLACEHOLDER": "Ikon",
+                    "LABEL_LABEL": "Címke",
+                    "LABEL_PLACEHOLDER": "Mező címkéje",
+                    "VALUE_LABEL": "Érték",
+                    "VALUE_PLACEHOLDER": "Mező értéke"
+                },
+                "JUST_NOW": "Épp most",
+                "MINUTES_AGO": "{minutes} perce",
+                "HOURS_AGO": "{hours} órája",
+                "REMOVE_ALARM": {
+                    "TITLE": "Riasztás eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a riasztást? (Ez minden alkalmazott számára törli a bevetést)",
+                    "CANCEL": "Mégse",
+                    "REMOVE": "Eltávolítás"
+                },
+                "REMOVE_ALL_ALARMS": {
+                    "TITLE": "Összes riasztás eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod az összes riasztást? (Ez minden alkalmazott számára törli a bevetést)"
+                },
+                "REMOVE_FOR_YOURSELF": "Eltávolítás csak magadnak",
+                "REMOVE_FOR_EVERYONE": "Eltávolítás mindenkinek"
+            },
+            "UNITS": {
+                "TITLE": "Egységek",
+                "SEARCH_UNITS": "Egységek keresése",
+                "ACTIVE_UNITS": "Aktív egységek",
+                "AVALIABLE_OFFICERS": "Elérhető tisztek",
+                "SEARCH_OFFICERS": "Tisztek keresése",
+                "DROP_OFFICER": "Húzz ide egy tisztet",
+                "DROP_OFFICER_AVAILABLE": "Húzz ide egy tisztet az elérhetővé tételhez",
+                "OFFICER": "Tiszt",
+                "OFFICERS": "Tisztek",
+                "NO_UNITS": "Adj hozzá egy egységet a kezdéshez",
+                "ADD_UNIT": {
+                    "TITLE": "Egység hozzáadása",
+                    "DESCRIPTION": "Új egység létrehozása",
+                    "PLACEHOLDER": "Egység neve"
+                },
+                "RENAME_UNIT": {
+                    "TITLE": "Egység átnevezése",
+                    "DESCRIPTION": "Az egység átnevezése",
+                    "PLACEHOLDER": "Egység neve"
+                },
+                "DELETE_UNIT": {
+                    "TITLE": "Egység törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt az egységet?"
+                }
+            },
+            "PROFILES": {
+                "TITLE": "Profil",
+                "PERSON": "Személy",
+                "SEARCH": "Profilok keresése",
+                "REMOVE_AVATAR": "Profilkép eltávolítása",
+                "IDENTIFIER": "Azonosító",
+                "FINGERPRINT": "Ujjlenyomat",
+                "DOB": "Születési dátum",
+                "PHONE_NR": "Telefonszám",
+                "GENDER": "Nem",
+                "JOB": "Foglalkozás",
+                "MALE": "Férfi",
+                "MALE_FULL": "Férfi (F)",
+                "FEMALE": "Nő",
+                "FEMALE_FULL": "Nő (N)",
+                "NOTES": "Megjegyzések",
+                "NOTES_PLACEHOLDER": "Írj ide megjegyzést...",
+                "LICENSES": {
+                    "TITLE": "Engedélyek",
+                    "ADD_LICENSE": "Engedély hozzáadása",
+                    "ADD": "Hozzáadás",
+                    "NO_LICENSES": "Nincsenek engedélyek",
+                    "POINTS": "pont",
+                    "POINTS_LABEL": "{current}/{limit} pont",
+                    "CHANGE_POINTS": "Pontok módosítása",
+                    "CHANGE_POINTS_TITLE": "Pontok beállítása",
+                    "CHANGE_POINTS_DESCRIPTION": "Pontok a(z) {license} engedélyhez (0–{limit})",
+                    "CHANGE_POINTS_PLACEHOLDER": "Pontok",
+                    "REVOKE_LICENSE": {
+                        "TITLE": "Engedély visszavonása",
+                        "DESCRIPTION": "Biztosan visszavonod a(z) {license} engedélyt?",
+                        "CANCEL": "Mégse",
+                        "REVOKE": "Visszavonás"
+                    }
+                },
+                "ADD_AVATAR": {
+                    "TITLE": "Profilkép hozzáadása",
+                    "SET_PHOTO": "Fotó beállítása",
+                    "PASTE_URL": "URL beillesztése",
+                    "PASTE_URL_DESCRIPTION": "Adj meg egy kép URL-jét",
+                    "PASTE_URL_PLACEHOLDER": "Kép URL-je",
+                    "INVALID_URL": "Érvénytelen URL",
+                    "INVALID_URL_DESCRIPTION": "A megadott URL nem érvényes képhivatkozás",
+                    "OK": "OK"
+                },
+                "VEHICLES": "Járművek",
+                "PROPERTIES": "Ingatlanok",
+                "REPORTS": "Jelentések",
+                "WEAPONS": "Fegyverek",
+                "INVOLVED": "Érintett",
+                "CHARGES": "Vádak",
+                "NO_CHARGES": "Nincsenek vádak",
+                "FINE_PLAYER": {
+                    "TITLE": "Játékos megbírságolása",
+                    "DESCRIPTION": "Meg szeretnéd bírságolni {name} személyt?",
+                    "DESCRIPTION_DETAILS": "Kérjük add meg az összeget és a leírást",
+                    "FINE_WITH_X": "Bírság ezzel: {catalogLabel}",
+                    "FINE_WITHOUT_X": "Bírság enélkül {catalogLabel}",
+                    "X_ADDED": "{catalogLabel} hozzáadva",
+                    "ADD_MORE_X": "Hozzáadva: {catalogLabel}. Hozzáadsz mégegyet {catalogLabel}?",
+                    "ADD_ANOTHER": "Hozzáadás",
+                    "CANCEL": "Mégse",
+                    "PROCEED": "Folytatás",
+                    "FINE": "Bírság",
+                    "AMOUNT_PLACEHOLDER": "Összeg",
+                    "DESCRIPTION_PLACEHOLDER": "Leírás",
+                    "SEND_FINE": "Bírság küldése",
+                    "SUCCESS": "Sikeres",
+                    "FINE_SENT": "Bírság elküldve {name} személynek",
+                    "ERROR": "Hiba",
+                    "FINE_FAILED": "Nem sikerült elküldeni a bírságot {name} személynek",
+                    "OK": "OK"
+                }
+            },
+            "VEHICLES": {
+                "TITLE": "Járművek",
+                "VEHICLE": "Jármű",
+                "SEARCH": "Járművek keresése",
+                "REMOVE_PICTURE": "Kép eltávolítása",
+                "DETAILS": "Részletek",
+                "VEHICLES": "Járművek",
+                "NO_VEHICLES": "Nincsenek járművek",
+                "VEHICLES_INVOLVED": "Érintett járművek",
+                "NO_VEHICLES_INVOLVED": "Nincsenek érintett járművek",
+                "ADD_PHOTO": {
+                    "TITLE": "Fotó hozzáadása",
+                    "SELECT_PHOTO": "Fotó kiválasztása",
+                    "PASTE_URL": "URL beillesztése",
+                    "PASTE_URL_DESCRIPTION": "Adj meg egy kép URL-jét",
+                    "PASTE_URL_PLACEHOLDER": "Kép URL-je",
+                    "INVALID_URL": "Érvénytelen URL",
+                    "INVALID_URL_DESCRIPTION": "A megadott URL nem érvényes képhivatkozás",
+                    "OK": "OK"
+                },
+                "MODEL": "Modell",
+                "PLATE": "Rendszám",
+                "COLOR": "Szín",
+                "LOCATION": "Helyszín",
+                "OWNER": "Tulajdonos",
+                "NOTES": "Megjegyzések",
+                "NOTES_PLACEHOLDER": "Írj ide megjegyzést...",
+                "SET_WAYPOINT": "Útpont beállítása",
+                "OPEN_IN_MAPS": "Megnyitás a Térképen",
+                "WAYPOINT_SET": "Útpont beállítva",
+                "WAYPOINT_SET_DESCRIPTION": "Az útpont a jármű tartózkodási helyére lett beállítva"
+            },
+            "PROPERTIES": {
+                "TITLE": "Ingatlanok",
+                "PROPERTY": "Ingatlan",
+                "SEARCH": "Ingatlanok keresése",
+                "NO_PROPERTIES": "Nincsenek ingatlanok",
+                "REMOVE_PICTURE": "Kép eltávolítása",
+                "DETAILS": "Részletek",
+                "ADD_PHOTO": {
+                    "TITLE": "Fotó hozzáadása",
+                    "SELECT_PHOTO": "Fotó kiválasztása",
+                    "PASTE_URL": "URL beillesztése",
+                    "PASTE_URL_DESCRIPTION": "Adj meg egy kép URL-jét",
+                    "PASTE_URL_PLACEHOLDER": "Kép URL-je",
+                    "INVALID_URL": "Érvénytelen URL",
+                    "INVALID_URL_DESCRIPTION": "A megadott URL nem érvényes képhivatkozás",
+                    "OK": "OK"
+                },
+                "LABEL": "Címke",
+                "ADDRESS": "Cím",
+                "OWNER": "Tulajdonos",
+                "LOCATION": "Helyszín",
+                "OPEN_IN_MAPS": "Megnyitás a Térképen",
+                "NOTES": "Megjegyzések",
+                "NOTES_PLACEHOLDER": "Írj ide megjegyzést..."
+            },
+            "WEAPONS": {
+                "TITLE": "Fegyverek",
+                "WEAPON": "Fegyver",
+                "SEARCH": "Fegyverek keresése",
+                "NO_WEAPONS": "Nincsenek fegyverek",
+                "WEAPONS_INVOLVED": "Érintett fegyverek",
+                "NO_WEAPONS_INVOLVED": "Nincsenek érintett fegyverek",
+                "REMOVE_PICTURE": "Kép eltávolítása",
+                "DETAILS": "Részletek",
+                "ADD_PHOTO": {
+                    "TITLE": "Fotó hozzáadása",
+                    "SELECT_PHOTO": "Fotó kiválasztása",
+                    "PASTE_URL": "URL beillesztése",
+                    "PASTE_URL_DESCRIPTION": "Adj meg egy kép URL-jét",
+                    "PASTE_URL_PLACEHOLDER": "Kép URL-je",
+                    "INVALID_URL": "Érvénytelen URL",
+                    "INVALID_URL_DESCRIPTION": "A megadott URL nem érvényes képhivatkozás",
+                    "OK": "OK"
+                },
+                "MODEL_MAKE": "Modell",
+                "SERIAL_NUMBER": "Sorozatszám",
+                "NOTES": "Megjegyzések",
+                "NOTES_PLACEHOLDER": "Írj ide megjegyzést...",
+                "UNREGISTERED": "Nem regisztrált",
+                "OWNER": "Tulajdonos",
+                "SELECT_MODEL": "Modell kiválasztása",
+                "SELECT_OWNER": "Tulajdonos kiválasztása",
+                "REMOVE_OWNER": {
+                    "TITLE": "Tulajdonos eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt tulajdonosként?"
+                },
+                "DELETE_WEAPON": {
+                    "TITLE": "Fegyver törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt a fegyvert?"
+                }
+            },
+            "REPORTS": {
+                "TITLE": "Jelentések",
+                "REPORT": "Jelentés",
+                "SEARCH": "Jelentések keresése",
+                "SEARCH_TYPE": "{type} keresése",
+                "RECENT_REPORTS": "Legutóbbi jelentések",
+                "NO_REPORTS": "Nincsenek jelentések",
+                "LINKED_REPORTS": "Kapcsolódó jelentések",
+                "NO_LINKED_REPORTS": "Nincsenek kapcsolódó jelentések",
+                "NO_PERSONS_INVOLVED": "Nincsenek érintett személyek",
+                "NO_TYPE_INVOLVED": "Nincs {type}",
+                "VIEW_PROFILE": "Profil megtekintése",
+                "FOOTER": "{author} - {type} azonosító: {id}",
+                "FOOTER_TIMESTAMP": "{timestamp} - {author}",
+                "NEW_REPORT_TITLE": "Új jelentés",
+                "NEW_REPORT_TITLE_TEMPLATE": "Új {type}",
+                "TYPE": "Típus",
+                "DESCRIPTION": "Leírás",
+                "DESCRIPTION_PLACEHOLDER": "Írj ide leírást...",
+                "GALLERY": "Galéria",
+                "NO_ATTACHMENTS": "Nincsenek mellékletek",
+                "HIGH_PRIORITY": "Magas prioritás",
+                "MEDIUM_PRIORITY": "Közepes prioritás",
+                "LOW_PRIORITY": "Alacsony prioritás",
+                "SELECT_TARGET": "Célpont kiválasztása",
+                "SELECT_TARGET_TYPE": "Célpont típusának kiválasztása",
+                "SELECT_VEHICLE": "Jármű kiválasztása",
+                "NO_TARGET_SELECTED": "Nincs célpont kiválasztva",
+                "NO_VEHICLE_SELECTED": "Nincs jármű kiválasztva",
+                "SELECT_PERSON": "Személy kiválasztása",
+                "NO_PERSON_SELECTED": "Nincs személy kiválasztva",
+                "SELECT_PROPERTY": "Ingatlan kiválasztása",
+                "NO_PROPERTY_SELECTED": "Nincs ingatlan kiválasztva",
+                "SELECT_WEAPON": "Fegyver kiválasztása",
+                "NO_WEAPON_SELECTED": "Nincs fegyver kiválasztva",
+                "CHARGES": "Vádak",
+                "CHARGES_AMOUNT": "Vádak: {amount}",
+                "FINE": "Bírság",
+                "SENTENCE": "Ítélet",
+                "ACTIVE": "Aktív",
+                "INACTIVE": "Inaktív",
+                "CLOSED": "Lezárt",
+                "SET_LOCATION": "Helyszín beállítása",
+                "ADD_LOCATION": "Helyszín hozzáadása",
+                "USE_CURRENT_LOCATION": "Jelenlegi helyszín használata",
+                "ADD_CURRENT_LOCATION": "Jelenlegi helyszín hozzáadása",
+                "NO_LOCATION_SET": "Nincs helyszín beállítva",
+                "REMOVE_LOCATION": {
+                    "TITLE": "Helyszín eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod ezt a helyszínt?"
+                },
+                "REMOVE_TARGET": {
+                    "TITLE": "Célpont eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a célpontot?"
+                },
+                "REMOVE_PERSON": {
+                    "TITLE": "Személy eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod ezt a személyt a jelentésből?"
+                },
+                "REMOVE_VEHICLE": {
+                    "TITLE": "Jármű eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a járművet?"
+                },
+                "REMOVE_WEAPON": {
+                    "TITLE": "Fegyver eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a fegyvert?"
+                },
+                "REMOVE_REPORT": {
+                    "TITLE": "Jelentés eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a jelentést?"
+                },
+                "OFFICERS_INVOLVED": "Érintett tisztek",
+                "NO_OFFICERS_INVOLVED": "Nincsenek érintett tisztek",
+                "REMOVE_OFFICER": {
+                    "TITLE": "Tiszt eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt?"
+                },
+                "CIVILLIANS_INVOLVED": "Érintett civilek",
+                "NO_CIVILLIANS_INVOLVED": "Nincsenek érintett civilek",
+                "REMOVE_CIVILIAN": {
+                    "TITLE": "Civil eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt?"
+                },
+                "REMOVE_CRIMINAL": {
+                    "TITLE": "Bűnöző eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt?"
+                },
+                "CRIMINALS_INVOLVED": "Érintett bűnözők",
+                "NO_CRIMINALS_INVOLVED": "Nincsenek érintett bűnözők",
+                "REMOVE_SUSPECT": {
+                    "TITLE": "Gyanúsított eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt?"
+                },
+                "VISIBILITY": {
+                    "TITLE": "Láthatóság",
+                    "PUBLIC": "Publikus",
+                    "PRIVATE": "Privát"
+                },
+                "REMOVE_USER": {
+                    "TITLE": "Felhasználó eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod {name} személyt?"
+                },
+                "ADD_USER": "Felhasználó hozzáadása",
+                "SHARED_WITH": "Megosztva vele",
+                "NO_SHARED_USERS": "Nincs olyan felhasználó, aki hozzáférne ehhez a jelentéshez",
+                "SEND_FINE": {
+                    "TITLE": "Bírság küldése",
+                    "DESCRIPTION": "El szeretnéd küldeni a {fine} összegű bírságot {name} személynek?"
+                },
+                "JAIL_PLAYER": {
+                    "TITLE": "Játékos bebörtönzése",
+                    "DESCRIPTION": "Be szeretnéd börtönözni {name} személyt {sentence} hónapra?"
+                },
+                "DELETE_REPORT": {
+                    "TITLE": "Jelentés törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt a jelentést?"
+                },
+                "TYPES": {
+                    "CASE": "Ügyirat",
+                    "REPORT": "Jelentés",
+                    "WARRANT": "Parancs"
+                },
+                "ERROR": {
+                    "TITLE": "Hiba",
+                    "NO_TYPE": "Kötelező jelentéstípust választani",
+                    "TITLE_LENGTH": "A címnek legalább 3 karakter hosszúnak kell lennie",
+                    "DESCRIPTION_LENGTH": "A leírásnak legalább 10 karakter hosszúnak kell lennie"
+                }
+            },
+            "EVIDENCE": {
+                "TITLE": "Bizonyítékok",
+                "OPEN_STASH": "Raktár megnyitása"
+            },
+            "CATALOG": {
+                "TITLE": "Katalógus",
+                "SEARCH": "Katalógus keresése",
+                "SEARCH_TYPE": "{type} keresése",
+                "MONTHS": "{amount} hónap",
+                "FINE": "{amount} bírság",
+                "SELECT_SEVERITY": "Súlyosság kiválasztása",
+                "SEVERITIES": {
+                    "INFRACTION": "Szabálysértés",
+                    "MISDEMEANOR": "Vétség",
+                    "FELONY": "Bűntett"
+                },
+                "NO_ITEMS_FOUND": "Nem található elem",
+                "ADD_ITEM": {
+                    "TITLE": "{type} hozzáadása",
+                    "DESCRIPTION": "Új elem létrehozása",
+                    "PLACEHOLDER": "Add meg az elem nevét",
+                    "DESCRIPTION_PLACEHOLDER": "Írj ide leírást..."
+                },
+                "EDIT_ITEM": {
+                    "TITLE": "Elem szerkesztése",
+                    "DESCRIPTION": "Az elem adatainak szerkesztése"
+                },
+                "DELETE_ITEM": {
+                    "TITLE": "Elem törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt az elemet?"
+                },
+                "SET_JAILTIME": {
+                    "TITLE": "Javasolt börtönbüntetés",
+                    "DESCRIPTION": "Add meg az elemhez javasolt börtönbüntetést",
+                    "PLACEHOLDER": "Javasolt börtönidő (hónapban) (0 = csak bírság)"
+                },
+                "SET_FINE": {
+                    "TITLE": "Javasolt bírság",
+                    "DESCRIPTION": "Add meg az elemhez javasolt bírságot",
+                    "PLACEHOLDER": "Javasolt bírság összege (0 = csak börtönbüntetés)"
+                },
+                "ADD_CATEGORY": {
+                    "TITLE": "Kategória hozzáadása",
+                    "DESCRIPTION": "Új kategória hozzáadása a katalóguslistához",
+                    "PLACEHOLDER": "Add meg a kategória nevét"
+                },
+                "EDIT_CATEGORY": {
+                    "TITLE": "Kategória szerkesztése",
+                    "DESCRIPTION": "A kategória adatainak szerkesztése",
+                    "PLACEHOLDER": "Add meg az új kategória nevét"
+                },
+                "DELETE_CATEGORY": {
+                    "TITLE": "Kategória törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt a kategóriát?"
+                }
+            },
+            "EMPLOYEES": {
+                "TITLE": "Alkalmazottak",
+                "SEARCH": "Alkalmazottak keresése"
+            },
+            "CHAT": {
+                "TITLE": "Chat",
+                "SEARCH": "Chatok keresése",
+                "PLACEHOLDER": "Üzenet küldése...",
+                "JOINED_CHATS": "Csatlakozott chatok",
+                "PUBLIC_CHATS": "Nyilvános chatok",
+                "JOINED": "Csatlakozott",
+                "PUBLIC": "Nyilvános",
+                "PRIVATE_CHATS": "Privát chatok",
+                "ROOM_ID": "Szoba azonosítója: {id}",
+                "TOGGLE_PRIVATE": "Privát kapcsolása",
+                "CHANGE_AVATAR": "Profilkép módosítása",
+                "SET_AVATAR": "Profilkép beállítása",
+                "REMOVE_AVATAR": "Profilkép eltávolítása",
+                "MANAGE": "Kezelés",
+                "REPLY": "Válasz",
+                "REPLYING_TO": "Válasz neki",
+                "ATTACHMENT": "Csatolmány",
+                "LEAVE": {
+                    "TITLE": "Kilépés",
+                    "DESCRIPTION": "Biztosan ki szeretnél lépni a chatszobából?"
+                },
+                "KICK": {
+                    "TITLE": "Kirúgás",
+                    "DESCRIPTION": "Biztosan kirúgod {name} személyt a chatszobából?"
+                },
+                "DELETE": {
+                    "TITLE": "Törlés",
+                    "DESCRIPTION": "Biztosan törlöd a chatszobát?"
+                },
+                "CREATE_CHATROOM": {
+                    "TITLE": "Chatszoba létrehozása",
+                    "DESCRIPTION": "Adj nevet a chatszobának",
+                    "PLACEHOLDER": "Chatszoba neve",
+                    "CREATE": "Létrehozás",
+                    "SET_VISIBILITY": "Láthatóság beállítása",
+                    "PUBLIC": "Nyilvános",
+                    "PRIVATE": "Privát"
+                },
+                "JOIN_CHAT": {
+                    "TITLE": "Csatlakozás a chathez",
+                    "DESCRIPTION": "Biztosan csatlakozol a(z) {channel} csatornához?",
+                    "JOIN": "Csatlakozás"
+                },
+                "ERROR": {
+                    "TITLE": "Hiba",
+                    "FAILED_JOIN": "Nem sikerült csatlakozni a chatszobához",
+                    "FAILED_INVITE": "Nem sikerült meghívni {name} személyt a chatszobába",
+                    "FAILED_SET_AVATAR": "Nem sikerült beállítani a chatszoba profilképét",
+                    "FAILED_REMOVE_AVATAR": "Nem sikerült eltávolítani a chatszoba profilképét",
+                    "FAILED_GET_MEMBERS": "Nem sikerült lekérni a chatszoba tagjait",
+                    "FAILED_KICK": "Nem sikerült kirúgni {name} személyt a chatszobából",
+                    "FAILED_LEAVE": "Nem sikerült kilépni a chatszobából",
+                    "FAILED_DELETE": "Nem sikerült törölni a chatszobát"
+                },
+                "SUCCESS": {
+                    "TITLE": "Sikeres",
+                    "INVITED": "Meghívtad {name} személyt a chatszobába",
+                    "KICKED": "Kirúgtad {name} személyt a chatszobából"
+                }
+            },
+            "PHONE": {
+                "TITLE": "Telefon",
+                "TRIANGULATE": {
+                    "TITLE": "Helymeghatározás",
+                    "DESCRIPTION": "Add meg a helymeghatározni kívánt telefonszámot",
+                    "PLACEHOLDER": "Telefonszám",
+                    "SUCCESS": {
+                        "TITLE": "Sikeres helymeghatározás",
+                        "DESCRIPTION": "A megadott telefonszám regisztrálva van egy közeli cellatoronyban. Ellenőrizd a térképen a helyszínt."
+                    },
+                    "FAILED": {
+                        "TITLE": "Sikertelen helymeghatározás",
+                        "DESCRIPTION": "A megadott telefonszám nem regisztrált egyetlen közeli cellatoronyban sem."
+                    }
+                },
+                "CALLS": {
+                    "TITLE": "Hívások",
+                    "CALL_HISTORY": "Hívásnapló",
+                    "CALL_STATUS": "Hívás állapota",
+                    "SEARCH": "Hívások keresése",
+                    "NO_CALLER_ID": "Ismeretlen hívó",
+                    "UNKNOWN": "Ismeretlen",
+                    "INCOMING": "Bejövő",
+                    "OUTGOING": "Kimenő",
+                    "IN_CALL": "Hívásban",
+                    "NOT_IN_CALL": "Nincs hívásban",
+                    "SUBSCRIBED": "Feliratkozva",
+                    "NOT_SUBSCRIBED": "Nincs feliratkozva",
+                    "YES": "Igen",
+                    "NO": "Nem",
+                    "GET_NOTIFIED": "Értesítés kérése",
+                    "LISTEN_TO_CALL": "Hívás lehallgatása",
+                    "LISTEN_TO_CALL_DESCRIPTION": "Biztosan lehallgatod ezt a hívást?",
+                    "STOP_LISTENING": "Lehallgatás leállítása",
+                    "STOP_LISTENING_DESCRIPTION": "Biztosan leállítod a hívás lehallgatását?",
+                    "SUBSCRIBE_TO_CALLS": "Feliratkozás hívásokra",
+                    "SUBSCRIBE_TO_CALLS_DESCRIPTION": "Biztosan feliratkozol a hívásokra?",
+                    "UNSUBSCRIBE_FROM_CALLS": "Leiratkozás hívásokról",
+                    "UNSUBSCRIBE_FROM_CALLS_DESCRIPTION": "Biztosan leiratkozol a hívásokról?",
+                    "FOOTER": "{name} által",
+                    "WIRETAP_PHONENUMBER": {
+                        "TITLE": "Telefonszám lehallgatása",
+                        "DESCRIPTION": "Add meg a lehallgatni kívánt telefonszámot",
+                        "PLACEHOLDER": "Telefonszám"
+                    },
+                    "REMOVE_WIRETAP": {
+                        "TITLE": "Lehallgatás eltávolítása",
+                        "DESCRIPTION": "Biztosan eltávolítod a lehallgatást a(z) {phoneNumber} telefonszámról?"
+                    },
+                    "CALL_ENDED": {
+                        "TITLE": "Hívás véget ért",
+                        "DESCRIPTION": "A lehallgatott hívás véget ért."
+                    }
+                },
+                "MESSAGES": {
+                    "TITLE": "Üzenetek",
+                    "SEARCH": "Üzenetek keresése",
+                    "SEARCH_CONVERSATIONS": "Beszélgetések keresése",
+                    "MESSAGE_HISTORY": "Üzenettörténet",
+                    "CONVERSATIONS": "Beszélgetések",
+                    "CREATED_BY": "Létrehozta: {name}",
+                    "SUBSCRIBED": "Feliratkozott",
+                    "NOT_SUBSCRIBED": "Nem feliratkozott",
+                    "RECEIVED": "Megérkezett",
+                    "READ": "Elolvasva",
+                    "DELIVERED": "Kézbesítve",
+                    "SENT": "Elküldve",
+                    "NO_MESSAGES_FOUND": "Nem található üzenet ebben a beszélgetésben.",
+                    "CHOOSE_CONVERSATION": "Válassz egy beszélgetést a bal oldalon az üzenetek megtekintéséhez.",
+                    "NO_MESSAGE_CONTENT": "Nincs üzenettartalom",
+                    "WIRETAP": {
+                        "TITLE": "Lehallgatás",
+                        "DESCRIPTION": "Add meg a lehallgatni kívánt telefonszámot.",
+                        "PLACEHOLDER": "Telefonszám"
+                    },
+                    "REMOVE_WIRETAP": {
+                        "TITLE": "Lehallgatás eltávolítása",
+                        "DESCRIPTION": "Biztosan el szeretnéd távolítani a lehallgatást a(z) {phoneNumber} telefonszámról?"
+                    },
+                    "EMBED": {
+                        "MISSED_CALL_IN": "Nem fogadott hívás: {number}",
+                        "MISSED_CALL_OUT": "Nem fogadott hívás (kimenő)",
+                        "SENT_LOCATION": "{name} megosztotta a tartózkodási helyét — koppints a térképre útvonal beállításához",
+                        "SENT_LOCATION_SELF": "Megosztott tartózkodási hely — koppints a térképre útvonal beállításához",
+                        "PAY_REQUESTED": "kérte"
+                    }
+                },
+                "UNLOCK": {
+                    "TITLE": "Feloldás",
+                    "NO_PHONES": "Nincs telefon a leltárodban",
+                    "SEARCH": "Telefon keresése",
+                    "SELECT_PHONE": "Telefon kiválasztása",
+                    "PHONE": "Telefon",
+                    "PROCESSED": "Feldolgozva",
+                    "PROCESSING": "Feldolgozás alatt",
+                    "LOCKED": "Zárolt",
+                    "PROCESS_PHONE": "Telefon feldolgozása",
+                    "PHONE_PROCESSED": "Telefon feldolgozva",
+                    "REMAINING_TIME": "Hátralévő: {time}",
+                    "PROCESSING_PHONE": "{phone} feldolgozása...",
+                    "ATTEMPTS": "Kísérletek: {attempts}/{maxAttempts}",
+                    "RESET_PIN": {
+                        "TITLE": "PIN visszaállítása",
+                        "SUCCESS": "A telefon PIN-je sikeresen visszaállítva."
+                    },
+                    "SUCCESS": {
+                        "TITLE": "Telefon feldolgozva",
+                        "DESCRIPTION": "A telefon sikeresen feldolgozva."
+                    },
+                    "FAILED": {
+                        "TITLE": "Telefon feldolgozása sikertelen",
+                        "DESCRIPTION": "A telefont nem sikerült feldolgozni. Kérjük próbáld újra."
+                    }
+                }
+            },
+            "JAIL": {
+                "TITLE": "Börtön",
+                "SEARCH": "Fogoly keresése",
+                "JAILED_PERSON": "Bebörtönzött személy",
+                "JAILED_BY": "Bebörtönözte",
+                "JAILED_BY_NAME": "Bebörtönözte: {name}",
+                "REMAINING_TIME": "Hátralévő idő",
+                "REMAINING_TIME_DATE": "Hátralévő idő: {time} ({date})",
+                "ORIGINAL_SENTENCE": "Eredeti ítélet",
+                "RELEASE_DATE": "Szabadulás dátuma",
+                "DESCRIPTION": "Leírás",
+                "DESCRIPTION_PLACEHOLDER": "Írj ide leírást...",
+                "RELEASED": "Szabadon bocsátva",
+                "LESS_THAN_MINUTE": "Kevesebb mint egy perc",
+                "UNJAIL": "Szabadon bocsátás",
+                "PROFILE": "Profil",
+                "JAILED_AT": "Bebörtönzés ideje",
+                "LINKED_CASE": "Kapcsolódó ügyirat",
+                "NO_LINKED_CASE": "Nincs kapcsolódó ügyirat",
+                "REMOVE_LINKED_CASE": {
+                    "TITLE": "Kapcsolódó ügyirat eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a kapcsolódó ügyiratot?"
+                },
+                "JAIL_PERSON": {
+                    "TITLE": "Bebörtönzés",
+                    "DESCRIPTION": "Töltsd ki az alábbi adatokat {name} bebörtönzéséhez",
+                    "SENTENCE_PLACEHOLDER": "Ítélet (percben)",
+                    "REASON_PLACEHOLDER": "Indok",
+                    "JAIL_WITH_CASE": "Bebörtönzés kapcsolódó ügyirattal",
+                    "JAIL_WITHOUT_CASE": "Bebörtönzés ügyirat nélkül",
+                    "PROCEED": "Folytatás"
+                },
+                "UNJAIL_PERSON": {
+                    "TITLE": "Szabadon bocsátás",
+                    "DESCRIPTION": "Biztosan szabadon bocsátod {name} személyt?",
+                    "PROCEED": "Folytatás"
+                },
+                "ERROR": {
+                    "TITLE": "Hiba",
+                    "MISSING_DETAILS": "Kötelező megadni az ítéletet és az indokot"
+                }
+            },
+            "LOGS": {
+                "TITLE": "Naplók",
+                "SEARCH": "Naplók keresése",
+                "FILTER": "Szűrő",
+                "CREATED": "Létrehozva",
+                "UPDATED": "Frissítve",
+                "DELETED": "Törölve",
+                "LOG_ID": "Azonosító",
+                "TYPE": "Típus",
+                "ACTION": "Művelet",
+                "TIMESTAMP": "Időbélyeg",
+                "DESCRIPTION": "Leírás",
+                "VIEW_FOOTER": "{type} megtekintése ({id})",
+                "TAG_TYPES": {
+                    "PROFILE": "profil",
+                    "VEHICLE": "jármű",
+                    "REPORT": "jelentés",
+                    "WARRANT": "parancs",
+                    "INCIDENT": "ügyirat"
+                },
+                "CREATE": {
+                    "CATALOG": {
+                        "CATEGORY": {
+                            "TITLE": "Katalóguskategória létrehozva",
+                            "DESCRIPTION": "Létrehozta a(z) \"{name}\" katalóguskategóriát"
+                        },
+                        "ITEM": {
+                            "TITLE": "Katalóguselem létrehozva",
+                            "DESCRIPTION": "Létrehozta a(z) \"{name}\" katalóguselemet a(z) \"{category}\" kategóriában"
+                        }
+                    },
+                    "BULLETIN": {
+                        "TITLE": "Hirdetőtáblai bejegyzés létrehozva",
+                        "DESCRIPTION": "Létrehozta a(z) \"{title}\" bejegyzést"
+                    },
+                    "TAG": {
+                        "TITLE": "Címke létrehozva",
+                        "DESCRIPTION": "Létrehozta a(z) \"{name}\" címkét"
+                    },
+                    "JAIL": {
+                        "TITLE": "Személy bebörtönözve",
+                        "DESCRIPTION": "Bebörtönözte {name} személyt {sentence} percre"
+                    },
+                    "TRIANGULATE": {
+                        "TITLE": "Telefonszám helymeghatározva",
+                        "DESCRIPTION": "Helymeghatározta a(z) {phoneNumber} telefonszámot"
+                    },
+                    "WIRETAP": {
+                        "TITLE": "Telefonszám lehallgatva",
+                        "DESCRIPTION": "Lehallgatta a(z) {phoneNumber} telefonszámot"
+                    },
+                    "UNLOCK": {
+                        "TITLE": "Telefon feloldásra várólistára helyezve",
+                        "DESCRIPTION": "Feloldásra várólistára helyezte a(z) {phoneNumber} telefonszámot"
+                    },
+                    "REPORT": {
+                        "TITLE": "{tab} létrehozva",
+                        "DESCRIPTION": "Létrehozta a(z) \"{title}\" {tab} elemet"
+                    },
+                    "LICENSE": {
+                        "TITLE": "Engedély hozzáadva",
+                        "DESCRIPTION": "Megadta a(z) {license} engedélyt {name} személynek"
+                    },
+                    "WEAPON": {
+                        "TITLE": "Fegyver regisztrálva",
+                        "DESCRIPTION": "Regisztrált egy {model} típusú fegyvert {serialNumber} sorozatszámmal"
+                    }
+                },
+                "UPDATE": {
+                    "CATALOG": {
+                        "CATEGORY": {
+                            "TITLE": "Katalóguskategória frissítve",
+                            "DESCRIPTION": "Átnevezte a(z) \"{oldName}\" katalóguskategóriát erre: \"{newName}\""
+                        },
+                        "ITEM": {
+                            "TITLE": "Katalóguselem frissítve",
+                            "DESCRIPTION": "Frissítette a(z) \"{name}\" katalóguselemet"
+                        }
+                    },
+                    "BULLETIN": {
+                        "TITLE": "Hirdetőtáblai bejegyzés frissítve",
+                        "DESCRIPTION": "Frissítette a(z) \"{title}\" bejegyzést"
+                    },
+                    "JAIL": {
+                        "TITLE": "Börtönbüntetés frissítve",
+                        "DESCRIPTION": "Frissítette {name} börtönbüntetését"
+                    },
+                    "REPORT": {
+                        "TITLE": "{tab} frissítve",
+                        "DESCRIPTION": "Frissítette a(z) \"{title}\" {tab} elemet"
+                    },
+                    "USER": {
+                        "TITLE": "Profil frissítve",
+                        "DESCRIPTION": "Frissítette {name} profilját"
+                    },
+                    "VEHICLE": {
+                        "TITLE": "Jármű frissítve",
+                        "DESCRIPTION": "Frissítette a(z) {plate} rendszámú járművet"
+                    },
+                    "PROPERTY": {
+                        "TITLE": "Ingatlan frissítve",
+                        "DESCRIPTION": "Frissítette a(z) {label} ingatlant"
+                    },
+                    "WEAPON": {
+                        "TITLE": "Fegyver frissítve",
+                        "DESCRIPTION": "Frissítette a(z) {serialNumber} sorozatszámú fegyvert"
+                    }
+                },
+                "DELETE": {
+                    "CATALOG": {
+                        "CATEGORY": {
+                            "TITLE": "Katalóguskategória törölve",
+                            "DESCRIPTION": "Törölte a(z) \"{name}\" katalóguskategóriát"
+                        },
+                        "ITEM": {
+                            "TITLE": "Katalóguselem törölve",
+                            "DESCRIPTION": "Törölte a(z) \"{name}\" katalóguselemet"
+                        }
+                    },
+                    "BULLETIN": {
+                        "TITLE": "Hirdetőtáblai bejegyzés törölve",
+                        "DESCRIPTION": "Törölte a(z) \"{title}\" bejegyzést"
+                    },
+                    "TAG": {
+                        "TITLE": "Címke törölve",
+                        "DESCRIPTION": "Törölte a(z) \"{name}\" címkét"
+                    },
+                    "JAIL": {
+                        "TITLE": "Börtönbüntetés törölve",
+                        "DESCRIPTION": "Törölte {name} börtönbüntetését"
+                    },
+                    "WIRETAP": {
+                        "TITLE": "Lehallgatás törölve",
+                        "DESCRIPTION": "Törölte a(z) {phoneNumber} telefonszám lehallgatását"
+                    },
+                    "REPORT": {
+                        "TITLE": "{tab} törölve",
+                        "DESCRIPTION": "Törölte a(z) \"{title}\" {tab} elemet"
+                    },
+                    "LICENSE": {
+                        "TITLE": "Engedély eltávolítva",
+                        "DESCRIPTION": "Eltávolította a(z) {license} engedélyt {name} személytől"
+                    },
+                    "WEAPON": {
+                        "TITLE": "Fegyver törölve",
+                        "DESCRIPTION": "Törölte a(z) {serialNumber} sorozatszámú fegyvert"
+                    }
+                }
+            },
+            "TAGS": {
+                "TITLE": "Címkék",
+                "ADD": "Hozzáadás",
+                "NO_TAGS": "Nincsenek címkék",
+                "ADD_TAG": "Címke hozzáadása",
+                "CREATE_TAG": {
+                    "TITLE": "Címke létrehozása",
+                    "DESCRIPTION": "Add meg a címke nevét",
+                    "PLACEHOLDER": "Címke neve",
+                    "CANCEL": "Mégse",
+                    "NEXT": "Következő",
+                    "SELECT_COLOR": "Válassz színt"
+                },
+                "DELETE_TAG": {
+                    "TITLE": "Címke törlése",
+                    "DESCRIPTION": "Biztosan törlöd ezt a címkét?",
+                    "CANCEL": "Mégse",
+                    "DELETE": "Törlés"
+                },
+                "REMOVE_TAG": {
+                    "TITLE": "Címke eltávolítása",
+                    "DESCRIPTION": "Biztosan eltávolítod a(z) '{tag}' címkét?",
+                    "CANCEL": "Mégse",
+                    "REMOVE": "Eltávolítás"
+                },
+                "COLORS": {
+                    "GREY": "Szürke",
+                    "BLUE": "Kék",
+                    "GREEN": "Zöld",
+                    "RED": "Piros",
+                    "ORANGE": "Narancssárga",
+                    "YELLOW": "Sárga",
+                    "PINK": "Rózsaszín",
+                    "PURPLE": "Lila",
+                    "BROWN": "Barna",
+                    "NAVY": "Sötétkék",
+                    "CYAN": "Cián"
+                },
+                "ERROR": {
+                    "TITLE": "Hiba",
+                    "DESCRIPTION": "Hiba történt a címke létrehozása során.",
+                    "TITLE_EXISTS": "A megadott címke már létezik",
+                    "OK": "OK"
+                }
+            },
+            "MISC": {
+                "TABLET": "Tablet",
+                "PHONE": "Telefon",
+                "SOON": "Hamarosan",
+                "UNKNOWN": "Ismeretlen",
+                "MINUTES": "{minutes}p",
+                "HOURS": "{hours}ó",
+                "DAYS": "{days}n",
+                "FORMATTED_DATE": "{year}. {month} {day}. {hours}:{minutes}",
+                "CHANGE_AVATAR": "Profilkép módosítása",
+                "REMOVE_AVATAR": "Profilkép eltávolítása",
+                "SET_CALLSIGN": "Hívójel beállítása",
+                "SET_WAYPOINT": "Útpont beállítása",
+                "SET_WAYPOINT_DESCRIPTION": "Biztosan be szeretnéd állítani ezt az útpontot?",
+                "WAYPOINT_SET": "Útpont beállítva",
+                "WAYPOINT_SET_DESCRIPTION": "Az útpont a helyszínre lett beállítva",
+                "CALLSIGN": {
+                    "TITLE": "Hívójel",
+                    "DESCRIPTION": "Add meg a hívójelet",
+                    "CANCEL": "Mégse",
+                    "PROCEED": "Folytatás",
+                    "ERROR": {
+                        "TITLE": "Hiba",
+                        "DESCRIPTION": "A megadott hívójel nem felel meg a szükséges formátumnak ({format}). Kérjük próbáld újra."
+                    }
+                }
+            },
+            "FILTERS": {
+                "TITLE": "Szűrők",
+                "ALL": "Összes",
+                "UNKNOWN": "Ismeretlen",
+                "WEAPONS_INVOLVED": "Érintett fegyverek",
+                "VEHICLES_INVOLVED": "Érintett járművek",
+                "PROPERTIES_INVOLVED": "Érintett ingatlanok",
+                "PERSONS_INVOLVED": "Érintett személyek",
+                "OFFICERS_INVOLVED": "Érintett tisztek",
+                "TARGET": "Célpont",
+                "PROFILE": "Profil",
+                "VEHICLE": "Jármű",
+                "WEAPON": "Fegyver",
+                "PROPERTY": "Ingatlan",
+                "YES": "Igen",
+                "NO": "Nem",
+                "WARRANTS": {
+                    "ACTIVE": "Aktív",
+                    "CLOSED": "Lezárt",
+                    "INACTIVE": "Inaktív",
+                    "PRIORITY": "Prioritás",
+                    "ACTIVE_WARRANT": "Aktív parancs"
+                },
+                "DISPATCH": {
+                    "PRIORITY": {
+                        "LOW": "Alacsony",
+                        "MEDIUM": "Közepes",
+                        "HIGH": "Magas"
+                    }
+                },
+                "LOGS": {
+                    "EMPLOYEE": "Alkalmazott",
+                    "TYPE": "Típus",
+                    "TAB": "Lap"
+                }
+            }
+        },
+        "BROWSER": {
+            "TITLE": "Böngésző",
+            "SEARCH_PLACEHOLDER": "Keresés vagy URL megadása",
+            "NEW_TAB": "Új lap",
+            "TABS": "Lapok",
+            "TAB": "Lap",
+            "DONE": "Kész",
+            "CLOSE_ALL": "Összes bezárása",
+            "HISTORY": "Előzmények",
+            "BOOKMARKS": "Könyvjelzők",
+            "BOOKMARK_REMOVE": "Könyvjelző eltávolítása",
+            "NO_BOOKMARKS": "Még nincsenek könyvjelzők",
+            "NO_HISTORY": "Még nincsenek előzmények",
+            "FAILED_LOAD_PAGE": "Az oldal nem érhető el ebben az alkalmazásban",
+            "FAILED_LOAD_PAGE_DESCRIPTION": "Ez a weboldal nem engedélyezi a beágyazást. Ez nem hiba."
+        },
+        "REGISTRATION": {
+            "TITLE": "Regisztráció",
+            "SELECT_CHARACTER": "Karakter kiválasztása",
+            "PLEASE_SELECT_CHARACTER": "Kérjük válassz karaktert",
+            "CREATE_NEW": "Új létrehozása",
+            "EDIT": "Szerkesztés",
+            "SAVE": "Mentés",
+            "DELETE": "Törlés",
+            "CANCEL": "Mégse",
+            "DELETE_CHARACTER": "Karakter törlése",
+            "DESCRIPTION": "Leírás",
+            "DESCRIPTION_PLACEHOLDER": "Ez egy leírás...",
+            "ADD": "Hozzáadás",
+            "CHARACTER_INFO": "Karakter adatai",
+            "REMOVE_AVATAR": "Profilkép eltávolítása",
+            "FIRSTNAME": "Keresztnév",
+            "LASTNAME": "Vezetéknév",
+            "DOB": "Születési dátum",
+            "PHONE_NUMBER": "Telefonszám",
+            "GENDER": "Nem",
+            "MALE": "Férfi",
+            "FEMALE": "Nő",
+            "JOB": "Foglalkozás",
+            "HEIGHT": "Magasság",
+            "FORMATTED_HEIGHT": "{height}cm",
+            "VEHICLES": "Járművek",
+            "VEHICLE": "Jármű",
+            "REMOVE_PICTURE": "Kép eltávolítása",
+            "SEARCH_VEHICLES": "Járművek keresése",
+            "MODEL": "Modell",
+            "PLATE": "Rendszám",
+            "COLOR": "Szín",
+            "CREATE": "Létrehozás",
+            "DELETE_VEHICLE": "Jármű törlése",
+            "DELETE_VEHICLE_POPUP": {
+                "TITLE": "Jármű törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt a járművet?"
+            },
+            "LICENSES": "Engedélyek",
+            "ADD_LICENSE": "Engedély hozzáadása",
+            "DELETE_LICENSE_POPUP": {
+                "TITLE": "Engedély törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt az engedélyt?"
+            },
+            "PROPERTIES": "Ingatlanok",
+            "ADD_PROPERTY_POPUP": {
+                "TITLE": "Új ingatlan",
+                "DESCRIPTION": "Új ingatlan létrehozása",
+                "LABEL": "Ingatlan neve",
+                "ADDRESS": "Ingatlan címe"
+            },
+            "DELETE_PROPERTY_POPUP": {
+                "TITLE": "Ingatlan törlése",
+                "DESCRIPTION": "Biztosan törlöd ezt az ingatlant?"
+            },
+            "ERROR": {
+                "TITLE": "Hiba",
+                "MISSING_FIELDS": "A következő mezők hiányoznak: {fields}",
+                "OK": "OK"
+            }
+        },
+        "MAPS": {
+            "GO": "Indulás"
+        }
+    },
+    "COMPONENTS": {
+        "CONTEXT_MENU": {
+            "CANCEL": "Mégse"
+        },
+        "IMAGE": {
+            "SAVE_TO_GALLERY": "Mentés a galériába"
+        },
+        "GALLERY": {
+            "CANCEL": "Mégse",
+            "EXTERNAL_URL": "Külső URL",
+            "EXTERNAL_URL_BLACKLISTED": "Ez az URL tiltólistán szerepel",
+            "NO_IMAGES": "Nincsenek képek"
+        },
+        "NOTIFICATIONS": {
+            "SENT_PHOTO": "Képet küldött",
+            "SENT_GIF": "GIF-et küldött",
+            "NOW": "most"
+        },
+        "SHARE": {
+            "COPY_PHOTO": "Fotó másolása",
+            "COPY_VIDEO": "Videó másolása",
+            "USE_WALLPAPER": "Beállítás háttérképként",
+            "COPY_NUMBER": "Szám másolása",
+            "COPY_LINK": "Link másolása",
+            "AIRDROP_SENT": "Elküldve",
+            "AIRDROP_ACCEPTED": "Elfogadva",
+            "AIRDROP_DECLINED": "Elutasítva",
+            "AIRDROP_NO_USERS": "Nincs közeli telefon",
+            "WALLPAPER_POPUP": {
+                "TITLE": "Beállítás háttérképként",
+                "TEXT": "Biztosan ezt a képet szeretnéd háttérképként beállítani?",
+                "CANCEL": "Mégse",
+                "PROCEED": "Folytatás"
+            },
+            "COPY_POPUP": {
+                "TITLE": "Sikeres",
+                "DESCRIPTION": "Sikeresen másolva a vágólapra",
+                "OK": "OK"
+            }
+        },
+        "AIRDROP": {
+            "TITLE": "AirShare",
+            "TEXT": "{sender} meg szeretne osztani egy {type} elemet",
+            "VIDEO": "videót",
+            "PHOTO": "fotót",
+            "CONTACT": "névjegyet",
+            "LOCATION": "helyszínt",
+            "NOTE": "jegyzetet",
+            "VOICEMEMO": "hangjegyzetet",
+            "PLAYLIST": "lejátszási listát",
+            "DECLINE": "Elutasítás",
+            "ACCEPT": "Elfogadás"
+        },
+        "BATTERY": {
+            "LOW_BATTERY": "Alacsony akkumulátor",
+            "BATTERY_REMAINING": "{percent}% akkumulátor maradt",
+            "LOW_POWER_MODE": "Energiatakarékos mód",
+            "CLOSE": "Bezárás"
+        },
+        "COLOR_PICKER": {
+            "COLOR": "Szín"
+        },
+        "ICON_PICKER": {
+            "SELECT_ICON": "Válassz ikont",
+            "SEARCH_PLACEHOLDER": "Ikonok keresése...",
+            "NO_ICONS_FOUND": "Nem található ikon erre: \"{query}\""
+        }
+    },
+    "SETUP": {
+        "HELLO": "Szia",
+        "SELECT_LANGUAGE": "Válaszd ki a nyelvedet",
+        "NEXT": "Kattints a megnyitáshoz",
+        "APPEARANCE": "Téma",
+        "APPEARANCE_TEXT": "Válassz sötét vagy világos témát az eszközödnek",
+        "CONTINUE": "Folytatás",
+        "WELCOME_TO": "Üdvözlünk itt:",
+        "CLICK": "Kattints a kezdéshez"
+    },
+    "HOMESCREEN": {
+        "DONE": "Kész",
+        "CLOSE_ALL": "Összes bezárása",
+        "REMOVE_APP_POPUP": {
+            "TITLE": "'{app}' eltávolítása?",
+            "DESCRIPTION": "Az alkalmazás törlése NEM törli az adatait. Az alkalmazás később újratelepíthető az App Store-ból.",
+            "CANCEL": "Mégse",
+            "PROCEED": "Törlés"
+        }
+    },
+    "LOCKSCREEN": {
+        "DELETE": "Törlés",
+        "FONT_AND_COLOR": "Betűtípus és szín"
+    },
+    "MISC": {
+        "COPY": "Másolás",
+        "OPEN_IN_BROWSER": "Megnyitás böngészőben",
+        "GENDERS": {
+            "MALE": "Férfi",
+            "FEMALE": "Nő"
+        },
+        "AIRPLANE_MODE_POPUP": {
+            "TITLE": "Hiba",
+            "DESCRIPTION": "Olyan műveletet próbálsz végrehajtani, amely internetkapcsolatot igényel. A folytatáshoz kapcsold ki a repülő üzemmódot.",
+            "OK": "OK"
+        }
+    },
+    "EXPORTED_DOCUMENT": {
+        "TITLE": "Exportált dokumentum",
+        "UNKNOWN": "Ismeretlen",
+        "N_A": "N/A",
+        "TAGS": "Címkék",
+        "DESCRIPTION": "Leírás",
+        "DETAILS": "Részletek",
+        "CREATED_UPDATED": "Létrehozva: {created}, utoljára frissítve: {updated}",
+        "REPORT": {
+            "UNTITLED_REPORT": "Névtelen jelentés",
+            "DOB": "Születési dátum: {dob}",
+            "COLOR": "Szín: {color}",
+            "NAME": "Név: {name}",
+            "ID": "Azonosító: ",
+            "TYPE": "Típus",
+            "AUTHOR": "Szerző",
+            "CREATED": "Létrehozva",
+            "LAST_UPDATED": "Utoljára frissítve",
+            "LINKED_REPORTS": "Kapcsolódó jelentések"
+        },
+        "PERSON": {
+            "NAME": "Név",
+            "CHARGES": "Vádak",
+            "FINE": "Bírság",
+            "SENTENCE": "Ítélet",
+            "JAIL_TIME": "Börtönidő",
+            "SENTENCE_LENGTH": "{amount} hónap"
+        },
+        "VEHICLE": {
+            "MODEL": "Modell",
+            "PLATE": "Rendszám",
+            "UNKNOWN": "Ismeretlen jármű"
+        },
+        "WEAPON": {
+            "MODEL": "Modell",
+            "SERIAL_NUMBER": "Sorozatszám",
+            "UNKNOWN": "Ismeretlen fegyver"
+        }
+    },
+    "BACKEND": {
+        "CAMERA": {
+            "TAKE_PHOTO": "{key} Fénykép",
+            "FLIP_CAMERA": "{key} Váltás",
+            "TOGGLE_FLASH": "{key} Vaku",
+            "TOGGLE_CURSOR": "{key} Kurzor",
+            "CHANGE_MODE": "{key} {key2} Mód",
+            "ROLL": "{key} {key2} Tekercs",
+            "FREEZE": "{key} Befagyasztás",
+            "UNFREEZE": "{key} Feloldás",
+            "TOGGLE_TIP": "{key} Elrejtés"
+        },
+        "SERVICES": {
+            "NEW_MESSAGE": "Új üzenet",
+            "ANONYMOUS": "Névtelen"
+        },
+        "MISC": {
+            "X_TABLET": "{firstname} tabletje"
+        },
+        "MAIL": {
+            "AUTOMATIC_PASSWORD": {
+                "SENDER": "Rendszer",
+                "SUBJECT": "A jelszavad",
+                "MESSAGE": "Szia,\n\nAz automatikus e-mail címed: {address}, a jelszavad: {password}"
+            }
+        },
+        "LOGS": {
+            "TOOK_PHOTO": "Fotót készített",
+            "TOOK_VIDEO": "Videót készített",
+            "NEW_DISPATCH": "Új bevetés: {title}"
+        },
+        "BASE_DISPATCH": {
+            "VEHICLE_CLASSES": {
+                "0": "kompakt",
+                "1": "szedán",
+                "2": "SUV",
+                "3": "kupé",
+                "4": "izomautó",
+                "5": "sportklasszikus",
+                "6": "sportautó",
+                "7": "szuperautó",
+                "8": "motorkerékpár",
+                "9": "terepjáró",
+                "10": "ipari jármű",
+                "11": "haszongépjármű",
+                "12": "furgon",
+                "13": "kerékpár",
+                "14": "csónak",
+                "15": "helikopter",
+                "16": "repülő",
+                "17": "szolgálati jármű",
+                "18": "mentőjármű",
+                "19": "katonai jármű",
+                "20": "kereskedelmi jármű",
+                "21": "vonat",
+                "22": "nyílt kerekű autó"
+            },
+            "VEHICLE_DATA": {
+                "BODY_TYPE": "Karosszéria típusa",
+                "MANUFACTURER": "Gyártó",
+                "MODEL": "Modell",
+                "COLOR": "Szín",
+                "PLATE": "Rendszám"
+            },
+            "VEHICLE_THEFT": {
+                "CODE": "10-31",
+                "TITLE": "Járműlopás - {plate}",
+                "DESCRIPTION": "Egy {gender_lower} személyt láttak, amint ellopott egy {color_lower} {class} {manufacturer} {model} típusú járművet {plate} rendszámmal."
+            },
+            "VEHICLE_JACKING": {
+                "CODE": "10-31",
+                "TITLE": "Járműrablás - {plate}",
+                "DESCRIPTION": "Egy {gender_lower} személyt láttak, amint kirábolt egy {color_lower} {class} {manufacturer} {model} típusú járművet {plate} rendszámmal."
+            },
+            "WEAPON_TYPES": {
+                "DIGISCANNER": "Digiszkenner",
+                "FIREEXTINGUISHER": "Tűzoltó készülék",
+                "HACKINGDEVICE": "Hacker eszköz",
+                "HEAVY": "Nehézfegyver",
+                "MELEE": "Közelharci fegyver",
+                "METALDETECTOR": "Fémkereső",
+                "MG": "Géppuska",
+                "NIGHTVISION": "Éjjellátó",
+                "PARACHUTE": "Ejtőernyő",
+                "PETROLCAN": "Benzineskanna",
+                "PISTOL": "Pisztoly",
+                "RIFLE": "Puska",
+                "SHOTGUN": "Sörétes puska",
+                "SMG": "Géppisztoly",
+                "SNIPER": "Mesterlövész puska",
+                "STUNGUN": "Sokkoló",
+                "THROWN": "Dobófegyver",
+                "TRANQILIZER": "Altatópuska",
+                "UNARMED": "Fegyvertelen",
+                "UNKNOWN": "Lőfegyver"
+            },
+            "GUNSHOT": {
+                "CODE": "10-31",
+                "TITLE": "Lövöldözés - {location}",
+                "DESCRIPTION": "Egy {gender_lower} személyt láttak, amint {weapon_type_lower} fegyverrel lövöldöz itt: {location}."
+            },
+            "EXPLOSION": {
+                "TITLE": "Robbanás",
+                "DESCRIPTION": "Robbanást észleltek itt: {location}.",
+                "CODE": "10-31"
+            },
+            "ARMED": {
+                "TITLE": "Felfegyverzett {gender}",
+                "DESCRIPTION": "Egy {gender_lower} személyt láttak {weapon_type_lower} fegyverrel felfegyverkezve itt: {location}.",
+                "CODE": "10-31"
+            }
+        },
+        "MDT": {
+            "EVIDENCE_LABEL": "Bizonyíték: {id}. ügyirat"
+        },
+        "MDT_NOTIFICATIONS": {
+            "NEW_CHAT_CHANNEL": {
+                "TITLE": "Új chat",
+                "CONTENT": "Létrejött a(z) '{channel}' új csatorna."
+            },
+            "NEW_CHAT_MESSAGE": {
+                "TITLE": "Új üzenet itt: {channel}",
+                "CONTENT": "{name}: {message}",
+                "ATTACHMENT": "melléklet"
+            },
+            "CHAT_INVITE": {
+                "TITLE": "Chat meghívó",
+                "CONTENT": "Meghívtak a(z) '{channel}' csatornához"
+            },
+            "CHAT_REACTION": {
+                "TITLE": "{name} reagált üzenetedre",
+                "CONTENT": "{name} reagált a {reaction} reakcióval a {channel} csatornában"
+            },
+            "NEW_BULLETIN": {
+                "TITLE": "Új hirdetőtáblai bejegyzés",
+                "CONTENT": "{title}"
+            },
+            "NEW_CATALOG_CATEGORY": {
+                "TITLE": "Új {catalog_name} kategória",
+                "CONTENT": "{name}"
+            },
+            "NEW_CATALOG_ITEM": {
+                "TITLE": "Új elem a(z) {category} kategóriában",
+                "CONTENT": "{name}"
+            },
+            "NEW_WEAPON": {
+                "TITLE": "Új fegyver regisztrálva",
+                "CONTENT": "{model} típusú fegyver {serialNumber} sorozatszámmal regisztrálva."
+            },
+            "NEW_REPORT": {
+                "TITLE": "Új {report_name}",
+                "CONTENT": "{title}"
+            },
+            "CANT_FINE_YOURSELF": {
+                "TITLE": "Sikertelen bírságolás",
+                "CONTENT": "Nem adhatsz bírságot magadnak."
+            },
+            "CANT_JAIL_YOURSELF": {
+                "TITLE": "Sikertelen börtönzés",
+                "CONTENT": "Nem küldheted börtönbe magad."
+            },
+            "WIRETAP": {
+                "TITLE": "Hívás lehallgatva",
+                "CONTENT": "A lehallgatott szám {number} hívásban van."
+            }
+        }
+    },
+    "MDT": {
+        "Police": {
+            "TABS": {
+                "HOME": "Főoldal",
+                "BULLETIN": "Hirdetőtábla",
+                "DISPATCH": "Diszpécser",
+                "UNITS": "Egységek",
+                "USERS": "Profilok",
+                "VEHICLES": "Járművek",
+                "PROPERTIES": "Ingatlanok",
+                "WEAPONS": "Fegyverek",
+                "REPORTS": "Jelentések",
+                "CASES": "Ügyiratok",
+                "WARRANTS": "Parancsok",
+                "CATALOG": "Jogsértések",
+                "EMPLOYEES": "Alkalmazottak",
+                "CHAT": "Chat",
+                "PHONE": "Telefon",
+                "JAIL": "Börtön",
+                "LOGS": "Naplók"
+            },
+            "FIELDS": {
+                "PROFILE": "Profil adatok",
+                "NOTES": "Megjegyzések",
+                "TAGS": "Címkék",
+                "LICENSES": "Engedélyek",
+                "VEHICLES": "Érintett járművek",
+                "PROPERTIES": "Ingatlanok",
+                "WEAPONS": "Érintett fegyverek",
+                "REPORTS": "Kapcsolódó jelentések",
+                "CASES": "Kapcsolódó ügyiratok",
+                "WARRANTS": "Parancsok",
+                "CHARGES": "Vádak",
+                "VEHICLE": "Jármű adatok",
+                "PROPERTY": "Ingatlan adatok",
+                "WEAPON": "Fegyver adatok",
+                "TYPE": "Típus",
+                "GALLERY": "Galéria",
+                "DESCRIPTION": "Leírás",
+                "OFFICERS": "Érintett tisztek",
+                "CIVILIANS": "Érintett civilek",
+                "SUSPECTS": "Érintett gyanúsítottak",
+                "LINKED_WARRANTS": "Kapcsolódó parancsok",
+                "EVIDENCE": "Bizonyítékok",
+                "STASH": "Raktár",
+                "CRIMINALS": "Érintett bűnözők",
+                "TARGET": "Célpont",
+                "STATUS": "Státusz",
+                "PRIORITY": "Prioritás",
+                "LINKED_REPORTS": "Kapcsolódó jelentések",
+                "CASE": "Kapcsolódó ügyirat"
+            },
+            "STATUSES": {
+                "AVAILABLE": "Elérhető",
+                "BUSY": "Foglalt"
+            },
+            "OPTIONS": {
+                "PROFILE.ACTIVEWARRANT.TRUE": "Igen",
+                "PROFILE.ACTIVEWARRANT.FALSE": "Nem",
+                "VEHICLE.ACTIVEWARRANT.TRUE": "Igen",
+                "VEHICLE.ACTIVEWARRANT.FALSE": "Nem",
+                "TYPE.ASSAULT": "Testi sértés",
+                "TYPE.ROBBERY": "Rablás",
+                "TYPE.BURGLARY": "Betörés",
+                "TYPE.THEFT": "Lopás",
+                "TYPE.FRAUD": "Csalás",
+                "TYPE.HOMICIDE": "Emberölés",
+                "TYPE.KIDNAPPING": "Emberrablás",
+                "TYPE.ARSON": "Gyújtogatás",
+                "TYPE.VANDALISM": "Rongálás",
+                "TYPE.DRUG_OFFENSE": "Kábítószer-bűncselekmény",
+                "TYPE.TRAFFIC_VIOLATION": "Közlekedési szabálysértés",
+                "TYPE.DOMESTIC_VIOLENCE": "Családon belüli erőszak",
+                "TYPE.CYBERCRIME": "Kiberbűnözés",
+                "TYPE.WEAPONS_VIOLATION": "Fegyverrel való visszaélés",
+                "TYPE.PUBLIC_DISTURBANCE": "Közrend megzavarása",
+                "TYPE.TRESPASSING": "Magánterületre való behatolás",
+                "TYPE.HARASSMENT": "Zaklatás",
+                "TYPE.MISSING_PERSON": "Eltűnt személy",
+                "TYPE.EXTORTION": "Zsarolás",
+                "TYPE.IDENTITY_THEFT": "Személyazonosság-lopás",
+                "TYPE.INTERROGATION": "Kihallgatás",
+                "TYPE.OTHER": "Egyéb",
+                "TYPE.ARREST_WARRANT": "Elfogatóparancs",
+                "TYPE.SEARCH_WARRANT": "Házkutatási parancs",
+                "TYPE.BENCH_WARRANT": "Bírósági idézés",
+                "TYPE.EXTRADITION_WARRANT": "Kiadatási parancs",
+                "TYPE.PROBATION_VIOLATION_WARRANT": "Próbaidő megszegése miatti parancs",
+                "TYPE.MATERIAL_WITNESS_WARRANT": "Tanú elővezetési parancs",
+                "TYPE.EXECUTION_WARRANT": "Végrehajtási parancs",
+                "TYPE.PAROLE_VIOLATION_WARRANT": "Feltételes szabadlábra helyezés megszegése miatti parancs",
+                "STATUS.ACTIVE": "Aktív",
+                "STATUS.SERVED": "Végrehajtva",
+                "STATUS.EXPIRED": "Lejárt",
+                "STATUS.CANCELLED": "Visszavonva",
+                "PRIORITY.LOW": "Alacsony",
+                "PRIORITY.MEDIUM": "Közepes",
+                "PRIORITY.HIGH": "Magas"
+            },
+            "ENTITY_FIELDS": {
+                "PROFILE.DOB": "Születési dátum",
+                "PROFILE.PHONENUMBER": "Telefonszám",
+                "PROFILE.GENDER": "Nem",
+                "PROFILE.JOB": "Foglalkozás",
+                "PROFILE.IDENTIFIER": "Azonosító",
+                "PROFILE.FINGERPRINT": "Ujjlenyomat",
+                "PROFILE.ACTIVEWARRANT": "Aktív parancs",
+                "VEHICLE.MODEL": "Modell",
+                "VEHICLE.PLATE": "Rendszám",
+                "VEHICLE.COLOR": "Szín",
+                "VEHICLE.OWNER": "Tulajdonos",
+                "VEHICLE.ACTIVEWARRANT": "Aktív parancs",
+                "PROPERTY.LABEL": "Megnevezés",
+                "PROPERTY.OWNER": "Tulajdonos",
+                "PROPERTY.ADDRESS": "Cím",
+                "WEAPON.MODEL": "Modell",
+                "WEAPON.SERIALNUMBER": "Sorozatszám",
+                "WEAPON.OWNER": "Tulajdonos"
+            }
+        },
+        "Ambulance": {
+            "TABS": {
+                "HOME": "Főoldal",
+                "BULLETIN": "Hirdetőtábla",
+                "DISPATCH": "Diszpécser",
+                "UNITS": "Egységek",
+                "USERS": "Naplók",
+                "REPORTS": "Jelentések",
+                "CATALOG": "Állapotok",
+                "EMPLOYEES": "Alkalmazottak",
+                "CHAT": "Chat",
+                "LOGS": "Naplók"
+            },
+            "FIELDS": {
+                "PROFILE": "Beteg adatai",
+                "TAGS": "Címkék",
+                "DIAGNOSES_CONDITIONS": "Diagnózisok / Állapotok",
+                "NOTES": "Megjegyzések",
+                "REPORTS": "Orvosi jelentések",
+                "TARGET": "Beteg",
+                "TYPE": "Típus",
+                "DESCRIPTION": "Jelentés részletei",
+                "GALLERY": "Galéria",
+                "INJURIES_CONDITIONS": "Sérülések / Állapotok",
+                "DOCTORS": "Érintett orvosok"
+            },
+            "STATUSES": {
+                "AVAILABLE": "Elérhető",
+                "BUSY": "Foglalt",
+                "AT_STATION": "Állomáson",
+                "ON_CALL": "Készenlétben"
+            },
+            "OPTIONS": {
+                "TYPE.INJURY": "Sérülés",
+                "TYPE.ILLNESS": "Betegség",
+                "TYPE.VEHICLE_ACCIDENT": "Közlekedési baleset",
+                "TYPE.OVERDOSE": "Túladagolás",
+                "TYPE.CARDIAC_ARREST": "Szívmegállás",
+                "TYPE.STROKE": "Agyvérzés",
+                "TYPE.RESPIRATORY_DISTRESS": "Légzési nehézség",
+                "TYPE.BURN_INJURY": "Égési sérülés",
+                "TYPE.FALL_INJURY": "Eséses sérülés",
+                "TYPE.DROWNING": "Fulladás",
+                "TYPE.POISONING": "Mérgezés",
+                "TYPE.SEIZURE": "Görcsroham",
+                "TYPE.TRAUMA": "Trauma",
+                "TYPE.ALLERGIC_REACTION": "Allergiás reakció",
+                "TYPE.SHOCK": "Sokk",
+                "TYPE.HEATSTROKE": "Hőguta",
+                "TYPE.HYPOTHERMIA": "Hipotermia",
+                "TYPE.LABOR_AND_DELIVERY": "Szülés",
+                "TYPE.MENTAL_HEALTH_CRISIS": "Mentális egészségügyi válság",
+                "TYPE.OTHER": "Egyéb"
+            },
+            "ENTITY_FIELDS": {
+                "PROFILE.DOB": "Születési dátum",
+                "PROFILE.PHONENUMBER": "Telefonszám",
+                "PROFILE.GENDER": "Nem",
+                "PROFILE.HEIGHT": "Magasság",
+                "PROFILE.BLOODTYPE": "Vércsoport"
+            }
+        },
+        "Fire": {
+            "TABS": {
+                "HOME": "Főoldal",
+                "BULLETIN": "Hirdetőtábla",
+                "DISPATCH": "Diszpécser",
+                "UNITS": "Egységek",
+                "REPORTS": "Jelentések",
+                "EMPLOYEES": "Alkalmazottak",
+                "CHAT": "Chat",
+                "LOGS": "Naplók"
+            },
+            "FIELDS": {
+                "TYPE": "Esemény típusa",
+                "LOCATION": "Helyszín",
+                "TAGS": "Címkék",
+                "GALLERY": "Helyszíni fotók",
+                "DESCRIPTION": "Eseményjelentés",
+                "FIREFIGHTERS": "Beavatkozó tűzoltók",
+                "CIVILIANS": "Érintett civilek/betegek"
+            },
+            "STATUSES": {
+                "IN_STATION": "Állomáson",
+                "RESPONDING": "Reagálás alatt",
+                "ON_SCENE": "A helyszínen",
+                "RETURNING": "Visszatérőben",
+                "OUT_OF_SERVICE": "Nem elérhető"
+            },
+            "OPTIONS": {
+                "TYPE.STRUCTURE_FIRE": "Épülettűz",
+                "TYPE.VEHICLE_FIRE": "Járműtűz",
+                "TYPE.WILDFIRE/BRUSH_FIRE": "Erdő-/bozóttűz",
+                "TYPE.MEDICAL_EMERGENCY": "Orvosi vészhelyzet",
+                "TYPE.HAZMAT_INCIDENT": "Veszélyesanyag-esemény",
+                "TYPE.GAS_LEAK": "Gázszivárgás",
+                "TYPE.CARBON_MONOXIDE_ALARM": "Szén-monoxid riasztás",
+                "TYPE.VEHICLE_ACCIDENT": "Közlekedési baleset",
+                "TYPE.WATER_RESCUE": "Vízimentés",
+                "TYPE.FALSE_ALARM": "Téves riasztás",
+                "TYPE.PUBLIC_ASSIST": "Közterületi segítségnyújtás",
+                "TYPE.OTHER": "Egyéb"
+            },
+            "ENTITY_FIELDS": {}
+        },
+        "Mechanic": {
+            "TABS": {
+                "HOME": "Főoldal",
+                "BULLETIN": "Hirdetőtábla",
+                "DISPATCH": "Diszpécser",
+                "UNITS": "Egységek",
+                "VEHICLES": "Járművek",
+                "SERVICEREPORTS": "Szervizjelentések",
+                "EMPLOYEES": "Alkalmazottak",
+                "CHAT": "Chat",
+                "LOGS": "Naplók"
+            },
+            "FIELDS": {
+                "VEHICLE": "Jármű adatok",
+                "NOTES": "Jármű megjegyzések",
+                "TAGS": "Címkék",
+                "SERVICEREPORTS": "Szerviz előzmények",
+                "TARGET": "Jármű",
+                "CUSTOMER": "Ügyfél",
+                "TYPE": "Szerviz típusa",
+                "STATUS": "Státusz",
+                "PRIORITY": "Prioritás",
+                "GALLERY": "Fotók",
+                "DESCRIPTION": "Szervizjelentés",
+                "MECHANICS": "Érintett szerelők"
+            },
+            "STATUSES": {
+                "AVAILABLE": "Elérhető",
+                "BUSY": "Foglalt",
+                "ON_CALL": "Készenlétben",
+                "AT_SHOP": "Műhelyben",
+                "OUT_OF_SERVICE": "Nem elérhető"
+            },
+            "OPTIONS": {
+                "TYPE.ENGINE_REPAIR": "Motorjavítás",
+                "TYPE.BODY_WORK": "Karosszéria javítás",
+                "TYPE.PAINT_JOB": "Fényezés",
+                "TYPE.TIRE_REPLACEMENT": "Gumicsere",
+                "TYPE.OIL_CHANGE": "Olajcsere",
+                "TYPE.BATTERY_REPLACEMENT": "Akkumulátorcsere",
+                "TYPE.TRANSMISSION_REPAIR": "Váltójavítás",
+                "TYPE.BRAKE_SERVICE": "Fékszerviz",
+                "TYPE.SUSPENSION_REPAIR": "Futóműjavítás",
+                "TYPE.ELECTRICAL_REPAIR": "Elektromos javítás",
+                "TYPE.EXHAUST_SYSTEM": "Kipufogórendszer",
+                "TYPE.DIAGNOSTIC_CHECK": "Diagnosztikai ellenőrzés",
+                "TYPE.MODIFICATION": "Módosítás",
+                "TYPE.INSPECTION": "Műszaki vizsgálat",
+                "TYPE.TOWING_SERVICE": "Vontatás",
+                "TYPE.ROADSIDE_ASSISTANCE": "Útszéli segítség",
+                "TYPE.OTHER": "Egyéb",
+                "STATUS.IN_PROGRESS": "Folyamatban",
+                "STATUS.COMPLETED": "Befejezve",
+                "STATUS.WAITING_PARTS": "Alkatrészre vár",
+                "STATUS.CANCELLED": "Visszavonva",
+                "PRIORITY.LOW": "Alacsony",
+                "PRIORITY.NORMAL": "Normál",
+                "PRIORITY.HIGH": "Magas",
+                "PRIORITY.URGENT": "Sürgős"
+            },
+            "ENTITY_FIELDS": {
+                "VEHICLE.MODEL": "Modell",
+                "VEHICLE.PLATE": "Rendszám",
+                "VEHICLE.COLOR": "Szín",
+                "VEHICLE.OWNER": "Tulajdonos",
+                "VEHICLE.LOCATION": "Utolsó ismert helyszín"
+            }
+        }
+    }
+}

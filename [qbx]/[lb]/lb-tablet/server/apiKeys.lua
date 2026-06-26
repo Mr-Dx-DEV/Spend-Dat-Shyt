@@ -1,8 +1,9 @@
 -- Set your API keys for uploading media here.
 -- Please note that the API key needs to match the correct upload method defined in Config.UploadMethod.
--- The default upload method is Fivemanage
--- You can get your API keys from https://fivemanage.com/
--- Use code LBPHONE10 for 10% off on Fivemanage
+-- The default and recommended upload method is Fivemanage
+-- Use code "LBPHONE25" for 25% off - forever
+-- You can get your API keys from https://refer.fivemanage.com/lb
+-- Affiliate link - purchases made through this link will give us a commission at no extra cost to you
 -- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
 API_KEYS = {
     Video = "nZzvFNiv00eSNdrtNoDNvpH30LBBjO0q",
@@ -11,7 +12,9 @@ API_KEYS = {
 }
 
 -- Discord webhook or API key for server logs
--- We recommend https://fivemanage.com/ for logs. Use code "LBLOGS" for 20% off the Logs Pro plan.
+-- We recommend Fivemanage for logs
+-- Use code "LBPHONE25" at https://refer.fivemanage.com/lb for 25% off forever
+-- Affiliate link - purchases made through this link will give us a commission at no extra cost to you
 LOG_WEBHOOKS = {
     Default = "https://discord.com/api/webhooks/", -- set to false to disable
     Police = "https://discord.com/api/webhooks/",

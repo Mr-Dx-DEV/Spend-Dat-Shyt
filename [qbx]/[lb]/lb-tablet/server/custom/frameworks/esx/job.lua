@@ -76,46 +76,47 @@ function GetJobGrades(jobs)
     }
 end
 
----@param companies string[]
----@param accountsTable string
-function GetEmployees(companies, accountsTable)
-    local query = ([[
-        SELECT u.identifier AS id,
-        a.callsign,
-        a.avatar,
-        CONCAT(u.firstname, ' ', u.lastname) AS `name`,
-        u.job,
-        u.job_grade AS `rank`
-        %s
+---@param mdt string
+function GetEmployees(mdt)
+    local query = [[
+        SELECT
+            u.identifier AS id,
+            e.callsign,
+            e.avatar,
+            CONCAT(u.firstname, ' ', u.lastname) AS `name`,
+            u.job,
+            u.job_grade AS `rank`
+            {PHONE_SELECT}
 
         FROM users u
-        LEFT JOIN {ACCOUNTS_TABLE} a ON a.id = u.identifier %s
-        %s
 
-        WHERE u.job IN (?)
-    ]]):format("%s", UsersCollate, "%s")
+        LEFT JOIN lbtablet_mdt_employees e
+            ON e.id = u.identifier {COLLATE} AND e.department = ?
 
-    query = query:gsub("{ACCOUNTS_TABLE}", accountsTable)
+        {PHONE_JOIN}
+
+        WHERE
+            u.job IN (?)
+    ]]
 
     if Config.LBPhone then
         local phoneConfig = GetPhoneConfig()
 
+        query = query:gsub("{PHONE_SELECT}", ", p.phone_number AS phoneNumber")
+
         if phoneConfig?.Item?.Unique then
-            query = query:format(
-                ", p.phone_number AS phoneNumber",
-                ("LEFT JOIN phone_last_phone p ON u.identifier %s = p.id"):format(UsersCollate)
-            )
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_last_phone p ON u.identifier {COLLATE} = p.id")
         else
-            query = query:format(
-                ", p.phone_number AS phoneNumber",
-                ("LEFT JOIN phone_phones p ON u.identifier %s = p.id"):format(VehiclesCollate)
-            )
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_phones p ON u.identifier {COLLATE} = p.id")
         end
     else
-        query = query:format("", "")
+        query = query:gsub("{PHONE_SELECT}", "")
+        query = query:gsub("{PHONE_JOIN}", "")
     end
 
-    return MySQL.query.await(query, { companies })
+    query = query:gsub("{COLLATE}", UsersCollate)
+
+    return MySQL.query.await(query, { mdt, MDTs[mdt].jobsArray })
 end
 
 ---@param jobs { [string]: any }

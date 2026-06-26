@@ -24,6 +24,34 @@ function table.combine(t1, t2)
     return t1
 end
 
+---@param t table
+function table.deep_clone(t)
+    local copy = {}
+
+    for k, v in pairs(t) do
+        if type(v) == "table" then
+            v = table.deep_clone(v)
+        end
+
+        copy[k] = v
+    end
+
+    return copy
+end
+
+---@param value number
+---@param numDecimalPlaces? number
+function math.round(value, numDecimalPlaces)
+    local mult = 10 ^ (numDecimalPlaces or 0)
+    local rounded = math.floor(value * mult + 0.5) / mult
+
+    if numDecimalPlaces and numDecimalPlaces > 0 then
+        return rounded
+    end
+
+    return math.floor(rounded)
+end
+
 ---@param length? integer
 function GenerateString(length)
     length = length or 5
@@ -204,8 +232,7 @@ if Config.HousingScript == "auto" then
 
     local housingScripts = {
         "loaf_housing",
-        "qb-houses",
-        "qs-housing"
+        "rtx_housing"
     }
 
     for i = 1, #housingScripts do
@@ -252,6 +279,25 @@ if Config.BillingScript == "auto" then
     end
 
     debugprint("Detected billing script:", Config.BillingScript)
+end
+
+if Config.MDT.ExportReports.Enabled == "auto" then
+    local inventoryScripts = {
+        "ox_inventory",
+        "qb-inventory"
+    }
+
+    Config.MDT.ExportReports.Enabled = false
+
+    for i = 1, #inventoryScripts do
+        local script = inventoryScripts[i]
+
+        if IsResourceStartedOrStarting(script) then
+            Config.MDT.ExportReports.Enabled = true
+            debugprint("Detected inventory script: " .. script .. ", enabled MDT report exports")
+            break
+        end
+    end
 end
 
 ---@param locales table
@@ -457,32 +503,17 @@ function GetCellTowers()
     return cellTowers or {}
 end
 
-local intervals = {}
-
----@param cb function
----@param interval? integer
-function SetInterval(cb, interval)
-    local id
-    interval = interval or 0
-
-    Citizen.CreateThreadNow(function(ref)
-        id = ref
-        intervals[id] = true
-
-        while intervals[id] do
-            cb()
-            Wait(interval)
-        end
-
-        intervals[id] = nil
-    end)
-
-    return id
-end
-
-function ClearInterval(id)
-    if intervals[id] then
-        intervals[id] = nil
+---@param ns number
+---@return string
+function FormatNanoSeconds(ns)
+    if ns >= 1e9 then
+        return string.format("%.2f seconds", ns / 1e9)
+    elseif ns >= 1e6 then
+        return string.format("%.2f ms", ns / 1e6)
+    elseif ns >= 1e3 then
+        return string.format("%.2f µs", ns / 1e3)
+    else
+        return string.format("%d ns", ns)
     end
 end
 
@@ -494,3 +525,38 @@ function AddCompatibilityExport(resource, export, handler)
         cb(handler)
     end)
 end
+
+---@param value? boolean | number
+---@return boolean
+function IsDatabaseValueTruthy(value)
+    if not value or value == 0 then
+        return false
+    end
+
+    return true
+end
+
+---@param key? string | string[]
+exports("GetConfig", function(key)
+    if type(key) == "string" then
+        return Config[key]
+    elseif type(key) == "table" and table.type(key) == "array" then
+        local value
+
+        for i = 1, #key do
+            if value then
+                value = value[key[i]]
+            else
+                value = Config[key[i]]
+            end
+
+            if value == nil then
+                return
+            end
+        end
+
+        return value
+    end
+
+    return Config
+end)

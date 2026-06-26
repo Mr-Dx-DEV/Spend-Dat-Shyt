@@ -3,29 +3,16 @@ function CanOpenTablet()
     if Config.LBPhone and exports["lb-phone"]:IsOpen() then
         debugprint("CanOpenTablet: lb-phone is open")
         return false
-    end
-
-    if IsPauseMenuActive() then
+    elseif IsPauseMenuActive() then
         debugprint("CanOpenTablet: pause menu is active")
         return false
-    end
-
-    if not HasTabletItem() then
+    elseif Config.Item.Require and not HasTabletItem() then
         debugprint("CanOpenTablet: no item")
         return false
-    end
-
-    if IsNuiFocused() then
+    elseif IsNuiFocused() then
         debugprint("CanOpenTablet: NUI is focused")
         return false
-    end
-
-    if IsHandcuffed and IsHandcuffed() then
-        debugprint("CanOpenTablet: player is handcuffed")
-        return false
-    end
-
-    if IsPedDeadOrDying(PlayerPedId(), false) then
+    elseif IsPedDeadOrDying(PlayerPedId(), false) then
         debugprint("CanOpenTablet: player is dead or dying")
         return false
     end
@@ -70,7 +57,7 @@ function ApplyBlipProperties(blip, properties)
     end
 
     if properties.size then
-        SetBlipScale(blip, 0.5)
+        SetBlipScale(blip, properties.size)
     end
 
     if properties.label then
@@ -116,9 +103,18 @@ function LoadModel(model)
     return modelHash
 end
 
-function HideHudComponents()
+local hideHudInterval = Interval:new(function()
     HideHudAndRadarThisFrame()
     HideHelpTextThisFrame()
+end, 0, false)
+
+---@param hidden boolean
+function ToggleHideHudComponents(hidden)
+    hideHudInterval:toggle(hidden)
+end
+
+function IsHudHidden()
+    return hideHudInterval.enabled
 end
 
 ---Wait for network id & entity to exist
@@ -207,20 +203,8 @@ function GetPedGender(ped)
     return L("MISC.GENDERS." .. gender)
 end
 
-function OnItemCountChange()
-    Wait(500)
-
-    local hasTablet = HasTabletItem()
-
-    if not hasTablet then
-        ToggleOpen(false)
-    end
-
-    SendReactMessage("setHasTablet", hasTablet)
-end
-
 ---@param job "Police" | "Ambulance"
-function GetPermissions(job)
+function OldGetPermissions(job)
     local permissions = {}
     local playerJob = GetJob()
     local playerGrade = GetJobGrade()
@@ -263,6 +247,102 @@ function GetLocationName(coords)
     local zoneName = GetLabelText(zone)
 
     return streetName .. ", " .. zoneName
+end
+
+---@param appIdentifier string
+---@param jobName? string
+---@param jobGrade? number
+function HasAccessToApp(appIdentifier, jobName, jobGrade)
+    if not GetJob then
+        debugprint("GetJob is not defined in framework functions")
+        return true
+    end
+
+    if not GetJobGrade then
+        debugprint("GetJobGrade is not defined in framework functions")
+        return true
+    end
+
+    if not Config.WhitelistApps and not Config.BlacklistApps then
+        return true
+    end
+
+    jobName = jobName or GetJob()
+    jobGrade = jobGrade or GetJobGrade()
+
+    local blacklistedJobs = Config.BlacklistApps and Config.BlacklistApps[appIdentifier]
+
+    if blacklistedJobs then
+        if table.type(blacklistedJobs) == "array" then
+            if table.contains(blacklistedJobs, jobName) then
+                debugprint("Player's job is blacklisted from app", appIdentifier)
+                return false
+            end
+        else
+            if blacklistedJobs[jobName] and jobGrade >= blacklistedJobs[jobName] then
+                debugprint("Player's job is blacklisted from app", appIdentifier)
+                return false
+            end
+        end
+    end
+
+    local allowedJobs = Config.WhitelistApps and Config.WhitelistApps[appIdentifier]
+
+    if allowedJobs then
+        if table.type(allowedJobs) == "array" then
+            if table.contains(allowedJobs, jobName) then
+                return true
+            end
+
+            debugprint("Player is not whitelisted for app", appIdentifier)
+            return false
+        else
+            if allowedJobs[jobName] and jobGrade >= allowedJobs[jobName] then
+                return true
+            end
+
+            debugprint("Player is not whitelisted for app", appIdentifier)
+            return false
+        end
+    end
+
+    return true
+end
+
+---@param bagName string
+---@return number? source
+---@return number? ped
+---@return number? playerIndex
+function GetPlayerDataFromStateBag(bagName)
+    local source = tonumber(bagName:match("player:(%d+)"))
+    local playerId = PlayerId()
+
+    if not source then
+        return
+    end
+
+    if source == GetPlayerServerId(playerId) then
+        return source, PlayerPedId(), playerId
+    end
+
+    local playerPed = PlayerPedId()
+    local player = GetPlayerFromServerId(source)
+    local ped = GetPlayerPed(player)
+    local timeout = GetGameTimer() + 1000
+
+    while player == playerId or ped == playerPed or ped == 0 do
+        Wait(0)
+
+        player = GetPlayerFromServerId(source)
+        ped = GetPlayerPed(player)
+
+        if GetGameTimer() > timeout then
+            debugprint("Timed out waiting for ped to be valid")
+            return
+        end
+    end
+
+    return source, ped, player
 end
 
 -- ---@param uploadType "Video" | "Image" | "Audio"

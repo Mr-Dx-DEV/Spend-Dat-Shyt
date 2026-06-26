@@ -89,5 +89,13 @@ RegisterNetEvent("police:server:JailPlayer", function(playerId, time)
         return
     end
 
-    LogJailed(targetCitizenid, citizenid, "Jailed", time * 60)
+    if MDTs["Police"] then
+        LogJailed(
+            "Police",
+            targetCitizenid,
+            citizenid,
+            "Jailed",
+            time * 60
+        )
+    end
 end)

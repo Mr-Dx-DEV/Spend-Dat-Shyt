@@ -51,18 +51,21 @@ end
 Queries.Users.FetchProfile = [[
     SELECT
         user.identifier AS id,
+        profile.id AS profileId,
+        profile.avatar,
         CONCAT(user.firstname, ' ', user.lastname) AS `name`,
         user.dateofbirth as dob,
         user.height,
         user.sex = "m" AS isMale,
-        profile.avatar,
-        profile.notes,
         grade.label AS jobGrade,
         job.label AS job
 
     FROM users user
 
-    LEFT JOIN {PROFILE_JOIN} profile ON profile.id = user.identifier {USERS_COLLATE}
+    LEFT JOIN lbtablet_mdt_profiles profile ON
+        profile.profile_id = user.identifier {USERS_COLLATE}
+        AND profile.profile_type = 'player'
+        AND profile.department = ?
 
     LEFT JOIN jobs job ON job.`name` = user.job
     LEFT JOIN job_grades grade ON grade.job_name = user.job AND grade.grade = user.job_grade

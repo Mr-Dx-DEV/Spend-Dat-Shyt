@@ -87,45 +87,47 @@ function GetJobGrades(jobs)
     }
 end
 
----@param companies string[]
----@param accountsTable string
-function GetEmployees(companies, accountsTable)
-    local query = ([[
+---@param mdt string
+function GetEmployees(mdt)
+    local query = [[
         SELECT
             u.citizenid AS id,
-            a.callsign,
-            a.avatar,
+            e.callsign,
+            e.avatar,
             CONCAT(JSON_VALUE(u.charinfo, '$.firstname'), ' ', JSON_VALUE(u.charinfo, '$.lastname')) AS `name`,
             JSON_VALUE(u.job, '$.grade.level') AS rank,
             JSON_VALUE(u.job, '$.name') AS job
-            %s
-        FROM players u
-        LEFT JOIN {ACCOUNTS_TABLE} a ON a.id = u.citizenid %s
-        %s
-        WHERE JSON_VALUE(u.job, '$.name') IN (?)
-    ]]):format("%s", UsersCollate, "%s")
+            {PHONE_SELECT}
 
-    query = query:gsub("{ACCOUNTS_TABLE}", accountsTable)
+        FROM players u
+
+        LEFT JOIN lbtablet_mdt_employees e
+            ON e.id = u.citizenid {COLLATE} AND e.department = ?
+
+        {PHONE_JOIN}
+
+        WHERE
+            JSON_VALUE(u.job, '$.name') IN (?)
+    ]]
 
     if Config.LBPhone then
         local phoneConfig = GetPhoneConfig()
 
-        if phoneConfig?.Item.Unique then
-            query = query:format(
-                ", p.phone_number AS phoneNumber",
-                ("LEFT JOIN phone_last_phone p ON u.citizenid %s = p.id"):format(UsersCollate)
-            )
+        query = query:gsub("{PHONE_SELECT}", ", p.phone_number AS phoneNumber")
+
+        if phoneConfig?.Item?.Unique then
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_last_phone p ON u.citizenid {COLLATE} = p.id")
         else
-            query = query:format(
-                ", p.phone_number AS phoneNumber",
-                ("LEFT JOIN phone_phones p ON u.citizenid %s = p.id"):format(UsersCollate)
-            )
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_phones p ON u.citizenid {COLLATE} = p.id")
         end
     else
-        query = query:format("", "")
+        query = query:gsub("{PHONE_SELECT}", "")
+        query = query:gsub("{PHONE_JOIN}", "")
     end
 
-    local employees = MySQL.query.await(query, { companies })
+    query = query:gsub("{COLLATE}", UsersCollate)
+
+    local employees = MySQL.query.await(query, { mdt, MDTs[mdt].jobsArray })
 
     for i = 1, #employees do
         employees[i].rank = tonumber(employees[i].rank)
@@ -140,13 +142,14 @@ function GetOnDutyEmployees(jobs)
     local employees = {}
 
     for job, _ in pairs(jobs) do
-        local count, playerSources = exports.qbx_core:GetDutyCountJob(job)
+        ---@type number[] | { [number]: table }
+        local players = QB.Functions.GetPlayersByJob and QB.Functions.GetPlayersByJob(job, true) or QB.Functions.GetPlayers()
 
-        for i = 1, count do
-            local qPlayer = exports.qbx_core:GetPlayer(playerSources[i])
+        for _, player in pairs(players) do
+            local qPlayer = type(player) == "number" and QB.Functions.GetPlayer(player) or player --[[@as table?]]
             local playerData = qPlayer and qPlayer.PlayerData
 
-            if playerData?.job?.onduty and jobs[qPlayer.PlayerData.job.name] then
+            if playerData and (QB.Functions.GetPlayersByJob or (playerData.job.name == job and playerData.job.onduty)) then
                 employees[#employees+1] = {
                     source = playerData.source,
                     name = playerData.charinfo.firstname .. " " .. playerData.charinfo.lastname,

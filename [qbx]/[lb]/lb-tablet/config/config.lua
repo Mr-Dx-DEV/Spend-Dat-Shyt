@@ -7,7 +7,7 @@ Config.DatabaseChecker.AutoFix = true -- if true, the tablet will automatically 
 
 Config.LBPhone = "auto" -- Set to false if you don't want to link lb-phone to lb-tablet
 
-Config.OpenCommand = "mdt" -- the command to open the tablet. can be set to false to disable
+Config.OpenCommand = "tablet" -- the command to open the tablet. can be set to false to disable
 
 Config.Logs = {}
 Config.Logs.Enabled = false
@@ -21,7 +21,7 @@ Config.Logs.Actions = {
     Dispatch = true
 }
 
---[[ FRAMEWORK OPTIONS ]] --
+-- [[ FRAMEWORK/SCRIPT OPTIONS ]] --
 Config.Framework = "auto"
 --[[
     Supported frameworks:
@@ -40,6 +40,10 @@ Config.BillingScript = "auto" --[[
 
 Config.RegistrationApp = "auto" -- add an app that lets players create their own characters, vehicles etc? useful for standalone servers
 
+Config.Item = {}
+Config.Item.Require = true -- require a tablet item to use the tablet
+Config.Item.Name = "tablet" -- name of the tablet item
+Config.Item.Inventory = "auto"
 Config.HousingScript = "auto"
 Config.JailScript = "auto"
 --[[
@@ -66,252 +70,13 @@ Config.Genders = "auto"
 --     }
 -- }
 
-Config.Item = {}
-Config.Item.Require = true -- require a tablet item to use the tablet
-Config.Item.Name = "tablet" -- name of the tablet item
-Config.Item.Inventory = "auto"
-Config.RequireItemDutyBlips = true -- require a tablet item to be shown on duty blips?
-Config.DutyBlipOptions = {
-    Show = true, -- show blips for players on duty on the in-game map?
-    Category = 7,
-    Sprite = 1,
-    Color = 0,
-    FriendIndicator = true,
-    Outline = false,
-    OutlineColour = { 93, 182, 229 },
-    Scale = 0.5,
-    ShortRange = true,
-    ShowHeading = true,
-    Name = "{name} - {callsign}",
-    VehicleTypes = {
-        car = 56,
-        bike = 226,
-        heli = 64,
-        boat = 455,
-        plane = 423,
-    }
-}
-
-Config.AutoCreateEmail = false
-Config.EmailDomain = "lbscripts.com"
 Config.DobFormat = "auto" -- default for qb-core
 
---[[ LANGUAGE OPTIONS ]] --
+-- [[ LANGUAGE OPTIONS ]] --
 Config.DefaultLocale = "en"
 Config.DateLocale = "en-US" -- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat
 Config.DateFormat = "auto" -- auto: use the date format from the locale, or set a custom format (e.g. "DDDD, MMMM DD")
 Config.CurrencyFormat = "$%s"
-
---[[ VOICE OPTIONS ]] --
-Config.Voice = {}
-Config.Voice.RecordNearby = true -- Should video & audio recording include nearby players?
-
---[[ ENTITY OPTIONS ]] --
-Config.TabletModel = `lb_tablet_prop` -- the prop of the tablet, if you want to use a custom tablet model, you can change this here
-Config.TabletRotation = vector3(0.0, 180.0, 0.0) -- the rotation of the tablet when attached to a player
-Config.TabletOffset = vector3(0.05, -0.005, -0.04) -- the offset of the tablet when attached to a player
-Config.ServerSideSpawn = false -- should the tablet entity be spawned on the server?
-
---[[ MISC OPTIONS ]] --
-Config.KeepInput = true -- keep input when nui is focused (meaning you can walk around etc)
-Config.DisableFocusTalking = true -- disable the focus key (default ALT) when talking in-game? Potentially fixes issues with PTT getting stuck (open mic)
-Config.SyncFlashlight = true -- should flashlight be synced between players?
-Config.AutoDeleteNotifications = true -- true = delete 1 week old notifications, false = keep all notifications. you can also set to a number (in hours) to delete after that time
-Config.FadeOutsideTablet = true -- should the tablet fade when the cursor is outside of the tablet?
-Config.EvidenceStash = true -- allow players to store evidence for cases in the tablet?
-Config.DutyBlipInterval = 5000 -- how often should duty blips update? in milliseconds
-
-Config.RequireDutyMDT = true -- require being on duty to be able to use work apps?
-
-Config.LiveEdit = {}
-Config.LiveEdit.Enabled = true
-Config.LiveEdit.UpdateInterval = 250 -- how often (in ms) to update the live edit state?
-
---[[ DISPATCH OPTIONS ]]--
-Config.RequireDutyDispatch = true -- require being on duty to see dispatch notifications?
-
-Config.DispatchEnabled = true -- enable dispatch?
-Config.DispatchVisible = true -- should the dispatch be visible? If false, you will only see dispatch in the MDT apps
-Config.DispatchPosition = "right" -- position of the dispatch notifications (left / right)
-Config.DispatchCompatibility = true -- add dispatch exports & events from other dispatch/mdt scripts? (note: this may not work with all scripts, we strongly recommend using the lb-tablet exports directly)
-Config.AllowClientDispatch = true -- add client-sided exports for dispatch? (note: this allows modders to trigger dispatches, but may be needed for some scripts)
-Config.ShowDispatchWithoutItem = true -- show dispatch even if the player doesn't have a tablet item?
-Config.DispatchUpdateZIndex = true -- set the z-index to 99 when a dispatch comes in? this makes the dispatch appear over other UIs.
-Config.HideDispatchWhenDead = true
-Config.DispatchBlip = {
-    Enabled = true, -- allow creating blips for dispatches
-    Default = {
-        Enabled = true, -- automatically create a blip for dispatches if one has not been provided?
-        Type = "default", -- default / radius
-        Radius = 50.0,
-        Sprite = 161, -- https://docs.fivem.net/docs/game-references/blips/#blips
-        Color = 1, -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
-        Size = 0.5,
-        ShortRange = false, -- show blip only when close to it?
-        Label = "{dispatch_title}", -- Available placeholders: {dispatch_title}, {id}, {priority}
-    }
-}
-
-Config.BaseDispatch = {}
-Config.BaseDispatch.Enabled = true -- enable the base dispatch system? calls for e.g. hijacking, shooting, etc
-Config.BaseDispatch.Debug = false -- draw a line to the witness?
-Config.BaseDispatch.RequireWitness = true -- require a witness (NPC) to trigger dispatch?
-Config.BaseDispatch.RequireLos = true -- require line of sight from the witness to the player to trigger dispatch?
-Config.BaseDispatch.MaxDistance = 100 -- maximum distance from the player to the witness to trigger dispatch
-Config.BaseDispatch.CallPolice = true -- should a nearby NPC call the police when a dispatch is triggered?
-Config.BaseDispatch.Chance = 100 -- chance of a dispatch being triggered (0-100)
-Config.BaseDispatch.IgnorePolice = true -- don't add dispatches if a police caused them?
-Config.BaseDispatch.Actions = {
-    --[[
-        To disable an action, set it to false.
-        Options:
-            - police: boolean -- should the police be notified?
-            - ambulance: boolean -- should the ambulance be notified?
-            - chance: number -- chance of the action being triggered (0-100)
-            - cooldown: number -- how often this action can be triggered by each player
-            - serverCooldown: number -- how often this action can be triggered (server-wide cooldown)
-            - dispatch
-                - priority: "low" | "medium" | "high"
-                - time: number -- how long the dispatch should be visible (in seconds)
-                - sound: string
-                - any other options, see https://docs.lbscripts.com/tablet/script-integration/server-exports/#adddispatch
-    ]]
-    CarJacking = {
-        police = true,
-        ambulance = false,
-        cooldown = 0,
-        serverCooldown = 0,
-        dispatch = {
-            priority = "medium",
-            time = 120,
-        },
-    },
-    VehicleTheft = {
-        police = true,
-        ambulance = false,
-        cooldown = 0,
-        serverCooldown = 0,
-        dispatch = {
-            priority = "medium",
-            time = 120,
-        },
-    },
-    Explosion = {
-        police = true,
-        ambulance = true,
-        serverCooldown = 10,
-        ignoredExplosions = { -- https://docs.fivem.net/natives/?_0xE3AD2BDBAEE269AC
-            11, 12, 13, 14, 18, 19, 20, 21, 22, 23, 24, 25, 38, 39, 77,
-        },
-        dispatch = {
-            priority = "medium",
-            time = 180,
-        },
-    },
-    Gunshot = {
-        police = true,
-        ambulance = true,
-        cooldown = 60,
-        serverCooldown = 0,
-        ignoredWeapons = {
-            -- `WEAPON_STUNGUN`
-        },
-        ignoredWeaponGroups = { -- https://docs.fivem.net/natives/?_0xC3287EE3050FB74C
-            "DIGISCANNER",
-            "FIREEXTINGUISHER",
-            "HACKINGDEVICE",
-            "METALDETECTOR",
-            "NIGHTVISION",
-            "PARACHUTE",
-            "PETROLCAN",
-            "STUNGUN",
-            "TRANQILIZER",
-            "UNARMED",
-            "UNKNOWN"
-        },
-        dispatch = {
-            priority = "high",
-            time = 300,
-        },
-    },
-    Armed = {
-        police = true,
-        ambulance = false,
-        cooldown = 120,
-        serverCooldown = 0,
-        ignoredWeapons = {
-            -- `WEAPON_STUNGUN`
-        },
-        ignoredWeaponGroups = { -- https://docs.fivem.net/natives/?_0xC3287EE3050FB74C
-            "DIGISCANNER",
-            "FIREEXTINGUISHER",
-            "HACKINGDEVICE",
-            "METALDETECTOR",
-            "NIGHTVISION",
-            "PARACHUTE",
-            "PETROLCAN",
-            "STUNGUN",
-            "TRANQILIZER",
-            "UNARMED",
-            "UNKNOWN"
-        },
-        dispatch = {
-            priority = "medium",
-            time = 120,
-        },
-    },
-}
-
-Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
-Config.CustomTime = false -- NOTE: set Config.RealTime to false if using this. you can set this to a function that returns custom time, as a table: { hour = 0-23, minute = 0-59 }
-
-Config.FrameColor = "#39334d" -- This is the color of the tablet frame. Default (#39334d) is purple.
-Config.AllowFrameColorChange = true -- Allow players to change the color of their tablet frame?
-
-Config.AllowExternal = { -- allow people to upload external images? (note: this means they can upload nsfw/gore etc)
-    Police = true,
-    Ambulance = true,
-    Registration = true,
-    Gallery = true,
-    Mail = false,
-    Other = false,
-}
-
--- Blacklisted domains for external images. You will not be able to upload from these domains.
-Config.ExternalBlacklistedDomains = {
-    "imgur.com",
-    "discord.com",
-    "discordapp.com",
-}
-
--- Whitelisted domains for external images. If this is not empty/nil/false, you will only be able to upload images from these domains.
-Config.ExternalWhitelistedDomains = {
-    -- "fivemanage.com",
-    -- "fmfile.com",
-}
-
--- Set to false/empty to disable
-Config.UploadWhitelistedDomains = { -- domains that are allowed to upload images to the phone (prevent using devtools to upload images)
-    "fivemanage.com",
-    "fmfile.com",
-    "cfx.re" -- lb-upload
-}
-
-Config.ShowLocationsInDispatch = true -- show locations in the police & ambulance dispatches?
-Config.Locations = { -- Locations that'll appear in the maps app
-    {
-        position = vector2(428.9, -984.5),
-        name = "LSPD",
-        description = "Los Santos Police Department",
-        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
-    },
-    {
-        position = vector2(304.2, -587.0),
-        name = "Pillbox",
-        description = "Pillbox Medical Hospital",
-        icon = "https://cdn-icons-png.flaticon.com/128/1032/1032989.png",
-    },
-}
 
 Config.Locales = { -- If your desired language isn't here, you may contribute at https://github.com/lbphone/lb-tablet-locales
     {
@@ -377,7 +142,205 @@ Config.Locales = { -- If your desired language isn't here, you may contribute at
     {
         locale = "da",
         name = "Dansk",
-      }
+    }
+}
+
+-- [[ VOICE OPTIONS ]] --
+Config.Voice = {}
+Config.Voice.RecordNearby = true -- Should video & audio recording include nearby players?
+
+-- [[ ENTITY OPTIONS ]] --
+Config.TabletModel = `lb_tablet_prop` -- the prop of the tablet, if you want to use a custom tablet model, you can change this here
+Config.TabletRotation = vector3(0.0, 180.0, 0.0) -- the rotation of the tablet when attached to a player
+Config.TabletOffset = vector3(0.05, -0.005, -0.04) -- the offset of the tablet when attached to a player
+Config.ServerSideSpawn = false -- should entities be spawned on the server?
+Config.PropSpawn = "state" --[[
+    - client: networked, spawned on the client
+    - server: networked, spawned on the server
+    - state: spawned on each client, not networked
+]]
+
+-- [[ MISC OPTIONS ]] --
+Config.KeepInput = true -- keep input when nui is focused (meaning you can walk around etc)
+Config.DisableFocusTalking = true -- disable the focus key (default ALT) when talking in-game? Potentially fixes issues with PTT getting stuck (open mic)
+Config.SyncFlashlight = true -- should flashlight be synced between players?
+Config.AutoDeleteNotifications = true -- true = delete 1 week old notifications, false = keep all notifications. you can also set to a number (in hours) to delete after that time
+Config.FadeOutsideTablet = true -- should the tablet fade when the cursor is outside of the tablet?
+Config.DutyBlipInterval = 5000 -- how often should duty blips update? in milliseconds
+
+Config.AutoCreateEmail = true
+Config.EmailDomain = "SpendDatShyt.com"
+
+Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
+Config.CustomTime = false -- NOTE: set Config.RealTime to false if using this. you can set this to a function that returns custom time, as a table: { hour = 0-23, minute = 0-59 }
+
+Config.FrameColor = "#39334d" -- This is the color of the tablet frame. Default (#39334d) is purple.
+Config.AllowFrameColorChange = true -- Allow players to change the color of their tablet frame?
+
+Config.WhitelistApps = {
+    -- ["Calculator"] = { "police", "ambulance" }
+}
+
+Config.BlacklistApps = {
+    -- ["Maps"] = { "police" }
+}
+
+Config.Sound = {}
+Config.Sound.System = "native" -- native: use native GTA audio, nui: play audio via nui NOTE: syncing only works when using native GTA audio
+Config.Sound.Sync = true -- syncing audio only works when using native audio
+Config.Sound.Volume = {} -- the volume options only applies to native audio
+Config.Sound.Volume.Multiplier = 1.0
+Config.Sound.Volume.Static = false -- here you can set a static volume for native sounds, instead of allowing users to change volume themselves
+Config.Sound.Volume.Min = 0.0
+Config.Sound.Volume.Max = 1.0
+Config.Sound.MaxDistance = 30.0 -- the maximum distance a sound can be heard from (only applies to native audio)
+
+Config.Sound.Notifications = {
+    ["default"] = {
+        name = "1",
+        soundSet = "notification"
+    },
+    ["notification 1"] = {
+        name = "2",
+        soundSet = "notification"
+    },
+    ["notification 2"] = {
+        name = "3",
+        soundSet = "notification"
+    },
+    ["notification 3"] = {
+        name = "4",
+        soundSet = "notification"
+    },
+    ["notification 4"] = {
+        name = "5",
+        soundSet = "notification"
+    },
+    ["notification 5"] = {
+        name = "6",
+        soundSet = "notification"
+    },
+    ["notification 6"] = {
+        name = "7",
+        soundSet = "notification"
+    },
+    ["notification 7"] = {
+        name = "8",
+        soundSet = "notification"
+    },
+}
+
+Config.Sound.AppNotifications = {
+    -- ["Messages"] = "default"
+}
+
+-- Config.CustomMaps = {
+--     {
+--         label = "Los Santos",
+--         url = "https://s.rsg.sc/sc/images/games/GTAV/map/{layer}/{z}/{x}/{y}.jpg",
+--         center = { 1650, 450 },
+--         topLeft = { -4140, 8400 },
+--         bottomRight = { 4860, -5100 },
+--         resolution = { 16384, 24576 },
+--         zoom = {
+--             default = 3,
+--             max = 7,
+--             min = 2
+--         },
+--         styles = {
+--             {
+--                 name = "game",
+--                 background = "#384950",
+--                 preview = "./assets/img/maps/placeholder_santos_game.webp"
+--             },
+--             {
+--                 name = "render",
+--                 background = "#0d2b4f",
+--                 preview = "./assets/img/maps/placeholder_santos_render.webp"
+--             },
+--             {
+--                 name = "print",
+--                 background = "#4eb1d0",
+--                 preview = "./assets/img/maps/placeholder_santos_print.webp"
+--             },
+--         },
+--     },
+--     {
+--         label = "Cayo Perico",
+--         url = "https://s.rsg.sc/sc/images/games/GTAV/map/{layer}_island_heist/{z}/{x}/{y}.jpg",
+--         center = { -5150, 4700 },
+--         topLeft = { 3700, -4150 },
+--         bottomRight = { 5700, -6150 },
+--         resolution = { 10000, 10000 },
+--         zoom = {
+--             default = 2,
+--             max = 6,
+--             min = 2
+--         },
+--         styles = {
+--             {
+--                 name = "game",
+--                 background = "#384950",
+--                 preview = "./assets/img/maps/placeholder_cayo_game.webp"
+--             },
+--             {
+--                 name = "render",
+--                 background = "#0d2b4f",
+--                 preview = "./assets/img/maps/placeholder_cayo_render.webp"
+--             },
+--             {
+--                 name = "print",
+--                 background = "#4eb1d0",
+--                 preview = "./assets/img/maps/placeholder_cayo_print.webp"
+--             },
+--         },
+--     },
+--     {
+--         label = "North Yankton",
+--         url = "https://s.rsg.sc/sc/images/games/GTAV/map/{layer}_alt/{z}/{x}/{y}.jpg",
+--         center = { 4500, -3700 },
+--         topLeft = { 1900, -3700 },
+--         bottomRight = { 7020, -5748 },
+--         resolution = { 20316, 8192 },
+--         zoom = {
+--             default = 3,
+--             max = 7,
+--             min = 3
+--         },
+--         styles = {
+--             {
+--                 name = "game",
+--                 background = "#1e1e1e",
+--                 preview = "https://s.rsg.sc/sc/images/games/GTAV/map/game_alt/2/0/0.jpg"
+--             },
+--             {
+--                 name = "render",
+--                 background = "#e1e6ea",
+--                 preview = "https://s.rsg.sc/sc/images/games/GTAV/map/render_alt/2/0/0.jpg"
+--             },
+--             {
+--                 name = "print",
+--                 background = "#cad2d2",
+--                 preview = "https://s.rsg.sc/sc/images/games/GTAV/map/print_alt/2/0/0.jpg"
+--             },
+--         }
+--     },
+-- }
+
+Config.ShowLocationsInDispatch = true -- show locations in the police & ambulance dispatches?
+Config.Locations = { -- Locations that'll appear in the maps app
+    {
+        position = vector2(428.9, -984.5),
+        name = "LSPD",
+        description = "Los Santos Police Department",
+        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
+    },
+    {
+        position = vector2(304.2, -587.0),
+        name = "Pillbox",
+        description = "Pillbox Medical Hospital",
+        icon = "https://cdn-icons-png.flaticon.com/128/1032/1032989.png",
+    },
 }
 
 -- See https://docs.lbscripts.com/tablet/script-integration/custom-apps/
@@ -400,7 +363,142 @@ Config.Locales = { -- If your desired language isn't here, you may contribute at
 --  onUninstall: A function that is called when the app is uninstalled
 Config.CustomApps = {}
 
---[[ SERVICES APP OPTIONS ]] --
+-- [[ DISPATCH OPTIONS ]]--
+Config.RequireDutyDispatch = true -- require being on duty to see dispatch notifications?
+
+Config.DispatchEnabled = false -- enable dispatch?
+Config.DispatchVisible = true -- should the dispatch be visible? If false, you will only see dispatch in the MDT apps
+Config.DispatchPosition = "top-right" -- position of the dispatch notifications (top/middle/bottom-left/middle/right, e.g., "top-left", "middle-right", "bottom-middle", or legacy: "left"/"right")
+Config.DispatchLatestFirst = false -- show latest dispatches first?
+Config.DispatchCompatibility = true -- add dispatch exports & events from other dispatch/mdt scripts? (note: this may not work with all scripts, we strongly recommend using the lb-tablet exports directly)
+Config.AllowClientDispatch = true -- add client-sided exports for dispatch? (note: this allows modders to trigger dispatches, but may be needed for some scripts)
+Config.ShowDispatchWithoutItem = true -- show dispatch even if the player doesn't have a tablet item?
+Config.DispatchUpdateZIndex = true -- set the z-index to 99 when a dispatch comes in? this makes the dispatch appear over other UIs.
+Config.HideDispatchWhenDead = true
+Config.DispatchBlip = {
+    Enabled = true, -- allow creating blips for dispatches
+    Default = {
+        Enabled = true, -- automatically create a blip for dispatches if one has not been provided?
+        Type = "default", -- default / radius
+        Radius = 50.0,
+        Sprite = 161, -- https://docs.fivem.net/docs/game-references/blips/#blips
+        Color = 1, -- https://docs.fivem.net/docs/game-references/blips/#blip-colors
+        Size = 1.5,
+        ShortRange = false, -- show blip only when close to it?
+        Label = "{dispatch_title}", -- Available placeholders: {dispatch_title}, {id}, {priority}
+    }
+}
+
+Config.BaseDispatch = {}
+Config.BaseDispatch.Enabled = true -- enable the base dispatch system? calls for e.g. hijacking, shooting, etc
+Config.BaseDispatch.Debug = false -- draw a line to the witness?
+Config.BaseDispatch.RequireWitness = true -- require a witness (NPC) to trigger dispatch?
+Config.BaseDispatch.RequireLos = true -- require line of sight from the witness to the player to trigger dispatch?
+Config.BaseDispatch.MaxDistance = 100 -- maximum distance from the player to the witness to trigger dispatch
+Config.BaseDispatch.CallPolice = true -- should a nearby NPC call the police when a dispatch is triggered?
+Config.BaseDispatch.Chance = 100 -- chance of a dispatch being triggered (0-100)
+Config.BaseDispatch.IgnoredVehicles = { -- vehicles that will not generate CarJacking or VehicleTheft dispatches
+    -- `t20`,
+}
+Config.BaseDispatch.IgnoredWeapons = { -- weapons that will not generate Gunshot or Armed dispatches
+    -- `WEAPON_STUNGUN`,
+}
+Config.BaseDispatch.Actions = {
+    --[[
+        To disable an action, set it to false.
+        Options:
+            - mdts: string[] -- which MDTs to send the dispatch to (e.g. { "Police", "Ambulance" })
+            - ignoreEmployees: boolean -- should employees of the MDT job be ignored for this dispatch? (e.g. police officers for gunshots)
+            - chance: number -- chance of the action being triggered (0-100)
+            - cooldown: number -- how often this action can be triggered by each player
+            - serverCooldown: number -- how often this action can be triggered (server-wide cooldown)
+            - dispatch
+                - priority: "low" | "medium" | "high"
+                - time: number -- how long the dispatch should be visible (in seconds)
+                - sound: string
+                - any other options, see https://docs.lbscripts.com/tablet/script-integration/server-exports/#adddispatch
+    ]]
+    CarJacking = {
+        mdts = { "Police" },
+        ignoreEmployees = false,
+        cooldown = 0,
+        serverCooldown = 0,
+        dispatch = {
+            priority = "medium",
+            time = 120,
+        },
+    },
+    VehicleTheft = {
+        mdts = { "Police" },
+        ignoreEmployees = false,
+        cooldown = 0,
+        serverCooldown = 0,
+        dispatch = {
+            priority = "medium",
+            time = 120,
+        },
+    },
+    Explosion = {
+        mdts = { "Police", "Ambulance" },
+        ignoreEmployees = false,
+        serverCooldown = 10,
+        ignoredExplosions = { -- https://docs.fivem.net/natives/?_0xE3AD2BDBAEE269AC
+            11, 12, 13, 14, 18, 19, 20, 21, 22, 23, 24, 25, 38, 39, 77,
+        },
+        dispatch = {
+            priority = "medium",
+            time = 180,
+        },
+    },
+    Gunshot = {
+        mdts = { "Police", "Ambulance" },
+        ignoreEmployees = true,
+        cooldown = 60,
+        serverCooldown = 0,
+        ignoredWeaponGroups = { -- https://docs.fivem.net/natives/?_0xC3287EE3050FB74C
+            "DIGISCANNER",
+            "FIREEXTINGUISHER",
+            "HACKINGDEVICE",
+            "METALDETECTOR",
+            "NIGHTVISION",
+            "PARACHUTE",
+            "PETROLCAN",
+            "STUNGUN",
+            "TRANQILIZER",
+            "UNARMED",
+            "UNKNOWN"
+        },
+        dispatch = {
+            priority = "high",
+            time = 300,
+        },
+    },
+    Armed = {
+        mdts = { "Police" },
+        ignoreEmployees = true,
+        cooldown = 120,
+        serverCooldown = 0,
+        ignoredWeaponGroups = { -- https://docs.fivem.net/natives/?_0xC3287EE3050FB74C
+            "DIGISCANNER",
+            "FIREEXTINGUISHER",
+            "HACKINGDEVICE",
+            "METALDETECTOR",
+            "NIGHTVISION",
+            "PARACHUTE",
+            "PETROLCAN",
+            "STUNGUN",
+            "TRANQILIZER",
+            "UNARMED",
+            "UNKNOWN"
+        },
+        dispatch = {
+            priority = "medium",
+            time = 120,
+        },
+    },
+}
+
+-- [[ SERVICES APP OPTIONS ]] --
 Config.Services = {}
 Config.Services.MessageOffline = true -- if true, players can message companies even if no one in the company is online
 Config.Services.SeeEmployees = "everyone" -- who should be able to see employees? they will see name, online status & phone number. options are: "everyone", "employees" or "none"
@@ -472,572 +570,118 @@ Config.Services.Companies = { -- the companies that are shown in the app
     },
 }
 
---[[ POLICE APP OPTIONS ]] --
-Config.Police = {}
+-- [[ MDT OPTIONS ]]
+Config.MDT = {}
 
-Config.Police.DutyBlips = true -- show blips for police officers on duty?
+Config.MDT.RequireDuty = false -- require being on duty to be able to see & use MDT apps?
+Config.MDT.CreateDispatch = true -- allow creating dispatches from the MDT?
 
-Config.Police.Callsign = {}
-Config.Police.Callsign.AutoGenerate = true -- should a callsign be automatically generated when a police profile is created? please note that if you enable this after profiles have been created, the callsigns will not be updated
-Config.Police.Callsign.Format = "11-1111" --[[
-    Callsign format:
-        * 1: number 0-9
-        * A: uppercase letter A-Z
-        * a: lowercase letter a-z
-        * ^: escape character
-]]
-Config.Police.Callsign.RequireTemplate = true -- Require users to follow the format of the callsign template?
-Config.Police.Callsign.AllowChange = true
+Config.MDT.ExportReports = {}
+Config.MDT.ExportReports.Enabled = "auto" -- allow exporting reports? auto: enabled if using a supported inventory
+Config.MDT.ExportReports.Item = "document"
 
-Config.Police.Jail = {}
-Config.Police.Jail.Refresh = true -- should jail_time be updated by the tablet script? Set to false if you've fully configured your jail script to work with lb-tablet
-Config.Police.Jail.Interval = 60 -- how often (in seconds) to update the jail time
-Config.Police.Jail.CanUnjail = "auto" -- auto: true if supported jail script, otherwise false
-Config.Police.Jail.AllowJailJailed = true -- allow police to jail players that are already jailed? (meaning they exist in lbtablet_police_jail)
-
-Config.Police.Charges = {}
-Config.Police.Charges.CountMethod = "stack" -- stack / highest, Should the charges stack or use the highest fine & jail amount?
-
-Config.Police.Triangulation = {}
-Config.Police.Triangulation.RequireCall = false -- require the phone number being triangulated to be in a call?
-Config.Police.Triangulation.CellTowerTime = 500 -- how many milliseconds between each cell tower when searching?
-Config.Police.Triangulation.SuccessRate = 50 -- how many % that the phone number will be found
-Config.Police.Triangulation.RangeMultiplier = 1.0 -- how much to multiply the cell tower range by when searching?
-
-Config.Police.PhoneUnlock = {}
-Config.Police.PhoneUnlock.Time = { 120, 240 } -- how many minutes should it take to unlock a phone? This is a range, randomized
-Config.Police.PhoneUnlock.Chance = 50 -- how many % that the phone will be unlocked
-Config.Police.PhoneUnlock.Attempts = 2 -- how many attempts should the police have to unlock a phone, in total?
-
-Config.Police.Wiretapping = {}
-Config.Police.Wiretapping.MinimumCallDuration = 0 -- how many seconds the call must be active before it can be listened to?
-
-Config.Police.Profile = {}
-Config.Police.Profile.Fields = {
-    dob = true,
-    phoneNumber = true,
-    gender = true,
-    job = true,
-    identifier = false,
-    fingerprint = true,
+Config.MDT.TagColors = {
+    ["Grey"] = "#8e8e93",
+    ["Blue"] = "#0a84ff",
+    ["Green"] = "#32d74b",
+    ["Red"] = "#ff3b30",
+    ["Orange"]  = "#ff9d0a",
+    ["Yellow"] = "#cca250",
+    ["Pink"] = "#FFC0CB",
+    ["Purple"] = "#af52de",
+    ["Brown"] = "#916e41",
+    ["Navy"] = "#000080",
+    ["Cyan"] = "#5ac8fa",
 }
 
-Config.Police.Profile.Involvement = {
-    report = {
-        officer = true,
-        civilian = true,
-        suspect = true
-    },
-    case = {
-        officer = true,
-        civilian = true,
-        criminal = true
-    }
-}
+Config.MDT.EvidenceStash = {}
+Config.MDT.EvidenceStash.Enabled = true -- allow employees to store evidence for cases in the tablet?
+Config.MDT.EvidenceStash.Slots = 60
+Config.MDT.EvidenceStash.Weight = 50000
 
--- Here you can add custom fields that will be shown in profiles in the police app.
--- You can either edit the `Queries.Users.FetchProfile` query to return the data, or you can modify the `GetCustomFields` function
-Config.Police.Profile.CustomFields = {
-    -- {
-    --     label = "DNA",
-    --     value = "dna"
-    -- }
-}
+Config.MDT.Jail = {}
+Config.MDT.Jail.Refresh = true -- should jail_time be updated by the tablet script? Set to false if you've fully configured your jail script to work with lb-tablet
+Config.MDT.Jail.Interval = 60 -- how often (in seconds) to update the jail time
+Config.MDT.Jail.CanUnjail = "auto" -- auto: true if supported jail script, otherwise false
+Config.MDT.Jail.AllowJailJailed = true -- allow jailing players that are already jailed? (meaning they exist in lbtablet_mdt_jail)
 
-Config.Police.Vehicle = {}
-Config.Police.Vehicle.Fields = {
-    model = true,
-    plate = true,
-    color = true,
-    location = true,
-    owner = true,
-}
+Config.MDT.Wiretapping = {}
+Config.MDT.Wiretapping.Enabled = true
+Config.MDT.Wiretapping.MinimumCallDuration = 0 -- how many seconds the call must be active before it can be listened to?
 
--- Here you can add custom fields that will be shown in vehicles in the police app.
--- You can modify the `GetCustomFields` function to return the data
-Config.Police.Vehicle.CustomFields = {
-    -- {
-    --     label = "Insurance",
-    --     value = "insurance"
-    -- }
-}
-
-Config.Police.AutoRegisterWeapons = {}
-Config.Police.AutoRegisterWeapons.Enabled = true -- automatically register weapons? this required a supported inventory (ox_inventory). Can be modified in server/custom/functions/registerWeapon.lua
-Config.Police.AutoRegisterWeapons.AddUnregistered = true -- add unregistered weapons to the database?
-Config.Police.AutoRegisterWeapons.IgnoreList = {
+Config.MDT.AutoRegisterWeapons = {}
+Config.MDT.AutoRegisterWeapons.Enabled = true -- automatically register weapons? this required a supported inventory (ox_inventory). Can be modified in server/custom/functions/registerWeapon.lua
+Config.MDT.AutoRegisterWeapons.AddUnregistered = true -- add unregistered weapons (no owner) to the database?
+Config.MDT.AutoRegisterWeapons.IgnoreList = {
     "WEAPON_PETROLCAN"
 }
 
-Config.Police.Notifications = {
+Config.MDT.Notifications = {
     NewBulletin = true,
-    NewCase = true,
+    NewWeapon = false,
     NewReport = true,
-    NewWarrant = true,
+
+    NewCatalogCategory = true,
+    NewCatalogItem = true,
+
     NewChat = true,
     ChatMessage = true,
+    ChatReaction = true, -- when someone reacts to your message
 }
 
---[[
-    Here you can set the offence classes & their color. Please note that you need to set the name of the class in the locales, e.g. in config/locales/en.json
-    Available colors:
-        grey    - #8e8e93
-        blue    - #0a84ff
-        green   - #32d74b
-        red     - #ff3b30
-        orange  - #ff9d0a
-        yellow  - #cca250
-        pink    - #ff3b30
-        purple  - #af52de
-        brown   - #a2845e
-        navy    - #0a84ff
-        cyan    - 5ac8fa
---]]
-
-Config.Police.OffenceClasses = {
-    infraction = "green",
-    misdemeanor = "orange",
-    felony = "red"
+-- Here you can set the max points a licene has, or false to disable points for that license
+Config.MDT.MaxLicensePoints = {
+    drive = 12,
+    driver = 12,
+    weapon = false,
 }
 
-Config.Police.AdminPermissions = {
-    logs = {
-        view = true
-    },
-    bulletin = {
-        pin = true,
-        delete = true
-    },
-    case = {
-        delete = true
-    },
-    warrant = {
-        delete = true
-    },
-    report = {
-        delete = true
+Config.MDT.DefaultMaxLicensePoints = 4 -- the default max points for licenses that aren't specified in Config.MDT.MaxLicensePoints. Set to false to disable points for unspecified licenses.
+
+Config.LiveEdit = {}
+Config.LiveEdit.Enabled = true
+Config.LiveEdit.UpdateInterval = 250 -- how often (in ms) to update the live edit state?
+
+Config.Triangulation = {}
+Config.Triangulation.RequireCall = false -- require the phone number being triangulated to be in a call?
+Config.Triangulation.CellTowerTime = 500 -- how many milliseconds between each cell tower when searching?
+Config.Triangulation.SuccessRate = 50 -- how many % that the phone number will be found
+Config.Triangulation.RangeMultiplier = 1.0 -- how much to multiply the cell tower range by when searching?
+
+Config.DutyBlips = {}
+Config.DutyBlips.RequireItem = true -- require a tablet item to be shown on & see duty blips?
+Config.DutyBlips.Options = {
+    Show = true, -- show blips for players on duty on the in-game map?
+    Category = 7,
+    Sprite = 1,
+    Color = 0,
+    FriendIndicator = true,
+    Outline = false,
+    OutlineColour = { 93, 182, 229 },
+    Scale = 0.9,
+    ShortRange = true,
+    ShowHeading = true,
+    Name = "{name} - {callsign}",
+    VehicleTypes = {
+        car = 56,
+        bike = 226,
+        heli = 64,
+        boat = 455,
+        plane = 423,
     }
 }
 
-Config.Police.Permissions = {
-    --[[
-    ["job"] = {
-        permission = {
-            create = minimumGrade,
-            edit = minimumGrade
-        }
-    }
-    --]]
-
-    ["police"] = {
-        home = {
-            view = 0,
-        },
-        dispatch = {
-            view = 0,
-            delete = 3,
-        },
-        unit = {
-            view = 0,
-            edit = 3,
-            create = 3,
-            delete = 3,
-        },
-        profile = {
-            edit = 3,
-            view = 0,
-        },
-        vehicle = {
-            edit = 3,
-            view = 0
-        },
-        property = {
-            edit = 3,
-            view = 0,
-        },
-        weapon = {
-            create = 3,
-            delete = 3,
-            edit = 3,
-            view = 0,
-        },
-        report = {
-            create = 0,
-            edit = 3,
-            delete = 3,
-            view = 0
-        },
-        case = {
-            create = 0,
-            edit = 3,
-            delete = 3,
-            view = 0,
-            fine = 1,
-        },
-        warrant = {
-            create = 0,
-            edit = 3,
-            delete = 3,
-            view = 0
-        },
-        offence = {
-            create = 0,
-            edit = 3,
-            delete = 3,
-            view = 0
-        },
-        employee = {
-            view = 0,
-        },
-        chat = {
-            -- The creator is always able to edit, kick and invite
-            create = 3,
-            edit = 3,
-            kick = 3,
-            invite = 3,
-            view = 0
-        },
-        jail = {
-            create = 3,
-            edit = 3,
-            unjail = 3,
-            view = 0
-        },
-        phone = {
-            view = 0,
-            triangulate = 2,
-            unlock = 2,
-            createWiretap = 2,
-            removeWiretap = 3, -- you can always remove your own wiretaps
-            listenWiretap = 1,
-            callHistory = 1,
-        },
-        logs = {
-            view = 3,
-        },
-
-        tag = {
-            create = 3,
-            delete = 3,
-        },
-        license = {
-            revoke = 3,
-            add = 3,
-            view = 0
-        },
-        bulletin = {
-            create = 3,
-            pin = 3,
-            delete = 3, -- you are always able to delete your own bulletins
-            edit = 3, -- you can always edit your own bulletins
-            view = 0
-        },
-        stash = {
-            view = 2,
-        }
-    },
-}
-
-Config.Police.Header = {
-    Logo = "./assets/img/icons/police/logo.webp",
-    Title = "Los Santos Police Department",
-    Subtitle = "Mobile Police Terminal"
-}
-
-Config.Police.ReportTypes = {
-    "Assault",
-    "Robbery",
-    "Burglary",
-    "Theft",
-    "Fraud",
-    "Homicide",
-    "Kidnapping",
-    "Arson",
-    "Vandalism",
-    "Drug Offense",
-    "Traffic Violation",
-    "Domestic Violence",
-    "Cybercrime",
-    "Weapons Violation",
-    "Public Disturbance",
-    "Trespassing",
-    "Harassment",
-    "Missing Person",
-    "Extortion",
-    "Identity Theft",
-    "Interrogation",
-    "Other"
-}
-
-Config.Police.WarrantTypes = {
-    "Arrest Warrant",
-    "Search Warrant",
-    "Bench Warrant",
-    "Extradition Warrant",
-    "Probation Violation Warrant",
-    "Material Witness Warrant",
-    "Execution Warrant",
-    "Parole Violation Warrant"
-}
-
-Config.Police.WarrantStatuses = {
-    active = {
-        color = "red",
-        label = "Active"
-    },
-    cancelled = {
-        color = "orange",
-        label = "Cancelled"
-    },
-    expired = {
-        color = "red",
-        label = "Expired"
-    },
-}
-
-Config.Police.DefaultUnitStatus = "available"
-Config.Police.UnitStatuses = {
-    available = {
-        label = "Available",
-        color = "green",
-    },
-    busy = {
-        label = "Busy",
-        color = "red",
-    },
-    at_station = {
-        label = "At Station",
-        color = "blue",
-    },
-    on_call = {
-        label = "On Call",
-        color = "yellow",
-    }
-}
-
-Config.Police.DefaultUnits = {
-    -- {
-    --     name = "Unit 1",
-    --     status = "available",
-    -- },
-}
-
-Config.Police.Templates = {
-    Report = "# Report template\n\n**Date:**\n**Reported By:** (Name & Callsign / Badge number)\n\n**Incident Details:**\n**Evidence Collected:**\n**Actions Taken:**\n\n**Additional Notes:**",
-    Case = "# Case template\n\n**Date Opened:**\n**Filed by:** (Name & Callsign / Badge number)\n\n**Incident Details:**\n**Key Evidence:**\n**Investigation Progress:**\n\n**Additional Notes:**",
-    Warrant = "# Warrant template\n\n**Date Issued:**\n**Requested By:** (Name & Callsign / Badge number)\n\n**Reason:**\n**Location / Target:**\n**Execution Details:**\n\n**Additional Notes:**"
-}
-
---[[ AMBULANCE APP OPTIONS ]] --
-Config.Ambulance = {}
-
-Config.Ambulance.DutyBlips = true -- show blips for ambulance/doctors that are on duty?
-
-Config.Ambulance.Header = {
-    Logo = "./assets/img/icons/ambulance/logo.webp",
-    Title = " Santos Medical Services",
-    Subtitle = "Mobile Database Terminal"
-}
-
-Config.Ambulance.Profile = {}
-Config.Ambulance.Profile.Fields = {
-    dob = true,
-    phoneNumber = true,
-    gender = true,
-    height = true,
-    bloodType = true,
-    identifier = false,
-    fingerprint = false,
-}
-
-Config.Ambulance.Callsign = {}
-Config.Ambulance.Callsign.AutoGenerate = true -- should a callsign be automatically generated when a Ambulance profile is created? please note that if you enable this after profiles have been created, the callsigns will not be updated
-Config.Ambulance.Callsign.Format = "11-1111" --[[
-    Callsign format:
-        * 1: number 0-9
-        * A: uppercase letter A-Z
-        * a: lowercase letter a-z
-        * ^: escape character
-]]
-Config.Ambulance.Callsign.RequireTemplate = true -- Require users to follow the format of the callsign template?
-Config.Ambulance.Callsign.AllowChange = true
-
-Config.Ambulance.Notifications = {
-    NewBulletin = true,
-    NewChat = true,
-    NewReport = true,
-    ChatMessage = true,
-}
-
-Config.Ambulance.ReportTypes = {
-    "Injury",
-    "Illness",
-    "Vehicle Accident",
-    "Overdose",
-    "Cardiac Arrest",
-    "Stroke",
-    "Respiratory Distress",
-    "Burn Injury",
-    "Fall Injury",
-    "Drowning",
-    "Poisoning",
-    "Seizure",
-    "Trauma",
-    "Allergic Reaction",
-    "Shock",
-    "Heatstroke",
-    "Hypothermia",
-    "Labor and Delivery",
-    "Mental Health Crisis",
-    "Other"
-}
-
-Config.Ambulance.DefaultUnitStatus = "available"
-Config.Ambulance.UnitStatuses = {
-    available = {
-        label = "Available",
-        color = "green",
-    },
-    busy = {
-        label = "Busy",
-        color = "red",
-    },
-    at_station = {
-        label = "At Station",
-        color = "blue",
-    },
-    on_call = {
-        label = "On Call",
-        color = "yellow",
-    }
-}
-
-Config.Ambulance.DefaultUnits = {
-    -- {
-    --     name = "Unit 1",
-    --     status = "available",
-    -- },
-}
-
-Config.Ambulance.Templates = {
-    Report = "Report template\n\nDate:\nReported By: (Name & Callsign)\n\nReport Details:\nInjuries:\nActions Taken:\n\nAdditional Notes:",
-}
-
---[[
-    Here you can set the severities & their color. Please note that you need to set the name of the severity in the locales, e.g. in config/locales/en.json
-    Available colors:
-        grey    - #8e8e93
-        blue    - #0a84ff
-        green   - #32d74b
-        red     - #ff3b30
-        orange  - #ff9d0a
-        yellow  - #cca250
-        pink    - #ff3b30
-        purple  - #af52de
-        brown   - #a2845e
-        navy    - #0a84ff
-        cyan    - 5ac8fa
---]]
-
-Config.Ambulance.Severities = {
-    minor = "green",
-    moderate = "orange",
-    severe = "red",
-    critical = "red"
-}
-
-Config.Ambulance.AdminPermissions = {
-    report = {
-        delete = true
-    },
-    tag = {
-        delete = true
-    },
-    chat = {
-        kick = true
-    },
-    bulletin = {
-        pin = true,
-        delete = true
-    },
-    condition = {
-        create = true,
-        edit = true,
-        delete = true
-    },
-    logs = {
-        view = true
-    },
-}
-
-Config.Ambulance.Permissions = {
-    ["ambulance"] = {
-        home = {
-            view = 0
-        },
-        dispatch = {
-            view = 0,
-            delete = 3,
-        },
-        unit = {
-            view = 0,
-            edit = 3,
-            create = 3,
-            delete = 3,
-        },
-        profile = {
-            edit = 3,
-            view = 0,
-            bill = 1
-        },
-        report = {
-            create = 3,
-            edit = 3,
-            delete = 3,
-            view = 0
-        },
-        condition = {
-            create = 3,
-            edit = 3,
-            delete = 3,
-            view = 0
-        },
-        employee = {
-            view = 0
-        },
-        chat = {
-            create = 3,
-            edit = 3,
-            kick = 3,
-            invite = 3,
-            view = 0
-        },
-        logs = {
-            view = 3
-        },
-
-        tag = {
-            create = 3,
-            delete = 3
-        },
-        bulletin = {
-            create = 3,
-            pin = 3,
-            delete = 3, -- you are always able to delete your own bulletins
-            edit = 3, -- you can always edit your own bulletins
-            view = 0
-        },
-    },
-}
-
---[[ Browser App Options ]] --
+-- [[ Browser App Options ]] --
 Config.Browser = {}
+
+Config.Browser.CX = "32dca7fc9f06341d2" -- The CX id used to search with Google. You can get your own id from https://cse.google.com/cse/all
+
 Config.Browser.DefaultBookmarks = {
-    {
-        title = "LB",
-        url = "https://lbscripts.com/",
-        icon = "https://lbscripts.com/assets/favicon.ico"
-    }
+    -- {
+    --     title = "LB",
+    --     url = "https://lbscripts.com/",
+    --     icon = "https://lbscripts.com/assets/favicon.ico"
+    -- }
 }
 
 Config.Browser.WhitelistedDomains = {
@@ -1048,7 +692,7 @@ Config.Browser.BlacklistedDomains = {
     -- "example.com",
 }
 
---[[ KEY BINDINGS ]] --
+-- [[ KEY BINDINGS ]] --
 Config.KeyBinds = {  -- https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     Open = {
         bind = "F5",
@@ -1132,6 +776,67 @@ Config.KeyBinds = {  -- https://docs.fivem.net/docs/game-references/input-mapper
     },
 }
 
+-- [[ UPLOAD OPTIONS ]] --
+Config.AllowExternal = { -- allow people to upload external images? (note: this means they can upload nsfw/gore etc)
+    Police = true,
+    Ambulance = true,
+    Registration = true,
+    Gallery = true,
+    Mail = false,
+    Other = false,
+}
+
+-- Blocked hostnames for external images. You will not be able to upload from these hostnames.
+Config.ExternalBlacklistedHostnames = {}
+
+-- Blacklisted domains for external images (blocks all subdomains too)
+Config.ExternalBlacklistedDomains = {
+    "imgur.com",
+    "discord.com",
+    "discordapp.com",
+}
+
+-- Whitelisted hostnames for external images
+Config.ExternalWhitelistedHostnames = {
+    -- "*.fivemanage.com",
+    -- "*.fmfile.com",
+    "r2.qbox.re",
+}
+
+-- Whitelisted domains for external images (allows all subdomains too)
+Config.ExternalWhitelistedDomains = {
+    "fivemanage.com"
+}
+
+-- Hostnames that are allowed to upload images to the tablet (prevent using devtools to upload images)
+-- You can use "*" as a wildcard at the start of the hostname to allow all subdomains (e.g. "*.example.com" will allow uploads from "r2.example.com", "s3.example.com" etc)
+Config.UploadWhitelistedHostnames = {
+    -- "*.fivemanage.com",
+    -- "*.fmfile.com",
+    "*.users.cfx.re", -- lb-upload
+    "r2.qbox.re", -- https://docs.qbox.re/dashboard/cdn
+}
+
+Config.UploadWhitelistedDomains = {
+    "fivemanage.com",
+    "fmfile.com",
+    "amazonaws.com", -- lb-presigned (S3)
+}
+
+-- Set your api keys in lb-tablet/server/apiKeys.lua
+Config.UploadMethod = {}
+-- You can edit the upload methods in lb-tablet/config/upload.lua
+-- The default and recommended upload method is Fivemanage
+-- Use code "LBPHONE25" for 25% off - forever
+-- You can get your API keys from https://refer.fivemanage.com/lb
+-- Affiliate link - purchases made through this link will give us a commission at no extra cost to you
+-- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
+-- If you want to use S3/R2, you can use "LBPresigned": https://github.com/lbphone/lb-presigned
+-- If you want to host uploads yourself, you can use "LBUpload": https://github.com/lbphone/lb-upload
+Config.UploadMethod.Video = "Fivemanage"
+Config.UploadMethod.Image = "Fivemanage"
+Config.UploadMethod.Audio = "Fivemanage"
+
 -- You can customize the function in lb-phone/server/custom/functions/webrtc.lua
 -- You can set your api key in lb-phone/server/apiKeys.lua
 Config.DynamicWebRTC = {}
@@ -1147,7 +852,7 @@ Config.DynamicWebRTC.RemoveStun = false -- remove the stun servers?
 --     }
 -- }
 
---[[ PHOTO / VIDEO OPTIONS ]] --
+-- [[ PHOTO / VIDEO OPTIONS ]] --
 Config.Camera = {}
 Config.Camera.ShowTip = true -- show a tip in the top-left of key binds for the camera?
 Config.Camera.Roll = true -- allow rolling the camera to the left & right?
@@ -1177,28 +882,14 @@ Config.Camera.Freeze.Enabled = true -- allow players to freeze the camera when t
 Config.Camera.Freeze.MaxDistance = 10.0 -- max distance the camera can be from the player when frozen
 Config.Camera.Freeze.MaxTime = 60 -- max time the camera can be frozen for (in seconds)
 
--- Set your api keys in lb-tablet/server/apiKeys.lua
-Config.UploadMethod = {}
--- You can edit the upload methods in lb-tablet/config/upload.lua
--- We recommend Fivemanage, https://fivemanage.com
--- Use code LBPHONE10 for 10% off on Fivemanage
--- A video tutorial for how to set up Fivemanage can be found here: https://www.youtube.com/watch?v=y3bCaHS6Moc
--- If you want to host uploads yourself, you can use LBUpload: https://github.com/lbphone/lb-upload
-Config.UploadMethod.Video = "Fivemanage" -- "Fivemanage" or "LBUpload" or "Imgur"
-Config.UploadMethod.Image = "Fivemanage" -- "Fivemanage" or "LBUpload" or "Imgur"
-Config.UploadMethod.Audio = "Fivemanage" -- "Fivemanage" or "LBUpload"
-
 Config.Video = {}
 Config.Video.Bitrate = 400 -- video bitrate (kbps), increase to improve quality, at the cost of file size
 Config.Video.FrameRate = 24 -- video framerate (fps), 24 fps is a good mix between quality and file size used in most movies
-Config.Video.MaxSize = 25 -- max video size (MB)
+Config.Video.MaxSize = 30 -- max video size (MB)
 Config.Video.MaxDuration = 60 -- max video duration (seconds)
+Config.Video.AudioBitrate = 128 -- audio bitrate (kbps) for video recordings
+Config.Video.VariableBitrate = true -- allow variable video bitrate when recording
 
 Config.Image = {}
 Config.Image.Mime = "image/webp"
 Config.Image.Quality = 0.95
-
-if Config.UploadMethod.Image == "Imgur" then
-    Config.Image.Mime = "image/png"
-    Config.Image.Quality = 1.0
-end

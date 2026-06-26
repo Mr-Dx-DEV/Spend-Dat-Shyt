@@ -71,7 +71,16 @@ AddEventHandler("rcore_prison:server:heartbeat", function(actionType, data)
     Wait(1000) -- if updating via the tablet, use that data instead
 
     if actionType == "PRISONER_NEW" then
-        LogJailed(prisoner.owner, prisoner.officerName, prisoner.jail_reason or "", prisoner.jail_time)
+        if MDTs["Police"] then
+            LogJailed(
+                "Police",
+                prisoner.owner,
+                prisoner.officerName,
+                prisoner.jail_reason or "",
+                prisoner.jail_time
+            )
+        end
+
     elseif actionType == "PRISONER_RELEASED" then
         UpdateJailSentence(prisoner.owner, 0)
     end

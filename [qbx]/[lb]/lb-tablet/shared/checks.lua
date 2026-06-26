@@ -8,14 +8,17 @@
 local checks = {}
 local checkId = 0
 
----@alias CheckEvent "triangulatePhone" | "unlockPhone" | "createWiretap" | "listenToWiretap"
+---@alias CheckEvent "triangulatePhone" | "unlockPhone" | "createWiretap" | "listenToWiretap" | "openTablet" | "createDispatch" | "playNativeSound"
 
 ---@param event CheckEvent
 ---@param handler fun(...: any): boolean
+---@overload fun(event: "openTablet", handler: fun(): boolean): number
 ---@overload fun(event: "triangulatePhone", handler: fun(source: number, phoneNumber: string): boolean): number
 ---@overload fun(event: "unlockPhone", handler: fun(source: number, phoneNumber: string): boolean): number
 ---@overload fun(event: "createWiretap", handler: fun(source: number, phoneNumber: string): boolean): number
 ---@overload fun(event: "listenToWiretap", handler: fun(source: number, phoneNumber: string): boolean): number
+---@overload fun(event: "createDispatch", handler: fun(dispatchData: NewDispatchOptions): boolean): number
+---@overload fun(event: "playNativeSound", handler: fun(soundType: string, soundName?: string): boolean): number
 ---@return number id
 function AddCheck(event, handler)
     local resource = GetInvokingResource()
@@ -45,7 +48,7 @@ exports("AddCheck", AddCheck)
 ---@return boolean success
 function RemoveCheck(id)
     for _, eventChecks in pairs(checks) do
-        for i = 1, #checks do
+        for i = 1, #eventChecks do
             local check = eventChecks[i]
 
             if check.id == id then
@@ -82,6 +85,7 @@ function ValidateChecks(event, ...)
         end
 
         if allowed == false then
+            debugprint(("Check '%s' (id %i, by resource '%s') returned false"):format(event, i, check.resource))
             return false
         end
     end

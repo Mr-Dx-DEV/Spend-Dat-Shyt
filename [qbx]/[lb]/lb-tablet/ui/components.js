@@ -48,29 +48,5 @@ if (!globalThis.componentsLoaded) {
         globalThis[name] = component;
     }
 
-    let addedHandlers = [];
-
-    function refreshInputs(inputs) {
-        inputs.forEach((input) => {
-            if (addedHandlers.includes(input)) return console.log('already added handler for', input);
-
-            input.addEventListener('focus', () => globalThis.fetchTablet('toggleInput', true));
-            input.addEventListener('blur', () => globalThis.fetchTablet('toggleInput', false));
-        });
-    }
-
-    refreshInputs(document.querySelectorAll('input, textarea'));
-
-    const inputObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
-                if (node.childNodes.length > 0) refreshInputs(node.querySelectorAll('input, textarea'));
-                if (node.tagName === 'INPUT' || node.tagName === 'TEXTAREA') refreshInputs([node]);
-            });
-        });
-    });
-
-    inputObserver.observe(document.body, { childList: true, subtree: true });
-
     globalThis.postMessage('componentsLoaded', '*');
 }

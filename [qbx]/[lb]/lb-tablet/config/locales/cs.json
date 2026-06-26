@@ -7,7 +7,6 @@
     "H": "h",
     "M": "m",
     "S": "s",
-
     "APP_NAMES": {
         "Police": "Policie",
         "Ambulance": "Ambulance",
@@ -25,7 +24,6 @@
         "Services": "Služby",
         "VoiceMemo": "Hlasové poznámky"
     },
-
     "APPS": {
         "SETTINGS": {
             "TITLE": "Nastavení",
@@ -99,7 +97,6 @@
             "OK": "OK",
             "ON": "Zapnuto",
             "OFF": "Vypnuto",
-
             "RESET_POPUP": {
                 "TITLE": "Resetovat tablet",
                 "TEXT": "Opravdu chcete resetovat svůj tablet? [TÍMTO SE ODSTRANÍ VŠE]",
@@ -212,7 +209,6 @@
             "DELETE": "Smazat",
             "SELECT_ITEMS": "Vybrat položky",
             "SELECTED_COUNT": "{count} položek vybráno",
-
             "PHOTOS": "Fotky",
             "ALBUMS": "Alba",
             "LIBRARY": "Knihovna",
@@ -252,12 +248,10 @@
                 "PROCEED": "Importovat",
                 "PLACEHOLDER": "URL obrázku"
             },
-
             "NO_PHOTOS": "Žádné fotky nebo videa",
             "NO_PHOTOS_INSTRUCTIONS": "Můžete pořizovat fotky a videa pomocí fotoaparátu",
             "PHOTO_COUNT": "{amount} fotek",
             "VIDEO_COUNT": "{amount} videí",
-
             "DELETE_CONTEXT_TITLE": "Chcete smazat {type} nebo je odstranit z tohoto alba",
             "THESE_PHOTOS": "tyto fotky",
             "THIS_PHOTO": "tuto fotku",
@@ -274,7 +268,6 @@
             "MONTHS": "Měsíce",
             "DAYS": "Dny",
             "ALL_PHOTOS": "Všechny fotky",
-
             "FAVOURITES": "Oblíbené",
             "RECENTS": "Nedávné"
         },
@@ -346,21 +339,17 @@
             "COMPANIES": "Společnosti",
             "MESSAGES": "Zprávy",
             "SETTINGS": "Nastavení",
-
             "CLOSED": "Zavřeno",
             "YOUR_MESSAGES": "Vaše zprávy",
             "JOB_MESSAGES": "Pracovní zprávy",
-
             "DUTY": "Služba",
             "DUTY_DESCRIPTION": "Přepnout stav služby",
             "GO_ON_DUTY": "Jít do služby",
             "GO_OFF_DUTY": "Jít mimo službu",
             "JOB_CALLS": "Pracovní hovory",
             "JOB_CALLS_DESCRIPTION": "{toggle} přijímání hovorů od zákazníků.",
-
             "ENABLE": "Povolit",
             "DISABLE": "Zakázat",
-
             "DISABLE_CALLS": "Zakázat hovory",
             "ENABLE_CALLS": "Povolit hovory",
             "BALANCE": "Zůstatek",
@@ -369,11 +358,9 @@
             "HIRE": "Najmout",
             "SET_GRADE": "Nastavit hodnost",
             "UNEMPLOYED": "Jste nezaměstnaný",
-
             "ALL": "Vše",
             "AVAILABLE": "Dostupné",
             "SEARCH_EMPLOYEES": "Hledat zaměstnance",
-
             "PERSONAL": "Osobní",
             "JOB": "Práce",
             "PLACEHOLDER": "Textová zpráva",
@@ -392,7 +379,6 @@
                 "CANCEL": "Zrušit",
                 "DELETE": "Smazat"
             },
-
             "DEPOSIT_POPUP": {
                 "TITLE": "Vklad",
                 "DESCRIPTION": "Vložit peníze na účet společnosti",
@@ -423,840 +409,7 @@
                 "PROCEED": "Pokračovat"
             }
         },
-        "POLICE": {
-            "CANCEL": "Zrušit",
-            "CLOSE": "Zavřít",
-            "BACK": "Zpět",
-            "EDIT": "Upravit",
-            "DELETE": "Smazat",
-            "REMOVE": "Odstranit",
-            "SAVE": "Uložit",
-            "CREATE": "Vytvořit",
-            "OK": "OK",
-            "ADD": "Přidat",
-            "NEW": "Nový",
-            "PROCEED": "Pokračovat",
-
-            "SEARCH": "Hledat",
-            "SEARCH_FOR": "Hledat {query} pro začátek",
-            "NO_RESULTS_FOR": "Žádné výsledky pro '{query}'",
-            "CLEAR_HISTORY": "Vymazat historii",
-
-            "HOME": {
-                "TITLE": "Domů",
-                "CREATE": "Vytvořit",
-
-                "RECENT_REPORTS": "Nedávná hlášení",
-                "REPORT_FOOTER": "{timestamp} - {author}",
-                "BULLETIN_BOARD": "Nástěnka",
-                "PIN": "Připnout",
-                "UNPIN": "Odepnout",
-                "SEARCH_BULLETIN": "Hledat na nástěnce",
-                "SEARCH_UNITS": "Hledat jednotky",
-                "ADD_BULLETIN": {
-                    "TITLE": "Přidat nástěnku",
-                    "DESCRIPTION": "Vytvořit nový příspěvek na nástěnce",
-                    "PLACEHOLDER": "Název",
-                    "CONTENT": "Obsah",
-                    "CANCEL": "Zrušit",
-                    "PROCEED": "Pokračovat"
-                },
-                "DELETE_BULLETIN": {
-                    "TITLE": "Smazat z nástěnky",
-                    "DESCRIPTION": "Opravdu chcete smazat tento příspěvek na nástěnce?",
-                    "CANCEL": "Zrušit",
-                    "DELETE": "Smazat"
-                },
-                "RECENT_WARRANTS": "Nedávné zatykače",
-                "ACTIVE_UNITS": "Aktivní jednotky"
-            },
-
-            "DISPATCH": {
-                "TITLE": "Dispečink",
-                "TOGGLE_OFFICERS": "Přepnout důstojníky",
-                "TOGGLE_ALARMS": "Přepnout alarmy",
-                "OFFICERS": "Důstojníci",
-                "ALARMS": "Alarmy",
-
-                "RESPOND": "Reagovat",
-                "COLLAPSE": "Sbalit",
-                "EXPAND": "Rozbalit",
-                "DISMISS": "Zavřít",
-                "VIEW_IN_TABLET": "Zobrazit v tabletu",
-                "SET_WAYPOINT": "Nastavit trasu",
-
-                "PRIORITY": {
-                    "HIGH": "Vysoká",
-                    "MEDIUM": "Střední",
-                    "LOW": "Nízká"
-                },
-
-                "JUST_NOW": "Právě teď",
-                "MINUTES_AGO": "Před {minutes} minutami",
-                "HOURS_AGO": "{hours} hodinami"
-            },
-
-            "PROFILES": {
-                "TITLE": "Profil",
-                "PERSON": "Osoba",
-                "SEARCH": "Hledat profily",
-                "REMOVE_AVATAR": "Odstranit avatara",
-                "IDENTIFIER": "Identifikátor",
-                "FINGERPRINT": "Otisk prstu",
-                "DOB": "Datum narození",
-                "PHONE_NR": "Telefonní číslo",
-                "GENDER": "Pohlaví",
-                "JOB": "Práce",
-                "MALE": "Muž",
-                "FEMALE": "Žena",
-                "NOTES": "Poznámky",
-                "NOTES_PLACEHOLDER": "Zadejte poznámky zde...",
-
-                "LICENSES": {
-                    "TITLE": "Licenses",
-                    "ADD_LICENSE": "Přidat licenci",
-                    "ADD": "Přidat",
-                    "NO_LICENSES": "Žádné licence",
-                    "REVOKE_LICENSE": {
-                        "TITLE": "Odebrat licenci",
-                        "DESCRIPTION": "Jste si jistí, že chcete odebrat licenci {license}?",
-                        "CANCEL": "Zrušit",
-                        "REVOKE": "Smazat"
-                    }
-                },
-
-                "ADD_AVATAR": {
-                    "TITLE": "Přidat Avatara",
-                    "SET_PHOTO": "Nastavit fotku",
-                    "PASTE_URL": "vložit URL",
-                    "PASTE_URL_DESCRIPTION": "Zadejte URL obrázku",
-                    "PASTE_URL_PLACEHOLDER": "URL obrázku",
-
-                    "INVALID_URL": "Neplatné URL",
-                    "INVALID_URL_DESCRIPTION": "URL, kterou jste zadali, není platná URL obrázku",
-                    "OK": "OK"
-                },
-
-                "VEHICLES": "Vozidla",
-                "NO_VEHICLES": "Žádná vozidla",
-                "PROPERTIES": "Nemovitosti",
-                "NO_PROPERTIES": "Žádné nemovitosti",
-                "REPORTS": "Zprávy",
-                "NO_REPORTS": "Žádné zprávy",
-                "CASES": "Případy",
-                "NO_CASES": "Žádné případy",
-                "WEAPONS": "Zbraně",
-                "NO_WEAPONS": "Beze zbraní"
-            },
-
-            "VEHICLES": {
-                "TITLE": "Vozidla",
-                "VEHICLE": "Vozidla",
-                "SEARCH": "Najít Vozidlo",
-                "REMOVE_PICTURE": "Odebrat obrázek",
-                "DETAILS": "Detaily",
-
-                "ADD_PHOTO": {
-                    "TITLE": "Přidat fotku",
-                    "SELECT_PHOTO": "Vybrat fotku",
-                    "PASTE_URL": "Vložit URL",
-                    "PASTE_URL_DESCRIPTION": "Vložit URL do obrázku",
-                    "PASTE_URL_PLACEHOLDER": "URL obrázku",
-
-                    "INVALID_URL": "Neplatné URL",
-                    "INVALID_URL_DESCRIPTION": "URL, kterou jste zadali, není platná URL obrázku",
-                    "OK": "OK"
-                },
-                "MODEL": "Model",
-                "PLATE": "Registrační značka",
-                "COLOR": "Barva",
-                "LOCATION": "Lokace",
-                "OWNER": "Majitel",
-                "NOTES": "Poznámky",
-                "NOTES_PLACEHOLDER": "Vložit poznámku...",
-                "SET_WAYPOINT": "Nastavit trasu",
-                "OPEN_IN_MAPS": "Otevřít v mapě",
-                "WAYPOINT_SET": "Waypoint nastaven",
-                "WAYPOINT_SET_DESCRIPTION": "Waypoint byl nastaven na lokaci vozidla",
-                "CASES": "Případy",
-                "NO_CASES": "Žádné případy"
-            },
-            "PROPERTIES": {
-                "TITLE": "Nemovitosti",
-                "PROPERTY": "Nemovitost",
-                "SEARCH": "Najít nemovitost",
-                "REMOVE_PICTURE": "Odstranit obrázek",
-                "DETAILS": "Detaily",
-                "ADD_PHOTO": {
-                    "TITLE": "Přidat fotku",
-                    "SELECT_PHOTO": "Vybrat fotku",
-                    "PASTE_URL": "vložit URL",
-                    "PASTE_URL_DESCRIPTION": "Vložit URL obrázku",
-                    "PASTE_URL_PLACEHOLDER": "URL obrázku",
-
-                    "INVALID_URL": "Neplatné URL",
-                    "INVALID_URL_DESCRIPTION": "URL, kterou jste zadali, není platná URL obrázku",
-                    "OK": "OK"
-                },
-                "LABEL": "Štítek",
-                "ADDRESS": "Adresa",
-                "OWNER": "Majitel",
-                "LOCATION": "Lokace",
-                "OPEN_IN_MAPS": "Otevřít v mapě",
-                "NOTES": "Poznámky",
-                "NOTES_PLACEHOLDER": "Enter notes here..."
-            },
-            "WEAPONS": {
-                "TITLE": "Zbraně",
-                "WEAPON": "Zbraň",
-                "SEARCH": "Najít zbraň",
-                "REMOVE_PICTURE": "Odebrat obrázek",
-                "DETAILS": "Detaily",
-                "ADD_PHOTO": {
-                    "TITLE": "vložit fotku",
-                    "SELECT_PHOTO": "Vybrat fotku",
-                    "PASTE_URL": "vložit URL",
-                    "PASTE_URL_DESCRIPTION": "Vložit URL do obrázku",
-                    "PASTE_URL_PLACEHOLDER": "URL obrázku",
-
-                    "INVALID_URL": "Neplatné URL",
-                    "INVALID_URL_DESCRIPTION": "URL, kterou jste zadali, není platná URL obrázku",
-                    "OK": "OK"
-                },
-                "MODEL_MAKE": "Model / Make",
-                "SERIAL_NUMBER": "Sériové číslo",
-                "NOTES": "Poznámky",
-                "NOTES_PLACEHOLDER": "Vložit poznámku...",
-                "LINKED_REPORTS": "Hlášení ve spojitosti s zbraní",
-                "NO_LINKED_REPORTS": "S zbraní nejsou spojena žádná hlášení",
-                "LINKED_CASES": "Případy spojené s zbraní",
-                "NO_LINKED_CASES": "S zbraní nejsou spojené žádné případy",
-                "UNREGISTERED": "Není registrováno",
-                "OWNER": "Majitel"
-            },
-
-            "REPORTS": {
-                "TITLE": "Hlášení",
-                "REPORT": "Hlášení",
-                "SEARCH": "Najít hlášení",
-                "FOOTER": "{author} - ID hlášení: {id}",
-                "NEW_REPORT_TITLE": "Nové hlášení",
-                "TYPE": "Typ",
-                "DESCRIPTION": "Popisek",
-                "DESCRIPTION_PLACEHOLDER": "Vložit popisek...",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Žádné příslušenství",
-                "WEAPONS_INVOLVED": "Použité zbraně",
-                "NO_WEAPONS_INVOLVED": "Žádné zbraně nebyly použity",
-                "REMOVE_WEAPON": {
-                    "TITLE": "Odebrat Zbraň",
-                    "DESCRIPTION": "Jste si jistí, že chcete odebrat zbraň z hlášení?"
-                },
-                "OFFICERS_INVOLVED": "Zúčastnění důstojníci",
-                "NO_OFFICERS_INVOLVED": "Žádní zúčastnění důstojníci",
-                "REMOVE_OFFICER": {
-                    "TITLE": "Odstranit důstojníka",
-                    "DESCRIPTION": "Opravdu chcete odstranit {name} z hlášení?"
-                },
-                "CIVILLIANS_INVOLVED": "Zúčastnění civilisté",
-                "NO_CIVILLIANS_INVOLVED": "Žádní zúčastnění civilisté",
-                "REMOVE_CIVILIAN": {
-                    "TITLE": "Odstranit civilistu",
-                    "DESCRIPTION": "Opravdu chcete odstranit {name} ze zprávy?"
-                },
-                "SUSPECTS_INVOLVED": "Zúčastnění podezřelí",
-                "NO_SUSPECTS_INVOLVED": "Žádní zúčastnění podezřelí",
-                "REMOVE_SUSPECT": {
-                    "TITLE": "Odstranit podezřelého",
-                    "DESCRIPTION": "Opravdu chcete odstranit {name} ze zprávy?"
-                },
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "NO_TYPE": "Musíte vybrat typ hlášení",
-                    "TITLE_LENGTH": "Název musí mít alespoň 3 znaky",
-                    "DESCRIPTION_LENGTH": "Popis musí mít alespoň 10 znaků"
-                }
-            },
-
-            "CASES": {
-                "TITLE": "Případy",
-                "SEARCH": "Najít případ",
-                "CASE": "Případ",
-                "FOOTER": "{author} - Case ID: {id}",
-                "TITLE_PLACEHOLDER": "Nový případ",
-                "DESCRIPTION": "Popis",
-                "DESCRIPTION_PLACEHOLDER": "Zadejte popis...",
-                "EVIDENCE": "Důkazy",
-                "NO_EVIDENCE": "Žádné připojené důkazy",
-                "OPEN_STASH": "Otevřít úkryt",
-                "VEHICLES_INVOLVED": "Zúčastněná vozidla",
-                "NO_VEHICLES_INVOLVED": "Žádná zúčastněná vozidla",
-                "REMOVE_VEHICLE": {
-                    "TITLE": "Odstranit vozidlo",
-                    "DESCRIPTION": "Opravdu chcete odstranit vozidlo z případu?"
-                },
-                "OFFICERS_INVOLVED": "Zúčastnění důstojníci",
-                "NO_OFFICERS_INVOLVED": "Žádní zúčastnění důstojníci",
-                "REMOVE_OFFICER": {
-                    "TITLE": "Odstranit důstojníka",
-                    "DESCRIPTION": "Opravdu chcete odstranit důstojníka z případu?"
-                },
-                "CIVILLIANS_INVOLVED": "Zúčastnění civilisté",
-                "NO_CIVILLIANS_INVOLVED": "Žádní zúčastnění civilisté",
-                "REMOVE_CIVILIAN": {
-                    "TITLE": "Odstranit civilistu",
-                    "DESCRIPTION": "Opravdu chcete odstranit civilistu z případu?"
-                },
-                "CRIMINALS_INVOLVED": "Zúčastnění zločinci",
-                "NO_CRIMINALS_INVOLVED": "Žádní zúčastnění zločinci",
-                "REMOVE_CRIMINAL": {
-                    "TITLE": "Odstranit zločince",
-                    "DESCRIPTION": "Opravdu chcete odstranit zločince z případu?"
-                },
-                "ADD_CHARGE": "Přidat obvinění",
-                "RECOMMENDED_FINE": "Doporučená pokuta ({currency})",
-                "RECOMMENDED_SENTENCE": "Doporučený trest (v měsících)",
-                "FINE": "Pokuta ({currency})",
-                "SENTENCE": "Trest (in months)",
-
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "TITLE_LENGTH": "Název musí mít alespoň 3 znaky",
-                    "DESCRIPTION_LENGTH": "Popis musí mít alespoň 10 znaků",
-                    "OK": "OK"
-                }
-            },
-
-            "WARRANTS": {
-                "TITLE": "Zatykače",
-                "SEARCH": "Hledat zatykač",
-
-                "HIGH_PRIORITY": "Vysoká priorita",
-                "MEDIUM_PRIORITY": "Střední priorita",
-                "LOW_PRIORITY": "Nízká priorita",
-                "FOOTER": "{author} - ID zatykače: {id}",
-                "TITLE_PLACEHOLDER": "Nový zatykač",
-                "DESCRIPTION": "Popis",
-                "DESCRIPTION_PLACEHOLDER": "Zadejte popis...",
-                "TYPE": "Typ",
-                "STATUS": "Stav",
-                "PRIORITY": "Priorita",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Žádné přílohy",
-                "LINKED_REPORTS": "Propojené zprávy",
-                "NO_LINKED_REPORTS": "Žádné propojené zprávy",
-                "REMOVE_REPORT": {
-                    "TITLE": "Odstranit hlášení",
-                    "DESCRIPTION": "Opravdu chcete odstranit hlášení ze zatykače?"
-                },
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "TITLE_LENGTH": "Název musí mít alespoň 3 znaky",
-                    "DESCRIPTION_LENGTH": "Popis musí mít alespoň 10 znaků",
-                    "NO_TYPE": "Musíte vybrat typ zatykače",
-                    "OK": "OK"
-                }
-            },
-
-            "OFFENCES": {
-                "TITLE": "Přestupky",
-                "SEARCH": "Hledat přestupky",
-                "MONTHS": "{amount} měsíců",
-                "FINE": "{amount} pokuta",
-
-                "SELECT_SEVERITY": "Vyberte závažnost",
-                "SEVERITIES": {
-                    "INFRACTION": "Přestupek",
-                    "MISDEMEANOR": "Přečin",
-                    "FELONY": "Těžký zločin"
-                },
-                "NO_OFFENCES_FOUND": "Žádné přestupky nenalezeny",
-                "ADD_OFFENCE": {
-                    "TITLE": "Přidat přestupek",
-                    "DESCRIPTION": "Vytvořit nový přestupek",
-                    "PLACEHOLDER": "Zadejte název přestupku",
-                    "DESCRIPTION_PLACEHOLDER": "Zadejte popis..."
-                },
-                "SET_JAILTIME": {
-                    "TITLE": "Doporučený trest odnětí svobody",
-                    "DESCRIPTION": "Nastavte doporučený trest odnětí svobody za přestupek",
-                    "PLACEHOLDER": "Doporučený trest odnětí svobody (v měsících) (0 pouze pro pokutu)"
-                },
-                "SET_FINE": {
-                    "TITLE": "Doporučená pokuta",
-                    "DESCRIPTION": "Nastavte doporučenou pokutu za přestupek",
-                    "PLACEHOLDER": "Doporučená výše pokuty (0 pouze pro trest odnětí svobody)"
-                },
-
-                "DELETE_OFFENCE": {
-                    "TITLE": "Smazat přestupek",
-                    "DESCRIPTION": "Opravdu chcete smazat tento přestupek?"
-                },
-                "ADD_CATEGORY": {
-                    "TITLE": "Přidat kategorii",
-                    "DESCRIPTION": "Přidat novou kategorii do seznamu přestupků",
-                    "PLACEHOLDER": "Zadejte název kategorie"
-                },
-                "DELETE_CATEGORY": {
-                    "TITLE": "Smazat kategorii",
-                    "DESCRIPTION": "Opravdu chcete smazat tuto kategorii?"
-                }
-            },
-
-            "EMPLOYEES": {
-                "TITLE": "Zaměstnanci",
-                "SEARCH": "Hledat zaměstnance"
-            },
-
-            "CHAT": {
-                "TITLE": "Chat",
-                "SEARCH": "Hledat chaty",
-                "PLACEHOLDER": "Odeslat zprávu...",
-                "JOINED_CHATS": "Připojené chaty",
-                "PUBLIC_CHATS": "Veřejné chaty",
-                "JOINED": "Připojené",
-                "PUBLIC": "Veřejné",
-                "PRIVATE_CHATS": "Soukromé chaty",
-                "ROOM_ID": "ID místnost: {id}",
-                "TOGGLE_PRIVATE": "Přepnout na soukromé",
-                "CHANGE_AVATAR": "Změnit Avatara",
-                "SET_AVATAR": "Nastavit Avatara",
-                "REMOVE_AVATAR": "Odstranit avatara",
-                "MANAGE": "Spravovat",
-                "LEAVE": {
-                    "TITLE": "Opustit",
-                    "DESCRIPTION": "Opravdu chcete opustit chatovací místnost?"
-                },
-                "KICK": {
-                    "TITLE": "Vykopnout",
-                    "DESCRIPTION": "Jste si jistí, že chcete vykopnout {name} z chatovací místnosti?"
-                },
-
-                "CREATE_CHATROOM": {
-                    "TITLE": "Vytvořit chatovací místnost",
-                    "DESCRIPTION": "Zadejte název chatovací místnosti",
-                    "PLACEHOLDER": "Název chatovací místnosti",
-                    "CREATE": "Vytvořit",
-                    "SET_VISIBILITY": "Nastavit viditelnost",
-                    "PUBLIC": "Veřejné",
-                    "PRIVATE": "Soukromé"
-                },
-                "JOIN_CHAT": {
-                    "TITLE": "Připojit se k chatu",
-                    "DESCRIPTION": "Opravdu se chcete připojit k {channel}?",
-                    "JOIN": "Připojit se"
-                },
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "FAILED_JOIN": "Nepodařilo se připojit k chatovací místnosti",
-                    "FAILED_INVITE": "Nepodařilo se pozvat {name} do chatovací místnosti",
-                    "FAILED_SET_AVATAR": "Nepodařilo se nastavit avatara chatovací místnosti",
-                    "FAILED_REMOVE_AVATAR": "Nepodařilo se odstranit avatara chatovací místnosti",
-                    "FAILED_GET_MEMBERS": "Nepodařilo se získat členy chatovací místnosti",
-                    "FAILED_KICK": "Nepodařilo se vykopnout {name} z chatovací místnosti",
-                    "FAILED_LEAVE": "Nepodařilo se opustit chatovací místnost"
-                },
-                "SUCCESS": {
-                    "TITLE": "Úspěch",
-                    "INVITED": "Pozvali jste {name} do chatovací místnosti",
-                    "KICKED": "Vykopli jste {name} z chatovací místnosti"
-                }
-            },
-
-            "PHONE": {
-                "TITLE": "Telefon",
-                "TRIANGULATE": "Triangulovat",
-                "MESSAGES": "Zprávy",
-                "CALLS": "Hovory",
-                "UNLOCK": "Odemknout"
-            },
-
-            "JAIL": {
-                "TITLE": "Vězení",
-                "SEARCH": "Hledat vězně",
-                "JAILED_PERSON": "Vězněná osoba",
-                "JAILED_BY": "Uvězněn",
-                "JAILED_BY_NAME": "Uvězněn {name}",
-                "REMAINING_TIME": "Zbývající čas",
-                "REMAINING_TIME_DATE": "Zbývající čas {time} ({date})",
-                "ORIGINAL_SENTENCE": "Původní trest",
-                "RELEASE_DATE": "Datum propuštění",
-                "DESCRIPTION": "Popis",
-                "DESCRIPTION_PLACEHOLDER": "Zadejte popis...",
-                "RELEASED": "Propuštěn",
-                "LESS_THAN_MINUTE": "Méně než minuta",
-                "UNJAIL": "Propustit",
-                "PROFILE": "Profil",
-                "JAILED_AT": "Uvězněn v",
-                "LINKED_CASE": "Případ spojený s osobou",
-                "NO_LINKED_CASE": "Zádný případ není propojen s touto osobou",
-                "REMOVE_LINKED_CASE": {
-                    "TITLE": "Odstranit spojený případ osobou",
-                    "DESCRIPTION": "Opravdu chcete odstranit případ spojený s touto osobou?"
-                },
-                "JAIL_PERSON": {
-                    "TITLE": "Uvěznit",
-                    "DESCRIPTION": "Vyplňte níže uvedené údaje pro uvěznění {name}",
-                    "SENTENCE_PLACEHOLDER": "Trest (v minutách)",
-                    "REASON_PLACEHOLDER": "Důvod",
-                    "JAIL_WITH_CASE": "Uvěznit osobu spojenou incidentem",
-                    "JAIL_WITHOUT_CASE": "Uvěznit osobu bez spojení s  incidentem",
-                    "PROCEED": "Pokračovat"
-                },
-                "UNJAIL_PERSON": {
-                    "TITLE": "Propustit",
-                    "DESCRIPTION": "Opravdu chcete propustit {name}?",
-                    "PROCEED": "Pokračovat"
-                },
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "MISSING_DETAILS": "Musíte zadat trest a důvod"
-                }
-            },
-
-            "LOGS": {
-                "TITLE": "Logy",
-                "SEARCH": "Hledat log",
-                "FILTER": "Filtr",
-                "CREATED": "Vytvořeno",
-                "UPDATED": "Aktualizováno",
-                "DELETED": "Smazáno",
-                "VIEW_FOOTER": "Zobrazit {type} ({id})",
-                "TAG_TYPES": {
-                    "PROFILE": "profil",
-                    "VEHICLE": "vozidlo",
-                    "REPORT": "zpráva",
-                    "WARRANT": "zatykač",
-                    "INCIDENT": "incident"
-                },
-
-                "CREATE_TAG_TITLE": "Vytvořit štítek",
-                "CREATE_TAG_DESCRIPTION": "Vytvořit štítek {type} \"{name}\"",
-                "DELETE_TAG_TITLE": "Smazal štítek",
-                "DELETE_TAG_DESCRIPTION": "Smazal štítek {type} \"{name}\"",
-                "UPDATE_PROFILE_TITLE": "Aktualizoval profil",
-                "UPDATE_PROFILE_DESCRIPTION": "Aktualizoval profil {name}",
-                "UPDATE_VEHICLE_TITLE": "Aktualizoval vozidlo",
-                "UPDATE_VEHICLE_DESCRIPTION": "Aktualizoval vozidlo {plate}",
-                "UPDATE_PROPERTY_TITLE": "Aktualizoval nemovitost",
-                "UPDATE_PROPERTY_DESCRIPTION": "Aktualizoval nemovitost",
-                "UPDATE_WEAPON_TITLE": "Aktualizoval zbraň",
-                "UPDATE_WEAPON_DESCRIPTION": "Aktualizoval zbraň se sériovým číslem {serial}",
-                "CREATE_REPORT_TITLE": "Vytvořil hlášení",
-                "CREATE_REPORT_DESCRIPTION": "Vytvořil hlášení {type} s názvem \"{title}\"",
-                "UPDATE_REPORT_TITLE": "Aktualizoval hlášení",
-                "UPDATE_REPORT_DESCRIPTION": "Aktualizoval zprávu {type} s názvem \"{title}\"",
-                "DELETE_REPORT_TITLE": "Smazal hlášení",
-                "DELETE_REPORT_DESCRIPTION": "Smazal zprávu s ID {id}",
-                "ISSUED_LICENSE_TITLE": "Vydal licenci",
-                "ISSUED_LICENSE_DESCRIPTION": "Vydal licenci {license} pro {name}",
-                "REVOKED_LICENSE_TITLE": "Odebral licenci",
-                "REVOKED_LICENSE_DESCRIPTION": "Odebral licenci {license} od{name}",
-                "PINNED_BULLETIN_TITLE": "Připnul příspěvek na nástěnku",
-                "PINNED_BULLETIN_DESCRIPTION": "Připnul příspěvek na nástěnku s ID {id}",
-                "UNPINNED_BULLETIN_TITLE": "Odepnul příspěvek z nástěnky",
-                "UNPINNED_BULLETIN_DESCRIPTION": "Odepnul příspěvek z nástěnky s ID {id}",
-                "CREATE_BULLETIN_TITLE": "Vytvořil příspěvek na nástěnku",
-                "CREATE_BULLETIN_DESCRIPTION": "Vytvořil příspěvek na nástěnku s názvem \"{title}\"",
-                "DELETE_BULLETIN_TITLE": "Smazal příspěvek z nástěnky",
-                "DELETE_BULLETIN_DESCRIPTION": "Smazal příspěvek z nástěnky s ID {id}",
-                "CREATE_WARRANT_TITLE": "Vytvořil zatykač",
-                "CREATE_WARRANT_DESCRIPTION": "Vytvořil zatykač {type} s názvem \"{title}\"",
-                "UPDATE_WARRANT_TITLE": "Aktualizoval zatykač",
-                "UPDATE_WARRANT_DESCRIPTION": "Aktualizoval zatykač \"{title}\"",
-                "CREATE_CASE_TITLE": "Vytvořil případ",
-                "CREATE_CASE_DESCRIPTION": "Vytvořil případ s názvem \"{title}\"",
-                "UPDATE_CASE_TITLE": "Aktualizoval případ",
-                "UPDATE_CASE_DESCRIPTION": "Aktualizoval případ s názvem \"{title}\"",
-                "DELETE_CASE_TITLE": "Smazal případ",
-                "DELETE_CASE_DESCRIPTION": "Smazal případ s ID {id}"
-            },
-
-            "TAGS": {
-                "TITLE": "Označení",
-                "ADD": "Přidat",
-                "NO_TAGS": "Žádné označení",
-                "CREATE_TAG": {
-                    "TITLE": "Vytvořit označení",
-                    "DESCRIPTION": "Zadejte název označení",
-                    "PLACEHOLDER": "Název označení",
-                    "CANCEL": "Zrušit",
-                    "NEXT": "Další",
-                    "SELECT_COLOR": "Vybrat barvu"
-                },
-                "DELETE_TAG": {
-                    "TITLE": "Smazat označení",
-                    "DESCRIPTION": "Opravdu chcete smazat toto označení?",
-                    "CANCEL": "Zrušit",
-                    "DELETE": "Smazat"
-                },
-                "REMOVE_TAG": {
-                    "TITLE": "Odstranit označení",
-                    "DESCRIPTION": "Opravdu chcete odstranit označení '{tag}'?",
-                    "CANCEL": "Zrušit",
-                    "REMOVE": "Odstranit"
-                }
-            },
-            "MISC": {
-                "SOON": "Brzy",
-                "UNKNOWN": "Neznámé",
-                "MINUTES": "{minutes}m",
-                "HOURS": "{hours}h",
-                "DAYS": "{days}d",
-                "FORMATTED_DATE": "{day} {month} {year} at {hours}:{minutes}",
-                "CHANGE_AVATAR": "Změnit Avatara",
-                "REMOVE_AVATAR": "Odstranit avatara",
-                "SET_CALLSIGN": "Nastavit volací znak",
-                "CALLSIGN": {
-                    "TITLE": "Volací znak",
-                    "DESCRIPTION": "Zadejte volací znak",
-                    "CANCEL": "Zrušit",
-                    "PROCEED": "Pokračovat"
-                }
-            }
-        },
-        "AMBULANCE": {
-            "TITLE": "Ambulance",
-
-            "SEARCH": "Hledat",
-            "CANCEL": "Zrušit",
-            "CLOSE": "Zavřít",
-            "BACK": "Zpět",
-            "EDIT": "Upravit",
-            "DELETE": "Smazat",
-            "REMOVE": "Odstranit",
-            "SAVE": "Uložit",
-            "CREATE": "Vytvořit",
-            "PROCEED": "Pokračovat",
-            "OK": "OK",
-            "ADD": "Přidat",
-            "NEW": "Nový",
-
-            "SEARCH_FOR": "Hledat {query} pro začátek",
-            "NO_RESULTS_FOR": "Nebyly nalezené výsledky pro '{query}'",
-            "CLEAR_HISTORY": "Vymazat historii",
-
-            "HOME": {
-                "TITLE": "Domů",
-                "CREATE": "Vytvořit",
-
-                "RECENT_REPORTS": "Nedávné hlášení",
-                "REPORT_FOOTER": "{timestamp} - {author}",
-                "BULLETIN_BOARD": "Nástěnka",
-                "PIN": "Připnout",
-                "UNPIN": "Odepnout",
-                "SEARCH_BULLETIN": "Hledat na nástěnce",
-                "SEARCH_UNITS": "Hledat jednotky",
-                "ADD_BULLETIN": {
-                    "TITLE": "Přidat příspěvek na nástěnku",
-                    "DESCRIPTION": "Vytvořit nový příspěvek na nástěnku",
-                    "PLACEHOLDER": "Název",
-                    "CONTENT": "Obsah",
-                    "CANCEL": "Zrušit",
-                    "PROCEED": "Pokračovat"
-                },
-                "DELETE_BULLETIN": {
-                    "TITLE": "Smazat příspěvek na nástěnce",
-                    "DESCRIPTION": "Opravdu chcete smazat tento příspěvek na nástěnce?",
-                    "CANCEL": "Zrušit",
-                    "DELETE": "Smazat"
-                },
-                "ACTIVE_UNITS": "Aktivní jednotky"
-            },
-
-            "DISPATCH": {
-                "TITLE": "Dispečink",
-                "TOGGLE_EMPLOYEES": "Přepnout zaměstnance",
-                "TOGGLE_ALARMS": "Přepnout alarmy",
-                "EMPLOYEES": "Zaměstnanci",
-                "ALARMS": "Alarmy",
-
-                "RESPOND": "Reagovat",
-                "COLLAPSE": "Sbalit",
-                "EXPAND": "Rozbalit",
-                "DISMISS": "Rozbalit",
-                "VIEW_IN_TABLET": "Zobrazit v tabletu",
-                "SET_WAYPOINT": "Nastavit trasu",
-
-                "PRIORITY": {
-                    "HIGH": "Vysoká",
-                    "MEDIUM": "Střední",
-                    "LOW": "Nízká"
-                },
-
-                "JUST_NOW": "Právě teď",
-                "MINUTES_AGO": "Před {minutes} minutami",
-                "HOURS_AGO": "Před {hours} hodinami"
-            },
-
-            "JOURNALS": {
-                "TITLE": "Záznamy",
-                "PROFILES": "Profily",
-                "PERSON": "Osoba",
-                "SEARCH": "Hledat profil",
-                "REMOVE_AVATAR": "Odstranit avatara",
-                "IDENTIFIER": "Identifikátor",
-                "FINGERPRINT": "Otisk prstu",
-                "DOB": "Datum narození",
-                "PHONE_NR": "Telefonní číslo",
-                "GENDER": "Pohlaví",
-                "JOB": "Práce",
-                "MALE": "Muž",
-                "FEMALE": "Žena",
-                "HEIGHT": "Výška",
-                "HEIGHT_FORMAT": "{height}cm",
-                "BLOOD_TYPE": "Krevní skupina",
-                "NOTES": "Poznámky",
-                "NOTES_PLACEHOLDER": "Vložit poznámku...",
-                "DIAGNOSES_DISEASES": "Diagnózy / Nemoci",
-                "NO_DIAGNOSES": "Žádné diagnózy / nemoci",
-                "REPORTS": "Zprávy",
-                "NO_REPORTS": "Žádné hlášení",
-
-                "ADD_AVATAR": {
-                    "TITLE": "Přidat Avatara",
-                    "SET_PHOTO": "Nastavit fotku",
-                    "PASTE_URL": "Vložit URL",
-                    "PASTE_URL_DESCRIPTION": "Zadejte URL obrázku",
-                    "PASTE_URL_PLACEHOLDER": "URL obrázku",
-
-                    "INVALID_URL": "Neplatné URL",
-                    "INVALID_URL_DESCRIPTION": "URL, kterou jste zadali, není platná URL obrázku",
-                    "OK": "OK"
-                }
-            },
-
-            "REPORTS": {
-                "TITLE": "Hlášení",
-                "REPORT": "Hlášení",
-                "SEARCH": "Najít hlášení",
-                "FOOTER": "{author} -  ID Hlášení: {id}",
-                "NEW_REPORT_TITLE": "Nové hlášení",
-                "TYPE": "Typ",
-                "DESCRIPTION": "Popis",
-                "DESCRIPTION_PLACEHOLDER": "Zadejte popis...",
-                "GALLERY": "Galerie",
-                "NO_ATTACHMENTS": "Žádné přílohy",
-                "INJURIES_CONDITIONS": "Zranění / Stavy",
-                "NO_INJURIES": "Žádná zranění / stavy",
-                "DOCTORS_INVOLVED": "Zúčastnění lékaři",
-                "NO_DOCTORS_INVOLVED": "Žádní zúčastnění lékaři",
-                "ADD_PATIENT": "Přidat pacienta",
-
-                "REMOVE_INJURY": {
-                    "TITLE": "Odstranit zranění",
-                    "DESCRIPTION": "Jste si jistí, že chcete odebrat zranění z hlášení?"
-                },
-                "REMOVE_DOCTOR": {
-                    "TITLE": "Ostranit lékaře",
-                    "DESCRIPTION": "Opravdu chcete odstranit {name} z hlášení?"
-                },
-
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "NO_TYPE": "Musíte vybrat typ hlášení",
-                    "TITLE_LENGTH": "Název musí mít alespoň 3 znaky",
-                    "DESCRIPTION_LENGTH": "Popis musí mít alespoň 10 znaků"
-                }
-            },
-
-            "EMPLOYEES": {
-                "TITLE": "Zaměstnanci",
-                "SEARCH": "Hledat zaměstnance"
-            },
-
-            "CHAT": {
-                "TITLE": "Chat",
-                "SEARCH": "Hledat chaty",
-                "PLACEHOLDER": "Odeslat zprávu...",
-                "JOINED_CHATS": "Připojené chaty",
-                "PUBLIC_CHATS": "Veřejné chaty",
-                "JOINED": "Připojené",
-                "PUBLIC": "Veřejné",
-                "PRIVATE_CHATS": "Soukromé chaty",
-                "ROOM_ID": "ID místnost: {id}",
-                "TOGGLE_PRIVATE": "Přepnout na soukromé",
-                "CHANGE_AVATAR": "Změnit Avatara",
-                "SET_AVATAR": "Nastavit Avatara",
-                "REMOVE_AVATAR": "Odstranit avatara",
-                "MANAGE": "Spravovat",
-                "LEAVE": {
-                    "TITLE": "Opustit",
-                    "DESCRIPTION": "Opravdu chcete opustit chatovací místnost?"
-                },
-                "KICK": {
-                    "TITLE": "Vykopnout",
-                    "DESCRIPTION": "Jste si jistí, že chcete vykopnout {name} z chatovací místnosti?"
-                },
-
-                "CREATE_CHATROOM": {
-                    "TITLE": "Vytvořit chatovací místnost",
-                    "DESCRIPTION": "Zadejte název chatovací místnosti",
-                    "PLACEHOLDER": "Název chatovací místnosti",
-                    "CREATE": "Vytvořit",
-                    "SET_VISIBILITY": "Nastavit viditelnost",
-                    "PUBLIC": "Veřejné",
-                    "PRIVATE": "Soukromé"
-                },
-                "JOIN_CHAT": {
-                    "TITLE": "Připojit se k chatu",
-                    "DESCRIPTION": "Opravdu se chcete připojit k {channel}??",
-                    "JOIN": "Připojit se"
-                },
-                "ERROR": {
-                    "TITLE": "Chyba",
-                    "FAILED_JOIN": "Nepodařilo se připojit k chatovací místnosti",
-                    "FAILED_INVITE": "Nepodařilo se pozvat {name} do chatovací místnosti",
-                    "FAILED_SET_AVATAR": "Nepodařilo se nastavit avatara chatovací místnosti",
-                    "FAILED_REMOVE_AVATAR": "Nepodařilo se odstranit avatara chatovací místnosti",
-                    "FAILED_GET_MEMBERS": "Nepodařilo se získat členy chatovací místnosti",
-                    "FAILED_KICK": "Nepodařilo se vykopnout {name} z chatovací místnosti",
-                    "FAILED_LEAVE": "Nepodařilo se opustit chatovací místnost"
-                },
-                "SUCCESS": {
-                    "TITLE": "Úspěch",
-                    "INVITED": "Pozvali jste {name} do chatovací místnosti",
-                    "KICKED": "Vykopli jste {name} z chatovací místnosti"
-                }
-            },
-
-            "CONDITIONS": {
-                "TITLE": "Stavy",
-                "CONDITION": "Stav",
-                "SEARCH": "Najít Stav",
-
-                "SELECT_SEVERITY": "Vyberte závažnost",
-                "SEVERITIES": {
-                    "MINOR": "Menší",
-                    "MODERATE": "Střední",
-                    "SEVERE": "Vážný",
-                    "CRITICAL": "Kritický"
-                },
-                "NO_CONDITIONS_FOUND": "Stavy nebyly nalezeny",
-                "ADD_CONDITION": {
-                    "TITLE": "Přidat Stav",
-                    "DESCRIPTION": "Vytvořit nový stav",
-                    "PLACEHOLDER": "Zadejte název stavu"
-                },
-                "DELETE_CONDITION": {
-                    "TITLE": "Smazat stav",
-                    "DESCRIPTION": "Jste si jistí, že chcete odebrat tento stav?"
-                },
-                "ADD_CATEGORY": {
-                    "TITLE": "Přidat kategorii",
-                    "DESCRIPTION": "Přidat novou kategorii do seznamu stavů",
-                    "PLACEHOLDER": "Zadejte název kategoriee"
-                },
-                "DELETE_CATEGORY": {
-                    "TITLE": "Smazat kategorii",
-                    "DESCRIPTION": "Opravdu chcete smazat tuto kategorii?"
-                }
-            },
-
-            "LOGS": {
-                "TITLE": "Logy"
-            }
-        },
+        "MDT": {},
         "BROWSER": {
             "TITLE": "Prohlížeč",
             "SEARCH_PLACEHOLDER": "Hledat nebo zadat URL",
@@ -1275,7 +428,6 @@
             "DESCRIPTION": "Popis",
             "DESCRIPTION_PLACEHOLDER": "Toto je popis...",
             "ADD": "Přidat",
-
             "CHARACTER_INFO": "Informace o postavě",
             "REMOVE_AVATAR": "Odstranit avatara",
             "FIRSTNAME": "Jméno",
@@ -1288,7 +440,6 @@
             "JOB": "Práce",
             "HEIGHT": "Výška",
             "FORMATTED_HEIGHT": "{height}cm",
-
             "VEHICLES": "Vozidla",
             "VEHICLE": "vozidlo",
             "REMOVE_PICTURE": "Odebrat obrázek",
@@ -1302,14 +453,12 @@
                 "TITLE": "smazat vozidlo",
                 "DESCRIPTION": "Jste si jistí, že chcete smazat toto vozidlo? "
             },
-
             "LICENSES": "Licence",
             "ADD_LICENSE": "Přidat licenci",
             "DELETE_LICENSE_POPUP": {
                 "TITLE": "smazat licenci",
                 "DESCRIPTION": "Jste si jistí, že chcete smazat tuto licenci?"
             },
-
             "PROPERTIES": "Nemovitosti",
             "ADD_PROPERTY_POPUP": {
                 "TITLE": "Nová nemovitost",
@@ -1321,7 +470,6 @@
                 "TITLE": "Smazat nemovitost",
                 "DESCRIPTION": "Jste si jistí, že chcete smazat tuto nemovitost?"
             },
-
             "ERROR": {
                 "TITLE": "Chyba",
                 "MISSING_FIELDS": "Chybí vám následující pole: {fields}",
@@ -1382,7 +530,6 @@
             "DECLINE": "Odmítnout",
             "ACCEPT": "Příjmout"
         },
-
         "BATTERY": {
             "LOW_BATTERY": "Baterie je slabá",
             "BATTERY_REMAINING": "{percent}% zbylo v baterii",
@@ -1448,7 +595,6 @@
                 "SENDER": "Systém",
                 "SUBJECT": "Vaše heslo",
                 "MESSAGE": "Ahoj,\n\nVaše automatická emailová adresa je {address} a vaše heslo je {password}"
-
             }
         },
         "LOGS": {
@@ -1456,128 +602,9 @@
             "TOOK_VIDEO": "Video pořízeno",
             "NEW_DISPATCH": "Nové hlášení: {title}"
         },
-        "POLICE": {
-            "EVIDENCE_LABEL": "Důkaz: případ {id}",
-            "NEW_BULLETIN_NOTIFICATION": {
-                "TITLE": "Nový příspěvěk na nástěnce",
-                "CONTENT": "{title}"
-            },
-            "NEW_CASE_NOTIFICATION": {
-                "TITLE": "Nový případ",
-                "CONTENT": "{title}"
-            },
-            "NEW_REPORT_NOTIFICATION": {
-                "TITLE": "Nové hlášení",
-                "CONTENT": "{title}"
-            },
-            "NEW_WARRANT_NOTIFICATION": {
-                "TITLE": "Nový zatykač",
-                "CONTENT": "{title}"
-            },
-            "NEW_CHAT_CHANNEL_NOTIFICATION": {
-                "TITLE": "Nová konverzace",
-                "CONTENT": "{channel}"
-            },
-            "CHAT_MESSAGE_NOTIFICATION": {
-                "TITLE": "Nová zpráva v {channel}",
-                "CONTENT": "{message}"
-            },
-            "LOGS": {
-                "CREATE_OFFENCE_CATEGORY": {
-                    "TITLE": "Vytvořena nová kategorie přestupku",
-                    "DESCRIPTION": "Vytvořena kategoier '{name}'"
-                },
-                "DELETE_OFFENCE_CATEGORY": {
-                    "TITLE": "Smazána kategorie přestupku",
-                    "DESCRIPTION": "Smazána kategorie '{name}'"
-                },
-                "CREATE_OFFENCE": {
-                    "TITLE": "Vytvořen nový přestupek",
-                    "DESCRIPTION": "Vytvořen nový přestupek {class} '{name}' v '{category}'"
-                },
-                "DELETE_OFFENCE": {
-                    "TITLE": "Smazat přestupek",
-                    "DESCRIPTION": "Smazaný přestupek '{name}' v '{category}'"
-                }
-            }
-        },
-        "AMBULANCE": {
-            "NOTIFICATIONS": {
-                "CHAT": {
-                    "NEW_CHANNEL": {
-                        "TITLE": "Nová konverzace",
-                        "CONTENT": "{channel}"
-                    },
-                    "NEW_MESSAGE": {
-                        "TITLE": "Nová zpráva v {channel}",
-                        "CONTENT": "{message}"
-                    }
-                },
-                "NEW_BULLETIN": {
-                    "TITLE": "Nový příspěvěk na nástěnce",
-                    "CONTENT": "{title}"
-                },
-                "NEW_REPORT": {
-                    "TITLE": "Nové hlášení",
-                    "CONTENT": "{title}"
-                }
-            },
-            "TAG_TYPES": {
-                "PROFILE": "Profil",
-                "REPORT": "Hlášení",
-                "PROPERTY": "Nemovitost",
-                "WEAPON": "Zbraň"
-            },
-            "LOGS": {
-                "CREATE_CONDITION_CATEGORY": {
-                    "TITLE": "Vytvořena nová kategorie stavů",
-                    "DESCRIPTION": "Vytvořena nová kategorie '{name}'"
-                },
-                "DELETE_CONDITION_CATEGORY": {
-                    "TITLE": "Smazána kategorie stavů",
-                    "DESCRIPTION": "Vytvořen stav '{name}'"
-                },
-                "CREATE_CONDITION": {
-                    "TITLE": "Vytvořen nový stav",
-                    "DESCRIPTION": "Vytvořen nový stav {severity} '{name}' v '{category}'"
-                },
-                "DELETE_CONDITION": {
-                    "TITLE": "Smazán stav",
-                    "DESCRIPTION": "Stav smazán '{name}' v '{category}'"
-                },
-                "CREATE_BULLETIN": {
-                    "TITLE": "Nový příspěvěk na nástěnce",
-                    "DESCRIPTION": "Vytvořený nový nástěnkový příspěvek '{title}'"
-                },
-                "DELETE_BULLETIN": {
-                    "TITLE": "Smazán příspěvek z nástěnky ",
-                    "DESCRIPTION": "Smazán příspěvek z nástěnku s {id}"
-                },
-                "PIN_BULLETIN": {
-                    "TITLE": "Připnut příspěvek na nástěnkut",
-                    "DESCRIPTION": "Připnut příspěvek na nástěnku s ID {id}"
-                },
-                "UNPIN_BULLETIN": {
-                    "TITLE": "Odepnut příspěvek z nástěnky s ID",
-                    "DESCRIPTION": "Odepnut příspěvek z nástěnky s ID {id}"
-                },
-                "DELETE_TAG": {
-                    "TITLE": "Smazáno označení",
-                    "DESCRIPTION": "Smazáno označení '{name}'"
-                },
-                "UPDATE_PROFILE": {
-                    "TITLE": "Aktualizován profil",
-                    "DESCRIPTION": "UAktualizován profil {name}"
-                },
-                "CREATE_REPORT": {
-                    "TITLE": "Vytvořeno nové hlášení",
-                    "DESCRIPTION": "Vytvořeno nové hlášení {type} '{title}' pro {patient} s id {id}"
-                },
-                "UPDATE_REPORT": {
-                    "TITLE": "Aktualizováno hlášení",
-                    "DESCRIPTION": "Aktualizováno hlášení {type} '{title}' s id {id}"
-                }
-            }
-        }
-    }
+        "BASE_DISPATCH": {},
+        "MDT": {},
+        "MDT_NOTIFICATIONS": {}
+    },
+    "MDT": {}
 }

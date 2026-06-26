@@ -1,25 +1,24 @@
 ---@param billerIdentifier string
 ---@param billedIdentifier string
----@param job "police" | "ambulance"
 ---@param amount number
 ---@param reason? string
 ---@return boolean success
-function BillPlayer(billerIdentifier, billedIdentifier, job, amount, reason)
+function BillPlayer(billerIdentifier, billedIdentifier, amount, reason)
     local senderSource = GetSourceFromIdentifier(billerIdentifier)
 
+    if not senderSource then
+        return false
+    end
+
+    local playerJob = GetJob(senderSource)
+
+    if not playerJob then
+        return false
+    end
+
     if Config.BillingScript == "framework" then
-        return FrameworkBillPlayer(billerIdentifier, billedIdentifier, job, amount, reason)
+        return FrameworkBillPlayer(billerIdentifier, billedIdentifier, playerJob.name, amount, reason)
     elseif Config.BillingScript == "vivum" then
-        if not senderSource then
-            return false
-        end
-
-        local playerJob = GetJob(senderSource)
-
-        if not playerJob then
-            return false
-        end
-
         local successPromise = promise.new()
 
         exports["vivum-billing"]:SendInvoice(senderSource, {
@@ -39,96 +38,6 @@ function BillPlayer(billerIdentifier, billedIdentifier, job, amount, reason)
     end
 
     return false
-end
-
----@param source number
----@param job "Police" | "Ambulance"
----@param permission string
----@param permissionType string
----@return boolean
-function HasPermission(source, job, permission, permissionType)
-    local playerJob = GetJob(source)
-    local jobPermissions = Config[job].Permissions[playerJob.name]
-
-    if not playerJob or not jobPermissions then
-        return false
-    end
-
-    if not jobPermissions[permission] or not jobPermissions[permission][permissionType] then
-        infoprint("warning", ("Permission %s.%s does not exist"):format(permission, permissionType))
-        return false
-    end
-
-    if playerJob.grade >= jobPermissions[permission][permissionType] then
-        return true
-    end
-
-    if IsAdmin(source) and Config[job].adminPermissions?[permission]?[permissionType] then
-        debugprint("Player has permission due to being admin")
-        return true
-    end
-
-    return false
-end
-
-local anyExternalAllowed = false
-
-for _, v in pairs(Config.AllowExternal) do
-    if v then
-        anyExternalAllowed = true
-    end
-end
-
----@param domain string
----@param domains string[]
----@return boolean
-local function IsDomainInArray(domain, domains)
-    domain = domain:lower()
-
-    for i = 1, #domains do
-        local domainToCheck = domains[i]:lower()
-
-        if domain == domainToCheck then
-            return true
-        end
-
-        local _, dotCount = domainToCheck:gsub("%.", "")
-
-        if dotCount == 1 then
-            if domain:match("^[%w-]+%." .. domainToCheck .. "$") then
-                return true
-            end
-        end
-    end
-
-    return false
-end
-
----@param link string
----@return boolean
-function IsMediaLinkAllowed(link)
-    if not Config.UploadWhitelistedDomains or #Config.UploadWhitelistedDomains == 0 then
-        return true
-    elseif anyExternalAllowed and #Config.ExternalWhitelistedDomains == 0 and #Config.ExternalBlacklistedDomains == 0 then
-        return true
-    end
-
-    local domain = link:match("([^/?#]+%.[^/?#]+)")
-
-    if not domain then
-        debugprint("IsMediaLinkAllowed: Failed to extract domain from:", link)
-        return false
-    end
-
-    if not anyExternalAllowed then
-        return IsDomainInArray(domain, Config.UploadWhitelistedDomains)
-    elseif #Config.ExternalBlacklistedDomains > 0 and IsDomainInArray(domain, Config.ExternalBlacklistedDomains) then
-        return false
-    elseif #Config.ExternalWhitelistedDomains > 0 and not IsDomainInArray(domain, Config.ExternalWhitelistedDomains) then
-        return false
-    end
-
-    return true
 end
 
 local charsetsToCollation = {
@@ -226,29 +135,67 @@ function TriggerClientOXLibCallback(callbackName, source, ...)
     return promise
 end
 
----@param source number
-function HasTabletItem(source)
-    if not Config.Item.Require then
-        return true
-    end
-
-    return HasItem(source, Config.Item.Name)
-end
+local MIME_TYPES <const> = {
+    Video = "video/webm",
+    Image = "image/webp",
+    Audio = "audio/webm;codecs=opus"
+}
 
 ---@param source number
 ---@param uploadType "Audio" | "Image" | "Video"
----@return string? presignedUrl
+---@return string | { upload: string, result: string } | nil
 function GetPresignedUrl(source, uploadType)
     local apiKey = API_KEYS[uploadType]
+    local uploadMethod = Config.UploadMethod[uploadType]
+
+    if uploadMethod == "LBPresigned" then
+        if GetResourceState("lb-presigned") ~= "started" then
+            infoprint("error", "lb-presigned resource is not started. Please start it to use the LBPresigned upload method.")
+            return
+        end
+
+        local res = exports["lb-presigned"]:GeneratePresignedUrl(MIME_TYPES[uploadType])
+
+        return {
+            upload = res.presignedUrl,
+            result = res.fileUrl
+        }
+    elseif uploadMethod == "Qbox" then
+        return Citizen.Await(promise.new(function(p)
+            PerformHttpRequest("https://api.qbox.re/v1/file/presigned-url", function(status, body, headers, errorData)
+                if status ~= 200 then
+                    p:resolve()
+
+                    infoprint("error", "Failed to create presigned URL using Qbox")
+                    print("Status:", status)
+                    print("Body:", body)
+                    print("Headers:", json.encode(headers or {}, { indent = true }))
+
+                    if errorData then
+                        print("Error:", errorData)
+                    end
+
+                    return
+                end
+
+                local data = json.decode(body)
+
+                p:resolve(data?.data?.presignedUrl)
+            end, "GET", nil, {
+                Accept = "application/json",
+                authorization = "Bearer " .. apiKey
+            })
+        end))
+    end
 
     infoprint("warning", "GetPresignedUrl has not been set up. Set it up in lb-tablet/server/custom/functions/functions.lua, or change your upload method to Fivemanage.")
 end
 
----@param mdtType "police" | "ambulance"
----@param profileType "user" | "vehicle"
+---@param mdt string
+---@param profileType "vehicle" | "player" | "property" | "weapon"
 ---@param id any
 ---@return { [string]: any }
-function GetCustomFields(mdtType, profileType, id)
+function GetCustomFields(mdt, profileType, id)
     return {}
 end
 

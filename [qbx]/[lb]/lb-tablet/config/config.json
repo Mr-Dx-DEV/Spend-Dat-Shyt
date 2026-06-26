@@ -20,16 +20,6 @@
             "name": "Notes",
             "removable": false
         },
-        "Police": {
-            "name": "Police",
-            "icon": "./assets/img/icons/apps/Police.png",
-            "removable": false
-        },
-        "Ambulance": {
-            "name": "Ambulance",
-            "icon": "./assets/img/icons/apps/Ambulance.png",
-            "removable": false
-        },
         "Registration": {
             "name": "Registration",
             "removable": false

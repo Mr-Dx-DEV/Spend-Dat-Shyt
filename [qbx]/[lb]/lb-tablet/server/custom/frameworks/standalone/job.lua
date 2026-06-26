@@ -49,47 +49,45 @@ function GetJobGrades(jobs)
     }
 end
 
----@param companies string[]
----@param accountsTable string
-function GetEmployees(companies, accountsTable)
-    local selectPhoneNumber = ""
-    local joinPhoneTable = ""
+---@param mdt string
+function GetEmployees(mdt)
+    local query = [[
+        SELECT
+            u.character_id AS id,
+            e.callsign,
+            e.avatar,
+            CONCAT(u.firstname, ' ', u.lastname) AS `name`,
+            u.job,
+            1 AS `rank`
+            {PHONE_SELECT}
+
+        FROM lbtablet_registration_characters u
+
+        LEFT JOIN lbtablet_mdt_employees e
+            ON e.id = u.character_id {COLLATE} AND e.department = ?
+
+        {PHONE_JOIN}
+
+        WHERE
+            u.job IN (?)
+    ]]
 
     if Config.LBPhone then
         local phoneConfig = GetPhoneConfig()
 
-        selectPhoneNumber = ", phone.phone_number AS phoneNumber"
+        query = query:gsub("{PHONE_SELECT}", ", p.phone_number AS phoneNumber")
 
         if phoneConfig?.Item?.Unique then
-            joinPhoneTable = "LEFT JOIN phone_last_phone phone ON user.character_id = phone.id"
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_last_phone p ON u.identifier {COLLATE} = p.id")
         else
-            joinPhoneTable = "LEFT JOIN phone_phones phone ON user.character_id = phone.id"
+            query = query:gsub("{PHONE_JOIN}", "LEFT JOIN phone_phones p ON u.identifier {COLLATE} = p.id")
         end
+    else
+        query = query:gsub("{PHONE_SELECT}", "")
+        query = query:gsub("{PHONE_JOIN}", "")
     end
 
-    local query = FormatString([[
-        SELECT
-            user.character_id AS id,
-            account.callsign,
-            account.avatar,
-            CONCAT(user.firstname, ' ', user.lastname) AS `name`,
-            user.job,
-            1 AS `rank`
-            {SELECT_PHONE_NUMBER}
-
-        FROM lbtablet_registration_characters user
-
-        LEFT JOIN {ACCOUNTS_TABLE} account ON account.id = user.identifier
-        {JOIN_PHONE_TABLE}
-
-        WHERE user.job IN (?)
-    ]], {
-        ACCOUNTS_TABLE = accountsTable,
-        SELECT_PHONE_NUMBER = selectPhoneNumber,
-        JOIN_PHONE_TABLE = joinPhoneTable
-    })
-
-    return MySQL.query.await(query, { companies })
+    return MySQL.query.await(query, { mdt, MDTs[mdt].jobsArray })
 end
 
 ---@param jobs { [string]: any }

@@ -1,12 +1,12 @@
 local shouldGenerateTables = false
 
+MySQL.ready.await()
+
 if not Config.DatabaseChecker?.Enabled and not shouldGenerateTables then
     debugprint("Database checker is disabled")
     DatabaseCheckerFinished = true
     return
 end
-
-MySQL.ready.await()
 
 local database = MySQL.scalar.await("SELECT DATABASE()")
 
@@ -83,6 +83,64 @@ end
 
 FetchTables()
 
+---@param content string
+---@return string[]
+local function ExtractQueriesFromFile(content)
+    local queries = {}
+
+    -- split queries by semicolon
+    for query in content:gmatch("[^;]+") do
+        -- remove comments
+        query = query:gsub("%-%-[^\n]*", ""):gsub("/%*.-%*/", ""):gsub("^%s+", ""):gsub("%s+$", "")
+        -- remove semicolon
+        query = query:sub(1, -1)
+
+        if #query > 0 then
+            queries[#queries+1] = query
+        end
+    end
+
+    return queries
+end
+
+local function RunTabletSQL()
+    local file = LoadResourceFile(GetCurrentResourceName(), "tablet.sql")
+
+    if not file then
+        DatabaseCheckerFinished = true
+
+        error("Database checker: Failed to load tablet.sql")
+    end
+
+    local queries = ExtractQueriesFromFile(file)
+
+    if not MySQL.transaction.await(queries) then
+        DatabaseCheckerFinished = true
+
+        error("Database checker: Failed to create tables, please run tablet.sql manually using HeidiSQL")
+    else
+        infoprint("success", "Database checker: Created tables successfully")
+    end
+end
+
+---@param fileName string
+local function RunOptionalSQL(fileName)
+    local filePath = "Optional SQL/" .. fileName .. ".sql"
+    local content = LoadResourceFile(GetCurrentResourceName(), filePath)
+
+    if not content then
+        infoprint("warning", ("Database checker: Failed to load ^5%s^7, skipping"):format(filePath))
+    end
+
+    local queries = ExtractQueriesFromFile(content)
+
+    if not MySQL.transaction.await(queries) then
+        infoprint("warning", ("Database checker: Failed to run ^5%s^7, skipping"):format(filePath))
+    else
+        infoprint("success", ("Database checker: Ran ^5%s^7 successfully"):format(filePath))
+    end
+end
+
 if shouldGenerateTables then
     local luaTable = "local defaultTables = {\n"
 
@@ -127,33 +185,9 @@ if not tables.lbtablet_tablets then
         return error("Database checker: Missing table lbtablet_tablets. Please run tablet.sql manually using HeidiSQL")
     end
 
-    local SQLFile = LoadResourceFile(GetCurrentResourceName(), "tablet.sql")
-
-    if not SQLFile then
-        DatabaseCheckerFinished = true
-        return error("Database checker: Failed to load tablet.sql")
-    end
-
-    local queries = {}
-
-    for query in SQLFile:gmatch("[^;]+") do
-        -- remove comments
-        query = query:gsub("%-%-[^\n]*", ""):gsub("/%*.-%*/", ""):gsub("^%s+", ""):gsub("%s+$", "")
-        -- remove semicolon
-        query = query:sub(1, -1)
-
-        if #query > 0 then
-            queries[#queries+1] = query
-        end
-    end
-
-    if not MySQL.transaction.await(queries) then
-        DatabaseCheckerFinished = true
-        return error("Database checker: Failed to create tables, please run tablet.sql manually using HeidiSQL")
-    else
-        infoprint("success", "Database checker: Created tables successfully")
-    end
-
+    RunTabletSQL()
+    RunOptionalSQL("mdt-conditions")
+    RunOptionalSQL("mdt-offences")
     FetchTables()
 end
 
@@ -161,181 +195,63 @@ local fixQueries = {}
 local missingTables = {}
 local madeChanges = false
 
-local function ValidateOffencesRewrite()
-    if tables.lbtablet_police_offences_categories then
+local function ValidateMDTRewrite()
+    if tables.lbtablet_mdt_employees then
         return
     end
 
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_offences_categories` (
-            `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `title` VARCHAR(100) NOT NULL,
+    infoprint("info", "Database checker: Detected old MDT structure, converting MDT data...")
 
-            PRIMARY KEY (`id`),
-            UNIQUE KEY (`title`)
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
+    RunTabletSQL()
+    ConvertMDTData(database)
 
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_offences` (
-            `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `category_id` INT UNSIGNED NOT NULL,
-            `class` VARCHAR(100) NOT NULL, -- misdemeanor, felony, etc
-            `title` VARCHAR(100) NOT NULL,
-            `description` TEXT NOT NULL,
-            `fine` INT UNSIGNED NOT NULL DEFAULT 0,
-            `jail_time` INT UNSIGNED NOT NULL DEFAULT 0,
-
-            PRIMARY KEY (`id`),
-            UNIQUE KEY (`category_id`, `class`, `title`),
-            FOREIGN KEY (`category_id`) REFERENCES lbtablet_police_offences(`id`) ON UPDATE CASCADE ON DELETE CASCADE
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    MySQL.rawExecute.await([[
-        DROP TABLE IF EXISTS lbtablet_police_cases_charges
-    ]])
-
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_cases_charges` (
-            `case_id` INT UNSIGNED NOT NULL,
-            `criminal` VARCHAR(100) NOT NULL,
-            `offence_id` INT UNSIGNED NOT NULL,
-
-            PRIMARY KEY (`case_id`, `criminal`, `offence_id`),
-            FOREIGN KEY (`case_id`, `criminal`) REFERENCES lbtablet_police_cases_criminals(`case_id`, `id`) ON UPDATE CASCADE ON DELETE CASCADE,
-            FOREIGN KEY (`offence_id`) REFERENCES lbtablet_police_offences(`id`) ON UPDATE CASCADE ON DELETE CASCADE
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    madeChanges = true
-
-    infoprint("info", "Database checker: Added & updated tables for offences rewrite")
-end
-
-local function CheckWeaponsTable()
-    if tables.lbtablet_police_weapons then
-        return
-    end
-
-    MySQL.rawExecute([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_weapons` (
-            `serial_number` VARCHAR(100) NOT NULL,
-
-            `owner` VARCHAR(100) DEFAULT NULL,
-            `weapon_name` VARCHAR(100) DEFAULT NULL,
-
-            PRIMARY KEY (`serial_number`)
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    madeChanges = true
-
-    infoprint("info", "Database checker: Added table lbtablet_police_weapons")
-end
-
-local function AllowNullJailedBy()
-    if not tables.lbtablet_police_jail or tables.lbtablet_police_jail.jailed_by.allowNull then
-        return
-    end
-
-    MySQL.rawExecute.await("ALTER TABLE `lbtablet_police_jail` MODIFY COLUMN `jailed_by` VARCHAR(100) DEFAULT NULL")
-end
-
-local function AddFinedAndJailed()
-    if not tables.lbtablet_police_cases_criminals or tables.lbtablet_police_cases_criminals.fined then
-        return
-    end
-
-    MySQL.rawExecute.await("ALTER TABLE `lbtablet_police_cases_criminals` ADD COLUMN `fined` BOOLEAN NOT NULL DEFAULT FALSE")
-    MySQL.rawExecute.await("ALTER TABLE `lbtablet_police_cases_criminals` ADD COLUMN `jailed` BOOLEAN NOT NULL DEFAULT FALSE")
+    infoprint("success", "Database checker: All old MDT data has been converted to the new format")
 
     madeChanges = true
 end
 
-local function AddCharges()
-    if not tables.lbtablet_police_cases_charges or tables.lbtablet_police_cases_charges.charges then
+local function MigrateReportsInvolvedUniqueKey()
+    local result = MySQL.scalar.await([[
+        SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
+            WHERE TABLE_SCHEMA = DATABASE()
+            AND TABLE_NAME = 'lbtablet_mdt_reports_involved'
+            AND INDEX_NAME != 'PRIMARY'
+            AND SEQ_IN_INDEX = 2
+            AND COLUMN_NAME = 'involved'
+            AND (
+                SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS s2
+                WHERE s2.TABLE_SCHEMA = DATABASE()
+                AND s2.TABLE_NAME = 'lbtablet_mdt_reports_involved'
+                AND s2.INDEX_NAME = STATISTICS.INDEX_NAME
+            ) = 2
+    ]])
+
+    if not result or result == 0 then
         return
     end
 
-    MySQL.rawExecute.await("ALTER TABLE `lbtablet_police_cases_charges` ADD COLUMN `charges` TINYINT UNSIGNED NOT NULL DEFAULT 1")
+    local indexName = MySQL.scalar.await([[
+        SELECT INDEX_NAME FROM INFORMATION_SCHEMA.STATISTICS
+        WHERE TABLE_SCHEMA = DATABASE()
+            AND TABLE_NAME = 'lbtablet_mdt_reports_involved'
+            AND INDEX_NAME != 'PRIMARY'
+            AND SEQ_IN_INDEX = 2
+            AND COLUMN_NAME = 'involved'
+        LIMIT 1
+    ]])
 
-    madeChanges = true
+    if indexName then
+        infoprint("info", "Database checker: Migrating lbtablet_mdt_reports_involved unique key...")
 
-    infoprint("info", "Database checker: Added column charges to lbtablet_police_cases_charges")
-end
+        MySQL.query.await(("ALTER TABLE lbtablet_mdt_reports_involved DROP INDEX `%s`, ADD UNIQUE KEY (report_id, involved, involvement)"):format(indexName))
 
-local function AddLinkedReportsToCases()
-    if tables.lbtablet_police_cases_linked_reports then
-        return
-
+        infoprint("success", "Database checker: Migrated lbtablet_mdt_reports_involved unique key")
     end
-
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_cases_linked_reports` (
-            `case_id` INT UNSIGNED NOT NULL,
-            `report_id` INT UNSIGNED NOT NULL,
-
-            PRIMARY KEY (`case_id`, `report_id`),
-            FOREIGN KEY (`case_id`) REFERENCES lbtablet_police_cases(`id`) ON UPDATE CASCADE ON DELETE CASCADE,
-            FOREIGN KEY (`report_id`) REFERENCES lbtablet_police_reports(`id`) ON UPDATE CASCADE ON DELETE CASCADE
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    madeChanges = true
-
-    infoprint("info", "Database checker: Added table lbtablet_police_cases_linked_reports")
-end
-
-local function AddPhoneTabTables()
-    if tables.lbtablet_police_wiretaps or tables.lbtablet_police_wiretaps_subscribers or tables.lbtablet_police_phone_unlocks then
-        return
-    end
-
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_wiretaps` (
-            `phone_number` VARCHAR(15) NOT NULL, -- the phone number of the tapped phone
-            `creator_tablet_id` VARCHAR(100) NOT NULL, -- the tablet id of the officer who created the wiretap
-            `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-            PRIMARY KEY (`phone_number`),
-            FOREIGN KEY (`creator_tablet_id`) REFERENCES lbtablet_tablets(`id`) ON UPDATE CASCADE ON DELETE CASCADE
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_wiretaps_subscribers` (
-            `tablet_id` VARCHAR(100) NOT NULL, -- the tablet id of the officer who subscribed to the wiretap
-            `phone_number` VARCHAR(15) NOT NULL, -- the phone number of the tapped phone
-
-            PRIMARY KEY (`tablet_id`, `phone_number`),
-            FOREIGN KEY (`tablet_id`) REFERENCES lbtablet_tablets(`id`) ON UPDATE CASCADE ON DELETE CASCADE,
-            FOREIGN KEY (`phone_number`) REFERENCES lbtablet_police_wiretaps(`phone_number`) ON UPDATE CASCADE ON DELETE CASCADE
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    MySQL.rawExecute.await([[
-        CREATE TABLE IF NOT EXISTS `lbtablet_police_phone_unlocks` (
-            `phone_number` VARCHAR(15) NOT NULL, -- the phone number of the phone to be unlocked
-            `attempts` TINYINT UNSIGNED NOT NULL DEFAULT 0, -- the number of attempts used to unlock the phone
-            `unlocked` BOOLEAN NOT NULL DEFAULT FALSE, -- whether the phone is unlocked or not
-            `finished_at` DATETIME NOT NULL, -- the time when the unlocking process finished
-
-            PRIMARY KEY (`phone_number`)
-        ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci
-    ]])
-
-    madeChanges = true
 end
 
 if Config.DatabaseChecker.AutoFix then
-    ValidateOffencesRewrite()
-    CheckWeaponsTable()
-    AllowNullJailedBy()
-    AddFinedAndJailed()
-    AddCharges()
-    AddLinkedReportsToCases()
-    AddPhoneTabTables()
+    ValidateMDTRewrite()
+    MigrateReportsInvolvedUniqueKey()
 end
 
 if madeChanges then
@@ -358,6 +274,16 @@ local function GetLastArg(column)
     end
 
     return lastArg
+end
+
+for tableName, columns in pairs(defaultTables) do
+    if not tables[tableName] then
+        infoprint("warning", ("The table ^5%s^7 is missing in the database. Automatically running the sql file."):format(tableName))
+        RunTabletSQL()
+        FetchTables()
+
+        break
+    end
 end
 
 for tableName, columns in pairs(defaultTables) do

@@ -12,7 +12,7 @@ local function GetLicenses()
     return AwaitCallback("registration:getLicenses")
 end
 
-ReactCallback("Registration", function(data)
+RegisterSyncNUICallback("Registration", function(data)
     local action = data.action
 
     if action == "getCharacters" then

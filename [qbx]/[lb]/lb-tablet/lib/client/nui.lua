@@ -6,7 +6,7 @@ local busyActions = {}
 ---@param defaultReturn any
 ---@param antiSpam? string[] | true
 ---@param ignoreAntiSpam? string[]
-function ReactCallback(event, callback, defaultReturn, antiSpam, ignoreAntiSpam)
+function RegisterSyncNUICallback(event, callback, defaultReturn, antiSpam, ignoreAntiSpam)
     if antiSpam then
         busyActions[event] = {}
     end
@@ -73,7 +73,7 @@ end
 
 ---@param action string
 ---@param data any
-function SendReactMessage(action, data)
+function SendNUIAction(action, data)
     SendNUIMessage({
         action = action,
         data = data
