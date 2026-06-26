@@ -35,7 +35,7 @@ Config.JailUIColor = '#0390fc' -- Can be 'red', 'blue', or a hex '#FF0000'
 Config.jobMenu = 'F6'          -- Default job menu key
 Config.useTarget = true        -- Enable target for police functions (Supports ox_target / qb-target)
 Config.MobileMenu = {          -- THIS WILL USE A REGULAR MENU RATHER THAN A CONTEXT STYLE MENU!
-    enabled = true,            -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
+    enabled = false,            -- Use a mobile menu rather than context? (Use arrow keys to navigate menu rather than mouse)
     position =
     'bottom-right'             -- Choose where menu is positioned. Options : 'top-left' or 'top-right' or 'bottom-left' or 'bottom-right'
 }
@@ -522,19 +522,19 @@ Config.Locations = {
         clockInAndOut = {
             enabled = true,                        -- Enable clocking in and out at a set location? (If using ESX you must have a off duty job for each e.x. offpolice for police offsheriff for sheriff AND have grades for each pd grade - QBCORE REQUIRES NOTHING)
             jobLock = 'police',                    -- This must be set to which job will be utilizing (ESX MUST HAVE OFF DUTY JOB / GRADES FOR THIS - ex. offpolice or offsheriff)
-            coords = vec3(440.085, -974.924, 30.689), -- Location of where to go on and off duty(If not using target)
+            coords = vec3(441.49, -977.55, 31.0), -- Location of where to go on and off duty(If not using target)
             label = '[E] - Go On/Off Duty',        -- Text to display(If not using target)
             distance = 3.0,                        -- Distance to display text UI(If not using target)
             target = {
-                enabled = false,                   -- If enabled, the location and distance above will be obsolete
+                enabled = true,                   -- If enabled, the location and distance above will be obsolete
                 label = 'Go On/Off Duty',
-                coords = vec3(464.87, -977.37, 30.69),
-                heading = 91.06,
+                coords = vec3(441.49, -977.55, 31.0),
+                heading = 272.61,
                 distance = 2.5,
                 width = 2.0,
                 length = 1.0,
-                minZ = 30.69 - 0.9,
-                maxZ = 30.69 + 0.9
+                minZ = 30.04,
+                maxZ = 31.9
             }
         },
 
