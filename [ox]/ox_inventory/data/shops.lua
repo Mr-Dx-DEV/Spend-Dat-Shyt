@@ -264,6 +264,16 @@ return {
 		groups = shared.police,
 		blip = { id = 110, colour = 84, scale = 0.5 },
 		inventory = {
+            { name = 'tablet', price = 0 },
+            { name = 'handcuffs', price = 0 },
+            { name = 'bobby_pin', price = 0 },
+            { name = 'tracking_bracelet', price = 0 },
+            { name = 'bandage', price = 0 },
+            { name = 'painkillers', price = 0 },
+            { name = 'bleachwipes', price = 0 },
+            { name = 'uvlight', price = 0 },
+
+
 			{ name = 'empty_evidence_bag', price = 0 },
 			{ name = 'handcuffs', price = 0 },
 			{ name = 'WEAPON_FLASHLIGHT', price = 0 },
