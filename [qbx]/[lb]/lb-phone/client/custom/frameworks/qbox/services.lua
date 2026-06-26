@@ -8,23 +8,23 @@ while not QB do
 end
 
 RegisterNetEvent("QBCore:Client:SetDuty", function(onDuty)
-    PlayerJob.onduty = onDuty
+    PlayerData.job.onduty = onDuty
 
     SendNUIAction("services:setDuty", onDuty)
 end)
 
 RegisterNetEvent("QBCore:Client:OnJobUpdate", function(jobInfo)
-    local oldJob = PlayerJob
+    local oldJob = PlayerData.job
 
-    PlayerJob = jobInfo
+    PlayerData.job = jobInfo
 
-    if oldJob.name ~= PlayerJob.name or oldJob.grade?.level ~= PlayerJob.grade?.level then
+    if not oldJob or (oldJob.name ~= PlayerData.job.name or oldJob.grade?.level ~= PlayerData.job.grade?.level) then
         SendNUIAction("services:setCompany", GetCompanyData())
     end
 
     TriggerEvent("lb-phone:jobUpdated", {
-        job = PlayerJob.name,
-        grade = PlayerJob.grade.level
+        job = PlayerData.job.name,
+        grade = PlayerData.job.grade.level
     })
 
     if RefreshMultiJobs then
@@ -34,24 +34,24 @@ end)
 
 ---@return string
 function GetJob()
-    return PlayerJob?.name or "unemployed"
+    return PlayerData?.job?.name or "unemployed"
 end
 
 ---@return number
 function GetJobGrade()
-    return PlayerJob?.grade?.level or 0
+    return PlayerData?.job?.grade?.level or 0
 end
 
 function GetCompanyData()
-    if PlayerJob.name == "unemployed" then
+    if GetJob() == "unemployed" then
         return
     end
 
     local jobData = {
-        job = PlayerJob.name,
-        jobLabel = PlayerJob.label,
-        isBoss = PlayerJob.isboss,
-        duty = PlayerJob.onduty
+        job = PlayerData.job.name,
+        jobLabel = PlayerData.job.label,
+        isBoss = PlayerData.job.isboss,
+        duty = PlayerData.job.onduty
     }
 
     if not jobData.isBoss then
@@ -99,7 +99,7 @@ end
 function SetGrade(identifier, newGrade)
     local maxGrade = 0
 
-    for grade, _ in pairs(QB.Shared.Jobs[PlayerJob.name].grades) do
+    for grade, _ in pairs(QB.Shared.Jobs[PlayerData.job.name].grades) do
         grade = tonumber(grade)
 
         if grade and grade > maxGrade then

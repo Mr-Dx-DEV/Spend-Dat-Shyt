@@ -41,7 +41,7 @@ function GetMultiJobs()
 
         return {
             jobs = formattedJobs,
-            activeJob = PlayerData.job.name,
+            activeJob = GetJob(),
             canLeave = true
         }
     end

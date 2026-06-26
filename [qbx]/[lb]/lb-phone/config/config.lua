@@ -28,6 +28,8 @@ Config.DatabaseChecker = {}
 Config.DatabaseChecker.Enabled = true -- if true, the phone will check the database for any issues and fix them if possible
 Config.DatabaseChecker.AutoFix = true
 
+Config.PhoneNumberState = true -- Set to false to disable the `phoneNumber` state
+
 --[[ FRAMEWORK OPTIONS ]] --
 Config.Framework = "auto"
 --[[
@@ -46,7 +48,7 @@ Config.QBOldJobMethod = false -- use the old method to check job in qb-core? thi
 
 Config.Item = {}
 -- If you want to set up multiple items & frame colours, see https://docs.lbscripts.com/phone/configuration/#multiple-items--colored-phones
-Config.Item.Require = false -- require a phone item to use the phone
+Config.Item.Require = true -- require a phone item to use the phone
 Config.Item.Name = "phone" -- name of the phone item
 -- Config.Item.Names = {
 --     {
@@ -107,6 +109,7 @@ Config.PhoneRotation = vector3(0.0, 0.0, 180.0) -- the rotation of the phone whe
 Config.PhoneOffset = vector3(0.0, -0.005, 0.0) -- the offset of the phone when attached to a player
 Config.LandscapeRotation = vector3(0.0, 90.0, 180.0) -- the rotation of the phone when in landscape mode (camera)
 Config.LandscapeOffset = vector3(-0.03, -0.005, -0.02) -- the offset of the phone when in landscape mode (camera)
+Config.AnimationStyle = "default" -- "default" or "two handed". Can be modified in config/animations.lua and client/custom/functions/animations.lua
 
 Config.DisableOpenNUI = true -- disable the phone from opening if another script has NUI focus?
 
@@ -175,236 +178,74 @@ Config.Companies.AllowNoService = false -- allow players to call & message compa
 Config.Companies.Services = {
     {
         job = "police",
-        name = "CPD",
+        name = "Police",
         icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Sergeant", "Superintendent" },
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = { "boss" }, -- ranks that can manage the company
         location = {
             name = "Mission Row",
-            coords = { x = 428.9, y = -984.5 }
+            coords = {
+                x = 428.9,
+                y = -984.5,
+            }
         },
         quickReplies = {
             ["APPS.SERVICES.QUICK_REPLIES.REQUEST_LOCATION.TITLE"] = "APPS.SERVICES.QUICK_REPLIES.REQUEST_LOCATION.MESSAGE",
             ["APPS.SERVICES.QUICK_REPLIES.OFFICER_EN_ROUTE.TITLE"] = "APPS.SERVICES.QUICK_REPLIES.OFFICER_EN_ROUTE.MESSAGE",
-        }
+            -- ["Officer en route"] = "An officer is on the way.",
+        },
+        -- customIcon = "IoShield", -- if you want to use a custom icon for the company, set it here: https://react-icons.github.io/react-icons/icons?name=io5
+        -- onCustomIconClick = function()
+        --    print("Clicked")
+        -- end
     },
     {
         job = "ambulance",
-        name = "EMS",
+        name = "Ambulance",
         icon = "https://cdn-icons-png.flaticon.com/128/1032/1032989.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Head Doctor", "Director" },
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = {"boss", "doctor"}, -- ranks that can manage the company
         location = {
             name = "Pillbox",
-            coords = { x = 304.2, y = -587.0 }
+            coords = {
+                x = 304.2,
+                y = -587.0
+            }
         }
-    },
-    {
-        job = "bcso",
-        name = "BCSO",
-        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Chief" },
-        location = {
-            name = "BCSO HQ",
-            coords = { x = 1850.0, y = 3700.0 } -- Adjust coords as needed
-        }
-    },
-    {
-        job = "sasp",
-        name = "SASP",
-        icon = "https://cdn-icons-png.flaticon.com/512/7211/7211100.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Chief" },
-        location = {
-            name = "SASP HQ",
-            coords = { x = -1500.0, y = 300.0 } -- Adjust coords
-        }
-    },
-    {
-        job = "doj",
-        name = "Department of Justice",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Chief Justice" }
     },
     {
         job = "mechanic",
         name = "Mechanic",
         icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Manager" },
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = {"boss", "worker"}, -- ranks that can manage the company
         location = {
-            name = "Mechanic Shop",
-            coords = { x = -336.6, y = -134.3 }
+            name = "LS Customs",
+            coords = {
+                x = -336.6,
+                y = -134.3
+            }
         }
-    },
-    {
-        job = "travorcustoms",
-        name = "Travor Customs",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "chicagotint",
-        name = "Chicago Paint N Tint",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "ttmcustoms",
-        name = "TTM Customs",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "chicago",
-        name = "Chicago Rim Shop",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "bennys",
-        name = "Bennys",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "bennysdocks",
-        name = "Bennys Docks",
-        icon = "https://cdn-icons-png.flaticon.com/128/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "billionairecustoms",
-        name = "Billionaire Customs",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
     },
     {
         job = "taxi",
         name = "Taxi",
         icon = "https://cdn-icons-png.flaticon.com/128/433/433449.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Manager" },
+        canCall = true, -- if true, players can call the company
+        canMessage = true, -- if true, players can message the company
+        bossRanks = {"boss", "driver"}, -- ranks that can manage the company
         location = {
             name = "Taxi HQ",
-            coords = { x = 984.2, y = -219.0 }
+            coords = {
+                x =984.2,
+                y = -219.0
+            }
         }
     },
-    {
-        job = "realestate",
-        name = "Real Estate",
-        icon = "https://cdn-icons-png.flaticon.com/512/1040/1040967.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Boss" }
-    },
-    {
-        job = "insurance",
-        name = "Trusted Insurance",
-        icon = "https://cdn-icons-png.flaticon.com/512/1040/1040967.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Owner" }
-    },
-    {
-        job = "cardealer",
-        name = "Vehicle Dealer",
-        icon = "https://cdn-icons-png.flaticon.com/512/1040/1040967.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Manager" }
-    },
-    {
-        job = "bus",
-        name = "Bus Service",
-        icon = "https://cdn-icons-png.flaticon.com/512/3202/3202003.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-    {
-        job = "tow",
-        name = "Towing",
-        icon = "https://cdn-icons-png.flaticon.com/512/10281/10281554.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-    {
-        job = "reporter",
-        name = "News / Reporter",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-    {
-        job = "barber",
-        name = "Fade Trap",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = { "Boss" }
-    },
-    {
-        job = "beauty",
-        name = "Beauty Trap",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-
-     {
-        job = "hitplace",
-        name = "Hit Place",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-    {
-        job = "ghostcustoms",
-        name = "Ghost Customs",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
-
-     {
-        job = "ghostauto",
-        name = "Ghost Autos",
-        icon = "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        canCall = true,
-        canMessage = true,
-        bossRanks = {}
-    },
 }
-
 
 Config.Companies.Contacts = { -- not needed if you use the services app, this will add the contact to the contacts app
     -- ["police"] = {
@@ -724,11 +565,11 @@ Config.PhoneNumber = {}
 Config.PhoneNumber.Format = "({3}) {3}-{4}" -- Don't touch unless you know what you're doing. IMPORTANT: The sum of the numbers needs to be equal to the phone number length + prefix length
 Config.PhoneNumber.Length = 7 -- This is the length of the phone number WITHOUT the prefix.
 Config.PhoneNumber.Prefixes = { -- These are the first numbers of the phone number, usually the area code. They all need to be the same length
-    "773",
-    "708",
-    "312",
-    "630",
-    "224"
+    "205",
+    "907",
+    "480",
+    "520",
+    "602"
 }
 
 Config.Battery = {} -- WITH THESE SETTINGS, A FULL CHARGE WILL LAST AROUND 2 HOURS.
@@ -749,14 +590,14 @@ Config.TransferLimits.Weekly = false -- The maximum amount of money that can be 
 Config.EnableMessagePay = true -- Allow players to pay other players via messages?
 Config.EnableVoiceMessages = true -- Allow players to send voice messages?
 Config.EnableGIFs = true
-Config.GIFsFilter = "low" -- https://developers.google.com/tenor/guides/content-filtering#ContentFilter-options
+Config.GIFsFilter = "low" -- Content filter for GIFs: "off" | "low" | "medium" | "high"
 
-Config.CityName = "Chicago" -- The name that's being used in the weather app etc.
+Config.CityName = "Spend Dat Shyt" -- The name that's being used in the weather app etc.
 Config.RealTime = true -- if true, the time will use real life time depending on where the user lives, if false, the time will be the ingame time.
 Config.CustomTime = false -- NOTE: disable Config.RealTime if using this. you can set this to a function that returns custom time, as a table: { hour = 0-24, minute = 0-60 }
 
-Config.EmailDomain = "lbscripts.com"
-Config.AutoCreateEmail = false -- should the phone automatically create an email for the player when they set up the phone?
+Config.EmailDomain = "SpendDatShyt.com"
+Config.AutoCreateEmail = true -- should the phone automatically create an email for the player when they set up the phone?
 Config.DeleteMail = true -- allow players to delete mails in the mail app?
 Config.ConvertMailToMarkdown = true -- convert mails from html to markdown?
 
@@ -767,16 +608,16 @@ Config.SyncFlash = true -- should flashlights be synced across all players? May 
 Config.EndLiveClose = false -- should InstaPic live end when you close the phone?
 
 Config.AllowExternal = { -- allow people to upload external images? (note: this means they can upload nsfw / gore etc)
-    Gallery = false, -- allow importing external links to the gallery?
-    Birdy = false, -- set to true to enable external images on that specific app, set to false to disable it.
-    InstaPic = false,
-    Spark = false,
-    Trendy = false,
-    Pages = false,
-    Marketplace = false,
-    Mail = false,
-    Messages = false,
-    Other = false, -- other apps that don't have a specific setting (ex: setting a profile picture for a contact, backgrounds for the phone etc)
+    Gallery = true, -- allow importing external links to the gallery?
+    Birdy = true, -- set to true to enable external images on that specific app, set to false to disable it.
+    InstaPic = true,
+    Spark = true,
+    Trendy = true,
+    Pages = true,
+    Marketplace = true,
+    Mail = true,
+    Messages = true,
+    Other = true, -- other apps that don't have a specific setting (ex: setting a profile picture for a contact, backgrounds for the phone etc)
 }
 
 -- Blocked hostnames for external images. You will not be able to upload from these hostnames.
@@ -1046,7 +887,7 @@ Config.KeyBinds = {
     -- Find keybinds here: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
     Open = { -- toggle the phone
         Command = "phone",
-        Bind = "F1",
+        Bind = "M",
         Description = "Open your phone"
     },
     Focus = { -- keybind to toggle the mouse cursor.

@@ -18137,7 +18137,6 @@ return {
     -- metadata will be handled automatically by ox_inventory
 },
 
-tablet = { name = 'tablet', label = 'Tablet', weight = 1000, type = 'item', image = 'tablet.png', unique = true, useable = true, shouldClose = true, description = 'Work-related tablet' },
 
 ['wood'] = {
     label = 'Wood',

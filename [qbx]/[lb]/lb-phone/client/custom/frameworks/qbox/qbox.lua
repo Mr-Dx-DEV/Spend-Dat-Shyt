@@ -6,7 +6,6 @@ debugprint("Loading Qbox")
 
 QB = exports["qb-core"]:GetCoreObject()
 
-PlayerJob = {}
 PlayerData = {}
 
 while not LocalPlayer.state.isLoggedIn do
@@ -17,12 +16,10 @@ FrameworkLoaded = true
 
 debugprint("Qbox loaded")
 
-PlayerJob = QB.Functions.GetPlayerData().job
 PlayerData = QB.Functions.GetPlayerData()
 
 RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
     PlayerData = QB.Functions.GetPlayerData()
-    PlayerJob = PlayerData.job
 
     FetchPhone()
 end)

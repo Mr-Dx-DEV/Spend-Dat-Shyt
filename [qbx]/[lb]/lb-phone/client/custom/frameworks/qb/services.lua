@@ -8,19 +8,19 @@ while not QB do
 end
 
 RegisterNetEvent("QBCore:Client:OnJobUpdate", function(jobInfo)
-    local oldJob = PlayerJob
+    local oldJob = PlayerData.job
 
-    PlayerJob = jobInfo
+    PlayerData.job = jobInfo
 
-    if oldJob.name ~= PlayerJob.name or oldJob.grade?.level ~= PlayerJob.grade?.level then
+    if not oldJob or (oldJob.name ~= PlayerData.job.name or oldJob.grade?.level ~= PlayerData.job.grade?.level) then
         SendNUIAction("services:setCompany", GetCompanyData())
     else
         SendNUIAction("services:setDuty", jobInfo.onduty)
     end
 
     TriggerEvent("lb-phone:jobUpdated", {
-        job = PlayerJob.name,
-        grade = PlayerJob.grade.level
+        job = PlayerData.job.name,
+        grade = PlayerData.job.grade.level
     })
 
     if RefreshMultiJobs then
@@ -30,24 +30,24 @@ end)
 
 ---@return string
 function GetJob()
-    return PlayerJob?.name or "unemployed"
+    return PlayerData?.job?.name or "unemployed"
 end
 
 ---@return number
 function GetJobGrade()
-    return PlayerJob?.grade?.level or 0
+    return PlayerData?.job?.grade?.level or 0
 end
 
 function GetCompanyData()
-    if PlayerJob.name == "unemployed" then
+    if PlayerData.job.name == "unemployed" then
         return
     end
 
     local jobData = {
-        job = PlayerJob.name,
-        jobLabel = PlayerJob.label,
-        isBoss = PlayerJob.isboss,
-        duty = PlayerJob.onduty
+        job = PlayerData.job.name,
+        jobLabel = PlayerData.job.label,
+        isBoss = PlayerData.job.isboss,
+        duty = PlayerData.job.onduty
     }
 
     if not jobData.isBoss then
@@ -120,7 +120,7 @@ function DepositMoney(amount, cb)
     TriggerServerEvent("qb-bossmenu:server:depositMoney", amount)
     Wait(500) -- Wait for the server to update the balance
 
-    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
+    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerData.job.name)
 end
 
 function WithdrawMoney(amount, cb)
@@ -131,7 +131,7 @@ function WithdrawMoney(amount, cb)
     TriggerServerEvent("qb-bossmenu:server:withdrawMoney", amount)
     Wait(500) -- Wait for the server to update the balance
 
-    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerJob.name)
+    QB.Functions.TriggerCallback("qb-bossmenu:server:GetAccount", cb, PlayerData.job.name)
 end
 
 function HireEmployee(source)
@@ -143,13 +143,13 @@ end
 function FireEmployee(source)
     TriggerServerEvent("qb-bossmenu:server:FireEmployee", source)
 
-    return PlayerJob.isboss or false
+    return PlayerData.job.isboss or false
 end
 
 function SetGrade(identifier, newGrade)
     local maxGrade = 0
 
-    for grade, _ in pairs(QB.Shared.Jobs[PlayerJob.name].grades) do
+    for grade, _ in pairs(QB.Shared.Jobs[PlayerData.job.name].grades) do
         grade = tonumber(grade)
 
         if grade and grade > maxGrade then
@@ -164,7 +164,7 @@ function SetGrade(identifier, newGrade)
     TriggerServerEvent("qb-bossmenu:server:GradeUpdate", {
         cid = identifier,
         grade = newGrade,
-        gradename = QB.Shared.Jobs[PlayerJob.name].grades[tostring(newGrade)].name
+        gradename = QB.Shared.Jobs[PlayerData.job.name].grades[tostring(newGrade)].name
     })
 
     return true

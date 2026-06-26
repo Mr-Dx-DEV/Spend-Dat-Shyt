@@ -22,7 +22,7 @@ RegisterNetEvent("esx:setJob", function(job)
 
     ESX.PlayerData.job = job
 
-    if oldJob.name ~= job.name or oldJob.grade ~= job.grade then
+    if not oldJob or (oldJob.name ~= job.name or oldJob.grade ~= job.grade) then
         SendNUIAction("services:setCompany", GetCompanyData())
     else
         SendNUIAction("services:setDuty", job.onDuty)

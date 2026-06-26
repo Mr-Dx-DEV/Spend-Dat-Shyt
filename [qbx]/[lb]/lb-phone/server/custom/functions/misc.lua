@@ -34,6 +34,11 @@ SetTimeout(100, function()
         return
     end
 
+    if GetResourceState("ox_inventory") == "started" then
+        debugprint("ox_inventory detected, not calling CreateUsableItem")
+        return
+    end
+
     if Config.Item.Name then
         CreateUsableItem(Config.Item.Name, function(src)
             TriggerClientEvent("phone:toggleOpen", src)
