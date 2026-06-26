@@ -1,4 +1,20 @@
 return {
+    ['love_tablet']       = { label = 'Love Tablet',               weight = 500, stack = false, close = true },
+['pregnancy_test']    = { label = 'Pregnancy Test',             weight = 50,  stack = true  },
+['contraception']     = { label = 'Contraception',              weight = 50,  stack = true  },
+['prenatal_vitamins'] = { label = 'Prenatal Vitamins',          weight = 50,  stack = true  },
+['condoms']           = { label = 'Condoms',                    weight = 50,  stack = true  },
+['plan_c']            = { label = 'Plan C (Morning-After)',     weight = 50,  stack = false },
+['std_test_kit']      = { label = 'STD Test Kit (7 Panel)',     weight = 100, stack = false },
+['dna_test']          = { label = 'DNA Test Kit',               weight = 100, stack = false },
+['dna_result']        = { label = 'DNA Test Result',            weight = 50,  stack = false },
+['birth_cert_boy']    = { label = 'Birth Certificate (Boy)',    weight = 100, stack = false },
+['birth_cert_girl']   = { label = 'Birth Certificate (Girl)',   weight = 100, stack = false },
+['prescription_meds'] = { label = 'Prescription Medication',    weight = 50,  stack = true  },
+['ultrasound_report'] = { label = 'Ultrasound Report',          weight = 50,  stack = false },
+
+
+
     	['handcuffs'] = {
 			label = 'Hand Cuffs',
 			weight = 2,
