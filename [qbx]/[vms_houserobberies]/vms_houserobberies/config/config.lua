@@ -105,7 +105,7 @@ Config.RobberyBlip = {
     blipEnabled = true,
     sprite = 458,
     display = 4,
-    scale = 0.5,
+    scale = 1.25,
     color = 49,
     name = 'Robbery - %s'
 }
@@ -193,7 +193,7 @@ Config.RobberyOrganizer = {
     blip = {
         sprite = 480,
         display = 4,
-        scale = 0.5,
+        scale = 0.85,
         color = 15,
         name = 'Robbery Organizer'
     },
@@ -221,7 +221,7 @@ Config.Pawnshop = {
     blip = {
         sprite = 500,
         display = 4,
-        scale = 0.5,
+        scale = 0.85,
         color = 15,
         name = 'Pawn Shop'
     },
@@ -246,7 +246,7 @@ Config.FencesDealer = {
     blip = {
         sprite = 500,
         display = 4,
-        scale = 0.5,
+        scale = 0.85,
         color = 6,
         name = 'Fence'
     },
