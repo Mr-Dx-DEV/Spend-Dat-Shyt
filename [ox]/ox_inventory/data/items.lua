@@ -3957,7 +3957,7 @@ return {
     },
 
     ---Oxide
-    blackmarket_pager = {
+    ['blackmarket_pager'] = {
     name = 'blackmarket_pager',
     label = 'Burner Pager',
     weight = 100,
