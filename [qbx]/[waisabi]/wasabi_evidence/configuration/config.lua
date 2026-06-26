@@ -169,7 +169,7 @@ Config.EvidenceLabs = { -- Locations where Config.PoliceJobs can analyze evidenc
         label = 'LSPD', -- Label to display during certain situations/notifications
 
         analyze = {
-            coords = vec3(465.11, -1008.15, 39.56), -- Coords for location(If target is not enabled)
+            coords = vec3(464.16, -1011.71, 26.54), -- Coords for location(If target is not enabled)
             range = 1.8, -- Range to show TextUI (If target is not enabled)
             label = '[E] - Analyze Evidence', -- TextUI string(If target is not enabled)
             target = {
@@ -186,7 +186,7 @@ Config.EvidenceLabs = { -- Locations where Config.PoliceJobs can analyze evidenc
 
         fingerprinting = {
             enabled = true, -- Enable a finger printing station. By default this will be used to reveal any 'unknown' fingerprints that are ran through the system.
-            coords = vec3(474.37, -1008.88, 21.93), -- Coords for location(If target is not enabled)
+            coords = vec3(459.8, -993.2, 26.4), -- Coords for location(If target is not enabled)
             range = 1.8, -- Range to show TextUI (If target is not enabled)
             label = '[E] - Take Suspect\'s Fingerprints', -- TextUI string(If target is not enabled)
             target = {
@@ -203,7 +203,7 @@ Config.EvidenceLabs = { -- Locations where Config.PoliceJobs can analyze evidenc
 
         storage = {
             enabled = true, -- Enable archive access in-game via storage location?
-            coords = vec3(465.68, -1001.43, 21.93), -- Coords for location(If target is not enabled)
+            coords = vec3(462.38, -1002.99, 26.5), -- Coords for location(If target is not enabled)
             range = 1.8, -- Range to show TextUI (If target is not enabled)
             label = '[E] - Access Evidence Storage', -- TextUI string(If target is not enabled)
             target = {
