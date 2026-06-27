@@ -6,7 +6,7 @@
 --- ### PERFUMS & COLOGNE ### ---
 
 Config = {}
-Config.Framework = 'ESX' -- 'ESX' or 'QBCore' (case sensitive)
+Config.Framework = 'QBCore' -- 'ESX' or 'QBCore' (case sensitive)
 Config.InteractionType = '3dtext' -- ox_target | 3dtext
 Config.UseOxTargetForNpc = true -- Set to true to enable ox_target, false to use key press interaction
 Config.TimeToCraft = 8000
@@ -37,8 +37,8 @@ Config.Jobs = {
 
 Config.NPC = {
     Model = "a_f_m_soucent_02", -- Change to your desired NPC model
-    Coords = vector3(47.4113, -1599.1135, 28.5428), -- Change to your desired NPC spawn location
-    Heading = 157.0, -- Adjust the heading as needed
+    Coords = vector3(-829.6940, -1087.2389, 11.1341), -- Change to your desired NPC spawn location
+    Heading = 299.4346, -- Adjust the heading as needed
     BlipEnabled = true,  -- New option to enable/disable blip
     BlipSprite = 389,        -- Example blip icon, see https://wiki.rage.mp/index.php?title=Blips for blip IDs
     BlipScale = 0.5,

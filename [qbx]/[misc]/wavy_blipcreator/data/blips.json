@@ -1,67 +1,93 @@
 [
     {
+        "coords": {
+            "x": 0,
+            "z": 0,
+            "y": 0
+        },
+        "id": "17825363893371",
+        "sprite": 1,
+        "color": "#FFFFFF",
+        "name": "Unnamed",
+        "radius": 0,
+        "scale": 1
+    },
+    {
+        "coords": {
+            "x": -795.73,
+            "z": 37.18,
+            "y": -230.3
+        },
+        "id": "17825363894801",
+        "sprite": 225,
+        "color": "#800080",
+        "name": "GHOST AUTO",
+        "radius": 0,
+        "scale": 1
+    },
+    {
+        "coords": {
+            "x": -266.24,
+            "z": 32.32,
+            "y": -898.91
+        },
         "name": "CASINO",
         "sprite": 207,
-        "coords": {
-            "z": 32.32,
-            "y": -898.91,
-            "x": -266.24
-        },
-        "scale": 1,
+        "color": "#FF0000",
         "id": "17807938373166",
         "radius": 0,
-        "color": "#FF0000"
+        "scale": 1
     },
     {
-        "name": "BOWLING",
         "coords": {
+            "x": -125.02,
             "z": 43.61,
-            "y": -171.06,
-            "x": -125.02
+            "y": -171.06
         },
+        "name": "BOWLING",
+        "sprite": 1,
         "color": "#00FF00",
-        "scale": 0.5,
         "id": "17805145614389",
         "radius": 0,
-        "sprite": 1
+        "scale": 0.5
     },
     {
+        "coords": {
+            "x": -163.79,
+            "z": 55.17,
+            "y": -123.56
+        },
         "name": "CHICAGO SKATING",
         "sprite": 119,
         "color": "#FF0000",
-        "scale": 0.5,
         "id": "17805144981866",
         "radius": 0,
-        "coords": {
-            "z": 55.17,
-            "y": -123.56,
-            "x": -163.79
-        }
+        "scale": 0.5
     },
     {
-        "name": "GHOST GUNS",
         "coords": {
+            "x": 843.78,
             "z": 28.13,
-            "y": -1024.13,
-            "x": 843.78
+            "y": -1024.13
         },
+        "name": "GHOST GUNS",
+        "sprite": 110,
         "color": "#800080",
-        "scale": 1,
         "id": "17805143833841",
         "radius": 0,
-        "sprite": 110
+        "scale": 1
     },
     {
+        "coords": {
+            "x": -298.12,
+            "z": 31.85,
+            "y": -1629.07
+        },
         "name": "Weed Field",
         "sprite": 140,
         "color": "#00FF00",
-        "scale": 0.8,
         "id": "17662119616935",
         "radius": 35,
-        "coords": {
-            "z": 31.85,
-            "y": -1629.07,
-            "x": -298.12
-        }
+        "scale": 0.8
     }
 ]

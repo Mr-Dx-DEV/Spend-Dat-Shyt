@@ -8,7 +8,7 @@ Config.locale = 'en'
 
 -- Name of the job
 -- Can be set to false to ignore job checks. Allowing anyone to access the contracts
-Config.jobName = 'powerwashing'
+Config.jobName = false
 
 -- Quality of the network sync of the wash areas
 -- Recommended to keep it at or below `medium` for large (100+ player) servers
@@ -219,7 +219,7 @@ Config.headquarters = {
     blip = {
         sprite = 498,
         color = 12,
-        scale = 0.5,
+        scale = 1.1,
         name = 'Dirty Hose Headquarters',
     },
 

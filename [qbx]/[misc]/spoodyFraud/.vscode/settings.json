@@ -1,0 +1,9 @@
+{
+    "Lua.diagnostics.globals": [
+        "lib",
+        "cache"
+    ],
+    "Lua.diagnostics.disable": [
+        "param-type-mismatch"
+    ]
+}

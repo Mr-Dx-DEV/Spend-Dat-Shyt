@@ -147,7 +147,7 @@ return {
 			{ name = 'bbs_bays_barbecue', price = 6 },
 			{ name = 'bbs_bays_all_dressed', price = 6 },
 			{ name = 'weed_baggy', price = 6 },
-			{ name = 'oldphone', price = 5000 },
+			{ name = 'outfitbag', price = 1000 },
 		}, locations = {
 			vec3(1135.808, -982.281, 46.415),
 			vec4(-1222.03, -907.42, 12.33, 224.27),
@@ -303,7 +303,7 @@ return {
 		},
 		targets = {
 			{ loc = vec3(465.36, -1009.72, 30.71), length = 0.5, width = 3.0, heading = 0.73, minZ = 29.1, maxZ = 31.9, distance = 6 },
-			{ ped = `s_m_y_cop_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(465.36, -1009.72, 30.71), heading = 0.73 },
+			{ ped = `s_m_y_cop_01`, scenario = 'WORLD_HUMAN_CLIPBOARD', loc = vec3(465.36, -1009.72, 29.71), heading = 0.73 },
 		}
 	},
 

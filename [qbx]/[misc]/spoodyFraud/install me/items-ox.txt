@@ -1,0 +1,114 @@
+["burnerphone"] = {
+    label = "Burner Phone",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+    client = {
+        image = "burnerphone.png",
+    },
+    server = {
+        export = 'spoodyFraud.burnerphone',
+    },
+},
+["msr"] = {
+    label = "MSR",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+    client = {
+        image = "msr.png",
+    },
+    server = {
+        export = 'spoodyFraud.msr',
+    },
+},
+["laptop"] = {
+    label = "Laptop",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+    client = {
+        image = "laptop.png",
+    },
+    server = {
+        export = 'spoodyFraud.laptop',
+    },
+},
+["printer"] = {
+    label = "Printer",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+    client = {
+        image = "printer.png",
+    },
+    server = {
+        export = 'spoodyFraud.printer',
+    },
+},
+["checkpaper"] = {
+    label = "Check Paper",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+},
+["fcheck"] = {
+    label = "Forged Check",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+},
+["ccard"] = {
+    label = "Cloned Card",
+    weight = 100,
+    stack = true,
+    close = true,
+    description = "",
+},
+["blank"] = {
+    label = "Blank Card",
+    weight = 100,
+    stack = true,
+    close = true,
+    description = "",
+},
+["sim"] = {
+    label = "Swapped Sim Card",
+    weight = 100,
+    stack = true,
+    close = true,
+    description = "",
+},
+["simcard"] = {
+    label = "Empty Sim Card",
+    weight = 100,
+    stack = true,
+    close = true,
+    description = "",
+},
+["fraud_usb"] = {
+    label = "Empty USB",
+    weight = 100,
+    stack = false,
+    close = true,
+    description = "",
+    client = {
+        image = "fraud_usb.png",
+    },
+    server = {
+        export = 'spoodyFraud.fraud_usb',
+    },
+},
+["usb_transfer"] = {
+    label = "Filled USB",
+    weight = 100,
+    stack = true,
+    close = true,
+    description = "",
+},

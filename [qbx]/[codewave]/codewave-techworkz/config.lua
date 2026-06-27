@@ -102,8 +102,8 @@ CodeWave_TechWorkz_Config.Jobs = {
 
 CodeWave_TechWorkz_Config.NPC = {
     Model       = "CSB_CallGirl_01",
-    Coords      = vector3(1126.8096, -968.6772, 46.586), -- IF PED IS FLOATING, DECREASE THE Z COORDINATE BY 1
-    Heading     = 276.0,
+    Coords      = vector3(-829.0472, -1088.5660, 11.1364), -- IF PED IS FLOATING, DECREASE THE Z COORDINATE BY 1
+    Heading     = 305.3142,
     BlipEnabled = true,
     BlipSprite  = 521,
     BlipScale   = 0.5,

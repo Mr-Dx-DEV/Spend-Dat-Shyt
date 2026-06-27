@@ -18,5 +18,3 @@ escrow_ignore {
 }
 
 dependency '/assetpacks'
-
-

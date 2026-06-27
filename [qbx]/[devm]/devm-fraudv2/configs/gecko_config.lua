@@ -1,1 +1,0 @@
-geckoAPIKey = "CG-fhjWfaEmHBggnZVsMNcLkgV9" -- enter geckoAPIKey here (https://www.coingecko.com/en/api)
